@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            {% if page.title == '#ROOT#' %}
+                PHP.de Community Knowledge Repository
+            {% else if %}
+                {{ page.title }} &middot; PHP.de Community Knowledge Repository
+            {% endif %}
+        </title>
+
+        <link rel="stylesheet" href="{{ site.url }}/css/global.css" />
+    </head>
+    <body>
+        <div class="pageWrap">
+            <div class="content">
+            {{ content }}
+            </div>
+        </div>
+    </body>
+</html>

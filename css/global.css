@@ -1,0 +1,16 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+
+body {
+    height:100%;
+
+    font-family:'Ubuntu', sans-serif;
+    font-size:12pt;
+
+    background-color:#e8e8e8;
+}
+
+body > .pageWrap {
+    margin:10px;
+
+    background-color:#f0f0f0;
+}

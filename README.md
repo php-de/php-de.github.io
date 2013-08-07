@@ -1,4 +1,4 @@
-php-de.github.io
+Contribute!-Richtlinie
 ================
 
-PHP.de Community Knowledge Repository
+In Progress...

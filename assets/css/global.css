@@ -31,6 +31,10 @@ body > .pageWrap {
     font-size:10pt !important;
 }
 
+.container h1, .container h2, .container h3, .container h4, .container h5 {
+    margin-top:12px !important;
+}
+
 .font-up {
     font-size:12pt !important;
 }

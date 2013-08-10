@@ -5,7 +5,7 @@ layout: default
     {% include heading.html %}
     <!-- sections -->
     <div class="list-group">
-        {% for sec in site.pageSection %}
+        {% for sec in page.pageSections %}
         <a class="list-group-item" href="{{ sec.url }}">
             <h4 class="list-group-item-heading">{{ sec.name }}</h4>
             <p>{{ sec.desc }}</p>

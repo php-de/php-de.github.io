@@ -55,13 +55,16 @@ Mögliche Werte: entry
 Setzt das Template in das der Markdown eingefügt wird.
 
 author: <array>
+
 Mögliche Werte: -: <return> <array-key: author> [Text] <return> <array-key: profileId> [Text]
 Setzt Informationen über den Autor des Dokuments
 
 shortDescription: <text>
+
 Setzt die Beschreibung für die Suchmaschinen-Indizierung der Github-Page ( meta-tag )
 
 keywords: <array>
+
 Mögliche Werte: ["wert1","wert2","wert3","..."]
 Setzt keywords für die Suchmaschinen-Indizierung der Github-Page ( meta-tag ).
 
@@ -82,3 +85,20 @@ Hallo-Welt Standard-Implementierung
 
 ...
 ```
+
+### 4. Komponenten-Vernetzung
+
+Grundsätzlich ist es kein Problem wenn du PHP-Komponenten die nicht zum PHP-Kern gehören 
+oder auch Komponenten-Klassen aus Bibliotheken in deinen Beiträgen verlinkst. Wir setzen
+allerdings voraus das die Klasse unter der bis zum Veröffentlichungszeitpunkt aktuellsten
+PHP-Version fehlerfrei läuft und weistestgehend ( wenn das Thema des Beitrags allgemein gehalten ist )
+auch auf allen Umgebungen ( Windows, Linux, MacOS ) lauffähig ist. Du solltest auch den Zustand
+berücksichtigen das die meisten Hosting-Platformen noch niedrigere PHP-Versionen ausliefern.
+Als grobe Empfehlung: Der Quellcode und/oder die Komponente sollte ab PHP 5.3 lauffähig sein.
+
+Versuche bitte weitestgehend Komponenten die auf PHP-Quellcode basieren auf Github gehostet 
+sind und wenn möglich [Composer](http://getcomposer.org)-Support bieten 
+( auf [Packagist.org](http://packagist.org) gelistet sind ).
+
+Für den Fall das eine verwendete Komponente per Composer verfügbar ist, solltest du in deinem Beitrag
+außerdem die dafür notwendige composer.json als Quellcode mit in deinen Beitrag einbeziehen.

@@ -66,7 +66,7 @@ Um auch internationalisierte Domains auf grundsätzliche formelle Korrektheit zu
 
 Für die Punycodeumwandlung gibt es einige PHP-Klassen im Web, dazu am besten mal [Tante G.](https://www.google.at/search?q=php+punycode+OR+idna+converter) fragen.
 
-Durch diese Klasse wir die E-Mail-Adresse vorweg in Punycode konvertiert und anschliessend [wie gehabt mittels filter_var()](#filtervar) geprüft. Nachfolgend Beispiel mit der PHP-Klasse [idna_convert von Matthias Sommerfeld] (http://phlymail.com/de/downloads/idna-convert.html) - dort gibts es überdies auch einen online [Punycode-Konverter](http://idnaconv.phlymail.de/?lang=de).
+Durch diese Klasse wir die E-Mail-Adresse vorweg in Punycode konvertiert und anschliessend [wie gehabt mittels filter_var()](#filtervar) geprüft. Nachfolgend Beispiel mit der PHP-Klasse [idna_convert von Matthias Sommerfeld](http://phlymail.com/de/downloads/idna-convert.html) - dort gibts es überdies auch einen online [Punycode-Konverter](http://idnaconv.phlymail.de/?lang=de).
 
     function isValidEmail($mail)
     { 

@@ -4,12 +4,11 @@ title: php.de
 
 pageSections:
 
-    -:
+    -
 
-        name: Email
+        name: "Email"
 
-        desc: Wissenswertes über den Umgang mit Email-Adressen, Mail-Servern, und Mailer-Klassen.
+        desc: "Wissenswertes über den Umgang mit Email-Adressen, Mail-Servern, und Mailer-Klassen."
 
-        url: /email
-        
+        url: "/email"
 ---

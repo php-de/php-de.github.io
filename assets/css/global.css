@@ -27,6 +27,7 @@ body > .pageWrap {
 
 .container blockquote, .container blockquote p {
     font-size:10pt !important;
+    color:#777 !important;
 }
 
 .container h1, .container h2, .container h3, .container h4, .container h5 {

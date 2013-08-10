@@ -35,6 +35,8 @@ body > .pageWrap {
     margin-top:20px !important;
 }
 
-.font-up {
-    font-size:12pt !important;
+.container footer {
+    text-align:center;
+    margin-top:4px;
+    margin-bottom:24px;
 }

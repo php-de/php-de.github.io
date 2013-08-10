@@ -27,6 +27,6 @@ body > .pageWrap {
     cursor:pointer;
 }
 
-.container blockquote {
-    font-size:10px;
+.container blockquote, .container blockquote p {
+    font-size:10pt;
 }

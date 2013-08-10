@@ -1,0 +1,3 @@
+[submodule "email"]
+ path = email
+ url = https://github.com/php-de/Email.git

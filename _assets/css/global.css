@@ -1,0 +1,28 @@
+@import url(http://fonts.googleapis.com/css?family=Arimo);
+
+body {
+    font-family:'Arimo', sans-serif;
+    font-size:12pt;
+
+    background-color:#fff;
+}
+
+body > .pageWrap {
+    background-image:url(../images/php-de-krepo.png);
+    background-position:right top;
+    background-repeat:no-repeat;
+    margin-top:35px;
+}
+
+.pageWrap > .head {
+    height:56px;
+    border-bottom:1px solid #484848;
+}
+
+.pageWrap > .sectionStream {
+    margin-top:12px;
+}
+
+.pageWrap > .sectionStream a {
+    cursor:pointer;
+}

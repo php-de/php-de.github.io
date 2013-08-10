@@ -2,21 +2,25 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>
-            {% if page.title == '#ROOT#' %}
-                PHP.de Community Knowledge Repository
-            {% else if %}
-                {{ page.title }} &middot; PHP.de Community Knowledge Repository
-            {% endif %}
-        </title>
+        <title>{% if page.title != 'php.de' %}{{ page.title }} &middot; {% endif %}PHP.de Community Knowledge Repository</title>
+    
+        <link rel="stylesheet" type="text/css" href="http://getbootstrap.com/dist/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="/assets/css/global.css">
 
-        <link rel="stylesheet" href="{{ site.url }}/css/global.css" />
     </head>
     <body>
-        <div class="pageWrap">
-            <div class="content">
-            {{ content }}
-            </div>
+        <div id="top" class="container pageWrap">
+            <div class="head">
         </div>
+    
+    <!-- landing only -->
+        <div class="container">
+            {{ content }}
+    <!-- stop landing -->
+        </div>
+        <hr />
+        <footer>
+            &copy; 2013 PHP.de Community
+        </footer>
     </body>
 </html>

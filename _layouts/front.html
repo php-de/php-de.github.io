@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<div class="panel sectionStream">
+    {% include heading %}
+    <!-- sections -->
+    <div class="list-group">
+        {% for sec in page.pageSection %}
+        <a class="list-group-item" href="{{ sec.url }}">
+            <h4 class="list-group-item-heading">{{ sec.name }}</h4>
+            <p>{{ sec.desc }}</p>
+        </a>
+        {% endfor %}
+    </div>
+</div>

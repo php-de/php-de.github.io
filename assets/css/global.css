@@ -1,7 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Arimo);
-
 body {
-    font-family:'Arimo', sans-serif;
+    font-family:Helvetica, arial, freesans, clean, sans-serif;;
     font-size:10pt;
 
     background-color:#fff;
@@ -33,6 +31,31 @@ body > .pageWrap {
 
 .container h1, .container h2, .container h3, .container h4, .container h5 {
     margin-top:20px !important;
+}
+
+.container p {
+    font-size:15px important!;
+    line-height:1.7;
+}
+
+.container h1 {
+    font-size:2.4em !important;
+}
+
+.container h2 {
+    font-size:2em !important;
+}
+
+.container h3 {
+    font-size:1.6em !important;
+}
+
+.container h4 {
+    font-size:1.2em !important;
+}
+
+.container h5 {
+    font-size:1.0em !important;
 }
 
 .container ul.authors .active {

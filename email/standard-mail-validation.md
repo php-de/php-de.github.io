@@ -1,7 +1,7 @@
 ---
 layout: guide
 title: Standard E-Mail-Validierung
-entry-type: in-progess
+entry-type: in-progress
 
 author:
     -   name: hausl

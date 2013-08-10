@@ -102,3 +102,7 @@ sind und wenn möglich [Composer](http://getcomposer.org)-Support bieten
 
 Für den Fall das eine verwendete Komponente per Composer verfügbar ist, solltest du in deinem Beitrag
 außerdem die dafür notwendige composer.json als Quellcode mit in deinen Beitrag einbeziehen.
+
+### 5. Seitenaktualisierung
+
+Änderungen der MarkDown-Dateien sind nicht sofort verfügbar. JEKYLL aktualisiert das Repository alle 10 Minuten.

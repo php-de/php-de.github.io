@@ -30,3 +30,7 @@ body > .pageWrap {
 .container blockquote, .container blockquote p {
     font-size:10pt;
 }
+
+.font-up {
+    font-size:12pt;
+}

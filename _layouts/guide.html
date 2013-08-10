@@ -66,9 +66,9 @@ layout: default
         <div class="panel">
             <ul class="list-group"></ul>
             {% for user in page.author %}
-                <li class="list-group-item">
+                <li class="list-group-item{% if page.creator %}{% if page.creator == user.name %} active{% endif %}{% endif %}">
                 {% if user.profile %}<a href="http://www.php.de/member.php?u={{ user.profile }}">{% endif %}
-                {{ user.name }}{% if page.creator %}{% if page.creator == user.name %}<span class="badge badge-success">&copy;</span>{% endif %}{% endif %}
+                {{ user.name }}
                 {% if user.profile %}</a>{% endif %}{% unless forloop.last %}, {% endunless %}
                 </li>
             {% endfor %}

@@ -1,6 +1,6 @@
 body {
     font-family:Helvetica, arial, freesans, clean, sans-serif;;
-    font-size:10pt;
+    font-size:11pt;
 
     background-color:#fff;
 }
@@ -36,7 +36,7 @@ body > .pageWrap {
 }
 
 .container p {
-    font-size:15px important!;
+    font-size:11pt important!;
     line-height:1.7;
 }
 

@@ -57,14 +57,17 @@ layout: default
             {{ content }}
         {% endcase %}
             <div class="panel-footer" style="text-align:right;">
-                <a href="#top">&uarr;</a>
+                <a href="#top">nach oben &uarr;</a>
             </div>
         </div>
     </div>
     <div class="col-lg-3">
         {% if page.author %}
         <div class="panel">
-            <ul class="list-group"></ul>
+            <p>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/de/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/de/88x31.png" /></a>
+            </p>
+            <ul class="list-group">
             {% for user in page.author %}
                 <li class="list-group-item{% if page.creator %}{% if page.creator == user.name %} active{% endif %}{% endif %}">
                 {% if user.profile %}<a href="http://www.php.de/member.php?u={{ user.profile }}">{% endif %}

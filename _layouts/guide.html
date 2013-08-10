@@ -8,7 +8,7 @@ layout: default
             {% when 'in-progress' %}    
         <div class="panel panel-danger">
             <div class="panel-heading">
-                {{ page.title }}
+                <span style="font-size:14pt">{{ page.title }}</span>
             </div>
             <p><strong>Dieser Beitrag ist zur Zeit in Bearbeitung.</strong><p>
             <ul class="list-group">
@@ -19,7 +19,7 @@ layout: default
             {% when 'deprecated' %}
         <div class="panel panel-info">
             <div class="panel-heading">
-                {{ page.title }}
+                <span style="font-size:14pt">{{ page.title }}</span>
             </div>
             <p><strong>Dieser Beitrag ist veraltet, du kannst ihn überarbeiten und uns deine Version des Beitrages vorschlagen.</strong><p>
             <ul class="list-group">
@@ -30,7 +30,7 @@ layout: default
             {% when 'in-discussion' %}
         <div class="panel panel-success">
             <div class="panel-heading">
-                {{ page.title }}
+                <span style="font-size:14pt">{{ page.title }}</span>
             </div>
             <p><strong>Dieser Beitrag ist nicht final und wird diskutiert.</strong><p>
             <ul class="list-group">
@@ -41,7 +41,7 @@ layout: default
             {% when 'marked-to-delete' %}
         <div class="panel panel-warning">
             <div class="panel-heading">
-                {{ page.title }}
+                <span style="font-size:14pt">{{ page.title }}</span>
             </div>
             <p><strong>Dieser Beitrag wird bald verworfen, du solltest ihn nicht weiter verlinken.</strong><p>
             <ul class="list-group">
@@ -52,7 +52,7 @@ layout: default
             {% else %}
         <div class="panel">
             <div class="panel-heading">
-                {{ page.title }}
+                <span style="font-size:14pt">{{ page.title }}</span>
             </div>
             {{ content }}
         {% endcase %}

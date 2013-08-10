@@ -26,3 +26,7 @@ body > .pageWrap {
 .sectionStream a {
     cursor:pointer;
 }
+
+.container blockquote {
+    font-size:10px;
+}

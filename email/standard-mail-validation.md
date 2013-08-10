@@ -16,7 +16,8 @@ Vorweg sei an dieser Stelle erwähnt das eine Prüfung auf tatsächliche Existen
 
 PHP stellt ab Version 5.2 die Funktion [filter_var()](http://php.net/manual/de/function.filter-var.php) zur Verfügung. Mit dem optionalen Parameter FILTER_VALIDATE_EMAIL kann diese grundsätzlich zur E-Mail-Validierung verwendet werden. Jedoch ist es damit nicht möglich internationalisierte E-Mail-Adressen zu prüfen - solche werden immer als falsch ausgewertet. Lösungsansätze folgen [weiter unten](#intdomain).
 
-    function isValidEmail($mail) { 
+    function isValidEmail($mail)
+    { 
         return (bool) filter_var($mail, FILTER_VALIDATE_EMAIL);
     } 
 
@@ -30,7 +31,8 @@ Sollte filter_var() nicht verfügbar sein, dann den Provider kontaktieren (oder 
 
 > We get a more practical implementation of RFC 2822 if we omit the syntax using double quotes and square brackets. It will still match 99.99% of all email addresses in actual use today. 
 
-    function isValidEmail($mail) { 
+    function isValidEmail($mail)
+    { 
         $pattern = '#[a-z0-9!\\#$%&\'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!\#$%&\'*+/=?^_`{|}~-]+)*'
                  . '@'
                  . '(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?#i';
@@ -42,8 +44,8 @@ Sollte filter_var() nicht verfügbar sein, dann den Provider kontaktieren (oder 
     var_dump(isValidEmail("mail@übung.de"));     // false 
 
 Dies kann alternativ statt filter_var() verwendet werden. Ebenso wie [oben bei filter_var()](#filtervar) schlägt die Prüfung von internationalisierten Domains damit fehl (was hier bereits am Pattern offensichtlich erkennbar ist).
-
-
+   
+  
 #### 2. <a name="intdomain"></a> Exkurs: Internationalisierte Domainnamen (IDN)
 
 [Dazu aus Wikipedia:](http://de.wikipedia.org/wiki/Internationalisierter_Domainname)
@@ -67,7 +69,8 @@ Für die Punycodeumwandlung gibt es einige PHP-Klassen im Web, dazu am besten ma
 
 Durch diese Klasse wir die E-Mail-Adresse vorweg in Punycode konvertiert und anschliessend [wie gehabt mittels filter_var()](#filtervar) geprüft. Nachfolgend Beispiel mit der PHP-Klasse ["idna_convert" von Matthias Sommerfeld] (http://phlymail.com/de/downloads/idna-convert.html) - dort gibts es überdies auch einen online [Punycode-Konverter](http://idnaconv.phlymail.de/?lang=de).
 
-    function isValidEmail($mail) { 
+    function isValidEmail($mail)
+    { 
         return (bool) filter_var($mail, FILTER_VALIDATE_EMAIL);
     } 
 
@@ -97,7 +100,8 @@ Mittels nachfolgendem Aufruf läßt sich rasch feststellen, ob diese Funktion zu
 
 Die konvertierte E-Mail-Adresse wird dann von filter_var() zur weiteren Validierung übergeben:
 
-    function isValidEmail($mail) {
+    function isValidEmail($mail)
+    {
         return (bool) filter_var(idn_to_ascii($mail), FILTER_VALIDATE_EMAIL);
     }
 
@@ -108,7 +112,8 @@ Die konvertierte E-Mail-Adresse wird dann von filter_var() zur weiteren Validier
  
 Diese Variante kommt ohne Punycode aus. Dann hierbei spielen die verwendeten Zeichen kaum eine Rolle, es wird nur der grobe Rahmen geprüft, und ob keine Whitespaces  (Leerzeichen, Tabstopps, etc..) vorhanden sind.
 
-    function isValidEmail($mail) { 
+    function isValidEmail($mail)
+    { 
         // Gesamtlänge check
         // http://de.wikipedia.org/wiki/E-Mail-Adresse#L.C3.A4nge_der_E-Mail-Adresse  
         if (strlen($mail) > 256) return false; 
@@ -136,7 +141,8 @@ Diese Variante kommt ohne Punycode aus. Dann hierbei spielen die verwendeten Zei
 
 Generell kann in jeder oben angeführten Varianten noch, wenn gewüscht, die Antwort des [DNS](http://de.wikipedia.org/wiki/Domain_Name_System) zur Domain (auf vorhandenen ["MX" oder "A"-Record](http://de.wikipedia.org/wiki/Domain_Name_System#Aufbau_der_DNS-Datenbank)) berücksichtigt werden. Die an das DNS übergebene Domain der E-Mail-Adresse muss für die Verwendung von internationalisierten Domains (wie bei filter_var()) ebenfalls schon in Punycode konvertiert sein.
 
-    function checkEMailDomainDNS($mail) {
+    function checkEMailDomainDNS($mail)
+    {
         $parts = explode('@', $mail);
         return (checkdnsrr($parts[1], "MX") or checkdnsrr($parts[1], "A"));
     }

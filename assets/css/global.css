@@ -28,9 +28,9 @@ body > .pageWrap {
 }
 
 .container blockquote, .container blockquote p {
-    font-size:10pt;
+    font-size:10pt !important;
 }
 
 .font-up {
-    font-size:12pt;
+    font-size:12pt !important;
 }

@@ -37,6 +37,7 @@ body > .pageWrap {
 
 .container ul.authors .active {
     background-color:#dff0d8;
+    border-radius:0px !important;
 }
 
 .container footer {

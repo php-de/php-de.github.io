@@ -1,0 +1,78 @@
+---
+layout: default
+---
+
+<div class="row sectionStream">
+    <div class="col-lg-9">
+        {% case page.entry-type %}
+            {% when 'in-progress' %}    
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                {{ page.title }}
+            </div>
+            <p><strong>Dieser Beitrag ist zur Zeit in Bearbeitung.</strong><p>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    {{ content }}
+                </li>
+            </ul>
+            {% when 'deprecated' %}
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                {{ page.title }}
+            </div>
+            <p><strong>Dieser Beitrag ist veraltet, du kannst ihn überarbeiten und uns deine Version des Beitrages vorschlagen.</strong><p>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    {{ content }}
+                </li>
+            </ul>
+            {% when 'in-discussion' %}
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                {{ page.title }}
+            </div>
+            <p><strong>Dieser Beitrag ist nicht final und wird diskutiert.</strong><p>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    {{ content }}
+                </li>
+            </ul>
+            {% when 'marked-to-delete' %}
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                {{ page.title }}
+            </div>
+            <p><strong>Dieser Beitrag wird bald verworfen, du solltest ihn nicht weiter verlinken.</strong><p>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    {{ content }}
+                </li>
+            </ul>
+            {% else %}
+        <div class="panel">
+            <div class="panel-heading">
+                {{ page.title }}
+            </div>
+            {{ content }}
+        {% endcase %}
+            <div class="panel-footer">
+                <a class="pull-right" href="#top">&uarr;</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        {% if page.author %}
+        <div class="panel">
+            {% for user in page.author %}
+                {% if user.profile %}<a href="http://www.php.de/member.php?u={{ user.profile }}">{% endif %}
+                {{ user.name }}
+                {% if user.profile %}</a>{% endif %}{% unless forloop.last %}, {% endunless %}
+            {% endfor %}
+            <div class="panel-footer">
+                <small>Autoren</small>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>

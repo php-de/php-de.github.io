@@ -10,5 +10,5 @@ pageSections:
 
         desc: "Wissenswertes über den Umgang mit Email-Adressen, Mail-Servern, und Mailer-Klassen."
 
-        url: "/email"
+        url: "email/"
 ---

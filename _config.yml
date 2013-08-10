@@ -1,0 +1,7 @@
+markdown: rdiscount
+
+# user defined variables
+
+# entry-type
+# [ default, in-progress, deprecated, in-discussion, marked-to-delete ]
+entry-type: default

@@ -2,6 +2,7 @@ Contribute!-Richtlinie
 ================
 
 Dieses Dokument ist veraltet und wird zur Zeit überarbeitet.
+
 ---
 Dies ist das GitHub-Pages Repository der PHP.de-Community. 
 Das GitHub-Pages Repository gliedert sich in Sektionen. 

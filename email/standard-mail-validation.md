@@ -6,7 +6,7 @@ author:
     -   name: hausl
         profile: 21246
         
-contents:
+inhalt:
     -   name: "filter_var()"
         anchor: filtervar
         simple: "nützliche Bordmittel"

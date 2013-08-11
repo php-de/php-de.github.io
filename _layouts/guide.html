@@ -62,25 +62,22 @@ layout: default
         </div>
     </div>
     <div class="col-lg-3">
-        {% if page.contents %}
+        {% if page.inhalt %}
         <div id="page-contents" class="panel">
             <p style="background-color:#f5f5f5">
                 Inhalt
             </p>
             <div class="list-group">
-                {% for content in page.contents %}
-                    {% if content.anchor and content.name %}
-                <a href="{{ page.url }}{{ content.anchor }}">
-                    <h4>{{ content.name }}</h4>
-                    {% if content.simple %}
-                    <p>{{ content.simple }}</p>
+                {% for inhalt in page.inhalt %}
+                    {% if inhalt.anchor and inhalt.name %}
+                <a href="{{ page.url }}{{ inhalt.anchor }}">
+                    <h4>{{ inhalt.name }}</h4>
+                    {% if inhalt.simple %}
+                    <p>{{ inhalt.simple }}</p>
                     {% endif %}
                 </a>
                     {% endif %}
                 {% endfor %}
-            </div>
-            <div class="panel-footer" style="text-align:right; color:#969696;">
-                Inhalt
             </div>
         </div>
         {% endif %}

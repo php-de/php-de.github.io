@@ -132,7 +132,7 @@ Na, wer hat jetzt die Arbeit?
 Bei Datenbankabfrage, die definitiv nur einen Datensatz liefern, wird oft die übliche Form des Auslesenes verwendet: 
 Code-Smells mit auslesenden Schleifen
 
-// Fehlerbehandlung wurde hier mal weggelassen
+    // Fehlerbehandlung wurde hier mal weggelassen
     $connection = mysql_connect('localhost' , 'root');
     mysql_select_db('userdb' , $connection);
  
@@ -166,7 +166,7 @@ Mit diesem Wissen können wir einen Ersatz für Fälle schaffen, in denen defini
 
 Hier ist eindeutiger, was passiert
 
-// ... Anfrage von oben
+    // ... Anfrage von oben
     $auth = false;
  
     if($data = mysql_fetch_assoc($ress))

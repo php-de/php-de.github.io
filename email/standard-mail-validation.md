@@ -115,7 +115,9 @@ Diese Variante kommt ohne Punycode aus. Dann hierbei spielen die verwendeten Zei
     { 
         // Gesamtlänge check
         // http://de.wikipedia.org/wiki/E-Mail-Adresse#L.C3.A4nge_der_E-Mail-Adresse  
-        if (strlen($mail) > 256) return false; 
+        if (strlen($mail) > 256) {
+            return false; 
+        }
         /* 
           Pattern: 
           ^       Anker Line-Start 

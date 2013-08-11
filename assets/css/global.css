@@ -7,7 +7,7 @@ body {
 
 body > .pageWrap {
     background-image:url(../images/php-de-2013-fin.png);
-    background-position:left top;
+    background-position:-10px top;
     background-repeat:no-repeat;
     margin-top:15px;
 }

@@ -6,15 +6,14 @@ body {
 }
 
 body > .pageWrap {
-    background-image:url(../images/php-de-krepo.png);
-    background-position:right top;
+    background-image:url(../images/php-de-2013-fin.png);
+    background-position:left top;
     background-repeat:no-repeat;
-    margin-top:35px;
+    margin-top:15px;
 }
 
 .pageWrap > .head {
-    height:56px;
-    border-bottom:1px solid #484848;
+    height:80px;
 }
 
 .sectionStream {

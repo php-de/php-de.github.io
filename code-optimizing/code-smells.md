@@ -1,3 +1,12 @@
+---
+layout: guide
+title: Codeoptimierung: Code-Smells
+creator: hausl
+entry-type: progress
+author:
+    -   name: hausl
+        profile: 21246
+---
 ### Codeoptimierung: Code-Smells
 
 Es gibt eine Reihe von Unsitten, die offenbar in veralteten Lehrbüchern auftauchen oder sich durch Copy & Paste im Laufe der Jahre im Internet exponentiell verbreitet haben. 

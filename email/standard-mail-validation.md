@@ -9,7 +9,7 @@ author:
 Dieses Tutorial zeigt grundsätzliche (übliche) Möglichkeiten, eine E-Mail-Adresse *(wie sie für den Transport per SMTP im Internet verwendet wird, besteht aus zwei Teilen, die durch ein @-Zeichen voneinander getrennt sind)*
  zu validieren. 
 
-Vorweg sei an dieser Stelle erwähnt das eine Prüfung auf tatsächliche Existenz einer E-Mail-Adresse auf diesem Weg nicht möglich ist. Die nachfolgende Ansätze dienen lediglich zur Feststellung ob die grundlegenden formellen Rahmenbedingungen erfüllt wurden bzw. einer positiven [DNS](http://de.wikipedia.org/wiki/Domain_Name_System)-Antwort im Falle einer [Domain](http://de.wikipedia.org/wiki/Domain)-[DNS](http://de.wikipedia.org/wiki/Domain_Name_System)-Prüfung. Weiters erhebt dieses Tutorial nicht den Anspruch, sämtlichen [RFC](http://tools.ietf.org/html/rfc2822) zu dem Thema zu genügen (wenn sich schon die meisten großen Provider und Mail-Anbieter nicht daran halten ...).
+Vorweg sei an dieser Stelle erwähnt das eine Prüfung auf tatsächliche Existenz einer E-Mail-Adresse auf diesem Weg nicht möglich ist. Die nachfolgende Ansätze dienen lediglich zur Feststellung ob die grundlegenden formellen Rahmenbedingungen erfüllt wurden bzw. einer positiven [DNS](http://de.wikipedia.org/wiki/Domain_Name_System)-Antwort im Falle einer [Domain](http://de.wikipedia.org/wiki/Domain)-[DNS](http://de.wikipedia.org/wiki/Domain_Name_System)-Prüfung. Weiters erhebt dieses Tutorial nicht den Anspruch, [sämtlichen RFC zu dem Thema](#rfc) zu genügen (wenn sich schon die meisten großen Provider und Mail-Anbieter nicht daran halten ...).
 
 #### 1. <a name="filtervar"></a> filter_var()
 
@@ -158,6 +158,7 @@ Generell kann in jeder oben angeführten Varianten noch, wenn gewüscht, die Ant
 #### 7. <a name="extsource"></a> Weiterfürhende Quellen
 
 **RFC zum Thema E-Mail**
+<a name="rfc"></a>
 
 [RFC 2142](http://tools.ietf.org/html/rfc2142) - Mailbox Names for Common Services, Roles and Functions  
 [RFC 2368](http://tools.ietf.org/html/rfc2368) - The mailto URL scheme  

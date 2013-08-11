@@ -1,11 +1,11 @@
 ---
 layout: guide
 title: Codeoptimierung: Code-Smells
-creator: hausl
-entry-type: progress
+creator: nikosch
+entry-type: in-progress
 author:
-    -   name: hausl
-        profile: 21246
+    -   name: nikosch
+        profile: 2314
 ---
 ### Codeoptimierung: Code-Smells
 

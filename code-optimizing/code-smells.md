@@ -1,6 +1,6 @@
 ---
 layout: guide
-title: Codeoptimierung: Code-Smells
+title: "Codeoptimierung: Code-Smells"
 creator: nikosch
 entry-type: in-progress
 author:

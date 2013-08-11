@@ -55,9 +55,9 @@ Dies kann alternativ statt filter_var() verwendet werden. Ebenso wie [oben bei f
 [Beispiele von Wikipedia (en)](http://en.wikipedia.org/wiki/Email_address#Internationalization_examples):
 
 > * Latin Alphabet (with diacritics): Pelé@example.com
-> * Greek Alphabet: d???µ?@pa??de??µa.d???µ?
-> * Japanese Characters: ??@??.??
-> * Cyrillic Characters: ?????????@????-?-???????????.??
+> * Greek Alphabet: δοκιμή@παράδειγμα.δοκιμή
+> * Japanese Characters: 甲斐@黒川.日本
+> * Cyrillic Characters: чебурашка@ящик-с-апельсинами.рф
 
 
 Um auch internationalisierte Domains auf grundsätzliche formelle Korrektheit zu prüfen ist die Konvertierung in [Punycode](http://de.wikipedia.org/wiki/Punycode) vor der eigentlichen Prüfung nötig. Nachfolgend dazu die grundsätzlichen Möglichkeiten:

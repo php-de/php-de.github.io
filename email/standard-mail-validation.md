@@ -15,11 +15,11 @@ inhalt:
         anchor: intdomain
         simple: "Domains mit Sonderzeichen"
     
-    -   name: "Konvertierung nach Punycode
+    -   name: "Konvertierung nach Punycode"
         anchor: punyclass
         simple: "Externe Klassen"
         
-    -   name: "Konvertierung nach Punycode
+    -   name: "Konvertierung nach Punycode"
         anchor: phpconv
         simple: "mit PHP Bordmitteln"
 ---

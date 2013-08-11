@@ -109,7 +109,7 @@ Die konvertierte E-Mail-Adresse wird dann von filter_var() zur weiteren Validier
 
 #### 5. <a name="nopuny"></a> Ohne Punycode - Lose Rahmenprüfung mittels Regulären Ausdrücken (Regex)
  
-Diese Variante kommt ohne Punycode aus. Dann hierbei spielen die verwendeten Zeichen kaum eine Rolle, es wird nur der grobe Rahmen geprüft, und ob keine Whitespaces  (Leerzeichen, Tabstopps, etc..) vorhanden sind.
+Diese Variante kommt ohne Punycode_Konvertierung aus. Dann hierbei spielen die verwendeten Zeichen kaum eine Rolle, es wird nur der grobe Rahmen geprüft, und ob keine Whitespaces  (Leerzeichen, Tabstopps, etc..) vorhanden sind.
 
     function isValidEmail($mail)
     { 
@@ -118,7 +118,8 @@ Diese Variante kommt ohne Punycode aus. Dann hierbei spielen die verwendeten Zei
         if (strlen($mail) > 256) {
             return false; 
         }
-        $pattern = '#^\S+'
+        $pattern = '#^'
+                 . '\S+'
                  . '@'
                  . '(?:[^\s.](?:[^\s.]*[^\s.])?\\.)+[^\s.](?:[^\s.]*[^\s.])?'
                  . '$#i';

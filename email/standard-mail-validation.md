@@ -11,7 +11,7 @@ Dieses Tutorial zeigt grundsätzliche (übliche) Möglichkeiten, eine E-Mail-Adr
 
 Vorweg sei an dieser Stelle erwähnt das eine Prüfung auf tatsächliche Existenz einer E-Mail-Adresse auf diesem Weg nicht möglich ist. Die nachfolgende Ansätze dienen lediglich zur Feststellung ob die grundlegenden formellen Rahmenbedingungen erfüllt wurden bzw. einer positiven [DNS](http://de.wikipedia.org/wiki/Domain_Name_System)-Antwort im Falle einer [Domain](http://de.wikipedia.org/wiki/Domain)-[DNS](http://de.wikipedia.org/wiki/Domain_Name_System)-Prüfung. Weiters erhebt dieses Tutorial nicht den Anspruch, [sämtlichen RFC zu dem Thema](#rfc) zu genügen (wenn sich schon die meisten großen Provider und Mail-Anbieter nicht daran halten ...).
 
-#### 1. <a name="filtervar"></a> filter_var()
+#### 1. <a id="filtervar"></a> filter_var()
 
 PHP stellt ab Version 5.2 die Funktion [filter_var()](http://php.net/manual/de/function.filter-var.php) zur Verfügung. Mit dem optionalen Parameter FILTER_VALIDATE_EMAIL kann diese grundsätzlich zur E-Mail-Validierung verwendet werden. Jedoch ist es damit nicht möglich internationalisierte E-Mail-Adressen zu prüfen - solche werden immer als falsch ausgewertet. Lösungsansätze folgen [weiter unten](#intdomain).
 
@@ -45,7 +45,7 @@ Sollte filter_var() nicht verfügbar sein, dann den Provider kontaktieren (oder 
 Dies kann alternativ statt filter_var() verwendet werden. Ebenso wie [oben bei filter_var()](#filtervar) schlägt die Prüfung von internationalisierten Domains damit fehl (was hier bereits am Pattern offensichtlich erkennbar ist).
    
   
-#### 2. <a name="intdomain"></a> Exkurs: Internationalisierte Domainnamen (IDN)
+#### 2. <a id="intdomain"></a> Exkurs: Internationalisierte Domainnamen (IDN)
 
 [Dazu aus Wikipedia:](http://de.wikipedia.org/wiki/Internationalisierter_Domainname)
 > Als internationalisierte Domainnamen (englisch internationalized domain name; IDN), umgangssprachlich auch Umlautdomain oder Sonderzeichendomain, werden Domainnamen bezeichnet, die Umlaute, diakritische Zeichen oder Buchstaben aus anderen Alphabeten als dem lateinischen Alphabet enthalten. Solche Zeichen waren ursprünglich im Domain Name System nicht vorgesehen und wurden nachträglich durch den Internetstandard Internationalizing Domain Names in Applications (IDNA) ermöglicht.
@@ -55,14 +55,14 @@ Dies kann alternativ statt filter_var() verwendet werden. Ebenso wie [oben bei f
 [Beispiele von Wikipedia (en)](http://en.wikipedia.org/wiki/Email_address#Internationalization_examples):
 
 > * Latin Alphabet (with diacritics): Pelé@example.com
-> * Greek Alphabet: δοκιμή@παράδειγμα.δοκιμή
-> * Japanese Characters: 甲斐@黒川.日本
-> * Cyrillic Characters: чебурашка@ящик-с-апельсинами.рф
+> * Greek Alphabet: d???µ?@pa??de??µa.d???µ?
+> * Japanese Characters: ??@??.??
+> * Cyrillic Characters: ?????????@????-?-???????????.??
 
 
 Um auch internationalisierte Domains auf grundsätzliche formelle Korrektheit zu prüfen ist die Konvertierung in [Punycode](http://de.wikipedia.org/wiki/Punycode) vor der eigentlichen Prüfung nötig. Nachfolgend dazu die grundsätzlichen Möglichkeiten:
 
-#### 3. <a name="punyclass"></a> Konvertierung durch eine externe Punycode-Klasse
+#### 3. <a id="punyclass"></a> Konvertierung durch eine externe Punycode-Klasse
 
 Für die Punycodeumwandlung gibt es einige PHP-Klassen im Web, dazu am besten mal [Tante G.](https://www.google.at/search?q=php+punycode+OR+idna+converter) fragen.
 
@@ -87,7 +87,7 @@ Durch diese Klasse wir die E-Mail-Adresse vorweg in Punycode konvertiert und ans
     var_dump(isValidEmail($idn->encode('pelé@example.com')));  // true
 
 
-#### 4. <a name="phpconv"></a> Konvertierung durch PHP-Boardmittel
+#### 4. <a id="phpconv"></a> Konvertierung durch PHP-Boardmittel
 
 Wenn folgende Voraussetzungen erfüllt sind ...
 > PHP 5 >= 5.3.0, [PECL intl >= 1.0.2](http://pecl.php.net/package/intl), [PECL idn >= 0.1](http://pecl.php.net/package/idn) 
@@ -107,7 +107,7 @@ Die konvertierte E-Mail-Adresse wird dann von filter_var() zur weiteren Validier
     var_dump(isValidEmail("mail@uebung.de"));  // true
     var_dump(isValidEmail("mail@übung.de"));   // true 
 
-#### 5. <a name="nopuny"></a> Ohne Punycode - Lose Rahmenprüfung mittels Regulären Ausdrücken (Regex)
+#### 5. <a id="nopuny"></a> Ohne Punycode - Lose Rahmenprüfung mittels Regulären Ausdrücken (Regex)
  
 Diese Variante kommt ohne Punycode_Konvertierung aus. Dann hierbei spielen die verwendeten Zeichen kaum eine Rolle, es wird nur der grobe Rahmen geprüft, und ob keine Whitespaces  (Leerzeichen, Tabstopps, etc..) vorhanden sind.
 
@@ -132,7 +132,7 @@ Diese Variante kommt ohne Punycode_Konvertierung aus. Dann hierbei spielen die v
     var_dump(isValidEmail("test@sub.mail.dot.anything.übärdrübär.com"));  // true 
  
 
-#### 6. <a name="dnscheck"></a> Zusatz-Option: DNS-Domain-Prüfung
+#### 6. <a id="dnscheck"></a> Zusatz-Option: DNS-Domain-Prüfung
 
 Generell kann in jeder oben angeführten Varianten noch, wenn gewüscht, die Antwort des [DNS](http://de.wikipedia.org/wiki/Domain_Name_System) zur Domain (auf vorhandenen ["MX" oder "A"-Record](http://de.wikipedia.org/wiki/Domain_Name_System#Aufbau_der_DNS-Datenbank)) berücksichtigt werden. Die an das DNS übergebene Domain der E-Mail-Adresse muss für die Verwendung von internationalisierten Domains (wie bei filter_var()) ebenfalls schon in Punycode konvertiert sein.
 
@@ -151,10 +151,10 @@ Generell kann in jeder oben angeführten Varianten noch, wenn gewüscht, die Ant
     // mit Punycodeumwandlung
     var_dump(checkEMailDomainDNS($idn->encode('mail@übung.de')));  // true
 
-#### 7. <a name="extsource"></a> Weiterfürhende Quellen
+#### 7. <a id="extsource"></a> Weiterfürhende Quellen
 
 **RFC zum Thema E-Mail**
-<a name="rfc"></a>
+<a id="rfc"></a>
 
 [RFC 2142](http://tools.ietf.org/html/rfc2142) - Mailbox Names for Common Services, Roles and Functions  
 [RFC 2368](http://tools.ietf.org/html/rfc2368) - The mailto URL scheme  

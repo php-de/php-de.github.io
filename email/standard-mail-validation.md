@@ -5,13 +5,16 @@ creator: hausl
 author:
     -   name: hausl
         profile: 21246
+
+    -   name: tr0y
+        profile: 21125
         
 inhalt:
     -   name: "filter_var()"
         anchor: filtervar
-        simple: "nützliche Bordmittel"
+        simple: "als Standard-Weg"
         
-    -   name: "Exkurs: International Domainnamen"
+    -   name: "Internationale Domainnamen"
         anchor: intdomain
         simple: "Domains mit Sonderzeichen"
     
@@ -22,6 +25,18 @@ inhalt:
     -   name: "Konvertierung nach Punycode"
         anchor: phpconv
         simple: "mit PHP Bordmitteln"
+
+    -   name: "Ohne Punycode"
+        anchor: nopuny
+        simple: "Lose Rahmenprüfung durch reguläre Ausdrücke"
+
+    -   name: "DNS Domain-Prüfung"
+        anchor: dnscheck
+        simple: "zusätzliche Existenz-Prüfung"
+
+    -   name: "Weiterführende Quellen"
+        anchor: extsource
+        simple: "RFCs: IDNA/Punycode und Email"
 ---
 Dieses Tutorial zeigt grundsätzliche (übliche) Möglichkeiten, eine E-Mail-Adresse *(wie sie für den Transport per SMTP im Internet verwendet wird, besteht aus zwei Teilen, die durch ein @-Zeichen voneinander getrennt sind)*
  zu validieren. 

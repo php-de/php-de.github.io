@@ -62,11 +62,33 @@ layout: default
         </div>
     </div>
     <div class="col-lg-3">
-        {% if page.author %}
+        {% if page.contents %}
+        <div id="page-contents" class="panel">
+            <p style="background-color:#f5f5f5">
+                Inhalt
+            </p>
+            <div class="list-group">
+                {% for content in page.contents %}
+                    {% if content.anchor and content.name %}
+                <a href="{{ page.url }}{{ content.anchor }}">
+                    <h4>{{ content.name }}</h4>
+                    {% if content.simple %}
+                    <p>{{ content.simple }}</p>
+                    {% endif %}
+                </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="panel-footer" style="text-align:right; color:#969696;">
+                Inhalt
+            </div>
+        </div>
+        {% endif %}
         <div class="panel">
             <p style="text-align:center">
                 <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/de/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/de/88x31.png" /></a><br /><small>Dieses Werk bzw. Inhalt steht unter einer <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/de/">Creative Commons Namensnennung - Weitergabe unter gleichen Bedingungen 3.0 Deutschland Lizenz</a></small>.
             </p>
+        {% if page.author %}
             <ul class="list-group authors">
             {% for user in page.author %}
                 <li class="list-group-item{% if page.creator %}{% if page.creator == user.name %} active{% endif %}{% endif %}">

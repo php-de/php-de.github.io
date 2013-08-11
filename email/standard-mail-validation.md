@@ -89,10 +89,10 @@ Durch diese Klasse wir die E-Mail-Adresse vorweg in Punycode konvertiert und ans
 
 #### 4. <a name="phpconv"></a> Konvertierung durch PHP-Boardmittel
 
-Wenn folgende Voraussetzungen erfüllt sind 
+Wenn folgende Voraussetzungen erfüllt sind ...
 > PHP 5 >= 5.3.0, [PECL intl >= 1.0.2](http://pecl.php.net/package/intl), [PECL idn >= 0.1](http://pecl.php.net/package/idn) 
 
-dann steht euch auch direkt die Funktion [idn_to_ascii()](http://php.net/manual/de/function.idn-to-ascii.php) zum Umwandeln von Punycode zur Verfügung. Somit würde man sich die externe Klasse ersparen.
+... dann steht die Funktion [idn_to_ascii()](http://php.net/manual/de/function.idn-to-ascii.php) zum Umwandeln von Punycode direkt zur Verfügung. Somit würde man sich die externe Klasse ersparen.
 Mittels nachfolgendem Aufruf läßt sich rasch feststellen, ob diese Funktion zur Verfügung steht.
 
     var_dump(function_exists('idn_to_ascii'));  // true oder false

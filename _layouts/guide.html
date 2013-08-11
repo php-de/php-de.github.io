@@ -70,7 +70,7 @@ layout: default
                 </div>
                 {% for inhalt in page.inhalt %}
                     {% if inhalt.anchor and inhalt.name %}
-                <a href="{{ page.url }}{{ inhalt.anchor }}" class="list-group-item">
+                <a href="{{ page.url }}#{{ inhalt.anchor }}" class="list-group-item">
 
                     <strong>{{ inhalt.name }}</strong>
                     {% if inhalt.simple %}

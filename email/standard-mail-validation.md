@@ -26,7 +26,7 @@ PHP stellt ab Version 5.2 die Funktion [filter_var()](http://php.net/manual/de/f
 
 **Hinweis**
 
-Sollte filter_var() nicht verfügbar sein, dann den Provider kontaktieren (oder wechseln :)). Im worst-case gibt es [auf dieser Seite](http://www.regular-expressions.info/email.html) unten (vorletzter Absatz) ein zur [RFC 2822](http://tools.ietf.org/html/rfc2822#section-3.4.1) empfohlenes Regex-Pattern.
+Sollte filter_var() nicht verfügbar sein, dann den Provider kontaktieren (oder wechseln :)). Im worst-case gibt es [auf dieser Seite](http://www.regular-expressions.info/email.html) unten (vorletzter Absatz) ein zur [RFC 2822](http://tools.ietf.org/html/rfc2822) empfohlenes Regex-Pattern.
 
 > We get a more practical implementation of RFC 2822 if we omit the syntax using double quotes and square brackets. It will still match 99.99% of all email addresses in actual use today. 
 
@@ -118,25 +118,18 @@ Diese Variante kommt ohne Punycode aus. Dann hierbei spielen die verwendeten Zei
         if (strlen($mail) > 256) {
             return false; 
         }
-        /* 
-          Pattern: 
-          ^       Anker Line-Start 
-          \S+     kein Whitespace, mind. 1x (local part) 
-          @       @-Zeichen 
-          \S+     kein Whitespace, mind. 1x (second level Domain) 
-          \.      Punkt 
-          \S+     kein Whitespace, mind. 1x (top level domain) 
-          $       Anker Line-End 
-          i       Modifier: case-insensitive 
-        */ 
-        $pattern = '#^\S+@\S+\.\S+$#i'; 
+        $pattern = '#^\S+'
+                 . '@'
+                 . '(?:[^\s.](?:[^\s.]*[^\s.])?\\.)+[^\s.](?:[^\s.]*[^\s.])?'
+                 . '$#i';
         return (bool) preg_match($pattern, $mail); 
     }  
-
-    // TESTS
-    var_dump(isValidEmail("mail@uebung.de"));    // true
-    var_dump(isValidEmail("mail@übung.de"));     // true 
-    var_dump(isValidEmail("pelé@example.com"));  // true 
+    
+    var_dump(isValidEmail("test@.....com"));                              // false 
+    var_dump(isValidEmail("test@sub.mail.dot.anything.example.com"));     // true 
+    var_dump(isValidEmail("test@übärdrübär.com"));                        // true  
+    var_dump(isValidEmail("test@sub.mail.dot.anything.übärdrübär.com"));  // true 
+ 
 
 #### 6. <a name="dnscheck"></a> Zusatz-Option: DNS-Domain-Prüfung
 

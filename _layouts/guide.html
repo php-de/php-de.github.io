@@ -63,15 +63,16 @@ layout: default
     </div>
     <div class="col-lg-3">
         {% if page.inhalt %}
-        <div id="page-contents" class="panel">
-            <p style="background-color:#f5f5f5">
-                Inhalt
-            </p>
+        <div id="page-contents">
             <div class="list-group">
+                <div class="list-group-item" style="background-color:#f5f5f5; font-size:14pt;">
+                    Inhalt
+                </div>
                 {% for inhalt in page.inhalt %}
                     {% if inhalt.anchor and inhalt.name %}
-                <a href="{{ page.url }}{{ inhalt.anchor }}">
-                    <h4>{{ inhalt.name }}</h4>
+                <a href="{{ page.url }}{{ inhalt.anchor }}" class="list-group-item">
+
+                    <strong>{{ inhalt.name }}</strong>
                     {% if inhalt.simple %}
                     <p>{{ inhalt.simple }}</p>
                     {% endif %}

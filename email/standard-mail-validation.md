@@ -7,21 +7,21 @@ author:
         profile: 21246
         
 inhalt:
-    -   name: filter_var()
+    -   name: "filter_var()"
         anchor: filtervar
-        simple: nützliche Bordmittel
+        simple: "nützliche Bordmittel"
         
-    -   name: Exkurs: International Domainnamen
+    -   name: "Exkurs: International Domainnamen"
         anchor: intdomain
-        simple: Domains mit Sonderzeichen
+        simple: "Domains mit Sonderzeichen"
     
-    -   name: Konvertierung nach Punycode
+    -   name: "Konvertierung nach Punycode"
         anchor: punyclass
-        simple: Externe Klassen
+        simple: "Externe Klassen"
         
-    -   name: Konvertierung nach Punycode
+    -   name: "Konvertierung nach Punycode"
         anchor: phpconv
-        simple: mit PHP Bordmitteln
+        simple: "mit PHP Bordmitteln"
 ---
 Dieses Tutorial zeigt grundsätzliche (übliche) Möglichkeiten, eine E-Mail-Adresse *(wie sie für den Transport per SMTP im Internet verwendet wird, besteht aus zwei Teilen, die durch ein @-Zeichen voneinander getrennt sind)*
  zu validieren. 

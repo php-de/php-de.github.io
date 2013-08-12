@@ -1,9 +1,16 @@
+---
+layout: guide
+title: Constribute Richtlinie
+creator: tr0y
+author:
+    -   name: tr0y
+        profile: 21125
+        
+entry-type: deprecated
+---
 Contribute!-Richtlinie
 ================
 
-Dieses Dokument ist veraltet und wird zur Zeit überarbeitet.
-
----
 Dies ist das GitHub-Pages Repository der PHP.de-Community. 
 Das GitHub-Pages Repository gliedert sich in Sektionen. 
 Jede Sektion ist in ein eigenes Repository entkoppelt, du

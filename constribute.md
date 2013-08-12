@@ -1,5 +1,5 @@
 ---
-layout: entry
+layout: guide
 title: "Constribute Richtlinie"
 
 creator: tr0y
@@ -64,18 +64,18 @@ Das JEKYLL-System benutzt nDiscount-Markdown und erlaubt inline HTML, du kannst 
 
 ##### YAML
 
-Jedes Dokument fängt mit einem YAML-Kopf an. Und muss zumindest den Eintrag "layout: entry" besitzen. Damit wird JEKYLL angewiesen das entsprechende Layout für Beiträge zu benutzen.
+Jedes Dokument fängt mit einem YAML-Kopf an. Und muss zumindest den Eintrag "layout: guide" besitzen. Damit wird JEKYLL angewiesen das entsprechende Layout für Beiträge zu benutzen.
     ---
-    layout: entry
+    layout: guide
     ---
 Zusätzlich ist es notwendig einen Titel anzugeben, dafür wurde das Feld "title" geschaffen.
     ---
-    layout: entry
+    layout: guide
     title: "Hallo Welt Tutorial"
     ---
 Damit JEKYLL feststellen kann wer das Tutorial eigentlich ursprünglich verfasst hat, muss jeder Beitrag 2 weitere Felder ausliefern: `authors` und `creator`. Das authors-Feld ist ein YAML-Array aus YAML-Arrays und ist wie folgt aufgebaut:
     ---
-    layout: entry
+    layout: guide
     title: "Hallo Welt Tutorial"
 
     creator: JohnDoe
@@ -87,7 +87,7 @@ Damit JEKYLL feststellen kann wer das Tutorial eigentlich ursprünglich verfasst
     ---
 Das Feld `name` ist notwendig, das Feld `profile` ist optional. Wenn einer der Felder `name` und das Feld `creator` übereinstimmen wird der jeweilige Autor als ursprünglicher Ersteller des Beitrags markiert. Zusätzlich zu diesen Feldern gibt es noch ein optionales `entry-type` Feld zur Steuerung der Beitrags-Typen-Mechanik. Als `entry-type` einstellbar sind: `default` ( Standardfall ), `in-progress` ( in Bearbeitung ), `deprecated` ( Veraltet ), `marked-to-delete` ( markiert zur Löschung ) und `in-discussion` ( in Diskussion ).
     ---
-    layout: entry
+    layout: guide
     title: "Hallo Welt Tutorial"
 
     creator: JohnDoe
@@ -106,7 +106,7 @@ Es wird kein Automatischer Index von deinem Beitrag erstellt, diesen musst du se
 
 <div class="alert">Alle Einträge im YAML-Array die ":" enthalten sollten außerdem in Double-Quotes ( " ) gesetzt werden.</div>
     ---
-    layout: entry
+    layout: guide
     title: "Hallo Welt Tutorial"
 
     creator: JohnDoe

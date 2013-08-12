@@ -36,7 +36,7 @@ entry-type: in-progress
 
 #### <a id="waechterorif"></a> Wächter vs. Schachtel-If
 
-In komplexem Code kommt es oft zu einer mehrfachen Verschachtelung von Kontrollstrukturen. Infolgedessen werden relevante Codeteile oft erst in Blöcken 2. oder 3. Ordnung aufgerufen. Nicht immer ist diese Problematik mit AND/OR Operatoren im Bedingungsausdruck zu lösen, ohne gleichzeitig das DRY-Prinzip (don't repeat yourself - Maxime, die besagt, keinen redundanten Code zu schreiben) zu verletzen. 
+In komplexem Code kommt es oft zu einer mehrfachen Verschachtelung von Kontrollstrukturen. Infolge dessen werden relevante Codeteile oft erst in Blöcken 2. oder 3. Ordnung aufgerufen. Nicht immer ist diese Problematik mit AND/OR Operatoren im Bedingungsausdruck zu lösen, ohne gleichzeitig das DRY-Prinzip (don't repeat yourself - Maxime, die besagt, keinen redundanten Code zu schreiben) zu verletzen. 
 
 Eine Lösung können hier sogenannte **Wächter** bilden, die auf der Grundlage von frühzeitigen Schleifen- bzw. Strukturabbrüchen basieren. 
 
@@ -309,4 +309,4 @@ Ergänzung zu Bsp. 2, alternativer Ansatz ohne natives Blockelement, PHP Umsetzu
 #### <a id="sieheauch"></a> Siehe auch
 
 http://c2.com/cgi/wiki?GuardClause  
-http://programming-php.net/de/clean-code/guard-clauses/ 
+http://programming-php.net/de/clean-code/guard-clauses/

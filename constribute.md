@@ -60,11 +60,11 @@ Respektiere folgende Regeln wenn du Beiträge hinzufügen oder bearbeiten möcht
 <div class="alert">
     <strong>Wichtig:</strong> Änderungen am JEKYLL sind diskutabel und sollten im Forum diskutiert werden.
 </div>
-Das JEKYLL-System benutzt nDiscount-Markdown und erlaubt inline HTML, du kannst also auch Bootstrap-Komponenten wie das obige Warning mit in deinen Beitrag einbauen. Nutze bitte nur folgende Bootstrap-Elemente: Warnings, Wells, Media-Objects, Labels. Nutze HTML **nicht** dazu demonstrationen deiner Quellcodes auszuliefern. Deine HTML-Elemente dürfen kein Javascript ausführen oder Ziel einer Javascript-Komponente der Seite werden.
+Das JEKYLL-System benutzt nDiscount-Markdown und erlaubt inline HTML, du kannst also auch Bootstrap-Komponenten wie das obige Warning mit in deinen Beitrag einbauen. Nutze bitte nur folgende Bootstrap-Elemente: Warnings, Wells, Media-Objects, Labels. Nutze HTML **nicht** dazu Demonstrationen deiner Quellcodes auszuliefern. Deine HTML-Elemente dürfen kein Javascript ausführen oder Ziel einer Javascript-Komponente der Seite werden.
 
 ##### YAML
 
-Jedes Dokument fängt mit einem YAML-Kopf an. Und muss zumindest den Eintrag `layout: guide` besitzen. Damit wird JEKYLL angewiesen das entsprechende Layout für Beiträge zu benutzen.
+Jedes Dokument fängt mit einem YAML-Kopf an und muss zumindest den Eintrag `layout: guide` besitzen. Damit wird JEKYLL angewiesen das entsprechende Layout für Beiträge zu benutzen.
     ---
     layout: guide
     ---
@@ -130,6 +130,6 @@ Es wird kein Automatischer Index von deinem Beitrag erstellt, diesen musst du se
 #### Komponenten Vernetzung
 <a id="component-networking"></a>
 
-Grundsätzlich ist es kein Problem wenn du PHP-Komponenten die nicht zum PHP-Kern gehören oder auch Klassen aus Bibliotheken in deinen Beiträgen verlinkst. Wir setzen allerdings voraus das die Klasse unter der bis zum Veröffentlichungszeitpunkt aktuellsten PHP-Version fehlerfrei läuft und noch einen aktiven Maintainer besitzt ( also weiterentwickelt und betreut wird ). Du solltest auch den Zustand berücksichigen das die meisten Hosting-Platformen noch ältere PHP-Versionen ausliefern. Als groben Schnitt sollte dein Quellcode mindestens noch PHP 5.3 unterstützen.
+Grundsätzlich ist es kein Problem wenn du PHP-Komponenten die nicht zum PHP-Kern gehören oder auch Klassen aus Bibliotheken in deinen Beiträgen verlinkst. Wir setzen allerdings voraus, dass die Klasse unter der bis zum Veröffentlichungszeitpunkt aktuellsten PHP-Version fehlerfrei läuft und noch einen aktiven Maintainer besitzt ( also weiterentwickelt und betreut wird ). Du solltest auch den Zustand berücksichigen das die meisten Hosting-Platformen noch ältere PHP-Versionen ausliefern. Als groben Schnitt sollte dein Quellcode mindestens noch PHP 5.3 unterstützen.
 
 Prüfe bitte ebenso ob deine Komponenten mit [Composer](http://getcomposer.org) installierbar ist, ist das der Fall veröffentliche bitte außerdem die Kurzform zur Installation `composer require ...` oder den Inhalt der `composer.json`-Datei oder einen direkten Link auf den [Packagist.org](http://packagist.org)-Eintrag.

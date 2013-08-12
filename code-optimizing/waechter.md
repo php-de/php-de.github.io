@@ -18,11 +18,14 @@ inhalt:
 
     -   name: "Möglichkeiten"
         anchor: moeglichkeiten
-        simple: ""
+        simple: "Schleifenabbrüche mit break;
+		Schleifenabbrüche mit continue;
+        	Funktionsabbrüche mit return;"
 
     -   name: "Spezialfälle"
         anchor: spezial
-        simple: ""
+        simple: "Verlassen tieferer Strukturen
+        	Bedingter Abbruch mit künstlichem Blockelement"
 
     -   name: "Siehe auch"
         anchor: sieheauch

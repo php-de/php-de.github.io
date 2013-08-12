@@ -15,6 +15,8 @@ inhalt:
     -   name: "foo"
         anchor: foo
         simple: ""
+
+entry-type: in-progress
 ---
 
 foo

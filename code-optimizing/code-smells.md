@@ -43,7 +43,7 @@ Der Artikel nutzt reduzierte Lehrbeispiele. Der Übersichtlichkeit halber könne
 
 #### Leere Strings <a id="emptystring"></a>  
 
-#### Problem
+##### Problem
 Code-Smells mit leeren Strings  
 
     // unsinnig
@@ -75,9 +75,9 @@ PHP unterstützt die Verwendung von Variablen innnerhalb von doppelten Anführun
 
 
 ##### Problem
-Weit verbreitet ist diese unsinnige Variante:  
+Code-Smells mit unnützen Stringsquotes
 
-Code-Smells mit unnützen Stringsquotes:
+Weit verbreitet ist diese unsinnige Variante:  
 
     $foo = 'Zwerg';
     echo "$foo"; // Zwerg
@@ -160,10 +160,10 @@ Na, wer hat jetzt die Arbeit?
 #### LIMIT und Schleife <a id="limit"></a>
 
 ##### Problem
+Code-Smells mit auslesenden Schleifen
 
 Bei Datenbankabfrage, die definitiv nur einen Datensatz liefern, wird oft die übliche Form des Auslesenes verwendet: 
 
-Code-Smells mit auslesenden Schleifen:  
 
     // Fehlerbehandlung wurde hier mal weggelassen
     $connection = mysql_connect('localhost' , 'root');

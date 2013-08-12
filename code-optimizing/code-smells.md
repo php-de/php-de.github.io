@@ -14,18 +14,26 @@ author:
 creator: nikosch
 
 inhalt:
-    -   name: "1. Leere Strings"
+    -   name: "Leere Strings"
         anchor: emptystring
         simple: ""
         
-    -   name: "2. Unnötiges Variablen-Parsing in Doppelquotes"
+    -   name: "Unnötiges Variablen-Parsing in Doppelquotes"
         anchor: varpars
+        simple: ""
+
+    -   name: "SELECT *"
+        anchor: selectall
+        simple: ""
+
+    -   name: "LIMIT vs. PHP-Counting "
+        anchor: limit
         simple: ""
 ---
 
 Es gibt eine Reihe von Unsitten, die offenbar in veralteten Lehrbüchern auftauchen oder sich durch Copy & Paste im Laufe der Jahre im Internet exponentiell verbreitet haben. 
 
-Dieser Artikel richtet sich an Spracheinsteiger, Fortgeschrittene können bei [Wikipedia einige Beispiel zu Code-Smells finden.](http://de.wikipedia.org/wiki/Code_smell)
+Dieser Artikel richtet sich an Spracheinsteiger, Fortgeschrittene können bei [Wikipedia einige Beispiel zu Code-Smells](http://de.wikipedia.org/wiki/Code_smell) finden.
 
 **Achtung!**  
 Der Artikel nutzt reduzierte Lehrbeispiele. Der Übersichtlichkeit halber können wichtige Funktionen zur Eingabevalidierung o. ä. weggelassen worden sein.

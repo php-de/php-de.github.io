@@ -52,7 +52,7 @@ Respektiere folgende Regeln wenn du Beiträge hinzufügen oder bearbeiten möcht
 * Wenn du selbst einen Beitrag verfasst und ihn nicht als Entgültig einsenden möchtest, konfiguriere den YAML-Kopf so das der Beitrag als `in-progress` eingestellt wird.
 * Verändere nichts an den Templates, den `index.md`-Dateien, dem Javascript-Dateien oder den Cascading Style Sheets, empfehle stattdessen im Issue-Tracker eine Veränderung. Pull-Requests die Modifikationen an ebendsolchen Dateien vornehmen werden vorbehaltslos abgelehnt.
 * Wenn du einen Beitrag diskutieren möchtest, erstelle einen Beitrag im Forum.
-* Der Issue-Tracker des Repository kann ebenfalls als To-Do-Liste der einzelnen Beiträge benutzt werden. Beiträge die eine Todo-Liste im Bug-Tracker haben, sollten als `in-progress` oder `in-discussion` markiert sein. Der Eintrag im Bug-Tracker bedarf eines <span class="label">To-Do</span> Labels.
+* Der Issue-Tracker des Repository kann ebenfalls als To-Do-Liste der einzelnen Beiträge benutzt werden. Beiträge die eine Todo-Liste im Bug-Tracker haben, sollten als `in-progress` oder `in-discussion` markiert sein. Der Eintrag im Bug-Tracker bedarf eines <span class="label label-success">To-Do</span> Labels.
 
 #### Markdown-Aufbau
 <a id="markdown-structure"></a>

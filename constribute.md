@@ -49,10 +49,10 @@ Respektiere folgende Regeln wenn du Beiträge hinzufügen oder bearbeiten möcht
 * Jeglicher PHP Quellcode in den Beiträgen sollte sich an den [PEAR PHP Coding Standard](http://pear.php.net/manual/de/standards.php) halten. Beiträge mit Quellcode die sich nicht an den Standard halten können von uns jederzeit abgelehnt werden.
 * Wenn du neue Beiträge hinzufügst oder ältere Beiträge veränderst bist du damit einverstanden das der Beitrag unter der Creative Commons Lizenz BY-SA veröffentlicht wird, du hast **kein Anrecht auf spätere Löschung**. Dein Beitrag bzw. deine Beitragsveränderung dient dem Nutzen der Community und wird von dir der Community zur Freien verwendung unter dieser Lizenz unumkehrbar bereitgestellt.
 * Wenn du einen Fehler in einem Beitrag entdeckt hast nutze den Issue-Tracker um ihn zu melden.
-* Wenn du selbst einen Beitrag verfasst und ihn nicht als Entgültig einsenden möchtest, konfiguriere den YAML-Kopf so das der Beitrag als "in-progress" eingestellt wird.
-* Verändere nichts an den Templates, den index.md-Dateien, dem Javascript-Dateien oder den Cascading Style Sheets, empfehle stattdessen im Issue-Tracker eine Veränderung. Pull-Requests die Modifikationen an ebendsolchen Dateien vornehmen werden vorbehaltslos abgelehnt.
+* Wenn du selbst einen Beitrag verfasst und ihn nicht als Entgültig einsenden möchtest, konfiguriere den YAML-Kopf so das der Beitrag als `in-progress` eingestellt wird.
+* Verändere nichts an den Templates, den `index.md`-Dateien, dem Javascript-Dateien oder den Cascading Style Sheets, empfehle stattdessen im Issue-Tracker eine Veränderung. Pull-Requests die Modifikationen an ebendsolchen Dateien vornehmen werden vorbehaltslos abgelehnt.
 * Wenn du einen Beitrag diskutieren möchtest, erstelle einen Beitrag im Forum.
-* Der Issue-Tracker des Repository kann ebenfalls als To-Do-Liste der einzelnen Beiträge benutzt werden. Beiträge die eine Todo-Liste im Bug-Tracker haben, sollten als "in-progress" oder "in-discussion" markiert sein. Der Eintrag im Bug-Tracker bedarf eines "To-Do" Labels.
+* Der Issue-Tracker des Repository kann ebenfalls als To-Do-Liste der einzelnen Beiträge benutzt werden. Beiträge die eine Todo-Liste im Bug-Tracker haben, sollten als "in-progress" oder "in-discussion" markiert sein. Der Eintrag im Bug-Tracker bedarf eines <span class="label">To-Do</span> Labels.
 
 #### Markdown-Aufbau
 <a id="markdown-structure"></a>

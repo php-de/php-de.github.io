@@ -64,11 +64,11 @@ Das JEKYLL-System benutzt nDiscount-Markdown und erlaubt inline HTML, du kannst 
 
 ##### YAML
 
-Jedes Dokument fängt mit einem YAML-Kopf an. Und muss zumindest den Eintrag "layout: guide" besitzen. Damit wird JEKYLL angewiesen das entsprechende Layout für Beiträge zu benutzen.
+Jedes Dokument fängt mit einem YAML-Kopf an. Und muss zumindest den Eintrag `layout: guide` besitzen. Damit wird JEKYLL angewiesen das entsprechende Layout für Beiträge zu benutzen.
     ---
     layout: guide
     ---
-Zusätzlich ist es notwendig einen Titel anzugeben, dafür wurde das Feld "title" geschaffen.
+Zusätzlich ist es notwendig einen Titel anzugeben, dafür wurde das Feld `title` geschaffen.
     ---
     layout: guide
     title: "Hallo Welt Tutorial"

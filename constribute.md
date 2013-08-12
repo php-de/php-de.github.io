@@ -104,7 +104,7 @@ Das Feld `name` ist notwendig, das Feld `profile` ist optional. Wenn einer der F
     ---
 Es wird kein Automatischer Index von deinem Beitrag erstellt, diesen musst du selbstständig im Feld `inhalt` festlegen. Dieses Feld ist ebenfalls ein YAML-Array das YAML-Arrays enthält. Dir stehen die Felder `name` ( Title des Links ), `anchor` ( Anker im Beitrag ) und `simple` ( zusätzlicher kurzer Hinweis ) zur Verfügung, alle 3 sind notwendig wenn du einen Eintrag anlegst. Der Inhalt wird in der Desktop-Version rechts neben dem Beitrag angezeigt, in der mobilen Version oberhalb des Beitrags.
 
-<div class="alert alert-danger">Fehler-Quelle: Alle Einträge im YAML-Array die `:` enthalten sollten außerdem in Double-Quotes `"` gesetzt werden.</div>
+<div class="alert alert-danger"><strong>Fehler-Quelle:</strong> Alle Einträge im YAML-Array die <code>:</code> enthalten sollten außerdem in Double-Quotes <code>"</code> gesetzt werden.</div>
     ---
     layout: guide
     title: "Hallo Welt Tutorial"

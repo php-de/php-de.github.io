@@ -308,5 +308,5 @@ Ergänzung zu Bsp. 2, alternativer Ansatz ohne natives Blockelement, PHP Umsetzu
 
 #### <a id="sieheauch"></a> Siehe auch
 
-http://c2.com/cgi/wiki?GuardClause  
-http://programming-php.net/de/clean-code/guard-clauses/
+[http://c2.com/cgi/wiki?GuardClause](http://c2.com/cgi/wiki?GuardClause)  
+[http://programming-php.net/de/clean-code/guard-clauses/](http://programming-php.net/de/clean-code/guard-clauses/)  

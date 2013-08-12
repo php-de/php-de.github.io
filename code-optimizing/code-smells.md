@@ -27,8 +27,8 @@ Es gibt eine Reihe von Unsitten, die offenbar in veralteten Lehrbüchern auftauc
 
 Dieser Artikel richtet sich an Spracheinsteiger, Fortgeschrittene können bei [Wikipedia einige Beispiel zu Code-Smells finden.](http://de.wikipedia.org/wiki/Code_smell)
 
-**Information**  
-Achtung! Der Artikel nutzt reduzierte Lehrbeispiele. Der Übersichtlichkeit halber können wichtige Funktionen zur Eingabevalidierung o. ä. weggelassen worden sein.
+**Achtung!**  
+Der Artikel nutzt reduzierte Lehrbeispiele. Der Übersichtlichkeit halber können wichtige Funktionen zur Eingabevalidierung o. ä. weggelassen worden sein.
 
 
 #### 1. <a id="emptystring"></a> Leere Strings  

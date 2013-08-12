@@ -16,11 +16,9 @@ creator: nikosch
 inhalt:
     -   name: "Leere Strings"
         anchor: emptystring
-        simple: ""
         
     -   name: "Unnötiges Variablen-Parsing in Doppelquotes"
         anchor: varpars
-        simple: ""
 
     -   name: "SELECT *"
         anchor: selectall

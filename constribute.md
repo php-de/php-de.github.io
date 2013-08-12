@@ -44,9 +44,9 @@ Markdowns bereitgestellt wurden erfährst du in diesem Beitrag.
 Respektiere folgende Regeln wenn du Beiträge hinzufügen oder bearbeiten möchtest:
 
 * Frühere Autoren insbesondere der Ersteller müssen bestehen bleiben
-* Füge dich selbst ans andere des YAML-Arrays hinzu, es ist nicht nötig seine Leistung besonders hervorzuheben.
+* Füge dich selbst ans Ende des YAML-Arrays hinzu, es ist nicht nötig seine Leistung besonders hervorzuheben.
 * Wenn du Beiträge anlegen möchtest ist es nötig dieses Repository zu forken um deine Änderungen als Pull-Request an die Owner dieses Repository weiterzuleiten. Die Annahme dieser Pull-Requests kann mitunter etwas dauern, es ist nicht nötig mit den Verantwortlichen Mitgliedern der Community in Verbindung zu treten, wir bemühen uns so schnell wie möglich deinen Pull-Request zu prüfen und zu bestätigen. Übe dich in Geduld.
-* Jeglicher PHP Quellcode in den Beiträgen sollte sich an den [PEAR PHP Coding Standard] (http://pear.php.net/manual/de/standards.php) halten. Beiträge mit Quellcode die sich nicht an den Standard halten können von uns jederzeit abgelehnt werden.
+* Jeglicher PHP Quellcode in den Beiträgen sollte sich an den [PEAR PHP Coding Standard](http://pear.php.net/manual/de/standards.php) halten. Beiträge mit Quellcode die sich nicht an den Standard halten können von uns jederzeit abgelehnt werden.
 * Wenn du neue Beiträge hinzufügst oder ältere Beiträge veränderst bist du damit einverstanden das der Beitrag unter der Creative Commons Lizenz BY-SA veröffentlicht wird, du hast **kein Anrecht auf spätere Löschung**. Dein Beitrag bzw. deine Beitragsveränderung dient dem Nutzen der Community und wird von dir der Community zur Freien verwendung unter dieser Lizenz unumkehrbar bereitgestellt.
 * Wenn du einen Fehler in einem Beitrag entdeckt hast nutze den Issue-Tracker um ihn zu melden.
 * Wenn du selbst einen Beitrag verfasst und ihn nicht als Entgültig einsenden möchtest, konfiguriere den YAML-Kopf so das der Beitrag als "in-progress" eingestellt wird.

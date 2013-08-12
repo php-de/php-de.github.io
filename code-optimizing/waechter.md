@@ -23,7 +23,7 @@ entry-type: in-progress
 
 In komplexem Code kommt es oft zu einer mehrfachen Verschachtelung von Kontrollstrukturen. Infolgedessen werden relevante Codeteile oft erst in Blöcken 2. oder 3. Ordnung aufgerufen. Nicht immer ist diese Problematik mit AND/OR Operatoren im Bedingungsausdruck zu lösen, ohne gleichzeitig das DRY-Prinzip (don't repeat yourself - Maxime, die besagt, keinen redundanten Code zu schreiben) zu verletzen. 
 
-Eine Lösung können hier sogenannte Wächter bilden, die auf der Grundlage von frühzeitigen Schleifen- bzw. Strukturabbrüchen basieren. 
+Eine Lösung können hier sogenannte **Wächter** bilden, die auf der Grundlage von frühzeitigen Schleifen- bzw. Strukturabbrüchen basieren. 
 
 **Information**  
 Vorzeitige Abbrüche sind unter Anhängern reiner Lehren wie der strukturierten Programmierung verpönt. Die Gratwanderung zwischem elegantem und verständlichem Code muß jeder selbst vollbringen. 
@@ -46,27 +46,33 @@ Das alternative Wächterprinzip macht sich die Logik zunutze, dass eine nicht er
     Führe Block 2 aus
 
 
-Beispiel 1 Im Vergleich:
+**Beispiel 1**
 
-Ein Wertebereich soll durchlaufen werden und für alle enthaltenen Datensätze angeben, on sie 1 sind oder nicht.
+Im Vergleich: Ein Wertebereich soll durchlaufen werden und für alle enthaltenen Datensätze angeben, on sie 1 sind oder nicht.  
+
 Pseudocode:
-  Bsp. 1, klassischer Ansatz, Pseudocode Schleifendurchlauf
+  
+Bsp. 1, klassischer Ansatz, Pseudocode
 
-    Ist Wert = 1:
-        Schreibe "key ist 1"
-    Sonst:
+    Schleifendurchlauf
+        Ist Wert = 1:
+            Schreibe "key ist 1"
+        Sonst:
+            Schreibe "key ist ungleich 1"
+
+  Bsp. 1, alternativer Ansatz, Pseudocode
+
+    Schleifendurchlauf
+        Ist Wert = 1:
+            Schreibe "key ist 1"
+            nächstes Schleifenelement
         Schreibe "key ist ungleich 1"
-
-  Bsp. 1, alternativer Ansatz, Pseudocode Schleifendurchlauf
-    Ist Wert = 1:
-        Schreibe "key ist 1"
-        nächstes Schleifenelement
-    Schreibe "key ist ungleich 1"
 
 
   Bsp. 1, klassischer Ansatz, PHP Umsetzung
 
     foreach ($array as $key => $value) {
+
         // positiver Bedingungszweig
         if ($value == 1) {
             echo $key . ' ist 1<br>';
@@ -80,6 +86,7 @@ Pseudocode:
 Bsp. 1, alternativer Ansatz, PHP Umsetzung
 
     foreach ($array as $key => $value) {
+
         // positiver Bedingungszweig
         if ($value == 1) {
             echo $key . ' ist 1<br>';
@@ -89,83 +96,81 @@ Bsp. 1, alternativer Ansatz, PHP Umsetzung
         echo $key . ' ist ungleich 1<br>';
     }
 
-Beispiel 2
+**Beispiel 2**
 
 Besonders in Funktionen ist das Prinzip des vorzeitigen Abbruchs sehr verständlich und am weitesten verbreitet. Im Beispiel soll eine Query an eine Datenbank abgesetzt werden. Die Funktion erzeugt dabei eine Datenbankverbindung, wählt die Datenbank aus und führt die Query aus. Alle drei Operationen können zu Fehlern führen, die die Funktion berücksichtigen soll.
 Wieder klassische Lösung und alternative im Vergleich:
 
-  Bsp. 2, klassischer Ansatz, Pseudocode Funktionsblock
-    Verbindungsaufbau
+  Bsp. 2, klassischer Ansatz, Pseudocode
 
+    Funktionsblock
+        Verbindungsaufbau
 
-    Verbindung erfolgreich:
+        Verbindung erfolgreich:
+            Datenbankwahl
+
+            Datenbankwahl erfolgreich:
+                Queryanfrage
+                Returnwert zuweisen
+
+            Sonst (Datenbankwahl nicht erfolgreich):
+                Schreibe "Datenbankverbindung fehlgeschlagen"
+                Returnwert zuweisen
+
+        Sonst (Verbindung nicht erfolgreich):
+            Schreibe "Verbindung fehlgeschlagen"
+            Returnwert zuweisen
+
+        Returnwert zurückgeben
+
+  Bsp. 2, alternativer Ansatz, Pseudocode
+
+    Funktionsblock
+        Verbindungsaufbau
+
+        Verbindung nicht erfolgreich:
+            Schreibe "Verbindung fehlgeschlagen"
+            Funktionsabbruch
+
         Datenbankwahl
 
-        Datenbankwahl erfolgreich:
-            Queryanfrage
-            Returnwert zuweisen
-
-        Sonst (Datenbankwahl nicht erfolgreich):
+        Datenbankwahl nicht erfolgreich:
             Schreibe "Datenbankverbindung fehlgeschlagen"
-            Returnwert zuweisen
+            Funktionsabbruch
 
-    Sonst (Verbindung nicht erfolgreich):
-        Schreibe "Verbindung fehlgeschlagen"
+        Queryanfrage
         Returnwert zuweisen
 
-    Returnwert zurückgeben
-
-  Bsp. 2, alternativer Ansatz, Pseudocode Funktionsblock
-  
-    Verbindungsaufbau
-
-    Verbindung nicht erfolgreich:
-        Schreibe "Verbindung fehlgeschlagen"
-        Funktionsabbruch
-
-    Datenbankwahl
-
-    Datenbankwahl nicht erfolgreich:
-        Schreibe "Datenbankverbindung fehlgeschlagen"
-        Funktionsabbruch
-
-    Queryanfrage
-    Returnwert zuweisen
-
-    Returnwert zurückgeben
+        Returnwert zurückgeben
 
   Bsp. 2, klassischer Ansatz, PHP Umsetzung:
 
-    function dbQuery ($querystring) 
-    {
+    function dbQuery ($querystring) {
         // Verbindungsaufbau
         $link = mysql_connect('example.com:3307', 'mysql_user', 'mysql_password');
- 
+    
         if ($link) {
             // erfolgreiche Verbindung 
- 
-            // Datenbankwahl
+    
+        // Datenbankwahl
             $db_selected = mysql_select_db("mydbname" , $link);
- 
-            if ($db_selected) {
+    
+        if ($db_selected) {
                 // erfolgreiche Datenbankwahl
- 
-                // Queryanfrage
+    
+            // Queryanfrage
                 $result = mysql_query($querystring , $link);
- 
-            }
-            else {
+    
+        } else {
                 // fehlgeschlagene Datenbankwahl
-
+    
                 echo 'Datenbankverbindung fehlgeschlagen';
                 $result = false;
             }
-
-        mysql_close($link);
-        }
-        else {
+            mysql_close($link);
+    
+        } else {
             // fehlgeschlagene Verbindung 
- 
             echo 'Verbindung fehlgeschlagen';
             $result = false;
         }
@@ -254,7 +259,7 @@ Bsp. 3, alternativer Ansatz, PHP Umsetzung:
         }
     }
 
-Anmerkung: Verwendete man statt des continue 2; hier ein break 2; Statement, ergäbe sich eine ander Funktionalität: Statt jedes einzelne Wort hinsichtlich der gültigen Buchstabenmenge zu validieren, würde dann die Wortmenge geprüft, ob sie ausschließlich aus gültigen Buchstben besteht.
+Anmerkung: Verwendete man statt des continue 2; hier ein break 2; Statement, ergäbe sich eine andere Funktionalität: Statt jedes einzelne Wort hinsichtlich der gültigen Buchstabenmenge zu validieren, würde dann die Wortmenge geprüft, ob sie ausschließlich aus gültigen Buchstaben besteht.
 
 ##### Bedingter Abbruch mit künstlichem Blockelement
 
@@ -267,7 +272,8 @@ Für Anwendungen wie dem Datenbankbeispiel kann eine mit FALSE initialisierte do
 	while (false);
 
 führt also alle Anweisungen (hier durch // Bedingungsblock repräsentiert) genau einmal aus. Der Vorteil, der sich gegenüber einer Ausführung ohne Blockelement ergibt, ist, dass die Schleife nun jederzeit mit einem break; vorzeitig verlassen werden. 
-Bezugnehmend auf das obige Beispiel könnte also bspw. ein Fehler bei der Datenbankverbindung so abgefangen werden:
+Bezugnehmend auf das obige Beispiel könnte also bspw. ein Fehler bei der Datenbankverbindung so abgefangen werden:  
+
 Ergänzung zu Bsp. 2, alternativer Ansatz ohne natives Blockelement, PHP Umsetzung:
 
     do {

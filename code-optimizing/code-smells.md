@@ -43,7 +43,7 @@ Der Artikel nutzt reduzierte Lehrbeispiele. Der Übersichtlichkeit halber könne
 
 #### Leere Strings <a id="emptystring"></a>  
 
-##### Problem
+#### Problem
 Code-Smells mit leeren Strings  
 
     // unsinnig
@@ -68,14 +68,16 @@ Wenn es darum geht, andere Typen nach String zu casten, sollte explizites Typ-Ca
 
 #### Unnötiges Variablen-Parsing in Doppelquotes <a id="varpars"></a>
 
-PHP unterstützt die Verwendung von Variablen innnerhalb von doppelten Anführungszeichen. Dort befindliche     Variablen werden in Ihren Wert aufgelöst: 
+PHP unterstützt die Verwendung von Variablen innnerhalb von doppelten Anführungszeichen. Dort befindliche Variablen werden in Ihren Wert aufgelöst: 
 
     $foo = 12;
     echo "Mein Hut der hat $foo Ecken";
 
 
 ##### Problem
-Weit verbreitet ist diese unsinnige Variante - Code-Smells mit unnützen Stringsquotes:
+Weit verbreitet ist diese unsinnige Variante:  
+
+Code-Smells mit unnützen Stringsquotes:
 
     $foo = 'Zwerg';
     echo "$foo"; // Zwerg
@@ -104,7 +106,7 @@ Wenn es darum geht, andere Typen nach String zu casten, sollte explizites Typ-Ca
 ##### Problem
 Code-Smells mit *-Select
 
-        $query = "SELECT * FROM Personen";
+    $query = "SELECT * FROM Personen";
 
 Aus der Datenbanktabelle wird hier stets jedes Feld der Zeile abgefragt. Oft ist das gar nicht nötig, weil nur ein Teil der Felder verarbeitet wird. Zudem sagt das Statement nichts darüber aus, welche Werte es liefert. Kritisch wird es, wenn sich die Tabellenstruktur ändert - Folgefehler (Zugriff auf nicht mehr existente Feldnamen) oder das Auslesen von unnützen Daten (Text, Blob) kann die Folge der *-Konvention sein. 
 
@@ -128,7 +130,7 @@ Code-Smells mit Limit
     mysql_select_db('userdb' , $connection);
  
     $ress = mysql_query("SELECT `Id` , `Name` FROM Personen");
-    $cnt=0;
+    $cnt = 0;
     while ($data = mysql_fetch_assoc($ress)) {
         if ($cnt > 3) {
             break;
@@ -160,7 +162,8 @@ Na, wer hat jetzt die Arbeit?
 ##### Problem
 
 Bei Datenbankabfrage, die definitiv nur einen Datensatz liefern, wird oft die übliche Form des Auslesenes verwendet: 
-Code-Smells mit auslesenden Schleifen
+
+Code-Smells mit auslesenden Schleifen:  
 
     // Fehlerbehandlung wurde hier mal weggelassen
     $connection = mysql_connect('localhost' , 'root');
@@ -187,7 +190,7 @@ Sowohl LIMIT 1, als auch eine sinnvolle Scriptlogik - in einem Loginprozess soll
 
 ##### Ersatz
 
-Die meisten Nutzer wissen gar nicht, was das while hier überhaupt tut. Kurz gesagt werden hier per Schleife solange Datensätze von der Datenbank angefordert, bis die Datenbank FALSE für "keine weiteren Datensätze" zurückliefert. Die Schleife läuft dadurch, dass diese Rückgabe die Schleifenbedingung bildenet. 
+Die meisten Nutzer wissen gar nicht, was das while hier überhaupt tut. Kurz gesagt werden hier per Schleife solange Datensätze von der Datenbank angefordert, bis die Datenbank FALSE für "keine weiteren Datensätze" zurückliefert. Die Schleife läuft dadurch, dass diese Rückgabe die Schleifenbedingung bildet. 
 
 Mit diesem Wissen können wir einen Ersatz für Fälle schaffen, in denen definitiv nur ein Datensatz erwartet wird oder nur einer ausgelesen werden soll (vgl. dazu aber obige Aussagen zu LIMIT). 
 

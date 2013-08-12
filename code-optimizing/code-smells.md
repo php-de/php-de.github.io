@@ -16,11 +16,11 @@ creator: nikosch
 inhalt:
     -   name: "1. Leere Strings"
         anchor: emptystring
-        simple: "foo"
+        simple: ""
         
     -   name: "2. Unnötiges Variablen-Parsing in Doppelquotes"
         anchor: varpars
-        simple: "foo"
+        simple: ""
 ---
 
 Es gibt eine Reihe von Unsitten, die offenbar in veralteten Lehrbüchern auftauchen oder sich durch Copy & Paste im Laufe der Jahre im Internet exponentiell verbreitet haben. 
@@ -56,7 +56,7 @@ Wenn es darum geht, andere Typen nach String zu casten, sollte explizites Typ-Ca
     // explizites Type-Casting
     $myString = (string)$myInt;
 
-#### 2. <a id="emptystring"></a> Unnötiges Variablen-Parsing in Doppelquotes
+#### 2. <a id="varpars"></a> Unnötiges Variablen-Parsing in Doppelquotes
 
 PHP unterstützt die Verwendung von Variablen innnerhalb von doppelten Anführungszeichen. Dort befindliche     Variablen werden in Ihren Wert aufgelöst: 
 

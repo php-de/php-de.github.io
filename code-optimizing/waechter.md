@@ -14,7 +14,7 @@ creator: nikosch
 inhalt:
     -   name: "Wächter vs. Schachtel-If"
         anchor: waechterorif
-        simple: "Grundlage"
+        simple: "Grundlagen"
 
     -   name: "Möglichkeiten"
         anchor: moeglichkeiten
@@ -43,7 +43,7 @@ Eine Lösung können hier sogenannte **Wächter** bilden, die auf der Grundlage 
 **Information**  
 Vorzeitige Abbrüche sind unter Anhängern reiner Lehren wie der strukturierten Programmierung verpönt. Die Gratwanderung zwischem elegantem und verständlichem Code muß jeder selbst vollbringen. 
 
-##### Grundlage
+##### Grundlagen
 Code funktioniert linear, wird also von oben nach unten, in einer Schleife auch mehrfach abgearbeitet. Jeder Code, der bedingt verarbeitet wird, wird in einem Block geklammert, der je nach Eintreffen der Bedingung durchlaufen wird oder nicht. In einer Schleife ist dies der gesamte zu wiederholende Block, der je nach Schleifenbedingung (Zählervergleich, Durchlaufen einer Menge oder dergl.) geloopt wird. Auch eine Funktion oder Methode ist ein solcher Anweisungsblock, der normalerweise als letztes ein Ergebnis oder einen boolschen Wert als Statusinformation zurückgibt. 
 
 Bedingungen haben im Bereich der Datenverarbeitung zwei Zustände. Sie werden deshalb so ausgeführt: 

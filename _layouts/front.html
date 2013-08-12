@@ -1,15 +1,42 @@
 ---
 layout: default
 ---
-<div class="panel sectionStream">
-    {% include heading.html %}
-    <!-- sections -->
-    <div class="list-group">
+
+<div class="row sectionStream">
+    <div class="col-lg-9">
+        <div class="panel">
+            {% include heading.html %}
+        </div>
+
+        <!-- sections -->
         {% for sec in page.pageSections %}
-        <a class="list-group-item" href="{{ sec.url }}">
-            <h4 class="list-group-item-heading">{{ sec.name }}</h4>
-            <p>{{ sec.desc }}</p>
-        </a>
+        <div class="panel">
+            <div class="panel-heading">
+                <strong>{{ sec.name }}</strong>
+            </div>
+            <p>
+                {{ sec.desc }}
+            </p>
+            <ul class="list-group">
+                {% for givenEntry in sec.entrys %}
+                <li class="list-group-item">
+                    <a href="{{ givenEntry.url }}">{{ givenEntry.name }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
         {% endfor %}
+    </div>
+    <div class="col-lg-3">
+        <div class="panel">
+        
+            <a class="btn btn-primary btn-sm btn-block" href="http://www.php.de">
+                zum Forum
+            </a>
+            <a class="btn btn-default btn-sm btn-block" href="constribute.html">
+                Mitmachen !
+            </a>
+        
+        </div>
     </div>
 </div>

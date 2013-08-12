@@ -4,11 +4,22 @@ title: php.de
 
 pageSections:
 
-    -
-
-        name: "Email"
+    -   name: "Email"
 
         desc: "Wissenswertes über den Umgang mit Email-Adressen, Mail-Servern, und Mailer-Klassen."
 
-        url: "email/"
+        entrys:
+
+            -   name: "Standard E-Mail-Validierung"
+                url: /email/standard-mail-validation.html
+
+    -   name: "Code Optimierung"
+
+        desc: "Wissenswertes über Code Optimierung"
+
+        entrys:
+
+            -   name: "Code smells"
+                url: /code-optimizing/code-smells.html
+                
 ---

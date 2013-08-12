@@ -124,12 +124,11 @@ Code-Smells mit Limit
 
 
     // Fehlerbehandlung wurde hier mal weggelassen
-    $connection = mysql_connect('localhost' , 'root');
-    mysql_select_db('userdb' , $connection);
- 
-    $ress = mysql_query("SELECT `Id` , `Name` FROM Personen");
+    $mysqli = mysqli_connect('localhost', 'user', 'password', 'database');
+
+    $ress = mysqli_query($mysqli, "SELECT `Id` , `Name` FROM Personen");
     $cnt = 0;
-    while ($data = mysql_fetch_assoc($ress)) {
+    while ($data = mysqli_fetch_assoc($ress)) {
         if ($cnt > 3) {
             break;
         }
@@ -147,11 +146,10 @@ Na, wer hat jetzt die Arbeit?
 
 
     // Fehlerbehandlung wurde hier mal weggelassen
-    $connection = mysql_connect('localhost' , 'root');
-    mysql_select_db('userdb' , $connection);
- 
-    $ress = mysql_query("SELECT `Id` , `Name` FROM Personen LIMIT 3");
-    while ($data = mysql_fetch_assoc($ress)) {
+    $mysqli = mysqli_connect('localhost', 'user', 'password', 'database');
+     
+    $ress = mysqli_query($mysqli, "SELECT `Id` , `Name` FROM Personen LIMIT 3");
+    while ($data = mysqli_fetch_assoc($ress)) {
         echo $data['Id'] , ', ' , $data['Name'] , '<br />';
     }
     
@@ -164,17 +162,16 @@ Bei Datenbankabfrage, die definitiv nur einen Datensatz liefern, wird oft die ü
 
 
     // Fehlerbehandlung wurde hier mal weggelassen
-    $connection = mysql_connect('localhost' , 'root');
-    mysql_select_db('userdb' , $connection);
- 
-    $ress = mysql_query("SELECT `ID` , `User` , `Password`
-                     FROM    Login 
-                     WHERE   `User` = '" . mysql_real_escape_string ($_POST['user']) . "' 
-                     LIMIT   1");
+    $mysqli = mysqli_connect('localhost', 'user', 'password', 'database');
+     
+    $ress = mysqli_query($mysqli, "SELECT `ID` , `User` , `Password`
+                    FROM   Login 
+                    WHERE  `User` = '" . mysqli_real_escape_string($mysqli, $_POST['user']) . "' 
+                    LIMIT  1");
  
     $auth = false;
  
-    while ($data = mysql_fetch_assoc($ress)) {
+    while ($data = mysqli_fetch_assoc($ress)) {
         if ($_POST['pass'] == $data['Password']) {
             $auth = true;
         }
@@ -197,7 +194,7 @@ Hier ist eindeutiger, was passiert
     // ... Anfrage von oben
     $auth = false;
  
-    if ($data = mysql_fetch_assoc($ress)) {
+    if ($data = mysqli_fetch_assoc($ress)) {
         if ($_POST['pass'] == $data['Password']) {
             $auth = true;
         }

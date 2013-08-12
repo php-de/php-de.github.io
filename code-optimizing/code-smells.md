@@ -3,8 +3,6 @@ layout: guide
 
 title: "Codeoptimierung: Code-Smells"
 
-entry-type: in-progress
-
 author:
     -   name: nikosch
         profile: 2314

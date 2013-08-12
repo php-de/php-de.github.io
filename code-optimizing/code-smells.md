@@ -16,11 +16,11 @@ creator: nikosch
 inhalt:
     -   name: "1. Leere Strings"
         anchor: emptystring
-        simple: "klein"
+        simple: "foo"
         
     -   name: "2. Unnötiges Variablen-Parsing in Doppelquotes"
         anchor: varpars
-        simple: "klein"
+        simple: "foo"
 ---
 
 Es gibt eine Reihe von Unsitten, die offenbar in veralteten Lehrbüchern auftauchen oder sich durch Copy & Paste im Laufe der Jahre im Internet exponentiell verbreitet haben. 

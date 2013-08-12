@@ -35,7 +35,7 @@ inhalt:
 
 Es gibt eine Reihe von Unsitten, die offenbar in veralteten Lehrbüchern auftauchen oder sich durch Copy & Paste im Laufe der Jahre im Internet exponentiell verbreitet haben. 
 
-Dieser Artikel richtet sich an Spracheinsteiger, Fortgeschrittene können bei [Wikipedia einige Beispiel zu Code-Smells](http://de.wikipedia.org/wiki/Code_smell) finden.
+Dieser Artikel richtet sich an Spracheinsteiger, Fortgeschrittene können [bei Wikipedia einige Beispiele zu Code-Smells](http://de.wikipedia.org/wiki/Code_smell) finden.
 
 **Achtung!**  
 Der Artikel nutzt reduzierte Lehrbeispiele. Der Übersichtlichkeit halber können wichtige Funktionen zur Eingabevalidierung o. ä. weggelassen worden sein.

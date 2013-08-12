@@ -8,7 +8,7 @@ author:
     -   name: tr0y
         profile: 21125
 
-entry-type: in-progress
+entry-type: in-discussion
 
 inhalt:
 

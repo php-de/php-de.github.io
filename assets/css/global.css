@@ -14,6 +14,7 @@ body > .pageWrap {
 
 .pageWrap > .head {
     height:80px;
+    display:block;
 }
 
 .sectionStream {

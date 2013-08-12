@@ -102,7 +102,12 @@ layout: default
         </div>
         {% endif %}
     </div>
-    <script type="text/javascript" media="handheld">
-        $("#page-contents").insertBefore('#guide');
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/yepnope/1.5.4/yepnope.min.js"></script>
+    <script type="text/javascript" src="/assets/detectbrowsermobile.js"></script>
+    <script type="text/javascript">
+        yepnope({
+            test: jquery.browser.mobile,
+            yep: '/assets/mobile-switch.js'
+        });
     </script>
 </div>

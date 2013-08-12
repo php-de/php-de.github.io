@@ -12,6 +12,15 @@ author:
         profile: 21246
 
 creator: nikosch
+
+inhalt:
+    -   name: "1. Leere Strings"
+        anchor: emptystrings
+        simple: "klein"
+        
+    -   name: "2. Unnötiges Variablen-Parsing in Doppelquotes"
+        anchor: intdomain
+        simple: "klein"
 ---
 
 Es gibt eine Reihe von Unsitten, die offenbar in veralteten Lehrbüchern auftauchen oder sich durch Copy & Paste im Laufe der Jahre im Internet exponentiell verbreitet haben. 
@@ -100,7 +109,7 @@ Was dieses Select liefert, ist klar ersichtlich
 
 #### 4. LIMIT vs. PHP-Counting 
 
-4.1. Problem
+#### 4.1. Problem
 Code-Smells mit Limit
 
 

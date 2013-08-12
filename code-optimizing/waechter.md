@@ -14,7 +14,7 @@ creator: nikosch
 inhalt:
     -   name: "Wächter vs. Schachtel-If"
         anchor: waechterorif
-        simple: ""
+        simple: "Grundlage"
 
     -   name: "Möglichkeiten"
         anchor: moeglichkeiten
@@ -22,15 +22,14 @@ inhalt:
 		Schleifenabbrüche mit continue;
         	Funktionsabbrüche mit return;"
 
-    -   name: "Spezialfälle"
+    -   name:  "Spezialfälle"
         anchor: spezial
         simple: "Verlassen tieferer Strukturen
         	Bedingter Abbruch mit künstlichem Blockelement"
 
     -   name: "Siehe auch"
         anchor: sieheauch
-        simple: ""
-
+        simple: "Link-Verweise"
 
 entry-type: in-progress
 ---

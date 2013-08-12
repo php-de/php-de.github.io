@@ -6,7 +6,7 @@ layout: default
     <div class="col-lg-9">
         {% case page.entry-type %}
             {% when 'in-progress' %}    
-        <div class="panel panel-danger">
+        <div class="panel panel-danger" id="guide">
             <div class="panel-heading">
                 <span style="font-size:14pt">{{ page.title }}</span>
             </div>
@@ -17,7 +17,7 @@ layout: default
                 </li>
             </ul>
             {% when 'deprecated' %}
-        <div class="panel panel-info">
+        <div class="panel panel-info" id="guide">
             <div class="panel-heading">
                 <span style="font-size:14pt">{{ page.title }}</span>
             </div>
@@ -28,7 +28,7 @@ layout: default
                 </li>
             </ul>
             {% when 'in-discussion' %}
-        <div class="panel panel-success">
+        <div class="panel panel-success" id="guide">
             <div class="panel-heading">
                 <span style="font-size:14pt">{{ page.title }}</span>
             </div>
@@ -39,7 +39,7 @@ layout: default
                 </li>
             </ul>
             {% when 'marked-to-delete' %}
-        <div class="panel panel-warning">
+        <div class="panel panel-warning" id="guide">
             <div class="panel-heading">
                 <span style="font-size:14pt">{{ page.title }}</span>
             </div>
@@ -50,7 +50,7 @@ layout: default
                 </li>
             </ul>
             {% else %}
-        <div class="panel">
+        <div class="panel" id="guide">
             <div class="panel-heading">
                 <span style="font-size:14pt">{{ page.title }}</span>
             </div>
@@ -102,4 +102,7 @@ layout: default
         </div>
         {% endif %}
     </div>
+    <script type="text/javascript" media="screen and (min-device-width : 320px) and (max-device-width : 480px)">
+        $("#page-contents").prependTo('#guide');
+    </script>
 </div>

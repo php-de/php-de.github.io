@@ -15,11 +15,11 @@ creator: nikosch
 
 inhalt:
     -   name: "1. Leere Strings"
-        anchor: emptystrings
+        anchor: emptystring
         simple: "klein"
         
     -   name: "2. Unnötiges Variablen-Parsing in Doppelquotes"
-        anchor: intdomain
+        anchor: varpars
         simple: "klein"
 ---
 
@@ -31,7 +31,7 @@ Dieser Artikel richtet sich an Spracheinsteiger, Fortgeschrittene können bei [W
 Achtung! Der Artikel nutzt reduzierte Lehrbeispiele. Der Übersichtlichkeit halber können wichtige Funktionen zur Eingabevalidierung o. ä. weggelassen worden sein.
 
 
-#### 1. Leere Strings  
+#### 1. <a id="emptystring"></a> Leere Strings  
 
 ##### 1.1 Problem
 Code-Smells mit leeren Strings  
@@ -56,7 +56,7 @@ Wenn es darum geht, andere Typen nach String zu casten, sollte explizites Typ-Ca
     // explizites Type-Casting
     $myString = (string)$myInt;
 
-#### 2. Unnötiges Variablen-Parsing in Doppelquotes
+#### 2. <a id="emptystring"></a> Unnötiges Variablen-Parsing in Doppelquotes
 
 PHP unterstützt die Verwendung von Variablen innnerhalb von doppelten Anführungszeichen. Dort befindliche     Variablen werden in Ihren Wert aufgelöst: 
 
@@ -89,7 +89,7 @@ Solche Konstrukte sind gegen die alleinstehende Variable auszutauschen.
     
 Wenn es darum geht, andere Typen nach String zu casten, sollte explizites Typ-Casting verwendet werden (siehe oben). 
 
-#### 3. SELECT * 
+#### 3. <a id="selectall"></a> SELECT * 
 
 ##### 3.1. Problem
 Code-Smells mit *-Select
@@ -107,7 +107,7 @@ Was dieses Select liefert, ist klar ersichtlich
 
 Übrigens existiert dieses Problem auch vertikal: Wer sich sicher ist, dass eine Zeile mit einer bestimmten WHERE-Bedingung nur einmal vorkommen kann, hat sicher kein Problem damit, ein LIMIT 1 zu ergänzen. 
 
-#### 4. LIMIT vs. PHP-Counting 
+#### 4. <a id="counting"></a> LIMIT vs. PHP-Counting 
 
 #### 4.1. Problem
 Code-Smells mit Limit
@@ -148,7 +148,7 @@ Na, wer hat jetzt die Arbeit?
       echo $data['Id'] , ', ' , $data['Name'] , '<br />';
     }
     
-#### 5. LIMIT und Schleife 
+#### 5. <a id="limit"></a> LIMIT und Schleife 
 
 ##### 5.1. Problem
 

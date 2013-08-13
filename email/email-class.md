@@ -39,12 +39,8 @@ per PDF als Anhang geschickt. Den PDF-Reader findest Du ja bei Adobe.
 Mit freundlichen Grüßen,
 in großer Erwatung
 
-!(images/smiley_xmas_27x25.gif) Dein Kalle 
+![xmas](images/smiley_xmas_27x25.gif) Dein Kalle
 ~~~
-
-![foo](images/smiley_xmas_27x25.gif)
-
-![foo](http://php-de.github.io/email/images/smiley_xmas_27x25.gif)
 
 
 Wollte Kalle diese E-Mail per PHP schicken, würde Ihm das wohl ziemlich viel Mühe bereiten. Als erstes hätten Ihn vermutlich die Umlaute geärgert. Im Text und vor allem im Betreff, überall Umlaute. Ein Charset-Header muss her. Oder gar eine ISO-Codierung fürs Subject? Dann fällt ihm ein, dass er ja noch ein fetziges Bild und unbedingt den Link zum Adobe Reader einbauen will ― schließlich soll’s der Weihnacksmann ja so einfach wie möglich haben. Außerdem kommt der alte Bärtige doch vermutlich erst mit grüner Schrift so richtig in Schenklaune. Fazit: eine HTML-Mail muss her. Dann noch das Wichtigste: Der PDF-Anhang! 

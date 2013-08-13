@@ -245,7 +245,16 @@ function dbQuery($querystring)
 ~~~
 
 Wie bereits dieses kurze Beispiel zeigt ist der Code nicht nur wesentlich kompakter und weniger geschachtelt, auch die Reihenfolge der Ausführung ist weit verständlicher, weil die else Zweige nicht in umgekehrter Reihenfolge wie ihre positiven Bedingungen abgearbeitet werden.
-Eine kleine Falle, der beim obigen Pseudocode unterschlagen wurde, enthält die Alternativlösung: Die Freigabe der Verbindungsressource durch mysql_close($link); muß für zwei Fälle erfolgen: Für den positiven, aber auch den negativen Fall der Datenbankwahl. In der klassischen Umsetzung ist dies aufgrund der Schachtelung schon eingebaut.
+Eine kleine Falle, der beim obigen Pseudocode unterschlagen wurde, enthält die Alternativlösung: Die Freigabe der Verbindungsressource durch mysqli_close($link); muß für zwei Fälle erfolgen: Für den positiven, aber auch den negativen Fall der Datenbankwahl. In der klassischen Umsetzung ist dies aufgrund der Schachtelung schon eingebaut.
+
+**Hinweis:**  
+Der obige Code dient als Beispiel zur Verdeutlichung einer Wächter-Implementierung, generell wird jedoch empfohlen, dass die Datenbank direkt beim Verbindungaufbau mittels mysqli_connect() ausgewählt wird:
+
+~~~ php
+// Verbindungsaufbau mit direkt DB-Auswahl 
+$link = mysqli_connect('db_host', 'db_username', 'db_password', 'db_name');
+// ...
+~~~
 
 ### Möglichkeiten
 

@@ -13,15 +13,15 @@ entry-type: in-discussion
 inhalt:
 
     -   name: "Beitragsregeln"
-        anchor: entry-rules
+        anchor: beitragsregeln
         simple: "Wann und Warum"
 
     -   name: "Markdown-Aufbau"
-        anchor: markdown-structure
+        anchor: markdown-aufbau
         simple: "Programmieren?!"
 
     -   name: "Komponenten Vernetzung"
-        anchor: component-networking
+        anchor: komponenten-vernetzung
         simple: "composer require ..."
 
 
@@ -39,7 +39,6 @@ Markdowns bereitgestellt wurden erfährst du in diesem Beitrag.
 </div>
 
 #### Beitragsregeln
-<a id="entry-rules"></a>
 
 Respektiere folgende Regeln wenn du Beiträge hinzufügen oder bearbeiten möchtest:
 
@@ -55,7 +54,6 @@ Respektiere folgende Regeln wenn du Beiträge hinzufügen oder bearbeiten möcht
 * Der Issue-Tracker des Repository kann ebenfalls als To-Do-Liste der einzelnen Beiträge benutzt werden. Beiträge die eine Todo-Liste im Bug-Tracker haben, sollten als `in-progress` oder `in-discussion` markiert sein. Der Eintrag im Bug-Tracker bedarf eines <span class="label label-success">To-Do</span> Labels.
 
 #### Markdown-Aufbau
-<a id="markdown-structure"></a>
 
 <div class="alert">
     <strong>Wichtig:</strong> Änderungen am JEKYLL sind diskutabel und sollten im Forum diskutiert werden.
@@ -66,26 +64,24 @@ Das JEKYLL-System benutzt [rDiscount](http://daringfireball.net/projects/markdow
 
 Jedes Dokument fängt mit einem YAML-Kopf an und muss zumindest den Eintrag `layout: guide` besitzen. Damit wird JEKYLL angewiesen das entsprechende Layout für Beiträge zu benutzen.
 
-~~~
+~~~ yaml
 ---
 layout: guide
 ---
 ~~~
-{: .language-yaml}
 
 Zusätzlich ist es notwendig einen Titel anzugeben, dafür wurde das Feld `title` geschaffen.
 
-~~~
+~~~ yaml
 ---
 layout: guide
 title: "Hallo Welt Tutorial"
 ---
 ~~~
-{: .language-yaml}
 
 Damit JEKYLL feststellen kann wer das Tutorial eigentlich ursprünglich verfasst hat, muss jeder Beitrag 2 weitere Felder ausliefern: `authors` und `creator`. Das authors-Feld ist ein YAML-Array aus YAML-Arrays und ist wie folgt aufgebaut:
 
-~~~
+~~~ yaml
 ---
 layout: guide
 title: "Hallo Welt Tutorial"
@@ -98,11 +94,10 @@ authors:
         profile: 12345678
 ---
 ~~~
-{: .language-yaml}
 
 Das Feld `name` ist notwendig, das Feld `profile` ist optional. Wenn einer der Felder `name` und das Feld `creator` übereinstimmen wird der jeweilige Autor als ursprünglicher Ersteller des Beitrags markiert. Zusätzlich zu diesen Feldern gibt es noch ein optionales `entry-type` Feld zur Steuerung der Beitrags-Typen-Mechanik. Als `entry-type` einstellbar sind: `default` ( Standardfall ), `in-progress` ( in Bearbeitung ), `deprecated` ( Veraltet ), `marked-to-delete` ( markiert zur Löschung ) und `in-discussion` ( in Diskussion ).
 
-~~~
+~~~ yaml
 ---
 layout: guide
 title: "Hallo Welt Tutorial"
@@ -120,19 +115,12 @@ authors:
 entry-type: in-progress
 ---
 ~~~
-{: .language-yaml}
 
 Es wird kein Automatischer Index von deinem Beitrag erstellt, diesen musst du selbstständig im Feld `inhalt` festlegen. Dieses Feld ist ebenfalls ein YAML-Array das YAML-Arrays enthält. Dir stehen die Felder `name` ( Title des Links ), `anchor` ( Anker im Beitrag ) und `simple` ( zusätzlicher kurzer Hinweis ) zur Verfügung, alle 3 sind notwendig wenn du einen Eintrag anlegst. Der Inhalt wird in der Desktop-Version rechts neben dem Beitrag angezeigt, in der mobilen Version oberhalb des Beitrags.
 
 <div class="alert alert-danger"><strong>Fehler-Quelle:</strong> Alle Einträge im YAML-Array die <code>:</code> enthalten sollten außerdem in Double-Quotes <code>"</code> gesetzt werden.</div>
 
-~~~ php
-<?php
-
-foreach( $foo as $bar ) {
-    
-}
-
+~~~ yaml
 ---
 layout: guide
 title: "Hallo Welt Tutorial"
@@ -157,7 +145,6 @@ inhalt:
 ~~~
 
 #### Komponenten Vernetzung
-<a id="component-networking"></a>
 
 Grundsätzlich ist es kein Problem wenn du PHP-Komponenten die nicht zum PHP-Kern gehören oder auch Klassen aus Bibliotheken in deinen Beiträgen verlinkst. Wir setzen allerdings voraus, dass die Klasse unter der bis zum Veröffentlichungszeitpunkt aktuellsten PHP-Version fehlerfrei läuft und noch einen aktiven Maintainer besitzt ( also weiterentwickelt und betreut wird ). Du solltest auch den Zustand berücksichigen das die meisten Hosting-Platformen noch ältere PHP-Versionen ausliefern. Als groben Schnitt sollte dein Quellcode mindestens noch PHP 5.3 unterstützen.
 

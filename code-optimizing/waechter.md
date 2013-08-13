@@ -158,7 +158,7 @@ Wieder klassische Lösung und alternative im Vergleich:
 
         Returnwert zurückgeben
 
-  Bsp. 2, klassischer Ansatz, PHP Umsetzung:
+  XXX Bsp. 2, klassischer Ansatz, PHP Umsetzung:
 
 ~~~ php
 function dbQuery ($querystring) {

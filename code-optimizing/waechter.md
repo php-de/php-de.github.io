@@ -177,37 +177,37 @@ Funktionsblock
 Bsp. 2, klassischer Ansatz, PHP Umsetzung:
 
 ~~~ php
-function dbQuery ($querystring)
+function dbQuery($querystring)
 {
     // Verbindungsaufbau
-    $link = mysql_connect('localhost', 'username', 'password');
-    
+    $link = mysqli_connect('db_host', 'db_username', 'db_password');
+
     if ($link) {
         // erfolgreiche Verbindung 
-    
+
         // Datenbankwahl
-        $db_selected = mysql_select_db("mydbname" , $link);
-    
+        $db_selected = mysqli_select_db('db_name' , $link);
+
         if ($db_selected) {
             // erfolgreiche Datenbankwahl
-    
+
             // Queryanfrage
-            $result = mysql_query($querystring , $link);
-    
+            $result = mysqli_query($querystring , $link);
+
         } else {
             // fehlgeschlagene Datenbankwahl
-    
+
             echo 'Datenbankverbindung fehlgeschlagen';
             $result = false;
         }
-        mysql_close($link);
-    
+        mysqli_close($link);
+
     } else {
         // fehlgeschlagene Verbindung 
         echo 'Verbindung fehlgeschlagen';
         $result = false;
     }
-    
+
     return $result;
 }
 ~~~
@@ -215,10 +215,10 @@ function dbQuery ($querystring)
 Bsp. 2, alternativer Ansatz, PHP Umsetzung:
 
 ~~~ php
-function dbQuery ($querystring) 
+function dbQuery($querystring) 
 {
     // Verbindungsaufbau
-    $link = mysql_connect('localhost', 'username', 'password');
+    $link = mysqli_connect('db_host', 'db_username', 'db_password');
 
     if (false === $link) {
     // fehlgeschlagene Verbindung 
@@ -228,18 +228,18 @@ function dbQuery ($querystring)
     }
 
     // Datenbankwahl
-    $db_selected = mysql_select_db("mydbname" , $link);
+    $db_selected = mysqli_select_db('db_name' , $link);
 
     if (false === $db_selected) {
         // fehlgeschlagene Datenbankwahl
 
         echo 'Verbindung fehlgeschlagen';
-        mysql_close($link);
+        mysqli_close($link);
         return false;
     }
  
     // Queryanfrage
-    $result = mysql_query($querystring , $link);
+    $result = mysqli_query($querystring , $link);
     return $result;
 }
 ~~~

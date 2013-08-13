@@ -160,38 +160,40 @@ Wieder klassische Lösung und alternative im Vergleich:
 
   Bsp. 2, klassischer Ansatz, PHP Umsetzung:
 
-    function dbQuery ($querystring) {
-        // Verbindungsaufbau
-        $link = mysql_connect('example.com:3307', 'mysql_user', 'mysql_password');
-    
-        if ($link) {
-            // erfolgreiche Verbindung 
-    
-        // Datenbankwahl
-            $db_selected = mysql_select_db("mydbname" , $link);
-    
-        if ($db_selected) {
-                // erfolgreiche Datenbankwahl
-    
-            // Queryanfrage
-                $result = mysql_query($querystring , $link);
-    
-        } else {
-                // fehlgeschlagene Datenbankwahl
-    
-                echo 'Datenbankverbindung fehlgeschlagen';
-                $result = false;
-            }
-            mysql_close($link);
-    
-        } else {
-            // fehlgeschlagene Verbindung 
-            echo 'Verbindung fehlgeschlagen';
-            $result = false;
-        }
-     
-        return $result;
+~~~ php
+function dbQuery ($querystring) {
+// Verbindungsaufbau
+$link = mysql_connect('example.com:3307', 'mysql_user', 'mysql_password');
+
+if ($link) {
+    // erfolgreiche Verbindung 
+
+// Datenbankwahl
+    $db_selected = mysql_select_db("mydbname" , $link);
+
+if ($db_selected) {
+        // erfolgreiche Datenbankwahl
+
+    // Queryanfrage
+        $result = mysql_query($querystring , $link);
+
+} else {
+        // fehlgeschlagene Datenbankwahl
+
+        echo 'Datenbankverbindung fehlgeschlagen';
+        $result = false;
     }
+    mysql_close($link);
+
+} else {
+    // fehlgeschlagene Verbindung 
+    echo 'Verbindung fehlgeschlagen';
+    $result = false;
+}
+
+return $result;
+}
+~~~
 
 Bsp. 2, alternativer Ansatz, PHP Umsetzung:
 

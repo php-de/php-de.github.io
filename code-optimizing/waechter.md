@@ -48,18 +48,21 @@ Code funktioniert linear, wird also von oben nach unten, in einer Schleife auch 
 
 Bedingungen haben im Bereich der Datenverarbeitung zwei Zustände. Sie werden deshalb so ausgeführt: 
 
-    Wenn Bedingung 1: 
-        Führe Block 1 aus
-    Sonst: 
-        Führe Block 2 aus
+~~~
+Wenn Bedingung 1: 
+    Führe Block 1 aus
+Sonst: 
+    Führe Block 2 aus
+~~~
 
 Das alternative Wächterprinzip macht sich die Logik zunutze, dass eine nicht erfüllte Bedingung 1 ja zwangsläufig zur Ausführung des zweiten Blocks führt. Also
 
-    Wenn Bedingung 1: 
-        Führe Block 1 aus
-        Verlasse die Bedingungsprüfung
-    Führe Block 2 aus
-
+~~~
+Wenn Bedingung 1: 
+    Führe Block 1 aus
+    Verlasse die Bedingungsprüfung
+Führe Block 2 aus
+~~~
 
 **Beispiel 1**
 
@@ -69,13 +72,15 @@ Pseudocode:
   
 Bsp. 1, klassischer Ansatz, Pseudocode
 
-    Schleifendurchlauf
-        Ist Wert = 1:
-            Schreibe "key ist 1"
-        Sonst:
-            Schreibe "key ist ungleich 1"
+~~~
+Schleifendurchlauf
+    Ist Wert = 1:
+        Schreibe "key ist 1"
+    Sonst:
+        Schreibe "key ist ungleich 1"
+~~~
 
-  Bsp. 1, alternativer Ansatz, Pseudocode
+Bsp. 1, alternativer Ansatz, Pseudocode
 
     Schleifendurchlauf
         Ist Wert = 1:
@@ -138,7 +143,7 @@ Wieder klassische Lösung und alternative im Vergleich:
 
         Returnwert zurückgeben
 
-  Bsp. 2, alternativer Ansatz, Pseudocode
+Bsp. 2, alternativer Ansatz, Pseudocode
 
     Funktionsblock
         Verbindungsaufbau
@@ -158,7 +163,7 @@ Wieder klassische Lösung und alternative im Vergleich:
 
         Returnwert zurückgeben
 
-  XXX Bsp. 2, klassischer Ansatz, PHP Umsetzung:
+Bsp. 2, klassischer Ansatz, PHP Umsetzung:
 
 ~~~ php
 function dbQuery ($querystring) {
@@ -197,33 +202,35 @@ return $result;
 
 Bsp. 2, alternativer Ansatz, PHP Umsetzung:
 
-    function dbQuery ($querystring) 
-    {
-        // Verbindungsaufbau
-        $link = mysql_connect('example.com:3307', 'mysql_user', 'mysql_password');
- 
-        if (false === $link) {
-            // fehlgeschlagene Verbindung 
- 
-            echo 'Datenbankverbindung fehlgeschlagen';
-            return false;
-        }
- 
-        // Datenbankwahl
-        $db_selected = mysql_select_db("mydbname" , $link);
- 
-        if (false === $db_selected) {
-            // fehlgeschlagene Datenbankwahl
- 
-            echo 'Verbindung fehlgeschlagen';
-            mysql_close($link);
-            return false;
-        }
- 
-        // Queryanfrage
-        $result = mysql_query($querystring , $link);
-        return $result;
+~~~ php
+function dbQuery ($querystring) 
+{
+    // Verbindungsaufbau
+    $link = mysql_connect('example.com:3307', 'mysql_user', 'mysql_password');
+
+    if (false === $link) {
+    // fehlgeschlagene Verbindung 
+
+        echo 'Datenbankverbindung fehlgeschlagen';
+        return false;
     }
+
+    // Datenbankwahl
+    $db_selected = mysql_select_db("mydbname" , $link);
+
+    if (false === $db_selected) {
+        // fehlgeschlagene Datenbankwahl
+
+        echo 'Verbindung fehlgeschlagen';
+        mysql_close($link);
+        return false;
+    }
+ 
+    // Queryanfrage
+    $result = mysql_query($querystring , $link);
+    return $result;
+}
+~~~
 
 Wie bereits dieses kurze Beispiel zeigt ist der Code nicht nur wesentlich kompakter und weniger geschachtelt, auch die Reihenfolge der Ausführung ist weit verständlicher, weil die else Zweige nicht in umgekehrter Reihenfolge wie ihre positiven Bedingungen abgearbeitet werden.
 Eine kleine Falle, der beim obigen Pseudocode unterschlagen wurde, enthält die Alternativlösung: Die Freigabe der Verbindungsressource durch mysql_close($link); muß für zwei Fälle erfolgen: Für den positiven, aber auch den negativen Fall der Datenbankwahl. In der klassischen Umsetzung ist dies aufgrund der Schachtelung schon eingebaut.

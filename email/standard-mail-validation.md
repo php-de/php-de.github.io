@@ -27,15 +27,15 @@ inhalt:
         simple: "mit PHP Bordmitteln"
 
     -   name: "Ohne Punycode"
-        anchor: nopuny
+        anchor: ohne-punycode---lose-rahmenprfung-mittels-regulren-ausdrcken-regex
         simple: "Lose Rahmenprüfung durch reguläre Ausdrücke"
 
     -   name: "DNS Domain-Prüfung"
-        anchor: dnscheck
+        anchor: zusatz-option-dns-domain-prfung
         simple: "zusätzliche Existenz-Prüfung"
 
     -   name: "Weiterführende Quellen"
-        anchor: extsource
+        anchor: weiterfhrende-quellen
         simple: "RFCs: IDNA/Punycode und Email"
 ---
 

@@ -128,6 +128,7 @@ var_dump(isValidEmail($idn->encode('pelé@example.com')));  // true
 ### Konvertierung durch PHP-Boardmittel
 
 Wenn folgende Voraussetzungen erfüllt sind ...
+
 > PHP 5 >= 5.3.0, [PECL intl >= 1.0.2](http://pecl.php.net/package/intl), [PECL idn >= 0.1](http://pecl.php.net/package/idn) 
 
 ... dann steht die Funktion [idn_to_ascii()](http://php.net/manual/de/function.idn-to-ascii.php) zum Umwandeln von Punycode direkt zur Verfügung. Somit würde man sich die externe Klasse ersparen.

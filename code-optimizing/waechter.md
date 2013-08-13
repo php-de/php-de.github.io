@@ -333,6 +333,5 @@ while (false);
 
 ### Siehe auch
 
-http://c2.com/cgi/wiki?GuardClause  
-
-http://programming-php.net/de/clean-code/guard-clauses  
+[http://c2.com/cgi/wiki?GuardClause](http://c2.com/cgi/wiki?GuardClause)  
+[http://programming-php.net/de/clean-code/guard-clauses](http://programming-php.net/de/clean-code/guard-clauses)

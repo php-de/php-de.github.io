@@ -58,7 +58,7 @@ Respektiere folgende Regeln wenn du Beiträge hinzufügen oder bearbeiten möcht
 <div class="alert">
     <strong>Wichtig:</strong> Änderungen am JEKYLL sind diskutabel und sollten im Forum diskutiert werden.
 </div>
-Das JEKYLL-System benutzt [rDiscount](http://daringfireball.net/projects/markdown/syntax)-Markdown und erlaubt inline HTML, du kannst also auch Bootstrap-Komponenten wie das obige Warning mit in deinen Beitrag einbauen. Nutze bitte nur folgende Bootstrap-Elemente: Warnings, Wells, Media-Objects, Labels. Nutze HTML **nicht** dazu Demonstrationen deiner Quellcodes auszuliefern. Deine HTML-Elemente dürfen kein Javascript ausführen oder Ziel einer Javascript-Komponente der Seite werden.
+Das JEKYLL-System benutzt [kramdown](http://kramdown.rubyforge.org/quickref.html)-Syntax und erlaubt inline HTML, du kannst also auch Bootstrap-Komponenten wie das obige Warning mit in deinen Beitrag einbauen. Nutze bitte nur folgende Bootstrap-Elemente: Warnings, Wells, Media-Objects, Labels. Nutze HTML **nicht** dazu Demonstrationen deiner Quellcodes auszuliefern. Deine HTML-Elemente dürfen kein Javascript ausführen oder Ziel einer Javascript-Komponente der Seite werden.
 
 ##### YAML
 

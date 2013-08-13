@@ -99,7 +99,7 @@ foreach ($array as $key => $value) {
     // positiver Bedingungszweig
     if ($value == 1) {
         echo $key . ' ist 1<br>';
-    
+    }
     // negativer Bedingungszweig
     } else {
         echo $key . ' ist ungleich 1<br>';
@@ -186,13 +186,13 @@ function dbQuery($querystring)
         // erfolgreiche Verbindung 
 
         // Datenbankwahl
-        $db_selected = mysqli_select_db('db_name' , $link);
+        $db_selected = mysqli_select_db($link, 'db_name');
 
         if ($db_selected) {
             // erfolgreiche Datenbankwahl
 
             // Queryanfrage
-            $result = mysqli_query($querystring , $link);
+            $result = mysqli_query($link, $querystring);
 
         } else {
             // fehlgeschlagene Datenbankwahl
@@ -221,14 +221,14 @@ function dbQuery($querystring)
     $link = mysqli_connect('db_host', 'db_username', 'db_password');
 
     if (false === $link) {
-    // fehlgeschlagene Verbindung 
+        // fehlgeschlagene Verbindung 
 
         echo 'Datenbankverbindung fehlgeschlagen';
         return false;
     }
 
     // Datenbankwahl
-    $db_selected = mysqli_select_db('db_name' , $link);
+    $db_selected = mysqli_select_db($link, 'db_name');
 
     if (false === $db_selected) {
         // fehlgeschlagene Datenbankwahl
@@ -239,7 +239,7 @@ function dbQuery($querystring)
     }
  
     // Queryanfrage
-    $result = mysqli_query($querystring , $link);
+    $result = mysqli_query($link, $querystring);
     return $result;
 }
 ~~~
@@ -328,7 +328,7 @@ Ergänzung zu Bsp. 2, alternativer Ansatz ohne natives Blockelement, PHP Umsetzu
 ~~~ php
 do {
     // Verbindungsaufbau
-    $link = mysql_connect('example.com:3307', 'mysql_user', 'mysql_password');
+    $link = mysql_connect('localhost', 'db_user', 'db_password');
 
     if (false === $link) {
         // fehlgeschlagene Verbindung 

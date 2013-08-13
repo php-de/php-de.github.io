@@ -34,7 +34,7 @@ inhalt:
 entry-type: in-progress
 ---
 
-#### <a id="waechterorif"></a> Wächter vs. Schachtel-If
+### <a id="waechterorif"></a> Wächter vs. Schachtel-If
 
 In komplexem Code kommt es oft zu einer mehrfachen Verschachtelung von Kontrollstrukturen. Infolge dessen werden relevante Codeteile oft erst in Blöcken 2. oder 3. Ordnung aufgerufen. Nicht immer ist diese Problematik mit AND/OR Operatoren im Bedingungsausdruck zu lösen, ohne gleichzeitig das DRY-Prinzip (don't repeat yourself - Maxime, die besagt, keinen redundanten Code zu schreiben) zu verletzen. 
 
@@ -43,7 +43,7 @@ Eine Lösung können hier sogenannte **Wächter** bilden, die auf der Grundlage 
 **Information**  
 Vorzeitige Abbrüche sind unter Anhängern reiner Lehren wie der strukturierten Programmierung verpönt. Die Gratwanderung zwischem elegantem und verständlichem Code muß jeder selbst vollbringen. 
 
-##### Grundlagen
+#### Grundlagen
 Code funktioniert linear, wird also von oben nach unten, in einer Schleife auch mehrfach abgearbeitet. Jeder Code, der bedingt verarbeitet wird, wird in einem Block geklammert, der je nach Eintreffen der Bedingung durchlaufen wird oder nicht. In einer Schleife ist dies der gesamte zu wiederholende Block, der je nach Schleifenbedingung (Zählervergleich, Durchlaufen einer Menge oder dergl.) geloopt wird. Auch eine Funktion oder Methode ist ein solcher Anweisungsblock, der normalerweise als letztes ein Ergebnis oder einen boolschen Wert als Statusinformation zurückgibt. 
 
 Bedingungen haben im Bereich der Datenverarbeitung zwei Zustände. Sie werden deshalb so ausgeführt: 
@@ -226,29 +226,29 @@ Bsp. 2, alternativer Ansatz, PHP Umsetzung:
 Wie bereits dieses kurze Beispiel zeigt ist der Code nicht nur wesentlich kompakter und weniger geschachtelt, auch die Reihenfolge der Ausführung ist weit verständlicher, weil die else Zweige nicht in umgekehrter Reihenfolge wie ihre positiven Bedingungen abgearbeitet werden.
 Eine kleine Falle, der beim obigen Pseudocode unterschlagen wurde, enthält die Alternativlösung: Die Freigabe der Verbindungsressource durch mysql_close($link); muß für zwei Fälle erfolgen: Für den positiven, aber auch den negativen Fall der Datenbankwahl. In der klassischen Umsetzung ist dies aufgrund der Schachtelung schon eingebaut.
 
-#### <a id="moeglichkeiten"></a> Möglichkeiten
+### <a id="moeglichkeiten"></a> Möglichkeiten
 
-##### Schleifenabbrüche mit break;
+#### Schleifenabbrüche mit break;
 
 Prüfung einer Bedingung und Abarbeitung zugehöriger Operationen. Vorzeitiger Abbruch der Schleife, Unterbinden der Abarbeitung weiterer Schleifenelemente.
 
 * Fehlerkontrolle und -abbruch
 * Spezialisierter Suchalgorithmus mit Abbruch beim ersten Fund
 
-##### Schleifenabbrüche mit continue;
+#### Schleifenabbrüche mit continue;
 
 Prüfung einer Bedingung und Abarbeitung zugehöriger Operationen. Unterbinden weiterer Prüfungen und Operationen auf das laufende Schleifenelement.
 
 * Komplexe Verarbeitung von Elementen einer Menge.
 * Vereinfachung der Codestruktur.
 
-##### Funktionsabbrüche mit return;
+#### Funktionsabbrüche mit return;
 
 Synonym für Schleifenabbrüche mit break; im Bereich von Funktions und -methodenblöcken. Zusätzlich Rückgabe eines Wertes an den aufrufenden Kontext.
 
-#### <a id="spezial"></a> Spezialfälle
+### <a id="spezial"></a> Spezialfälle
 
-##### Verlassen tieferer Strukturen
+#### Verlassen tieferer Strukturen
 
 Sowohl continue als auch break (nicht aber return) bieten die Möglichkeit, auch mehrfach verschachtelte Strukturen (Schleifen) vorzeitig zu beenden bzw. das nächste Element der äußeren Schleife auszuführen. Als Beispiel soll hier eine bewußt dumme Suchfunktion dienen:
 Eine Funktion durchläuft eine Menge von Wörtern und untersucht diese, ob sie vollständig aus Buchstaben einer Codemenge bestehen. Der bedingte Abbruch prüft hier, ob ein Buchstabe existiert, der nicht dieser Menge entspricht und bricht dann mit diesem hinreichenden Kriterium die Prüfung für das aktuelle Wort-Element ab. Die verbleibenden Buchstaben werden also übersprungen.
@@ -276,7 +276,7 @@ Bsp. 3, alternativer Ansatz, PHP Umsetzung:
 
 Anmerkung: Verwendete man statt des continue 2; hier ein break 2; Statement, ergäbe sich eine andere Funktionalität: Statt jedes einzelne Wort hinsichtlich der gültigen Buchstabenmenge zu validieren, würde dann die Wortmenge geprüft, ob sie ausschließlich aus gültigen Buchstaben besteht.
 
-##### Bedingter Abbruch mit künstlichem Blockelement
+#### Bedingter Abbruch mit künstlichem Blockelement
 
 Es kann Codebeispiele geben, in denen kein Blockelement existiert, eine Wächterlösung aber trotzdem sinnvoll ist. Hier kann sich mit einem künstlichen Blockelement beholfen werden.
 Für Anwendungen wie dem Datenbankbeispiel kann eine mit FALSE initialisierte do-while Schleife benutzt werden. Das Besondere an diesem Schleifentyp ist, dass sie unabhängig von ihren Bedingungen mindestens einmal durchlaufen wird. Das FALSE als Bedingung garantiert die Beschränkung auf einen Durchlauf.
@@ -306,7 +306,7 @@ Ergänzung zu Bsp. 2, alternativer Ansatz ohne natives Blockelement, PHP Umsetzu
     while (false);
    
 
-#### <a id="sieheauch"></a> Siehe auch
+### <a id="sieheauch"></a> Siehe auch
 
 [http://c2.com/cgi/wiki?GuardClause](http://c2.com/cgi/wiki?GuardClause)  
 [http://programming-php.net/de/clean-code/guard-clauses/](http://programming-php.net/de/clean-code/guard-clauses/)  

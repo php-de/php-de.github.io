@@ -65,13 +65,16 @@ Das JEKYLL-System benutzt [rDiscount](http://daringfireball.net/projects/markdow
 ##### YAML
 
 Jedes Dokument fängt mit einem YAML-Kopf an und muss zumindest den Eintrag `layout: guide` besitzen. Damit wird JEKYLL angewiesen das entsprechende Layout für Beiträge zu benutzen.
+
 ~~~
 ---
 layout: guide
 ---
 ~~~
 {: .language-yaml}
+
 Zusätzlich ist es notwendig einen Titel anzugeben, dafür wurde das Feld `title` geschaffen.
+
 ~~~
 ---
 layout: guide
@@ -79,7 +82,9 @@ title: "Hallo Welt Tutorial"
 ---
 ~~~
 {: .language-yaml}
+
 Damit JEKYLL feststellen kann wer das Tutorial eigentlich ursprünglich verfasst hat, muss jeder Beitrag 2 weitere Felder ausliefern: `authors` und `creator`. Das authors-Feld ist ein YAML-Array aus YAML-Arrays und ist wie folgt aufgebaut:
+
 ~~~
 ---
 layout: guide
@@ -94,7 +99,9 @@ authors:
 ---
 ~~~
 {: .language-yaml}
+
 Das Feld `name` ist notwendig, das Feld `profile` ist optional. Wenn einer der Felder `name` und das Feld `creator` übereinstimmen wird der jeweilige Autor als ursprünglicher Ersteller des Beitrags markiert. Zusätzlich zu diesen Feldern gibt es noch ein optionales `entry-type` Feld zur Steuerung der Beitrags-Typen-Mechanik. Als `entry-type` einstellbar sind: `default` ( Standardfall ), `in-progress` ( in Bearbeitung ), `deprecated` ( Veraltet ), `marked-to-delete` ( markiert zur Löschung ) und `in-discussion` ( in Diskussion ).
+
 ~~~
 ---
 layout: guide
@@ -114,10 +121,18 @@ entry-type: in-progress
 ---
 ~~~
 {: .language-yaml}
+
 Es wird kein Automatischer Index von deinem Beitrag erstellt, diesen musst du selbstständig im Feld `inhalt` festlegen. Dieses Feld ist ebenfalls ein YAML-Array das YAML-Arrays enthält. Dir stehen die Felder `name` ( Title des Links ), `anchor` ( Anker im Beitrag ) und `simple` ( zusätzlicher kurzer Hinweis ) zur Verfügung, alle 3 sind notwendig wenn du einen Eintrag anlegst. Der Inhalt wird in der Desktop-Version rechts neben dem Beitrag angezeigt, in der mobilen Version oberhalb des Beitrags.
 
 <div class="alert alert-danger"><strong>Fehler-Quelle:</strong> Alle Einträge im YAML-Array die <code>:</code> enthalten sollten außerdem in Double-Quotes <code>"</code> gesetzt werden.</div>
-~~~
+
+~~~ php
+<?php
+
+foreach( $foo as $bar ) {
+    
+}
+
 ---
 layout: guide
 title: "Hallo Welt Tutorial"
@@ -140,7 +155,6 @@ inhalt:
         simple: "foo is my best friend"
 ---
 ~~~
-{: .language-yaml}
 
 #### Komponenten Vernetzung
 <a id="component-networking"></a>

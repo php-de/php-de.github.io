@@ -34,7 +34,7 @@ inhalt:
 entry-type: in-progress
 ---
 
-### <a id="waechterorif"></a> Wächter vs. Schachtel-If
+### Wächter vs. Schachtel-If
 
 In komplexem Code kommt es oft zu einer mehrfachen Verschachtelung von Kontrollstrukturen. Infolge dessen werden relevante Codeteile oft erst in Blöcken 2. oder 3. Ordnung aufgerufen. Nicht immer ist diese Problematik mit AND/OR Operatoren im Bedingungsausdruck zu lösen, ohne gleichzeitig das DRY-Prinzip (don't repeat yourself - Maxime, die besagt, keinen redundanten Code zu schreiben) zu verletzen. 
 
@@ -235,7 +235,7 @@ function dbQuery ($querystring)
 Wie bereits dieses kurze Beispiel zeigt ist der Code nicht nur wesentlich kompakter und weniger geschachtelt, auch die Reihenfolge der Ausführung ist weit verständlicher, weil die else Zweige nicht in umgekehrter Reihenfolge wie ihre positiven Bedingungen abgearbeitet werden.
 Eine kleine Falle, der beim obigen Pseudocode unterschlagen wurde, enthält die Alternativlösung: Die Freigabe der Verbindungsressource durch mysql_close($link); muß für zwei Fälle erfolgen: Für den positiven, aber auch den negativen Fall der Datenbankwahl. In der klassischen Umsetzung ist dies aufgrund der Schachtelung schon eingebaut.
 
-### <a id="moeglichkeiten"></a> Möglichkeiten
+### Möglichkeiten
 
 #### Schleifenabbrüche mit break;
 
@@ -255,7 +255,7 @@ Prüfung einer Bedingung und Abarbeitung zugehöriger Operationen. Unterbinden w
 
 Synonym für Schleifenabbrüche mit break; im Bereich von Funktions und -methodenblöcken. Zusätzlich Rückgabe eines Wertes an den aufrufenden Kontext.
 
-### <a id="spezial"></a> Spezialfälle
+### Spezialfälle
 
 #### Verlassen tieferer Strukturen
 
@@ -315,7 +315,7 @@ Ergänzung zu Bsp. 2, alternativer Ansatz ohne natives Blockelement, PHP Umsetzu
     while (false);
    
 
-### <a id="sieheauch"></a> Siehe auch
+### Siehe auch
 
 [http://c2.com/cgi/wiki?GuardClause](http://c2.com/cgi/wiki?GuardClause)  
 [http://programming-php.net/de/clean-code/guard-clauses/](http://programming-php.net/de/clean-code/guard-clauses/)  

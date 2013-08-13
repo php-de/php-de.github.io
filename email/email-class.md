@@ -39,7 +39,7 @@ per PDF als Anhang geschickt. Den PDF-Reader findest Du ja bei Adobe.
 Mit freundlichen Grüßen,
 in großer Erwatung
 
-!(images/smiley_xmas_27x25.jpg) 
+![testt](images/smiley_xmas_27x25.gif) 
 Dein Kalle 
 ~~~
 

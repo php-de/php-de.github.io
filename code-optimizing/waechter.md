@@ -33,7 +33,6 @@ inhalt:
         anchor: siehe-auch
         simple: "Link-Verweise"
 
-entry-type: in-progress
 ---
 
 ### Wächter vs. Schachtel-If

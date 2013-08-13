@@ -13,21 +13,23 @@ creator: nikosch
 
 inhalt:
     -   name: "Leere Strings"
-        anchor: emptystring
+        anchor: leere-strings
+        simple: ""
         
     -   name: "Unnötiges Variablen-Parsing in Doppelquotes"
-        anchor: varpars
+        anchor: unntiges-variablen-parsing-in-doppelquotes
+        simple: ""
 
     -   name: "SELECT *"
-        anchor: selectall
+        anchor: select-
         simple: ""
 
     -   name: "LIMIT vs. PHP-Counting"
-        anchor: counting
+        anchor: limit-vs-php-counting
         simple: ""
 
     -   name: "LIMIT und Schleife"
-        anchor: limit
+        anchor: limit-und-schleife
         simple: ""
 ---
 

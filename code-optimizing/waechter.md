@@ -13,22 +13,24 @@ creator: nikosch
 
 inhalt:
     -   name: "Wächter vs. Schachtel-If"
-        anchor: waechterorif
-        simple: "Grundlagen"
+        anchor: 
+        simple: "Grundlagen<br>
+                Beispiel 1<br>
+                Beispiel2"
 
     -   name: "Möglichkeiten"
-        anchor: moeglichkeiten
+        anchor: 
         simple: "Schleifenabbrüche mit break;<br>
 		Schleifenabbrüche mit continue;<br>
         	Funktionsabbrüche mit return;"
 
     -   name:  "Spezialfälle"
-        anchor: spezial
+        anchor: 
         simple: "Verlassen tieferer Strukturen
         	Bedingter Abbruch mit künstlichem Blockelement"
 
     -   name: "Siehe auch"
-        anchor: sieheauch
+        anchor: 
         simple: "Link-Verweise"
 
 entry-type: in-progress
@@ -40,8 +42,7 @@ In komplexem Code kommt es oft zu einer mehrfachen Verschachtelung von Kontrolls
 
 Eine Lösung können hier sogenannte **Wächter** bilden, die auf der Grundlage von frühzeitigen Schleifen- bzw. Strukturabbrüchen basieren. 
 
-**Information**  
-Vorzeitige Abbrüche sind unter Anhängern reiner Lehren wie der strukturierten Programmierung verpönt. Die Gratwanderung zwischem elegantem und verständlichem Code muß jeder selbst vollbringen. 
+<div class="alert alert-info"><strong>Information:</strong> Vorzeitige Abbrüche sind unter Anhängern reiner Lehren wie der strukturierten Programmierung verpönt. Die Gratwanderung zwischem elegantem und verständlichem Code muß jeder selbst vollbringen. </div>
 
 #### Grundlagen
 Code funktioniert linear, wird also von oben nach unten, in einer Schleife auch mehrfach abgearbeitet. Jeder Code, der bedingt verarbeitet wird, wird in einem Block geklammert, der je nach Eintreffen der Bedingung durchlaufen wird oder nicht. In einer Schleife ist dies der gesamte zu wiederholende Block, der je nach Schleifenbedingung (Zählervergleich, Durchlaufen einer Menge oder dergl.) geloopt wird. Auch eine Funktion oder Methode ist ein solcher Anweisungsblock, der normalerweise als letztes ein Ergebnis oder einen boolschen Wert als Statusinformation zurückgibt. 
@@ -64,7 +65,7 @@ Wenn Bedingung 1:
 Führe Block 2 aus
 ~~~
 
-**Beispiel 1**
+#### Beispiel 1
 
 Im Vergleich: Ein Wertebereich soll durchlaufen werden und für alle enthaltenen Datensätze angeben, on sie 1 sind oder nicht.  
 
@@ -82,86 +83,96 @@ Schleifendurchlauf
 
 Bsp. 1, alternativer Ansatz, Pseudocode
 
-    Schleifendurchlauf
-        Ist Wert = 1:
-            Schreibe "key ist 1"
-            nächstes Schleifenelement
-        Schreibe "key ist ungleich 1"
-
+~~~
+Schleifendurchlauf
+    Ist Wert = 1:
+        Schreibe "key ist 1"
+        nächstes Schleifenelement
+    Schreibe "key ist ungleich 1"
+~~~
 
   Bsp. 1, klassischer Ansatz, PHP Umsetzung
 
-    foreach ($array as $key => $value) {
+~~~ php    
+foreach ($array as $key => $value) {
 
-        // positiver Bedingungszweig
-        if ($value == 1) {
-            echo $key . ' ist 1<br>';
-        }
-        // negativer Bedingungszweig
-        else {
-            echo $key . ' ist ungleich 1<br>';
-        }
+    // positiver Bedingungszweig
+    if ($value == 1) {
+        echo $key . ' ist 1<br>';
+    
+    // negativer Bedingungszweig
+    } else {
+    
+        echo $key . ' ist ungleich 1<br>';
     }
+~~~
 
 Bsp. 1, alternativer Ansatz, PHP Umsetzung
 
-    foreach ($array as $key => $value) {
+~~~ php
+foreach ($array as $key => $value) {
 
-        // positiver Bedingungszweig
-        if ($value == 1) {
-            echo $key . ' ist 1<br>';
-            continue;
-        }
-        // negativer Bedingungszweig
-        echo $key . ' ist ungleich 1<br>';
+    // positiver Bedingungszweig
+    if ($value == 1) {
+        echo $key . ' ist 1<br>';
+        continue;
     }
+    // negativer Bedingungszweig
+    echo $key . ' ist ungleich 1<br>';
+}
+~~~
 
-**Beispiel 2**
+#### Beispiel 2
 
 Besonders in Funktionen ist das Prinzip des vorzeitigen Abbruchs sehr verständlich und am weitesten verbreitet. Im Beispiel soll eine Query an eine Datenbank abgesetzt werden. Die Funktion erzeugt dabei eine Datenbankverbindung, wählt die Datenbank aus und führt die Query aus. Alle drei Operationen können zu Fehlern führen, die die Funktion berücksichtigen soll.
 Wieder klassische Lösung und alternative im Vergleich:
 
-  Bsp. 2, klassischer Ansatz, Pseudocode
 
-    Funktionsblock
-        Verbindungsaufbau
+Bsp. 2, klassischer Ansatz, Pseudocode
 
-        Verbindung erfolgreich:
-            Datenbankwahl
+~~~
+Funktionsblock
+    Verbindungsaufbau
 
-            Datenbankwahl erfolgreich:
-                Queryanfrage
-                Returnwert zuweisen
+    Verbindung erfolgreich:
+        Datenbankwahl
 
-            Sonst (Datenbankwahl nicht erfolgreich):
-                Schreibe "Datenbankverbindung fehlgeschlagen"
-                Returnwert zuweisen
-
-        Sonst (Verbindung nicht erfolgreich):
-            Schreibe "Verbindung fehlgeschlagen"
+        Datenbankwahl erfolgreich:
+            Queryanfrage
             Returnwert zuweisen
 
-        Returnwert zurückgeben
+        Sonst (Datenbankwahl nicht erfolgreich):
+            Schreibe "Datenbankverbindung fehlgeschlagen"
+            Returnwert zuweisen
+
+    Sonst (Verbindung nicht erfolgreich):
+        Schreibe "Verbindung fehlgeschlagen"
+        Returnwert zuweisen
+
+    Returnwert zurückgeben
+~~~
 
 Bsp. 2, alternativer Ansatz, Pseudocode
 
-    Funktionsblock
-        Verbindungsaufbau
+~~~
+Funktionsblock
+    Verbindungsaufbau
 
-        Verbindung nicht erfolgreich:
-            Schreibe "Verbindung fehlgeschlagen"
-            Funktionsabbruch
+    Verbindung nicht erfolgreich:
+        Schreibe "Verbindung fehlgeschlagen"
+        Funktionsabbruch
 
-        Datenbankwahl
+    Datenbankwahl
 
-        Datenbankwahl nicht erfolgreich:
-            Schreibe "Datenbankverbindung fehlgeschlagen"
-            Funktionsabbruch
+    Datenbankwahl nicht erfolgreich:
+        Schreibe "Datenbankverbindung fehlgeschlagen"
+        Funktionsabbruch
 
-        Queryanfrage
-        Returnwert zuweisen
+    Queryanfrage
+    Returnwert zuweisen
 
-        Returnwert zurückgeben
+    Returnwert zurückgeben
+~~~
 
 Bsp. 2, klassischer Ansatz, PHP Umsetzung:
 
@@ -173,16 +184,16 @@ $link = mysql_connect('example.com:3307', 'mysql_user', 'mysql_password');
 if ($link) {
     // erfolgreiche Verbindung 
 
-// Datenbankwahl
+    // Datenbankwahl
     $db_selected = mysql_select_db("mydbname" , $link);
 
-if ($db_selected) {
+    if ($db_selected) {
         // erfolgreiche Datenbankwahl
 
-    // Queryanfrage
+        // Queryanfrage
         $result = mysql_query($querystring , $link);
 
-} else {
+    } else {
         // fehlgeschlagene Datenbankwahl
 
         echo 'Datenbankverbindung fehlgeschlagen';
@@ -264,24 +275,26 @@ Eine Funktion durchläuft eine Menge von Wörtern und untersucht diese, ob sie v
 
 Bsp. 3, alternativer Ansatz, PHP Umsetzung:
 
-    $buchstaben = array ('a' , 'b' , 'c'); 
-    $worte = array ('abbabab' , 'babajaga' , 'acab'); 
- 
-    foreach ($worte as $wort) {
-        echo '<br>Prüfe ' . $wort . ': '; 
- 
-        for ($i = 0 ; $i < strlen($wort) ; $i++) {
-            // Anzeige aktueller Buchstabe
-            echo $wort[$i];
- 
-            // Prüfung aktueller Buchstabe
-            if (false === in_array($wort[$i] , $buchstaben)) {
-                // ungültiges Wort - Abbruch, nächstes Wort
-                echo ' failed';
-                continue 2;
-            }
+~~~ php
+$buchstaben = array ('a' , 'b' , 'c'); 
+$worte = array ('abbabab' , 'babajaga' , 'acab'); 
+
+foreach ($worte as $wort) {
+    echo '<br>Prüfe ' . $wort . ': '; 
+
+    for ($i = 0 ; $i < strlen($wort) ; $i++) {
+        // Anzeige aktueller Buchstabe
+        echo $wort[$i];
+
+        // Prüfung aktueller Buchstabe
+        if (false === in_array($wort[$i] , $buchstaben)) {
+            // ungültiges Wort - Abbruch, nächstes Wort
+            echo ' failed';
+            continue 2;
         }
     }
+}
+~~~
 
 Anmerkung: Verwendete man statt des continue 2; hier ein break 2; Statement, ergäbe sich eine andere Funktionalität: Statt jedes einzelne Wort hinsichtlich der gültigen Buchstabenmenge zu validieren, würde dann die Wortmenge geprüft, ob sie ausschließlich aus gültigen Buchstaben besteht.
 
@@ -290,32 +303,36 @@ Anmerkung: Verwendete man statt des continue 2; hier ein break 2; Statement, erg
 Es kann Codebeispiele geben, in denen kein Blockelement existiert, eine Wächterlösung aber trotzdem sinnvoll ist. Hier kann sich mit einem künstlichen Blockelement beholfen werden.
 Für Anwendungen wie dem Datenbankbeispiel kann eine mit FALSE initialisierte do-while Schleife benutzt werden. Das Besondere an diesem Schleifentyp ist, dass sie unabhängig von ihren Bedingungen mindestens einmal durchlaufen wird. Das FALSE als Bedingung garantiert die Beschränkung auf einen Durchlauf.
 
-    do {
-        // Bedingungsblock
-    }
-	while (false);
+~~~ php
+do {
+    // Bedingungsblock
+}
+while (false);
+~~~
 
 führt also alle Anweisungen (hier durch // Bedingungsblock repräsentiert) genau einmal aus. Der Vorteil, der sich gegenüber einer Ausführung ohne Blockelement ergibt, ist, dass die Schleife nun jederzeit mit einem break; vorzeitig verlassen werden. 
 Bezugnehmend auf das obige Beispiel könnte also bspw. ein Fehler bei der Datenbankverbindung so abgefangen werden:  
 
 Ergänzung zu Bsp. 2, alternativer Ansatz ohne natives Blockelement, PHP Umsetzung:
 
-    do {
-        // Verbindungsaufbau
-        $link = mysql_connect('example.com:3307', 'mysql_user', 'mysql_password');
- 
-        if (false === $link) {
-            // fehlgeschlagene Verbindung 
- 
-            echo 'Datenbankverbindung fehlgeschlagen';
-            break;
-        }
-        // ... weitere Datenbank-Operationen
+~~~ php
+do {
+    // Verbindungsaufbau
+    $link = mysql_connect('example.com:3307', 'mysql_user', 'mysql_password');
+
+    if (false === $link) {
+        // fehlgeschlagene Verbindung 
+
+        echo 'Datenbankverbindung fehlgeschlagen';
+        break;
     }
-    while (false);
-   
+    // ... weitere Datenbank-Operationen
+}
+while (false);
+~~~   
 
 ### Siehe auch
 
-[http://c2.com/cgi/wiki?GuardClause](http://c2.com/cgi/wiki?GuardClause)  
-[http://programming-php.net/de/clean-code/guard-clauses/](http://programming-php.net/de/clean-code/guard-clauses/)  
+http://c2.com/cgi/wiki?GuardClause  
+
+http://programming-php.net/de/clean-code/guard-clauses  

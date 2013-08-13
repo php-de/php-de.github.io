@@ -38,23 +38,26 @@ inhalt:
         anchor: extsource
         simple: "RFCs: IDNA/Punycode und Email"
 ---
+
 Dieses Tutorial zeigt grundsätzliche (übliche) Möglichkeiten, eine E-Mail-Adresse *(wie sie für den Transport per SMTP im Internet verwendet wird, besteht aus zwei Teilen, die durch ein @-Zeichen voneinander getrennt sind)*
  zu validieren. 
 
 Vorweg sei an dieser Stelle erwähnt das eine Prüfung auf tatsächliche Existenz einer E-Mail-Adresse auf diesem Weg nicht möglich ist. Die nachfolgende Ansätze dienen lediglich zur Feststellung ob die grundlegenden formellen Rahmenbedingungen erfüllt wurden bzw. einer positiven [DNS](http://de.wikipedia.org/wiki/Domain_Name_System)-Antwort im Falle einer [Domain](http://de.wikipedia.org/wiki/Domain)-[DNS](http://de.wikipedia.org/wiki/Domain_Name_System)-Prüfung. Weiters erhebt dieses Tutorial nicht den Anspruch, [sämtlichen RFC zu dem Thema](#rfc) zu genügen (wenn sich schon die meisten großen Provider und Mail-Anbieter nicht daran halten ...).
 
-### 1. <a id="filtervar"></a> filter_var()
+### filter_var()
 
 PHP stellt ab Version 5.2 die Funktion [filter_var()](http://php.net/manual/de/function.filter-var.php) zur Verfügung. Mit dem optionalen Parameter FILTER_VALIDATE_EMAIL kann diese grundsätzlich zur E-Mail-Validierung verwendet werden. Jedoch ist es damit nicht möglich internationalisierte E-Mail-Adressen zu prüfen - solche werden immer als falsch ausgewertet. Lösungsansätze folgen [weiter unten](#intdomain).
 
-    function isValidEmail($mail)
-    { 
-        return (bool) filter_var($mail, FILTER_VALIDATE_EMAIL);
-    } 
+~~~ php
+function isValidEmail($mail)
+{ 
+    return (bool) filter_var($mail, FILTER_VALIDATE_EMAIL);
+} 
 
-    var_dump(isValidEmail("test@example.com"));  // true
-    var_dump(isValidEmail("pelé@example.com"));  // false
-    var_dump(isValidEmail("mail@übung.de"));     // false
+var_dump(isValidEmail("test@example.com"));  // true
+var_dump(isValidEmail("pelé@example.com"));  // false
+var_dump(isValidEmail("mail@übung.de"));     // false
+~~~
 
 **Hinweis**
 
@@ -62,22 +65,24 @@ Sollte filter_var() nicht verfügbar sein, dann den Provider kontaktieren (oder 
 
 > We get a more practical implementation of RFC 2822 if we omit the syntax using double quotes and square brackets. It will still match 99.99% of all email addresses in actual use today. 
 
-    function isValidEmail($mail)
-    { 
-        $pattern = '#[a-z0-9!\\#$%&\'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!\#$%&\'*+/=?^_`{|}~-]+)*'
-                 . '@'
-                 . '(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?#i';
-        return (bool) preg_match($pattern, $mail);
-    } 
+~~~ php
+function isValidEmail($mail)
+{ 
+    $pattern = '#[a-z0-9!\\#$%&\'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!\#$%&\'*+/=?^_`{|}~-]+)*'
+             . '@'
+             . '(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?#i';
+    return (bool) preg_match($pattern, $mail);
+} 
 
-    var_dump(isValidEmail("test@example.com"));  // true
-    var_dump(isValidEmail("pelé@example.com"));  // false
-    var_dump(isValidEmail("mail@übung.de"));     // false 
+var_dump(isValidEmail("test@example.com"));  // true
+var_dump(isValidEmail("pelé@example.com"));  // false
+var_dump(isValidEmail("mail@übung.de"));     // false 
+~~~
 
 Dies kann alternativ statt filter_var() verwendet werden. Ebenso wie [oben bei filter_var()](#filtervar) schlägt die Prüfung von internationalisierten Domains damit fehl (was hier bereits am Pattern offensichtlich erkennbar ist).
    
   
-### 2. <a id="intdomain"></a> Exkurs: Internationalisierte Domainnamen (IDN)
+### Exkurs: Internationalisierte Domainnamen (IDN)
 
 [Dazu aus Wikipedia:](http://de.wikipedia.org/wiki/Internationalisierter_Domainname)
 > Als internationalisierte Domainnamen (englisch internationalized domain name; IDN), umgangssprachlich auch Umlautdomain oder Sonderzeichendomain, werden Domainnamen bezeichnet, die Umlaute, diakritische Zeichen oder Buchstaben aus anderen Alphabeten als dem lateinischen Alphabet enthalten. Solche Zeichen waren ursprünglich im Domain Name System nicht vorgesehen und wurden nachträglich durch den Internetstandard Internationalizing Domain Names in Applications (IDNA) ermöglicht.
@@ -94,32 +99,33 @@ Dies kann alternativ statt filter_var() verwendet werden. Ebenso wie [oben bei f
 
 Um auch internationalisierte Domains auf grundsätzliche formelle Korrektheit zu prüfen ist die Konvertierung in [Punycode](http://de.wikipedia.org/wiki/Punycode) vor der eigentlichen Prüfung nötig. Nachfolgend dazu die grundsätzlichen Möglichkeiten:
 
-### 3. <a id="punyclass"></a> Konvertierung durch eine externe Punycode-Klasse
+### Konvertierung durch eine externe Punycode-Klasse
 
 Für die Punycodeumwandlung gibt es einige PHP-Klassen im Web, dazu am besten mal [Tante G.](https://www.google.at/search?q=php+punycode+OR+idna+converter) fragen.
 
 Durch diese Klasse wir die E-Mail-Adresse vorweg in Punycode konvertiert und anschliessend [wie gehabt mittels filter_var()](#filtervar) geprüft. Nachfolgend Beispiel mit der PHP-Klasse [idna_convert von Matthias Sommerfeld](http://phlymail.com/de/downloads/idna-convert.html) - dort gibts es überdies auch einen online [Punycode-Konverter](http://idnaconv.phlymail.de/?lang=de).
 
-    function isValidEmail($mail)
-    { 
-        return (bool) filter_var($mail, FILTER_VALIDATE_EMAIL);
-    } 
+~~~ php
+function isValidEmail($mail)
+{ 
+    return (bool) filter_var($mail, FILTER_VALIDATE_EMAIL);
+} 
 
-    // Prüfungen ohne/vor Punycode-Konvertierung
-    var_dump(isValidEmail('mail@example.com'));  // true
-    var_dump(isValidEmail('mail@übung.de'));     // false
-    var_dump(isValidEmail('pelé@example.com'));  // false
+// Prüfungen ohne/vor Punycode-Konvertierung
+var_dump(isValidEmail('mail@example.com'));  // true
+var_dump(isValidEmail('mail@übung.de'));     // false
+var_dump(isValidEmail('pelé@example.com'));  // false
 
-    require_once('idna_convert.class.php');
-    $idn = new idna_convert();
+require_once('idna_convert.class.php');
+$idn = new idna_convert();
 
-    // Prüfungen nach/mit Punycode-Konvertierung
-    var_dump(isValidEmail($idn->encode('mail@example.com')));  // true
-    var_dump(isValidEmail($idn->encode('mail@übung.de')));     // true
-    var_dump(isValidEmail($idn->encode('pelé@example.com')));  // true
+// Prüfungen nach/mit Punycode-Konvertierung
+var_dump(isValidEmail($idn->encode('mail@example.com')));  // true
+var_dump(isValidEmail($idn->encode('mail@übung.de')));     // true
+var_dump(isValidEmail($idn->encode('pelé@example.com')));  // true
+~~~
 
-
-### 4. <a id="phpconv"></a> Konvertierung durch PHP-Boardmittel
+### Konvertierung durch PHP-Boardmittel
 
 Wenn folgende Voraussetzungen erfüllt sind ...
 > PHP 5 >= 5.3.0, [PECL intl >= 1.0.2](http://pecl.php.net/package/intl), [PECL idn >= 0.1](http://pecl.php.net/package/idn) 
@@ -127,66 +133,72 @@ Wenn folgende Voraussetzungen erfüllt sind ...
 ... dann steht die Funktion [idn_to_ascii()](http://php.net/manual/de/function.idn-to-ascii.php) zum Umwandeln von Punycode direkt zur Verfügung. Somit würde man sich die externe Klasse ersparen.
 Mittels nachfolgendem Aufruf läßt sich rasch feststellen, ob diese Funktion zur Verfügung steht.
 
-    var_dump(function_exists('idn_to_ascii'));  // true oder false
+~~~ php
+var_dump(function_exists('idn_to_ascii'));  // true oder false
+~~~
 
 Die konvertierte E-Mail-Adresse wird dann von filter_var() zur weiteren Validierung übergeben:
 
-    function isValidEmail($mail)
-    {
-        return (bool) filter_var(idn_to_ascii($mail), FILTER_VALIDATE_EMAIL);
-    }
+~~~ php
+function isValidEmail($mail)
+{
+    return (bool) filter_var(idn_to_ascii($mail), FILTER_VALIDATE_EMAIL);
+}
 
-    var_dump(isValidEmail("mail@uebung.de"));  // true
-    var_dump(isValidEmail("mail@übung.de"));   // true 
+var_dump(isValidEmail("mail@uebung.de"));  // true
+var_dump(isValidEmail("mail@übung.de"));   // true 
+~~~
 
-### 5. <a id="nopuny"></a> Ohne Punycode - Lose Rahmenprüfung mittels Regulären Ausdrücken (Regex)
+### Ohne Punycode - Lose Rahmenprüfung mittels Regulären Ausdrücken (Regex)
  
 Diese Variante kommt ohne Punycode_Konvertierung aus. Dann hierbei spielen die verwendeten Zeichen kaum eine Rolle, es wird nur der grobe Rahmen geprüft, und ob keine Whitespaces  (Leerzeichen, Tabstopps, etc..) vorhanden sind.
 
-    function isValidEmail($mail)
-    { 
-        // Gesamtlänge check
-        // http://de.wikipedia.org/wiki/E-Mail-Adresse#L.C3.A4nge_der_E-Mail-Adresse  
-        if (strlen($mail) > 256) {
-            return false; 
-        }
-        $pattern = '#^'
-                 . '\S+'
-                 . '@'
-                 . '(?:[^\s.](?:[^\s.]*[^\s.])?\\.)+[^\s.](?:[^\s.]*[^\s.])?'
-                 . '$#i';
-        return (bool) preg_match($pattern, $mail); 
-    }  
-    
-    var_dump(isValidEmail("test@.....com"));                              // false 
-    var_dump(isValidEmail("test@sub.mail.dot.anything.example.com"));     // true 
-    var_dump(isValidEmail("test@übärdrübär.com"));                        // true  
-    var_dump(isValidEmail("test@sub.mail.dot.anything.übärdrübär.com"));  // true 
- 
+~~~ php    
+function isValidEmail($mail)
+{ 
+    // Gesamtlänge check
+    // http://de.wikipedia.org/wiki/E-Mail-Adresse#L.C3.A4nge_der_E-Mail-Adresse  
+    if (strlen($mail) > 256) {
+        return false; 
+    }
+    $pattern = '#^'
+             . '\S+'
+             . '@'
+             . '(?:[^\s.](?:[^\s.]*[^\s.])?\\.)+[^\s.](?:[^\s.]*[^\s.])?'
+             . '$#i';
+    return (bool) preg_match($pattern, $mail); 
+}  
 
-### 6. <a id="dnscheck"></a> Zusatz-Option: DNS-Domain-Prüfung
+var_dump(isValidEmail("test@.....com"));                              // false 
+var_dump(isValidEmail("test@sub.mail.dot.anything.example.com"));     // true 
+var_dump(isValidEmail("test@übärdrübär.com"));                        // true  
+var_dump(isValidEmail("test@sub.mail.dot.anything.übärdrübär.com"));  // true 
+~~~ 
+
+### Zusatz-Option: DNS-Domain-Prüfung
 
 Generell kann in jeder oben angeführten Varianten noch, wenn gewüscht, die Antwort des [DNS](http://de.wikipedia.org/wiki/Domain_Name_System) zur Domain (auf vorhandenen ["MX" oder "A"-Record](http://de.wikipedia.org/wiki/Domain_Name_System#Aufbau_der_DNS-Datenbank)) berücksichtigt werden. Die an das DNS übergebene Domain der E-Mail-Adresse muss für die Verwendung von internationalisierten Domains (wie bei filter_var()) ebenfalls schon in Punycode konvertiert sein.
 
-    function checkEMailDomainDNS($mail)
-    {
-        $parts = explode('@', $mail);
-        return (checkdnsrr($parts[1], "MX") or checkdnsrr($parts[1], "A"));
-    }
+~~~ php
+function checkEMailDomainDNS($mail)
+{
+    $parts = explode('@', $mail);
+    return (checkdnsrr($parts[1], "MX") or checkdnsrr($parts[1], "A"));
+}
 
-    // ohne Punycodeumwandlung - funktioniert nicht!
-    var_dump(checkEMailDomainDNS('mail@übung.de'));  // false
+// ohne Punycodeumwandlung - funktioniert nicht!
+var_dump(checkEMailDomainDNS('mail@übung.de'));  // false
 
-    require_once('idna_convert.class.php');
-    $idn = new idna_convert();
+require_once('idna_convert.class.php');
+$idn = new idna_convert();
 
-    // mit Punycodeumwandlung
-    var_dump(checkEMailDomainDNS($idn->encode('mail@übung.de')));  // true
+// mit Punycodeumwandlung
+var_dump(checkEMailDomainDNS($idn->encode('mail@übung.de')));  // true
+~~~
 
-### 7. <a id="extsource"></a> Weiterfürhende Quellen
+### Weiterführende Quellen
 
-**RFC zum Thema E-Mail**
-<a id="rfc"></a>
+#### RFC zum Thema E-Mail
 
 [RFC 2142](http://tools.ietf.org/html/rfc2142) - Mailbox Names for Common Services, Roles and Functions  
 [RFC 2368](http://tools.ietf.org/html/rfc2368) - The mailto URL scheme  
@@ -198,7 +210,7 @@ Generell kann in jeder oben angeführten Varianten noch, wenn gewüscht, die Ant
 [RFC 5335](http://tools.ietf.org/html/rfc5335) - Internationalized Email Headers  
 
 
-**RFC zum Thema IDNA / Punycode**
+#### RFC zum Thema IDNA / Punycode
 
 [RFC 3490](http://tools.ietf.org/html/rfc3490) - Internationalizing Domain Names in Applications (IDNA)  
 [RFC 3491](http://tools.ietf.org/html/rfc3491) - Nameprep: A Stringprep Profile for Internationalized Domain Names (IDN)  

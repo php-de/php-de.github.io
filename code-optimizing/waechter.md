@@ -18,8 +18,8 @@ inhalt:
 
     -   name: "Möglichkeiten"
         anchor: moeglichkeiten
-        simple: "Schleifenabbrüche mit break;
-		Schleifenabbrüche mit continue;
+        simple: "Schleifenabbrüche mit break;<br>
+		Schleifenabbrüche mit continue;<br>
         	Funktionsabbrüche mit return;"
 
     -   name:  "Spezialfälle"

@@ -15,15 +15,15 @@ inhalt:
         simple: "als Standard-Weg"
         
     -   name: "Internationale Domainnamen"
-        anchor: intdomain
+        anchor: exkurs-internationalisierte-domainnamen-idn
         simple: "Domains mit Sonderzeichen"
     
     -   name: "Konvertierung nach Punycode"
-        anchor: punyclass
+        anchor: konvertierung-durch-eine-externe-punycode-klasse
         simple: "Externe Klassen"
         
     -   name: "Konvertierung nach Punycode"
-        anchor: phpconv
+        anchor: konvertierung-durch-php-boardmittel
         simple: "mit PHP Bordmitteln"
 
     -   name: "Ohne Punycode"

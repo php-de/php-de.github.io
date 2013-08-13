@@ -13,24 +13,24 @@ creator: nikosch
 
 inhalt:
     -   name: "Wächter vs. Schachtel-If"
-        anchor: 
+        anchor: wchter-vs-schachtel-if
         simple: "Grundlagen<br>
                 Beispiel 1<br>
                 Beispiel2"
 
     -   name: "Möglichkeiten"
-        anchor: 
+        anchor: mglichkeiten
         simple: "Schleifenabbrüche mit break;<br>
 		Schleifenabbrüche mit continue;<br>
         	Funktionsabbrüche mit return;"
 
     -   name:  "Spezialfälle"
-        anchor: 
+        anchor: spezialflle
         simple: "Verlassen tieferer Strukturen
         	Bedingter Abbruch mit künstlichem Blockelement"
 
     -   name: "Siehe auch"
-        anchor: 
+        anchor: siehe-auch
         simple: "Link-Verweise"
 
 entry-type: in-progress

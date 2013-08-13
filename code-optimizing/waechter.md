@@ -102,7 +102,6 @@ foreach ($array as $key => $value) {
     
     // negativer Bedingungszweig
     } else {
-    
         echo $key . ' ist ungleich 1<br>';
     }
 }
@@ -219,7 +218,7 @@ Bsp. 2, alternativer Ansatz, PHP Umsetzung:
 function dbQuery ($querystring) 
 {
     // Verbindungsaufbau
-    $link = mysql_connect('example.com:3307', 'mysql_user', 'mysql_password');
+    $link = mysql_connect('localhost', 'username', 'password');
 
     if (false === $link) {
     // fehlgeschlagene Verbindung 

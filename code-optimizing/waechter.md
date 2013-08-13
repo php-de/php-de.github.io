@@ -16,17 +16,17 @@ inhalt:
         anchor: wchter-vs-schachtel-if
         simple: "Grundlagen<br>
                 Beispiel 1<br>
-                Beispiel2"
+                Beispiel 2"
 
     -   name: "Möglichkeiten"
         anchor: mglichkeiten
-        simple: "Schleifenabbrüche mit break;<br>
-		Schleifenabbrüche mit continue;<br>
-        	Funktionsabbrüche mit return;"
+        simple: "Schleifenabbrüche mit break<br>
+		Schleifenabbrüche mit continue<br>
+        	Funktionsabbrüche mit return"
 
     -   name:  "Spezialfälle"
         anchor: spezialflle
-        simple: "Verlassen tieferer Strukturen
+        simple: "Verlassen tieferer Strukturen<br>
         	Bedingter Abbruch mit künstlichem Blockelement"
 
     -   name: "Siehe auch"
@@ -105,6 +105,7 @@ foreach ($array as $key => $value) {
     
         echo $key . ' ist ungleich 1<br>';
     }
+}
 ~~~
 
 Bsp. 1, alternativer Ansatz, PHP Umsetzung
@@ -177,37 +178,38 @@ Funktionsblock
 Bsp. 2, klassischer Ansatz, PHP Umsetzung:
 
 ~~~ php
-function dbQuery ($querystring) {
-// Verbindungsaufbau
-$link = mysql_connect('example.com:3307', 'mysql_user', 'mysql_password');
-
-if ($link) {
-    // erfolgreiche Verbindung 
-
-    // Datenbankwahl
-    $db_selected = mysql_select_db("mydbname" , $link);
-
-    if ($db_selected) {
-        // erfolgreiche Datenbankwahl
-
-        // Queryanfrage
-        $result = mysql_query($querystring , $link);
-
+function dbQuery ($querystring)
+{
+    // Verbindungsaufbau
+    $link = mysql_connect('localhost', 'username', 'password');
+    
+    if ($link) {
+        // erfolgreiche Verbindung 
+    
+        // Datenbankwahl
+        $db_selected = mysql_select_db("mydbname" , $link);
+    
+        if ($db_selected) {
+            // erfolgreiche Datenbankwahl
+    
+            // Queryanfrage
+            $result = mysql_query($querystring , $link);
+    
+        } else {
+            // fehlgeschlagene Datenbankwahl
+    
+            echo 'Datenbankverbindung fehlgeschlagen';
+            $result = false;
+        }
+        mysql_close($link);
+    
     } else {
-        // fehlgeschlagene Datenbankwahl
-
-        echo 'Datenbankverbindung fehlgeschlagen';
+        // fehlgeschlagene Verbindung 
+        echo 'Verbindung fehlgeschlagen';
         $result = false;
     }
-    mysql_close($link);
-
-} else {
-    // fehlgeschlagene Verbindung 
-    echo 'Verbindung fehlgeschlagen';
-    $result = false;
-}
-
-return $result;
+    
+    return $result;
 }
 ~~~
 

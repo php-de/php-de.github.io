@@ -1,4 +1,7 @@
-markdown: rdiscount
+markdown: kramdown
+
+kramdown:
+    use_coderay: true
 
 # user defined variables
 

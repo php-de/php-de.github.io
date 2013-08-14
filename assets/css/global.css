@@ -41,7 +41,7 @@ body > .pageWrap {
     line-height:1.7;
 }
 
-.container .panel > * {
+.container .panel > p {
     padding:15px;
 }
 

@@ -17,6 +17,9 @@ inhalt:
 entry-type: in-progress
 ---
 
+This is *red*{: style="color: red"}.
+
+
 
 > Von: Karl-Heinz Gierig  
 An: Wunschzettel@Der-Weihnachtsmann-am-Nordpol.org  

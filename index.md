@@ -15,7 +15,7 @@ pageSections:
 
     -   name: "Code Optimierung"
 
-        desc: "Wissenswertes über Code Optimierung"
+        desc: "Code Optimierung von A bis Z."
 
         entrys:
 
@@ -24,5 +24,14 @@ pageSections:
                 
             -   name: "Wächter"
                 url: /code-optimizing/waechter.html
+
+    -   name: "Request Handling"
+
+        desc: "Wissenswertes über das Request Handling in PHP."
+
+        entrys:
+
+            -   name: "GPC"
+                url: /request-handling/gpc.html
                 
 ---

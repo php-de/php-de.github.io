@@ -36,12 +36,6 @@ body > .pageWrap {
     border-bottom:1px solid #eee;
 }
 
-.container .panel > p {
-    padding-top:15px;
-    padding-left:15px;
-    padding-right:15px;
-}
-
 .container h1 {
     font-size:2.4em !important;
     font-weight:bold;
@@ -76,4 +70,8 @@ body > .pageWrap {
     text-align:center;
     margin-top:4px;
     margin-bottom:24px;
+}
+
+.container a.list-group-item {
+    color:#428bca;
 }

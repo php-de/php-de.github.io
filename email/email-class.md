@@ -43,25 +43,40 @@ in großer Erwatung
 ### Test mit (derzeit noch invaliden) HTML 
 
 
-<font size="3"><font face="Trebuchet MS"><br> 
-<font face="Courier New">Von: Karl-Heinz Gierig<br>
-An: Wunschzettel@Der-Weihnachtsmann-am-Nordpol.org<br>
-Betreff: Will ich haben! Wünsch ich mir!<br>
-Anhang:  wunschzettel.pdf<br> </font><br> 
-<font face="Georgia"><font color="Green"><br> 
-<i><font size="5">L</font>ieber Weihnacksmann!<br> <br> 
-<font size="5">A</font>uch dieses Jahr war ich sehr ahrtig. Ich habe mir Müe gegeben,<br>
-meine Schwester <b>möglichst wenig</b> zu ärgern und immers meine<br>
-Hausaufgaben pünktlich gemacht. Naja, fast immers…<br> <br>
-<font size="5">W</font>ie in jedem Jahr schicke ich Dir mein Wunschzettel. Ich hoffe,<br>
-Du kannst <font size="4">schön viel davon</font> liefern. Die wichtigsten Sachen stehen <br>
-gleich oben. Weil das so viel war, habe ich Dir diesmal das ganze <br>
-per PDF als Anhang geschickt. Den PDF-Reader findest Du ja bei <a href="http://get.adobe.com/de/reader/" target="_blank" rel="nofollow" >Adobe</a>.
-<br> <br>
-Mit freundlichen Grüßen,<br>
-in großer Erwatung<br> <br> 
-<img src="http://www.macinacs.de/smile/xmass27x25.gif" alt="smiley"> Dein Kalle </i></font></font>
-</font></font>
+<font size="3">
+
+	<font face="Courier New">Von: Karl-Heinz Gierig<br>
+		An: Wunschzettel@Der-Weihnachtsmann-am-Nordpol.org<br>
+		Betreff: Will ich haben! Wünsch ich mir!<br>
+		Anhang: wunschzettel.pdf<br>
+	</font>
+	
+	<br>
+
+	<font face="Georgia"><font color="Green"><i>
+	<br>
+
+		<font size="5">L</font>ieber Weihnacksmann!<br>
+		<br>
+		<font size="5">A</font>uch dieses Jahr war ich sehr ahrtig. Ich habe mir Müe gegeben,<br>
+		meine Schwester <b>möglichst wenig</b> zu ärgern und immers meine<br>
+		Hausaufgaben pünktlich gemacht. Naja, fast immers…<br>
+		<br>
+		<font size="5">W</font>ie in jedem Jahr schicke ich Dir mein Wunschzettel. Ich 
+		hoffe,<br>
+		Du kannst <font size="4">schön viel davon</font> liefern. Die wichtigsten Sachen 
+		stehen <br>
+		gleich oben. Weil das so viel war, habe ich Dir diesmal das ganze <br>
+		per PDF als Anhang geschickt. Den PDF-Reader findest Du ja bei <a href="http://get.adobe.com/de/reader/" target="_blank" rel="nofollow" >Adobe</a>. 
+		<br>
+		<br>
+		Mit freundlichen Grüßen,<br>
+		in großer Erwatung<br>
+		<br>
+		<img src="http://www.macinacs.de/smile/xmass27x25.gif" alt="smiley"> Dein Kalle 
+	</i></font></font>
+
+</font>
 
 
 

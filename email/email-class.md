@@ -21,8 +21,7 @@ entry-type: in-progress
 > Von: Karl-Heinz Gierig  
 An: Wunschzettel@Der-Weihnachtsmann-am-Nordpol.org  
 Betreff: Will ich haben! Wünsch ich mir!  
-Anhang: wunschzettel.pdf  
-
+Anhang: wunschzettel.pdf{: style="color: green"}
 
 > Lieber Weihnacksmann!
 

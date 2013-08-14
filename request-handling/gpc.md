@@ -15,7 +15,7 @@ author:
 
 inhalt:
     -   name: "Superglobale Parametersumme"
-        anchor: superglobale parametersumme
+        anchor: superglobale-parametersumme
         simple: "allgemeines Arrayrequest"
 
     -   name: "Initialisierungsreihenfolge"

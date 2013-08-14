@@ -75,3 +75,7 @@ body > .pageWrap {
 .container a.list-group-item {
     color:#428bca;
 }
+
+code.prettyprint {
+    padding:15px;
+}

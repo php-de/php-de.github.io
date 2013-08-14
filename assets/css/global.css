@@ -76,6 +76,6 @@ body > .pageWrap {
     color:#428bca;
 }
 
-code.prettyprint {
-    padding:15px;
+pre.prettyprint {
+    padding:15px !important;
 }

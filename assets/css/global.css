@@ -36,11 +36,6 @@ body > .pageWrap {
     border-bottom:1px solid #eee;
 }
 
-.container p {
-    font-size:11pt !important;
-    line-height:1.7;
-}
-
 .container .panel > p {
     padding-top:15px;
     padding-left:15px;

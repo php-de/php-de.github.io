@@ -1,18 +1,17 @@
 ---
 layout: guide
 title: "Request Handling: GPC"
-creator: "_cyrix_"
+creator: manko10
 
 author: 
-
-    -   name: "_cyrix_"
-        profile: 7661
+    -   name: manko10
+        profile: 1139
 
     -   name: nikosch
         profile: 2314
 
-    -   name: manko10
-        profile: 1139
+    -   name: "_cyrix_"
+        profile: 7661
 
 inhalt:
     -   name: "Superglobale Parametersumme"

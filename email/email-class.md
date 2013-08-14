@@ -17,7 +17,7 @@ inhalt:
 entry-type: in-progress
 ---
 
-This is *red*{: style="color: red"}.
+This is red{: style="color: green"}.
 
 
 

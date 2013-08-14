@@ -38,8 +38,11 @@ body > .pageWrap {
 
 .container p {
     font-size:11pt !important;
-    margin:10px;
     line-height:1.7;
+}
+
+.container .panel > * {
+    padding:15px;
 }
 
 .container h1 {

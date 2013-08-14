@@ -14,33 +14,32 @@ inhalt:
         anchor: 
         simple: ""
 
-
 entry-type: in-progress
 ---
 
-~~~
-Von: Karl-Heinz Gierig
-An: Wunschzettel@Der-Weihnachtsmann-am-Nordpol.org
-Betreff: Will ich haben! Wünsch ich mir!
-Anhang: wunschzettel.pdf
+
+> Von: Karl-Heinz Gierig  
+An: Wunschzettel@Der-Weihnachtsmann-am-Nordpol.org  
+Betreff: Will ich haben! Wünsch ich mir!  
+Anhang: wunschzettel.pdf  
 
 
-Lieber Weihnacksmann!
+> Lieber Weihnacksmann!
 
-Auch dieses Jahr war ich sehr ahrtig. Ich habe mir Müe gegeben,
+> Auch dieses Jahr war ich sehr ahrtig. Ich habe mir Müe gegeben,
 meine Schwester möglichst wenig zu ärgern und immers meine
 Hausaufgaben pünktlich gemacht. Naja, fast immers…
 
-Wie in jedem Jahr schicke ich Dir mein Wunschzettel. Ich hoffe,
+> Wie in jedem Jahr schicke ich Dir mein Wunschzettel. Ich hoffe,
 Du kannst schön viel davon liefern. Die wichtigsten Sachen stehen 
 gleich oben. Weil das so viel war, habe ich Dir diesmal das ganze 
 per PDF als Anhang geschickt. Den PDF-Reader findest Du ja bei Adobe.
 
-Mit freundlichen Grüßen,
+> Mit freundlichen Grüßen,
 in großer Erwatung
 
-![xmas](images/smiley_xmas_27x25.gif) Dein Kalle
-~~~
+> ![xmas](images/smiley_xmas_27x25.gif) Dein Kalle
+
 
 
 Wollte Kalle diese E-Mail per PHP schicken, würde Ihm das wohl ziemlich viel Mühe bereiten. Als erstes hätten Ihn vermutlich die Umlaute geärgert. Im Text und vor allem im Betreff, überall Umlaute. Ein Charset-Header muss her. Oder gar eine ISO-Codierung fürs Subject? Dann fällt ihm ein, dass er ja noch ein fetziges Bild und unbedingt den Link zum Adobe Reader einbauen will ― schließlich soll’s der Weihnacksmann ja so einfach wie möglich haben. Außerdem kommt der alte Bärtige doch vermutlich erst mit grüner Schrift so richtig in Schenklaune. Fazit: eine HTML-Mail muss her. Dann noch das Wichtigste: Der PDF-Anhang! 

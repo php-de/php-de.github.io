@@ -17,9 +17,10 @@ inhalt:
 entry-type: in-progress
 ---
 
-This is red{: style="color: green"}.
+This is green{: style="color: green"}.
 
 
+{::comment}
 
 > Von: Karl-Heinz Gierig  
 An: Wunschzettel@Der-Weihnachtsmann-am-Nordpol.org  
@@ -41,6 +42,8 @@ per PDF als Anhang geschickt. Den PDF-Reader findest Du ja bei Adobe.
 in großer Erwatung
 >
 > ![xmas](images/smiley_xmas_27x25.gif) Dein Kalle
+
+{:/comment}
 
 
 ### Test mit (derzeit noch invaliden) HTML 

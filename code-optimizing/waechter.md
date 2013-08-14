@@ -98,7 +98,7 @@ foreach ($array as $key => $value) {
     // positiver Bedingungszweig
     if ($value == 1) {
         echo $key . ' ist 1<br>';
-    }
+    
     // negativer Bedingungszweig
     } else {
         echo $key . ' ist ungleich 1<br>';

@@ -37,7 +37,7 @@ body > .pageWrap {
 }
 
 .container p {
-    font-size:11pt important!;
+    font-size:11pt !important;
     line-height:1.7;
 }
 

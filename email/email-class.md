@@ -40,6 +40,30 @@ in großer Erwatung
 > ![xmas](images/smiley_xmas_27x25.gif) Dein Kalle
 
 
+### Test mit (derzeit noch invaliden) HTML 
+
+
+<font size="3"><font face="Trebuchet MS"><br> 
+<font face="Courier New">Von: Karl-Heinz Gierig<br>
+An: Wunschzettel@Der-Weihnachtsmann-am-Nordpol.org<br>
+Betreff: Will ich haben! Wünsch ich mir!<br>
+Anhang:  wunschzettel.pdf<br> </font><br> 
+<font face="Georgia"><font color="Green"><br> 
+<i><font size="5">L</font>ieber Weihnacksmann!<br> <br> 
+<font size="5">A</font>uch dieses Jahr war ich sehr ahrtig. Ich habe mir Müe gegeben,<br>
+meine Schwester <b>möglichst wenig</b> zu ärgern und immers meine<br>
+Hausaufgaben pünktlich gemacht. Naja, fast immers…<br> <br>
+<font size="5">W</font>ie in jedem Jahr schicke ich Dir mein Wunschzettel. Ich hoffe,<br>
+Du kannst <font size="4">schön viel davon</font> liefern. Die wichtigsten Sachen stehen <br>
+gleich oben. Weil das so viel war, habe ich Dir diesmal das ganze <br>
+per PDF als Anhang geschickt. Den PDF-Reader findest Du ja bei <a href="http://get.adobe.com/de/reader/" target="_blank" rel="nofollow" >Adobe</a>.
+<br> <br>
+Mit freundlichen Grüßen,<br>
+in großer Erwatung<br> <br> 
+<img src="http://www.macinacs.de/smile/xmass27x25.gif" alt="smiley"> Dein Kalle </i></font></font>
+</font></font>
+
+
 
 Wollte Kalle diese E-Mail per PHP schicken, würde Ihm das wohl ziemlich viel Mühe bereiten. Als erstes hätten Ihn vermutlich die Umlaute geärgert. Im Text und vor allem im Betreff, überall Umlaute. Ein Charset-Header muss her. Oder gar eine ISO-Codierung fürs Subject? Dann fällt ihm ein, dass er ja noch ein fetziges Bild und unbedingt den Link zum Adobe Reader einbauen will ― schließlich soll’s der Weihnacksmann ja so einfach wie möglich haben. Außerdem kommt der alte Bärtige doch vermutlich erst mit grüner Schrift so richtig in Schenklaune. Fazit: eine HTML-Mail muss her. Dann noch das Wichtigste: Der PDF-Anhang! 
 Mime-Types, Content-Types, Transfer-Encodings, Boundaries… Vielleicht alles noch als Plain text? Sicher ist sicher?

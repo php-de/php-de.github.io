@@ -23,9 +23,9 @@ entry-type: in-progress
 	Betreff: Einladung!<br>
 	Anhang: anfahrt_und_menüplan.pdf<br>
 </p>
-<p style="color: brown; font-size: 14pt; font-family: Georgia, Calibri"><i>
+<p style="color: brown; font-size: 13pt; font-family: Georgia, Calibri"><i>
 <br>
-	Meine lieben Freunde,<br>
+	Meine lieben Freunde!<br>
 	<br>
 	Auch dieses Jahr ist es wieder so weit!<br> 
 	<br>

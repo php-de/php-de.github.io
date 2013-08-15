@@ -200,6 +200,13 @@ var_dump(checkEMailDomainDNS($idn->encode('mail@übung.de')));  // true
 
 ### Weiterführende Quellen
 
+#### Links
+
+Wer sich genauer für die Regex-Prüfung interessiert, dem sei der[dieser Link](http://squiloople.com/2009/12/20/email-address-validation/) empfohlen. Danke  [Trainmaster](http://www.php.de/member.php?u=20243)!
+
+Wer sich dafür interessiert wie filter_var() valiediert, dem sei ein Blick in die Sourcen von PHP empfohlen, oder etwas einfacher hier in [diesem Forumsbeitrag](http://www.php.de/wiki-diskussionsforum/101439-sinnvolle-standard-verfahren-zur-e-mail-validierung-3.html#post748505) - Danke [Asterixus](http://www.php.de/member.php?u=21236) fürs raussuchen.
+
+
 #### RFC zum Thema E-Mail
 
 [RFC 2142](http://tools.ietf.org/html/rfc2142) - Mailbox Names for Common Services, Roles and Functions  

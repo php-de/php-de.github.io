@@ -146,7 +146,7 @@ Es gibt also mehr als den altbekannten PHPMailer. Das da oben war ― unschwer z
 
 Drei Ergänzungen noch:  
 
-1. Natürlich müßt Ihr den Absender an Eure Domain anpassen. Sonst verweigert Euer Mailserver noch die Auslieferung. Oder schlimmer: Der Weihnachtsmann liefert an den Falschen!
+1. Natürlich müßt Ihr den Absender an Eure Domain anpassen. Sonst verweigert euer Mailserver noch die Auslieferung. Oder schlimmer: Die Einladung geht an jemanden Falschen!
  
 2. Schützt Eure Verzeichnisse! Oder wollt Ihr auch noch von Fremden ungeliebte Geschenke?  
 

@@ -59,14 +59,13 @@ Doch halt! Von ferne naht kein „Stairway to heaven", sondern der Rat der Weise
 
 
 ~~~ php
-require_once './Swift-4.0.5/lib/swift_required.php'; 
+require_once __DIR__.'/Swift-5.0.1/lib/swift_required.php';
 
-
-$subject     = 'Will ich haben! Wünsch ich mir!'; 
-$from        = 'Karl-Heinz@Gierig-Family.de'; 
-$to          = 'Wunschzettel@Der-Weihnachtsmann-am-Nordpol.org'; 
-$attachment  = 'wunschzettel.pdf'; // muß im selben Folder liegen 
-
+$from        = 'max.spendabel@example.org'; 
+$to          = 'meine.freunde@example.org'; 
+$subject     = 'Einladung!'; 
+$attachment  = 'anfahrt_und_essen.pdf'; // muß im selben Folder liegen 
+$smiley      = 'party_smiley.png';      // muß im selben Folder liegen 
 
 // Als erstes brauchen wir ein Objekt für unsere Nachricht 
 $message = Swift_Message::newInstance($subject); 
@@ -75,45 +74,44 @@ $message = Swift_Message::newInstance($subject);
 $message->setTo($to); 
 $message->setFrom($from); 
 
-
-// Ein weihnachtliches Bildchen.. 
-$smiley = 'smiley.gif'; // muß im selben Folder liegen 
-
-// ..muß für die Email mit ID eingebettet werden 
+// bild muß für die Email mit ID eingebettet werden 
 $cid = $message->embed(Swift_Image::fromPath($smiley)); 
 
 // ein gutes Schreiben ist die halbe Miete 
-$message->setBody( 
+$message->setBody(
 ' 
-<html> 
- <head></head> 
- <body> 
-  <div style="color:#0b0;"> 
-
-  <p>Lieber Weihnacksmann!</p> 
-
-  <p>Auch dieses Jahr war ich sehr ahrtig. Ich habe mir Müe gegeben, 
-     meine Schwester möglichst wenig zu ärgern und immers meine 
-     Hausaufgaben pünktlich gemacht. Naja, fast immers…</p> 
-
-  <p>Wie in jedem Jahr schicke ich Dir mein Wunschzettel. Ich hoffe, 
-     Du kannst schön viel davon liefern. Die wichtigsten Sachen stehen 
-     gleich oben. Weil das so viel war, habe ich Dir diesmal das ganze 
-     per PDF als Anhang geschickt. Den PDF-Reader findest Du ja  
-     bei <a href="http://get.adobe.com/de/reader/">Adobe</a>.</p> 
-
-  <p>Mit freundlichen Grüßen,<br /> 
-     in großer Erwartung</p> 
-
-  <p><big>Dein Kalle</big> <img src="' . $cid . '" alt="Image" /></p> 
-  </div> 
-  </body> 
-</html>' , 
-
-'text/html'  
-); 
+<!DOCTYPE html>
+<head>
+    <title>Einladung</title>
+    <meta charset="utf-8">
+</head>
+<body>
+<p style="color: brown; font-size: 14pt; font-family: Georgia, Calibri"><i>
+<br>
+	Meine lieben Freunde!<br>
+	<br>
+	Auch dieses Jahr ist es wieder so weit!<br> 
+	<br>
+	Ich habe, trotz meiner großen Klappe, ein weiteres Jahr übelebt,<br>
+	und möchte euch daher gerne zum alljährlichen Spitzenevent, <br>
+	meiner Geburtstagsfeier, einladen.<br> 
+	<br>
+	Welche supercoole Location ich mir dieses Jahr ausgesucht habe,<br>
+	findet ihr, inkl. Anfahrtsbeschreibung und Menükarte, im PDF anbei.<br> 
+	<br>
+	Um das PDF ansehen zu können, benötigt ihr nach wie vor den<br>
+	<a href="http://get.adobe.com/de/reader/" target="_blank" rel="nofollow">Adobe Reader</a>.
+	<br> 
+    <br>
+	<img src="'.$cid.'" alt="party smiley"> Let the good times roll! 
+	<br>
+	<br>
+	Euer Max!
+</i></p>
+</body>'
+, 'text/html'); 
    
-// Das Wichtigste! Die PDF-Wunschliste 
+// Das PDF 
 $message->attach(Swift_Attachment::fromPath($attachment)); 
 
 // Hier bestimmen wir die Sendemethode. Fortgeschrittene benutzen besser SMTP 
@@ -125,15 +123,14 @@ $mailer = Swift_Mailer::newInstance($transport);
 // Und schon geht die Nachricht auf die Reise 
 if ($mailer->send($message)) { 
   echo 'Hurra.'; 
-} 
-else { 
+} else { 
   echo 'Fehler! Schnell F5 drücken!!'; 
 } 
 ~~~
 
 Die Klasse flugs auf dem Server installiert, Pfade angepasst und das Dauerfeuer kann losgehen.
 
-Wenn Ihr noch keine Geschenke habt und ganz Web-Zwei-Nullig noch ein paar Bestellungen ordern wollt, dann flugs zu einem der nachfolgenden Produkte gegriffen:
+Die Üblichen Nachfolgende Mailer-Klassen-Kandidaten:
 
 http://swiftmailer.org/
 http://sourceforge.net/projects/phpmailer/
@@ -142,7 +139,7 @@ http://pear.php.net/package/Mail/
 Auch Zend und ezComponents stellen Mailer bereit, die aber nur in Verbindung mit den jeweiligen Umgebungen funktionieren.
 
 
-Es gibt also mehr als den altbekannten PHPMailer. Das da oben war ― unschwer zu erkennen ― die Swiftmailer-Klasse in der 4er Version.
+Es gibt also mehr als den altbekannten PHPMailer. Das da oben war ― unschwer zu erkennen ― die Swiftmailer-Klasse in der 5er Version.
 
 Drei Ergänzungen noch:
 Natürlich müßt Ihr den Absender an Eure Domain anpassen. Sonst verweigert Euer Mailserver noch die Auslieferung. Oder schlimmer: Der Weihnachtsmann liefert an den Falschen! 

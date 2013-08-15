@@ -54,7 +54,7 @@ Mime-Types, Content-Types, Transfer-Encodings, Boundaries… Vielleicht alles no
 
 Max raucht der Kopf. „Gott“, denkt er sich, „da bin ich ja bis nächstes Jahr noch nicht fertig, da kann ich meine fetzigen, modernen Einladungs-E-Mails vergessen".
 
-Doch halt! Von ferne schallt Rat der Weisen! „Mailing Klasse“ flüstern Sie in sein Ohr. Max fragt kurz Tante Google und plötzlich ist alles ganz einfach. Einmal fix die Hilfe aufgerufen und ein paar Kommandos abgepinselt:
+Doch halt! Von ferne hallt nicht „Stairway to Heaven" sondern der Rat der Weisen! „Mailing Klasse“ flüstern Sie in sein Ohr. Max fragt kurz Tante Google und plötzlich ist alles ganz einfach. Einmal fix die Hilfe aufgerufen und ein paar Kommandos abgepinselt:
 
 
 ~~~ php

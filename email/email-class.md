@@ -17,44 +17,45 @@ inhalt:
 entry-type: in-progress
 ---
 
+-
+
 <p style="font-size: 12pt; font-family: Courier New, Consolas">
-    Von: Max Mustermann<br>
-	An: meine.freunde@example.org<br>
-	Betreff: Einladung!<br>
-	Anhang: anfahrt_und_menüplan.pdf<br>
+    Von: Max Spendabel<br>
+    An: meine.freunde@example.org<br>
+    Betreff: Einladung!<br>
+    Anhang: anfahrt_und_menüplan.pdf<br>
 </p>
-<p style="color: brown; font-size: 13pt; font-family: Georgia, Calibri"><i>
+<p style="color: brown; font-size: 14pt; font-family: Georgia, Calibri"><i>
 <br>
-	Meine lieben Freunde!<br>
-	<br>
-	Auch dieses Jahr ist es wieder so weit!<br> 
-	<br>
-	Ich habe, trotz meiner großen Klappe,<br> 
-    ein weiteres Jahr übelebt, und möchte euch<br>
-    daher gerne zum alljährlichen Spitzenevent, <br>
-	meiner Geburtstagsfeier, einladen.<br> 
-	<br>
-	Welche supercoole Location ich mir dieses Jahr<br>
-	ausgesucht habt findet ihr, inkl. Anfahrtsbeschreibung<br>
-	und Menükarte, im PDF anbei.<br> 
-	<br>
-	Um das PDF öffnen zu können hier sicherheitshalber<br> 
-	nochmals der Link zum <a href="http://get.adobe.com/de/reader/" target="_blank" rel="nofollow">Adobe Reader</a>. 
-	<br> 
+    Meine lieben Freunde!<br>
     <br>
-	<img src="images/party_smiley.png" alt="party smiley"> Let the good times roll! 
-	<br>
-	<br>
-	Euer Max!
+    Auch dieses Jahr ist es wieder so weit!<br> 
+    <br>
+    Ich habe, trotz meiner großen Klappe, ein weiteres Jahr übelebt,<br>
+    und möchte euch daher gerne zum alljährlichen Spitzenevent, <br>
+    meiner Geburtstagsfeier, einladen.<br> 
+    <br>
+    Welche supercoole Location ich mir dieses Jahr ausgesucht habe,<br>
+    findet ihr, inkl. Anfahrtsbeschreibung und Menükarte, im PDF anbei.<br> 
+    <br>
+    Um das PDF ansehen zu können, benötigt ihr den 
+    <a href="http://get.adobe.com/de/reader/" target="_blank" rel="nofollow">Adobe Reader</a>.
+    <br> 
+    <br>
+    <img src="images/party_smiley.png" alt="party smiley"> Let the good times roll! 
+    <br>
+    <br>
+    Euer Max!
 </i></p>
 
+-
 
-Wollte Kalle diese E-Mail per PHP schicken, würde Ihm das wohl ziemlich viel Mühe bereiten. Als erstes hätten Ihn vermutlich die Umlaute geärgert. Im Text und vor allem im Betreff, überall Umlaute. Ein Charset-Header muss her. Oder gar eine ISO-Codierung fürs Subject? Dann fällt ihm ein, dass er ja noch ein fetziges Bild und unbedingt den Link zum Adobe Reader einbauen will ― schließlich soll’s der Weihnacksmann ja so einfach wie möglich haben. Außerdem kommt der alte Bärtige doch vermutlich erst mit grüner Schrift so richtig in Schenklaune. Fazit: eine HTML-Mail muss her. Dann noch das Wichtigste: Der PDF-Anhang! 
+Wollte Max dieses E-Mail per PHP schicken, würde Ihm das wohl ziemlich viel Mühe bereiten. Als erstes hätten Ihn vermutlich die Umlaute geärgert. Im Text und vor allem im Betreff, überall Umlaute. Ein Charset-Header muss her. Oder gar eine ISO-Codierung fürs Subject? Dann fällt ihm ein, dass er ja noch ein fetziges Bild und unbedingt den Link zum Adobe Reader einbauen will ― schließlich sollen es seine Freunde ja so einfach wie möglich haben. Außerdem kommen die  doch vermutlich erst mit farbiger Schrift so richtig in Schenklaune. Fazit: eine HTML-Mail muss her. Dann noch das Wichtigste: Der PDF-Anhang! 
 Mime-Types, Content-Types, Transfer-Encodings, Boundaries… Vielleicht alles noch als Plain text? Sicher ist sicher?
 
-Kalle raucht der Kopf. „Gott“, denkt er sich, „da bin ich ja Ostern noch nicht fertig. Da kann ich meinen PHP-Wunschzettelgenerator wohl vergessen…“
+Max raucht der Kopf. „Gott“, denkt er sich, „da bin ich ja bis nächstes Jahr noch nicht fertig, da kann ich meine supercoolen, modernen Einladungs-Emails vergessen".
 
-Doch halt! Von ferne naht kein Glockenklang, sondern der Rat der Weisen! „Mailing Klasse“ flüstern Sie in sein Ohr. Kalle fragt kurz Tante Google und plötzlich ist alles ganz einfach. Einmal fix die Hilfe aufgerufen und ein paar Kommandos abgepinselt:
+Doch halt! Von ferne naht kein „Stairway to heaven", sondern der Rat der Weisen! „Mailing Klasse“ flüstern Sie in sein Ohr. Max fragt kurz Tante Google und plötzlich ist alles ganz einfach. Einmal fix die Hilfe aufgerufen und ein paar Kommandos abgepinselt:
 
 
 ~~~ php
@@ -150,14 +151,9 @@ SwiftMailer benutzt Exceptions. Für alle Fälle solltet Ihr also alles per try/
 
 PS: Wer jetzt immer noch uneinsichtig fragt, was denn an mail() so verkehrt ist, der möge sich in einer heimeligen Adventsstunde mal sämtliche RFCs zum Thema E-Mail zu Gemüte führen. Und sich fragen, ob er all diese Vorschriften mal locker aus dem Handgelenk programmiert, wofür etablierte Mailingklassen hunderte Scripte bereitstellen. Auch für einfache Textnachrichten lohnt sich der Griff zur Mailer-Klasse. Nur Mut.
 
-Frohes Mailen! Euer Nikolaus.
+Frohes Mailen!
 
 
 LINKS
-
-http://swiftmailer.org/
-http://sourceforge.net/projects/phpmailer/
-http://pear.php.net/package/Mail/
-
 http://www.robo47.net/text/38-Mail-ist-tot-es-lebe-mail
-http://www.php.de/adventskalender-2009/62142-13-die-3-e-postel-und-die-freuden-des-briefverkehrs.html
+

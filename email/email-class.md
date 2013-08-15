@@ -19,71 +19,36 @@ entry-type: in-progress
 
 This is green{: style="color: green"}.
 
-
-{::comment}
-
-> Von: Karl-Heinz Gierig  
-An: Wunschzettel@Der-Weihnachtsmann-am-Nordpol.org  
-Betreff: Will ich haben! Wünsch ich mir!  
-Anhang: wunschzettel.pdf
->
-> Lieber Weihnacksmann!
->
-> Auch dieses Jahr war ich sehr ahrtig. Ich habe mir Müe gegeben,
-meine Schwester möglichst wenig zu ärgern und immers meine
-Hausaufgaben pünktlich gemacht. Naja, fast immers…
->
-> Wie in jedem Jahr schicke ich Dir mein Wunschzettel. Ich hoffe,
-Du kannst schön viel davon liefern. Die wichtigsten Sachen stehen 
-gleich oben. Weil das so viel war, habe ich Dir diesmal das ganze 
-per PDF als Anhang geschickt. Den PDF-Reader findest Du ja bei Adobe.
->
-> Mit freundlichen Grüßen,
-in großer Erwatung
->
-> ![xmas](images/smiley_xmas_27x25.gif) Dein Kalle
-
-{:/comment}
-
-
-### Test mit (derzeit noch invaliden) HTML 
-
-
-<font size="3">
-
-	<font face="Courier New">Von: Karl-Heinz Gierig<br>
-		An: Wunschzettel@Der-Weihnachtsmann-am-Nordpol.org<br>
-		Betreff: Will ich haben! Wünsch ich mir!<br>
-		Anhang: wunschzettel.pdf<br>
-	</font>
-	
+<p style="font-size: 12pt; font-family: Courier New, Consolas">
+    Von: Max Mustermann<br>
+	An: meine.freunde@example.org<br>
+	Betreff: Einladung!<br>
+	Anhang: anfahrt_und_menüplan.pdf<br>
+</p>
+<p style="color: brown; font-size: 14pt; font-family: Georgia, Calibri"><i>
+<br>
+	Meine lieben Freunde,<br>
 	<br>
-
-	<font face="Georgia"><font color="Green"><i>
+	Auch dieses Jahr ist es wieder so weit!<br> 
 	<br>
-
-		<font size="5">L</font>ieber Weihnacksmann!<br>
-		<br>
-		<font size="5">A</font>uch dieses Jahr war ich sehr ahrtig. Ich habe mir Müe gegeben,<br>
-		meine Schwester <b>möglichst wenig</b> zu ärgern und immers meine<br>
-		Hausaufgaben pünktlich gemacht. Naja, fast immers…<br>
-		<br>
-		<font size="5">W</font>ie in jedem Jahr schicke ich Dir mein Wunschzettel. Ich 
-		hoffe,<br>
-		Du kannst <font size="4">schön viel davon</font> liefern. Die wichtigsten Sachen 
-		stehen <br>
-		gleich oben. Weil das so viel war, habe ich Dir diesmal das ganze <br>
-		per PDF als Anhang geschickt. Den PDF-Reader findest Du ja bei <a href="http://get.adobe.com/de/reader/" target="_blank" rel="nofollow" >Adobe</a>. 
-		<br>
-		<br>
-		Mit freundlichen Grüßen,<br>
-		in großer Erwatung<br>
-		<br>
-		<img src="http://www.macinacs.de/smile/xmass27x25.gif" alt="smiley"> Dein Kalle 
-	</i></font></font>
-
-</font>
-
+	Ich habe, trotz meiner großen Klappe,<br> 
+    ein weiteres Jahr übelebt, und möchte euch<br>
+    daher gerne zum alljährlichen Spitzenevent, <br>
+	meiner Geburtstagsfeier, einladen.<br> 
+	<br>
+	Welche supercoole Location ich mir dieses Jahr<br>
+	ausgesucht habt findet ihr, inkl. Anfahrtsbeschreibung<br>
+	und Menükarte, im PDF anbei.<br> 
+	<br>
+	Um das PDF öffnen zu können hier sicherheitshalber<br> 
+	nochmals der Link zum <a href="http://get.adobe.com/de/reader/" target="_blank" rel="nofollow">Adobe Reader</a>. 
+	<br> 
+    <br>
+	<img src="images/party_smiley.png" alt="party smiley"> Let the good times roll! 
+	<br>
+	<br>
+	Euer Max!
+</i></p>
 
 
 Wollte Kalle diese E-Mail per PHP schicken, würde Ihm das wohl ziemlich viel Mühe bereiten. Als erstes hätten Ihn vermutlich die Umlaute geärgert. Im Text und vor allem im Betreff, überall Umlaute. Ein Charset-Header muss her. Oder gar eine ISO-Codierung fürs Subject? Dann fällt ihm ein, dass er ja noch ein fetziges Bild und unbedingt den Link zum Adobe Reader einbauen will ― schließlich soll’s der Weihnacksmann ja so einfach wie möglich haben. Außerdem kommt der alte Bärtige doch vermutlich erst mit grüner Schrift so richtig in Schenklaune. Fazit: eine HTML-Mail muss her. Dann noch das Wichtigste: Der PDF-Anhang! 

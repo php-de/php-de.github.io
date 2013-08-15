@@ -20,7 +20,7 @@ entry-type: in-progress
 <p style="font-size: 10pt; font-family: Courier New, Consolas">
     Von: Max Spendabel<br>
     An: meine.freunde@example.org<br>
-    Betreff: Einladung!<br>
+    Betreff: Einladung für dich!<br>
     Anhang: anfahrt_und_menüplan.pdf<br>
 </p>
 <p style="color: brown; font-size: 12pt; font-family: Georgia, Calibri"><i>
@@ -62,7 +62,7 @@ require_once __DIR__.'/Swift-5.0.1/lib/swift_required.php';
 
 $from        = 'max.spendabel@example.org'; 
 $to          = 'meine.freunde@example.org'; 
-$subject     = 'Einladung!'; 
+$subject     = 'Einladung für dich!'; 
 $attachment  = 'anfahrt_und_essen.pdf'; // muß im selben Folder liegen 
 $smiley      = 'party_smiley.png';      // muß im selben Folder liegen 
 

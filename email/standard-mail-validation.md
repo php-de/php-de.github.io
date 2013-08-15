@@ -85,6 +85,7 @@ Dies kann alternativ statt filter_var() verwendet werden. Ebenso wie [oben bei f
 ### Exkurs: Internationalisierte Domainnamen (IDN)
 
 [Dazu aus Wikipedia:](http://de.wikipedia.org/wiki/Internationalisierter_Domainname)
+
 > Als internationalisierte Domainnamen (englisch internationalized domain name; IDN), umgangssprachlich auch Umlautdomain oder Sonderzeichendomain, werden Domainnamen bezeichnet, die Umlaute, diakritische Zeichen oder Buchstaben aus anderen Alphabeten als dem lateinischen Alphabet enthalten. Solche Zeichen waren ursprünglich im Domain Name System nicht vorgesehen und wurden nachträglich durch den Internetstandard Internationalizing Domain Names in Applications (IDNA) ermöglicht.
 
 > Grundsätzlich sind alle Unicode-Zeichen in IDNs zulässig. Jede Vergabestelle für Domains regelt jedoch individuell, welche Zeichen sie für Domain-Registrierungen erlaubt. 

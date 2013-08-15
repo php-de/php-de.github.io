@@ -63,8 +63,8 @@ require_once __DIR__.'/Swift-5.0.1/lib/swift_required.php';
 $from        = 'max.spendabel@example.org'; 
 $to          = 'meine.freunde@example.org'; 
 $subject     = 'Einladung für dich!'; 
-$attachment  = 'anfahrt_und_essen.pdf'; // muß im selben Folder liegen 
-$smiley      = 'party_smiley.png';      // muß im selben Folder liegen 
+$attachment  = 'anfahrt_und_essen.pdf'; // muß im selben Verzeichnis liegen 
+$smiley      = 'party_smiley.png';      // muß im selben Verzeichnis liegen 
 
 // Als erstes brauchen wir ein Objekt für unsere Nachricht 
 $message = Swift_Message::newInstance($subject); 

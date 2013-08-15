@@ -17,8 +17,6 @@ inhalt:
 entry-type: in-progress
 ---
 
-This is green{: style="color: green"}.
-
 <p style="font-size: 12pt; font-family: Courier New, Consolas">
     Von: Max Mustermann<br>
 	An: meine.freunde@example.org<br>

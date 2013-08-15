@@ -128,7 +128,10 @@ if ($mailer->send($message)) {
 } 
 ~~~
 
-Die Klasse flugs auf dem Server installiert, Pfade angepasst und das Dauerfeuer kann losgehen.
+Die Klasse flugs auf dem Server installiert, Pfade angepasst und das Dauerfeuer kann losgehen Herz was willst du mehr?
+
+![email](images/email.png)
+
 
 Die Üblichen Nachfolgende Mailer-Klassen-Kandidaten:
 

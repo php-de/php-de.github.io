@@ -132,7 +132,7 @@ Die Klasse flugs auf dem Server installiert, Pfade angepasst und das Dauerfeuer 
 ![email](images/email.png)
   
   
-Die Üblichen Nachfolgende Mailer-Klassen-Kandidaten:
+Überblick der aktuell publiken Mailer-Klassen-Kandidaten:
 
 [http://swiftmailer.org/](http://swiftmailer.org/)  
 [http://sourceforge.net/projects/phpmailer/](http://sourceforge.net/projects/phpmailer/)  

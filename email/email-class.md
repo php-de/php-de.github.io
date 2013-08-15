@@ -144,7 +144,8 @@ Auch Zend und ezComponents stellen Mailer bereit, die aber nur in Verbindung mit
 
 Es gibt also mehr als den altbekannten PHPMailer. Das da oben war ― unschwer zu erkennen ― die Swiftmailer-Klasse in der 5er Version.
 
-Drei Ergänzungen noch:
+Drei Ergänzungen noch:  
+
 1. Natürlich müßt Ihr den Absender an Eure Domain anpassen. Sonst verweigert Euer Mailserver noch die Auslieferung. Oder schlimmer: Der Weihnachtsmann liefert an den Falschen!
  
 2. Schützt Eure Verzeichnisse! Oder wollt Ihr auch noch von Fremden ungeliebte Geschenke?  

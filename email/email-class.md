@@ -79,8 +79,7 @@ $cid = $message->embed(Swift_Image::fromPath($smiley));
 
 // ein gutes Schreiben ist die halbe Miete 
 $message->setBody(
-' 
-<!DOCTYPE html>
+'<!DOCTYPE html>
 <head>
     <title>Einladung</title>
     <meta charset="utf-8">

@@ -25,7 +25,7 @@ entry-type: in-progress
     Anhang: anfahrt_und_menüplan.pdf<br>
 </p>
 <p style="color: brown; font-size: 12pt; font-family: Georgia, Calibri"><i>
-<br>
+    <br>
     Meine lieben Freunde!<br>
     <br>
     Auch dieses Jahr ist es wieder so weit!<br> 
@@ -87,25 +87,25 @@ $message->setBody(
 <body>
 <p style="color: brown; font-size: 14pt; font-family: Georgia, Calibri"><i>
 <br>
-	Meine lieben Freunde!<br>
-	<br>
-	Auch dieses Jahr ist es wieder so weit!<br> 
-	<br>
-	Ich habe, trotz meiner großen Klappe, ein weiteres Jahr übelebt,<br>
-	und möchte euch daher gerne zum alljährlichen Spitzenevent, <br>
-	meiner Geburtstagsfeier, einladen.<br> 
-	<br>
-	Welche supercoole Location ich mir dieses Jahr ausgesucht habe,<br>
-	findet ihr, inkl. Anfahrtsbeschreibung und Menükarte, im PDF anbei.<br> 
-	<br>
-	Um das PDF ansehen zu können, benötigt ihr nach wie vor den<br>
-	<a href="http://get.adobe.com/de/reader/" target="_blank" rel="nofollow">Adobe Reader</a>.
-	<br> 
+    Meine lieben Freunde!<br>
     <br>
-	<img src="'.$cid.'" alt="party smiley"> Let the good times roll! 
-	<br>
-	<br>
-	Euer Max!
+    Auch dieses Jahr ist es wieder so weit!<br> 
+    <br>
+    Ich habe, trotz meiner großen Klappe, ein weiteres Jahr übelebt,<br>
+    und möchte euch daher gerne zum alljährlichen Spitzenevent, <br>
+    meiner Geburtstagsfeier, einladen.<br> 
+    <br>
+    Welche supercoole Location ich mir dieses Jahr ausgesucht habe,<br>
+    findet ihr, inkl. Anfahrtsbeschreibung und Menükarte, im PDF anbei.<br> 
+    <br>
+    Um das PDF ansehen zu können, benötigt ihr nach wie vor den<br>
+    <a href="http://get.adobe.com/de/reader/" target="_blank" rel="nofollow">Adobe Reader</a>.
+    <br> 
+    <br>
+    <img src="'.$cid.'" alt="party smiley"> Let the good times roll! 
+    <br>
+    <br>
+    Euer Max!
 </i></p>
 </body>'
 , 'text/html'); 

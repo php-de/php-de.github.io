@@ -19,13 +19,13 @@ entry-type: in-progress
 
 -
 
-<p style="font-size: 12pt; font-family: Courier New, Consolas">
+<p style="font-size: 10pt; font-family: Courier New, Consolas">
     Von: Max Spendabel<br>
     An: meine.freunde@example.org<br>
     Betreff: Einladung!<br>
     Anhang: anfahrt_und_menüplan.pdf<br>
 </p>
-<p style="color: brown; font-size: 14pt; font-family: Georgia, Calibri"><i>
+<p style="color: brown; font-size: 12pt; font-family: Georgia, Calibri"><i>
 <br>
     Meine lieben Freunde!<br>
     <br>

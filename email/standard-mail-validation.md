@@ -36,7 +36,7 @@ inhalt:
 
     -   name: "Weiterführende Quellen"
         anchor: weiterfhrende-quellen
-        simple: "RFCs: IDNA/Punycode und Email"
+        simple: "Links, RFCs"
 ---
 
 Dieses Tutorial zeigt grundsätzliche (übliche) Möglichkeiten, eine E-Mail-Adresse *(wie sie für den Transport per SMTP im Internet verwendet wird, besteht aus zwei Teilen, die durch ein @-Zeichen voneinander getrennt sind)*
@@ -199,6 +199,13 @@ var_dump(checkEMailDomainDNS($idn->encode('mail@übung.de')));  // true
 ~~~
 
 ### Weiterführende Quellen
+
+#### Links
+
+Wer sich genauer für die Regex-Prüfung interessiert, dem sei [dieser Link](http://squiloople.com/2009/12/20/email-address-validation/) empfohlen. Danke an  [Trainmaster](http://www.php.de/member.php?u=20243) für den Link.
+
+Wer sich dafür interessiert wie eigentlich filter_var() validiert, dem sei ein Blick in die Sourcen von PHP empfohlen, oder etwas einfacher hier in [diesem Forumsbeitrag](http://www.php.de/wiki-diskussionsforum/101439-sinnvolle-standard-verfahren-zur-e-mail-validierung-3.html#post748505). Danke an [Asterixus](http://www.php.de/member.php?u=21236) fürs raussuchen.
+
 
 #### RFC zum Thema E-Mail
 

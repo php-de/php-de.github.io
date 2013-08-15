@@ -17,15 +17,14 @@ inhalt:
 entry-type: in-progress
 ---
 
-
 <p style="font-size: 10pt; font-family: Courier New, Consolas">
     Von: Max Spendabel<br>
     An: meine.freunde@example.org<br>
-    Betreff: Einladung!<br>
+    Betreff: Einladung für dich!<br>
     Anhang: anfahrt_und_menüplan.pdf<br>
 </p>
 <p style="color: brown; font-size: 12pt; font-family: Georgia, Calibri"><i>
-<br>
+    <br>
     Meine lieben Freunde!<br>
     <br>
     Auch dieses Jahr ist es wieder so weit!<br> 
@@ -63,9 +62,9 @@ require_once __DIR__.'/Swift-5.0.1/lib/swift_required.php';
 
 $from        = 'max.spendabel@example.org'; 
 $to          = 'meine.freunde@example.org'; 
-$subject     = 'Einladung!'; 
-$attachment  = 'anfahrt_und_essen.pdf'; // muß im selben Folder liegen 
-$smiley      = 'party_smiley.png';      // muß im selben Folder liegen 
+$subject     = 'Einladung für dich!'; 
+$attachment  = 'anfahrt_und_essen.pdf'; // muß im selben Verzeichnis liegen 
+$smiley      = 'party_smiley.png';      // muß im selben Verzeichnis liegen 
 
 // Als erstes brauchen wir ein Objekt für unsere Nachricht 
 $message = Swift_Message::newInstance($subject); 
@@ -79,8 +78,7 @@ $cid = $message->embed(Swift_Image::fromPath($smiley));
 
 // ein gutes Schreiben ist die halbe Miete 
 $message->setBody(
-' 
-<!DOCTYPE html>
+'<!DOCTYPE html>
 <head>
     <title>Einladung</title>
     <meta charset="utf-8">
@@ -88,25 +86,25 @@ $message->setBody(
 <body>
 <p style="color: brown; font-size: 14pt; font-family: Georgia, Calibri"><i>
 <br>
-	Meine lieben Freunde!<br>
-	<br>
-	Auch dieses Jahr ist es wieder so weit!<br> 
-	<br>
-	Ich habe, trotz meiner großen Klappe, ein weiteres Jahr übelebt,<br>
-	und möchte euch daher gerne zum alljährlichen Spitzenevent, <br>
-	meiner Geburtstagsfeier, einladen.<br> 
-	<br>
-	Welche supercoole Location ich mir dieses Jahr ausgesucht habe,<br>
-	findet ihr, inkl. Anfahrtsbeschreibung und Menükarte, im PDF anbei.<br> 
-	<br>
-	Um das PDF ansehen zu können, benötigt ihr nach wie vor den<br>
-	<a href="http://get.adobe.com/de/reader/" target="_blank" rel="nofollow">Adobe Reader</a>.
-	<br> 
+    Meine lieben Freunde!<br>
     <br>
-	<img src="'.$cid.'" alt="party smiley"> Let the good times roll! 
-	<br>
-	<br>
-	Euer Max!
+    Auch dieses Jahr ist es wieder so weit!<br> 
+    <br>
+    Ich habe, trotz meiner großen Klappe, ein weiteres Jahr übelebt,<br>
+    und möchte euch daher gerne zum alljährlichen Spitzenevent, <br>
+    meiner Geburtstagsfeier, einladen.<br> 
+    <br>
+    Welche supercoole Location ich mir dieses Jahr ausgesucht habe,<br>
+    findet ihr, inkl. Anfahrtsbeschreibung und Menükarte, im PDF anbei.<br> 
+    <br>
+    Um das PDF ansehen zu können, benötigt ihr nach wie vor den<br>
+    <a href="http://get.adobe.com/de/reader/" target="_blank" rel="nofollow">Adobe Reader</a>.
+    <br> 
+    <br>
+    <img src="'.$cid.'" alt="party smiley"> Let the good times roll! 
+    <br>
+    <br>
+    Euer Max!
 </i></p>
 </body>'
 , 'text/html'); 
@@ -128,32 +126,32 @@ if ($mailer->send($message)) {
 } 
 ~~~
 
-Die Klasse flugs auf dem Server installiert, Pfade angepasst und das Dauerfeuer kann losgehen Herz was willst du mehr?
+Die Klasse flugs auf dem Server installiert, Pfade angepasst und das Dauerfeuer kann losgehen; Herz was willst du mehr?
 
+  
 ![email](images/email.png)
+  
+  
+Überblick der aktuell publiken Mailer-Klassen-Kandidaten:
 
+[http://swiftmailer.org/](http://swiftmailer.org/)  
+[http://sourceforge.net/projects/phpmailer/](http://sourceforge.net/projects/phpmailer/)  
+[http://pear.php.net/package/Mail/](http://pear.php.net/package/Mail/)  
 
-Die Üblichen Nachfolgende Mailer-Klassen-Kandidaten:
-
-http://swiftmailer.org/
-http://sourceforge.net/projects/phpmailer/
-http://pear.php.net/package/Mail/
 
 Auch Zend und ezComponents stellen Mailer bereit, die aber nur in Verbindung mit den jeweiligen Umgebungen funktionieren.
 
 
 Es gibt also mehr als den altbekannten PHPMailer. Das da oben war ― unschwer zu erkennen ― die Swiftmailer-Klasse in der 5er Version.
 
-Drei Ergänzungen noch:
-Natürlich müßt Ihr den Absender an Eure Domain anpassen. Sonst verweigert Euer Mailserver noch die Auslieferung. Oder schlimmer: Der Weihnachtsmann liefert an den Falschen! 
-Schützt Eure Verzeichnisse! Oder wollt Ihr auch noch von Fremden ungeliebte Geschenke? 
-SwiftMailer benutzt Exceptions. Für alle Fälle solltet Ihr also alles per try/catch umschließen. Leider wird das in Beispielcodes (konsequent auch in meinem) in der Regel vergessen. 
+Drei Ergänzungen noch:  
 
-PS: Wer jetzt immer noch uneinsichtig fragt, was denn an mail() so verkehrt ist, der möge sich in einer heimeligen Adventsstunde mal sämtliche RFCs zum Thema E-Mail zu Gemüte führen. Und sich fragen, ob er all diese Vorschriften mal locker aus dem Handgelenk programmiert, wofür etablierte Mailingklassen hunderte Scripte bereitstellen. Auch für einfache Textnachrichten lohnt sich der Griff zur Mailer-Klasse. Nur Mut.
+1. Natürlich müßt Ihr den Absender an Eure Domain anpassen. Sonst verweigert euer Mailserver noch die Auslieferung. Oder schlimmer: Die Einladung geht an jemanden Falschen!
+ 
+2. Schützt Eure Verzeichnisse! Oder wollt Ihr auch noch von Fremden ungeliebte Geschenke?  
+
+3. SwiftMailer benutzt Exceptions. Für alle Fälle solltet Ihr also alles per try/catch umschließen. Leider wird das in Beispielcodes (konsequent auch in meinem oben) in der Regel vergessen. 
+
+PS: Wer jetzt immer noch uneinsichtig fragt, was denn an mail() so verkehrt ist, der möge sich in einer heimeligen Adventsstunde mal [sämtliche RFCs zum Thema E-Mail](http://php-de.github.io/email/standard-mail-validation.html#rfc-zum-thema-e-mail) zu Gemüte führen. Und sich fragen, ob er all diese Vorschriften mal locker aus dem Handgelenk programmiert, wofür etablierte Mailingklassen hunderte Scripte bereitstellen. Auch für einfache Textnachrichten lohnt sich der Griff zur Mailer-Klasse. Nur Mut.
 
 Frohes Mailen!
-
-
-LINKS
-http://www.robo47.net/text/38-Mail-ist-tot-es-lebe-mail
-

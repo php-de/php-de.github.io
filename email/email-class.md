@@ -130,14 +130,16 @@ if ($mailer->send($message)) {
 
 Die Klasse flugs auf dem Server installiert, Pfade angepasst und das Dauerfeuer kann losgehen Herz was willst du mehr?
 
+  
 ![email](images/email.png)
-
-
+  
+  
 Die Üblichen Nachfolgende Mailer-Klassen-Kandidaten:
 
-http://swiftmailer.org/
-http://sourceforge.net/projects/phpmailer/
-http://pear.php.net/package/Mail/
+[http://swiftmailer.org/](http://swiftmailer.org/)  
+[http://sourceforge.net/projects/phpmailer/](http://sourceforge.net/projects/phpmailer/)  
+[http://pear.php.net/package/Mail/](http://pear.php.net/package/Mail/)  
+
 
 Auch Zend und ezComponents stellen Mailer bereit, die aber nur in Verbindung mit den jeweiligen Umgebungen funktionieren.
 
@@ -145,11 +147,11 @@ Auch Zend und ezComponents stellen Mailer bereit, die aber nur in Verbindung mit
 Es gibt also mehr als den altbekannten PHPMailer. Das da oben war ― unschwer zu erkennen ― die Swiftmailer-Klasse in der 5er Version.
 
 Drei Ergänzungen noch:
-Natürlich müßt Ihr den Absender an Eure Domain anpassen. Sonst verweigert Euer Mailserver noch die Auslieferung. Oder schlimmer: Der Weihnachtsmann liefert an den Falschen! 
-Schützt Eure Verzeichnisse! Oder wollt Ihr auch noch von Fremden ungeliebte Geschenke? 
-SwiftMailer benutzt Exceptions. Für alle Fälle solltet Ihr also alles per try/catch umschließen. Leider wird das in Beispielcodes (konsequent auch in meinem) in der Regel vergessen. 
+1. Natürlich müßt Ihr den Absender an Eure Domain anpassen. Sonst verweigert Euer Mailserver noch die Auslieferung. Oder schlimmer: Der Weihnachtsmann liefert an den Falschen! 
+2. Schützt Eure Verzeichnisse! Oder wollt Ihr auch noch von Fremden ungeliebte Geschenke? 
+3. SwiftMailer benutzt Exceptions. Für alle Fälle solltet Ihr also alles per try/catch umschließen. Leider wird das in Beispielcodes (konsequent auch in meinem) in der Regel vergessen. 
 
-PS: Wer jetzt immer noch uneinsichtig fragt, was denn an mail() so verkehrt ist, der möge sich in einer heimeligen Adventsstunde mal sämtliche RFCs zum Thema E-Mail zu Gemüte führen. Und sich fragen, ob er all diese Vorschriften mal locker aus dem Handgelenk programmiert, wofür etablierte Mailingklassen hunderte Scripte bereitstellen. Auch für einfache Textnachrichten lohnt sich der Griff zur Mailer-Klasse. Nur Mut.
+PS: Wer jetzt immer noch uneinsichtig fragt, was denn an mail() so verkehrt ist, der möge sich in einer heimeligen Adventsstunde mal [sämtliche RFCs zum Thema E-Mail](http://php-de.github.io/email/standard-mail-validation.html#rfc-zum-thema-e-mailweiterfhrende-quellen) zu Gemüte führen. Und sich fragen, ob er all diese Vorschriften mal locker aus dem Handgelenk programmiert, wofür etablierte Mailingklassen hunderte Scripte bereitstellen. Auch für einfache Textnachrichten lohnt sich der Griff zur Mailer-Klasse. Nur Mut.
 
 Frohes Mailen!
 

@@ -1,6 +1,6 @@
 ---
 layout: guide
-title: E-Mail-Klassen
+title: "Email: E-Mail-Klassen"
 creator: nikosch
 author:
     -   name: nikosch

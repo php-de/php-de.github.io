@@ -1,4 +1,23 @@
-Wie bringe ich meiner Datenbank UTF-8 bei?
+---
+layout: guide
+title: "Mysql und UTF-8"
+creator: Manko10
+author:
+    -   name: Manko10
+        profile: 1139
+
+    -   name: hausl
+        profile: 21246
+
+inhalt:
+    -   name: ""
+        anchor: 
+        simple: ""
+
+entry-type: in-progress
+---
+
+### Wie bringe ich meiner Datenbank UTF-8 bei?
 
 Wie auch dieses Türchen nutzen mittlerweile die meisten Webanwendungen UTF-8 und das aus gutem Grund. In einem internationalen Raum muss auch für jede Sprache und deren Zeichen Platz sein und jeden Benutzer erst einstellen zu lassen, welchen Zeichensatz er gern hätte, ist eine unsägliche Methode. Einerseits fände dies der Benutzer sicherlich nicht so lustig wie vielleicht der Programmierer, andererseits bedeutete es einen enormen Aufwand, der sich nicht rechnet. Folglich wird auf Unicode gesetzt, im Speziellen auf UTF-8.
 In Verbindung mit MySQL gab es aber seit jeher Probleme mit diesem Zeichensatz, sicherlich deshalb, weil er erst mit MySQL 4.1 eingeführt wurde, welches auch erst im März 2005 released wurde… also praktisch gestern Abend.

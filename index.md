@@ -37,4 +37,13 @@ pageSections:
             -   name: "GPC"
                 url: /request-handling/gpc.html
                 
+    -   name: "Datenbanken"
+
+        desc: "MySQL & Co."
+
+        entrys:
+
+            -   name: "MySQL und UFT-8"
+                url: /database/mysql-and-utf8.html
+
 ---

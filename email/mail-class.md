@@ -14,7 +14,6 @@ inhalt:
         anchor: 
         simple: ""
 
-entry-type: in-progress
 ---
 
 <p style="font-size: 10pt; font-family: Courier New, Consolas">

@@ -14,7 +14,7 @@ pageSections:
                 url: /email/standard-mail-validation.html
                 
             -   name: "E-Mail-Klassen"
-                url: /email/email-class.html
+                url: /email/mail-class.html
 
     -   name: "Code Optimierung"
 

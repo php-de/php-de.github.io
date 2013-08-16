@@ -10,8 +10,8 @@ author:
         profile: 21246
 
 inhalt:
-    -   name: ""
-        anchor: 
+    -   name: "MySQL und UTF-8"
+        anchor: wie-bringe-ich-meiner-datenbank-utf-8-bei
         simple: ""
 
 entry-type: in-progress

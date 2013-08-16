@@ -78,33 +78,32 @@ $cid = $message->embed(Swift_Image::fromPath($smiley));
 
 // ein gutes Schreiben ist die halbe Miete 
 $message->setBody(
-'<!DOCTYPE html>
+'<html>
 <head>
     <title>Einladung</title>
-    <meta charset="utf-8">
 </head>
 <body>
 <p style="color: brown; font-size: 14pt; font-family: Georgia, Calibri"><i>
 <br>
-    Meine lieben Freunde!<br>
+	Meine lieben Freunde!<br>
+	<br>
+	Auch dieses Jahr ist es wieder so weit!<br> 
+	<br>
+	Ich habe, trotz meiner großen Klappe, ein weiteres Jahr übelebt,<br>
+	und möchte euch daher gerne zum alljährlichen Spitzenevent, <br>
+	meiner Geburtstagsfeier, einladen.<br> 
+	<br>
+	Welche supercoole Location ich mir dieses Jahr ausgesucht habe,<br>
+	findet ihr, inkl. Anfahrtsbeschreibung und Menükarte, im PDF anbei.<br> 
+	<br>
+	Um das PDF ansehen zu können, benötigt ihr nach wie vor den<br>
+	<a href="http://get.adobe.com/de/reader/" target="_blank" rel="nofollow">Adobe Reader</a>.
+	<br> 
     <br>
-    Auch dieses Jahr ist es wieder so weit!<br> 
-    <br>
-    Ich habe, trotz meiner großen Klappe, ein weiteres Jahr übelebt,<br>
-    und möchte euch daher gerne zum alljährlichen Spitzenevent, <br>
-    meiner Geburtstagsfeier, einladen.<br> 
-    <br>
-    Welche supercoole Location ich mir dieses Jahr ausgesucht habe,<br>
-    findet ihr, inkl. Anfahrtsbeschreibung und Menükarte, im PDF anbei.<br> 
-    <br>
-    Um das PDF ansehen zu können, benötigt ihr nach wie vor den<br>
-    <a href="http://get.adobe.com/de/reader/" target="_blank" rel="nofollow">Adobe Reader</a>.
-    <br> 
-    <br>
-    <img src="'.$cid.'" alt="party smiley"> Let the good times roll! 
-    <br>
-    <br>
-    Euer Max!
+	<img src="'.$cid.'" alt="party smiley"> Let the good times roll! 
+	<br>
+	<br>
+	Euer Max!
 </i></p>
 </body>'
 , 'text/html'); 

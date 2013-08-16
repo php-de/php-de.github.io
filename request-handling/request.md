@@ -17,32 +17,32 @@ author:
 
 inhalt:
     - name: "HTTP"
-	  anchor: http
-	  simple: ""
+      anchor: http
+      simple: ""
 
-        - name: "GET"
-	      anchor: get
-	      simple: ""
+    - name: "GET"
+      anchor: get
+      simple: ""
 
-            - name: "Anwendungsgebiet"
-              anchor: anwendungsgebiet
-              simple: ""
+    - name: "Anwendungsgebiet"
+      anchor: anwendungsgebiet
+      simple: ""
 
-        - name: "POST"
-	      anchor: post
-	      simple: ""
+    - name: "POST"
+      anchor: post
+      simple: ""
 
-            - name: "Anwendungsgebiet"
-              anchor: anwendungsgebiet
-              simple: ""
+    - name: "Anwendungsgebiet"
+      anchor: anwendungsgebiet
+      simple: ""
 
     - name: "Beispiele"
-	  anchor: beispiele
-	  simple: ""
+      anchor: beispiele
+      simple: ""
 
-        - name: "Request auf eine Bilddatei"
-	      anchor: request-auf-eine-bilddatei
-	      simple: ""
+    - name: "Request auf eine Bilddatei"
+      anchor: request-auf-eine-bilddatei
+      simple: ""
 
 ---
 

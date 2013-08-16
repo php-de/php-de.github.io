@@ -21,7 +21,7 @@ entry-type: in-progress
     Von: Max Spendabel<br>
     An: meine.freunde@example.org<br>
     Betreff: Einladung für dich!<br>
-    Anhang: anfahrt_und_menüplan.pdf<br>
+    Anhang: anfahrt_und_essen.pdf<br>
 </p>
 <p style="color: brown; font-size: 12pt; font-family: Georgia, Calibri"><i>
     <br>

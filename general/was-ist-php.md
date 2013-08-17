@@ -18,17 +18,16 @@ author:
 inhalt:
     - name: "Was PHP ist"
       anchor: was-php-ist
-      simple: "und was möglich ist"
+      simple: "Was möglich ist"
       
     - name: "Was PHP nicht ist"
       anchor: was-php-nicht-ist
-      simple: "und nicht möglich ist"
+      simple: "Was nicht möglich ist"
 
     - name: "Merkhilfe"
       anchor: merkhilfe
       simple: ""
 
-entry-type: in-progress
 ---
 
 **... und was ist es nicht?** 

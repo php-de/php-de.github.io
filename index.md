@@ -29,6 +29,13 @@ pageSections:
                 url: /database/mysql-and-utf8.html
 
 
+    -   name: "Debugging"
+        desc: "Auf Fehlersuche"
+        entrys:
+            -   name: "Debugging - Begriffserklärung"
+                url: /debugging/debugging.html
+
+
     -   name: "E-Mail"
         desc: "Wissenswertes über den Umgang mit E-Mail-Adressen, Mail-Servern, und Mailer-Klassen."
         entrys:

@@ -13,8 +13,6 @@ inhalt:
     -   name: "MySQL und UTF-8"
         anchor: wie-bringe-ich-meiner-datenbank-utf-8-bei
         simple: ""
-
-entry-type: in-progress
 ---
 
 ### Wie bringe ich meiner Datenbank UTF-8 bei?

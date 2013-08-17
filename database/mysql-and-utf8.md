@@ -71,12 +71,11 @@ Dies kann aber zu Informationsverlusten führen, wenn Vergleiche mit Unicode-Zei
 
 Fassen wir somit zusammen. Um MySQL erfolgreich mit UTF-8 zu quälen, muss Folgendes gegeben sein:
 
-* Der Client selbst muss UTF-8 sprechen (heißt konkret: die PHP-Datei muss unbedingt in UTF-8 kodiert werden und vom Benutzer kommende Daten müssen ebenfalls in UTF-8 vorliegen) 
-* `SET NAMES 'utf8'` muss an die Datenbank gesendet werden (auf der Kommandozeile wird dafür der Parameter `--default-character-set=UTF8` genutzt) 
-* Die Datenbank sowie deren Tabellen und Spalten müssen auf UTF-8 gestellt sein 
-* Die von MySQL zurückgegebenen Werte sind UTF-8 und müssen auch als solche behandelt werden.  
-  
-  
+- Der Client selbst muss UTF-8 sprechen (heißt konkret: die PHP-Datei muss unbedingt in UTF-8 kodiert werden und vom Benutzer kommende Daten müssen ebenfalls in UTF-8 vorliegen) 
+- `SET NAMES 'utf8'` muss an die Datenbank gesendet werden (auf der Kommandozeile wird dafür der Parameter `--default-character-set=UTF8` genutzt) 
+- Die Datenbank sowie deren Tabellen und Spalten müssen auf UTF-8 gestellt sein 
+- Die von MySQL zurückgegebenen Werte sind UTF-8 und müssen auch als solche behandelt werden.  
+
 
 Ab PHP 5.2.3 existiert übrigens die Funktion [mysqli_set_charset()](http://php.net/manual/de/mysqli.set-charset.php), welche statt einem manuellen `SET NAMES` genutzt werden sollte, da hier noch verifiziert wird, ob der gewünschte Zeichensatz vom Client überhaupt unterstützt wird. Darüberhinaus wird das interne Feld mysql->charset auf den entsprechenden Zeichensatz gesetzt, was bei der manuellen Variante ebenfalls nicht gegeben wäre.
 Zu bedenken ist aber, dass neben der richtigen PHP-Version auch eine MySQL-Version 5.0.7 oder höher benötigt wird.

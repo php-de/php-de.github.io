@@ -1,6 +1,6 @@
 ---
 layout: guide
-title: "Debugging - Begriffserklärung"
+title: "Debugging: Begriffserklärung"
 creator: nikosch
 author:
     -   name: nikosch
@@ -13,7 +13,7 @@ author:
         profile: 21246
 
 inhalt:
-    -   name: ""
+    -   name: "Debugging"
         anchor: 
         simple: ""
 

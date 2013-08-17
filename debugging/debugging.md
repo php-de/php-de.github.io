@@ -14,10 +14,12 @@ author:
 
 inhalt:
     -   name: "Debugging"
-        anchor: 
-        simple: ""
+        anchor: debugging
+        simple: "Was ist das?"
 
 ---
+
+### Debugging
 
 Das **Debugging** bezeichnet im Prozess der Softwareentwicklung die gezielte Fehlersuche in einem vorhandenen Code. Das Wort leitet sich aus der Negation des Wortes *Bug* ab, das im Programmiererjargon einen Programmfehler bezeichnet. 
 

@@ -6,7 +6,7 @@ pageSections:
 
     -   name: "Allgemein"
 
-        desc: "Grundlegende Informationen zum Einstieg in PHP"
+        desc: "Grundlegende Informationen zum Einstieg in PHP."
 
         entrys:
 

@@ -1,6 +1,6 @@
 ---
 layout: guide
-title: "MySQL und UTF-8"
+title: "Datenbanken: MySQL und UTF-8"
 creator: Manko10
 author:
     -   name: Manko10

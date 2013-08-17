@@ -65,7 +65,7 @@ Für direkte Interaktion mit dem Benutzer ist [JavaScript](http://www.php.de/wik
 
 ### Merkhilfe 
 Im normalen Kontext - Browser ruft Website auf - stellen sich die Rollen von HTML und PHP so dar: 
-
+  
 Der Aufruf einer HTML Seite liefert ein Hypertextdokument, das durch den Browser gerendert, d. h. angezeigt wird. 
 Der Aufruf einer PHP Seite startet ein Programm, das ein Hypertextdokument erzeugt. Das Hypertextdokument wird wiederum durch den Server ausgeliefert und im Browser gerendert. 
 

@@ -25,7 +25,7 @@ inhalt:
 entry-type: in-progress
 ---
 
-Bei **GPC** handelt es sich um ein Kürzel, welches für **G**ET, **P**OST, **C**OOKIE steht. Gemeint sind Parameterwerte, die dem Script je nach Art des Aufrufs im [HTTP-Request](http://www.php.de/wiki-php/index.php/Request)  übergeben werden können.
+Bei **GPC** handelt es sich um ein Kürzel, welches für **G**ET, **P**OST, **C**OOKIE steht. Gemeint sind Parameterwerte, die dem Script je nach Art des Aufrufs im [HTTP-Request](http://php-de.github.io/request-handling/request.html)  übergeben werden können.
 
 Im Variablenraum von PHP manifestieren sich diese Parametermengen jeweils als gleichnamiges, superglobales Array: Anfallende Daten werden als $_GET, $_POST bzw. $_COOKIE global verfügbar. Da die Arrays getrennte Wertebereiche pro Parameterart benutzen, repräsentieren sie stets alle bei einem Scriptaufruf anfallenden Daten und unterliegen nicht der Konkurrenz gleichnamiger Schlüsselwerte. Ist die Herkunft der Angabe dagegen nicht relevant, kann alternativ eine andere Superglobale verwendet werden: $_REQUEST.
 

@@ -126,6 +126,9 @@ Die Länge der gesendeten Daten eines POST-Requests ist theoretisch nur von der 
 Da bei einem POST-Request (im Gegensatz zum GET-Request) die Parameter nicht an die URL angehängt werden, ist diese Sendemethode transparenter und weniger verwirrend für den Benutzer. Sie bietet sich vor allem für Serveranfragen mit viel Inhalt (z.B. Formulare) an. Da die URL nicht verändert wird, werden die Header auch in der Log-Datei des Servers nicht festgehalten. Somit eignet sich ein POST-Request besser zur Übertragung vertraulicher Daten, als ein GET-Request, wobei natürlich auch hier eine Übertragungs-Verschlüsselung genutzt werden sollte.
 
 ### Beispiele
+---
+
+#### Request auf eine Bilddatei
 
 ~~~html
 GET http://www.google.de:80/images/firefox/sprite.png HTTP/1.1
@@ -145,7 +148,9 @@ If-Modified-Since: Wed, 23 Jan 2008 19:15:23 GMT
 Cache-Control: max-age=0
 ~~~
 
-> * Fordert über Port 80 der Domain www.google.de aus dem Unterverzeichnis /images/firefox/ die Datei sprite.png an.
-> * Die Anfrage erfolgt aus einem Firefox-Browser, Version 2.0.0.14 oder einem Programm, dass sich dafür ausgibt.
-> * Zuvor wurde die Seite "http://www.google.de/firefox?client=firefox-a&rls=org.mozilla:de:official" aufgerufen, in der die Bild-Ressource eingebunden wird.
-> * Der Browser sendet Cookiedaten mit, die früher auf dem Client abgelegt wurden
+~~~code
+* Fordert über Port 80 der Domain www.google.de aus dem Unterverzeichnis /images/firefox/ die Datei sprite.png an.
+* Die Anfrage erfolgt aus einem Firefox-Browser, Version 2.0.0.14 oder einem Programm, dass sich dafür ausgibt.
+* Zuvor wurde die Seite "http://www.google.de/firefox?client=firefox-a&rls=org.mozilla:de:official" aufgerufen, in der die Bild-Ressource eingebunden wird.
+* Der Browser sendet Cookiedaten mit, die früher auf dem Client abgelegt wurden
+~~~

@@ -43,7 +43,7 @@ pageSections:
 
         entrys:
 
-            -   name: "MySQL und UFT-8"
+            -   name: "MySQL und UTF-8"
                 url: /database/mysql-and-utf8.html
 
 ---

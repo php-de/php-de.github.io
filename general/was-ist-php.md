@@ -16,10 +16,18 @@ author:
       profile: 21246
       
 inhalt:
-    - name: ""
-      anchor: 
-      simple: ""
+    - name: "Was PHP ist"
+      anchor: was-php-ist
+      simple: "und was möglich ist"
       
+    - name: "Was PHP nicht ist"
+      anchor: was-php-nicht-ist
+      simple: "und nicht möglich ist"
+
+    - name: "Merkhilfe"
+      anchor: merkhilfe
+      simple: ""
+
 entry-type: in-progress
 ---
 
@@ -60,9 +68,10 @@ Im normalen Kontext - Browser ruft Website auf - stellen sich die Rollen von HTM
 
 Der Aufruf einer HTML Seite liefert ein Hypertextdokument, das durch den Browser gerendert, d. h. angezeigt wird. 
 Der Aufruf einer PHP Seite startet ein Programm, das ein Hypertextdokument erzeugt. Das Hypertextdokument wird wiederum durch den Server ausgeliefert und im Browser gerendert. 
-Bild:Client-Server.JPG 
+
 
 ![Client-Server](images/client-server.jpg)
+
 
 PHP geschieht also vor allen Sprachen und Formatierungen, die im Browser zum Einsatz kommen (HTML, Javascript, CSS). PHP ist von einem Server (also so gesehen von einer bestehenden Internetverbindung) abhängig, clientseitige Sprachen sind es nicht (insofern der Quelltext lokal auf dem Client PC existiert). Ein HTML Code mit Stylesheets und Javascript Funktionalität kann also auf einen Client PC heruntergeladen lokal vom Browser verarbeitet werden. PHP Code dagegen nicht.
 

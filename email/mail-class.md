@@ -11,12 +11,10 @@ author:
 
 inhalt:
     -   name: "E-Mail-Klassen"
-        anchor: e-mail-klassen
+        anchor: 
         simple: ""
 
 ---
-
-### E-Mail-Klassen
 
 <p style="font-size: 10pt; font-family: Courier New, Consolas">
     Von: Max Spendabel<br>

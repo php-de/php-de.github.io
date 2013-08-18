@@ -69,7 +69,7 @@ phpinfo();
 
 Lade die Datei in den öffentlich erreichbaren Kontext Deines Webspace und rufe die Datei über die URL Deines Browsers auf. Wird eine Liste von PHP Settings angezeigt, hast Du sichergestellt, dass PHP generell funktioniert. 
 
-**Hinweis:** Bei allen nachfolgenden Beispielen wird das <?php nicht mehr explizit erwähnt.
+**Hinweis:** Bei allen nachfolgenden Beispielen wird das `<?php` nicht mehr explizit erwähnt.
 
 
 #### Erzwinge die Fehlerausgabe

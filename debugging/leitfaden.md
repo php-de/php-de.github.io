@@ -43,17 +43,19 @@ Wenn das Deine ersten Schritte mit PHP sind, erstelle eine Datei test.php mit fo
 
 ~~~ php
 <?php
-
 phpinfo();
 ~~~
 
 Lade die Datei in den öffentlich erreichbaren Kontext Deines Webspace und rufe die Datei über die URL Deines Browsers auf. Wird eine Liste von PHP Settings angezeigt, hast Du sichergestellt, dass PHP generell funktioniert. 
 
+**Hinweis:** Bei allen nachfolgenden Beispielen wird das <?php nicht mehr explizit erwähnt.
+
+
 #### Erzwinge die Fehlerausgabe
 
 Mit hoher Wahrscheinlichkeit handelt es sich um einen Fehler vor der ersten Ausgabe oder einen sogenannten Parser Fehler. Das ist ein Fehler, den PHP generiert, weil der Parser aufgrund einer Syntaxverletzung die Ausführung des Scripts nicht zu Ende führen kann. 
 
-Platziere ganz am Anfang Deines Scripts hinter dem ersten öffnenden `<?php` folgenden Code: 
+Platziere ganz am Anfang Deines Scripts (und natürlich hinter dem ersten öffnenden `<?php`) folgenden Code: 
 
 ~~~ php
 error_reporting(-1);
@@ -74,7 +76,7 @@ Je nachdem wie sich die Ausgabe ändert kannst Du jetzt unter 2 oder 3 fortfahre
 
 #### Fehler verstehen
 
-Jede Fehlermeldung, die PHP erzeugt, enthält eine kurze Beschreibung, eine Angabe zu Script und Zeilennumer, in dem der Fehler auftrat und u.U. ein sogenanntes Parser Token, das die Zeichenkette bezeichnet, die den Fehler ausgelöst hat. Alle Parser Token sind im PHP Manual im Anhang nachlesbar. Somit kann man ergründen, welches Element vom Parser zum Zeitpunkt des Fehlers verarbeitet wurde. 
+Jede Fehlermeldung, die PHP erzeugt, enthält eine kurze Beschreibung, eine Angabe zu Script und Zeilennumer, in dem der Fehler auftrat und u.U. ein sogenanntes Parser Token, das die Zeichenkette bezeichnet, die den Fehler ausgelöst hat. Alle Parser Token sind im [PHP Manual](http://php.net/manual/de/tokens.php) nachlesbar. Somit kann man ergründen, welches Element vom Parser zum Zeitpunkt des Fehlers verarbeitet wurde. 
 
 #### Sonderfall Parser Fehler
 
@@ -94,7 +96,7 @@ Erzeugt ein
 Parse error: syntax error, unexpected T_ECHO, expecting ',' or ';' in Webpfad\test.php on line 4
 ~~~
 
-also ein unwerwartetes T_ECHO (Parser Token für den echo () Befehl) und fordert ein Komma oder eine Semikolon an der bezeichneten Stelle.
+also ein unwerwartetes T_ECHO (Parser Token für den echo() Befehl) und fordert ein Komma oder eine Semikolon an der bezeichneten Stelle.
 
 ~~~ php
 echo 'Hallo
@@ -133,7 +135,7 @@ Damit ist es sinnvoll, bei der Fehleranalyse immer linear vorzugehen.
 
 #### Wirklich?
 
-Gerade für Anfänger ist es wichtig, sich immer wieder die Zusammenhänge von server- und clientseitigem Code klarzumachen. Da PHP vor browserseitigen Ausgaben erfolgt können Fehlermeldungen durchaus in HTML Text eingeschlossen und damit nur im Quelltext sichtbar sein. Sie können innerhalb einer Ausgabe von Javascript erzeugt worden sein und dadurch wiederum dort eine ungültige Syntax erzeugen und damit wiederum Javascript Fehlermeldungen. Schließlich haben Browser eine gewisse Fehlertoleranz auf ihr Markup, sodass irreguläre Angaben gänzlich unerkannt bleiben können.
+Gerade für Anfänger ist es wichtig, sich immer wieder die [Zusammenhänge von server- und clientseitigem Code](http://php-de.github.io/general/was-ist-php.html) klarzumachen. Da PHP vor browserseitigen Ausgaben erfolgt können Fehlermeldungen durchaus in HTML Text eingeschlossen und damit nur im Quelltext sichtbar sein. Sie können innerhalb einer Ausgabe von Javascript erzeugt worden sein und dadurch wiederum dort eine ungültige Syntax erzeugen und damit wiederum Javascript Fehlermeldungen. Schließlich haben Browser eine gewisse Fehlertoleranz auf ihr Markup, sodass irreguläre Angaben gänzlich unerkannt bleiben können.
 
 Einfache Faustregel: PHP baut HTML und alle anderen Sprachen, die der Browser verarbeitet. Der erste Blick bei der Fehlersuche sollte also stets dem Browserquelltext dienen, die reine Bildschirmaussage sagt kaum etwas über die Probleme im Hintergrund aus. 
 

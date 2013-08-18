@@ -33,8 +33,8 @@ inhalt:
         anchor: tipps
         simple: "var_dump()"
 
-    -   name: "Querys"
-        anchor: querys
+    -   name: "Queries"
+        anchor: queries
         simple: "zu beachten bei SQL-Querys"
 
 entry-type: in-progress

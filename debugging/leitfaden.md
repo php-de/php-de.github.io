@@ -17,6 +17,7 @@ inhalt:
         anchor: 
         simple: ""
 
+entry-type: in-progress
 ---
 
 Hier findest du einen Debugging Leitfaden, der Schritt für Schritt durch Grundlagen der Fehlersuche führen soll. Die nachfolgenden Informationen beziehen sich vornehmlich auf die Analyse von Fehlern, die serverseitig in PHP auftreten. Konkrete Fehlersituationen klärt [Debugging-Standardfehler](http://php-de.github.io/debugging/standardfehler.html). 

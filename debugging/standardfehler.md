@@ -17,6 +17,7 @@ inhalt:
         anchor: 
         simple: ""
 
+type-entry: in-progress
 ---
 
 under construction

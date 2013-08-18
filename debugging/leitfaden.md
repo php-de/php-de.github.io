@@ -35,7 +35,7 @@ inhalt:
 
     -   name: "Queries"
         anchor: queries
-        simple: "zu beachten bei SQL-Querys"
+        simple: "Mehrzeilig angeben"
 
 entry-type: in-progress
 ---

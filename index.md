@@ -34,6 +34,8 @@ pageSections:
         entrys:
             -   name: "Debuggung? Was ist das?"
                 url: /debugging/was-ist-debugging.html
+            -   name: "Leitfaden"
+                url: /debugging/leitfaden.html
 
 
     -   name: "E-Mail"

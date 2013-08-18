@@ -69,14 +69,14 @@ phpinfo();
 
 Lade die Datei in den öffentlich erreichbaren Kontext Deines Webspace und rufe die Datei über die URL Deines Browsers auf. Wird eine Liste von PHP Settings angezeigt, hast Du sichergestellt, dass PHP generell funktioniert. 
 
-**Hinweis:** Bei allen nachfolgenden Beispielen wird das `<?php` nicht mehr explizit erwähnt.
+**Hinweis:** Bei allen nachfolgenden Beispielen wird das <?php nicht mehr explizit angeführt.
 
 
 #### Erzwinge die Fehlerausgabe
 
 Mit hoher Wahrscheinlichkeit handelt es sich um einen Fehler vor der ersten Ausgabe oder einen sogenannten Parser Fehler. Das ist ein Fehler, den PHP generiert, weil der Parser aufgrund einer Syntaxverletzung die Ausführung des Scripts nicht zu Ende führen kann. 
 
-Platziere ganz am Anfang Deines Scripts (und natürlich hinter dem ersten öffnenden `<?php`) folgenden Code: 
+Platziere ganz am Anfang Deines Scripts (und natürlich hinter dem ersten öffnenden <?php) folgenden Code: 
 
 ~~~ php
 error_reporting(-1);

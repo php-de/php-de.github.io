@@ -180,7 +180,7 @@ Auch wenn etwas noch so logisch oder noch so unmöglich erscheint - läuft das P
 
 Eine Grundregel - lass Dir Variablen ausgeben! 
 
-Für einfache Varibalen reicht schon ein echo Kommando. Für komplexere Typen wie Arrays und Objekte helfen print_r und var_dump. Wo print_r etwas übersichtlichere Resultate liefert ist var_dump genauer; es gibt nämlich die Typen mit an. Unschlagbar für Fälle, in denen eine Variable einen leeren String oder einen BOOL Wert enthält - hier gibt print_r schlicht gar nichts aus.
+Für einfache Varibalen reicht schon ein echo Kommando. Für komplexere Typen wie Arrays und Objekte helfen print_r() und var_dump. Wo print_r() etwas übersichtlichere Resultate liefert ist var_dump() genauer; es gibt nämlich die Typen mit an. Unschlagbar für Fälle, in denen eine Variable einen leeren String oder einen BOOL Wert enthält - hier gibt print_r() schlicht gar nichts aus.
 Für Ausgaben (sogenannte Dumps) von Arrays und Objekten empfielt sich weiterhin, das HTML-Script vorübergehend durch ein zu erweitern oder die Debuggingausgabe im Browserquelltext anzuschauen. Grund ist die Eigenheit von HTML-Renderings, Gruppen von Leerzeichen und Zeilenumbrüchen als ein Leerzeichen darzustellen und damit die strukturelle Darstellung von Variablendumps in einen großen Zeichenberg aufzulösen.
 
 #### Meldungen erzeugen
@@ -202,11 +202,11 @@ Manche Funktionen liefern auch weitreichendere Fehlermeldungen, die man explizit
 
 **var_dump()**
 
-Solange man keine ausgefeiltere Debugging Klasse/Funktion verwendet, empfielt sich die Verwendung von var_dump für Variablenausgaben.
+Solange man keine ausgefeiltere Debugging Klasse/Funktion verwendet, empfielt sich die Verwendung von var_dump() für Variablenausgaben.
 
-- Vorteil gegenüber echo: var_dump kann alle Datentypen ausgeben, während echo Objekte, Arrays oder boolsche Werte nicht aussagekräftig darstellen kann. Selbst wenn statt eines erwarteten Strings ein Objekt gesetzt wurde, erfolgt eine sinnvolle Ausgabe ohne Folgefehler.
-- Gegenüber print_r werden die Werte NULL, " " (leerer String) und FALSE sowie TRUE und 1 unterschieden. Das ist sehr sinnvoll zum Debuggen von Rückgabewerten von Funktionen, die unterschiedliche Datentypen zurückgeben können (so auch viele PHP  built-in-Funktionen).
-- var_dump erzeugt immer Bildschirmausgabe, weil zumindest der Typ immer mit ausgegeben wird. Gerade für Anfänger ergibt sich so nicht die zusätzliche Frage, wieso der Debuggingpunkt nicht ausgeführt wird.
+- Vorteil gegenüber echo: var_dump() kann alle Datentypen ausgeben, während echo Objekte, Arrays oder boolsche Werte nicht aussagekräftig darstellen kann. Selbst wenn statt eines erwarteten Strings ein Objekt gesetzt wurde, erfolgt eine sinnvolle Ausgabe ohne Folgefehler.
+- Gegenüber print_r() werden die Werte NULL, " " (leerer String) und FALSE sowie TRUE und 1 unterschieden. Das ist sehr sinnvoll zum Debuggen von Rückgabewerten von Funktionen, die unterschiedliche Datentypen zurückgeben können (so auch viele PHP  built-in-Funktionen).
+- var_dump() erzeugt immer Bildschirmausgabe, weil zumindest der Typ immer mit ausgegeben wird. Gerade für Anfänger ergibt sich so nicht die zusätzliche Frage, wieso der Debuggingpunkt nicht ausgeführt wird.
 <br>
 
 #### Queries

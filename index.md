@@ -13,8 +13,8 @@ pageSections:
                 url: /general/ich-will-das-selbst-schaffen-attituede.html
 
 
-    -   name: "Code Optimierung"
-        desc: "Code Optimierung von A bis Z."
+    -   name: "Code-Optimierung"
+        desc: "Code-Optimierung von A bis Z."
         entrys:
             -   name: "Code smells"
                 url: /code-optimizing/code-smells.html
@@ -29,6 +29,13 @@ pageSections:
                 url: /database/mysql-and-utf8.html
 
 
+    -   name: "Debugging"
+        desc: "Auf Fehlersuche"
+        entrys:
+            -   name: "Begriffserklärung"
+                url: /debugging/debugging.html
+
+
     -   name: "E-Mail"
         desc: "Wissenswertes über den Umgang mit E-Mail-Adressen, Mail-Servern, und Mailer-Klassen."
         entrys:
@@ -38,7 +45,7 @@ pageSections:
                 url: /email/mail-class.html
 
 
-    -   name: "Request Handling"
+    -   name: "Request-Handling"
         desc: "Wissenswertes über das Request Handling in PHP."
         entrys:
             -   name: "GPC"

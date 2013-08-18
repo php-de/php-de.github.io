@@ -13,9 +13,29 @@ author:
         profile: 21246
 
 inhalt:
-    -   name: ""
-        anchor: 
+    -   name: "Hinweis"
+        anchor: hinweis
         simple: ""
+
+    -   name: "Ausgangssituation 1"
+        anchor: ausgangssituation-1
+        simple: "Keine Ausgabe"
+
+    -   name: "Ausgangssituation 2"
+        anchor: ausgangssituation-2
+        simple: "Es gibt Fehlermeldungen"
+
+    -   name: "Ausgangssituation 3"
+        anchor: ausgangssituation-3
+        simple: "Keine Fehlermeldungen, trotzdem stimmt was nicht"
+
+    -   name: "Tipps"
+        anchor: tipps
+        simple: "var_dump()"
+
+    -   name: "Querys"
+        anchor: querys
+        simple: "zu beachten bei SQL-Querys"
 
 entry-type: in-progress
 ---
@@ -191,5 +211,5 @@ Solange man keine ausgefeiltere Debugging Klasse/Funktion verwendet, empfielt si
 
 #### Queries
 
-Datenbankqueries, die in PHP als String angegeben werden, können besser debugt werden, wenn sie mehrzeilig notiert sind. Zum einen ist eine bessere optische Analyse möglich, zum zweiten beziehen sich Fehlermeldungen, die mysql liefert dann auf eine konkrete Zeile des Statements.
+Datenbankqueries, die in PHP als String angegeben werden, können besser debugged werden, wenn sie mehrzeilig notiert sind. Zum einen ist eine bessere optische Analyse möglich, zum zweiten beziehen sich Fehlermeldungen, die mysql liefert dann auf eine konkrete Zeile des Statements.
 

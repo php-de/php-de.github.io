@@ -1,6 +1,6 @@
 ---
 layout: guide
-title: "Email: E-Mail-Klassen"
+title: "E-Mail: E-Mail-Klassen"
 creator: nikosch
 author:
     -   name: nikosch
@@ -10,11 +10,13 @@ author:
         profile: 21246
 
 inhalt:
-    -   name: ""
-        anchor: 
+    -   name: "E-Mail-Klassen"
+        anchor: e-mail-klassen
         simple: ""
 
 ---
+
+### E-Mail-Klassen
 
 <p style="font-size: 10pt; font-family: Courier New, Consolas">
     Von: Max Spendabel<br>

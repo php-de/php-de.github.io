@@ -30,9 +30,6 @@ inhalt:
 
 ---
 
-<<<<<<< HEAD
-foo
-=======
 **... und was ist es nicht?** 
 
 Oft zeigt sich bei PHP-Einsteigern, dass ein grundlegendes Verständnis dafür fehlt, was PHP eigentlich genau ist, wofür es zu gebrauchen ist und eben auch, wofür es nicht zu gebrauchen ist. 

@@ -48,7 +48,11 @@ Dieser Leitfaden bezieht sich auf die Analyse von PHP Fehlern. Viele dieser Fehl
 
 Ein Analysefluss lässt sich linear nur schwer darstellen, deshalb nachfolgend und einleitend ein kleines Diagramm zur Fehlereingrenzung: 
 
-![Debugging-Analyse](images/debugging-analyse.jpg) 
+![Debugging-Analyse](images/debugging_analyse_800px.jpg) 
+
+
+
+[![Debugging-Analyse](images/debugging_analyse_800px.jpg)](images/debugging_analyse_1589px.jpg)
 
 
 ### Ausgangssituation 1

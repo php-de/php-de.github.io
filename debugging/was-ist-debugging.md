@@ -1,6 +1,6 @@
 ---
 layout: guide
-title: "Debugging: Begriffserklärung"
+title: "Debugging: Was ist Debugging?"
 creator: nikosch
 author:
     -   name: nikosch

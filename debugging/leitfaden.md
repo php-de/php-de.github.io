@@ -67,14 +67,14 @@ phpinfo();
 
 Lade die Datei in den öffentlich erreichbaren Kontext Deines Webspace und rufe die Datei über die URL Deines Browsers auf. Wird eine Liste von PHP Settings angezeigt, hast Du sichergestellt, dass PHP generell funktioniert. 
 
-**Hinweis:** Bei allen nachfolgenden Beispielen wird das <?php nicht mehr explizit angeführt.
+**Hinweis:** Bei allen nachfolgenden Beispielen wird das `<?php` nicht mehr explizit angeführt.
 
 
 #### Erzwinge die Fehlerausgabe
 
 Mit hoher Wahrscheinlichkeit handelt es sich um einen Fehler vor der ersten Ausgabe oder einen sogenannten Parser Fehler. Das ist ein Fehler, den PHP generiert, weil der Parser aufgrund einer Syntaxverletzung die Ausführung des Scripts nicht zu Ende führen kann. 
 
-Platziere ganz am Anfang Deines Scripts (und natürlich hinter dem ersten öffnenden <?php) folgenden Code: 
+Platziere ganz am Anfang Deines Scripts (und natürlich hinter dem ersten öffnenden `<?php`) folgenden Code: 
 
 ~~~ php
 error_reporting(-1);
@@ -83,7 +83,7 @@ ini_set('display_errors', 1);
 
 Das weist PHP an, alle auftretenden Fehlermeldungen und -hinweise auf dem Bildschirm auszugeben. Zusätzlich sind alle @ (Fehlerkontrolloperator) vor Ausdrücken im PHP Code zu entfernen. 
 
-Parserfehler treten auf, bevor das Skript ausgeführt wird. Daher kann das Reportverhalten im fehlerhaften Skript nicht über ini_set() beeinflusst werden. Auf dem Entwicklungsserver sollten hierfür die Parameter display_startup_errors und/oder error_log in der php.ini gesetzt werden. 
+Parserfehler treten auf, bevor das Skript ausgeführt wird. Daher kann das Reportverhalten im fehlerhaften Skript nicht über ini_set() beeinflusst werden. Auf dem Entwicklungsserver sollten hierfür die Parameter `display_startup_errors` und/oder `error_log` in der php.ini gesetzt werden. 
 
 Je nachdem wie sich die Ausgabe ändert kannst Du jetzt unter 2 oder 3 fortfahren. 
 
@@ -115,7 +115,7 @@ Erzeugt ein
 Parse error: syntax error, unexpected T_ECHO, expecting ',' or ';' in Webpfad\test.php on line 4
 ~~~
 
-also ein unwerwartetes T_ECHO (Parser Token für den echo() Befehl) und fordert ein Komma oder eine Semikolon an der bezeichneten Stelle.
+also ein unwerwartetes T_ECHO (Parser Token für den echo-Befehl) und fordert ein Komma oder eine Semikolon an der bezeichneten Stelle.
 
 ~~~ php
 echo 'Hallo
@@ -178,7 +178,7 @@ Auch wenn etwas noch so logisch oder noch so unmöglich erscheint - läuft das P
 
 Eine Grundregel - lass Dir Variablen ausgeben! 
 
-Für einfache Varibalen reicht schon ein echo Kommando. Für komplexere Typen wie Arrays und Objekte helfen print_r() und var_dump. Wo print_r() etwas übersichtlichere Resultate liefert ist var_dump() genauer; es gibt nämlich die Typen mit an. Unschlagbar für Fälle, in denen eine Variable einen leeren String oder einen BOOL Wert enthält - hier gibt print_r() schlicht gar nichts aus.
+Für einfache Varibalen reicht schon ein `echo` Kommando. Für komplexere Typen wie Arrays und Objekte helfen `print_r()` und `var_dump()`. Wo `print_r()` etwas übersichtlichere Resultate liefert ist `var_dump()` genauer; es gibt nämlich die Typen mit an. Unschlagbar für Fälle, in denen eine Variable einen leeren String oder einen BOOL Wert enthält - hier gibt `print_r()` schlicht gar nichts aus.
 Für Ausgaben (sogenannte Dumps) von Arrays und Objekten empfielt sich weiterhin, das HTML-Script vorübergehend durch ein zu erweitern oder die Debuggingausgabe im Browserquelltext anzuschauen. Grund ist die Eigenheit von HTML-Renderings, Gruppen von Leerzeichen und Zeilenumbrüchen als ein Leerzeichen darzustellen und damit die strukturelle Darstellung von Variablendumps in einen großen Zeichenberg aufzulösen.
 
 #### Meldungen erzeugen
@@ -202,9 +202,9 @@ Manche Funktionen liefern auch weitreichendere Fehlermeldungen, die man explizit
 
 Solange man keine ausgefeiltere Debugging Klasse/Funktion verwendet, empfielt sich die Verwendung von var_dump() für Variablenausgaben.
 
-- Vorteil gegenüber echo: var_dump() kann alle Datentypen ausgeben, während echo Objekte, Arrays oder boolsche Werte nicht aussagekräftig darstellen kann. Selbst wenn statt eines erwarteten Strings ein Objekt gesetzt wurde, erfolgt eine sinnvolle Ausgabe ohne Folgefehler.
-- Gegenüber print_r() werden die Werte NULL, " " (leerer String) und FALSE sowie TRUE und 1 unterschieden. Das ist sehr sinnvoll zum Debuggen von Rückgabewerten von Funktionen, die unterschiedliche Datentypen zurückgeben können (so auch viele PHP  built-in-Funktionen).
-- var_dump() erzeugt immer Bildschirmausgabe, weil zumindest der Typ immer mit ausgegeben wird. Gerade für Anfänger ergibt sich so nicht die zusätzliche Frage, wieso der Debuggingpunkt nicht ausgeführt wird.
+- Vorteil gegenüber `echo`: `var_dump()` kann alle Datentypen ausgeben, während `echo` Objekte, Arrays oder boolsche Werte nicht aussagekräftig darstellen kann. Selbst wenn statt eines erwarteten Strings ein Objekt gesetzt wurde, erfolgt eine sinnvolle Ausgabe ohne Folgefehler.
+- Gegenüber `print_r()` werden die Werte NULL, " " (leerer String) und FALSE sowie TRUE und 1 unterschieden. Das ist sehr sinnvoll zum Debuggen von Rückgabewerten von Funktionen, die unterschiedliche Datentypen zurückgeben können (so auch viele PHP  built-in-Funktionen).
+- `var_dump()` erzeugt immer Bildschirmausgabe, weil zumindest der Typ immer mit ausgegeben wird. Gerade für Anfänger ergibt sich so nicht die zusätzliche Frage, wieso der Debuggingpunkt nicht ausgeführt wird.
 <br>
 
 #### Queries

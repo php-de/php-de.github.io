@@ -9,6 +9,7 @@ pageSections:
         entrys:
             -   name: "Was ist PHP?"
                 url: /general/was-ist-php.html
+
             -   name: "Ich-will-das-selbst-schaffen-Attitüde"
                 url: /general/ich-will-das-selbst-schaffen-attituede.html
 
@@ -18,6 +19,7 @@ pageSections:
         entrys:
             -   name: "Code smells"
                 url: /code-optimizing/code-smells.html
+
             -   name: "Wächter"
                 url: /code-optimizing/waechter.html
 
@@ -34,8 +36,12 @@ pageSections:
         entrys:
             -   name: "Debugging ... Was ist das?"
                 url: /debugging/was-ist-debugging.html
+
             -   name: "Leitfaden"
                 url: /debugging/leitfaden.html
+
+            -   name: "Standardfehler"
+                url: /debugging/standardfehler.html
 
 
     -   name: "E-Mail"
@@ -43,6 +49,7 @@ pageSections:
         entrys:
             -   name: "Standard E-Mail-Validierung"
                 url: /email/standard-mail-validation.html
+
             -   name: "E-Mail-Klassen"
                 url: /email/mail-class.html
 
@@ -52,6 +59,7 @@ pageSections:
         entrys:
             -   name: "GPC"
                 url: /request-handling/gpc.html
+
             -   name: "Request"
                 url: /request-handling/request.html
 

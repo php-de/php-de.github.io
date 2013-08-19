@@ -13,9 +13,22 @@ author:
         profile: 21246
 
 inhalt:
-    -   name: ""
-        anchor: 
+    -   name: "Headervorgänge und „Headers already sent"
+        anchor: headervorgnge-und-headers-already-sent
         simple: ""
+
+    -   name: "Kontrollstrukturen: Zuweisung statt Vergleich"
+        anchor: kontrollstrukturen-zuweisung-statt-vergleich
+        simple: ""
+
+    -   name: "Kontrollstrukturen: Vorzeitige Beendigung durch Anweisungsende"
+        anchor: kontrollstrukturen-vorzeitige-beendigung-durch-anweisungsende
+        simple: ""
+
+    -   name: "Kontrollstrukturen: Fehlende Blöcke"
+        anchor: kontrollstrukturen-fehlende-blcke
+        simple: ""
+
 
 entry-type: in-progress
 ---

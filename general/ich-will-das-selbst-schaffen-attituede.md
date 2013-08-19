@@ -32,7 +32,6 @@ inhalt:
       anchor: resum
       simple: ""
       
-entry-type: in-progress
 ---
 
 Das Web ist groß und wird immer größer und auch die Ideen und Innovationen wachsen und wachsen und kein Ende ist in Sicht. In einigen Jahren, so prophezeihen renommierte Kristallkugelleser und Heise-Forenkommentatoren, wird sich der gesamte Wissensstand der Menschheit vervielfacht haben und die technischen Möglichkeiten werden die heutige Vorstellungskraft weit übersteigen. Seit der Erfindung des Rades konnte dem technischen Fortschritt der Menschheit kein Einhalt geboten, auch durch staatliche und kirchliche Repressionen nicht. Einzig eine Konstante existiert im Universum neben der Stetigkeit des Wandels, wie Leonardo di ser Piero aus Vinci schon sagte, und das ist der geistige Entwicklungsstand des Menschen selbst. Die folgende völlig quellen-, fakten- wie zweckfreie Studie der selbsternannten PHP.de-Soziologen soll diese unglaubliche Tatsache ein wenig näher beleuchten. 

@@ -32,7 +32,7 @@ pageSections:
     -   name: "Debugging"
         desc: "Auf Fehlersuche"
         entrys:
-            -   name: "Debuggung ... Was ist das?"
+            -   name: "Debugging ... Was ist das?"
                 url: /debugging/was-ist-debugging.html
             -   name: "Leitfaden"
                 url: /debugging/leitfaden.html

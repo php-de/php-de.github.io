@@ -37,7 +37,7 @@ entry-type: in-progress
 
 #### Problem 
 
-Bei einer Sessioninitialisierung (session_start), einem Cookiesetzen oder einer versuchten Header-Weiterleitung (Location) erfolgt eine Fehlermeldung („Headers already sent“) und die Aktion bleibt aus. 
+Bei einer Sessioninitialisierung (`session_start()`), einem Cookiesetzen oder einer versuchten Header-Weiterleitung (Location) erfolgt eine Fehlermeldung („Headers already sent“) und die Aktion bleibt aus. 
 
 #### Fehler 
 
@@ -47,7 +47,7 @@ Liste möglicher Ursachen im Hauptartikel zu Headers already sent.
 
 #### Lösung 
 
-Es gibt zwei prinzipielle Lösungsansätze. Der erste besteht darin, die gesamte Scriptstruktur (aller beteiligten Scripte) so zu strukturieren, dass vor einer Aktion wie Sessionstart oder Header-Weiterleitung keine Ausgabe erfolgen kann. Dies kann im allgemeinen durch Ergänzen von Bedingungen oder Anlegen von Variablen für Ausgabestrings erreicht werden. Eine wichtige Maßnahme ist auch, alle Funktionen so einzurichten, dass sie keine Bildschirmausgabe erzeugen, sondern Code mittels return als String zurückgeben. 
+Es gibt zwei prinzipielle Lösungsansätze. Der erste besteht darin, die gesamte Scriptstruktur (aller beteiligten Scripte) so zu strukturieren, dass vor einer Aktion wie Sessionstart oder Header-Weiterleitung keine Ausgabe erfolgen kann. Dies kann im allgemeinen durch Ergänzen von Bedingungen oder Anlegen von Variablen für Ausgabestrings erreicht werden. Eine wichtige Maßnahme ist auch, alle Funktionen so einzurichten, dass sie keine Bildschirmausgabe erzeugen, sondern Code mittels `return` als String zurückgeben. 
 
 Näheres findet man im Hauptartikel zum [EVA Prinzip](#). 
 
@@ -110,7 +110,7 @@ In der Bedingung wird eine Zuweisung (=-Operator) statt eines Vergleichs (== bzw
 
 #### Lösung
  
-Der PHP-Parser kann diesen Fall nicht erkennen, weil if ( ) nur einen Ausdruck mit einem Rückgabewert erfordert. Eine Zuweisung hat einen Rückgabewert (den zugewiesenen Wert) und ist damit erfüllt (bzw. nicht erfüllt, je nach zugewiesenem Wert). Die Lösung besteht in der Benutzung der korrekten Vergleichsoperatoren: 
+Der PHP-Parser kann diesen Fall nicht erkennen, weil `if( )` nur einen Ausdruck mit einem Rückgabewert erfordert. Eine Zuweisung hat einen Rückgabewert (den zugewiesenen Wert) und ist damit erfüllt (bzw. nicht erfüllt, je nach zugewiesenem Wert). Die Lösung besteht in der Benutzung der korrekten Vergleichsoperatoren: 
 
 ~~~ php
 if ($a == 5) {
@@ -149,7 +149,7 @@ Die geklammerten Anweisungen (do_something) sollen abhängig von der Bedingung a
 
 #### Fehler
  
-Hinter der Bedingung wurde versehentlich ein Semikolon notiert. Semikolons schließen Anweisungen ab, das if wird also für einen leeren Ausdruck ausgewertet. {}-Blöcke dürfen in PHP auch alleinstehend existieren, auch wenn sie keinen Zweck erfüllen. Daher reagiert der PHP-Parser hier mit keiner Meldung. 
+Hinter der Bedingung wurde versehentlich ein Semikolon notiert. Semikolons schließen Anweisungen ab, das `if` wird also für einen leeren Ausdruck ausgewertet. {}-Blöcke dürfen in PHP auch alleinstehend existieren, auch wenn sie keinen Zweck erfüllen. Daher reagiert der PHP-Parser hier mit keiner Meldung. 
 
 #### Lösung
  
@@ -169,7 +169,9 @@ Auch für andere Kontrollstrukturen wird dieser Fehler gerne gemacht:
 for ($i = 0; $i < 5 ; $i++);
 {
   do_something();
-}$x = 5;
+}
+
+$x = 5;
 // Endlosschleife, „do_something“ und $x-Dekrement werden nie erreicht
 while ($x > 0);
 {

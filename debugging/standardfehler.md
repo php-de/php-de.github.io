@@ -43,7 +43,7 @@ Bei einer Sessioninitialisierung (`session_start()`), einem Cookiesetzen oder ei
 
 Der Fehler kann mannigfaltige Ursachen haben, die aber alle die Gemeinsamkeit besitzen, dass sie vor der jeweiligen Headerausgabe Zeichenausgaben erzeugen. 
 
-Liste möglicher Ursachen im Hauptartikel zu Headers already sent. 
+Liste möglicher Ursachen im [Hauptartikel zu Headers already sent](#). 
 
 #### Lösung 
 

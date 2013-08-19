@@ -56,13 +56,9 @@ Für das Verständnis der Client-Server-Kommunikation, vor allem aber der Verarb
 
 ### HTTP
 
----
-
 Ein maßgeblicher Teil der Requestverarbeitung in PHP betrifft das Hypertext Transfer Protocol (HTTP). Hier sind zwei Typen von Parameterübergaben zu unterscheiden.
 
 #### GET
-
----
 
 Parameter, die mit einem GET-Request übertragen werden, werden zusätzlich zur Angabe des aufzurufenden Dokuments als Daten an die URL angehängt. Dabei erfolgt die Angabe in der Form Parametername=Parameterwert. Mehrere Parameter werden durch ein Trennzeichen, üblicherweise das kaufmännische Und (&) voneinander getrennt. Zur Abgrenzung von der URL Adresse dient standardmäßig das Fragezeichen.
 
@@ -126,7 +122,6 @@ Die Länge der gesendeten Daten eines POST-Requests ist theoretisch nur von der 
 Da bei einem POST-Request (im Gegensatz zum GET-Request) die Parameter nicht an die URL angehängt werden, ist diese Sendemethode transparenter und weniger verwirrend für den Benutzer. Sie bietet sich vor allem für Serveranfragen mit viel Inhalt (z.B. Formulare) an. Da die URL nicht verändert wird, werden die Header auch in der Log-Datei des Servers nicht festgehalten. Somit eignet sich ein POST-Request besser zur Übertragung vertraulicher Daten, als ein GET-Request, wobei natürlich auch hier eine Übertragungs-Verschlüsselung genutzt werden sollte.
 
 ### Beispiele
----
 
 #### Request auf eine Bilddatei
 

@@ -37,7 +37,7 @@ entry-type: in-progress
 
 #### Problem 
 
-Bei einer Sessioninitialisierung (`session_start()`), einem Cookiesetzen oder einer versuchten Header-Weiterleitung (Location) erfolgt eine Fehlermeldung („Headers already sent“) und die Aktion bleibt aus. 
+Bei einer Sessioninitialisierung (`session_start()`), einem Cookiesetzen oder einer versuchten Header-Weiterleitung (`header("Location: ... ")`) erfolgt eine Fehlermeldung („Headers already sent“) und die Aktion bleibt aus. 
 
 #### Fehler 
 

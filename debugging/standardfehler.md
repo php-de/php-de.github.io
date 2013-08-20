@@ -29,8 +29,6 @@ inhalt:
         anchor: kontrollstrukturen-fehlende-blcke
         simple: ""
 
-
-entry-type: in-progress
 ---
 
 ### Headervorgänge und „Headers already sent“

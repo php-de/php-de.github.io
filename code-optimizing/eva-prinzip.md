@@ -18,3 +18,9 @@ inhalt:
         
 entry-type: in-progress
 ---
+
+in progress... 
+
+[http://www.php.de/wiki-php/index.php/EVA-Prinzip_%28Standardverfahren%29](http://www.php.de/wiki-php/index.php/EVA-Prinzip_%28Standardverfahren%29
+
+)

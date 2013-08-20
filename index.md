@@ -22,6 +22,9 @@ pageSections:
 
             -   name: "Wächter"
                 url: /code-optimizing/waechter.html
+                
+            -   name: "EVA-Prinzip"
+                url: /code-optimizing/eva-prinzip.html
 
 
     -   name: "Datenbanken"

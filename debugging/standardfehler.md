@@ -43,13 +43,13 @@ Bei einer Sessioninitialisierung (`session_start()`), einem Cookiesetzen oder ei
 
 Der Fehler kann mannigfaltige Ursachen haben, die aber alle die Gemeinsamkeit besitzen, dass sie vor der jeweiligen Headerausgabe Zeichenausgaben erzeugen. 
 
-Liste möglicher Ursachen im [Hauptartikel zu Headers already sent](#). 
+Liste möglicher Ursachen im [Hauptartikel zu Headers already sent](http://www.php.de/wiki-php/index.php/Headers_already_sent). 
 
 #### Lösung 
 
 Es gibt zwei prinzipielle Lösungsansätze. Der erste besteht darin, die gesamte Scriptstruktur (aller beteiligten Scripte) so zu strukturieren, dass vor einer Aktion wie Sessionstart oder Header-Weiterleitung keine Ausgabe erfolgen kann. Dies kann im allgemeinen durch Ergänzen von Bedingungen oder Anlegen von Variablen für Ausgabestrings erreicht werden. Eine wichtige Maßnahme ist auch, alle Funktionen so einzurichten, dass sie keine Bildschirmausgabe erzeugen, sondern Code mittels `return` als String zurückgeben. 
 
-Näheres findet man im Hauptartikel zum [EVA Prinzip](#). 
+Näheres findet man im Hauptartikel zum [EVA Prinzip](http://www.php.de/wiki-php/index.php/EVA-Prinzip_%28Standardverfahren%29). 
 
 Variante zwei nutzt den sogenannten [Ausgabepuffer](http://www.php.net/manual/de/intro.outcontrol.php), den man nutzen kann, um Bildschirmausgaben vorübergehend in eine Variable umzuleiten. Das funktioniert sogar mit Inline-HTML: 
 

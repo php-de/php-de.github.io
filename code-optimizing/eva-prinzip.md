@@ -322,7 +322,7 @@ Die meisten nicht-trivialen Objekte, sind von anderen Objekten oder Vorgabewerte
 - Was passiert, wenn wir bei einer ungültigen Altersangabe eine Information ausgeben wollen? 
 <br>  
   
-XXXDie Antwort auf alle drei Fragen lautet: Geht nicht, das Funktionsprinzip ist fest verdrahtet, dazu muß der Code für das Userobjekt geändert werden. 
+Die Antwort auf alle drei Fragen lautet: Geht nicht, das Funktionsprinzip ist fest verdrahtet, dazu muß der Code für das Userobjekt geändert werden. 
 
 #### Includes 
 ...

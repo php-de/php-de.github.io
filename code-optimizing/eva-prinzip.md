@@ -28,6 +28,14 @@ inhalt:
         anchor: umsetzung
         simple: "Funktionsrückgabe <br>Methodenrückgabe <br>Dependency Injection"
 
+    -   name: "Includes"
+        anchor: includes
+        simple: ""
+
+    -   name: "Templating"
+        anchor: templating
+        simple: ""
+
         
 entry-type: in-discussion
 ---

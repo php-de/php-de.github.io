@@ -320,9 +320,9 @@ Die meisten nicht-trivialen Objekte, sind von anderen Objekten oder Vorgabewerte
 - Was passiert, wenn wir den Usernamen prinzipiell in Kleinschreibung setzen wollen? 
 - Was passiert, wenn wir statt $_POST zusätzlich auch $_GET erlauben wollen? 
 - Was passiert, wenn wir bei einer ungültigen Altersangabe eine Information ausgeben wollen? 
-<br>
-
-
+<br>  
+  
+XX
 Die Antwort auf alle drei Fragen lautet: Geht nicht, das Funktionsprinzip ist fest verdrahtet, dazu muß der Code für das Userobjekt geändert werden. 
 
 #### Includes 

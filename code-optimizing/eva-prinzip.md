@@ -1,7 +1,7 @@
 ---
 layout: guide
 
-title: "Codeoptimierung: EVA-Prinzip"
+title: "Codeoptimierung: EVA-Prinzip (Standardverfahren)"
 
 author:
     -   name: nikosch

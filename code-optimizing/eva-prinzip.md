@@ -323,7 +323,7 @@ Die meisten nicht-trivialen Objekte, sind von anderen Objekten oder Vorgabewerte
 <br>
 <br>
 
-Die Antwort auf alle drei Fragen lautet: Geht nicht, das Funktionsprinzip ist fest verdrahtet, dazu muß der Code für das Userobjekt geändert werden. 
+YYYDie Antwort auf alle drei Fragen lautet: Geht nicht, das Funktionsprinzip ist fest verdrahtet, dazu muß der Code für das Userobjekt geändert werden. 
 
 #### Includes 
 ...

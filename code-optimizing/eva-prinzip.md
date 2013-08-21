@@ -330,4 +330,3 @@ Die Antwort auf alle drei Fragen lautet: Geht nicht, das Funktionsprinzip ist fe
 
 #### Templating
 ...
- 

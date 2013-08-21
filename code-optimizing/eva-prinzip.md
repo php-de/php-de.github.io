@@ -16,7 +16,7 @@ inhalt:
         anchor: einleitung
         simple: ""
         
-entry-type: in-progress
+entry-type: in-discussion
 ---
 
 Das **EVA-Prinzip** (Eingabe - Verarbeitung - Ausgabe) steht für ein Paradigma, das die Arbeitsfolge von Komponenten einer Anwendung beschreibt. Die Kernaussage ist dabei, dass die grundlegende Arbeitsweise die Arbeitsschritte 
@@ -127,6 +127,7 @@ Solange wir PHP in seiner Grundfunktion als Ausgabesprache nutzen, brauchen wir 
 - PHP-Header-Weiterleitungen (location-redirect) 
 - spezielle Mimetype- oder Download-Header
 <br>
+
 
 All diese Funktionen müssen vor jeglichen Textausgaben des Dokuments geschehen, sonst resultieren sie in einem [headers-sent-Fehler](http://www.php.de/wiki-php/index.php/Headers_already_sent). 
 
@@ -294,6 +295,7 @@ Die meisten nicht-trivialen Objekte, sind von anderen Objekten oder Vorgabewerte
 - Was passiert, wenn wir statt $_POST zusätzlich auch $_GET erlauben wollen? 
 - Was passiert, wenn wir bei einer ungültigen Altersangabe eine Information ausgeben wollen? 
 <br>
+
 
 Die Antwort auf alle drei Fragen lautet: Geht nicht, das Funktionsprinzip ist fest verdrahtet, dazu muß der Code für das Userobjekt geändert werden. 
 

@@ -20,12 +20,12 @@ pageSections:
             -   name: "Code smells"
                 url: /code-optimizing/code-smells.html
 
-            -   name: "Wächter"
-                url: /code-optimizing/waechter.html
-                
             -   name: "EVA-Prinzip (Standardverfahren)"
                 url: /code-optimizing/eva-prinzip.html
 
+            -   name: "Wächter"
+                url: /code-optimizing/waechter.html
+                
 
     -   name: "Datenbanken"
         desc: "MySQL & Co."

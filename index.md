@@ -23,7 +23,7 @@ pageSections:
             -   name: "Wächter"
                 url: /code-optimizing/waechter.html
                 
-            -   name: "EVA-Prinzip"
+            -   name: "EVA-Prinzip (Standardverfahren)"
                 url: /code-optimizing/eva-prinzip.html
 
 

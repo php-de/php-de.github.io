@@ -213,13 +213,13 @@ Satz des Pythagoras, richtig gerechnet, falsch verarbeitet
 ~~~ php
 <?php
 function doPythagorean ($a, $b)
-  {
-  $sum = pow ($a , 2 ) + pow ($b , 2);
-  $c = sqrt ($sum);
+{
+    $sum = pow ($a , 2 ) + pow ($b , 2);
+    $c = sqrt ($sum);
  
-  echo 'Der Pythagoras lautet: ' , $c;
-  }
- 
+    echo 'Der Pythagoras lautet: ' , $c;
+}
+
 doPythagorean(17 , 4);
 ?>
 ~~~
@@ -231,13 +231,13 @@ Satz des Pythagoras, diesmal mit EVA
 ~~~ php
 <?php
 function doPythagorean ($a, $b) // Eingabe
-  {
-  // Verarbeitung
-  $sum = pow ($a , 2 ) + pow ($b , 2);
-  $c = sqrt ($sum);
+{
+    // Verarbeitung
+    $sum = pow ($a , 2 ) + pow ($b , 2);
+    $c = sqrt ($sum);
  
-  return $c;
-  }
+    return $c;
+}
  
 // Ausgabe nach außen verlagert
 echo 'Der Pythagoras lautet: ' , doPythagorean(17 , 4);
@@ -275,7 +275,7 @@ $user = new User($_POST['username']);
  
 $user->setAge ($_POST['age']);
 if (false === $user->checkAge()) {
-  echo 'invalid age';
+    echo 'invalid age';
 }
 ?>
 ~~~
@@ -289,7 +289,7 @@ EVA bei der Arbeit mit Objekten, sauberes Interface
 $user = new User($_POST['username']);
  
 if (true === $user->checkAge($_POST['age'])) {
-  $user->setAge ($_POST['age']);
+    $user->setAge ($_POST['age']);
 }
 ?>
 ~~~

@@ -17,11 +17,11 @@ author:
       
 inhalt:
     - name: "magic_quotes_gpc"
-      anchor: magic_quotes_gpc
+      anchor: magic-quotes-gpc
       simple: ""
 
     - name: "register_globals"
-      anchor: register_globals
+      anchor: register-globals
       simple: ""
       
     - name: "Verfügbarkeit"
@@ -37,7 +37,7 @@ inhalt:
       simple: ""
       
     - name: "Alternative Verwendung von Superglobalen Arrays"
-      anchor: alternative-verwendung-von-superglobalen-arraya
+      anchor: alternative-verwendung-von-superglobalen-arrays
       simple: ""
 
     - name: "Links zum Thema"

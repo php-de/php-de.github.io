@@ -265,7 +265,7 @@ $user->getStatus();
 ?>
 ~~~
 
-Variante 1. Wir erzeugen ein Userobjekt. SetAge() setzt das Alter als Property im Userobjekt. checkAge() prüft jetzt diese Property. Offensichtlich wird diese Prüfung irgendwo im Objekt gespeichert, getStatus() scheint diese Information - vielleicht auch weitere - auszuwerten. 
+**Variante 1.** Wir erzeugen ein Userobjekt. SetAge() setzt das Alter als Property im Userobjekt. checkAge() prüft jetzt diese Property. Offensichtlich wird diese Prüfung irgendwo im Objekt gespeichert, getStatus() scheint diese Information - vielleicht auch weitere - auszuwerten. 
 
 EVA bei der Arbeit mit Objekten, verbessert
 
@@ -280,7 +280,7 @@ if (false === $user->checkAge()) {
 ?>
 ~~~
 
-Variante 2. Hier erhalten wir außerhalb des Objekts eine Information, ob das Alter eine sinnvolle Angabe darstellt und können geeignet reagieren, bspw. eine Ausgabe machen, die Anwendung beenden oder das Userobjekt verwerfen. Der Vorteil: Wir benötigen keine zusätzliche Property, die die Gültigkeit der Altersangabe speichert (siehe oben, Methode getStatus()). Trotzdem greift checkAge() offensichtlich auf die objekteigene Property zu, in die vorher das Alter gespeichert wurde. 
+**Variante 2.** Hier erhalten wir außerhalb des Objekts eine Information, ob das Alter eine sinnvolle Angabe darstellt und können geeignet reagieren, bspw. eine Ausgabe machen, die Anwendung beenden oder das Userobjekt verwerfen. Der Vorteil: Wir benötigen keine zusätzliche Property, die die Gültigkeit der Altersangabe speichert (siehe oben, Methode getStatus()). Trotzdem greift checkAge() offensichtlich auf die objekteigene Property zu, in die vorher das Alter gespeichert wurde. 
 
 EVA bei der Arbeit mit Objekten, sauberes Interface
 
@@ -294,7 +294,7 @@ if (true === $user->checkAge($_POST['age'])) {
 ?>
 ~~~
 
-Variante 3. checkAge() besitzt hier einen Parameter und liefert die Information zur Gültigkeit des Alters zurück. Das gibt uns neue Möglichkeiten: Wir können bereits im Vorfeld entscheiden, ob wir das Userobjekt auf das offensichtlich falsche Alter setzen wollen. 
+**Variante 3.** checkAge() besitzt hier einen Parameter und liefert die Information zur Gültigkeit des Alters zurück. Das gibt uns neue Möglichkeiten: Wir können bereits im Vorfeld entscheiden, ob wir das Userobjekt auf das offensichtlich falsche Alter setzen wollen. 
 
  
 <div class="alert alert-info"><strong>Information!</strong> Die vorliegenden Codes sind Lehrbeispiele und der Übersichtlichkeit halber stark vereinfacht. Der Sinn, einen User ggf. ohne Altersangabe und ohne Validierung des Namens zu erstellen, ist natürlich in Frage zu stellen.</div>  
@@ -320,8 +320,9 @@ Die meisten nicht-trivialen Objekte, sind von anderen Objekten oder Vorgabewerte
 - Was passiert, wenn wir den Usernamen prinzipiell in Kleinschreibung setzen wollen? 
 - Was passiert, wenn wir statt $_POST zusätzlich auch $_GET erlauben wollen? 
 - Was passiert, wenn wir bei einer ungültigen Altersangabe eine Information ausgeben wollen? 
-<br>  
-  
+<br>
+
+
 Die Antwort auf alle drei Fragen lautet: Geht nicht, das Funktionsprinzip ist fest verdrahtet, dazu muß der Code für das Userobjekt geändert werden. 
 
 #### Includes 

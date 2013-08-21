@@ -18,7 +18,7 @@ inhalt:
         
 entry-type: in-progress
 ---
-
+.
 Das **EVA-Prinzip** (Eingabe - Verarbeitung - Ausgabe) steht für ein Paradigma, das die Arbeitsfolge von Komponenten einer Anwendung beschreibt. Die Kernaussage ist dabei, dass die grundlegende Arbeitsweise die Arbeitsschritte 
 
 - Eingabe von Daten,  

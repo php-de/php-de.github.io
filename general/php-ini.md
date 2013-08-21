@@ -3,10 +3,10 @@ layout: guide
 
 title: "php.ini - Wichtigsten Funktionen"
 
-creator: - Manko10
+creator: Manko10
 
 author:
-    - name: Manko
+    - name: Manko10
       profile: 1139
       
     - name: nikosch

@@ -78,7 +78,7 @@ Im nächsten Schritt soll das Script eine URL-Übergabe wiedergeben. Aus Gründe
 </html>
 ~~~
 
-Schließlich wollen wir noch etwas Logik hinzufügen. Z.B. eine Prüfung, ob der Link gedrückt wurde: 
+Schließlich wollen wir noch etwas Logik hinzufügen. Z.B. eine Prüfung, ob der Link geklickt wurde: 
 
 ~~~ php 
 <html>
@@ -146,9 +146,9 @@ Solange wir PHP in seiner Grundfunktion als Ausgabesprache nutzen, brauchen wir 
 - Cookieverarbeitung, 
 - damit zumeist auch Sessions 
 - PHP-Header-Weiterleitungen (location-redirect) 
-- spezielle Mimetype- oder Download-Header
+- spezielle Mimetype- oder Download-Header  
 <br>
-
+  
 
 All diese Funktionen müssen vor jeglichen Textausgaben des Dokuments geschehen, sonst resultieren sie in einem [headers-sent-Fehler](http://www.php.de/wiki-php/index.php/Headers_already_sent). 
 
@@ -157,6 +157,7 @@ All diese Funktionen müssen vor jeglichen Textausgaben des Dokuments geschehen,
 Der klassische Einsteigerfehler ist, die Anwendung nach dem Funktionsprinzip und nicht nach EVA zu gliedern: 
 
 Verarbeitung einer Formulareingabe (Form nicht im Code)
+
 ~~~ php
 <html>
   ...
@@ -176,6 +177,7 @@ Der Code versucht, ein Kennwort zu prüfen und im Erfolgsfall zu „success.php�
 Wir wollen uns auf PHP als die „umschließende“ Sprache zurückbesinnen und stellen den Code um: 
 
 Verarbeitung einer Formulareingabe, diesmal nach EVA
+
 ~~~ php
 <?php
 // Eingabe
@@ -207,6 +209,7 @@ Die Prüfung ist nicht direkt für die Ausgabe verantwortlich und kann deshalb f
 Die meisten der obigen Aussagen, lassen sich auf Funktionen übertragen. Meist dienen Funktionen ja dazu, wiederverwendbare oder zusammengehörige Funktionalität zu kapseln. Damit können Sie ein Paradebesipiel für EVA sein: Sie erhalten nötige Eingabewerte, stellen irgendetwas damit an und geben das fertige Produkt zurück. Leider sieht die Realität sehr oft immer noch so aus: 
 
 Satz des Pythagoras, richtig gerechnet, falsch verarbeitet
+
 ~~~ php
 <?php
 function doPythagorean ($a, $b)
@@ -251,6 +254,7 @@ Prinzipiell gilt das eben für Funktionen gesagte. Auch für ein Objekt besteht 
 Objekte bieten aber noch eine andere Gefahr zur Verletzung von EVA: Sie bilden einen eigenen Werteraum (Scope), der dazu verführt, Funktionsergebnisse direkt im Objekt abzulegen, statt an den aufrufenden Kontext zurückzugeben. Für einige Methoden mag das sinnvoll sein (Init-, Settermethoden), für manche eine Philosophiefrage, für viele aber auch schlechter Stil. In der OOP dreht sich ein großer Teil der Eleganz um sogenannte Schnittstellen: Objekte und auch deren Methoden haben eine gewisse Signatur, sie zeigen über Ihre festgelegten Eingabeparameter, welche Daten sie verarbeiten können, sie zeigen über ihren Namen, welchen Verarbeitungsschritt sie anbieten oder welche Funktion sie erfüllen. Auch die Rückgabe einer Methode sollte diesem Ideal folgen und einen vorhersehbaren Wert liefern. Eine Methode namens „getAge()“ lässt die Rückgabe eines Alters erwarten, für ein Objekt „User“ wird das vermutlich ein Integer kleiner 100 sein. Eine Methode „checkAge()“ sagt uns aufgrund Ihres Namens, dass sie ein Alter prüft. In der OOP kann das verschieden aussehen. Als Beispielfall denke man sich eine Nutzergenerierung auf Grundlage eines POST-Formulars, dass einen Usernamen und eine Altersangabe abfragt: 
 
 EVA bei der Arbeit mit Objekten, Negativbeispiel
+
 ~~~ php
 <?php
 $user = new User($_POST['username']);
@@ -264,6 +268,7 @@ $user->getStatus();
 Variante 1. Wir erzeugen ein Userobjekt. SetAge() setzt das Alter als Property im Userobjekt. checkAge() prüft jetzt diese Property. Offensichtlich wird diese Prüfung irgendwo im Objekt gespeichert, getStatus() scheint diese Information - vielleicht auch weitere - auszuwerten. 
 
 EVA bei der Arbeit mit Objekten, verbessert
+
 ~~~ php
 <?php
 $user = new User($_POST['username']);

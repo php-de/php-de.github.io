@@ -31,12 +31,12 @@ linear in dieser Reihenfolge erfolgen sollen. Dies ist technisch sinnvoll, soll 
 Die Sprache PHP ist eng mit dem EVA-Prinzip verknüpft, weil der übliche Spracheinstieg eng mit der Funktion von PHP als dynamische Ausgabe verknüpft ist: 
 
 ~~~ php
- <html>
-   ...
-   <body>
-   <?php echo 'Hallo Welt'; ?>
-   </body>
- </html>
+<html>
+  ...
+  <body>
+  <?php echo 'Hallo Welt'; ?>
+  </body>
+</html>
 ~~~
 
 PHP kommt hier die Rolle der Ausgabe einer Information zu. Diese ist zunächst statisch - „Hallo Welt“. 
@@ -44,30 +44,30 @@ PHP kommt hier die Rolle der Ausgabe einer Information zu. Diese ist zunächst s
 Im nächsten Schritt soll das Script eine URL-Übergabe wiedergeben. Aus Gründen der Scriptsicherheit fügen wir einen htmlspecialchars-Befehl ein, der sich um die Maskierung (sog. Escaping) schädlicher Eingabewerte kümmert: 
 
 ~~~ php
- <html>
-   …
-   <body>
-   <?php echo htmlspecialchars($_GET['test']); ?>
-   <a href="?test=Hallo+Welt">Test</a>
-   </body>
- </html>
+<html>
+  ...
+  <body>
+  <?php echo htmlspecialchars($_GET['test']); ?>
+  <a href="?test=Hallo+Welt">Test</a>
+  </body>
+</html>
 ~~~
 
 Schließlich wollen wir noch etwas Logik hinzufügen. Z.B. eine Prüfung, ob der Link gedrückt wurde: 
 
 ~~~ php 
-  <html>
-   ...
-   <body>
-   <?php 
-   if (isset($_GET['test'])) {
-       echo htmlspecialchars($_GET['test']);
-   } else { 
-       echo 'Zum ersten mal hier?';
-   } ?>
-   <a href="?test=Hallo+Welt">Test</a>
-   </body>
- </html>
+<html>
+  ...
+  <body>
+  <?php 
+  if (isset($_GET['test'])) {
+      echo htmlspecialchars($_GET['test']);
+  } else { 
+      echo 'Zum ersten mal hier?';
+  } ?>
+  <a href="?test=Hallo+Welt">Test</a>
+  </body>
+</html>
 ~~~
 
 Im Prinzip haben wir jetzt alle Komponenten zusammen. Die Eingabe (hier durch die superglobale $_GET repräsentiert), die Verarbeitung (Existenzprüfung, Umwandlung der Eingabe und Rückgabe als Escape-String), die Ausgabe (statischer Wert bzw. echo dieses Escape-Ausdrucks). 
@@ -78,7 +78,7 @@ Im Beispiel wirkt PHP größtenteil als Templating-Funktion. Das bedeutet, in ei
  
 Um dies weiter zu betrachten, müssen wir uns kurz das Prinzip von Webkommunikation ansehen. Auf einen Request des Client erfolgt die Antwort in Form unseres PHP-generierten Dokuments. Auf einer tieferen Ebene (vgl. OSI-Modell) wird neben den offensichtlichen Textinhalten aber auch eine Reihe von Meta-Informationen versendet: die sogenannten HTTP-Header. Diese Header können auch durch PHP gesetzt werden. Nicht gesetzte Header produziert der Webserver eigenständig. Für das EVA-Prinzip relevant ist vor allem, dass dies vor jeglicher Textausgabe erfolgt. Das bedeutet, der Webserver erkennt eine Textausgabe und verschickt die HTTP-Header des Dokuments, bevor er die Ausgabe ausliefert. 
 
-An dieser Stelle ist es Zeit, unser Verständnis für das Funktionsprinzip von PHP „umzukrempeln“. Der Spracheinsteiger interpretiert PHP zumeist als „in HTML eingebettete“, dynamische Komponente. Betrachtet man die Komponenten (PHP, HTML, Server, Client, HTTP) auf technischer Ebene, ergibt sich ein anderes Bild: Der Server, auf dem PHP läuft, kennt im Prinzip gar keine HTML-Dokumente. Seine einzige Aufgabe ist das Ausliefern (und über PHP auch das Generieren) von Dokumenten, die übere eine Adresse (die URI) angefordert werden. Erst auf der Clientseite - für gewöhnlich ein Browser - wird das Dokuyment als HTML (oder eben als Bild, XML-Dokument, Stylesheet…) identifiziert und angemessen dargestellt. 
+An dieser Stelle ist es Zeit, unser Verständnis für das Funktionsprinzip von PHP „umzukrempeln“. Der Spracheinsteiger interpretiert PHP zumeist als „in HTML eingebettete“, dynamische Komponente. Betrachtet man die Komponenten (PHP, HTML, Server, Client, HTTP) auf technischer Ebene, ergibt sich ein anderes Bild: Der Server, auf dem PHP läuft, kennt im Prinzip gar keine HTML-Dokumente. Seine einzige Aufgabe ist das Ausliefern (und über PHP auch das Generieren) von Dokumenten, die übere eine Adresse (die URI) angefordert werden. Erst auf der Clientseite - für gewöhnlich ein Browser - wird das Dokuyment als HTML (oder eben als Bild, XML-Dokument, Stylesheet...) identifiziert und angemessen dargestellt. 
 
 Als Erkenntnis ergibt sich, dass PHP die „umschließende“ Sprache ist, nicht HTML. Für unser Hallo-Welt-Beispiel: 
 
@@ -100,14 +100,14 @@ Als Erkenntnis ergibt sich, dass PHP die „umschließende“ Sprache ist, nicht
 oder in einer alternativen Schreibweise: 
 
 ~~~ php
- <?php
- // PHP vor HTML
+<?php
+// PHP vor HTML
  
- $out = 'Hallo Welt';
- echo '<html> … <body>' , $out , '</body></html>';
- 
- // PHP nach HTML
- ?>
+$out = 'Hallo Welt';
+echo '<html> ... <body>' , $out , '</body></html>';
+
+// PHP nach HTML
+?>
 ~~~
 
 Der HTML-Inhalt wird zu einem reinen Ausgabetext von PHP, der erst im Browser seine Bedeutung erhält. 
@@ -133,17 +133,17 @@ Der klassische Einsteigerfehler ist, die Anwendung nach dem Funktionsprinzip und
 Verarbeitung einer Formulareingabe (Form nicht im Code)
 
 ~~~ php
- <html>
-   ...
-   <body>
-   <?php if ($_POST['Name'] == 'geheim') {
-       header('Location: http://www.example.com/success.php');
-       exit;
-   } else { 
-       ?>Die Anmeldung war leider falsch.<?php
-   } ?>
-   </body>
- </html>
+<html>
+  ...
+  <body>
+  <?php if ($_POST['Name'] == 'geheim') {
+      header('Location: http://www.example.com/success.php');
+      exit;
+  } else { 
+      ?>Die Anmeldung war leider falsch.<?php
+  } ?>
+  </body>
+</html>
 ~~~
 
 Der Code versucht, ein Kennwort zu prüfen und im Erfolgsfall zu „success.php“ weiterzuleiten. Was mit einer Ausgabe noch funktionierte und von der Abfolge logisch aufgebaut war, wird mit dem header-Befehl fehlschlagen, da hier ein nötiger HTTP-Header bereits nicht mehr abgesetzt werden kann. 
@@ -166,7 +166,7 @@ if ($input == 'geheim') {
     header('Location: http://www.example.com/success.php');
     exit;
 } else { 
-    $out = '<html>…<body>Die Anmeldung war leider falsch.</body></html>';
+    $out = '<html>...<body>Die Anmeldung war leider falsch.</body></html>';
 } 
  
 // Ausgabe

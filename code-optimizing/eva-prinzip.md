@@ -15,6 +15,19 @@ inhalt:
     -   name: "Einleitung"
         anchor: einleitung
         simple: ""
+
+    -   name: "EVA und das Client-Server-Prinzip"
+        anchor: eva-und-das-client-server-prinzip
+        simple: ""
+
+    -   name: "Bedeutung"
+        anchor: bedeutung
+        simple: ""
+
+    -   name: "Umsetzung"
+        anchor: umsetzung
+        simple: "Funktionsrückgabe <br>Methodenrückgabe <br>Dependency Injection"
+
         
 entry-type: in-discussion
 ---

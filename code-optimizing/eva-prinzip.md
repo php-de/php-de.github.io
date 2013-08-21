@@ -21,9 +21,10 @@ entry-type: in-progress
 
 Das **EVA-Prinzip** (Eingabe - Verarbeitung - Ausgabe) steht für ein Paradigma, das die Arbeitsfolge von Komponenten einer Anwendung beschreibt. Die Kernaussage ist dabei, dass die grundlegende Arbeitsweise die Arbeitsschritte 
 
-* Eingabe von Daten,
-* programmatischer Verarbeitungsprozess, 
-* Ausgabe des Ergebnisses 
+- Eingabe von Daten,  
+- programmatischer Verarbeitungsprozess,  
+- Ausgabe des Ergebnisses  
+<br>
 
 linear in dieser Reihenfolge erfolgen sollen. Dies ist technisch sinnvoll, soll aber auch eine Abbildbarkeit eines Softwareprozesses auf eine abstraktes Prinzip unterstützen, das dem Prinzip *Ursache* und *Wirkung* nahekommt. 
 
@@ -119,10 +120,11 @@ Gehen wir zurück zur obigen AUssage zu Headern, werden die Header ziemlich gena
  
 Solange wir PHP in seiner Grundfunktion als Ausgabesprache nutzen, brauchen wir uns im Prinzip keine Sorgen um EVA und die HTTP-Header machen. Sobald wir etwas tiefer einsteigen, wird das schnell unabdingbar. Viele wichtige Mechanismen basieren auf dem Prinzip von HTTP-Headern: 
 
-* Cookieverarbeitung, 
-* damit zumeist auch Sessions 
-* PHP-Header-Weiterleitungen (location-redirect) 
-* spezielle Mimetype- oder Download-Header
+- Cookieverarbeitung, 
+- damit zumeist auch Sessions 
+- PHP-Header-Weiterleitungen (location-redirect) 
+- spezielle Mimetype- oder Download-Header
+<br>
 
 All diese Funktionen müssen vor jeglichen Textausgaben des Dokuments geschehen, sonst resultieren sie in einem [headers-sent-Fehler](http://www.php.de/wiki-php/index.php/Headers_already_sent). 
 
@@ -286,9 +288,10 @@ Die meisten nicht-trivialen Objekte, sind von anderen Objekten oder Vorgabewerte
 
 3 Fragen an den obigen Kurz-Code: 
 
-* Was passiert, wenn wir den Usernamen prinzipiell in Kleinschreibung setzen wollen? 
-* Was passiert, wenn wir statt $_POST zusätzlich auch $_GET erlauben wollen? 
-* Was passiert, wenn wir bei einer ungültigen Altersangabe eine Information ausgeben wollen? 
+- Was passiert, wenn wir den Usernamen prinzipiell in Kleinschreibung setzen wollen? 
+- Was passiert, wenn wir statt $_POST zusätzlich auch $_GET erlauben wollen? 
+- Was passiert, wenn wir bei einer ungültigen Altersangabe eine Information ausgeben wollen? 
+<br>
 
 Die Antwort auf alle drei Fragen lautet: Geht nicht, das Funktionsprinzip ist fest verdrahtet, dazu muß der Code für das Userobjekt geändert werden. 
 

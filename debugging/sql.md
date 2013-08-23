@@ -77,7 +77,7 @@ PHP-generierte Queries sind meistens dynamisch (also mit variablen Parametern) u
 - Wo befinden sich Stringbereiche 
 - Welche Zeichen sind escaped 
 - Welche Variableninhalte wurden eingetragen 
-<br>
+<br> <br> 
 
 Bei der Fehlersuche sollte die erste Maßnahme sein, sich die „gerenderte“ Query ausgeben zu lassen, also den Querystring, der auch an die Datenbank via mysql_query übergeben wird. 
 
@@ -102,7 +102,7 @@ Mehrzeilige Statements
 
 - sind besser zu lesen und damit leichter zu debuggen 
 - ergeben in Fehlermeldungen genauere Positionsmeldungen („near ... at line 2“) 
-<br>
+<br> <br> 
 
 Aber richtig! 
 
@@ -147,6 +147,7 @@ Begrenzer  Bedeutung
 Strings gehören nicht in Backticks, Feldnamen nicht in Stringbegrenzer. Auch wenn MySQL hier manchmal etwas weniger strikt ist, bitte gar nicht erst angewöhnen! 
 
 Benutze Backticks richtig 
+
 Richtig: 
 
 ~~~ php
@@ -156,6 +157,7 @@ Richtig:
 ~~~
 
 Falsch:
+
 ~~~ php 
 `Feldname `
 `Tabellenname.Feldname`

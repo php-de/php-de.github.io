@@ -48,12 +48,12 @@ entry-type: in-progress
 #### In der Entwicklungsumgebung
 
 ~~~ php
-mysql_query ($query, $connection) or die (mysql_error ($connection));
+mysql_query($query, $connection) or die(mysql_error($connection));
  
 // oder besser:
 
-if (false === mysql_query ($query, $connection)) {
-   die (mysql_error ($connection));
+if (false === mysql_query($query, $connection)) {
+   die(mysql_error($connection));
 }
 ~~~
 
@@ -61,7 +61,7 @@ if (false === mysql_query ($query, $connection)) {
 #### In der Produktivumgebung
 
 ~~~ php
-if (false === mysql_query ($query, $connection)) {
+if (false === mysql_query($query, $connection)) {
    // Deine Fehlerbehandlung hier, z.B.
    throw new Exception(mysql_error($connection), mysql_errno($connection));
 }
@@ -140,9 +140,12 @@ Benutze richtige Backticks
 Backticks sind keine Stringsbegrenzer! 
 
 Begrenzer  Bedeutung  
+
+~~~ php
 '  String  
 "  String  
 `  Backtick, schließt Bezeichner ein  
+~~~
 
 Strings gehören nicht in Backticks, Feldnamen nicht in Stringbegrenzer. Auch wenn MySQL hier manchmal etwas weniger strikt ist, bitte gar nicht erst angewöhnen! 
 
@@ -190,7 +193,7 @@ Auch den Wechsel der für PHP und SQL zuständigen Begrenzer sollte man vermeide
 Negativbeispiel - Wechsel der Stringbegrenzer ist unübersichtlich
 
 ~~~ php
-$name = mysql_real_escape_string ($name , $connection);
+$name = mysql_real_escape_string($name , $connection);
 $query = 'SELECT `Name` , 
                  `Age`
           FROM    Users
@@ -223,7 +226,7 @@ $query = 'SELECT `Name`  ,
           FROM    Users';
  
  
-$name = mysql_real_escape_string ($name , $connection);
+$name = mysql_real_escape_string($name , $connection);
 $query = 'SELECT `Name` , 
                  `Age`
           FROM    Users

@@ -39,9 +39,8 @@ inhalt:
         anchor: last-but-not-least
         simple: ""
 
-
-entry-type: in-progress
 ---
+
 
 ### Lass Dir Fehler ausgeben
  
@@ -79,7 +78,7 @@ PHP-generierte Queries sind meistens dynamisch (also mit variablen Parametern) u
 - Welche Variableninhalte wurden eingetragen 
 <br> <br> 
 
-Bei der Fehlersuche sollte die erste Maßnahme sein, sich die „gerenderte“ Query ausgeben zu lassen, also den Querystring, der auch an die Datenbank via mysqli_query übergeben wird. 
+Bei der Fehlersuche sollte die erste Maßnahme sein, sich die „gerenderte“ Query ausgeben zu lassen, also den Querystring, der auch an die Datenbank via mysqli_query() übergeben wird. 
 
 
 ### Keywords
@@ -168,7 +167,7 @@ Falsch:
 
 #### Benutze Stringbegrenzer konsequent
 
-Wie eben geschrieben erlaubt SQL zwei verschiedene Stringbegrenzer - einfache und doppelte Hochkommata. Da das gleiche für PHP gilt, ist es eine gute Idee, konsequent einen Stringbegrenzer für PHP und einen für SQL zu benuzten, um Escaping vermeiden zu können. Diese Überlegungen haben nichts mit Feldinhalten zu tun (und dort evtl. auftretenden Hochkommata); hierfür ist allein mysqli_real_escape_string verantwortlich!
+Wie eben geschrieben erlaubt SQL zwei verschiedene Stringbegrenzer - einfache und doppelte Hochkommata. Da das gleiche für PHP gilt, ist es eine gute Idee, konsequent einen Stringbegrenzer für PHP und einen für SQL zu benuzten, um Escaping vermeiden zu können. Diese Überlegungen haben nichts mit Feldinhalten zu tun (und dort evtl. auftretenden Hochkommata); hierfür ist allein mysqli_real_escape_string() verantwortlich!
 
 Negativbeispiele - kollidierende Stringbegrenzer benötigen Escaping
 

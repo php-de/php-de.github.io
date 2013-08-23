@@ -46,6 +46,9 @@ pageSections:
             -   name: "Standardfehler"
                 url: /debugging/standardfehler.html
 
+            -   name: "SQL"
+                url: /debugging/sql.html
+
 
     -   name: "E-Mail"
         desc: "Wissenswertes über den Umgang mit E-Mail-Adressen, Mail-Servern, und Mailer-Klassen."

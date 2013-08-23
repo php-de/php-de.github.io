@@ -48,12 +48,12 @@ entry-type: in-progress
 #### In der Entwicklungsumgebung
 
 ~~~ php
-mysql_query($query, $connection) or die(mysql_error($connection));
+mysqli_query($dblink, $query) or die(mysqli_error($dblink));
  
 // oder besser:
 
-if (false === mysql_query($query, $connection)) {
-   die(mysql_error($connection));
+if (false === mysqli_query($dblink, $query)) {
+   die(mysqli_error($dblink));
 }
 ~~~
 
@@ -61,9 +61,9 @@ if (false === mysql_query($query, $connection)) {
 #### In der Produktivumgebung
 
 ~~~ php
-if (false === mysql_query($query, $connection)) {
+if (false === mysqli_query($dblink, $query)) {
    // Deine Fehlerbehandlung hier, z.B.
-   throw new Exception(mysql_error($connection), mysql_errno($connection));
+   throw new Exception(mysqli_error($dblink), mysqli_errno($dblink));
 }
 ~~~
 
@@ -72,7 +72,6 @@ Natürlich kann man auch bei der Entwicklung schon vernünftig mit Exceptions ar
 ### Lass Dir die Query ausgeben
  
 PHP-generierte Queries sind meistens dynamisch (also mit variablen Parametern) und werden damit schnell unübersichtlich: 
-
 - Wo befinden sich Leerzeichen 
 - Wo befinden sich Stringbereiche 
 - Welche Zeichen sind escaped 
@@ -193,7 +192,7 @@ Auch den Wechsel der für PHP und SQL zuständigen Begrenzer sollte man vermeide
 Negativbeispiel - Wechsel der Stringbegrenzer ist unübersichtlich
 
 ~~~ php
-$name = mysql_real_escape_string($name , $connection);
+$name = mysqli_real_escape_string($dblink, $name);
 $query = 'SELECT `Name` , 
                  `Age`
           FROM    Users
@@ -226,7 +225,7 @@ $query = 'SELECT `Name`  ,
           FROM    Users';
  
  
-$name = mysql_real_escape_string($name , $connection);
+$name = mysqli_real_escape_string($dblink, $name);
 $query = 'SELECT `Name` , 
                  `Age`
           FROM    Users

@@ -72,6 +72,7 @@ Natürlich kann man auch bei der Entwicklung schon vernünftig mit Exceptions ar
 ### Lass Dir die Query ausgeben
  
 PHP-generierte Queries sind meistens dynamisch (also mit variablen Parametern) und werden damit schnell unübersichtlich: 
+
 - Wo befinden sich Leerzeichen 
 - Wo befinden sich Stringbereiche 
 - Welche Zeichen sind escaped 

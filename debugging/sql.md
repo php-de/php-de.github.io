@@ -19,8 +19,24 @@ author:
         profile: 21246
 
 inhalt:
-    -   name: ""
-        anchor: 
+    -   name: "Lass Dir Fehler ausgeben"
+        anchor: lass-dir-fehler-ausgeben
+        simple: ""
+
+    -   name: "Lass Dir die Query ausgeben"
+        anchor: lass-dir-die-query-ausgeben
+        simple: ""
+
+    -   name: "Keywords"
+        anchor: keywords
+        simple: ""
+
+    -   name: "Proaktive Maßnahmen"
+        anchor: proaktive-manahmen
+        simple: ""
+
+    -   name: "Last but not least"
+        anchor: last-but-not-least
         simple: ""
 
 

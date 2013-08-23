@@ -141,7 +141,7 @@ Backticks sind keine Stringsbegrenzer!
 
 Begrenzer  Bedeutung  
 
-~~~ php
+~~~
 '  String  
 "  String  
 `  Backtick, schließt Bezeichner ein  

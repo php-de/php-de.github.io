@@ -74,8 +74,8 @@ Klassische eindimensionale Formulardaten sind Einträge einer Textbox oder eines
 <input type="radio" name="Auswahlfeld" value="Auswahl 2"> oder wähle mich
  
 <select name="EinfachSelektion">
-  <option value="Option 1">wähle mich</option>
-  <option value="Option 2">oder wähle mich</option>
+    <option value="Option 1">wähle mich</option>
+    <option value="Option 2">oder wähle mich</option>
 </select>
 ~~~
 
@@ -100,8 +100,8 @@ Alle anderen Eingabeelemente (außer Buttons, die genau genommen auch als solche
 <input type="checkbox" name="Auswahlfeld[]" value="Auswahl 2"> wähle mich auch
  
 <select name="MehrfachSelektion[]">
-  <option value="Option 1">wähle mich</option>
-  <option value="Option 2">und wähle mich</option>
+    <option value="Option 1">wähle mich</option>
+    <option value="Option 2">und wähle mich</option>
 </select>
 ~~~
 

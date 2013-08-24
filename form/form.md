@@ -11,8 +11,24 @@ author:
         profile: 21246
 
 inhalt:
-    -   name: ""
-        anchor: 
+    -   name: "Grundlagen"
+        anchor: grundlagen
+        simple: ""
+
+    -   name: "Parametermengen"
+        anchor: parametermengen
+        simple: ""
+
+    -   name: "Parameterformat"
+        anchor: parameterformat
+        simple: ""
+
+    -   name: "Komplettbeispiel"
+        anchor: komplettbeispiel
+        simple: ""
+
+    -   name: "Weitere Beiträge zum Thema"
+        anchor: weitere-beitrge-zum-thema
         simple: ""
 
 entry-type: in-progress

@@ -34,7 +34,7 @@ inhalt:
 entry-type: in-discussion
 ---
 
-Die Formularverarbeitung ist ein Schwerpunktgebiet serverseitiger Programmiersprachen – und ein klassischer Grund, sich mit Sprachen wie PHP auseinanderzusetzen. 
+Die **Formularverarbeitung** ist ein Schwerpunktgebiet serverseitiger Programmiersprachen – und ein klassischer Grund, sich mit Sprachen wie PHP auseinanderzusetzen. 
 
 HTML bietet verschiedene Eingabeelemente an, die ähnlich den Feldern einer Erfassungsmaske gestaltet sind. Das Angebot umfasst klassische Eingabefelder, Ankreuz- und Auswahlelemente. Aktuelle Webbrowser können die Daten solcher Elememente zwar verarbeiten ([JavaScript](http://www.php.de/wiki-php/index.php/JavaScript)), aber nicht speichern. Auch sind Eingabedaten meist eher relevant für den Anbieter eines Webdienstes, nicht aber den Nutzer selbst, weshalb die Verarbeitung serverseitig erfolgt. Hier können die Daten beliebig analysiert (vgl. [Eingabevalidierung](http://www.php.de/wiki-php/index.php/Validierung)), manipuliert und verarbeitet werden. Das Spektrum reicht dabei von der Speicherung in einer Datenbank, über den Versand als Email bis hin zu aufwendigen Verarbeitungsmethoden. 
 
@@ -50,7 +50,9 @@ Wichtig zu wissen ist, dass die Daten beim Aufruf des Serverscripts im [Request]
 
 Je nachdem, wie die Datenübertragung erfolgt, gibt es für PHP verschiedene Array-Variablen, die Parameterdaten enthalten können. 
 
-[Hauptartikel Request](http://php-de.github.io/request-handling/request.html) | [Hauptartikel GPC](http://php-de.github.io/request-handling/gpc.html) 
+Siehe dazu auch:
+[Hauptartikel Request](http://php-de.github.io/request-handling/request.html)  
+[Hauptartikel GPC](http://php-de.github.io/request-handling/gpc.html)  
 
 Nachfolgend wird stets der POST Request bei der PHP-seitigen Verarbeitung zugrunde gelegt und `<form>` Tags im der HTML Code der Übersichtlichkeit halber weggelassen. 
 
@@ -133,7 +135,7 @@ if (isset($_POST['MehrfachSelektion'][0])) {
 }
 ~~~
 
-solange nicht unterschieden werden soll, ob nur der erste Eintrag des Feldes "MehrfachSelektion" existiert (also mindestens ein Wert gewählt wurde) oder ob MehrfachSelektion überhaupt existiert. 
+solange nicht unterschieden werden soll, ob nur der erste Eintrag des Feldes "MehrfachSelektion" existiert (also mindestens ein Wert gewählt wurde) oder ob "MehrfachSelektion" *überhaupt* existiert. 
 
 
 ##### Vorbestimmte Wertmengenschlüssel
@@ -295,8 +297,6 @@ Wie dieses Beispiel als Affenformular und mit kompletter Eingabeprüfung aussieh
 ### Weitere Beiträge zum Thema
 
 [Affenformular (Standardverfahren)](http://www.php.de/wiki-php/index.php/Affenformular_%28Standardverfahren%29)
-
 [Eingabevalidierung](http://www.php.de/wiki-php/index.php/Validierung)
-
 [Parametersicherheit](http://www.php.de/wiki-php/index.php?title=Parametersicherheit&action=edit)
 

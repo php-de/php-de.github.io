@@ -8,7 +8,7 @@ author:
     -   name: tr0y
         profile: 21125
 
-entry-type: in-discussion
+entry-type: deprecated
 
 inhalt:
 

@@ -29,7 +29,7 @@ layout: default
             <dl id="contents">
                 {% for curcont in page.inhalt %}
                 <dt><span class="glyphicon glyphicon-th-list"></span> <a href="{{ page.url }}#{{ curcont.anchor }}">{{ curcont.name }}</a></dt>
-                {% if curcont.simple != empty %}<dd>{{ curcont.simple }}</dd>{% endif %}
+                {% if curcont.simple != empty %}<dd>{{ curcont.simple }}</dd>{% else %}<dd style="display:none"></dd>{% endif %}
                 {% endfor %}
             </dl>
             </div>

@@ -75,6 +75,10 @@
         width:24%;
     }
 
+    .group-panel.panel {
+        border-radius:0;
+    }
+
     .panel {
         margin-bottom:0;
     }
@@ -175,6 +179,14 @@
     footer {
         text-align:center;
         padding:15px;
+    }
+
+    footer > * {
+        margin-top:8px;
+    }
+
+    footer > *:last-child {
+        margin-bottom:15px;
     }
 
     * {

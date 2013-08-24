@@ -7,7 +7,7 @@ layout: default
 {% for sitegroup in site.groups %}
 <div class="group-panel panel panel-default">
     <div class="panel-heading shadowed">
-        <a name="{{ sitegroup.anchor }}" href="{{ site.url }}#{{ sitegroup.anchor}}">{{ sitegroup.name }}</a>
+        <a id="{{ sitegroup.anchor }}" href="{{ site.url }}#{{ sitegroup.anchor}}">{{ sitegroup.name }}</a>
     </div>
     <div class="condensed info-block introduction ">
         {{ sitegroup.desc }}

@@ -31,7 +31,7 @@ inhalt:
         anchor: weitere-beitrge-zum-thema
         simple: ""
 
-entry-type: in-progress
+entry-type: in-discussion
 ---
 
 Die Formularverarbeitung ist ein Schwerpunktgebiet serverseitiger Programmiersprachen – und ein klassischer Grund, sich mit Sprachen wie PHP auseinanderzusetzen. 
@@ -50,10 +50,9 @@ Wichtig zu wissen ist, dass die Daten beim Aufruf des Serverscripts im [Request]
 
 Je nachdem, wie die Datenübertragung erfolgt, gibt es für PHP verschiedene Array-Variablen, die Parameterdaten enthalten können. 
 
-[Hauptartikel Request](http://php-de.github.io/request-handling/request.html) | [Hauptartikel GPC]
-(http://php-de.github.io/request-handling/gpc.html) 
+[Hauptartikel Request](http://php-de.github.io/request-handling/request.html) | [Hauptartikel GPC](http://php-de.github.io/request-handling/gpc.html) 
 
-Nachfolgend wird stets der POST Request bei der PHP-seitigen Verarbeitung zugrunde gelegt und <form> Tags im der HTML Code der Übersichtlichkeit halber weggelassen. 
+Nachfolgend wird stets der POST Request bei der PHP-seitigen Verarbeitung zugrunde gelegt und `<form>` Tags im der HTML Code der Übersichtlichkeit halber weggelassen. 
 
 
 ### Parameterformat
@@ -63,7 +62,7 @@ Formular-Parameterdaten (nachfolgend Formulardaten) kann man grob in zwei Datent
 
 #### Skalare Elementtypen
 
-Klassische eindimensionale Formulardaten sind Einträge einer Textbox oder eines Inputfeldes vom Typ 'text'. Hier steht ein konkreter Wert einem Namen gegenüber. Auch der Eintrag einer Gruppe von Radioboxes ist ein solcher Typ, weil nur jeweils eine der möglichen Auswahlen als Wert übertragen wird. 
+Klassische eindimensionale Formulardaten sind Einträge einer Textbox oder eines Inputfeldes vom Typ `'text'`. Hier steht ein konkreter Wert einem Namen gegenüber. Auch der Eintrag einer Gruppe von Radioboxes ist ein solcher Typ, weil nur jeweils eine der möglichen Auswahlen als Wert übertragen wird. 
 
 ~~~ php
 <input type="text" name="Textfeld" value="abc">
@@ -87,12 +86,12 @@ echo $_POST['Auswahlfeld'];
 echo $_POST['EinfachSelektion'];
 ~~~
 
-Dieses Script wird mit den oben vorgegebenen Felddaten nacheinander "abc", "123" und – je nach Auswahl – "Auswahl 1" bzw. "Auswahl 2", "Option 1" bzw. "Option 2" ausgeben. 
+Dieses Script wird mit den oben vorgegebenen Felddaten nacheinander "*abc*", "*123*" und – je nach Auswahl – "*Auswahl 1*" bzw. "*Auswahl 2*", "*Option 1*" bzw. "*Option 2*" ausgeben. 
 
 
 #### Mehrdimensionale Elementtypen
 
-Alle anderen Eingabeelemente (außer Buttons, die genau genommen auch als solche benutzt werden können) erzeugen mehrdimensionale Daten. Das liegt in der Natur der Eingabe begründet: Sobald mehrere Optionen auswählbar sind, müssen diese Werte auch als Wertmenge übertragen werden. Zu nennen sind hier Checkbox-Elemente und Select-Auswahlen mit einem multiple Attribut. 
+Alle anderen Eingabeelemente (außer Buttons, die genau genommen auch als solche benutzt werden können) erzeugen mehrdimensionale Daten. Das liegt in der Natur der Eingabe begründet: Sobald mehrere Optionen auswählbar sind, müssen diese Werte auch als Wertmenge übertragen werden. Zu nennen sind hier Checkbox-Elemente und Select-Auswahlen mit einem `multiple` Attribut. 
 
 ~~~ php
 <input type="checkbox" name="Auswahlfeld[]" value="Auswahl 1"> wähle mich
@@ -146,8 +145,12 @@ Ein anderer Ansatz, der dieses Problem weiter beleuchtet, besteht darin, die aut
 <input type="checkbox" name="AuswahlfeldAssoc[b]" value="Auswahl 2"> wähle mich auch
  
 <input type="checkbox" name="AuswahlfeldNum[3]" value="Auswahl 1"> wähle mich
-<input type="checkbox" name="AuswahlfeldNum[1000]" value="Auswahl 2"> wähle mich auchEin print_r($_POST) nach Ankreuzen aller Felder wird also liefern: 
+<input type="checkbox" name="AuswahlfeldNum[1000]" value="Auswahl 2"> wähle mich auch
+~~~
 
+Ein `print_r($_POST)` nach Ankreuzen aller Felder wird also liefern: 
+
+~~~ php
 Array (
    [AuswahlfeldAssoc] => Array
        (

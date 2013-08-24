@@ -67,7 +67,7 @@ if (false === mysqli_query($dblink, $query)) {
 }
 ~~~
 
-Natürlich kann man auch bei der Entwicklung schon vernünftig mit Exceptions arbeiten. In jedem Fall haben im Live-System die-Anweisungen nichts zu suchen! Technische Fehlermeldungen sind nicht für Anwender gedacht und beinhalten ein Gefahrenpotential, weil Sie potentiellen Angreifern wertvolle Informationen liefern. 
+Natürlich kann man auch bei der Entwicklung schon vernünftig mit Exceptions arbeiten. In jedem Fall haben im Live-System `die`-Anweisungen nichts zu suchen! Technische Fehlermeldungen sind nicht für Anwender gedacht und beinhalten ein Gefahrenpotential, weil Sie potentiellen Angreifern wertvolle Informationen liefern. 
 
 ### Lass Dir die Query ausgeben
  
@@ -79,7 +79,7 @@ PHP-generierte Queries sind meistens dynamisch (also mit variablen Parametern) u
 - Welche Variableninhalte wurden eingetragen 
 <br> <br> 
 
-Bei der Fehlersuche sollte die erste Maßnahme sein, sich die „gerenderte“ Query ausgeben zu lassen, also den Querystring, der auch an die Datenbank via mysqli_query() übergeben wird. 
+Bei der Fehlersuche sollte die erste Maßnahme sein, sich die „gerenderte“ Query ausgeben zu lassen, also den Querystring, der auch an die Datenbank via `mysqli_query()` übergeben wird. 
 
 
 ### Keywords
@@ -101,7 +101,7 @@ $query = 'SELECT Name , Age FROM Users WHERE Name LIKE "%Horst%" OR `Register` <
 Mehrzeilige Statements
 
 - sind besser zu lesen und damit leichter zu debuggen 
-- ergeben in Fehlermeldungen genauere Positionsmeldungen („near ... at line 2“) 
+- ergeben in Fehlermeldungen genauere Positionsmeldungen (`„near ... at line 2“`) 
 <br> <br> 
 
 Aber richtig! 
@@ -168,7 +168,7 @@ Falsch:
 
 #### Benutze Stringbegrenzer konsequent
 
-Wie eben geschrieben erlaubt SQL zwei verschiedene Stringbegrenzer - einfache und doppelte Hochkommata. Da das gleiche für PHP gilt, ist es eine gute Idee, konsequent einen Stringbegrenzer für PHP und einen für SQL zu benuzten, um Escaping vermeiden zu können. Diese Überlegungen haben nichts mit Feldinhalten zu tun (und dort evtl. auftretenden Hochkommata); hierfür ist allein mysqli_real_escape_string() verantwortlich!
+Wie eben geschrieben erlaubt SQL zwei verschiedene Stringbegrenzer - einfache und doppelte Hochkommata. Da das gleiche für PHP gilt, ist es eine gute Idee, konsequent einen Stringbegrenzer für PHP und einen für SQL zu benuzten, um Escaping vermeiden zu können. Diese Überlegungen haben nichts mit Feldinhalten zu tun (und dort evtl. auftretenden Hochkommata); hierfür ist allein `mysqli_real_escape_string()` verantwortlich!
 
 Negativbeispiele - kollidierende Stringbegrenzer benötigen Escaping
 

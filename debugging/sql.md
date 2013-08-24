@@ -67,7 +67,7 @@ if (false === mysqli_query($dblink, $query)) {
 }
 ~~~
 
-Natürlich kann man auch bei der Entwicklung schon vernünftig mit Exceptions arbeiten. In jedem Fall haben im Live-System `die`-Anweisungen nichts zu suchen! Technische Fehlermeldungen sind nicht für Anwender gedacht und beinhalten ein Gefahrenpotential, weil Sie potentiellen Angreifern wertvolle Informationen liefern. 
+Natürlich kann man auch bei der Entwicklung schon vernünftig mit Exceptions arbeiten. In jedem Fall haben im Live-System `die()`-Anweisungen nichts zu suchen! Technische Fehlermeldungen sind nicht für Anwender gedacht und beinhalten ein Gefahrenpotential, weil Sie potentiellen Angreifern wertvolle Informationen liefern. 
 
 ### Lass Dir die Query ausgeben
  

@@ -89,7 +89,7 @@ Es zeigt sich auch, dass Methoden sich wie Eigenschaften verhalten, also der Wer
 
 ### Prototypen vs. Klassen
  
-JavaScript ist vollständig objektorientiert bzw. objektbasiert, jedoch sind im jetzigen Entwicklungsstand der Sprache keine Klassen vorgesehen (Dennoch ist das Schlüsselwort `class` nach ECMAScript ein reservierter Bezeichner und kann deshalb nicht verwendet werden. Allerdings empfiehlt sich die Nutzung solcher Bezeichner ohnehin nicht). 
+JavaScript ist vollständig objektorientiert bzw. objektbasiert, jedoch sind im jetzigen Entwicklungsstand der Sprache keine Klassen vorgesehen (dennoch ist das Schlüsselwort `class` nach ECMAScript ein reservierter Bezeichner und kann deshalb nicht verwendet werden. Allerdings empfiehlt sich die Nutzung solcher Bezeichner ohnehin nicht). 
 
 In JavaScript existieren nur Objekte. Alternativ zum Klassenkonzept in der Objektorientierung arbeitet Javascript mit sogenannten Prototypen. Diese stellen eine Art Vorlage für ein Objekt dar. Da es sich bei Prototypen selbst um Objekte handelt, können diese jederzeit um bestimmte Eigenschaften und Methoden erweitert werden. Ebenso kann jedes beliebige Objekt als Prototyp für ein weiteres dienen. Der Prototyp kommt immer dann zum Tragen, wenn eine neue Instanz eines Objektes abgeleitet wird, hat aber keinen direkten Einfluss auf die aktuelle Instanz (dazu im weiteren Verlauf mehr).
 

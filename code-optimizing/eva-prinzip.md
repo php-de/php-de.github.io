@@ -1,13 +1,15 @@
 ---
 layout: guide
 
-title: "Codeoptimierung: EVA-Prinzip (Standardverfahren)"
+title: "EVA-Prinzip (Standardverfahren)"
 
 author:
     -   name: nikosch
         profile: 2314
     -   name: hausl
         profile: 21246
+
+group: "Code-Optimierung"
 
 creator: nikosch
 

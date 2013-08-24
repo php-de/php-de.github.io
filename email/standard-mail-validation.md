@@ -1,6 +1,7 @@
 ---
 layout: guide
-title: Standard E-Mail-Validierung
+title: "Standard E-Mail-Validierung"
+group: "E-Mail"
 creator: hausl
 author:
     -   name: hausl

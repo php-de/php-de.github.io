@@ -1,7 +1,8 @@
 ---
 layout: guide
-title: "Debugging: Leitfaden"
+title: "Leitfaden"
 creator: nikosch
+group: "Debugging"
 author:
     -   name: nikosch
         profile: 2314

@@ -1,7 +1,8 @@
 ---
 layout: guide
-title: "Debugging: SQL"
+title: "SQL-Fehlerbehebung"
 creator: nikosch
+group: "Debugging"
 author:
     -   name: nikosch
         profile: 2314

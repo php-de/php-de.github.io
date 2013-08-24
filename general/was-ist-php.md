@@ -5,6 +5,8 @@ title: "Was ist PHP?"
 
 creator: hoefti
 
+group: "Allgemein"
+
 author:
     - name: hoefti
       profile: 1

@@ -8,3 +8,39 @@ kramdown:
 # entry-type
 # [ default, in-progress, deprecated, in-discussion, marked-to-delete ]
 entry-type: default
+
+url: "http://php-de.github.io"
+
+# page groups
+
+groups:
+
+    - name: "Allgemein"
+      path: "/general"
+      desc: "Grundlegende Informationen zum Einstieg in PHP"
+      anchor: "general"
+
+    - name: "Code-Optimierung"
+      path: "/code-optimizing"
+      desc: "Code-Optimierung von A bis Z."
+      anchor: "code-optimizing"
+
+    - name: "Datenbanken"
+      path: "/database"
+      desc: "MySQL & Co."
+      anchor: "database"
+
+    - name: "Debugging"
+      path: "/debugging"
+      desc: "Auf Fehlersuche"
+      anchor: "debugging"
+
+    - name: "E-Mail"
+      path: "/email"
+      desc: "Wissenswertes über den Umgang mit E-Mail-Adressen, Mail-Servern, und Mailer-Klassen."
+      anchor: "email"
+
+    - name: "Request-Handling"
+      path: "/request-handling"
+      desc: "Wissenswertes über das Request Handling in PHP."
+      anchor: "request-handling"

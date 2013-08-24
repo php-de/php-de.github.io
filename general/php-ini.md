@@ -5,6 +5,8 @@ title: "php.ini - Wichtigsten Funktionen"
 
 creator: Manko10
 
+group: "Allgemein"
+
 author:
     - name: Manko10
       profile: 1139

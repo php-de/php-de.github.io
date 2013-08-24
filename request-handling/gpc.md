@@ -1,7 +1,9 @@
 ---
 layout: guide
-title: "Request Handling: GPC"
+title: "GPC"
 creator: manko10
+
+group: "Request-Handling"
 
 author: 
     -   name: manko10

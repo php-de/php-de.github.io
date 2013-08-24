@@ -1,13 +1,15 @@
 ---
 layout: guide
 
-title: "Codeoptimierung: Code-Smells"
+title: "Code-Smells"
 
 author:
     -   name: nikosch
         profile: 2314
     -   name: hausl
         profile: 21246
+
+group: "Code-Optimierung"
 
 creator: nikosch
 

@@ -4,22 +4,40 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% if page.title != 'php.de' %}{{ page.title }} &middot; {% endif %}PHP.de Community Knowledge Repository</title>
-    
-        <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="/assets/css/global.css">
+
+        <!--<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css" media="screen">-->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/assets/css/general.css">
 
         <script type="text/javascript" src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
-        <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
     </head>
     <body>
-        <div id="top" class="container pageWrap">
-            <a class="head" href="/"></a>
-        
-            {{ content }}
+        <div id="page" class="container">
+            <div id="logoContainer">
 
-            <hr />
+            </div>
+            <div id="breadcrumbs">
+                <ol class="breadcrumb">
+                {% if page.title == 'php.de' %}
+                    <li class="active">PHP.de Wissen</li>
+                {% else %}
+                    <li><a href="{{ site.url }}">PHP.de Wissen</a></li>
+                    {% for group in site.groups %}
+                    {% if group.name == page.group %}
+                    <li><a href="{{ site.url }}#{{ group.anchor }}">{{ group.name }}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                    <li class="active">{{ page.title }}</li>
+                {% endif %}
+                </ol>
+            </div>
+            <div id="content">
+                {{ content }}
+            </div>
+        </div>
+        <div class="container">
             <footer>
-                <small>&copy; 2013 PHP.de Community - erzeugt mit <a href="http://getbootstrap.com">Bootstrap 3</a> durch <a href="http://jekyllrb.com">JEKYLL</a> basierend auf HTML5</small>
+                <small>&copy; Initiiert, betreut und gewartet von der PHP.de Community</small>
             </footer>
         </div>
     </body>

@@ -1,0 +1,193 @@
+
+@media screen {
+    
+    .container {
+        padding:0;
+    }
+
+    #logoContainer {
+        background-image:url(../images/php-de-2013-fin.png);
+        background-position:center left;
+        background-repeat:no-repeat;
+        height:80px;
+
+    }
+
+    #breadcrumbs ol {
+        border-radius:0 !important;
+        margin:0;
+    }
+
+    #breadcrumbs {
+        border-bottom:1px solid #ddd;
+    }
+
+    #page {
+        border-left:1px solid #ddd;
+        border-right:1px solid #ddd;
+        border-bottom:1px solid #ddd;
+        border-radius:5px;
+        border-top-left-radius:0px;
+        border-top-right-radius:0px;
+    }
+
+    .alert {
+        border:0 !important;
+        border-left:5px solid !important;
+        border-radius:0;
+        text-align:justify;
+        padding-left:11px;
+    }
+
+    .alert.alert-default {
+        border-color:#ddd !important;
+    }
+
+    .left-alerted .alert {
+        border:0 !important;
+        border-right:5px solid !important;
+        margin:0;
+        padding:8px;
+        padding-left:15px;
+    }
+
+    td.left-alerted {
+        padding:0 !important;
+    }
+
+    .introduction {
+        border-bottom:1px solid #ddd !important;
+        margin-bottom:0;
+    }
+
+    .introduction.info-block {
+        padding:15px;
+    }
+
+    table.groups-table thead td {
+        color:#aaa;
+    }
+
+    table.groups-table .creator {
+        width:24%;
+    }
+
+    table.groups-table .state {
+        width:24%;
+    }
+
+    .panel {
+        margin-bottom:0;
+    }
+
+    table.groups-table.table td {
+        padding-left:15px;
+    }
+
+    #guide {
+        margin-top:0;
+    }
+
+    #guide .alert {
+        margin-left:-15px;
+        margin-right:-15px;
+    }
+
+    #guide .alert.introduction {
+        margin-top:-15px;
+        margin-bottom:15px;
+    }
+
+    #guide .group-panel.panel {
+        border-radius:0;
+        border:0;
+        border-bottom:1px solid #ddd;
+    }
+
+    #guide blockquote, blockquote p {
+        font-size:11pt !important;
+        color:#777 !important;
+    }
+
+    #guide h1, #guide h2, #guide h3, #guide h4, #guide h5 {
+        margin-top:30px !important;
+        border-bottom:1px solid #eee;
+    }
+
+    #guide h1 {
+        font-size:2.4em !important;
+        font-weight:bold;
+    }
+
+    #guide h2 {
+        font-size:2em !important;
+        font-weight:bold;
+    }
+
+    #guide h3 {
+        font-size:1.6em !important;
+        font-weight:bold;
+    }
+
+    #guide h4 {
+        font-size:1.2em !important;
+        font-weight:bold;
+    }
+
+    #guide h5 {
+        font-size:1.0em !important;
+        font-weight:bold;
+    }
+
+    #guide dl dt {
+        font-weight:normal;
+    }
+
+    #guide dl dt span.glyphicon {
+        color:#ddd;
+    }
+
+    #guide dl dd {
+        margin-bottom:8px;
+        padding-left:18px;
+    }
+
+    #guide .alert.contents {
+        padding-top:6px;
+        padding-bottom:6px;
+        border-color:#bbb !important;
+        border-bottom:0 !important;
+    }
+
+    #guide .alert.contents dl {
+        margin-top:3px;
+        margin-bottom:3px;
+    }
+
+    .group-panel .panel-heading {
+        background-color:#eee;
+        border-radius:0;
+    }
+
+    .shadowed {
+        box-shadow:inset 0px 0px 8px #d8d8d8;
+    }
+
+    footer {
+        text-align:center;
+        padding:15px;
+    }
+
+    * {
+        box-sizing:content-box !important;
+    }
+
+    pre.prettyprint {
+        padding:15px !important;
+    }
+
+}
+
+@media print {
+    
+}

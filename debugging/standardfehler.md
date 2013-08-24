@@ -1,7 +1,8 @@
 ---
 layout: guide
-title: "Debugging: Standardfehler"
+title: "Standardfehler"
 creator: nikosch
+group: "Debugging"
 author:
     -   name: nikosch
         profile: 2314

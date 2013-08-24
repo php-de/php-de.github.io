@@ -5,6 +5,8 @@ title: "Ich-will-das-selbst-schaffen-Attitüde"
 
 creator: manko10
 
+group: "Allgemein"
+
 author:
     - name: manko10
       profile: 1139

@@ -1,117 +1,44 @@
 ---
 layout: default
 ---
-
-<div class="row sectionStream">
-    <div class="col-lg-9">
-        {% case page.entry-type %}
-            {% when 'in-progress' %}    
-        <div class="panel panel-danger" id="guide">
-            <div class="panel-heading">
-                <span style="font-size:14pt">{{ page.title }}</span>
-            </div>
-            <p><strong>Dieser Beitrag ist zur Zeit in Bearbeitung.</strong><p>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    {{ content }}
-                </li>
-            </ul>
-            {% when 'deprecated' %}
-        <div class="panel panel-info" id="guide">
-            <div class="panel-heading">
-                <span style="font-size:14pt">{{ page.title }}</span>
-            </div>
-            <p><strong>Dieser Beitrag ist veraltet, du kannst ihn überarbeiten und uns deine Version des Beitrages vorschlagen.</strong><p>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    {{ content }}
-                </li>
-            </ul>
-            {% when 'in-discussion' %}
-        <div class="panel panel-success" id="guide">
-            <div class="panel-heading">
-                <span style="font-size:14pt">{{ page.title }}</span>
-            </div>
-            <p><strong>Dieser Beitrag ist nicht final und wird diskutiert.</strong><p>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    {{ content }}
-                </li>
-            </ul>
-            {% when 'marked-to-delete' %}
-        <div class="panel panel-warning" id="guide">
-            <div class="panel-heading">
-                <span style="font-size:14pt">{{ page.title }}</span>
-            </div>
-            <p><strong>Dieser Beitrag wird bald verworfen, du solltest ihn nicht weiter verlinken.</strong><p>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    {{ content }}
-                </li>
-            </ul>
-            {% else %}
-        <div class="panel" id="guide">
-            <div class="panel-heading">
-                <span style="font-size:14pt">{{ page.title }}</span>
-            </div>
-            {{ content }}
-        {% endcase %}
-            <div class="panel-footer" style="text-align:right;">
-                <a href="#top">nach oben &uarr;</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3">
-        {% if page.inhalt %}
-        <div id="page-contents">
-            <div class="list-group">
-                <div class="list-group-item" style="background-color:#f5f5f5; font-size:14pt;">
-                    Inhalt
-                </div>
-                {% for inhalt in page.inhalt %}
-                    {% if inhalt.anchor and inhalt.name %}
-                <a href="{{ page.url }}#{{ inhalt.anchor }}" class="list-group-item">
-
-                    <strong>{{ inhalt.name }}</strong>
-                    {% if inhalt.simple %}
-                    <p>{{ inhalt.simple }}</p>
-                    {% endif %}
-                </a>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-        {% endif %}
-        <div class="panel">
-            <p style="text-align:center">
-                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/de/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/de/88x31.png" /></a><br /><small>Dieses Werk bzw. Inhalt steht unter einer <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/de/">Creative Commons Namensnennung - Weitergabe unter gleichen Bedingungen 3.0 Deutschland Lizenz</a></small>.
-            </p>
-        {% if page.author %}
-            <ul class="list-group authors">
-            {% for user in page.author %}
-                <li class="list-group-item{% if page.creator %}{% if page.creator == user.name %} active{% endif %}{% endif %}">
-                {% if user.profile %}<a href="http://www.php.de/member.php?u={{ user.profile }}">{% endif %}
-                {{ user.name }}{% if page.creator %}{% if page.creator == user.name %} <small>( Ersteller )</small>{% endif %}{% endif %}
-                {% if user.profile %}</a>{% endif %}
-                </li>
-            {% endfor %}
-            </ul>
-            <div class="panel-footer" style="text-align:right; color:#969696;">
-                <small>Autoren und Lizenz</small>
-            </div>
-        </div>
-        {% endif %}
-    </div>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/yepnope/1.5.4/yepnope.min.js"></script>
-    <script type="text/javascript" src="/assets/detectbrowsermobile.js"></script>
-    <script type="text/javascript">
-        yepnope({
-            test: jQuery.browser.mobile,
-            yep: '/assets/mobile-switch.js'
-        });
-    </script>
+{% case page.entry-type %}
+    {% when 'in-progress' %}{% assign warntype = 'alert-info' %}
+    {% when 'in-discussion' %}{% assign warntype = 'alert-info' %}
+    {% when 'deprecated' %}{% assign warntype = 'alert-danger' %}
+    {% else %}{% assign warntype = 'alert-success' %}
+{% endcase %}
+{% for editor in page.author %}
+    {% if forloop.last %}{% assign currentEditor = editor %}{% endif %}
+{% endfor %}
+<div class="condensed alert {{ warntype }} introduction">
+    {% case page.entry-type %}
+        {% when 'in-progress' %}<p><strong>Dieser Beitrag wird zur Zeit von <a href="http://www.php.de/member.php?u={{ currentEditor.profile }}">{{ currentEditor.name }}</a> bearbeitet.</strong></p><p>Beiträge die sich in Bearbeitung befinden enthalten mitunter unvollständige Informationen. Gedulde dich etwas, wir stellen diesen Beitrag so schnell es möglich ist fertig.</p>
+        {% when 'in-discussion' %}<p><strong>Dieser Beitrag wird zur diskutiert und wurde zuletzt von <a href="http://www.php.de/member.php?u={{ currentEditor.profile }}">{{ currentEditor.name }}</a> verändert.</strong></p><p>Beiträge die zur Diskussion gestellt werden enthalten Informationen bei denen wir uns unklar sind, ob sie in diesem Beitrag länger notwendig sind. Gedulde dich etwas, wir stellen diesen Beitrag fertig sobald die Diskussion beendet ist.</p>
+        {% when 'deprecated' %}<p><strong>Dieser Beitrag wurde von <a href="http://www.php.de/member.php?u={{ currentEditor.profile }}">{{ currentEditor.name }}</a> als veraltet gekennzeichnet.</strong></p><p>Beiträge die als veraltet gekennzeichnet wurden müssen überarbeitet werden. Wir geben uns mühe die notwendigen Informationen so schnell es geht zusammenzutragen und einzupflegen. Solltest du etwas beisteuern möchten, kannst du im Issue-Tracker unseres Repository einen Eintrag erstellen.</p>
+        {% else %}<p><strong>Dieser Beitrag ist fertiggestellt und wurde zuletzt von <a href="http://www.php.de/member.php?u={{ currentEditor.profile }}">{{ currentEditor.name }}</a> bearbeitet.</strong></p>
+    {% endcase %}
 </div>
-
+<div id="guide">
+    <div class="group-panel panel panel-default">
+        <div class="panel-heading">
+            <strong>{{ page.title }}</strong>
+        </div>
+        <div class="panel-body">
+            {% if page.inhalt %}
+            <div class="condensed alert introduction contents">
+            <dl id="contents">
+                {% for curcont in page.inhalt %}
+                <dt><span class="glyphicon glyphicon-th-list"></span> <a href="{{ page.url }}#{{ curcont.anchor }}">{{ curcont.name }}</a></dt>
+                {% if curcont.simple != empty %}<dd>{{ curcont.simple }}</dd>{% endif %}
+                {% endfor %}
+            </dl>
+            </div>
+            {% endif %}
+            {{ content }}
+        </div>
+    </div>
+</div>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 <script type="text/javascript">
 $('pre code').parent().addClass('prettyprint');
 </script>

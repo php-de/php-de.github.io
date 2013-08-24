@@ -1,7 +1,8 @@
 ---
 layout: guide
-title: "Debugging: Was ist Debugging?"
+title: "Was ist Debugging?"
 creator: nikosch
+group: "Debugging"
 author:
     -   name: nikosch
         profile: 2314

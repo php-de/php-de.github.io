@@ -1,42 +1,34 @@
 ---
 layout: default
 ---
-
-<div class="row sectionStream">
-    <div class="col-lg-9">
-        <div class="panel">
-            {% include heading.html %}
-        </div>
-
-        <!-- sections -->
-        {% for sec in page.pageSections %}
-        <div class="panel">
-            <div class="panel-heading">
-                <strong>{{ sec.name }}</strong>
-            </div>
-            <p>
-                {{ sec.desc }}
-            </p>
-            <ul class="list-group">
-                {% for givenEntry in sec.entrys %}
-                <li class="list-group-item">
-                    <a href="{{ givenEntry.url }}">{{ givenEntry.name }}</a>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-        {% endfor %}
-    </div>
-    <div class="col-lg-3">
-        <div class="panel">
-        
-            <a class="btn btn-primary btn-sm btn-block" href="http://www.php.de">
-                zum Forum
-            </a>
-            <a class="btn btn-default btn-sm btn-block" href="constribute.html">
-                Mitmachen !
-            </a>
-        
-        </div>
-    </div>
+<div class="condensed alert alert-info introduction">
+    {{ content }}
 </div>
+{% for sitegroup in site.groups %}
+<div class="group-panel panel panel-default">
+    <div class="panel-heading shadowed">
+        <a name="{{ sitegroup.anchor }}" href="{{ site.url }}#{{ sitegroup.anchor}}">{{ sitegroup.name }}</a>
+    </div>
+    <div class="condensed info-block introduction ">
+        {{ sitegroup.desc }}
+    </div>
+    <table class="table groups-table">
+        <thead>
+            <td class="topic">Thema</td>
+            <td class="creator">Verfasser</td>
+            <td class="state">Status</td>
+        </thead>
+        <tbody>
+        {% for current in site.pages %}
+            {% if sitegroup.name == current.group %}
+            <tr>
+                <td class="topic"><a href="{{ current.url }}"><span class="glyphicon glyphicon-bookmark"></span> {{ current.title }}</a></td>
+                <td class="creator">{{ current.creator }}</td>
+                <td class="state left-alerted">{% case current.entry-type %}{% when 'in-progress' %}<div class="alert alert-danger">In Bearbeitung</div>{% when 'in-discussion' %}<div class="alert alert-warning">In Diskussion</div>{% when 'deprecated' %}<div class="alert-info">Veraltet</div>{% else %}<div class="alert alert-success">Fertiggestellt</div>{% endcase %}</td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endfor %}

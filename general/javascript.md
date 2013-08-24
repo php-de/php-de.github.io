@@ -122,7 +122,7 @@ alert(myNewInstance.myProperty1 + ' - ' + myNewInstance.myProperty2);
 Im obigen Beispiel wurde der (eingangs natürlich noch leere) Prototyp zunächst vollständig durch ein anderes Objekt ersetzt, welches dann um eine Eigenschaft ergänzt wurde. Nachdem eine zweite Instanz des Objektes erstellt wurde, standen diese beiden durch den Prototypen erstellten Eigenschaften zur Verfügung. Der Operator new mag hier vielleicht verwirren, da eingangs gesagt wurde, dass JavaScript keine Klassen kennt, doch stellt dies keinen Widerspruch dar. Das Objekt `myObject` agiert hier praktisch als „Pseudoklasse“. Sein Prototyp dient dabei als Vorlage, nach der ein neues Objekt zu erzeugt wird. Das Objekt selbst wird streng genommen aber nicht instantiiert. Es wird nur ein neues Objekt nach Vorlage des eben erstellten Prototypen abgeleitet. Die als Pseudoklasse dienende Funktion selbst stellt dabei den Konstruktor dar. 
 
 <div class="alert alert-danger">
-<strong>Achtung!</strong> Häufig gemachter Fehler:
+<strong>Achtung!</strong> Häufig gemachter Fehler:  
 JavaScript ist nicht Java! Diese beiden grundlegend verschiedenen Sprachen werden oft verwechselt. Bis auf den Namen und eine ähnliche Syntax haben sie aber nichts gemein.</div>
 
 ### Weiterführende Informationen

@@ -1,6 +1,6 @@
 ---
 layout: guide
-title: "Constribute Richtlinie"
+title: "Contribute Richtlinie"
 
 creator: tr0y
 author:

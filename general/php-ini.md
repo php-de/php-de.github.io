@@ -65,9 +65,9 @@ Das Verhalten von magic_quotes_gpc ist sehr wichtig für eine nachfolgende Param
 
 Um zur Laufzeit herauszufinden, ob die Direktive auf On gesetzt ist, kann die Funktion [get_magic_quotes_gpc()](http://php.net/get_magic_quotes_gpc) herangezogen werden.
 
-<div class="alert">
+<div class="alert alert-danger">
 <strong>Achtung!</strong> magic_quotes_gpc ist als deprecated gekennzeichnet und wird in PHP 6.0.0 entfernt.
-Schon jetzt sollten [Alternativen](http://www.php.net/manual/en/security.magicquotes.disabling.php) benutzt werden, um Software zukunftsfähig zu gestalten. 
+Schon jetzt sollten <a href="http://www.php.net/manual/en/security.magicquotes.disabling.php">Alternativen</a> benutzt werden, um Software zukunftsfähig zu gestalten. 
 </div>
 
 ### register_globals
@@ -80,9 +80,9 @@ Da register_globals in frühen PHP-Versionen Standard war, setzen viele alte (ve
 
 Die Verwendung von Variablen, die durch register_globals automatisch initialisiert wurden, führt zu verschiedenen Problemen, weshalb diese Option zunehmend per Ini-Voreinstellung abgeschaltet ist und in zukünftigen PHP Versionen ganz entfallen wird. Nachfolgend werden die Problematiken aufgeführt. 
 
-<div class="alert">
+<div class="alert alert-danger">
 <strong>Achtung!</strong> register_globals ist seit PHP 4.2.0 standardmäßig deaktiviert und wird in PHP 6.0.0 endgültig entfernt.
-Es wird dringend empfohlen, stattdessen [SuperGlobals](http://www.php.de/wiki-php/index.php/SuperGlobals) zu verwenden! 
+Es wird dringend empfohlen, stattdessen <a href="http://www.php.de/wiki-php/index.php/SuperGlobals">SuperGlobals</a> zu verwenden! 
 </div>
 
 ##### Verfügbarkeit
@@ -97,7 +97,7 @@ Ein Zugriff auf Variablen, denen in einem Script bisher kein Wert zugewiesen wur
 
 Ein Beispiel, um diese Sicherheitslücke du demonstrieren:
 
-~~~php
+~~~ php
 if (isset($param)) {
     $passSecondIf = true;
 }

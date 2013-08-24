@@ -5,9 +5,11 @@ layout: default
     {{ content }}
 </div>
 {% for sitegroup in site.groups %}
+{% assign cgcount = 0 %}
 <div class="group-panel panel panel-default">
+    {% for current in site.pages %}{% if sitegroup.name == current.group %}{% assign cgcount = cgcount |plus:1 %}{% endif %}{% endfor %}
     <div class="panel-heading shadowed">
-        <a id="{{ sitegroup.anchor }}" href="{{ site.url }}#{{ sitegroup.anchor}}">{{ sitegroup.name }}</a>
+        <a id="{{ sitegroup.anchor }}" href="{{ site.url }}#{{ sitegroup.anchor}}">{{ sitegroup.name }}<span class="label label-default pull-right">{{ cgcount }} {% if cgcount > 1 %}Beiträge{% else %}Beitrag{% endif %}</span></a>
     </div>
     <div class="condensed info-block introduction ">
         {{ sitegroup.desc }}

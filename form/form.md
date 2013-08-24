@@ -50,7 +50,7 @@ Wichtig zu wissen ist, dass die Daten beim Aufruf des Serverscripts im [Request]
 
 Je nachdem, wie die Datenübertragung erfolgt, gibt es für PHP verschiedene Array-Variablen, die Parameterdaten enthalten können. 
 
-Siehe dazu auch:
+Siehe dazu auch:  
 [Hauptartikel Request](http://php-de.github.io/request-handling/request.html)  
 [Hauptartikel GPC](http://php-de.github.io/request-handling/gpc.html)  
 

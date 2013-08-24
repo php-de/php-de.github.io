@@ -99,7 +99,7 @@
     }
 
     #guide .group-panel.panel {
-        border-radius:0;
+        border-radius:0 !important;
         border:0;
         border-bottom:1px solid #ddd;
     }

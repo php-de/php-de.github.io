@@ -40,6 +40,11 @@ groups:
       desc: "Wissenswertes über den Umgang mit E-Mail-Adressen, Mail-Servern, und Mailer-Klassen."
       anchor: "email"
 
+    - name: "Formularverarbeitung"
+      path: "/form"
+      desc: "Rund um die Erstellung, Verarbeitung, Validierung, etc. von Formularen"
+      anchor: "form"
+
     - name: "Request-Handling"
       path: "/request-handling"
       desc: "Wissenswertes über das Request Handling in PHP."

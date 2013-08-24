@@ -14,9 +14,18 @@ author:
         profile: 21246
 
 inhalt:
-    -   name: "JavaScript"
-        anchor: 
+    -   name: "Sprachelemente und Systematik"
+        anchor: sprachelemente-und-systematik
         simple: ""
+
+    -   name: "Prototypen vs. Klassen"
+        anchor: prototypen-vs-klassen
+        simple: ""
+
+    -   name: "Weiterführende Informationen"
+        anchor: weiterfhrende-informationen
+        simple: ""
+
 
 entry-type: in-progress
 ---
@@ -118,7 +127,7 @@ JavaScript ist nicht Java! Diese beiden grundlegend verschiedenen Sprachen werde
 
 ### Weiterführende Informationen
 
-http://aktuell.de.selfhtml.org/artikel/javascript/oomodell/ 
-http://mckoss.com/jscript/object.htm 
-http://developer.yahoo.com/yui/theater/ (Videos von Douglas Crockford) 
+[http://aktuell.de.selfhtml.org/artikel/javascript/oomodell/](http://aktuell.de.selfhtml.org/artikel/javascript/oomodell/)  
+[http://mckoss.com/jscript/object.htm](http://mckoss.com/jscript/object.htm)  
+[http://developer.yahoo.com/yui/theater/](http://developer.yahoo.com/yui/theater/) (Videos von Douglas Crockford) 
 

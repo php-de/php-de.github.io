@@ -119,7 +119,7 @@ Wiederum wird auf einen Wert über den Namen als Arrayschlüssel zugegriffen. Ge
 
 <div class="alert alert-info"><strong>Information! </strong>Genau betrachtet können auch oben genannte 'skalare' Elementtypen mit einem [] erweitert werden, um ihre Werte in der Parametermenge als Array abzubilden. In bestimmten Fällen – meist um eine JavaScript Funktionalität umzusetzen – kann dieses Verhalten sinnvoll sein.</div>
 
-##### vorhergehende Existenz-Prüfung
+##### Vorhergehende Existenz-Prüfung
 
 Der Zugriff auf einen konkreten Wert einer Mehrfachauswahl kann tückisch sein. Werden bspw. keine Elemente angewählt oder ist die Anzahl der ausgewählten Optionen kleiner als der angeforderte Index, wird PHP angewiesen, auf einen nicht existierenden Wert (genauer: Arrayschlüssel) zuzugreifen und wird diesen Versuch mit einer Fehlermeldung quittieren. 
 
@@ -137,7 +137,7 @@ if (isset($_POST['MehrfachSelektion'][0])) {
 solange nicht unterschieden werden soll, ob nur der erste Eintrag des Feldes "MehrfachSelektion" existiert (also mindestens ein Wert gewählt wurde) oder ob MehrfachSelektion überhaupt existiert. 
 
 
-##### vorbestimmte Wertmengenschlüssel
+##### Vorbestimmte Wertmengenschlüssel
 
 Ein anderer Ansatz, der dieses Problem weiter beleuchtet, besteht darin, die automatische Numerierung übertragener Feldwerte zu unterbinden, indem im HTML Formelement bereits konkrete Schlüssel vergeben werden. Üblicherweise werden hier Strings verwendet, numerische Schlüssel sind aber auch durchaus möglich. 
 
@@ -163,11 +163,13 @@ Array (
 )
 ~~~
 
-##### spezielle Übergabeverhalten
+##### Spezielle Übergabeverhalten
 
 Radio- und Checkboxes, sowie Mehrfachselektionen erfordern eine zusätzliche Aufmerksamkeit. Diese Elementtypen legen bei der Datenübergabe ein besonderes Verhalten an den Tag: Nur Elemente, von denen die im Formular mindestens eine Option angekreuzt bzw. ausgewählt wurde, werden übertragen. Von nicht angewählten Formularelementen tauchen also auch nicht die Elementnamen im Parameterarray auf. Demgegenüber werden bspw. Textfelder immer übertragen, auch wenn die Eingabe leer ist.
+
 In Kombination mit Ebengesagtem zur Existenzprüfung ergibt sich ein neuer Ansatz zur Checkbox-Verarbeitung.
 Aus Sicht von HTML bilden die Elemente weiterhin eine Gruppe, während aus Sicht von PHP jedes Element nun für sich betrachtet werden kann und sich der binäre Zustand (Checkbox an/aus) nicht wie bisher über seinen value, sondern über die Existenz des Elements in der Menge der übertragenen Parameterwerte (bzw. des Elementnamens in der Menge der Parameterschlüssel) ergibt.
+
 Gegenübergestellt kann eine Optionswahl also so aussehen:
 
 ~~~ php

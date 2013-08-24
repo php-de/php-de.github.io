@@ -87,7 +87,7 @@ myObject.myProperty = 'Hallo Wiki!';
 myObject.myMethod();
 ~~~
 
-Es zeigt sich auch, dass Methoden sich wie Eigenschaften verhalten, also der Wert einer Zuweisung sein können. Diese Notation der Zuweisung sogenannter anonymer Funktionen ist ein äußerst mächtiges Mittel und findet in vielen Bereichen Anwendung. Insbesondere für [Callback](http://www.php.de/wiki-php/index.php?title=Callback&action=edit)-Übergaben werden anonyme Funktionen gern genutzt. Diese Art von Funktion wird auch „Lambda-Funktion“ oder „Funktion im Lambda-Stil“ genannt. 
+Es zeigt sich auch, dass Methoden sich wie Eigenschaften verhalten, also der Wert einer Zuweisung sein können. Diese Notation der Zuweisung sogenannter *anonymer Funktionen* ist ein äußerst mächtiges Mittel und findet in vielen Bereichen Anwendung. Insbesondere für Callback-Übergaben werden anonyme Funktionen gern genutzt. Diese Art von Funktion wird auch „Lambda-Funktion“ oder „Funktion im Lambda-Stil“ genannt. 
 
 ### Prototypen vs. Klassen
  
@@ -95,7 +95,7 @@ JavaScript ist vollständig objektorientiert bzw. objektbasiert, jedoch sind im 
 
 In JavaScript existieren nur Objekte. Alternativ zum Klassenkonzept in der Objektorientierung arbeitet Javascript mit sogenannten Prototypen. Diese stellen eine Art Vorlage für ein Objekt dar. Da es sich bei Prototypen selbst um Objekte handelt, können diese jederzeit um bestimmte Eigenschaften und Methoden erweitert werden. Ebenso kann jedes beliebige Objekt als Prototyp für ein weiteres dienen. Der Prototyp kommt immer dann zum Tragen, wenn eine neue Instanz eines Objektes abgeleitet wird, hat aber keinen direkten Einfluss auf die aktuelle Instanz (dazu im weiteren Verlauf mehr).
 
-Jede Methode/Funktion stellt intern ein Objekt dar, das einer Eigenschaft zugewiesen ist, die den Namen der Funktion trägt. Dies ist so zu verstehen, dass beim Erstellen einer Funktion `myFunction` eine Eigenschaft mit diesem Namen im aktuellen Objektkontext angelegt wird, der als Wert die Funktion zugewiesen wird. Diese Funktion ist selbst jedoch ein Objekt und kann somit wieder Eigenschaften besitzen, welchen wiederum Objekte zugewiesen werden können.
+Jede Methode/Funktion stellt intern ein Objekt dar, das einer Eigenschaft zugewiesen ist, die den Namen der Funktion trägt. Dies ist so zu verstehen, dass beim Erstellen einer Funktion `myFunction()` eine Eigenschaft mit diesem Namen im aktuellen Objektkontext angelegt wird, der als Wert die Funktion zugewiesen wird. Diese Funktion ist selbst jedoch ein Objekt und kann somit wieder Eigenschaften besitzen, welchen wiederum Objekte zugewiesen werden können.
 
 Mit diesem Wissen können wir wieder zu den Prototypen zurückkehren. Jede Funktion (also jedes Objekt) besitzt per se ein eigenes prototypisches Objekt, oder auch kurz: einen Prototypen. Dieser „Bauplan“ des Objektes befindet sich in dessen Eigenschaft `prototype` und lässt sich über diese manipulieren. Wenn eine Funktion und somit ein Objekt erstellt werden, ist der Prototyp zunächst leer, jedoch kann er wie jedes andere Objekt entweder erweitert oder durch ein anderes Objekt ersetzt werden. Im Folgenden soll dies demonstriert werden: 
 

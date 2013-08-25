@@ -41,6 +41,14 @@ inhalt:
     - name: "Alternative Verwendung von Superglobalen Arrays"
       anchor: alternative-verwendung-von-superglobalen-arrays
       simple: ""
+      
+    - name: "expose_php"
+      anchor: exposephp
+      simple: ""
+      
+    - name: "register_argc_argv"
+      anchor: registerargcargv
+      simple: ""
 
     - name: "Links zum Thema"
       anchor: links-zum-thema
@@ -155,6 +163,14 @@ $foo = $_REQUEST['foo'];
 ~~~
 
 Entsprechend bündelt **$_POST** alle POST Parameter und **$_COOKIE** alle vom Browser gesandten Cookiedaten des Scriptaufrufs. 
+
+### expose_php
+
+Diese Funktion kann getrost deaktiviert werden, da hier nur Informationen gespeichert werden, die ein normaler User nicht benötigt. Je weniger Informationen dargelegt werden, desto sicherer ist Eure Seite.
+
+### register_argc_argv
+
+Wenn man php nicht über eine Kommandozeile bedient, kann dieses zur Speicherreduzierung deaktivieren.
 
 ### Links zum Thema
 

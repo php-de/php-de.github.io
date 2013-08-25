@@ -309,6 +309,6 @@ ausgetauscht werden. Gruppen aus Auswahlfeldern werden allerdings als benutzerfr
  
 Für die Eingaben von Werten aus Auswahlfeldern gilt das übliche Gefahrenpotential von HTML-seitigen Ausgaben oder Verarbeitungen in Kontexten wie Datenbankqueries. Einen Überblick bieten die Artikel Formularverarbeitung, Sicherheit und die Ausführungen zum verandten Selection-Element. 
 
-<div class="alert alert-danger"><strong>Achtung!</strong> Häufig gemachter Fehler:
+<div class="alert alert-danger"><strong>Achtung!</strong> Häufig gemachter Fehler:<br> 
 Für Auswahlfelder und -listen werden die Gefahren von XSS oftmals unterschätzt, weil sie im Gegensatz zu Textfeldern keine direkte Eingabe von Schadcode ermöglichen. In Anbetracht der Tatsache, dass in einem gefälschten Formular allein die richtige Angabe des name-Attributs ausreicht, um beliebige Werte und Werttypen für beliebige Elemente übermitteln zu können, ist die Annahme jedoch haltlos und damit besonders gefährlich.</div> 
 

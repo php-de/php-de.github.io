@@ -45,10 +45,6 @@ inhalt:
     - name: "expose_php"
       anchor: exposephp
       simple: ""
-      
-    - name: "register_argc_argv"
-      anchor: registerargcargv
-      simple: ""
 
     - name: "Links zum Thema"
       anchor: links-zum-thema
@@ -74,7 +70,7 @@ Das Verhalten von magic_quotes_gpc ist sehr wichtig für eine nachfolgende Param
 Um zur Laufzeit herauszufinden, ob die Direktive auf On gesetzt ist, kann die Funktion [get_magic_quotes_gpc()](http://php.net/get_magic_quotes_gpc) herangezogen werden.
 
 <div class="alert alert-danger">
-<strong>Achtung!</strong> magic_quotes_gpc ist als deprecated gekennzeichnet und wird in PHP 6.0.0 entfernt.
+<strong>Achtung!</strong> Dieses Feature ist seit PHP 5.3.0 DEPRECATED (veraltet) und seit PHP 5.4.0 ENTFERNT.
 Schon jetzt sollten <a href="http://www.php.net/manual/en/security.magicquotes.disabling.php">Alternativen</a> benutzt werden, um Software zukunftsfähig zu gestalten. 
 </div>
 
@@ -168,12 +164,9 @@ Entsprechend bündelt **$_POST** alle POST Parameter und **$_COOKIE** alle vom B
 
 Diese Funktion kann getrost deaktiviert werden, da hier nur Informationen gespeichert werden, die ein normaler User nicht benötigt. Je weniger Informationen dargelegt werden, desto sicherer ist Eure Seite.
 
-### register_argc_argv
-
-Wenn man php nicht über eine Kommandozeile bedient, kann dieses zur Speicherreduzierung deaktivieren.
-
 ### Links zum Thema
 
 * [RegisterGlobals, was ist das?](http://www.openwebboard.org/Tutorials/PHP_MySQL/RegisterGlobals_was_ist_das_1.html)
 * [PHP.net: Superglobals](http://de.php.net/manual/de/language.variables.superglobals.php)
 * [PHP.net: Verarbeitung von Daten](http://de.php.net/manual/de/ini.sect.data-handling.php#ini.register-globals)
+* [PHP.net: php.ini-Direktiven](http://php.net/manual/de/ini.list.php)

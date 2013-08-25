@@ -28,9 +28,14 @@ Radiobox-Gruppe, ohne Auswahl Radiobox-Gruppe, mit Auswahl, zweites Element akti
 Checkbox-Gruppe, ohne Auswahl Checkbox-Gruppe, mit Auswahl, erstes Element aktiv 
 Je nach Verwendung und nach Elementtyp ergibt sich eine Funktion als 
 
-- An/Aus-Auswahl (Bestätigungsfeld) 
-- Auswahl 1-aus-n (Entscheidung aus mehreren Optionsvorgaben) 
-- Auswahl n-aus-m (Multiple choice Funktionalität) 
+
+- An/Aus-Auswahl (Bestätigungsfeld) ![Einfache Checkbox, Standardansicht](images/check-single-off.jpg)  ![Einfache Checkbox, ausgewählt](images/check-single-selected.jpg)
+
+- Auswahl 1-aus-n (Entscheidung aus mehreren Optionsvorgaben) ![Radiobox-Gruppe, ohne Auswahl](images/radio-multi-off.jpg)  ![Radiobox-Gruppe, mit Auswahl](images/radio-multi-selected.jpg)
+
+- Auswahl n-aus-m (Multiple choice Funktionalität) ![Checkbox-Gruppe, ohne Auswahl](images/radio-multi-off.jpg)  ![Checkbox-Gruppe, mit Auswahl](images/radio-multi-selected.jpg)
+
+
 
 Inhaltlich können die meisten diese Aufgaben auch durch Auswahllisten übernommen werden. Aus Aspekten der Usability werden Auswahlfelder aber als die bessere Alternative bewertet. 
 
@@ -309,6 +314,6 @@ ausgetauscht werden. Gruppen aus Auswahlfeldern werden allerdings als benutzerfr
  
 Für die Eingaben von Werten aus Auswahlfeldern gilt das übliche Gefahrenpotential von HTML-seitigen Ausgaben oder Verarbeitungen in Kontexten wie Datenbankqueries. Einen Überblick bieten die Artikel Formularverarbeitung, Sicherheit und die Ausführungen zum verandten Selection-Element. 
 
-<div class="alert alert-danger"><strong>Achtung!</strong> Häufig gemachter Fehler:<br> 
+<div class="alert alert-danger"><strong>Achtung!</strong> Häufig gemachter Fehler:
 Für Auswahlfelder und -listen werden die Gefahren von XSS oftmals unterschätzt, weil sie im Gegensatz zu Textfeldern keine direkte Eingabe von Schadcode ermöglichen. In Anbetracht der Tatsache, dass in einem gefälschten Formular allein die richtige Angabe des name-Attributs ausreicht, um beliebige Werte und Werttypen für beliebige Elemente übermitteln zu können, ist die Annahme jedoch haltlos und damit besonders gefährlich.</div> 
 

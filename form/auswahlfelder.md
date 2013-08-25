@@ -44,9 +44,9 @@ Auswahlfelder sind HTML Formularelemente, die die Auswahl einer atomaren Angabe 
 Je nach Verwendung und nach Elementtyp ergibt sich eine Funktion als 
 
 
-| An/Aus-Auswahl (Bestätigungsfeld) | ![Einfache Checkbox, Standardansicht](images/check-single-off.jpg)  ![Einfache Checkbox, ausgewählt](images/check-single-selected.jpg) |
-| Auswahl 1-aus-n (Entscheidung aus mehreren Optionsvorgaben) | ![Radiobox-Gruppe, ohne Auswahl](images/radio-multi-off.jpg)  ![Radiobox-Gruppe, mit Auswahl](images/radio-multi-selected.jpg) |
-| Auswahl n-aus-m (Multiple choice Funktionalität) | ![Checkbox-Gruppe, ohne Auswahl](images/check-multi-off.jpg)  ![Checkbox-Gruppe, mit Auswahl](images/check-multi-selected.jpg) |
+| - An/Aus-Auswahl (Bestätigungsfeld) | ![Einfache Checkbox, Standardansicht](images/check-single-off.jpg)  ![Einfache Checkbox, ausgewählt](images/check-single-selected.jpg) |
+| - Auswahl 1-aus-n (Entscheidung aus mehreren Optionsvorgaben) | ![Radiobox-Gruppe, ohne Auswahl](images/radio-multi-off.jpg)  ![Radiobox-Gruppe, mit Auswahl](images/radio-multi-selected.jpg) |
+| - Auswahl n-aus-m (Multiple choice Funktionalität) | ![Checkbox-Gruppe, ohne Auswahl](images/check-multi-off.jpg)  ![Checkbox-Gruppe, mit Auswahl](images/check-multi-selected.jpg) |
 
 
 Inhaltlich können die meisten diese Aufgaben auch durch Auswahllisten übernommen werden. Aus Aspekten der Usability werden Auswahlfelder aber als die bessere Alternative bewertet. 

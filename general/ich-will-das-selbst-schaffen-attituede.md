@@ -3,12 +3,12 @@ layout: guide
 
 title: "Ich-will-das-selbst-schaffen-Attitüde"
 
-creator: manko10
+creator: Manko10
 
 group: "Allgemein"
 
 author:
-    - name: manko10
+    - name: Manko10
       profile: 1139
       
     - name: nikosch

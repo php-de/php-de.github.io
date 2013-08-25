@@ -51,7 +51,7 @@ Je nach Verwendung und nach Elementtyp ergibt sich eine Funktion als
 | - Auswahl n-aus-m (Multiple choice Funktionalität) | ![Checkbox-Gruppe, ohne Auswahl](images/check-multi-off.jpg)  ![Checkbox-Gruppe, mit Auswahl](images/check-multi-selected.jpg) |
   
   
-Inhaltlich können die meisten diese Aufgaben auch durch Auswahllisten übernommen werden. Aus Aspekten der Usability werden Auswahlfelder aber als die bessere Alternative bewertet. 
+Inhaltlich können die meisten diese Aufgaben auch durch [Auswahllisten](http://php-de.github.io/form/auswahllisten.html) übernommen werden. Aus Aspekten der Usability werden Auswahlfelder aber als die bessere Alternative bewertet. 
 
 ### Browserelemente
  

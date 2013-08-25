@@ -19,11 +19,11 @@ author:
       
 inhalt:
     - name: "magic_quotes_gpc"
-      anchor: magic-quotes-gpc
+      anchor: magicquotesgpc
       simple: ""
 
     - name: "register_globals"
-      anchor: register-globals
+      anchor: registerglobals
       simple: ""
       
     - name: "Verfügbarkeit"

@@ -73,7 +73,7 @@ Im Gegensatz zu Checkboxes sind alleinstehende Radiobox-Elemente fürgemein nich
 ### Auswahlfelder auswerten
  
 <div class="alert alert-warning"><strong>Achtung: </strong><br>
-Für alle Ausgaben von Formularwerten besteht die Gefahr von Code-injection und Cross Site Scripting. Die Lehrbeispiele werden zunächst ohne entsprechende Maßnahmen reduziert dargestellt. Weitere Hinweise dazu bietet das Kapitel [Sicherheit](#sicherheit) weiter unten.</div> 
+Für alle Ausgaben von Formularwerten besteht die Gefahr von Code-injection und Cross Site Scripting. Die Lehrbeispiele werden zunächst ohne entsprechende Maßnahmen reduziert dargestellt. Weitere Hinweise dazu bietet das Kapitel <a href="#sicherheit">Sicherheit</a> weiter unten.</div> 
 
 #### Übertragung
  

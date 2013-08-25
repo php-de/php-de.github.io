@@ -11,7 +11,7 @@ author:
     - name: nikosch
       profile: 2314
 
-    - name: manko10
+    - name: Manko10
       profile: 1139
 
     - name: _cyrix_

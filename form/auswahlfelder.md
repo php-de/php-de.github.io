@@ -41,11 +41,6 @@ Auswahlfelder sind HTML Formularelemente, die die Auswahl einer atomaren Angabe 
 
 ### Funktion
  
-einfache Checkbox (Standardansicht) einfache Checkbox, ausgewählt 
-
-Radiobox-Gruppe, ohne Auswahl Radiobox-Gruppe, mit Auswahl, zweites Element aktiv 
-
-Checkbox-Gruppe, ohne Auswahl Checkbox-Gruppe, mit Auswahl, erstes Element aktiv 
 Je nach Verwendung und nach Elementtyp ergibt sich eine Funktion als 
 
 
@@ -65,12 +60,12 @@ Aktuell stellen Browser Checkboxes und Radioboxes zur Verfügung.
 
 #### Checkbox-Elemente
  
-- Checkboxes werden mit `<input type="checkbox">` erzeugt 
+- Checkboxes werden mit <input type="checkbox"> erzeugt 
 - können durch Vergabe eines identischen *name*-Attributs gruppiert werden 
 
 #### Radiobox-Elemente
  
-- Radioboxes werden mit `<input type="radio">` erzeugt 
+- Radioboxes werden mit <input type="radio"> erzeugt 
 - können durch Vergabe eines identischen name-Attributs gruppiert werden 
 
 Im Gegensatz zu Checkboxes sind alleinstehende Radiobox-Elemente fürgemein nicht sinnvoll und auch nicht nutzerfreundlich, weil sie weder eine Alternativauswahl bieten, noch browserseitig wieder „abgewählt“ werden können. Im Vergleich zu Checkbox-Elementen (An/Aus-Funktion) ergibt sich hier eine Ja-oder-Ja-Funktion. 
@@ -78,14 +73,14 @@ Im Gegensatz zu Checkboxes sind alleinstehende Radiobox-Elemente fürgemein nich
 ### Auswahlfelder auswerten
  
 <div class="alert alert-warning"><strong>Achtung: </strong><br>
-Für alle Ausgaben von Formularwerten besteht die Gefahr von Code-injection und Cross Site Scripting. Die Lehrbeispiele werden zunächst ohne entsprechende Maßnahmen reduziert dargestellt. Weitere Hinweise dazu bietet das Kapitel Sicherheit weiter unten.</div> 
+Für alle Ausgaben von Formularwerten besteht die Gefahr von Code-injection und Cross Site Scripting. Die Lehrbeispiele werden zunächst ohne entsprechende Maßnahmen reduziert dargestellt. Weitere Hinweise dazu bietet das Kapitel [Sicherheit](#sicherheit) weiter unten.</div> 
 
 #### Übertragung
  
 Ein wichtiger Punkt ist die fehlende Übertragung nicht ausgewählter Elemente. Gängige Browser erzeugen keinen Parameter zu einem Auswahlelement, das nicht im Browser selektiert wurde. Dies dürfte dem Umstand geschuldet sein, dass Auswahlfelder eine freie Angabe von value-Werten (prinzipiell also auch den leeren String) ermöglichen, was zu einer Verwechselungsmöglichkeit führen würde. Zudem würde ein Form-Submit eine große Anzahl von Parametern enthalten, die nicht ausgewählten Elementen entstammen. 
 
 
-Wird ein Eintrag ausgewählt wird im Request der Inhalt des value-Attributs des/der jeweiligen Element(e) übertragen. Wie bei allen Formularelementen kann dieser Wert PHP-seitig in den Requestarrays $_POST bzw. $_GET abgerufen werden. 
+Wird ein Eintrag ausgewählt wird im Request der Inhalt des value-Attributs des/der jeweiligen Element(e) übertragen. Wie bei allen Formularelementen kann dieser Wert PHP-seitig in den Requestarrays `$_POST` bzw. `$_GET` abgerufen werden. 
 
 Der Schlüssel für das Array richtet sich nach der Art des name-Attributs, das wiederum funktionsbestimmend für gruppierte Auswahlfelder ist: 
 
@@ -111,7 +106,7 @@ array (
 )
 ~~~
 
-in $_POST bzw. $_GET. 
+in `$_POST` bzw. `$_GET`. 
 
 Für mehrere Checkboxes ist das Verhalten analog. Um eine Gruppe zu erzeugen, kann also einfach ein weiteres Element mit einem anderen Namen ergänzt werden: 
 
@@ -151,7 +146,7 @@ bspw. eine n-aus-m-Auswahl für Farben:
 
 Drei Unterschiede sind hier wichtig. 
 
-1. Alle Element benutzen ein idenisches name-Attribut 
+1. Alle Element benutzen ein idenisches *name*-Attribut 
 2. Das name-Attribut enthält abschließende eckige Klammern 
 Diese beiden Faktoren erzeugen eine Array-Struktur im PHP-Kontext 
 
@@ -166,7 +161,7 @@ array (
 
 wenn bspw. Box 2 und 3 ausgewählt wurden. Zu beachten ist die 0-basierte Numerierung der Werte - obwohl „blau“ die zweite Auswahl der Elemente im Browser ist, wird nur die Menge der übertragenen Werte betrachtet und ab 0 indexiert. 
 
-3. Die Elemente enthalten jetzt den eigentlichen Wert im value-Attribut. Vorher wurde nur ein semantisch unbezogenes „Ja“ verwendet, das erst zusammen mit dem Array-Schlüssel eine Information erzeugte. 
+3. Die Elemente enthalten jetzt den eigentlichen Wert im *value*-Attribut. Vorher wurde nur ein semantisch unbezogenes „Ja“ verwendet, das erst zusammen mit dem Array-Schlüssel eine Information erzeugte. 
 Ein Zugriff über den Namen würde jetzt einen Array-Typ liefern. Der Eingabewert muss also mit einer Schleife verarbeitet werden oder mit einem zusätzlichen Arrayschlüssel abgefragt: 
 
 Über den Namensschlüssel kann der Wert PHP-seitig ausgelesen oder geprüft werden: 
@@ -207,9 +202,9 @@ array (
 )
 ~~~
 
-Etwas anderes als ja kann prinzipbedingt hier (aus dem Originalformular) gar nicht übertragen werden. 
+Etwas anderes als *ja* kann prinzipbedingt hier (aus dem Originalformular) gar nicht übertragen werden. 
 
-Die gezeigten Varianten haben verschiedene Vor- und Nachteile und werden deshalb je nach Anwendungszweck benutzt. Bei Variante 2 ist bspw. der Zugriff auf die einzelnen Werte sehr einfach (über den numerischen Schlüssel), die Varianten 1 und 3 lassen sich sehr leicht auf Vorhandensein eines bestimmten Wertes prüfen (isset bzw. in_array). 
+Die gezeigten Varianten haben verschiedene Vor- und Nachteile und werden deshalb je nach Anwendungszweck benutzt. Bei Variante 2 ist bspw. der Zugriff auf die einzelnen Werte sehr einfach (über den numerischen Schlüssel), die Varianten 1 und 3 lassen sich sehr leicht auf Vorhandensein eines bestimmten Wertes prüfen (`isset()` bzw. `in_array()`). 
 
 #### Radiobox-Elemente
  
@@ -243,7 +238,7 @@ Beide Elementtypen können durch Setzen des checked-Attributs vorselektiert werd
 <input type="checkbox" name="Farbe[]"  value="blau"> blau
  
 <input type="radio" name="Anrede"  value="Herr" <?php echo 'checked="checked"'; ?>> Herr
-<input type="radio" name="Anrede"  value="Frau" <?php echo 'checked="checked"'; ?>> Frau
+<input type="radio" name="Anrede"  value="Frau"> Frau
 ~~~
 
 #### Vorbelegen mit „sich selbst“
@@ -262,16 +257,14 @@ Im sog. Affenformular werden bis zur Vollständigkeit einer Formulareingabe abge
 <?php if ('Frau' == $_POST['Anrede']) { echo 'checked="checked"'; } ?>> Frau
 ~~~
 
-~~~ php
 Da dies sehr unübersichtlich ist, empfielt sich, die Formular-Elemente mit einem Array zu erzeugen: 
 
-<?php
- 
+~~~ php
 $farben = array ('rot' => 'rot' , 'blau' = > 'blau');
  
 foreach ($farben as $wert => $bezeichner) {
    ?><input type="checkbox" name="Farbe[]"  value="<?php echo $wert; ?>" 
-     <?php if (in_array ($wert , $_POST['Farbe'])) { echo 'checked="checked"'; } ?>> <?php echo $bezeichner; 
+     <?php if (in_array($wert , $_POST['Farbe'])) { echo 'checked="checked"'; } ?>> <?php echo $bezeichner; 
 }
  
 $anreden = array ('Herr' => 'Herr' , 'Frau' => 'Frau');
@@ -282,7 +275,7 @@ foreach ($anreden as $wert => $bezeichner) {
 }
 ~~~
 
-Die bisherigen Beispiele gehen davon aus, dass $_POST['Anrede'] bzw. $_POST['Farbe'] existieren. Da dies nicht garantiert ist, muss dieser Fall zusätzlich abgefangen werden. Wir wollen gleichzeitig eine lesbare Variante anbieten: 
+Die bisherigen Beispiele gehen davon aus, dass `$_POST['Anrede']` bzw. `$_POST['Farbe']` existieren. Da dies nicht garantiert ist, muss dieser Fall zusätzlich abgefangen werden. Wir wollen gleichzeitig eine lesbare Variante anbieten: 
 
 ~~~ php
 $farben = array ('rot' => 'rot' , 'blau' = > 'blau');
@@ -326,9 +319,11 @@ foreach ($anreden as $wert => $bezeichner) {
  
 Wie bereits angedeutet sind Auswahllisten und gruppierte Auswahlfelder größtenteils austauschbar. Sowohl inhaltliche Funktion als auch PHP-seitige Verarbeitung (natürlich abgesehen vom HTML-Code des jeweiligen Elements) können 
 
-gruppierte Radioboxes gegen ein Single-Select 
-nach der Variante „Übergabe als Wertgruppe“ gruppierte Checkbox-Felder gegen eine Multi-Select-Liste 
-ausgetauscht werden. Gruppen aus Auswahlfeldern werden allerdings als benutzerfreundlicher angesehen. Besonders Multi-Select-Listen sind wesentlich schlechter bedienbar. 
+- gruppierte Radioboxes gegen ein Single-Select
+- nach der Variante „Übergabe als Wertgruppe“ gruppierte Checkbox-Felder gegen eine Multi-Select-Liste ausgetauscht werden.
+
+Gruppen aus Auswahlfeldern werden allerdings als benutzerfreundlicher angesehen. Besonders Multi-Select-Listen sind wesentlich schlechter bedienbar. 
+
 
 ### Sicherheit
  

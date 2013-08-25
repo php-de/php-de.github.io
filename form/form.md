@@ -231,9 +231,11 @@ Jede Art von nicht-INT-Eingabe wird hier durch die explizite Typumwandlung durch
 Beispielhaft soll hier ein minimaler Personendatensatz übertragen und von PHP strukturiert ausgegeben werden. Als einfache Typprüfung wird exemplarisch eine Altersprüfung vorgenommen.
 
 ~~~ php
+<!DOCTYPE html>
 <html>
     <head>
         <title>Anmeldung</title>
+        <meta charset="UTF-8">
     </head>
     <body>
         <h1>Anmeldung</h1>

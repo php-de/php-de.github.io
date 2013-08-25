@@ -1,12 +1,12 @@
 ---
 layout: guide
 title: "GPC"
-creator: manko10
+creator: Manko10
 
 group: "Request-Handling"
 
 author: 
-    -   name: manko10
+    -   name: Manko10
         profile: 1139
 
     -   name: nikosch

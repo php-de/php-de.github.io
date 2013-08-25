@@ -24,7 +24,6 @@ inhalt:
         anchor: initialisierungsreihenfolge
         simple: "korrekte Reihenfolge"
 
-entry-type: in-progress
 ---
 
 Bei **GPC** handelt es sich um ein Kürzel, welches für **G**ET, **P**OST, **C**OOKIE steht. Gemeint sind Parameterwerte, die dem Script je nach Art des Aufrufs im [HTTP-Request](http://php-de.github.io/request-handling/request.html)  übergeben werden können.
@@ -37,6 +36,6 @@ Das Array $_REQUEST vereint die Werte dieser drei Arrays in sich, wobei die Beha
 
 ### Initialisierungsreihenfolge
 
-Sowohl für Arrays, die verschiedene Wertmengen gemeinsam verwalten, als auch das Verfahren [register_globals](http://www.php.de/wiki-php/index.php/Register_globals_(php.ini-Direktive\)), das Daten lokal unter ihrem Parameternamen als Variable verfügbar macht, ergibt sich die Problematik gleichnamiger Schlüssel: In einem Namensraum wie auch einer Array kann stets nur ein Wert einem Bezeichner zugeordnet sein. Wird aber bspw. in einem Aufruf gleichzeitig per POST und per COOKIE ein Parameter namens wert übergeben, treten die beiden Angaben in eine Konkurrenzsituation. 
+Sowohl für Arrays, die verschiedene Wertmengen gemeinsam verwalten, als auch das Verfahren [register_globals](http://php-de.github.io/general/php-ini.html#registerglobals), das Daten lokal unter ihrem Parameternamen als Variable verfügbar macht, ergibt sich die Problematik gleichnamiger Schlüssel: In einem Namensraum wie auch einer Array kann stets nur ein Wert einem Bezeichner zugeordnet sein. Wird aber bspw. in einem Aufruf gleichzeitig per POST und per COOKIE ein Parameter namens wert übergeben, treten die beiden Angaben in eine Konkurrenzsituation. 
 
 Maßgeblich für die Initialisierung von Parameterdaten sind die [php.ini](http://www.php.de/wiki-php/index.php/Php.ini)-Direktiven gpc_order bzw. variables_order, die die Reihenfolge angeben, in denen gleichnamige Werte in $_REQUEST überschrieben werden. Die Standardreihenfolge ist gpc bzw. egpcs. Das heißt, GET wird von POST und POST von COOKIE überschrieben.

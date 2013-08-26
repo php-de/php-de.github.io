@@ -181,8 +181,10 @@ echo "\n Ausgabe Element: ";
 echo $_POST['Farbe'][0];
 ~~~
 
+~~~
 Ausgabe Schleife: blau gelb 
 Ausgabe Element: blau
+~~~
 
 ##### Übergabe als assoziative Wertgruppe
  

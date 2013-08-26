@@ -147,6 +147,7 @@ bspw. eine n-aus-m-Auswahl für Farben:
 Drei Unterschiede sind hier wichtig. 
 
 1. Alle Element benutzen ein identisches *name*-Attribut  
+  
 2. Das *name*-Attribut enthält abschließende eckige Klammern 
 Diese beiden Faktoren erzeugen eine Array-Struktur im PHP-Kontext 
 

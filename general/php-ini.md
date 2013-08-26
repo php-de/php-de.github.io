@@ -45,7 +45,23 @@ inhalt:
     - name: "expose_php"
       anchor: exposephp
       simple: ""
-
+      
+    - name: "allow_url_fopen"
+      anchor: allowurlfopen
+      simple: ""
+      
+    - name: "allow_url_include"
+      anchor: allowurlinclude
+      simple: ""
+      
+    - name: "disable_functions"
+      anchor: disablefunctions 
+      simple: ""
+      
+    - name: "disable_classes"
+      anchor: disableclasses 
+      simple: ""
+      
     - name: "Links zum Thema"
       anchor: links-zum-thema
       simple: ""
@@ -85,7 +101,7 @@ Da register_globals in frühen PHP-Versionen Standard war, setzen viele alte (ve
 Die Verwendung von Variablen, die durch register_globals automatisch initialisiert wurden, führt zu verschiedenen Problemen, weshalb diese Option zunehmend per Ini-Voreinstellung abgeschaltet ist und in zukünftigen PHP Versionen ganz entfallen wird. Nachfolgend werden die Problematiken aufgeführt. 
 
 <div class="alert alert-danger">
-<strong>Achtung!</strong> register_globals ist seit PHP 4.2.0 standardmäßig deaktiviert und wird in PHP 6.0.0 endgültig entfernt.
+<strong>Achtung!</strong> register_globals ist seit PHP 4.2.0 standardmäßig deaktiviert, seit PHP 5.3.0 DEPRECATED (veraltet) und wurde in PHP 5.4.0 endgültig entfernt.
 Es wird dringend empfohlen, stattdessen <a href="http://www.php.de/wiki-php/index.php/SuperGlobals">SuperGlobals</a> zu verwenden! 
 </div>
 
@@ -163,6 +179,22 @@ Entsprechend bündelt **$_POST** alle POST Parameter und **$_COOKIE** alle vom B
 ### expose_php
 
 Diese Funktion kann getrost deaktiviert werden, da hier nur Informationen gespeichert werden, die ein normaler User nicht benötigt. Je weniger Informationen dargelegt werden, desto sicherer ist Eure Seite.
+
+### allow_url_fopen
+
+Über diese Funktion wird der Zugriff mittels **fopen** auf externe Server gesteuert. Es wird empfohlen die Funktion zu deaktivieren, da durch das Sicherheitsrisiko verringert wird.
+
+### allow_url_include
+
+Über diese Funktion wird der Zugriff mittels **reuqire**, sowie **include** auf externe Server gesteuert. Es wird empfohlen die Funktion zu deaktivieren, da durch das Sicherheitsrisiko verringert wird.
+
+### disable_functions
+
+Mit dieser Funktion können alle nicht benötigten Funktionen über eine Kommatatrennung gesperrt werden.
+
+### disable_classes
+
+Mit dieser Funktion können alle nicht benötigten Klassen über eine Kommatatrennung gesperrt werden.
 
 ### Links zum Thema
 

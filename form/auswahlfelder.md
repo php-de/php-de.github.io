@@ -67,7 +67,7 @@ Aktuell stellen Browser Checkboxes und Radioboxes zur Verfügung.
 #### Radiobox-Elemente
  
 - Radioboxes werden mit `<input type="radio">` erzeugt 
-- können durch Vergabe eines identischen name-Attributs gruppiert werden 
+- können durch Vergabe eines identischen *name*-Attributs gruppiert werden 
 
 Im Gegensatz zu Checkboxes sind alleinstehende Radiobox-Elemente fürgemein nicht sinnvoll und auch nicht nutzerfreundlich, weil sie weder eine Alternativauswahl bieten, noch browserseitig wieder „abgewählt“ werden können. Im Vergleich zu Checkbox-Elementen (An/Aus-Funktion) ergibt sich hier eine Ja-oder-Ja-Funktion. 
 

@@ -146,8 +146,8 @@ bspw. eine n-aus-m-Auswahl für Farben:
 
 Drei Unterschiede sind hier wichtig. 
 
-1) Alle Element benutzen ein identisches *name*-Attribut  
-2) Das *name*-Attribut enthält abschließende eckige Klammern 
+1. Alle Element benutzen ein identisches *name*-Attribut  
+2. Das *name*-Attribut enthält abschließende eckige Klammern 
 Diese beiden Faktoren erzeugen eine Array-Struktur im PHP-Kontext 
 
 ~~~ php
@@ -161,9 +161,9 @@ array (
 
 wenn bspw. Box 2 und 3 ausgewählt wurden. Zu beachten ist die 0-basierte Numerierung der Werte - obwohl „blau“ die zweite Auswahl der Elemente im Browser ist, wird nur die Menge der übertragenen Werte betrachtet und ab 0 indexiert. 
 
-3) Die Elemente enthalten jetzt den eigentlichen Wert im *value*-Attribut. Vorher wurde nur ein semantisch unbezogenes „Ja“ verwendet, das erst zusammen mit dem Array-Schlüssel eine Information erzeugte.  
-<br>
-
+3. Die Elemente enthalten jetzt den eigentlichen Wert im *value*-Attribut. Vorher wurde nur ein semantisch unbezogenes „Ja“ verwendet, das erst zusammen mit dem Array-Schlüssel eine Information erzeugte.  
+  
+  
 Ein Zugriff über den Namen würde jetzt einen Array-Typ liefern. Der Eingabewert muss also mit einer Schleife verarbeitet werden oder mit einem zusätzlichen Arrayschlüssel abgefragt: 
 
 Über den Namensschlüssel kann der Wert PHP-seitig ausgelesen oder geprüft werden: 

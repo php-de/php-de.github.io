@@ -213,9 +213,9 @@ Die gezeigten Varianten haben verschiedene Vor- und Nachteile und werden deshalb
  
 Die Systematik entstehender Requestwerte gleicht denen der Checkbox. Namen mit [] erzeugen Array-Typen, sonst werden die Werte einzeln übertragen. Es gibt jedoch zwei Unterschiede. 
 
-1) Assoziative Wertgruppen sind für Radiobox-Felder nicht sinnvoll, weil *name*-Attribute hier vollständig identisch sein müssen, damit das Radiofeld als Gruppe, also als 1-aus-n-Auswahl funktioniert. 
+1. Assoziative Wertgruppen sind für Radiobox-Felder nicht sinnvoll, weil *name*-Attribute hier vollständig identisch sein müssen, damit das Radiofeld als Gruppe, also als 1-aus-n-Auswahl funktioniert. 
 
-2) Auch die Übergabe als Wertgruppe ist unsinnig, weil PHP hier die Werte in einem Array strukturiert. Radio-Elemente übertragen aber prinzipbedingt immer nur einen Wert einer Gruppe, deshalb ist Variante 1 das Mittel der Wahl: 
+2. Auch die Übergabe als Wertgruppe ist unsinnig, weil PHP hier die Werte in einem Array strukturiert. Radio-Elemente übertragen aber prinzipbedingt immer nur einen Wert einer Gruppe, deshalb ist Variante 1 das Mittel der Wahl: 
 
 ~~~ php
 <input type="radio" value="value1" name="Auswahl"> Eintrag 1

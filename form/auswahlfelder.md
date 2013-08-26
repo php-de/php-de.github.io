@@ -146,9 +146,9 @@ bspw. eine n-aus-m-Auswahl für Farben:
 
 Drei Unterschiede sind hier wichtig. 
 
-1. Alle Element benutzen ein identisches *name*-Attribut  
+1) Alle Element benutzen ein identisches *name*-Attribut  
   
-2. Das *name*-Attribut enthält abschließende eckige Klammern 
+2) Das *name*-Attribut enthält abschließende eckige Klammern 
 Diese beiden Faktoren erzeugen eine Array-Struktur im PHP-Kontext 
 
 ~~~ php
@@ -162,7 +162,7 @@ array (
 
 wenn bspw. Box 2 und 3 ausgewählt wurden. Zu beachten ist die 0-basierte Numerierung der Werte - obwohl „blau“ die zweite Auswahl der Elemente im Browser ist, wird nur die Menge der übertragenen Werte betrachtet und ab 0 indexiert. 
 
-3. Die Elemente enthalten jetzt den eigentlichen Wert im *value*-Attribut. Vorher wurde nur ein semantisch unbezogenes „Ja“ verwendet, das erst zusammen mit dem Array-Schlüssel eine Information erzeugte.  
+3) Die Elemente enthalten jetzt den eigentlichen Wert im *value*-Attribut. Vorher wurde nur ein semantisch unbezogenes „Ja“ verwendet, das erst zusammen mit dem Array-Schlüssel eine Information erzeugte.  
   
   
 Ein Zugriff über den Namen würde jetzt einen Array-Typ liefern. Der Eingabewert muss also mit einer Schleife verarbeitet werden oder mit einem zusätzlichen Arrayschlüssel abgefragt: 
@@ -213,9 +213,9 @@ Die gezeigten Varianten haben verschiedene Vor- und Nachteile und werden deshalb
  
 Die Systematik entstehender Requestwerte gleicht denen der Checkbox. Namen mit [] erzeugen Array-Typen, sonst werden die Werte einzeln übertragen. Es gibt jedoch zwei Unterschiede. 
 
-1. Assoziative Wertgruppen sind für Radiobox-Felder nicht sinnvoll, weil *name*-Attribute hier vollständig identisch sein müssen, damit das Radiofeld als Gruppe, also als 1-aus-n-Auswahl funktioniert. 
+1) Assoziative Wertgruppen sind für Radiobox-Felder nicht sinnvoll, weil *name*-Attribute hier vollständig identisch sein müssen, damit das Radiofeld als Gruppe, also als 1-aus-n-Auswahl funktioniert. 
 
-2. Auch die Übergabe als Wertgruppe ist unsinnig, weil PHP hier die Werte in einem Array strukturiert. Radio-Elemente übertragen aber prinzipbedingt immer nur einen Wert einer Gruppe, deshalb ist Variante 1 das Mittel der Wahl: 
+2) Auch die Übergabe als Wertgruppe ist unsinnig, weil PHP hier die Werte in einem Array strukturiert. Radio-Elemente übertragen aber prinzipbedingt immer nur einen Wert einer Gruppe, deshalb ist Variante 1 das Mittel der Wahl: 
 
 ~~~ php
 <input type="radio" value="value1" name="Auswahl"> Eintrag 1

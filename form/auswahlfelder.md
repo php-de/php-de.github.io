@@ -286,10 +286,9 @@ Die bisherigen Beispiele gehen davon aus, dass `$_POST['Anrede']` bzw. `$_POST['
 $farben = array ('rot' => 'rot' , 'blau' = > 'blau');
  
 foreach ($farben as $wert => $bezeichner) {
-    if (isset ($_POST['Farbe']) && in_array ($wert , (array) $_POST['Farbe'])) {
+    if (isset($_POST['Farbe']) && in_array ($wert , (array) $_POST['Farbe'])) {
         $checked = 'checked="checked"';
-    }
-    else {
+    } else {
         $checked = '';
     }
  

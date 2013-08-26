@@ -81,9 +81,9 @@ Für alle Ausgaben von Formularwerten besteht die Gefahr von Code-injection und 
 Ein wichtiger Punkt ist die fehlende Übertragung nicht ausgewählter Elemente. Gängige Browser erzeugen keinen Parameter zu einem Auswahlelement, das nicht im Browser selektiert wurde. Dies dürfte dem Umstand geschuldet sein, dass Auswahlfelder eine freie Angabe von value-Werten (prinzipiell also auch den leeren String) ermöglichen, was zu einer Verwechselungsmöglichkeit führen würde. Zudem würde ein Form-Submit eine große Anzahl von Parametern enthalten, die nicht ausgewählten Elementen entstammen. 
 
 
-Wird ein Eintrag ausgewählt wird im Request der Inhalt des value-Attributs des/der jeweiligen Element(e) übertragen. Wie bei allen Formularelementen kann dieser Wert PHP-seitig in den Requestarrays `$_POST` bzw. `$_GET` abgerufen werden. 
+Wird ein Eintrag ausgewählt wird im Request der Inhalt des *value*-Attributs des/der jeweiligen Element(e) übertragen. Wie bei allen Formularelementen kann dieser Wert PHP-seitig in den Requestarrays `$_POST` bzw. `$_GET` abgerufen werden. 
 
-Der Schlüssel für das Array richtet sich nach der Art des name-Attributs, das wiederum funktionsbestimmend für gruppierte Auswahlfelder ist: 
+Der Schlüssel für das Array richtet sich nach der Art des *name*-Attributs, das wiederum funktionsbestimmend für gruppierte Auswahlfelder ist: 
 
 #### Checkbox-Elemente
  
@@ -148,7 +148,7 @@ bspw. eine n-aus-m-Auswahl für Farben:
 Drei Unterschiede sind hier wichtig. 
 
 1) Alle Element benutzen ein idenisches *name*-Attribut 
-2) Das name-Attribut enthält abschließende eckige Klammern 
+2) Das *name*-Attribut enthält abschließende eckige Klammern 
 Diese beiden Faktoren erzeugen eine Array-Struktur im PHP-Kontext 
 
 ~~~ php
@@ -211,7 +211,7 @@ Die gezeigten Varianten haben verschiedene Vor- und Nachteile und werden deshalb
  
 Die Systematik entstehender Requestwerte gleicht denen der Checkbox. Namen mit [] erzeugen Array-Typen, sonst werden die Werte einzeln übertragen. Es gibt jedoch zwei Unterschiede. 
 
-1) Assoziative Wertgruppen sind für Radiobox-Felder nicht sinnvoll, weil name-Attribute hier vollständig identisch sein müssen, damit das Radiofeld als Gruppe, also als 1-aus-n-Auswahl funktioniert. 
+1) Assoziative Wertgruppen sind für Radiobox-Felder nicht sinnvoll, weil *name*-Attribute hier vollständig identisch sein müssen, damit das Radiofeld als Gruppe, also als 1-aus-n-Auswahl funktioniert. 
 
 2) Auch die Übergabe als Wertgruppe ist unsinnig, weil PHP hier die Werte in einem Array strukturiert. Radio-Elemente übertragen aber prinzipbedingt immer nur einen Wert einer Gruppe, deshalb ist Variante 1 das Mittel der Wahl: 
 
@@ -232,7 +232,7 @@ Abgefragt werden kann dieser Wert wie oben beschrieben.
 
 ### Vorbelegen der Anzeige
  
-Beide Elementtypen können durch Setzen des checked-Attributs vorselektiert werden. 
+Beide Elementtypen können durch Setzen des *checked*-Attributs vorselektiert werden. 
 
 ~~~ php
 <input type="checkbox" name="Farbe[]"  value="rot" <?php echo 'checked="checked"'; ?>> rot
@@ -331,5 +331,5 @@ Gruppen aus Auswahlfeldern werden allerdings als benutzerfreundlicher angesehen.
 Für die Eingaben von Werten aus Auswahlfeldern gilt das übliche Gefahrenpotential von HTML-seitigen Ausgaben oder Verarbeitungen in Kontexten wie Datenbankqueries. Einen Überblick bieten die Artikel Formularverarbeitung, Sicherheit und die Ausführungen zum verandten Selection-Element. 
 
 <div class="alert alert-danger"><strong>Achtung!</strong> Häufig gemachter Fehler:<br> 
-Für Auswahlfelder und -listen werden die Gefahren von XSS oftmals unterschätzt, weil sie im Gegensatz zu Textfeldern keine direkte Eingabe von Schadcode ermöglichen. In Anbetracht der Tatsache, dass in einem gefälschten Formular allein die richtige Angabe des name-Attributs ausreicht, um beliebige Werte und Werttypen für beliebige Elemente übermitteln zu können, ist die Annahme jedoch haltlos und damit besonders gefährlich.</div> 
+Für Auswahlfelder und -listen werden die Gefahren von XSS oftmals unterschätzt, weil sie im Gegensatz zu Textfeldern keine direkte Eingabe von Schadcode ermöglichen. In Anbetracht der Tatsache, dass in einem gefälschten Formular allein die richtige Angabe des *name*-Attributs ausreicht, um beliebige Werte und Werttypen für beliebige Elemente übermitteln zu können, ist die Annahme jedoch haltlos und damit besonders gefährlich.</div> 
 

@@ -34,7 +34,6 @@ inhalt:
         anchor: sicherheit
         simple: ""
 
-entry-type: in-progress
 ---
 
 Auswahlfelder sind HTML Formularelemente, die die Auswahl einer atomaren Angabe ermöglichen. Typischerweise stellt diese Angabe eine Element einer Gruppe von Auswahloptionen dar. 
@@ -74,7 +73,7 @@ Im Gegensatz zu Checkboxes sind alleinstehende Radiobox-Elemente fürgemein nich
 ### Auswahlfelder auswerten
  
 <div class="alert alert-warning"><strong>Achtung: </strong><br>
-Für alle Ausgaben von Formularwerten besteht die Gefahr von Code-injection und Cross Site Scripting. Die Lehrbeispiele werden zunächst ohne entsprechende Maßnahmen reduziert dargestellt. Weitere Hinweise dazu bietet das Kapitel <a href="#sicherheit">Sicherheit</a> weiter unten.</div> 
+Für alle Ausgaben von Formularwerten besteht die Gefahr von Code-injection und Cross Site Scripting. Die Lehrbeispiele werden zunächst ohne entsprechende Maßnahmen reduziert dargestellt. Weitere Hinweise dazu bietet das <a href="#sicherheit">Kapitel Sicherheit</a> weiter unten.</div> 
 
 #### Übertragung
  
@@ -147,7 +146,7 @@ bspw. eine n-aus-m-Auswahl für Farben:
 
 Drei Unterschiede sind hier wichtig. 
 
-1) Alle Element benutzen ein idenisches *name*-Attribut  
+1) Alle Element benutzen ein identisches *name*-Attribut  
 2) Das *name*-Attribut enthält abschließende eckige Klammern 
 Diese beiden Faktoren erzeugen eine Array-Struktur im PHP-Kontext 
 
@@ -162,7 +161,9 @@ array (
 
 wenn bspw. Box 2 und 3 ausgewählt wurden. Zu beachten ist die 0-basierte Numerierung der Werte - obwohl „blau“ die zweite Auswahl der Elemente im Browser ist, wird nur die Menge der übertragenen Werte betrachtet und ab 0 indexiert. 
 
-3) Die Elemente enthalten jetzt den eigentlichen Wert im *value*-Attribut. Vorher wurde nur ein semantisch unbezogenes „Ja“ verwendet, das erst zusammen mit dem Array-Schlüssel eine Information erzeugte. 
+3) Die Elemente enthalten jetzt den eigentlichen Wert im *value*-Attribut. Vorher wurde nur ein semantisch unbezogenes „Ja“ verwendet, das erst zusammen mit dem Array-Schlüssel eine Information erzeugte.  
+<br>
+
 Ein Zugriff über den Namen würde jetzt einen Array-Typ liefern. Der Eingabewert muss also mit einer Schleife verarbeitet werden oder mit einem zusätzlichen Arrayschlüssel abgefragt: 
 
 Über den Namensschlüssel kann der Wert PHP-seitig ausgelesen oder geprüft werden: 
@@ -302,16 +303,15 @@ $anreden = array ('Herr' => 'Herr' , 'Frau' => 'Frau');
 foreach ($anreden as $wert => $bezeichner) {
     if (isset ($_POST['Anrede']) && $wert == $_POST['Anrede']) {
         $checked = 'checked="checked"';
-    }
-    else {
+    } else {
         $checked = '';
     }
  
     printf (
-           '<input type="radio" name="Anrede" value="%s" %s>%s'
-           $wert ,
-           $checked ,
-           $bezeichner
+            '<input type="radio" name="Anrede" value="%s" %s>%s'
+            $wert ,
+            $checked ,
+            $bezeichner
            );
 }
 ~~~
@@ -328,7 +328,7 @@ Gruppen aus Auswahlfeldern werden allerdings als benutzerfreundlicher angesehen.
 
 ### Sicherheit
  
-Für die Eingaben von Werten aus Auswahlfeldern gilt das übliche Gefahrenpotential von HTML-seitigen Ausgaben oder Verarbeitungen in Kontexten wie Datenbankqueries. Einen Überblick bieten die Artikel Formularverarbeitung, Sicherheit und die Ausführungen zum verandten Selection-Element. 
+Für die Eingaben von Werten aus Auswahlfeldern gilt das übliche Gefahrenpotential von HTML-seitigen Ausgaben oder Verarbeitungen in Kontexten wie Datenbankqueries. Einen Überblick bieten die Artikel [Formularverarbeitung, Sicherheit](http://www.php.de/wiki-php/index.php/Formularverarbeitung%2C_Sicherheit) und die [Ausführungen zum verandten Selection-Element](http://www.php.de/wiki-php/index.php/Formularverarbeitung%2C_Auswahllisten#Sicherheit). 
 
 <div class="alert alert-danger"><strong>Achtung!</strong> Häufig gemachter Fehler:<br> 
 Für Auswahlfelder und -listen werden die Gefahren von XSS oftmals unterschätzt, weil sie im Gegensatz zu Textfeldern keine direkte Eingabe von Schadcode ermöglichen. In Anbetracht der Tatsache, dass in einem gefälschten Formular allein die richtige Angabe des *name*-Attributs ausreicht, um beliebige Werte und Werttypen für beliebige Elemente übermitteln zu können, ist die Annahme jedoch haltlos und damit besonders gefährlich.</div> 

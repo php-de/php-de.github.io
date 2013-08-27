@@ -11,9 +11,26 @@ author:
         profile: 21246
 
 inhalt:
-    -   name: ""
-        anchor: 
+    -   name: "Serverpfade"
+        anchor: serverpfade
         simple: ""
+
+    -   name: "Webpfade"
+        anchor: webpfade
+        simple: ""
+
+    -   name: "Komplettbeispiel"
+        anchor: komplettbeispiel
+        simple: ""
+
+    -   name: "Sicherheit"
+        anchor: sicherheit
+        simple: ""
+
+    -   name: "Besonderheiten"
+        anchor: besonderheiten
+        simple: ""
+
 
 entry-type: in-progress 
 
@@ -32,26 +49,26 @@ Serverpfade sind relevant für
 
 #### Aufbau
  
-Serverpfade bestehen aus Verzeichnisnamen, die durch Slashes voneinander getrennt sind. Die Gültigkeit der Verzeichnisnamen richtet sich dabei nach dem verwendeten Betriebssystem - Windows und Linux erlauben damit abweichende Zeichenmengen für die Namen der Verzeichnisse. Windows benutzt `"\"` als Pfadtrennzeichen, Linux dagegen `"/"`. Unter PHP ist das irrelevant. Da `"\"` aber eine Sonderbedeutung in Strings hat (Escapezeichen), empfielt sich eine generelle Verwendung von `"/"`, auch unter Windows-Serversystemen. 
+Serverpfade bestehen aus Verzeichnisnamen, die durch Slashes voneinander getrennt sind. Die Gültigkeit der Verzeichnisnamen richtet sich dabei nach dem verwendeten Betriebssystem - Windows und Linux erlauben damit abweichende Zeichenmengen für die Namen der Verzeichnisse. Windows benutzt `\` als Pfadtrennzeichen, Linux dagegen `/`. Unter PHP ist das irrelevant. Da `\` aber eine Sonderbedeutung in Strings hat (Escapezeichen), empfielt sich eine generelle Verwendung von `/`, auch unter Windows-Serversystemen. 
 
 #### Absolute Serverpfade
  
-Absolute Serverpfade beginnen mit `"/"` und beziehen sich stets auf das Wurzelverzeichnis des Mount points (Linux, Unix) bzw. das Laufwerk (Windows) in dessen Subpfad sich das aktuell gestartete PHP-Script befindet. 
+Absolute Serverpfade beginnen mit `/` und beziehen sich stets auf das Wurzelverzeichnis des Mount points (Linux, Unix) bzw. das Laufwerk (Windows) in dessen Subpfad sich das aktuell gestartete PHP-Script befindet. 
 
 Beispiel: 
 
 index.php liegt unter Windows in `C:\xampp\htdocs\test\`. 
-Eine darin referenzierte Pfadangabe `"/abc/cde/"` bezieht sich dann auf den Systempfad `"C:\abc\cde\"`. 
+Eine darin referenzierte Pfadangabe `/abc/cde/` bezieht sich dann auf den Systempfad `C:\abc\cde\`. 
 Alle anderen Pfade werden als relativ interpretiert. 
 
 #### Relative Serverpfade
  
-Relative Serverpfade beginnen mit einer Verzeichnisangabe (".", "..", ein oder mehrere Verzeichnisse durch "/" getrennt) oder sind leer (für das aktuelle Verzeichnis). Sie beziehen sich stets auf den kompletten Serverpfad des aktuell gestarteten PHP-Scripts. 
+Relative Serverpfade beginnen mit einer Verzeichnisangabe (`.`, `..`, ein oder mehrere Verzeichnisse durch `/` getrennt) oder sind leer (für das aktuelle Verzeichnis). Sie beziehen sich stets auf den kompletten Serverpfad des aktuell gestarteten PHP-Scripts. 
 
 Beispiel: 
 
-index.php liegt unter Linux in /homepages/47/u110815/htdocs/ eines Mount points. 
-Eine darin referenzierte Pfadangabe "../abc/cde/test.txt" bezieht sich dann auf den Systempfad "/homepages/47/u110815/abc/cde/test.txt". 
+index.php liegt unter Linux in `/homepages/47/u110815/htdocs/` eines Mount points. 
+Eine darin referenzierte Pfadangabe `../abc/cde/test.txt` bezieht sich dann auf den Systempfad `/homepages/47/u110815/abc/cde/test.txt`. 
 
 Hinweise: 
 
@@ -87,8 +104,8 @@ eine Subdomain - innerhalb des Userverzeichnisses kann ein Unterverzeichnis/ein 
 Pfadangaben in der URL werden relativ zum Userverzeichnis adressiert. 
 Beispiel: 
 
-Ein Nutzer reserviert sich die Domain http://example.com bei seinem Hoster HostingXY. HostingXY richtet dem Nutzer jetzt auf seinem Server das Userverzeichnis /homepages/47/u110815/ ein und mappt die Domain http://example.com/ auf /homepages/47/u110815/htdocs/. 
-Legt der User nun eine Datei in dieses Verzeichnis (/homepages/47/u110815/htdocs/index.html), so wird der Server die URL http://example.com/index.html entsprechend auflösen und das Dokument ausliefern. 
+Ein Nutzer reserviert sich die Domain `http://example.com` bei seinem Hoster HostingXY. HostingXY richtet dem Nutzer jetzt auf seinem Server das Userverzeichnis `/homepages/47/u110815/` ein und mappt die Domain `http://example.com/` auf `/homepages/47/u110815/htdocs/`. 
+Legt der User nun eine Datei in dieses Verzeichnis (`/homepages/47/u110815/htdocs/index.html`), so wird der Server die URL `http://example.com/index.html` entsprechend auflösen und das Dokument ausliefern. 
 Bezugnehmend auf diese Aussagen, ergeben sich folgende Referenzierungsarten: 
 
 
@@ -98,17 +115,17 @@ Für diese gilt Ebengesagtes. Domain und Subdomain bestimmen das physische Serve
 
 Beispiel: 
 
-Bezieht sich die Domain http://example.com auf das Verzeichnis /homepages/47/u110815/htdocs/, so referenziert die URL http://example.com/images/test.jpg die Datei /homepages/47/u110815/htdocs/images/test.jpg auf der entsprechenden Maschine. 
+Bezieht sich die Domain `http://example.com` auf das Verzeichnis `/homepages/47/u110815/htdocs/`, so referenziert die URL `http://example.com/images/test.jpg` die Datei `/homepages/47/u110815/htdocs/images/test.jpg` auf der entsprechenden Maschine. 
 
 
 #### Absolute Webpfade
  
-Die aktuelle Domain (oben http://example.com) kann durch / angesprochen werden. Es ergibt sich eine absolute Pfadangabe, bspw. /images/test.jpg für ebengenanntes Beispiel. 
+Die aktuelle Domain (oben `http://example.com`) kann durch `/` angesprochen werden. Es ergibt sich eine absolute Pfadangabe, bspw. `/images/test.jpg` für ebengenanntes Beispiel. 
 
 
 #### Relative Webpfade
  
-Analog zu Relativen Serverpfaden kann eine Ressource auch relativ zum aktuellen Dokument referenziert werden. Wiederum sind die Angaben ".", "..", ein Verzeichnispfad oder der leere String gültig. Die Angabe ist dabei relativ zum sogenannten Doc Root. Das ist physisch der o.g. Mapping-Ordner für die aktuelle Domain, aus Sicht der URL-Adressierung ist das Serverdateisystem aber nicht transparent. Das bedeutet, der Doc Root bildet aus Sicht der URL das Wurzelverzeichnis, das auch nicht mit ".." verlassen werden kann. 
+Analog zu Relativen Serverpfaden kann eine Ressource auch relativ zum aktuellen Dokument referenziert werden. Wiederum sind die Angaben `.`, `..`, ein Verzeichnispfad oder der leere String gültig. Die Angabe ist dabei relativ zum sogenannten Doc Root. Das ist physisch der o.g. Mapping-Ordner für die aktuelle Domain, aus Sicht der URL-Adressierung ist das Serverdateisystem aber nicht transparent. Das bedeutet, der Doc Root bildet aus Sicht der URL das Wurzelverzeichnis, das auch nicht mit `..` verlassen werden kann. 
 
 #### Analogie
  
@@ -216,4 +233,3 @@ Eine alternative Zugriffssicherung wird in der Praxis durch Einsatz einer .htacc
 
 #### (Dateisystem)-Links
  
-

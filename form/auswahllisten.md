@@ -15,7 +15,7 @@ inhalt:
         simple: ""
         
     -   name: "Selections mit Vorauswahl dynamisch erzeugen"
-        anchor: selections-mit-vorauswahl-dynamisch-erzeugen
+        anchor: selection-mit-vorauswahl-dynamisch-erzeugen
         simple: ""
 
     -   name: "Sicherheit"
@@ -27,11 +27,12 @@ entry-type: in-progress
 ---
 
 
-| **Selections** oder **Auswahllisten** sind HTML Formularelemente, die eine Liste von Werten einer fest definierten Menge zur Auswahl bereitstellen. Selections können als Einfach- oder Mehrfachauswahl notiert werden. Dabei wird in Einfachlisten üblicherweise immer ein Wert übertragen, in Mehrfachlisten kann kein, ein oder mehrere Werte ausgewählt und übertragen werden. 
 
-Je nach Selectiontyp unterscheiden sich die Verfahren zur Verarbeitung und Darstellung. Die jeweiligen Verfahren sind dabei mit denen für Optionsfelder (Radiogroups bzw. Checkboxes) verwandt/identisch.| ![blaa](images/select_single_closed.gif) ![blaa](images/select_single_open.gif)
+
+| **Selections** oder **Auswahllisten** sind HTML Formularelemente, die eine Liste von Werten einer fest definierten Menge zur Auswahl bereitstellen. Selections können als Einfach- oder Mehrfachauswahl notiert werden. Dabei wird in Einfachlisten üblicherweise immer ein Wert übertragen, in Mehrfachlisten kann kein, ein oder mehrere Werte ausgewählt und übertragen werden. | ![blaa](images/select_single_closed.gif) ![blaa](images/select_single_open.gif) |
+
+| Je nach Selectiontyp unterscheiden sich die Verfahren zur Verarbeitung und Darstellung. Die jeweiligen Verfahren sind dabei mit denen für Optionsfelder (Radiogroups bzw. Checkboxes) verwandt/identisch. | 
 ![blaa](images/select_multi_off.gif) ![blaa](images/select_multi_selected.gif) |
-
 
 
 ### Selections auswerten
@@ -49,21 +50,6 @@ Für einfache Selections wird im HTML-Teil eine skalare Variable als *name*-Attr
     <option value="value2">Eintrag 2</option>
 </select>
 ~~~
-
-~~~ html
-<select name="Auswahl">
-    <option value="value1">Eintrag 1</option>
-    <option value="value2">Eintrag 2</option>
-</select>
-~~~
-
-~~~
-<select name="Auswahl">
-    <option value="value1">Eintrag 1</option>
-    <option value="value2">Eintrag 2</option>
-</select>
-~~~
-
 
 Folglich steht der Wert auch dementsprechend im Eingabeparameter des Folgescripts (hier nach Absenden bei Auswahl der ersten Option:
 

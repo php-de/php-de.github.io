@@ -15,6 +15,8 @@ inhalt:
         anchor: 
         simple: ""
 
+entry-type: in-progress 
+
 ---
 
 ### Serverpfade

@@ -209,6 +209,7 @@ Als logische Konsequenz aus den obigen Aussagen zum DocRoot ergibt sich, dass je
 
 „Jenseits des Docroot“ bezeichnet alle Pfade, die oberhalb oder parallel zum DocRoot (und selbst nicht als DocRoot gemappt sind). 
 
+~~~ php
 + homepages
   + 47
     + u110815
@@ -221,6 +222,7 @@ Als logische Konsequenz aus den obigen Aussagen zum DocRoot ergibt sich, dass je
             sicher
           sicher
         sicher
+~~~
 
 Eine alternative Zugriffssicherung wird in der Praxis durch Einsatz einer .htaccess-Datei erreicht.
 

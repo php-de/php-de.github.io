@@ -32,6 +32,14 @@ entry-type: in-progress
 | Je nach Selectiontyp unterscheiden sich die Verfahren zur Verarbeitung und Darstellung. Die jeweiligen Verfahren sind dabei mit denen für Optionsfelder (Radiogroups bzw. Checkboxes) verwandt/identisch. | ![select](images/select_multi_off.gif) | ![select](images/select_multi_selected.gif) |
 
 
+| **Selections** oder **Auswahllisten** sind HTML Formularelemente, die eine Liste von Werten einer fest definierten Menge zur Auswahl bereitstellen. Selections können als Einfach- oder Mehrfachauswahl notiert werden. Dabei wird in Einfachlisten üblicherweise immer ein Wert übertragen, in Mehrfachlisten kann kein, ein oder mehrere Werte ausgewählt und übertragen werden. 
+
+Je nach Selectiontyp unterscheiden sich die Verfahren zur Verarbeitung und Darstellung. Die jeweiligen Verfahren sind dabei mit denen für Optionsfelder (Radiogroups bzw. Checkboxes) verwandt/identisch. | bar |
+
+| foo | bar |
+
+
+
 ### Selections auswerten
 
 Wie bei allen Formularelementen können die Werte eines innnerhalb eines `<form>`-Tags notierten `<select>`-Elements durch Auslesen eines Parameterarrays im Folgescript verarbeitet werden. Näheres dazu siehe unter [Formularverarbeitung Überblick](http://php-de.github.io/form/form.html). 

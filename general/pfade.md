@@ -72,7 +72,7 @@ Eine darin referenzierte Pfadangabe `../abc/cde/test.txt` bezieht sich dann auf 
 
 Hinweise: 
 
-Werden mehrere Scripte durch include/require verbunden, ist das erste (also das gestartete) Script relevant. 
+Werden mehrere Scripte durch `include` bzw. `require` verbunden, ist das erste (also das gestartete) Script relevant. 
 Die obigen Ausführungen nehmen keinen Bezug auf Zugriffsberechtigungen. Pfade wie im zweiten Beispiel lassen sich zwar adressieren, i. A. wird aber bspw. bei Webhostern der Zugriff auf fremde Userverzeichnisse rechtlich eingeschränkt sein. 
 
 
@@ -84,12 +84,12 @@ Webpfade adressieren über eine URL bestimmte Ressourcen (Dateien oder generiert
 
 #### Anwendung
  
-Webpfade 
-
-bilden konkrete Daten oder Dokumente auf Pfade ab 
-dienen clientseitig zur Angabe einzubindender Ressourcen (Dokumente über href, Bilder über src, …) 
+Webpfade bilden konkrete Daten oder Dokumente auf Pfade ab 
+dienen clientseitig zur Angabe einzubindender Ressourcen (Dokumente über `href`, Bilder über `src`, ...) 
 können über sogenannte URL-Wrapper Dateizugriffe auf fremde Server ermöglichen (siehe dazu Abschnitt URL-Wrapper) 
-Aufbau 
+
+#### Aufbau 
+
 Da sie i.A. physische Dateien referenzieren, unterliegen Webpfade zum einen den Beschränkungen des verwendeten Filesystems (Ausnahme: Mod Rewrite und vergleichbare Techniken). Desweiteren ist die Menge der für URLs gültigen Zeichen weiter eingeschränkt. Hier kommen Escapezeichenketten zum Einsatz. 
 
 
@@ -99,9 +99,13 @@ Die Grundlage der URL-Adressierung bildet das DNS System und das Routing über d
 
 Auf dem jeweiligen Server können anschließend weitere URL-Bestandteile auf konkrete Pfade gemappt werden. In der Regel sind das: 
 
-die Domain selbst - ein Hoster kann so viele Domains auf einer Maschine vertwalten, indem jeder Domain oder jedem dahinterstehenden Kunden ein konkretes Userverzeichnis bereitsgestellt wird. 
-eine Subdomain - innerhalb des Userverzeichnisses kann ein Unterverzeichnis/ein Subpfad das Rootverzeichnis für die Domain mit Subdomain abbilden. 
+- die Domain selbst - ein Hoster kann so viele Domains auf einer Maschine vertwalten, indem jeder Domain oder jedem dahinterstehenden Kunden ein konkretes Userverzeichnis bereitsgestellt wird. 
+
+- eine Subdomain - innerhalb des Userverzeichnisses kann ein Unterverzeichnis/ein Subpfad das Rootverzeichnis für die Domain mit Subdomain abbilden. 
+  
+
 Pfadangaben in der URL werden relativ zum Userverzeichnis adressiert. 
+
 Beispiel: 
 
 Ein Nutzer reserviert sich die Domain `http://example.com` bei seinem Hoster HostingXY. HostingXY richtet dem Nutzer jetzt auf seinem Server das Userverzeichnis `/homepages/47/u110815/` ein und mappt die Domain `http://example.com/` auf `/homepages/47/u110815/htdocs/`. 

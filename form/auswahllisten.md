@@ -65,7 +65,7 @@ echo $_POST['Auswahl'];
 #### Mehrfachauswahlen
 
 Ein HTTP Request überträgt zwar alle ausgewählten Werte eines entsprechenden Mehrfachauswahlfeldes, nur werden diese anschließend in die superglobalen Parameterarrays unter ihrem Variablennamen als Schlüssel hinterlegt und damit folglich alle Werte bis auf den letzten von den folgenden überschrieben.
-Die Lösung ist, im name-Attribut von vornherein eine Arrayvariable anzugeben:
+Die Lösung ist, im *name*-Attribut von vornherein eine Arrayvariable anzugeben:
 
 ~~~ php
 <select name="Auswahl[]" multiple="multiple">
@@ -85,7 +85,7 @@ array (
 )
 ~~~
 
-hier für den Fall, dass beide Werte vor dem Absenden ausgewählt wurden. Der Zugriff kann nun natürlich nur wie für ein Array üblich, über einen Sub-Index oder eine Arrayfunktion erfolgen:
+Hier für den Fall, dass beide Werte vor dem Absenden ausgewählt wurden. Der Zugriff kann nun natürlich nur wie für ein Array üblich, über einen Sub-Index oder eine Arrayfunktion erfolgen:
  
 ~~~ php
 // gibt das erste Element aus,  
@@ -112,7 +112,7 @@ In verschiedenen Fällen kann es nötig sein, dass Selections bei der Ausgabe dy
 Der oder die selektierten Auswahlwert einer Auswahlliste wird HTML-seitig über das Attribut `selected="selected"` im zugehörigen `<option>` Element notiert. Damit ergibt sich folgendes Prinzip, das anhand einer Wertvergleichsoperation die jeweilige Ausgabe des Attributwertes erzeugt:
 
 
-*Bsp. 1, Wiederauswahl für Einfachauswahlen*
+**Bsp. 1, Wiederauswahl für Einfachauswahlen**
 
 Einfache PHP Umsetzung des Funktionsprinzips. Es wird von einer POST-Übermittlungsmethode des zugrundeliegenden Formulars ausgegangen.
 
@@ -148,7 +148,7 @@ $selectedValue = $_POST['Auswahl'];
 Einen ersten Ansatz für Einfachauswahlen haben wir gerade kennengelernt. Wie deutlich zu erkennen, ist dabei der Overhead, den die Funktion zum Wiederbefüllen erzeugt, relativ hoch. Optimiert werden kann der Code, wenn die Optionsbezeichner und -werte als Array vorliegen und sowohl die eben gezeigte Prüfung, als auch die gesamte Ausgabe des `<option>`-Elements in einer Schleife erfolgt. Gerade bei erhöhter Wertanzahl ergibt sich hier ein schlanker und übersichtlicher Code. Zudem ergibt sich eine leichte Möglichkeit zum Abändern der Einträge.
 
 
-*Bsp. 2, Wiederauswahl für Einfachauswahlen*
+**Bsp. 2, Wiederauswahl für Einfachauswahlen**
 
 Optimierte PHP Umsetzung mir Wertarray für die Lösung aus 1. Es wird von einer POST-Übermittlungsmethode des zugrundeliegenden Formulars ausgegangen.
 
@@ -200,9 +200,9 @@ Wie oben beschrieben, liegen die Werte übertragener Multiselects immer als Arra
 
 Für die obige Schleifenlösung bietet sich `in_array()` an:
   
-*Bsp. 3, Wiederauswahl für Mehrfachauswahlen*
+**Bsp. 3, Wiederauswahl für Mehrfachauswahlen**
 
-PHP Umsetzung mit Wertarray,Es wird von einer POST-Übermittlungsmethode des zugrundeliegenden Formulars ausgegangen.
+PHP Umsetzung mit Wertarray. Es wird von einer POST-Übermittlungsmethode des zugrundeliegenden Formulars ausgegangen.
 
 ~~~ php
 <?php 
@@ -251,11 +251,12 @@ Die Funktion `in_array()` untersucht hier den aktuell durchlaufenen Optionwert a
 
 Für alle Ausgaben auf Formularübermittlung ergibt sich die Gefahr von Code-Injection und Cross Site Scripting. Zudem unterliegen Selections noch der Gefahr von Typverletzungen.
 
-Direkte Ausgaben wie diejenigen mit `echo` in [Selections auswerten](#selections-auswerten), sind genauso anfällig, wie Eingaben aus einem Textfeld. Letzten Endes hat der Programmierer keinen Einfluß darüber, ob die Eingaben tatsächlich aus einem Select erfolgen. Daraus resultieren auch weitere wichtige Punkte:
+Direkte Ausgaben wie diejenigen mit `echo` in [Selections auswerten](#selections-auswerten), sind genauso anfällig, wie Eingaben aus einem Textfeld. Letzten Endes hat der Programmierer keinen Einfluß darüber, ob die Eingaben tatsächlich aus einem Select erfolgen. Daraus resultieren auch weitere wichtige Punkte:  
+
 Obwohl die oben gezeigte Wiederauswahl dynamischer Auswahlliste augenscheinlich ohne Ausgabe des Wertes auskommt, ergibt sich hier eine andere Gefahr. So werden bspw. übermittelte Auswahlen aus Multiselections als Arraytyp erwartet. Ist die Eingabe dagegen leer oder ein String, wird das Script ohne Maßnahmen wie das oben verwendete Typcasting über `(array)` einen Fehler erzeugen. Übrigens ist auch die Umkehrung gültig: Wird an eine Einfachauswahl ein Werte*array* übermittelt (bspw. über ein Multiselect eines gefälschten Formulars) wird jeder Wertvergleicht, wie `($value == $selectedValue)` in Code-Bsp. 2, mit einem Fehler quittiert.
 Übrigens unterliegen auch ungefälschte Multiselect dem Typproblem. Genau wie Checkboxfelder werden in Formularen hier nur Elemente mit mindestens einer Auswahl übermittelt. Ein Lösungsansatz kann hier eine vorhergehende Prüfung des übermittelten Wertes sein:
 
-*Bsp. 4, Wiederauswahl für Einfachauswahlen*
+**Bsp. 4, Wiederauswahl für Einfachauswahlen**
 
 Erweiterung von Bsp. 2 um eine Typ/Wertprüfung
 
@@ -286,7 +287,7 @@ if (false === isset($_POST['Auswahl']) || false === is_string($_POST['Auswahl'])
 
 Im Zuge einer Validierung zur Erkennung von Angriffen kann auch das vordefinierte Wertearray benutzt werden. Dazu ziehen wir die Wertedefinition etwas vor:
 
-*Bsp. 5, Wiederauswahl für Einfachauswahlen*
+**Bsp. 5, Wiederauswahl für Einfachauswahlen**
 
 Erweiterung von Bsp. 4 um eine Prüfung auf konkrete Wertmenge
 
@@ -328,7 +329,7 @@ else {
 
 Für Mehrfachauswahlen kann analog eine Prüfung über `array_diff()` vorgenommen werden.
 
-*Bsp. 6, Wiederauswahl für Mehrfachauswahlen*
+**Bsp. 6, Wiederauswahl für Mehrfachauswahlen**
 
 Erweiterung von Bsp. 3 um eine Prüfung auf konkrete Wertmenge
 

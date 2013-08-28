@@ -141,7 +141,7 @@ Der Serverpfad ist ein Dateisystempfad auf einer konkreten Maschine. Webpfade ka
 Hinweise: 
 
 - Sowohl absolute als auch relative Webpfad sind relativ zur aktuellen Domain. „Absolut“ bzw. „relativ“ bezieht sich hier nur auf den Rootpfad der Domain (Doc Root).  
-- Wie gesagt, ist das referenzierende Dokument relevant. Gerade bei CSS-Dateien mit url()-Stylesheetangaben ist hier der Webpfad der CSS-Datei maßgebich, nicht der Pfad des (HTML-)Dokuments, das im Browser aufgerufen wurde.  
+- Wie gesagt, ist das referenzierende Dokument relevant. Gerade bei CSS-Dateien mit `url()`-Stylesheetangaben ist hier der Webpfad der CSS-Datei maßgebich, nicht der Pfad des (HTML-)Dokuments, das im Browser aufgerufen wurde.  
   
 
 ### Komplettbeispiel

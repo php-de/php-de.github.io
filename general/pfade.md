@@ -112,6 +112,8 @@ Beispiel:
 
 : Ein Nutzer reserviert sich die Domain `http://example.com` bei seinem Hoster HostingXY. HostingXY richtet dem Nutzer jetzt auf seinem Server das Userverzeichnis `/homepages/47/u110815/` ein und mappt die Domain `http://example.com/` auf `/homepages/47/u110815/htdocs/`.  
 Legt der User nun eine Datei in dieses Verzeichnis (`/homepages/47/u110815/htdocs/index.html`), so wird der Server die URL `http://example.com/index.html` entsprechend auflösen und das Dokument ausliefern. 
+
+
 Bezugnehmend auf diese Aussagen, ergeben sich folgende Referenzierungsarten: 
 
 

@@ -84,6 +84,7 @@ Webpfade adressieren über eine URL bestimmte Ressourcen (Dateien oder generiert
 #### Anwendung
  
 Webpfade 
+
 - bilden konkrete Daten oder Dokumente auf Pfade ab 
 - dienen clientseitig zur Angabe einzubindender Ressourcen (Dokumente über `href`, Bilder über `src`, ...) 
 - können über sogenannte URL-Wrapper Dateizugriffe auf fremde Server ermöglichen (siehe dazu Abschnitt URL-Wrapper)  - 

@@ -21,9 +21,6 @@ inhalt:
     -   name: "Sicherheit"
         anchor: sicherheit
         simple: ""
-
-        
-entry-type: in-progress
 ---
 
 
@@ -253,7 +250,7 @@ Für alle Ausgaben auf Formularübermittlung ergibt sich die Gefahr von Code-Inj
 
 Direkte Ausgaben wie diejenigen mit `echo` in [Selections auswerten](#selections-auswerten), sind genauso anfällig, wie Eingaben aus einem Textfeld. Letzten Endes hat der Programmierer keinen Einfluß darüber, ob die Eingaben tatsächlich aus einem Select erfolgen. Daraus resultieren auch weitere wichtige Punkte:  
 
-Obwohl die oben gezeigte Wiederauswahl dynamischer Auswahlliste augenscheinlich ohne Ausgabe des Wertes auskommt, ergibt sich hier eine andere Gefahr. So werden bspw. übermittelte Auswahlen aus Multiselections als Arraytyp erwartet. Ist die Eingabe dagegen leer oder ein String, wird das Script ohne Maßnahmen wie das oben verwendete Typcasting über `(array)` einen Fehler erzeugen. Übrigens ist auch die Umkehrung gültig: Wird an eine Einfachauswahl ein Werte*array* übermittelt (bspw. über ein Multiselect eines gefälschten Formulars) wird jeder Wertvergleicht, wie `($value == $selectedValue)` in Code-Bsp. 2, mit einem Fehler quittiert.
+Obwohl die oben gezeigte Wiederauswahl dynamischer Auswahlliste augenscheinlich ohne Ausgabe des Wertes auskommt, ergibt sich hier eine andere Gefahr. So werden bspw. übermittelte Auswahlen aus Multiselections als Arraytyp erwartet. Ist die Eingabe dagegen leer oder ein String, wird das Script ohne Maßnahmen wie das oben verwendete Typcasting über `(array)` einen Fehler erzeugen. Übrigens ist auch die Umkehrung gültig: Wird an eine Einfachauswahl ein Werte*array* übermittelt (bspw. über ein Multiselect eines gefälschten Formulars) wird jeder Wertvergleich, wie `($value == $selectedValue)` in Code-Bsp. 2, mit einem Fehler quittiert.
 Übrigens unterliegen auch ungefälschte Multiselect dem Typproblem. Genau wie Checkboxfelder werden in Formularen hier nur Elemente mit mindestens einer Auswahl übermittelt. Ein Lösungsansatz kann hier eine vorhergehende Prüfung des übermittelten Wertes sein:
 
 **Bsp. 4, Wiederauswahl für Einfachauswahlen**

@@ -68,7 +68,7 @@ Alle anderen Pfade werden als relativ interpretiert.
 
 Beispiel: 
 
-index.php liegt unter Linux in `/homepages/47/u110815/htdocs/` eines Mount points. 
+: index.php liegt unter Linux in `/homepages/47/u110815/htdocs/` eines Mount points.  
 Eine darin referenzierte Pfadangabe `../abc/cde/test.txt` bezieht sich dann auf den Systempfad `/homepages/47/u110815/abc/cde/test.txt`. 
 
 Hinweise: 
@@ -109,7 +109,7 @@ Pfadangaben in der URL werden relativ zum Userverzeichnis adressiert.
 
 Beispiel: 
 
-Ein Nutzer reserviert sich die Domain `http://example.com` bei seinem Hoster HostingXY. HostingXY richtet dem Nutzer jetzt auf seinem Server das Userverzeichnis `/homepages/47/u110815/` ein und mappt die Domain `http://example.com/` auf `/homepages/47/u110815/htdocs/`. 
+: Ein Nutzer reserviert sich die Domain `http://example.com` bei seinem Hoster HostingXY. HostingXY richtet dem Nutzer jetzt auf seinem Server das Userverzeichnis `/homepages/47/u110815/` ein und mappt die Domain `http://example.com/` auf `/homepages/47/u110815/htdocs/`.  
 Legt der User nun eine Datei in dieses Verzeichnis (`/homepages/47/u110815/htdocs/index.html`), so wird der Server die URL `http://example.com/index.html` entsprechend auflösen und das Dokument ausliefern. 
 Bezugnehmend auf diese Aussagen, ergeben sich folgende Referenzierungsarten: 
 
@@ -120,7 +120,7 @@ Für diese gilt Ebengesagtes. Domain und Subdomain bestimmen das physische Serve
 
 Beispiel: 
 
-Bezieht sich die Domain `http://example.com` auf das Verzeichnis `/homepages/47/u110815/htdocs/`, so referenziert die URL `http://example.com/images/test.jpg` die Datei `/homepages/47/u110815/htdocs/images/test.jpg` auf der entsprechenden Maschine. 
+: Bezieht sich die Domain `http://example.com` auf das Verzeichnis `/homepages/47/u110815/htdocs/`, so referenziert die URL `http://example.com/images/test.jpg` die Datei `/homepages/47/u110815/htdocs/images/test.jpg` auf der entsprechenden Maschine. 
 
 
 #### Absolute Webpfade

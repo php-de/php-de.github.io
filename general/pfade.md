@@ -87,7 +87,7 @@ Webpfade
 
 - bilden konkrete Daten oder Dokumente auf Pfade ab 
 - dienen clientseitig zur Angabe einzubindender Ressourcen (Dokumente über `href`, Bilder über `src`, ...) 
-- können über sogenannte URL-Wrapper Dateizugriffe auf fremde Server ermöglichen (siehe dazu Abschnitt URL-Wrapper)  - 
+- können über sogenannte URL-Wrapper Dateizugriffe auf fremde Server ermöglichen (siehe dazu Abschnitt URL-Wrapper) 
   
 
 #### Aufbau 
@@ -101,11 +101,9 @@ Die Grundlage der URL-Adressierung bildet das DNS System und das Routing über d
 
 Auf dem jeweiligen Server können anschließend weitere URL-Bestandteile auf konkrete Pfade gemappt werden. In der Regel sind das: 
 
-- die Domain selbst - ein Hoster kann so viele Domains auf einer Maschine vertwalten, indem jeder Domain oder jedem dahinterstehenden Kunden ein konkretes Userverzeichnis bereitsgestellt wird. 
-
-- eine Subdomain - innerhalb des Userverzeichnisses kann ein Unterverzeichnis/ein Subpfad das Rootverzeichnis für die Domain mit Subdomain abbilden. 
-  
-- Pfadangaben in der URL werden relativ zum Userverzeichnis adressiert.
+- die Domain selbst - ein Hoster kann so viele Domains auf einer Maschine vertwalten, indem jeder Domain oder jedem dahinterstehenden Kunden ein konkretes Userverzeichnis bereitsgestellt wird.  
+- eine Subdomain - innerhalb des Userverzeichnisses kann ein Unterverzeichnis/ein Subpfad das Rootverzeichnis für die Domain mit Subdomain abbilden.  
+- Pfadangaben in der URL werden relativ zum Userverzeichnis adressiert.  
 
 
 Beispiel: 
@@ -142,8 +140,9 @@ Der Serverpfad ist ein Dateisystempfad auf einer konkreten Maschine. Webpfade ka
 
 Hinweise: 
 
-Sowohl absolute als auch relative Webpfad sind relativ zur aktuellen Domain. „Absolut“ bzw. „relativ“ bezieht sich hier nur auf den Rootpfad der Domain (Doc Root). 
-Wie gesagt, ist das referenzierende Dokument relevant. Gerade bei CSS-Dateien mit url()-Stylesheetangaben ist hier der Webpfad der CSS-Datei maßgebich, nicht der Pfad des (HTML-)Dokuments, das im Browser aufgerufen wurde. 
+- Sowohl absolute als auch relative Webpfad sind relativ zur aktuellen Domain. „Absolut“ bzw. „relativ“ bezieht sich hier nur auf den Rootpfad der Domain (Doc Root).  
+- Wie gesagt, ist das referenzierende Dokument relevant. Gerade bei CSS-Dateien mit url()-Stylesheetangaben ist hier der Webpfad der CSS-Datei maßgebich, nicht der Pfad des (HTML-)Dokuments, das im Browser aufgerufen wurde.  
+  
 
 ### Komplettbeispiel
  

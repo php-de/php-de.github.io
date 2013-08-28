@@ -58,7 +58,7 @@ Serverpfade bestehen aus Verzeichnisnamen, die durch Slashes voneinander getrenn
 Beispiel: 
 
 : index.php liegt unter Windows in `C:\xampp\htdocs\test\`. 
-: Eine darin referenzierte Pfadangabe `/abc/cde/` bezieht sich dann auf den Systempfad `C:\abc\cde\`.  
+Eine darin referenzierte Pfadangabe `/abc/cde/` bezieht sich dann auf den Systempfad `C:\abc\cde\`.  
   
 Alle anderen Pfade werden als relativ interpretiert. 
 

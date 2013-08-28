@@ -140,6 +140,8 @@ Wie gesagt, ist das referenzierende Dokument relevant. Gerade bei CSS-Dateien mi
 ### Komplettbeispiel
  
 Struktur des Projektes im Dateisystem
+
+~~~
 /
 + homepages
   + 47
@@ -155,55 +157,66 @@ Struktur des Projektes im Dateisystem
         + css
             styles.css
           index.php
+~~~
 
 index.php
- <?php
+
+~~~ php
+<?php
  
- // absoluter Serverpfad als Konstante
- define('PATH_PROJECT' , '/homepages/47/u110815/htdocs/');
+// absoluter Serverpfad als Konstante
+define('PATH_PROJECT' , '/homepages/47/u110815/htdocs/');
  
  
- // relativer Serverpfad
- require('includes/function.php'); 
+// relativer Serverpfad
+require('includes/function.php'); 
  
- ?><html>
- <head>
-   <title />
-   <!-- absoluter Webpfad -->
-   <link rel="stylesheet" href="/css/styles.css">
- </head>
- <body>
+?><html>
+<head>
+  <title />
+  <!-- absoluter Webpfad -->
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
  
-   <div id="logo"></div>
-   <?php echo getContent ('inhalt.txt'); ?>
+  <div id="logo"></div>
+  <?php echo getContent ('inhalt.txt'); ?>
  
- </body>
- </html>function.php
- <?php
+</body>
+</html>function.php
+<?php
  
- function getContent ($file)
- {
-   // absoluter Serverpfad
-   $path= PATH_PROJECT . 'contents/' . $file;
+function getContent ($file)
+{
+  // absoluter Serverpfad
+  $path= PATH_PROJECT . 'contents/' . $file;
  
-   return(file_get_contents($path));
-   }styles.css
+  return(file_get_contents($path));
+}
+~~~
+
+styles.css
+
+~~~ php
  #logo {
    width :100px;
    height:100px;
  
    background-image:url(../images/test.jpg); /* relativer Webpfad */
  }
- 
- inhalt.txt
- <h1>Dies ist ein Text</h1>
- <p>
+ ~~~
+
+inhalt.txt 
+
+~~~ php
+<h1>Dies ist ein Text</h1>
+<p>
    <!-- Webpfad mit vollständiger URL -->
    <img src="http://example.com/images/title.jpg" /> 
  
    Dies ist ein Text.
- </p>
-
+</p>
+~~~
 
 ### Sichtbarkeit
  
@@ -226,7 +239,6 @@ Als logische Konsequenz aus den obigen Aussagen zum DocRoot ergibt sich, dass je
           sicher
         sicher
 ~~~
-
 
 Eine alternative Zugriffssicherung wird in der Praxis durch Einsatz einer .htaccess-Datei erreicht.
 

@@ -204,7 +204,7 @@ styles.css
  
    background-image:url(../images/test.jpg); /* relativer Webpfad */
  }
- ~~~
+~~~
 
 inhalt.txt 
 

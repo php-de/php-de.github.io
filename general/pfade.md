@@ -105,8 +105,8 @@ Auf dem jeweiligen Server können anschließend weitere URL-Bestandteile auf kon
 
 - eine Subdomain - innerhalb des Userverzeichnisses kann ein Unterverzeichnis/ein Subpfad das Rootverzeichnis für die Domain mit Subdomain abbilden. 
   
+- Pfadangaben in der URL werden relativ zum Userverzeichnis adressiert.
 
-Pfadangaben in der URL werden relativ zum Userverzeichnis adressiert. 
 
 Beispiel: 
 

@@ -57,6 +57,7 @@ Serverpfade bestehen aus Verzeichnisnamen, die durch Slashes voneinander getrenn
 
 Beispiel: 
 
+
 : index.php liegt unter Windows in `C:\xampp\htdocs\test\`.  
 Eine darin referenzierte Pfadangabe `/abc/cde/` bezieht sich dann auf den Systempfad `C:\abc\cde\`.  
   
@@ -67,6 +68,7 @@ Alle anderen Pfade werden als relativ interpretiert.
 **Relative Serverpfade** beginnen mit einer Verzeichnisangabe (`.`, `..`, ein oder mehrere Verzeichnisse durch `/` getrennt) oder sind leer (für das aktuelle Verzeichnis). Sie beziehen sich stets auf den kompletten Serverpfad des aktuell gestarteten PHP-Scripts. 
 
 Beispiel: 
+
 
 : index.php liegt unter Linux in `/homepages/47/u110815/htdocs/` eines Mount points.  
 Eine darin referenzierte Pfadangabe `../abc/cde/test.txt` bezieht sich dann auf den Systempfad `/homepages/47/u110815/abc/cde/test.txt`. 
@@ -109,6 +111,7 @@ Pfadangaben in der URL werden relativ zum Userverzeichnis adressiert.
 
 Beispiel: 
 
+
 : Ein Nutzer reserviert sich die Domain `http://example.com` bei seinem Hoster HostingXY. HostingXY richtet dem Nutzer jetzt auf seinem Server das Userverzeichnis `/homepages/47/u110815/` ein und mappt die Domain `http://example.com/` auf `/homepages/47/u110815/htdocs/`.  
 Legt der User nun eine Datei in dieses Verzeichnis (`/homepages/47/u110815/htdocs/index.html`), so wird der Server die URL `http://example.com/index.html` entsprechend auflösen und das Dokument ausliefern. 
 Bezugnehmend auf diese Aussagen, ergeben sich folgende Referenzierungsarten: 
@@ -119,6 +122,7 @@ Bezugnehmend auf diese Aussagen, ergeben sich folgende Referenzierungsarten:
 Für diese gilt Ebengesagtes. Domain und Subdomain bestimmen das physische Serververzeichnis, weitere URL-Pfadangaben werden relativ zum Serververzeichnis benutzt. 
 
 Beispiel: 
+
 
 : Bezieht sich die Domain `http://example.com` auf das Verzeichnis `/homepages/47/u110815/htdocs/`, so referenziert die URL `http://example.com/images/test.jpg` die Datei `/homepages/47/u110815/htdocs/images/test.jpg` auf der entsprechenden Maschine. 
 

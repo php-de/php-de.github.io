@@ -32,7 +32,7 @@ inhalt:
         simple: ""
 
 
-entry-type: in-progress 
+entry-type: in-discussion
 
 ---
 

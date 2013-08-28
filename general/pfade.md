@@ -182,7 +182,7 @@ index.php
  <?php
  
  function getContent ($file)
-   {
+ {
    // absoluter Serverpfad
    $path= PATH_PROJECT . 'contents/' . $file;
  
@@ -193,7 +193,9 @@ index.php
    height:100px;
  
    background-image:url(../images/test.jpg); /* relativer Webpfad */
- }inhalt.txt
+ }
+ 
+ inhalt.txt
  <h1>Dies ist ein Text</h1>
  <p>
    <!-- Webpfad mit vollständiger URL -->
@@ -209,7 +211,8 @@ Als logische Konsequenz aus den obigen Aussagen zum DocRoot ergibt sich, dass je
 
 „Jenseits des Docroot“ bezeichnet alle Pfade, die oberhalb oder parallel zum DocRoot (und selbst nicht als DocRoot gemappt sind). 
 
-~~~ php
+
+~~~
 + homepages
   + 47
     + u110815
@@ -223,6 +226,7 @@ Als logische Konsequenz aus den obigen Aussagen zum DocRoot ergibt sich, dass je
           sicher
         sicher
 ~~~
+
 
 Eine alternative Zugriffssicherung wird in der Praxis durch Einsatz einer .htaccess-Datei erreicht.
 

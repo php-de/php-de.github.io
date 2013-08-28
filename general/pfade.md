@@ -23,8 +23,8 @@ inhalt:
         anchor: komplettbeispiel
         simple: ""
 
-    -   name: "Sicherheit"
-        anchor: sicherheit
+    -   name: "Sichtbarkeit"
+        anchor: sichtbarkeit
         simple: ""
 
     -   name: "Besonderheiten"

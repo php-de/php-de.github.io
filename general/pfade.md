@@ -43,7 +43,7 @@ entry-type: in-progress
 Serverpfade sind relevant für 
 
 - Dateisystemfunktionen (`dir()`, `is_file()`, `glob()`, ...) 
-- normale Includes
+- normale Includes (`include`, `require`, ...)
 <br>
 
 
@@ -53,17 +53,18 @@ Serverpfade bestehen aus Verzeichnisnamen, die durch Slashes voneinander getrenn
 
 #### Absolute Serverpfade
  
-Absolute Serverpfade beginnen mit `/` und beziehen sich stets auf das Wurzelverzeichnis des Mount points (Linux, Unix) bzw. das Laufwerk (Windows) in dessen Subpfad sich das aktuell gestartete PHP-Script befindet. 
+**Absolute Serverpfade** beginnen mit `/` und beziehen sich stets auf das Wurzelverzeichnis des Mount points (Linux, Unix) bzw. das Laufwerk (Windows) in dessen Subpfad sich das aktuell gestartete PHP-Script befindet. 
 
 Beispiel: 
 
-index.php liegt unter Windows in `C:\xampp\htdocs\test\`. 
-Eine darin referenzierte Pfadangabe `/abc/cde/` bezieht sich dann auf den Systempfad `C:\abc\cde\`. 
+: index.php liegt unter Windows in `C:\xampp\htdocs\test\`. 
+: Eine darin referenzierte Pfadangabe `/abc/cde/` bezieht sich dann auf den Systempfad `C:\abc\cde\`.  
+  
 Alle anderen Pfade werden als relativ interpretiert. 
 
 #### Relative Serverpfade
  
-Relative Serverpfade beginnen mit einer Verzeichnisangabe (`.`, `..`, ein oder mehrere Verzeichnisse durch `/` getrennt) oder sind leer (für das aktuelle Verzeichnis). Sie beziehen sich stets auf den kompletten Serverpfad des aktuell gestarteten PHP-Scripts. 
+**Relative Serverpfade** beginnen mit einer Verzeichnisangabe (`.`, `..`, ein oder mehrere Verzeichnisse durch `/` getrennt) oder sind leer (für das aktuelle Verzeichnis). Sie beziehen sich stets auf den kompletten Serverpfad des aktuell gestarteten PHP-Scripts. 
 
 Beispiel: 
 
@@ -72,10 +73,8 @@ Eine darin referenzierte Pfadangabe `../abc/cde/test.txt` bezieht sich dann auf 
 
 Hinweise: 
 
-Werden mehrere Scripte durch `include` bzw. `require` verbunden, ist das erste (also das gestartete) Script relevant. 
-Die obigen Ausführungen nehmen keinen Bezug auf Zugriffsberechtigungen. Pfade wie im zweiten Beispiel lassen sich zwar adressieren, i. A. wird aber bspw. bei Webhostern der Zugriff auf fremde Userverzeichnisse rechtlich eingeschränkt sein. 
-
-
+- Werden mehrere Scripte durch `include` bzw. `require` verbunden, ist das erste (also das gestartete) Script relevant. 
+- Die obigen Ausführungen nehmen keinen Bezug auf Zugriffsberechtigungen. Pfade wie im zweiten Beispiel lassen sich zwar adressieren, i. A. wird aber bspw. bei Webhostern der Zugriff auf fremde Userverzeichnisse rechtlich eingeschränkt sein. 
 
 ### Webpfade
  
@@ -84,13 +83,15 @@ Webpfade adressieren über eine URL bestimmte Ressourcen (Dateien oder generiert
 
 #### Anwendung
  
-Webpfade bilden konkrete Daten oder Dokumente auf Pfade ab 
-dienen clientseitig zur Angabe einzubindender Ressourcen (Dokumente über `href`, Bilder über `src`, ...) 
-können über sogenannte URL-Wrapper Dateizugriffe auf fremde Server ermöglichen (siehe dazu Abschnitt URL-Wrapper) 
+Webpfade 
+- bilden konkrete Daten oder Dokumente auf Pfade ab 
+- dienen clientseitig zur Angabe einzubindender Ressourcen (Dokumente über `href`, Bilder über `src`, ...) 
+- können über sogenannte URL-Wrapper Dateizugriffe auf fremde Server ermöglichen (siehe dazu Abschnitt URL-Wrapper)  - 
+  
 
 #### Aufbau 
 
-Da sie i.A. physische Dateien referenzieren, unterliegen Webpfade zum einen den Beschränkungen des verwendeten Filesystems (Ausnahme: Mod Rewrite und vergleichbare Techniken). Desweiteren ist die Menge der für URLs gültigen Zeichen weiter eingeschränkt. Hier kommen Escapezeichenketten zum Einsatz. 
+Da sie im Allgemeinen physische Dateien referenzieren, unterliegen Webpfade zum einen den Beschränkungen des verwendeten Filesystems (Ausnahme: Mod Rewrite und vergleichbare Techniken). Desweiteren ist die Menge der für URLs gültigen Zeichen weiter eingeschränkt. Hier kommen Escapezeichenketten zum Einsatz. 
 
 
 #### Prinzip
@@ -108,8 +109,8 @@ Pfadangaben in der URL werden relativ zum Userverzeichnis adressiert.
 
 Beispiel: 
 
-Ein Nutzer reserviert sich die Domain `http://example.com` bei seinem Hoster HostingXY. HostingXY richtet dem Nutzer jetzt auf seinem Server das Userverzeichnis `/homepages/47/u110815/` ein und mappt die Domain `http://example.com/` auf `/homepages/47/u110815/htdocs/`. 
-Legt der User nun eine Datei in dieses Verzeichnis (`/homepages/47/u110815/htdocs/index.html`), so wird der Server die URL `http://example.com/index.html` entsprechend auflösen und das Dokument ausliefern. 
+: Ein Nutzer reserviert sich die Domain `http://example.com` bei seinem Hoster HostingXY. HostingXY richtet dem Nutzer jetzt auf seinem Server das Userverzeichnis `/homepages/47/u110815/` ein und mappt die Domain `http://example.com/` auf `/homepages/47/u110815/htdocs/`. 
+: Legt der User nun eine Datei in dieses Verzeichnis (`/homepages/47/u110815/htdocs/index.html`), so wird der Server die URL `http://example.com/index.html` entsprechend auflösen und das Dokument ausliefern. 
 Bezugnehmend auf diese Aussagen, ergeben sich folgende Referenzierungsarten: 
 
 
@@ -119,7 +120,7 @@ Für diese gilt Ebengesagtes. Domain und Subdomain bestimmen das physische Serve
 
 Beispiel: 
 
-Bezieht sich die Domain `http://example.com` auf das Verzeichnis `/homepages/47/u110815/htdocs/`, so referenziert die URL `http://example.com/images/test.jpg` die Datei `/homepages/47/u110815/htdocs/images/test.jpg` auf der entsprechenden Maschine. 
+: Bezieht sich die Domain `http://example.com` auf das Verzeichnis `/homepages/47/u110815/htdocs/`, so referenziert die URL `http://example.com/images/test.jpg` die Datei `/homepages/47/u110815/htdocs/images/test.jpg` auf der entsprechenden Maschine. 
 
 
 #### Absolute Webpfade

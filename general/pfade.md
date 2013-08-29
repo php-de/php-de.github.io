@@ -190,7 +190,12 @@ require('includes/function.php');
   <?php echo getContent ('inhalt.txt'); ?>
  
 </body>
-</html>function.php
+</html>
+~~~
+
+function.php
+
+~~~ php
 <?php
  
 function getContent ($file)

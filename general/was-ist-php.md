@@ -76,4 +76,3 @@ Der Aufruf einer PHP Seite startet ein Programm, das ein Hypertextdokument erzeu
 
 PHP geschieht also vor allen Sprachen und Formatierungen, die im Browser zum Einsatz kommen (HTML, Javascript, CSS). PHP ist von einem Server (also so gesehen von einer bestehenden Internetverbindung) abhängig, clientseitige Sprachen sind es nicht (insofern der Quelltext lokal auf dem Client PC existiert). Ein HTML Code mit Stylesheets und Javascript Funktionalität kann also auf einen Client PC heruntergeladen lokal vom Browser verarbeitet werden. PHP Code dagegen nicht.
 
->>>>>>> 4a503577de8e7a73381f859312bee34e763efb55

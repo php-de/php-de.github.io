@@ -15,7 +15,7 @@ inhalt:
         anchor: 
         simple: ""
 
-entry-type: in-progress
+entry-type: in-discussion
 
 ---
 
@@ -59,10 +59,9 @@ function get_float($value)
 }
 ~~~
 
-Ergibt:
+Tests:
 
 ~~~ php
-
 $arr = array(
            "1500.23",
            "1500,23",
@@ -80,7 +79,6 @@ foreach ($arr as $val) {
     float 1500.23
     float 1500.23
     float 1500.23
-
 */
-
 ~~~
+

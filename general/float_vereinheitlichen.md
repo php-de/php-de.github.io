@@ -58,3 +58,29 @@ function get_float($value)
     return ((float) $value);
 }
 ~~~
+
+Ergibt:
+
+~~~ php
+
+$arr = array(
+           "1500.23",
+           "1500,23",
+           "1.500,23",
+           "1,500.23",
+       );
+
+
+foreach ($arr as $val) {
+    var_dump(get_float($val));
+}
+
+/*
+    float 1500.23
+    float 1500.23
+    float 1500.23
+    float 1500.23
+
+*/
+
+~~~

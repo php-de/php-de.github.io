@@ -248,7 +248,7 @@ Beide Elementtypen können durch Setzen des *checked*-Attributs vorselektiert we
 
 #### Vorbelegen mit „sich selbst“
  
-Im sog. Affenformular werden bis zur Vollständigkeit einer Formulareingabe abgesendete Werte wieder als Vorauswahl Ihrer Formularelemente verwendet. Das Prinzip ist dabei abhängig von den oben beschriebenen Übergabemethoden. 
+Im sog. [Affenformular](http://php-de.github.io/form/affenformular.html) werden bis zur Vollständigkeit einer Formulareingabe abgesendete Werte wieder als Vorauswahl Ihrer Formularelemente verwendet. Das Prinzip ist dabei abhängig von den oben beschriebenen Übergabemethoden. 
 
 ~~~ php
 <input type="checkbox" name="Farbe[]"  value="rot" 

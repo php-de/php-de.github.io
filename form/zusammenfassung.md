@@ -162,4 +162,4 @@ Dabei werden konsequent alle ausgewählten Werte den vorhergehenden überschreib
 ### Komplettbeispiel
 
 Für die Themen Formularverarbeitung und Affenformular wurde ein Beispiel verfasst, das die meisten Eingabeelemente und deren Verarbeitung abdeckt.
-Komplettbeispiel, [einfache Verarbeitung](http://www.php.de/wiki-php/index.php/Formularverarbeitung%2C_Komplettbeispiel) und Lösung als [Affenformular](http://www.php.de/wiki-php/index.php/Formularverarbeitung%2C_Komplettbeispiel).
+Komplettbeispiel, [einfache Verarbeitung](http://www.php.de/wiki-php/index.php/Formularverarbeitung%2C_Komplettbeispiel) und Lösung als [Affenformular](affenformular.html).

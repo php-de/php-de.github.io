@@ -22,7 +22,7 @@ inhalt:
         anchor: umsetzung
         simple: ""
 
-entry-type: in-progress
+entry-type: in-discussion
 ---
 
 Das sogenannte **Affenformular** ist eine Codebasis bei der Verarbeitung von Webformularen. Sein Hauptzweck ist die Erstellung einer grundlegenden Formularverarbeitung: Darstellung eines Forms, Prüfung des Status, Selbstaufruf mit wiederaufgefüllten Eingabefeldern. 

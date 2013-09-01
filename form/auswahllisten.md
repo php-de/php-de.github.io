@@ -1,7 +1,7 @@
 ---
 layout: guide
 group: "Formularverarbeitung"
-title: "Auswahllisten"
+title: "Auswahllisten (Selections)"
 creator: nikosch
 author:
     -   name: nikosch

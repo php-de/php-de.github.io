@@ -37,8 +37,6 @@ inhalt:
     -   name: "Komplettbeispiel"
         anchor: komplettbeispiel
         simple: ""
-        
-entry-type: in-progress
 ---
 
 ### Formularnotierung
@@ -154,7 +152,7 @@ Schließlich kann sogar eine Multiselection skalar übertragen werden
 <select name="auswahl"  multiple="multiple">
   <option>Wert 1<option>
   <option>Wert 2<option>
-  <option>Wert 3option>
+  <option>Wert 3<option>
   <option>Wert 4<option>
 </select>
 ~~~

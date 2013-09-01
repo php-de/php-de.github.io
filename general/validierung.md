@@ -22,7 +22,7 @@ inhalt:
         anchor: abgrenzung
         simple: ""
 
-entry-type: in-progress
+entry-type: in-discussion
 ---
 
 
@@ -53,7 +53,7 @@ Typische Beispiele konkreter Datentypen:
 Beispiele abstrakter Feldtypen: 
 
 - Ein Name kann zwar Sonderzeichen wie Umlaute, nie aber Zeichen wie ">" oder "§" enthalten 
-- Eine Altersangabe wird nie negativ oder größer als (sagen wir) 120 sein. Sinnvollere Wertte ergeben sich auch aus der Zielgruppe der Anwendung 
+- Eine Altersangabe wird nie negativ oder größer als (sagen wir) 120 sein. Sinnvollere Werte ergeben sich auch aus der Zielgruppe der Anwendung 
 - Das Format einer Emailadresse ist in einer Spezifikation festgelegt. Eine Emailangabe kann diesbezüglich abgeglichen werden. 
 - Eine Währungsangabe erlaubt nur bestimmte Zeichen 
 - Eine ID ist als Md5-Hash erzeugt worden und erlaubt nur Hexadezimale Zeichen 
@@ -76,9 +76,9 @@ Hierunter fallen alle Kriterien, die die Anzeige oder Funktion der Anwendung bew
 
 Beispiele: 
 
-- Pfadangabe darf keine "/../" Bereiche oder "http://" enthalten 
-- Eine freie Textangabe darf keine Zeichenkette "<script" enthalten 
-- Ein Datenbanksuchstring darf keine "/*" oder "*/" Zeichenketten oder SQL Schlüsselwörter enthalten 
+- Pfadangabe darf keine `/../` Bereiche oder `http://` enthalten 
+- Eine freie Textangabe darf keine Zeichenkette `<script` enthalten 
+- Ein Datenbanksuchstring darf keine `/*` oder `*/` Zeichenketten oder SQL Schlüsselwörter enthalten 
 
 Je nach Toleranz der Anwendung können folgende Fehler als Angriffsversuch oder weniger restriktiv als Fehleingabe kategorisiert und dementsprechend verarbeitet werden: 
 
@@ -98,7 +98,6 @@ Sicherheitsrelevante Validierung kann also allgemein als informationell verstand
 Generell gilt: 
 
 <div class="alert alert-info"><strong>Merke: </strong>Alle vom Client aus übersendeten Daten sind zu validieren und/oder zu filtern.<br> 
-<br> 
 (Leitsatz: *never trust user input* – vertraue niemals Nutzereingaben)</div>
 
 

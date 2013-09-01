@@ -117,7 +117,7 @@ Zur Verabeitung einer Gruppe bietet sich stets `foreach()` an:
 
 Zur Verarbeitung einzelner Werte sollte stets eine Verfügbarkeitsprüfung über `empty()` oder `isset()` erfolgen. 
 
-<div class="alert alert-info"><strong>Achtung!</strong>Häufig gemachter Fehler:
+<div class="alert alert-danger"><strong>Achtung! </strong>Häufig gemachter Fehler:
 Checkboxgruppen und Multiselections ermöglichen die Abwahl aller Einträge/Auswahlen. Wird nicht mindestens ein Wert ausgewählt, wird das gesamte Formularelement aber nicht übertragen! Dies ist bei Zugriffen auf Werte und Arrayschlüssel unbedingt zu beachten.</div>
 
 

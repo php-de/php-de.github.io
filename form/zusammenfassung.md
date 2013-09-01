@@ -98,7 +98,7 @@ Grundlegend betrachtet, unterscheidet die Verabeitung von Formularelementen aktu
 
 Dazu gehören alle Textfelder, Einfach-Selections und Radiobuttons. Nur ein Wert ist auswählbar oder direkt eingebbar. Zur Verarbeitung ist jeweils der Attributwert von value aus dem Formularelemnent Als Requestparametereintrag verfügbar. (Ausnahme: Textareas besitzen kein *value*-Attribut sondern benutzen den Taginhalt des Elements.
 
-Skalare Eingabefelder übermitteln in (ungefälschten) abgesendeten Formularen stets eine Stringtyp. Das gilt auch für numerische Angaben im HTML Bereich. Dieser Fakt ist durch das HTTP Protokoll bedingt und ist wichtig für die [Validierung](http://www.php.de/wiki-php/index.php/Validierung) von Eingabedaten.
+Skalare Eingabefelder übermitteln in (ungefälschten) abgesendeten Formularen stets eine Stringtyp. Das gilt auch für numerische Angaben im HTML Bereich. Dieser Fakt ist durch das HTTP Protokoll bedingt und ist wichtig für die [Validierung](http://php-de.github.io/general/validierung.html) von Eingabedaten.
 
 #### Mehrdimensionale Eingabetypen
 

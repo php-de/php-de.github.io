@@ -36,7 +36,7 @@ entry-type: in-discussion
 
 Die **Formularverarbeitung** ist ein Schwerpunktgebiet serverseitiger Programmiersprachen – und ein klassischer Grund, sich mit Sprachen wie PHP auseinanderzusetzen. 
 
-HTML bietet verschiedene Eingabeelemente an, die ähnlich den Feldern einer Erfassungsmaske gestaltet sind. Das Angebot umfasst klassische Eingabefelder, Ankreuz- und Auswahlelemente. Aktuelle Webbrowser können die Daten solcher Elememente zwar verarbeiten ([JavaScript](http://php-de.github.io/general/javascript.html)), aber nicht speichern. Auch sind Eingabedaten meist eher relevant für den Anbieter eines Webdienstes, nicht aber den Nutzer selbst, weshalb die Verarbeitung serverseitig erfolgt. Hier können die Daten beliebig analysiert (vgl. [Eingabevalidierung](http://www.php.de/wiki-php/index.php/Validierung)), manipuliert und verarbeitet werden. Das Spektrum reicht dabei von der Speicherung in einer Datenbank, über den Versand als Email bis hin zu aufwendigen Verarbeitungsmethoden. 
+HTML bietet verschiedene Eingabeelemente an, die ähnlich den Feldern einer Erfassungsmaske gestaltet sind. Das Angebot umfasst klassische Eingabefelder, Ankreuz- und Auswahlelemente. Aktuelle Webbrowser können die Daten solcher Elememente zwar verarbeiten ([JavaScript](http://php-de.github.io/general/javascript.html)), aber nicht speichern. Auch sind Eingabedaten meist eher relevant für den Anbieter eines Webdienstes, nicht aber den Nutzer selbst, weshalb die Verarbeitung serverseitig erfolgt. Hier können die Daten beliebig analysiert (vgl. [Eingabevalidierung](http://php-de.github.io/general/validierung.html)), manipuliert und verarbeitet werden. Das Spektrum reicht dabei von der Speicherung in einer Datenbank, über den Versand als Email bis hin zu aufwendigen Verarbeitungsmethoden. 
 
 Da die Natur des Menschen (die, Fehler zu machen) dem zustandslosen Verbindungsverhalten (oder der Vergesslichkeit) PHPs entgegenläuft, hat sich als Standardmethode der Datenverarbeitung das sogenannte [Affenformular (Standardverfahren)](http://php-de.github.io/form/affenformular.html) etabliert, das sich solange mit bereits eingetragenen Daten selbst aufruft, bis die Eingabe vollständig und fehlerfrei ist. Das Verfahren ist so praktisch, dass ihm in diesem Wiki ein eigener Themenbereich gewidmet wurde. 
  
@@ -299,6 +299,6 @@ Wie dieses Beispiel als Affenformular und mit kompletter Eingabeprüfung aussieh
 ### Weitere Beiträge zum Thema
 
 [Affenformular (Standardverfahren)](http://php-de.github.io/form/affenformular.html)
-[Eingabevalidierung](http://www.php.de/wiki-php/index.php/Validierung)
+[Eingabevalidierung](http://php-de.github.io/general/validierung.html)
 [Parametersicherheit](http://www.php.de/wiki-php/index.php?title=Parametersicherheit&action=edit)
 

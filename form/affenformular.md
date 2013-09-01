@@ -29,7 +29,7 @@ Das sogenannte **Affenformular** ist eine Codebasis bei der Verarbeitung von Web
 
 ![Affenformular, Funktionsprinzip des Arbeitsprozesses](images/affenformular_prozess.jpg) 
 
-In jedem Fall registriert ein solcher Code einen erfolgreichen Submit (i.A. einen [POST Request](http://php-de.github.io/request-handling/request.html#post)) und führt eine Folgeaktion (Parameterverarbeitung oder erneutes Darstellen des Formularcodes) aus. Ob eine [Validierung](http://www.php.de/wiki-php/index.php/Validierung) der übertragenen Feldwerte noch zum Affenformular gehört ist Ansichtssache. 
+In jedem Fall registriert ein solcher Code einen erfolgreichen Submit (i.A. einen [POST Request](http://php-de.github.io/request-handling/request.html#post)) und führt eine Folgeaktion (Parameterverarbeitung oder erneutes Darstellen des Formularcodes) aus. Ob eine [Validierung](http://php-de.github.io/general/validierung.html) der übertragenen Feldwerte noch zum Affenformular gehört ist Ansichtssache. 
 
 ### Abgrenzung
 

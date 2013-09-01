@@ -101,7 +101,7 @@ foreach ($_POST['Auswahl'] as $value) {
 
 ### Selection mit Vorauswahl dynamisch erzeugen
 
-In verschiedenen Fällen kann es nötig sein, dass Selections bei der Ausgabe dynamisch mit einem oder mehreren gegebenen Auswahlwerten vorselektiert werden. Nachfolgend wird zunächst das Prinzip erklärt und dann eine optimierte Variante gezeigt. In allen Beispielen werden als gegebene Auswahlwerte die Eingabeparameter aus einem [POST-Submit](http://php-de.github.io/request-handling/request.html#post) angenommen, wie es bspw. beim [Affenformular](http://www.php.de/wiki-php/index.php/Affenformular_%28Standardverfahren%29) üblich ist. Natürlich kann statt der `$_POST`-Angabe auch jede andere Variable gleichen Typs genutzt werden.
+In verschiedenen Fällen kann es nötig sein, dass Selections bei der Ausgabe dynamisch mit einem oder mehreren gegebenen Auswahlwerten vorselektiert werden. Nachfolgend wird zunächst das Prinzip erklärt und dann eine optimierte Variante gezeigt. In allen Beispielen werden als gegebene Auswahlwerte die Eingabeparameter aus einem [POST-Submit](http://php-de.github.io/request-handling/request.html#post) angenommen, wie es bspw. beim [Affenformular](http://php-de.github.io/form/affenformular.html) üblich ist. Natürlich kann statt der `$_POST`-Angabe auch jede andere Variable gleichen Typs genutzt werden.
 
 
 #### Funktionsprinzip

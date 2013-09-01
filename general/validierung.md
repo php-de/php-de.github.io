@@ -22,7 +22,7 @@ inhalt:
         anchor: abgrenzung
         simple: ""
 
-type-entry: in-progress
+entry-type: in-progress
 ---
 
 

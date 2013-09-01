@@ -14,8 +14,28 @@ author:
         profile: 21246
 
 inhalt:
-    -   name: ""
-        anchor: 
+    -   name: "Formularnotierung"
+        anchor: formularnotierung
+        simple: ""
+
+    -   name: "Übertragung"
+        anchor: bertragung
+        simple: ""
+
+    -   name: "Gemeinsamkeiten"
+        anchor: gemeinsamkeiten
+        simple: ""
+
+    -   name: "Datentypen (nativer Ansatz)"
+        anchor: datentypen-nativer-ansatz
+        simple: ""
+
+    -   name: "Datentypen (technischer Ansatz)"
+        anchor: datentypen-technischer-ansatz
+        simple: ""
+
+    -   name: "Komplettbeispiel"
+        anchor: komplettbeispiel
         simple: ""
         
 entry-type: in-progress

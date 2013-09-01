@@ -12,12 +12,17 @@ author:
         profile: 21246
 
 inhalt:
-    -   name: ""
-        anchor: 
+    -   name: "Abgrenzung"
+        anchor: abgrenzung
+        simple: ""
+    -   name: "Herleitung aus einer Standard-Formularverarbeitung"
+        anchor: herleitung-aus-einer-standard-formularverarbeitung
+        simple: ""
+    -   name: "Umsetzung"
+        anchor: umsetzung
         simple: ""
 
 entry-type: in-progress
-
 ---
 
 Das sogenannte **Affenformular** ist eine Codebasis bei der Verarbeitung von Webformularen. Sein Hauptzweck ist die Erstellung einer grundlegenden Formularverarbeitung: Darstellung eines Forms, Prüfung des Status, Selbstaufruf mit wiederaufgefüllten Eingabefeldern. 
@@ -119,9 +124,7 @@ Die unkomliziertesten Felder. Die Ausgabe erfolgt im value Attribut bzw. zwische
 ~~~
 
 ##### Auswahlelemente
-Hauptartikel Formularverarbeitung
-[Auswahlfelder](http://php-de.github.io/form/auswahlfelder.html)
-[Auswahllisten (Selections)](http://php-de.github.io/form/auswahllisten.html) 
+Hauptartikel Formularverarbeitung [Auswahlfelder](http://php-de.github.io/form/auswahlfelder.html) | [Auswahllisten (Selections)](http://php-de.github.io/form/auswahllisten.html) 
 
 Für alle anderen Elemente muß die jeweilige Auswahl durch ein spezielles Attribut (je nach Typ checked oder selected) gekennzeichnet werden. Das Vorgehen unterscheidet sich lediglich im Datentyp, das das Element liefert. 
 

@@ -143,7 +143,7 @@ Bsp.
 </form>
 ~~~
 
-<div class="alert alert-info"><strong>Achtung! </strong>Häufig gemachter Fehler: Das vorliegende Beispiel zeigt eine weit verbreitete, sicherheitskritische Angabe, um eine Form-Action wieder auf das aktuelle Script zu leiten (Affenformular).</div>
+<div class="alert alert-danger"><strong>Achtung! </strong>Häufig gemachter Fehler: Das vorliegende Beispiel zeigt eine weit verbreitete, sicherheitskritische Angabe, um eine Form-Action wieder auf das aktuelle Script zu leiten (Affenformular).</div>
  
 
 ### Abgrenzung

@@ -17,9 +17,13 @@ author:
         profile: 21246
 
 inhalt:
-    -   name: ""
-        anchor: 
-        simple: ""
+    -   name: "Anwendung"
+        anchor: anwendung
+        simple: "Datenbank, Formular-Validierung"
+
+    -   name: "Schluss"
+        anchor: schluss
+        simple: "Wichte Anmerkung zum Schluss"
 
 entry-type: in-progress
 

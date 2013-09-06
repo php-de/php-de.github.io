@@ -65,6 +65,7 @@ class Person
     {
         return 'My Name is ' , $this->__name , '! And I am ' , $this->__age , ' years old!<br />';
     }
+
 }
  
 $person = new Person();
@@ -106,6 +107,7 @@ class Person_chaining
     {
         return 'My Name is ' . $this->__name . '! And I am ' . $this->__age . ' years old!<br />';
     }
+
 }
  
 $person = new Person_chaining();

@@ -24,9 +24,6 @@ inhalt:
     -   name: "Schluss"
         anchor: schluss
         simple: "Schlussbemerkungen"
-
-entry-type: in-progress
-
 ---
 
 Unter **Method chaining** (engl. *chaining* = Verkettung) wird in der Welt der objektorientierten Programmierung (OOP) eine spezielle Syntax verstanden, die das Ausführen einer Reihe von Methoden eines Objektes beschreibt. Mit der Umstellung der Syntax geht eine Änderung des Rückgabeverhaltens der beteiligten Methoden einher. 

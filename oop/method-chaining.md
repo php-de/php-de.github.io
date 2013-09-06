@@ -23,7 +23,7 @@ inhalt:
 
     -   name: "Schluss"
         anchor: schluss
-        simple: "Wichte Anmerkung zum Schluss"
+        simple: "Schlussbemerkungen"
 
 entry-type: in-progress
 
@@ -37,7 +37,9 @@ Method chaining funktioniert nur mit mit dem erweiterten Objektmodell von PHP5.
 
 
 ### Anwendung
- 
+
+<div class="alert alert-warning"><strong>Achtung! </strong>Aus Gründen der Übersicht wurde auf Fehlerbehandlungen verzichtet, dies obliegt dem Nutzer.</div>
+
 #### klassische Anwendung von Methoden
  
 Hier ein Beispiel mit einer Klasse und Methoden, die im klassischen Sinne verwendet werden. 
@@ -274,6 +276,4 @@ class Validator
 Method chaining ist also eine interessant Art wie man mit Methoden umgehen kann. Bei sinnvoller Verwendung kann es so die Lesbarkeit erhöhen und den Aufwand für den Programmierer senken. 
 
 Ein Beispiel bei dem Method chaining eingesetzt wird wäre das Zend Framework! 
-
-<div class="alert alert-warning"><strong>Achtung! </strong>Aus Gründen der Übersicht wurde auf Fehlerbehandlungen verzichtet, dies obliegt dem Nutzer.</div>
 

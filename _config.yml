@@ -45,6 +45,11 @@ groups:
       desc: "Rund um die Erstellung, Verarbeitung, Validierung, etc. von Formularen"
       anchor: "form"
 
+    - name: "Objektorientierte Programmierung (OOP)"
+      path: "/oop"
+      desc: "OOP unter PHP"
+      anchor: "oop"
+
     - name: "Request-Handling"
       path: "/request-handling"
       desc: "Wissenswertes über das Request Handling in PHP."

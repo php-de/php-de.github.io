@@ -47,7 +47,7 @@ groups:
 
     - name: "Objektorientierte Programmierung (OOP)"
       path: "/oop"
-      desc: "Grundlagen in der OOP unter PHP"
+      desc: "OOP unter PHP"
       anchor: "oop"
 
     - name: "Request-Handling"

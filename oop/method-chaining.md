@@ -19,7 +19,7 @@ author:
 inhalt:
     -   name: "Anwendung"
         anchor: anwendung
-        simple: "Datenbank, Formular-Validierung"
+        simple: "als Beispiel: Datenbank, Formular-Validierung"
 
     -   name: "Schluss"
         anchor: schluss
@@ -120,13 +120,15 @@ My Name is Flo! And I am 21 years old!
 
 Es erfolgt genau die selbe Ausgabe wie bei dem ersten Beispiel. Der Unterschied ist dass hier die Methodenaufrufe einfach aneinander gehängt werden. Dies kann unter Umständen Schreibarbeit sparen und ein besseres Verständnis bieten. Dazu später noch ein paar Beispiele. 
 
-Doch warum können wir diese Methoden hintereinander aufrufen? Ein Aufruf funktioniert nach diesem Schema: `$object->method();`. Es gibt ein Objekt und es wird eine Methode dieses Objektes aufgerufen. Der Rückgabewert wird durch return in der Methode definiert. Das kann z.B. ein String, ein Integer oder ein Array sein natürlich kann auch nichts (null) zurück gegeben werden. Man könnte sich vorstellen das bei folgendem Aufruf `$x = $number->getValue();` die Methode eine Zahl zurück gibt. Es wird also der Variable `$x` zum Beispiel 5 zugewiesen. 5 wäre also der Rückgabewert der von der Methode `getValue()` zurück gegeben wird. 
+Doch warum können wir diese Methoden hintereinander aufrufen? Ein Aufruf funktioniert nach diesem Schema: `$object->method();`. Es gibt ein Objekt und es wird eine Methode dieses Objektes aufgerufen. Der Rückgabewert wird durch `return` in der Methode definiert. Das kann z.B. ein String, ein Integer oder ein Array sein natürlich kann auch nichts (null) zurück gegeben werden. Man könnte sich vorstellen das bei folgendem Aufruf `$x = $number->getValue();` die Methode eine Zahl zurück gibt. Es wird also der Variable `$x` zum Beispiel 5 zugewiesen. 5 wäre also der Rückgabewert der von der Methode `getValue()` zurück gegeben wird. 
 
 Bei Method chaining soll aber nach dem Methodenaufruf noch eine weitere Methode aufgerufen werden.Angenommen nach `getValue()` soll noch `setNewValue()` aufgerufen werden, also `$number->getValue()->setNewValue();`, würde also `$numer->getValue()` eine 5 ergeben und daraufhin noch `setNewValue()` aufgerufen werden. Hier die einzelnen Schritte die von PHP intern ausgeführt werden würden. 
 
 ~~~ php
-$number->getValue()->setNewValue(); // aus $number->getValue() wird 5
-5->setNewValue(); // jetzt wird noch setNewValue() aufgerufen
+// aus $number->getValue() wird 5
+$number->getValue()->setNewValue();
+// jetzt wird noch setNewValue() aufgerufen
+5->setNewValue();
 ~~~
 
 Dies kann natürlich nicht funktionieren da keine Methode auf einen Integer Wert aufgerufen werden kann. Die Methode soll natürlich wieder vom selben Objekt aufgerufen. Die Lösung ist also bei er ersten Methode das Objekt selber zurückzugeben. Denn dann kann wieder eine Methode auf dieses Objekt aufgerufen werden. 
@@ -135,15 +137,18 @@ Dies kann natürlich nicht funktionieren da keine Methode auf einen Integer Wert
 public function setName($name) 
 {
     $this->__name = $name;
-    return $this; // hier wird das Objekt selbst zurückgegeben
+    // hier wird das Objekt selbst zurückgegeben
+    return $this;
 }
 ~~~
 
 Das ganze würde also wie folgt ablaufen, hier dargestellt die einzelnen Schritte die intern von PHP ausgeführt werden würden. 
 
 ~~~ php
-$number->getValue()->setNewValue(); // $number ist wieder das Objekt und $number->getValue() gibt wieder das Objekt $number zurück
-$number->setNewValue(); // da das Objekt selbst zurückgegeben wurde kann eine weitere Methode ganz normal aufgerufen werden.
+// $number ist wieder das Objekt und $number->getValue() gibt wieder das Objekt $number zurück
+$number->getValue()->setNewValue();
+// da das Objekt selbst zurückgegeben wurde kann eine weitere Methode ganz normal aufgerufen werden
+$number->setNewValue();
 ~~~
 
 Um Method chaining zu nutzen muss also **nur** das Objekt selbst in den Methoden, die aneinander gekettet werden sollen, zurückgegeben werden. Es muss also in diesen Methoden immer ein `return $this;` am Ende aufgerufen werden. Die Daten die in den Methoden gesetzt oder verändert werden müssen allerdings in dem Objekt gespeichert werden um sie dann bei dem letzten Methodenaufruf der Kette verarbeitet zu werden. In dem Beispiel oben wird also das Alter und der Name intern gespeichert und erst bei der letzten Methode ausgegeben. 
@@ -236,7 +241,8 @@ class Validator
  
     public function isDate() 
     {
-        $date = explode('.', $this->__value); // deutsches Datum Format (tt.mm.jjjj)
+        // deutsches Datum Format (tt.mm.jjjj)
+        $date = explode('.', $this->__value);
         if (!checkdate($date[1], $date[0], $date[2])) {
             $this->__error++;
         }
@@ -277,5 +283,4 @@ class Validator
  
 Method chaining ist also eine interessant Art wie man mit Methoden umgehen kann. Bei sinnvoller Verwendung kann es so die Lesbarkeit erhöhen und den Aufwand für den Programmierer senken. 
 
-Ein Beispiel bei dem Method chaining eingesetzt wird wäre das Zend Framework! 
-
+Ein Beispiel bei dem Method chaining eingesetzt wird wäre das [Zend Framework](http://framework.zend.com/)!

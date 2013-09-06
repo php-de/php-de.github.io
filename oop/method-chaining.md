@@ -283,4 +283,4 @@ class Validator
  
 Method chaining ist also eine interessant Art wie man mit Methoden umgehen kann. Bei sinnvoller Verwendung kann es so die Lesbarkeit erhöhen und den Aufwand für den Programmierer senken. 
 
-Ein Beispiel bei dem Method chaining eingesetzt wird wäre das [Zend Framework](http://framework.zend.com/)!
+Ein Beispiel bei dem Method chaining eingesetzt wird wäre das [Zend Framework](http://framework.zend.com/).

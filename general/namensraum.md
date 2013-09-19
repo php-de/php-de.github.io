@@ -34,14 +34,6 @@ inhalt:
         anchor: superglobals
         simple: ""
 
-    -   name: "SuperGolbals"
-        anchor: superglobals
-        simple: ""
-
-    -   name: "SuperGolbals"
-        anchor: superglobals
-        simple: ""
-
     -   name: "Nicht-Variablen-Namensräume"
         anchor: nicht-variablen-namensrume
         simple: ""

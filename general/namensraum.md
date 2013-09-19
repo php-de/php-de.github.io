@@ -77,16 +77,16 @@ Definiert man nun einen lokalen Namensraum, so hat das zur Folge, dass die darin
 Einen lokalen Namensraum kann man durch eine Funktion definieren. Innerhalb dieser Funktion gilt eine andere Sichtbarkeit als außerhalb. 
 
 ~~~ php
-$var = 5;
-echo $var . '<br />';
-func();
-echo $var . '<br />';
- 
 function func()
 {
     $var = 4;
     echo $var . '<br />';
 }
+
+$var = 5;
+echo $var . '<br />';
+func();
+echo $var . '<br />';
 ~~~
 
 Das Ergebnis:
@@ -102,13 +102,13 @@ Obwohl der Variablen `$var` innerhalb der Funktion der Wert `4` zugewiesen wurde
 Noch deutlicher wird es bei folgendem Beispiel: 
 
 ~~~ php
-$var = 5;
-func();
- 
 function func()
 {
     echo $var;
 }
+
+$var = 5;
+func();
 ~~~
 
 Innerhalb des lokalen Namensraumes existiert die Variable ´$var´ nicht, weshalb eine Notice ausgegeben wird: 

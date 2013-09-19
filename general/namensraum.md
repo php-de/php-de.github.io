@@ -58,7 +58,7 @@ Standardmäßig werden Variablen im globalen Namensraum definiert. "Global" ist 
 ~~~ php
 // Variablendefinition im globalen Namensraum
 $var = 5;
-print $var;
+echo $var;
 ~~~
 
 Das Ergebnis:
@@ -78,14 +78,14 @@ Einen lokalen Namensraum kann man durch eine Funktion definieren. Innerhalb dies
 
 ~~~ php
 $var = 5;
-print $var . '<br />';
+echo $var . '<br />';
 func();
-print $var . '<br />';
+echo $var . '<br />';
  
 function func()
 {
     $var = 4;
-    print $var . '<br />';
+    echo $var . '<br />';
 }
 ~~~
 
@@ -107,7 +107,7 @@ func();
  
 function func()
 {
-    print $var;
+    echo $var;
 }
 ~~~
 
@@ -129,7 +129,7 @@ function func()
         $var = 5;
     }
     $var++;
-    print $var . '<br />';
+    echo $var . '<br />';
 }
 
 func();
@@ -152,7 +152,7 @@ function func()
         static $var = 5;
     }
     $var++;
-    print $var . '<br />';
+    echo $var . '<br />';
 }
 
 func();
@@ -178,13 +178,13 @@ function func()
         static $var = 5;
     }
     $var++;
-    print $var . '<br />';
+    echo $var . '<br />';
 }
 
 func();
 func();
 // ergibt Fehlermeldung:
-print $var;
+echo $var;
 ~~~
 
 ### Das Schlüsselwort global
@@ -195,7 +195,7 @@ Das Schlüsselwort ´global´ durchbricht den Namensraum und macht eine Variable
 function func()
 {
     global $var;
-    print $var; 
+    echo $var; 
 }
 
 $var = 5;
@@ -218,7 +218,7 @@ function func()
 }
 
 func();
-print $var;
+echo $var;
 ~~~
 
 Das Ergebnis ist dasselbe:
@@ -238,7 +238,7 @@ SuperGlobals sind von PHP reservierte Variablen, die in jedem Namensraum verfüg
 Ein Aufruf von
 
 ~~~ php
-echo '<pre>' . print_r($GLOBALS, true) . '</pre>';
+echo '<pre>' . echo_r($GLOBALS, true) . '</pre>';
 ~~~
 
 beweist dies.
@@ -253,7 +253,7 @@ function func()
 }
 
 func();
-print $var;
+echo $var;
 ~~~
 
 Das Ergebnis, wie erwartet:
@@ -276,4 +276,3 @@ Es obliegt dem Parser, den zuständigen Namensraum aufgrund der Syntax zu bestim
 In PHP gibt es zwei Strukturen (oder drei, je nach Betrachtungsweise), die jenseits der globalen Sichtbarkeit einen eigenen lokalen (Variablen-)Namensraum abbilden. Die Funktionen wurden bereits genannt. 
 Einen zweiten Namensraum bilden Klassenstrukturen, auf deren Eigenschaften aus anderen Namensräumen nur über ihr zugehöriges Objekt zugegriffen werden kann. Das Objekt muss dazu im aufrufenden Variablenraum als Variable verfügbar sein.
 Innerhalb eines Objektes sind weiterhin die Methoden zu nennen, die zur Auflösung von Zugriffen auf Objekteigenschaften das Schlüsselwort ´$this´ verwenden, was ebenfalls die Objektinstanz kennzeichnet.
-

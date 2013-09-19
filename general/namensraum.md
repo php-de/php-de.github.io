@@ -14,8 +14,40 @@ author:
         profile: 21246
 
 inhalt:
-    -   name:   ""
-        anchor: 
+    -   name: "Globaler Namensraum"
+        anchor: der-globale-namensraum
+        simple: ""
+
+    -   name: "Lokaler Namensraum"
+        anchor: der-lokale-namensraum
+        simple: ""
+
+    -   name: "Schlüsselwort static"
+        anchor: das-schlsselwort-static
+        simple: ""
+        
+    -   name: "Schlüsselwort global"
+        anchor: das-schlsselwort-global
+        simple: ""
+        
+    -   name: "SuperGolbals"
+        anchor: superglobals
+        simple: ""
+
+    -   name: "SuperGolbals"
+        anchor: superglobals
+        simple: ""
+
+    -   name: "SuperGolbals"
+        anchor: superglobals
+        simple: ""
+
+    -   name: "Nicht-Variablen-Namensräume"
+        anchor: nicht-variablen-namensrume
+        simple: ""
+
+    -   name: "Namensraum-Strukturen"
+        anchor: namensraum-strukturen
         simple: ""
 
 entry-type: in-progress

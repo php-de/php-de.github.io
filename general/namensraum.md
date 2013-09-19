@@ -232,7 +232,7 @@ Das Ergebnis ist dasselbe:
 
 ### SuperGlobals
 
-SuperGlobals sind von PHP reservierte Variablen, die in jedem Namensraum verfügbar sind. SuperGlobals beginnen immer mit einem Unterstrich _ im Namen. Zu ihnen gehören ´$_SERVER´, ´$_GET´, ´$_POST´, ´$_COOKIE´, ´$_REQUEST´, ´$_FILES´, ´$_SESSION´, ´$_ENV´ und ´$GLOBALS´.
+SuperGlobals sind von PHP reservierte Variablen, die in jedem Namensraum verfügbar sind. SuperGlobals beginnen immer mit einem Unterstrich _ im Namen. Zu ihnen gehören <code>$_SERVER</code>, <code>$_GET</code>, <code>$_POST</code>, <code>$_COOKIE</code>, <code>$_REQUEST</code>, <code>$_FILES</code>, <code>$_SESSION</code>, <code>$_ENV</code> und <code>$GLOBALS</code>.
 
 ´$GLOBALS´ stellt die einzige Ausnahme in der Namenskonvention dar und wird ohne Unterstrich geschrieben. Dieses Array enthält alle globalen Variablen, auch die zuvor genannten SuperGlobals. ´$GLOBALS´ kann also als die Hauptvariable bezeichnet werden.
 Ein Aufruf von

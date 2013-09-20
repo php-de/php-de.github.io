@@ -18,9 +18,6 @@ inhalt:
     -   name: "Referenzen auf nicht-initialisierte Variablen"
         anchor: referenzen-auf-nicht-initialisierte-variablen
         simple: ""
-
-
-entry-type: in-progress
 ---
 
 Eine **Referenz** stellt einen Verweis auf eine Speicherstelle dar, in der der Wert einer bereits initialisierten Variablen abgelegt wurde. Dabei übt sie praktisch die Funktion eines Aliasnamens für eine bereits existente Variable aus. Referenzen können auch [namensraumübergreifend](http://php-de.github.io/general/namensraum.html) eingesetzt werden. 
@@ -40,7 +37,7 @@ echo $var1 . ' - ' . $var2 . '<br />';
  
 // Referenzierung
 $var1 = 5;
-$var2 = &$var1;$var2 = 6;  // Anwendung des Referenzierungs-Operator
+$var2 = &$var1;$var2 = 6;  // Anwendung des Referenzierungsoperator
 echo $var1 . ' - ' . $var2;
 ~~~
 
@@ -79,7 +76,7 @@ $ref = &$var;
 var_dump($ref);
 ~~~
 
-Die Ausgabe
+Die Ausgabe:
 
 ~~~ php
 null

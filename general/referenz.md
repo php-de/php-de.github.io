@@ -18,6 +18,7 @@ inhalt:
     -   name: "Referenzen auf nicht-initialisierte Variablen"
         anchor: referenzen-auf-nicht-initialisierte-variablen
         simple: ""
+
 ---
 
 Eine **Referenz** stellt einen Verweis auf eine Speicherstelle dar, in der der Wert einer bereits initialisierten Variablen abgelegt wurde. Dabei übt sie praktisch die Funktion eines Aliasnamens für eine bereits existente Variable aus. Referenzen können auch [namensraumübergreifend](http://php-de.github.io/general/namensraum.html) eingesetzt werden. 

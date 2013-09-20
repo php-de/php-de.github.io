@@ -17,15 +17,21 @@ author:
         profile: 21246
 
 inhalt:
-    -   name: ""
-        anchor: 
+    -   name: "Festlegung der Parameter"
+        anchor: festlegung-der-parameter
         simple: ""
+
+    -   name: "Art der Übergabe"
+        anchor: art-der-bergabe
+        simple: ""
+
 
 entry-type: in-progress
 ---
 
 
-<div class="alert alert-info"><strong>Information: </strong>Dieser Artikel behandelt nicht die Parameterübergabe an ein PHP-Script. Diese Informationen sind in den Artikeln <a href="http://php-de.github.io/request-handling/request.html">Request</a> und <a href="http://php-de.github.io/request-handling/gpc.html">GPC</a> zu finden.</div>
+<div class="alert alert-info"><strong>Information:</strong><br>
+Dieser Artikel behandelt nicht die Parameterübergabe an ein PHP-Script. Diese Informationen sind in den Artikeln <a href="http://php-de.github.io/request-handling/request.html">Request</a> und <a href="http://php-de.github.io/request-handling/gpc.html">GPC</a> zu finden.</div>
 
 
 Die **Parameterübergabe** bezeichnet die Übergabe von Werten an eine Funktion oder Methode, welche die weitere Verarbeitung dieser Daten übernimmt. In aller Regel wird eine feste Anzahl von Parametern übergeben, die bei der Funktionsdeklaration bestimmt wird. Diese festgelegte Parameteranzahl nennt man *Funktions-* bzw. *Methodensignatur*. In vielen Hochsprachen stellen sind auch die Datentypen der einzelnen Parameter einen Teil der Signatur dar, weil PHP jedoch eine schwach getypte Sprache ist, ist die Festlegung der Datentypen nur beschränkt möglich. 
@@ -72,7 +78,7 @@ Wert1 - Wert2
 Beim zweiten Funktionsaufruf wird der zweite Parameter nicht übergeben, stattdessen wird der Standardwert benutzt. 
 
 
-<div class="alert alert-danger"><strong>Achtung! </strong>Häufig gemachter Fehler: 
+<div class="alert alert-danger"><strong>Achtung!</strong> Häufig gemachter Fehler:<br>
 Nach einem optionalen Parameter dürfen nur noch weitere optionale Parameter folgen, ein fester Parameter ist nicht mehr möglich. Die folgende Funktionssignatur ist also ungültig und wird eine Fehlermeldung zur Folge haben: 
 
 function func($param1, $param2 = 'xyz', $param3)

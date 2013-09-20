@@ -24,14 +24,9 @@ inhalt:
     -   name: "Art der Übergabe"
         anchor: art-der-bergabe
         simple: ""
-
-
-entry-type: in-progress
 ---
 
-
-<div class="alert alert-info"><strong>Information:</strong><br>
-Dieser Artikel behandelt nicht die Parameterübergabe an ein PHP-Script. Diese Informationen sind in den Artikeln <a href="http://php-de.github.io/request-handling/request.html">Request</a> und <a href="http://php-de.github.io/request-handling/gpc.html">GPC</a> zu finden.</div>
+<div class="alert alert-info"><strong>Information:</strong> Dieser Artikel behandelt nicht die Parameterübergabe an ein PHP-Script. Diese Informationen sind in den Artikeln <a href="http://php-de.github.io/request-handling/request.html">Request</a> und <a href="http://php-de.github.io/request-handling/gpc.html">GPC</a> zu finden.</div>
 
 
 Die **Parameterübergabe** bezeichnet die Übergabe von Werten an eine Funktion oder Methode, welche die weitere Verarbeitung dieser Daten übernimmt. In aller Regel wird eine feste Anzahl von Parametern übergeben, die bei der Funktionsdeklaration bestimmt wird. Diese festgelegte Parameteranzahl nennt man *Funktions-* bzw. *Methodensignatur*. In vielen Hochsprachen stellen sind auch die Datentypen der einzelnen Parameter einen Teil der Signatur dar, weil PHP jedoch eine schwach getypte Sprache ist, ist die Festlegung der Datentypen nur beschränkt möglich. 
@@ -61,7 +56,7 @@ Es ist auch möglich, optionale Parameter festzulegen, indem in der Signatur gle
 ~~~ php
 function func($param1, $param2 = 'Wert2')
 {
-    print $param1 . ' - ' . $param2 . '<br />';
+    echo $param1 . ' - ' . $param2 . '<br />';
 }
 
 func('Wert0', 'Wert1');
@@ -111,10 +106,12 @@ Type Hinting bezeichnet die Festlegung des Datentyps in der Signatur, indem der 
 func1(array $array)
 {
 }
-~~~
- 
+
 // der Parameter muss vom Typ MyInterface sein
-func2(MyInterface)Wird ein Klassenname angegeben, so muss der Parameter eine Instanz dieser Klasse oder einer ihrer Kindklassen sein. Handelt es sich um eine Schnittstelle, muss die Klasse, von der die Instanz stammt, diese realisieren. 
+func2(MyInterface)
+~~~
+
+Wird ein Klassenname angegeben, so muss der Parameter eine Instanz dieser Klasse oder einer ihrer Kindklassen sein. Handelt es sich um eine Schnittstelle, muss die Klasse, von der die Instanz stammt, diese realisieren. 
 
 
 

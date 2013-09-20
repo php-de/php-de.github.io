@@ -22,7 +22,7 @@ inhalt:
         anchor: der-lokale-namensraum
         simple: ""
 
-    -   name: "Schlüsselwort static"
+    -   name: "Schlüsselwort `static`"
         anchor: das-schlsselwort-static
         simple: ""
         

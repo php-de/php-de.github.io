@@ -26,7 +26,8 @@ inhalt:
         simple: ""
 ---
 
-<div class="alert alert-info"><strong>Information:</strong> Dieser Artikel behandelt nicht die Parameterübergabe an ein PHP-Script. Diese Informationen sind in den Artikeln <a href="http://php-de.github.io/request-handling/request.html">Request</a> und <a href="http://php-de.github.io/request-handling/gpc.html">GPC</a> zu finden.</div>
+<div class="alert alert-info"><strong>Information:</strong><br>
+Dieser Artikel behandelt nicht die Parameterübergabe an ein PHP-Script. Diese Informationen sind in den Artikeln <a href="http://php-de.github.io/request-handling/request.html">Request</a> und <a href="http://php-de.github.io/request-handling/gpc.html">GPC</a> zu finden.</div>
 
 
 Die **Parameterübergabe** bezeichnet die Übergabe von Werten an eine Funktion oder Methode, welche die weitere Verarbeitung dieser Daten übernimmt. In aller Regel wird eine feste Anzahl von Parametern übergeben, die bei der Funktionsdeklaration bestimmt wird. Diese festgelegte Parameteranzahl nennt man *Funktions-* bzw. *Methodensignatur*. In vielen Hochsprachen stellen sind auch die Datentypen der einzelnen Parameter einen Teil der Signatur dar, weil PHP jedoch eine schwach getypte Sprache ist, ist die Festlegung der Datentypen nur beschränkt möglich. 

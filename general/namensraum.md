@@ -227,7 +227,7 @@ Das Ergebnis ist dasselbe:
 5
 ~~~
 
-<div class="alert alert-warning"><strong>Achtung: </strong>Durch die Verwendung von global wird das Prinzip des Namensraumes außer Kraft gesetzt und es ist nicht mehr sicher, ob eine Variable bereits definiert wurde oder nicht. So kommt es leicht zu einer ungewollten Überschreibung von Variablen. Deshalb wird geraten, auf <code>global</code> zu verzichten. Wenn innerhalb einer Funktion auf eine Variable aus dem globalen Namensraum zugegriffen werden muss, sollte lieber eine <a href="http://www.php.de/wiki-php/index.php/Parameteruebergabe#Art_der_.C3.9Cbergabe">Referenz</a> als Parameter übergeben werden.</div>
+<div class="alert alert-warning"><strong>Achtung: </strong>Durch die Verwendung von global wird das Prinzip des Namensraumes außer Kraft gesetzt und es ist nicht mehr sicher, ob eine Variable bereits definiert wurde oder nicht. So kommt es leicht zu einer ungewollten Überschreibung von Variablen. Deshalb wird geraten, auf <code>global</code> zu verzichten. Wenn innerhalb einer Funktion auf eine Variable aus dem globalen Namensraum zugegriffen werden muss, sollte lieber eine <a href="http://php-de.github.io/general/referenz.html">Referenz</a> als Parameter übergeben werden.</div>
 
 
 ### SuperGlobals

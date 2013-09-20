@@ -11,9 +11,14 @@ author:
         profile: 21246
 
 inhalt:
-    -   name: ""
-        anchor: 
+    -   name: "Variablen und Referenzen"
+        anchor: variablen-und-referenzen
         simple: ""
+
+    -   name: "Referenzen auf nicht-initialisierte Variablen"
+        anchor: referenzen-auf-nicht-initialisierte-variablen
+        simple: ""
+
 
 entry-type: in-progress
 ---
@@ -35,7 +40,7 @@ echo $var1 . ' - ' . $var2 . '<br />';
  
 // Referenzierung
 $var1 = 5;
-$var2 = &$var1;$var2 = 6;  // Anwendung des Referenzoperatiors
+$var2 = &$var1;$var2 = 6;  // Anwendung des Referenzierungs-Operator
 echo $var1 . ' - ' . $var2;
 ~~~
 
@@ -48,7 +53,7 @@ Die Ausgabe:
 
 Man beachte den Referenzierungsoperator in der angemerkten Zeile. Bei der ersten Zuweisung wird der Wert der Variablen `$var1` in die Variable `$var2` bzw. deren Speicherstelle kopiert. Die beiden Werte sind fortan unabhängig voneinander. Bei der zweiten Zuweisung handelt es sich nicht um die Übergabe eines Wertes, sondern um die Übergabe der Speicheradresse. `$var1` und `$var2` verweisen also auf dieselbe Speicheradresse. Eine Änderung an der einen Variablen wirkt sich unmittelbar auf die andere aus. 
 
-Will man eine Speicherstelle leeren, kann man ihr den Wert null zuweisen. Der Einsatz von `unset()` bewirkt lediglich, dass der Bezeichner gelöscht wird, nicht aber der Wert. Dieser ist weiterhin über andere Referenzen erreichbar: 
+Will man eine Speicherstelle leeren, kann man ihr den Wert `null` zuweisen. Der Einsatz von `unset()` bewirkt lediglich, dass der Bezeichner gelöscht wird, nicht aber der Wert. Dieser ist weiterhin über andere Referenzen erreichbar: 
 
 ~~~ php
 $var = 5;
@@ -71,14 +76,13 @@ Was passiert aber, wenn eine Referenz auf eine nicht existierende Variable über
 
 ~~~ php
 $ref = &$var;
-echo is_null($var) ? 'is NULL' : 'is not NULL';
+var_dump($ref);
 ~~~
 
 Die Ausgabe
 
 ~~~ php
-is NULL
+null
 ~~~
 
 Es wird keine Notice ausgegeben, die Variable existiert. 
-

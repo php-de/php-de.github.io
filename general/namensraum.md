@@ -22,7 +22,7 @@ inhalt:
         anchor: der-lokale-namensraum
         simple: ""
 
-    -   name: "Schlüsselwort `static`"
+    -   name: "Schlüsselwort static"
         anchor: das-schlsselwort-static
         simple: ""
         
@@ -42,7 +42,7 @@ inhalt:
         anchor: namensraum-strukturen
         simple: ""
 
-entry-type: in-progress
+entry-type: in-discussion
 ---
 
 
@@ -238,7 +238,7 @@ SuperGlobals sind von PHP reservierte Variablen, die in jedem Namensraum verfüg
 Ein Aufruf von
 
 ~~~ php
-echo '<pre>' . echo_r($GLOBALS, true) . '</pre>';
+echo '<pre>' . print_r($GLOBALS, true) . '</pre>';
 ~~~
 
 beweist dies.

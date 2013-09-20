@@ -159,5 +159,5 @@ Abhilfe schafft bspw. die Bearbeitung des Eingabewertes mit `htmlentities()`. Di
 ~~~
 
 
-<div class="alert alert-warning"><strong>Achtung: </strong>Die vorliegenden Ausführungen sind auf das Funktionsprinzip reduziert. Eine Formularverarbeitung und -darstellung setzt zwingend eine Beschäftigung mit Unsicherheitsfaktoren wie <a href="http://www.php.de/wiki-php/index.php/Cross_Site_Scripting" target="_blank">XSS</a> voraus!</div>
+<div class="alert alert-warning"><strong>Achtung: </strong>Die vorliegenden Ausführungen sind auf das Funktionsprinzip reduziert. Eine Formularverarbeitung und -darstellung setzt zwingend eine Beschäftigung mit Unsicherheitsfaktoren wie <a href="http://www.php.de/wiki-php/index.php/Cross_Site_Scripting">XSS</a> voraus!</div>
 

@@ -39,7 +39,7 @@ inhalt:
     findet ihr, inkl. Anfahrtsbeschreibung und Menükarte, im PDF anbei.<br> 
     <br>
     Um das PDF ansehen zu können, benötigt ihr den 
-    <a href="http://get.adobe.com/de/reader/" target="_blank" rel="nofollow">Adobe Reader</a>.
+    <a href="http://get.adobe.com/de/reader/">Adobe Reader</a>.
     <br> 
     <br>
     <img src="images/party_smiley.png" alt="party smiley"> Let the good times roll! 
@@ -99,7 +99,7 @@ $message->setBody(
     findet ihr, inkl. Anfahrtsbeschreibung und Menükarte, im PDF anbei.<br> 
     <br>
     Um das PDF ansehen zu können, benötigt ihr nach wie vor den<br>
-    <a href="http://get.adobe.com/de/reader/" target="_blank" rel="nofollow">Adobe Reader</a>.
+    <a href="http://get.adobe.com/de/reader/">Adobe Reader</a>.
     <br> 
     <br>
     <img src="'.$cid.'" alt="party smiley"> Let the good times roll! 

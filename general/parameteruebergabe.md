@@ -75,13 +75,14 @@ Beim zweiten Funktionsaufruf wird der zweite Parameter nicht übergeben, stattde
 
 
 <div class="alert alert-danger"><strong>Achtung!</strong> Häufig gemachter Fehler:<br>
-Nach einem optionalen Parameter dürfen nur noch weitere optionale Parameter folgen, ein fester Parameter ist nicht mehr möglich. Die folgende Funktionssignatur ist also ungültig und wird eine Fehlermeldung zur Folge haben: 
-<pre><code>
+Nach einem optionalen Parameter dürfen nur noch weitere optionale Parameter folgen, ein fester Parameter ist nicht mehr möglich. Die folgende Funktionssignatur ist also ungültig und wird eine Fehlermeldung zur Folge haben.</div> 
+
+~~~ php
+// nicht möglich
 function func($param1, $param2 = 'xyz', $param3)
 {
 }
-</code></pre>
-</div> 
+~~~
 
 
 #### Variable Parameter

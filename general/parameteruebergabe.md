@@ -78,7 +78,7 @@ Beim zweiten Funktionsaufruf wird der zweite Parameter nicht übergeben, stattde
 Nach einem optionalen Parameter dürfen nur noch weitere optionale Parameter folgen, ein fester Parameter ist nicht mehr möglich. Die folgende Funktionssignatur ist also ungültig und wird eine Fehlermeldung zur Folge haben.</div> 
 
 ~~~ php
-// nicht möglich
+// ungültig
 function func($param1, $param2 = 'xyz', $param3)
 {
 }
@@ -112,6 +112,8 @@ func1(array $array)
 
 // der Parameter muss vom Typ MyInterface sein
 func2(MyInterface)
+{
+}
 ~~~
 
 Wird ein Klassenname angegeben, so muss der Parameter eine Instanz dieser Klasse oder einer ihrer Kindklassen sein. Handelt es sich um eine Schnittstelle, muss die Klasse, von der die Instanz stammt, diese realisieren. 

@@ -19,7 +19,11 @@ groups:
       path: "/general"
       desc: "Grundlegende Informationen zum Einstieg in PHP"
       anchor: "general"
-
+    - name: "Entwicklungs Umgebung"
+      path: "/dev-enviroment"
+      desc: "XAMPP,LAMPP,VirtualBox,ZendServer & Co."
+      anchor: "dev-enviroment"
+      
     - name: "Code-Optimierung"
       path: "/code-optimizing"
       desc: "Code-Optimierung von A bis Z."

@@ -2,7 +2,7 @@
 layout: guide
 title: "Entwicklungsumgebung mit Vagrant"
 creator: BlackScorp
-group: "dev-enviroment"
+group: "Entwicklungs Umgebung"
 author:
     -   name: BlackScorp
         profile: 16579

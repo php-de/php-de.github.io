@@ -29,7 +29,7 @@ inhalt:
         simple: ""
 ---
 
-<div class="alert alert-info"><strong>Information:</strong><br />
+<div class="alert alert-info"><strong>Information:</strong><br>
 Dieser Artikel behandelt nicht die Parameterübergabe an ein PHP-Script. Diese Informationen sind in den Artikeln <a href="http://php-de.github.io/request-handling/request.html">Request</a> und <a href="http://php-de.github.io/request-handling/gpc.html">GPC</a> zu finden.</div>
 
 
@@ -77,7 +77,7 @@ Wert1 - Standardwert2
 Beim zweiten Funktionsaufruf wird der zweite Parameter nicht übergeben, stattdessen wird der Standardwert benutzt. 
 
 
-<div class="alert alert-danger"><strong>Achtung!</strong> Häufig gemachter Fehler:<br />
+<div class="alert alert-danger"><strong>Achtung!</strong> Häufig gemachter Fehler:<br>
 Nach einem optionalen Parameter sollten nur noch weitere optionale Parameter folgen. Denn PHP bietet keine Möglichkeit, optionale Parameter zu überspringen.</div> 
 
 ~~~ php
@@ -147,7 +147,7 @@ function func(&$param)
 }
 
 $var = 5;
-echo $var . '<br />';
+echo $var . '<br>';
 func($var);
 echo $var;
 ~~~

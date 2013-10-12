@@ -11,10 +11,13 @@ author:
         profile: 2314
 
     -   name: mermshaus
-        profile: 150414
+        profile: 15041
 
     -   name: hausl
         profile: 21246
+        
+    -   name: Trainmaster
+        profile: 20243
 
 inhalt:
     -   name: "Festlegung der Parameter"
@@ -26,11 +29,11 @@ inhalt:
         simple: ""
 ---
 
-<div class="alert alert-info"><strong>Information:</strong><br>
+<div class="alert alert-info"><strong>Information:</strong><br />
 Dieser Artikel behandelt nicht die Parameterübergabe an ein PHP-Script. Diese Informationen sind in den Artikeln <a href="http://php-de.github.io/request-handling/request.html">Request</a> und <a href="http://php-de.github.io/request-handling/gpc.html">GPC</a> zu finden.</div>
 
 
-Die **Parameterübergabe** bezeichnet die Übergabe von Werten an eine Funktion oder Methode, welche die weitere Verarbeitung dieser Daten übernimmt. In aller Regel wird eine feste Anzahl von Parametern übergeben, die bei der Funktionsdeklaration bestimmt wird. Diese festgelegte Parameteranzahl nennt man *Funktions-* bzw. *Methodensignatur*. In vielen Hochsprachen stellen sind auch die Datentypen der einzelnen Parameter einen Teil der Signatur dar, weil PHP jedoch eine schwach getypte Sprache ist, ist die Festlegung der Datentypen nur beschränkt möglich. 
+Die **Parameterübergabe** bezeichnet die Übergabe von Werten an eine Funktion oder Methode, welche die weitere Verarbeitung dieser Daten übernimmt. In aller Regel wird eine feste Anzahl von Parametern übergeben, die bei der Funktionsdeklaration bestimmt wird. Diese festgelegte Parameteranzahl nennt man *Funktions-* bzw. *Methodensignatur*. In vielen Hochsprachen stellen die Datentypen der einzelnen Parameter einen Teil der Signatur dar. Weil jedoch PHP eine schwach getypte Sprache ist, ist die Festlegung der Datentypen nur beschränkt möglich. 
 
 
 ### Festlegung der Parameter
@@ -55,33 +58,43 @@ func('Wert1', 'Wert2');
 Es ist auch möglich, optionale Parameter festzulegen, indem in der Signatur gleich ein Wert zugewiesen wird. Dieser Standardwert wird benutzt, wenn der entsprechende Parameter beim Funktionsaufruf nicht definiert wird. 
 
 ~~~ php
-function func($param1, $param2 = 'Wert2')
+function func($param1, $param2 = 'Standardwert2')
 {
-    echo $param1 . ' - ' . $param2 . '<br />';
+    echo $param1 . ' - ' . $param2;
 }
 
-func('Wert0', 'Wert1');
+func('Wert1', 'Wert2');
 func('Wert1');
 ~~~
 
-Die Ausgabe:
+Ausgabe:
 
 ~~~
-Wert0 - Wert1
 Wert1 - Wert2
+Wert1 - Standardwert2
 ~~~
 
 Beim zweiten Funktionsaufruf wird der zweite Parameter nicht übergeben, stattdessen wird der Standardwert benutzt. 
 
 
-<div class="alert alert-danger"><strong>Achtung!</strong> Häufig gemachter Fehler:<br>
-Nach einem optionalen Parameter dürfen nur noch weitere optionale Parameter folgen, ein fester Parameter ist nicht mehr möglich. Die folgende Funktionssignatur ist also ungültig und wird eine Fehlermeldung zur Folge haben.</div> 
+<div class="alert alert-danger"><strong>Achtung!</strong> Häufig gemachter Fehler:<br />
+Nach einem optionalen Parameter sollten nur noch weitere optionale Parameter folgen. Denn PHP bietet keine Möglichkeit, optionale Parameter zu überspringen.</div> 
 
 ~~~ php
-// ungültig
 function func($param1, $param2 = 'xyz', $param3)
 {
+    echo $param1 . ' - ' . $param2 . ' - ' . $param3;
 }
+
+// Keine Möglichkeit, den Standardwert des zweiten Parameter zu benutzen
+// Es müssen drei Argumente übergeben werden
+func('Wert1', 'Wert2', 'Wert3');
+~~~
+
+Ausgabe:
+
+~~~
+Wert1 - Wert2 - Wert3
 ~~~
 
 
@@ -92,10 +105,10 @@ Es ist in PHP auch möglich, auf die explizite Festlegung der Signatur zu verzic
 Um dennoch auf die Parameter zugreifen zu können, bietet PHP die Funktion `func_get_args()`. 
 
 ~~~ php
-// keine explizit angegebenen Parameter:
+// Keine explizit angegebenen Parameter
 function func()
 {
-    // ggf. übergebene Parameter ausgeben:
+    // Ggf. übergebene Parameter ausgeben
     echo '<pre>' . print_r(func_get_args(), true) . '</pre>';
 }
 ~~~
@@ -105,19 +118,18 @@ function func()
 Type Hinting bezeichnet die Festlegung des Datentyps in der Signatur, indem der Datentyp vor dem Parameternamen notiert wird. Übergebene Parameter müssen diesem Datentyp entsprechen, ansonsten wird eine Fehlermeldung von Typ *Catchable fatal error* geworfen. Type Hinting ist **nicht** mit skalaren (primitiven) Datentypen möglich! 
 
 ~~~ php
-// der Parameter muss ein Array sein
+// Der Parameter muss ein Array sein
 func1(array $array)
 {
 }
 
-// der Parameter muss vom Typ MyInterface sein
+// Der Parameter muss vom Typ MyInterface sein
 func2(MyInterface)
 {
 }
 ~~~
 
-Wird ein Klassenname angegeben, so muss der Parameter eine Instanz dieser Klasse oder einer ihrer Kindklassen sein. Handelt es sich um eine Schnittstelle, muss die Klasse, von der die Instanz stammt, diese realisieren. 
-
+Wird ein Klassenname angegeben, so muss der Parameter eine Instanz dieser Klasse oder einer ihrer Kindklassen sein. Handelt es sich um eine Schnittstelle, muss der übergebene Parameter diese implementieren. 
 
 
 ### Art der Übergabe

@@ -91,7 +91,7 @@ $floatAutoDetect = function ($value) {
 };
 ~~~
 
-Zuletzt eine Variante, welche die intl Erweiterung (http://www.php.net/manual/de/intro.intl.php) voraussetzt. Es muss bedacht werden, dass die gewählte locale über die Interpretation der Werte entscheidet (zur Veranschaulichung siehe Tests).
+Zuletzt eine Variante, welche die [intl Erweiterung](http://www.php.net/manual/de/intro.intl.php) voraussetzt. Es muss bedacht werden, dass die übergebene Locale das Parsing beeinflusst (zur Veranschaulichung siehe Tests).
 
 ~~~ php
 $fmtDE = new NumberFormatter('de', NumberFormatter::DECIMAL);
@@ -102,7 +102,8 @@ $fmtEN = new NumberFormatter('en', NumberFormatter::DECIMAL);
 Tests:
 
 ~~~ php
-$arr = array(        // get_float()         $floatAutoDetect    $fmtDE          $fmtEN
+                     // get_float()         $floatAutoDetect    $fmtDE          $fmtEN
+$arr = array(
     '1500.23',       // double(1500.23)     double(1500.23)     float(150023)   float(1500.23)
     '1500,23',       // double(1500.23)     double(1500.23)     float(1500.23)  float(150023)
     '1.500,23',      // double(1500.23)     double(1500.23)     float(1500.23)  float(1.50023)

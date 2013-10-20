@@ -12,6 +12,9 @@ author:
 
     -   name: mermshaus
         profile: 15041
+        
+    -   name: Trainmaster
+        profile: 20243
 
 inhalt:
     -   name: ""
@@ -65,7 +68,7 @@ function get_float($value)
 Ein anderer Ansatz per [`filter_var`](http://php.net/filter_var):
 
 ~~~ php
-$filterFloatSeparatorAutoDetect = function ($value) {
+$floatAutoDetect = function ($value) {
     $a = filter_var($value, FILTER_VALIDATE_FLOAT, array(
         'options' => array('decimal' => '.'),
         'flags'   => FILTER_FLAG_ALLOW_THOUSAND
@@ -88,31 +91,39 @@ $filterFloatSeparatorAutoDetect = function ($value) {
 };
 ~~~
 
+Zuletzt eine Variante, welche die intl Erweiterung (http://www.php.net/manual/de/intro.intl.php) voraussetzt. Es muss bedacht werden, dass die gewählte locale über die Interpretation der Werte entscheidet (zur Veranschaulichung siehe Tests).
+
+~~~ php
+$fmtDE = new NumberFormatter('de', NumberFormatter::DECIMAL);
+$fmtEN = new NumberFormatter('en', NumberFormatter::DECIMAL);
+~~~
+
+
 Tests:
 
 ~~~ php
-$arr = array(
-    '1500.23',       // double(1500.23)     double(1500.23)
-    '1500,23',       // double(1500.23)     double(1500.23)
-    '1.500,23',      // double(1500.23)     double(1500.23)
-    '1,500.23',      // double(1500.23)     double(1500.23)
-    '-1,500.23',     // double(-1500.23)    double(-1500.23)
-    '-1,500,000',    // double(-1500000)    double(-1500000)
-    '-1,500',        // double(-1.5)        bool(false)
-    '1.500',         // double(1.5)         bool(false)
-    '-1,50',         // double(-1.5)        double(-1.5)
-    '-1.500,000',    // double(-1500)       double(-1500)
-    '1500,000,000',  // double(1500000000)  bool(false)
-    '-10',           // double(-10)         double(-10)
-    '.5',            // double(0.5)         double(0.5)
-    '.',             // double(0)           bool(false)
-    '',              // double(0)           bool(false)
-    ' ',             // double(0)           bool(false)
-    ' 5.',           // double(5)           double(5)
-    '5. ',           // double(5)           double(5)
-    'abc',           // double(0)           bool(false)
-    '1abc',          // double(1)           bool(false)
-    'abc1'           // double(0)           bool(false)
+$arr = array(        // get_float()         $floatAutoDetect    $fmtDE          $fmtEN
+    '1500.23',       // double(1500.23)     double(1500.23)     float(150023)   float(1500.23)
+    '1500,23',       // double(1500.23)     double(1500.23)     float(1500.23)  float(150023)
+    '1.500,23',      // double(1500.23)     double(1500.23)     float(1500.23)  float(1.50023)
+    '1,500.23',      // double(1500.23)     double(1500.23)     float(1.50023)  float(1500.23)
+    '-1,500.23',     // double(-1500.23)    double(-1500.23)    float(-1.50023) float(-1500.23)
+    '-1,500,000',    // double(-1500000)    double(-1500000)    float(-1.5)     float(-1500000)
+    '-1,500',        // double(-1.5)        bool(false)         float(-1.5)     float(-1500)
+    '1.500',         // double(1.5)         bool(false)         float(1500)     float(1.5)
+    '-1,50',         // double(-1.5)        double(-1.5)        float(-1.5)     float(-150)
+    '-1.500,000',    // double(-1500)       double(-1500)       float(-1500)    float(-1.5)    
+    '1500,000,000',  // double(1500000000)  bool(false)         float(1500)     float(1500000000)
+    '-10',           // double(-10)         double(-10)         float(-10)      float(-10)
+    '.5',            // double(0.5)         double(0.5)         float(5)        float(0.5)
+    '.',             // double(0)           bool(false)         bool(false)     bool(false)
+    '',              // double(0)           bool(false)         bool(false)     bool(false)
+    ' ',             // double(0)           bool(false)         bool(false)     bool(false)
+    ' 5.',           // double(5)           double(5)           bool(false)     bool(false)
+    '5. ',           // double(5)           double(5)           float(5)        float(5)
+    'abc',           // double(0)           bool(false)         bool(false)     bool(false)
+    '1abc',          // double(1)           bool(false)         float(1)        float(1)    
+    'abc1'           // double(0)           bool(false)         bool(false)     bool(false)
 );
 
 foreach ($arr as $val) {
@@ -120,7 +131,9 @@ foreach ($arr as $val) {
 
     var_dump(
         get_float($val),
-        filter_var($val, FILTER_CALLBACK, array('options' => $filterFloatSeparatorAutoDetect))
+        filter_var($val, FILTER_CALLBACK, array('options' => $floatAutoDetect)),
+        $fmtDE->parse($val, NumberFormatter::TYPE_DOUBLE),
+        $fmtEN->parse($val, NumberFormatter::TYPE_DOUBLE)
     );
 
     echo "\n";
@@ -128,4 +141,3 @@ foreach ($arr as $val) {
 ~~~
 
 Zu beachten ist die unterschiedliche Ausgabe bei Eingaben wie `"1.500"` und `"1,500"`, die `get_float` als `double(1.5)` interpretiert, während der Ansatz mit `filter_var` hier `bool(false)` zurückgibt, was „nicht entscheidbar“ bedeutet. Zudem akzeptiert nur `get_float` eine Eingabe wie `"1500,000,000"`, in der nicht jeder mögliche Tausenderseparator gesetzt ist.
-

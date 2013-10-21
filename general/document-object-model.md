@@ -24,7 +24,7 @@ inhalt:
         simple: ""
 
     -   name: "Weiterführende Links"
-        anchor: weiterfuehrende-links
+        anchor: weiterfhrende-links
         simple: ""
 
 entry-type: in-discussion
@@ -79,10 +79,11 @@ eines Elements wird als `#text`-Knoten (`#text`-Node) behandelt.
 <strong>Hinweis:</strong>
 
 Gecko-Browser interpretieren die Leerzeichen und Zeilenumbrüche zwischen den
-Elementen ebenfalls als `#text-Knoten`, weshalb es oft zu unerwarteten
-Skript-Fehlern kommt. Dieses Verhalten ist laut W3C-Standard allerdings nicht
-korrekt. Eine mögliche Lösung dieses Problems gibt es im [Mozilla Developer
-Center](http://developer.mozilla.org/en/whitespace_in_the_DOM).
+Elementen ebenfalls als <code>#text</code>-Knoten, weshalb es oft zu
+unerwarteten Skript-Fehlern kommt. Dieses Verhalten ist laut W3C-Standard
+allerdings nicht korrekt. Eine mögliche Lösung dieses Problems gibt es im <a
+href="http://developer.mozilla.org/en/whitespace_in_the_DOM">Mozilla Developer
+Center</a>.
 
 </div>
 

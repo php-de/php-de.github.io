@@ -16,7 +16,6 @@ layout: default
         <thead>
             <tr>
                 <th class="topic">Thema</th>
-                <th class="creator">Verfasser</th>
                 <th class="state">Status</th>
             </tr>
         </thead>
@@ -25,7 +24,6 @@ layout: default
             {% if sitegroup.name == current.group %}
             <tr>
                 <td class="topic"><a href="{{ current.url }}"><span class="glyphicon glyphicon-bookmark"></span> {{ current.title }}</a></td>
-                <td class="creator">{{ current.creator }}</td>
                 <td class="state left-alerted">{% case current.entry-type %}{% when 'in-progress' %}<div class="alert alert-danger">In Bearbeitung</div>{% when 'in-discussion' %}<div class="alert alert-warning">In Diskussion</div>{% when 'deprecated' %}<div class="alert-info">Veraltet</div>{% else %}<div class="alert alert-success">Fertiggestellt</div>{% endcase %}</td>
             </tr>
             {% endif %}

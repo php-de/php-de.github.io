@@ -24,7 +24,7 @@ inhalt:
         simple: ""
 
     -   name: "Weiterführende Links"
-        anchor: weiterfuehrende-links
+        anchor: weiterfhrende-links
         simple: ""
 
 entry-type: in-discussion

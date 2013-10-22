@@ -141,7 +141,7 @@ $items = range(1, 4);
 
 $f = fac(count($items));
 
-for ($i = $f * -2; $i <= $f * 2; $i++) {
+for ($i = 0; $i < $f; $i++) {
     printf("% 3d  :  %s\n", $i, join(', ', getNthPermutation($items, $i)));
 }
 ~~~

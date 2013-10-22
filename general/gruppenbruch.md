@@ -12,7 +12,7 @@ author:
 
 inhalt:
     -   name: "Prinzip und Voraussetzung"
-        anchor: prinzip-und-voraussetzungen
+        anchor: prinzip-und-voraussetzung
         simple: ""
 
     -   name: "Bruch nach Vergleichskriterium"

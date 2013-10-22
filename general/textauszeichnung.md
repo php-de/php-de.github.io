@@ -272,14 +272,14 @@ werden bspw. Absätze berücksichtigt.
 
 Pseudo-semantische HTML Auszeichnung, reduzierte Dokumentsyntax:
 
-~~~
- <html>
-     <head />
-     <body>
-         <p>This is only a test of the <strong>emergency broadcast system</strong>.</p>
-         <p>This is only a test of the <em>emergency broadcast system</em>.</p>
-     </body>
- </html>
+~~~ html
+<html>
+    <head />
+    <body>
+        <p>This is only a test of the <strong>emergency broadcast system</strong>.</p>
+        <p>This is only a test of the <em>emergency broadcast system</em>.</p>
+    </body>
+</html>
 ~~~
 
 Rich Text Format, Dokumentsyntax:

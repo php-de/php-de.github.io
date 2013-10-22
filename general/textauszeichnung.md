@@ -62,7 +62,7 @@ den Unterschied von Klartextformaten gegenüber einem binären Typ.
 Auch wenn eine Abgrenzung zu modernen Scripts und Hochsprachen oft schwierig
 ist, gelten Markup-Sprachen genau genommen nicht als Programmiersprachen, weil
 ihnen grundlegende Kontrollstrukturen fehlen. HTML wird also nicht
-`programmiert`, trotzdem kann man wohl gemeinhin von einem Quellcode sprechen.
+*programmiert*, trotzdem kann man wohl gemeinhin von einem Quellcode sprechen.
 
 
 
@@ -92,7 +92,7 @@ Ausformung oder ein Verhalten des Strukturelementes spezifizieren.
 Da XML keine bestimmte Elementmenge definiert, beziehen sich die nachfolgenden
 Ausführungen auf HTML.
 
-Alle Auszeichnungen – sogenannte `tags` – sind an den englischen Sprachschatz
+Alle Auszeichnungen – sogenannte *tags* – sind an den englischen Sprachschatz
 angelehnt und damit funktionsbeschreibend.
 
 * `<strong>` bezeichnet einen betonten Textabschnitt

@@ -31,9 +31,8 @@ Siehe nächste Frage.
 **„Wie kann ich mit `mail` Anhänge versenden?“**
 
 Benutze eine fertige Mailsoftware.
-[PHPMailer](http://phpmailer.worxware.com/), [Swift
-Mailer](http://swiftmailer.org/).
-
+[PHPMailer](http://phpmailer.worxware.com/), [Swift Mailer](http://swiftmailer.org/).
+Siehe hierzu auch [diesen Artikel](http://php-de.github.io/email/mail-class.html).
 
 
 **„Wie kann ich erreichen, dass mein Formular bei Unvollständigkeit wieder

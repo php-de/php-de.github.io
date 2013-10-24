@@ -68,7 +68,7 @@ Die Sprache PHP ist eng mit dem EVA-Prinzip verknüpft, weil der übliche Sprach
 
 PHP kommt hier die Rolle der Ausgabe einer Information zu. Diese ist zunächst statisch - „Hallo Welt“. 
 
-Im nächsten Schritt soll das Script eine URL-Übergabe wiedergeben. Aus Gründen der [Scriptsicherheit](http://php-de.github.io/general/cross-site-scripting.html) fügen wir einen htmlspecialchars-Befehl ein, der sich um die [Maskierung](http://www.php.de/wiki-php/index.php/Zeichenmaskierung) (sog. Escaping) schädlicher Eingabewerte kümmert: 
+Im nächsten Schritt soll das Script eine URL-Übergabe wiedergeben. Aus Gründen der [Scriptsicherheit](http://php-de.github.io/general/cross-site-scripting.html) fügen wir einen htmlspecialchars-Befehl ein, der sich um die [Maskierung](http://php-de.github.io/general/kontextwechsel.html) (sog. Escaping) schädlicher Eingabewerte kümmert: 
 
 ~~~ php
 <html>

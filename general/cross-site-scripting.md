@@ -1,6 +1,6 @@
 ---
 layout: guide
-title: "Cross-Site-Scripting"
+title: "Cross-Site-Scripting (XSS)"
 group: "Allgemein"
 creator: Manko10
 author:

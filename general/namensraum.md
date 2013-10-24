@@ -1,6 +1,6 @@
 ---
 layout: guide
-title: "Namensraum"
+title: "Namensraum (Scope)"
 group: "Allgemein"
 creator: Manko10
 author:

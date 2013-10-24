@@ -101,7 +101,7 @@ Bei einem POST-Request werden die Parameter nicht an die URL angehängt, sondern
 Ein Beispiel-Request könnte z.B. wie folgt aussehen:
 
 ~~~html
-POST /wiki-php/index.php/Request HTTP/1.1
+POST /php/index.php/Request HTTP/1.1
 Host: php.de
 Content-Type: application/x-www-form-urlencoded
 Content-Length: 33
@@ -114,7 +114,7 @@ Zunächst wird die Sendemethode (hier: POST) angegeben, gefolgt von der URL, an 
 Es folgen weiter die Angabe des für einen POST-Request erforderlichen Content-Types sowie die Länge des Requests. Hier wird in Bytes angegeben, wie lang der Body des Requests ist.
 
 Eine Leerzeile trennt schließlich den Headerbereich vom Body. In diesem befinden sich nun die Parameter, vergleichbar mit denen eines GET-Requests.
-Die Länge der gesendeten Daten eines POST-Requests ist theoretisch nur von der Einstellung post_max_size  in der [php.ini](http://www.php.de/wiki-php/index.php/Php.ini) abhängig. Allerdings kann es sein, dass das Skript dennoch vorzeitig abbricht, da die Übertragung zu lange dauert oder das Speicherlimit erreicht wurde.
+Die Länge der gesendeten Daten eines POST-Requests ist theoretisch nur von der Einstellung post_max_size  in der [php.ini](http://php-de.github.io/general/php-ini.html) abhängig. Allerdings kann es sein, dass das Skript dennoch vorzeitig abbricht, da die Übertragung zu lange dauert oder das Speicherlimit erreicht wurde.
 
 ##### Anwendungsgebiet
 

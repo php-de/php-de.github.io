@@ -54,7 +54,7 @@ Um ein PHP-Skript aufzurufen, wird ein [Request](http://php-de.github.io/request
 
 ### Was PHP nicht ist 
 PHP ist hingegen nicht dazu gedacht, direkt mit dem Benutzer zu interagieren, sprich: es ist nicht möglich, direkt auf Eingaben vom Benutzer zu reagieren, sofern diese nicht durch einen erneuten Request an den Server gesendet wurden.
-Für direkte Interaktion mit dem Benutzer ist [JavaScript](http://www.php.de/wiki-php/index.php/JavaScript) gedacht, welches (genau entgegengesetzt zu PHP) im Browser des Benutzers läuft, hingegen nicht auf dem Server ausgeführt wird. 
+Für direkte Interaktion mit dem Benutzer ist [JavaScript](http://php-de.github.io/general/javascript.html) gedacht, welches (genau entgegengesetzt zu PHP) im Browser des Benutzers läuft, hingegen nicht auf dem Server ausgeführt wird. 
 
 #### Somit ist mit PHP folgendes nicht möglich: 
 - Direkte Verarbeitung von Benutzereingaben bzw. aktive Interaktion mit dem Anwender 

@@ -28,7 +28,7 @@ inhalt:
 
 ---
 
-**JavaScript** ist eine auf ECMAScript ([ECMA 262](http://www.ecma-international.org/publications/standards/Ecma-262.htm)) basierende Skriptsprache, die im Browser des Anwenders läuft. Es ist mit JavaScript also möglich, Operationen auf Client-Ebene durchzuführen. Meist handelt es sich dabei um Manipulationen des [Document Object Model](http://www.php.de/wiki-php/index.php/Document_Object_Model) (DOM, Objektbaum eines HTML- oder XML-Dokumentes), Benutzerinteraktion oder Browserabfragen. 
+**JavaScript** ist eine auf ECMAScript ([ECMA 262](http://www.ecma-international.org/publications/standards/Ecma-262.htm)) basierende Skriptsprache, die im Browser des Anwenders läuft. Es ist mit JavaScript also möglich, Operationen auf Client-Ebene durchzuführen. Meist handelt es sich dabei um Manipulationen des [Document Object Model](http://php-de.github.io/general/document-object-model.html) (DOM, Objektbaum eines HTML- oder XML-Dokumentes), Benutzerinteraktion oder Browserabfragen. 
 
 ### Sprachelemente und Systematik
 

@@ -114,7 +114,7 @@ Für die Umsetzung des Abschicken & Wiederauffüllen-Verfahrens müssen die unte
 Die Grundlagen zur Übergabe von Formular-Parameterdaten sind bereits unter [Formularverarbeitung](http://php-de.github.io/form/form.html) beschrieben. Nachfolgend wird darauf aufbauend die Wiederbelegung der Elemente beschrieben. 
 
 ##### Textfeld und Inputfeld 
-Hauptartikel [Formularverarbeitung Textfelder](http://www.php.de/wiki-php/index.php/Formularverarbeitung%2C_Textfelder) 
+Hauptartikel [Formularverarbeitung Textfelder](http://php-de.github.io/form/textfelder.html) 
 
 Die unkomliziertesten Felder. Die Ausgabe erfolgt im value Attribut bzw. zwischen den Tags. Bitte Kapitel *Problematik HTML Sonderzeichen* beachten. 
 
@@ -149,7 +149,7 @@ ergäbe
 
 wobei der Browser *"Peter sagte "* als Attributwert für *value* interpretierte. Ein folgendes > würde auch das input Element verlassen usw. 
 
-Analog kann über einen unbearbeiteten Parameter auch Stylesheet-Formatierung oder - weit mächtiger - JavaScript Code in das Script eingeschleust werden. Dieses Verfahren nennt man [Cross Site Scripting](http://www.php.de/wiki-php/index.php/Cross_Site_Scripting). 
+Analog kann über einen unbearbeiteten Parameter auch Stylesheet-Formatierung oder - weit mächtiger - JavaScript Code in das Script eingeschleust werden. Dieses Verfahren nennt man [Cross Site Scripting](http://php-de.github.io/general/cross-site-scripting.html). 
 
 
 Abhilfe schafft bspw. die Bearbeitung des Eingabewertes mit `htmlentities()`. Dieser wandelt HTML Syntaxbestandteile in eine sogenannte Entity (einen HTML Ersatzcode) um, der vom Browser nur in der Anzeige als das gewünschte Zeichen gerendert wird. Obiges Beispiel erzeugte beispielsweise die HTML Ausgabe: 
@@ -159,5 +159,5 @@ Abhilfe schafft bspw. die Bearbeitung des Eingabewertes mit `htmlentities()`. Di
 ~~~
 
 
-<div class="alert alert-warning"><strong>Achtung: </strong>Die vorliegenden Ausführungen sind auf das Funktionsprinzip reduziert. Eine Formularverarbeitung und -darstellung setzt zwingend eine Beschäftigung mit Unsicherheitsfaktoren wie <a href="http://www.php.de/wiki-php/index.php/Cross_Site_Scripting">XSS</a> voraus!</div>
+<div class="alert alert-warning"><strong>Achtung: </strong>Die vorliegenden Ausführungen sind auf das Funktionsprinzip reduziert. Eine Formularverarbeitung und -darstellung setzt zwingend eine Beschäftigung mit Unsicherheitsfaktoren wie <a href="http://php-de.github.io/general/cross-site-scripting.html">XSS</a> voraus!</div>
 

@@ -138,7 +138,7 @@ Die Parameter lassen sich auf zwei Arten übergeben. Zum einen durch *Call by Va
 
 Bei der *Call by Value*-Übergabe wird eine Kopie des Wertes im lokalen [Namensraum](http://php-de.github.io/general/namensraum.html) der Funktion bekannt gemacht. Dieser ist gekapselt und hat keine Verbindung mehr zur Ursprungsvariablen. Änderungen am Parameterwert wirken sich also nicht auf Variablen des globalen Namensraumes aus. Die Parameterübergaben aus den Beispielen zuvor sind allesamt *Call by Value*-Übergaben. 
 
-*Call by Reference*-Übergaben liefern keine Kopie des Wertes, sondern eine [Referenz](http://www.php.de/wiki-php/index.php/Referenz) auf die übergebene Variable. Änderungen am Parameter wirken sich also direkt auf die übergebene Variable des aufrufenden Namensraumes aus. Um einen Parameter als Referenz zu deklarieren, wird der Referenz-Operator `&` benutzt. 
+*Call by Reference*-Übergaben liefern keine Kopie des Wertes, sondern eine [Referenz](http://php-de.github.io/general/referenz.html) auf die übergebene Variable. Änderungen am Parameter wirken sich also direkt auf die übergebene Variable des aufrufenden Namensraumes aus. Um einen Parameter als Referenz zu deklarieren, wird der Referenz-Operator `&` benutzt. 
 
 ~~~ php
 function func(&$param)

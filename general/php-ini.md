@@ -92,7 +92,7 @@ Schon jetzt sollten <a href="http://www.php.net/manual/en/security.magicquotes.d
 
 ### register_globals
 
-Die Direktive register_globals in der php.ini bewirkt, dass alle Request-Parameter unter ihrem Namen als Variable im globalen [Scope](http://www.php.de/wiki-php/index.php/Scope) verfügbar sind. Wird einer PHP-Datei beispielsweise der GET-Parameter foo=bar übergeben, so ist bei aktiver register_globals Einstellung der Wert bar im Skript direkt unter dem Variablennamen $foo abrufbar. 
+Die Direktive register_globals in der php.ini bewirkt, dass alle Request-Parameter unter ihrem Namen als Variable im globalen [Scope](http://php-de.github.io/general/namensraum.html) verfügbar sind. Wird einer PHP-Datei beispielsweise der GET-Parameter foo=bar übergeben, so ist bei aktiver register_globals Einstellung der Wert bar im Skript direkt unter dem Variablennamen $foo abrufbar. 
 
 Da register_globals in frühen PHP-Versionen Standard war, setzen viele alte (veraltete) Scripte noch auf dieses Verhalten. In neuen Serverumgebungen funktionieren diese Scripte jedoch out-of-the-box nicht mehr, da register_globals in aktuellen PHP-Versionen deaktiviert ist und damit die betreffenden Variablen nicht mehr automatisch im Scope deklariert werden. 
 
@@ -102,7 +102,7 @@ Die Verwendung von Variablen, die durch register_globals automatisch initialisie
 
 <div class="alert alert-danger">
 <strong>Achtung!</strong> register_globals ist seit PHP 4.2.0 standardmäßig deaktiviert, seit PHP 5.3.0 DEPRECATED (veraltet) und wurde in PHP 5.4.0 endgültig entfernt.
-Es wird dringend empfohlen, stattdessen <a href="http://www.php.de/wiki-php/index.php/SuperGlobals">SuperGlobals</a> zu verwenden! 
+Es wird dringend empfohlen, stattdessen <a href="http://php-de.github.io/general/namensraum.html#superglobals">SuperGlobals</a> zu verwenden! 
 </div>
 
 ##### Verfügbarkeit

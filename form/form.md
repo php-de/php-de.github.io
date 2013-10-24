@@ -298,7 +298,6 @@ Wie dieses Beispiel als Affenformular und mit kompletter Eingabeprüfung aussieh
 
 ### Weitere Beiträge zum Thema
 
-[Affenformular (Standardverfahren)](http://php-de.github.io/form/affenformular.html)
-[Eingabevalidierung](http://php-de.github.io/general/validierung.html)
-[Parametersicherheit](http://www.php.de/wiki-php/index.php?title=Parametersicherheit&action=edit)
-
+[Affenformular (Standardverfahren)](http://php-de.github.io/form/affenformular.html) 
+[Eingabevalidierung](http://php-de.github.io/general/validierung.html) 
+Parametersicherheit (Link folgt)

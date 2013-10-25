@@ -106,14 +106,17 @@ einen Stringbegrenzer, ein Semikolon oder eine Klammer vergessen. Siehe:
 
 
 **„You have an error in your SQL syntax; check the manual that corresponds to
-your MySQL server version for the right syntax to use near '…' at line …“**
+your MySQL server version for the right syntax to use near '…' at line …“ /
+„Warning: mysql_fetch_row() expects parameter 1 to be resource, boolean
+given“**
 <a href="#sql-error">#sql-error</a>
 {: #sql-error}
 
 <div style="margin-left: 20px;">
 
-Die Query der Datenbankabfrage ist fehlerhaft. Lass Dir den fertigen String
-der entsprechenden Query vor der Anfrage testweise ausgeben.
+Der SQL-String für die Datenbankabfrage ist fehlerhaft. Lass dir den fertigen
+String der entsprechenden Query vor der Anfrage testweise ausgeben. Siehe:
+[SQL-Fehlerbehebung](http://php-de.github.io/debugging/sql.html).
 
 </div>
 

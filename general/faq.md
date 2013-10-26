@@ -105,6 +105,84 @@ einen Stringbegrenzer, ein Semikolon oder eine Klammer vergessen. Siehe:
 
 
 
+**„Was sind SQL-Injections und was kann ich dagegen unternehmen?“**
+<a href="#sql-injection">#sql-injection</a>
+{: #sql-injection}
+
+<div style="margin-left: 20px;">
+
+SQL-Injections fallen in den Bereich der
+[Kontextwechsel-Probleme](http://php-de.github.io/general/kontextwechsel.html).
+SQL-Queries werden in PHP als normaler String zusammengebaut. Dynamisch
+hinzugefügte Werte (etwa eine Benutzereingabe in `$_POST['name']`) können dabei
+die vorgesehene Logik der Query verändern, wenn sie für den Kontext syntaktisch
+relevante Zeichen (etwa die Anführungszeichen `"` und `'`) enthalten.
+
+~~~ php
+$_POST['name'] = "Max' OR 1";
+$query = "DELETE FROM nutzer WHERE name = '" . $_POST['name'] . "'";
+// Resultierender String:
+// DELETE FROM nutzer WHERE name = 'Max' OR 1
+~~~
+
+In diesem Beispiel gelingt es der Eingabe in `$_POST['name']`, durch ein
+geschickt platziertes Anführungszeichen den Kontext „String in einer SQL-Query“
+zu verlassen und in den Kontext „SQL-Query“ darüber auszubrechen. Dort wird die
+Bedingung, welche Einträge aus `nutzer` gelöscht werden sollen, um den Teil `OR
+1` erweitert, was dazu führt, dass die Gesamtbedingung für jeden Datensatz in
+dieser Tabelle erfüllt ist. Durch die fertige Abfrage werden somit *alle*
+Datensätze in der Tabelle gelöscht.
+
+Wie bei allen Kontextwechseln muss derlei unerwünschten Effekten kein gezielter
+Angriffsversuch vorausgehen. Im Beispiel würde bereits die Eingabe eines Namens
+wie `O'Brian` die Query syntaktisch ungültig werden und fehlschlagen lassen.
+
+Zur Vermeidung von SQL-Injections dienen Funktionen, die die syntaktisch
+relevanten Zeichen, die in Eingaben enthalten sein können, durch Escaping so
+anpassen, dass sie nicht mehr zu einem Kontextwechsel führen. Aus `"` wird so
+beispielsweise `\"`. Das verdeutlicht dem Datenbanksystem, dass hier kein
+Stringbegrenzer gemeint ist (syntaktische Funktion), sondern lediglich das
+konkrete Zeichen `"` (reiner Inhalt).
+
+Für jede Datenbankschnittstelle existiert mindestens eine spezielle Funktion
+oder Methode, die dieses Escaping durchführen kann. Es *muss* diese zur
+Schnittstelle gehörende Funktion genutzt werden. Eine allgemeine Funktion wie
+`addslashes` ist *nicht* ausreichend. Eine Auswahl dieser Funktionen für einige
+Schnittstellen:
+
+* mysql (veraltet): `mysql_real_escape_string`
+* mysqli: `mysqli_real_escape_string`
+* PDO: [`PDO::Quote`](http://www.php.net/manual/en/pdo.quote.php)
+* postgresql: [`pg_escape_string`](http://www.php.net/manual/en/function.pg-escape-string.php) (und andere)
+
+Die Anwendung dieser Funktionen ist quasi immer gleich und nicht sonderlich
+kompliziert: Bevor ein Wert in den Query-String eingefügt wird, muss er die
+passende Escape-Funktion durchlaufen.
+
+~~~ php
+$query = "
+    DELETE FROM nutzer
+    WHERE name = '" . mysqli_real_escape_string($link, $_POST['name']) . "'
+";
+~~~
+
+Es ist zu empfehlen, *jeden* variablen Wert, der in Query-Strings eingefügt
+wird, durch die passende Escape-Funktion zu schicken. Also auch dann, wenn der
+Wert je nach Logik der Anwendung nur beispielsweise aus `[0-9A-Za-z]` bestehen
+kann. Diese Beschränkung könnte sich ändern oder sie könnte durch einen Bug
+umgangen werden. Auch sollte kein Entwickler kognitive Leistung dafür
+aufbringen müssen, darüber nachzudenken, warum an einer Stelle eine
+Escape-Funktion fehlt. Schließlich wäre es denkbar, dass sie versehentlich
+vergessen wurde.
+
+Viele Datenbankschnittstellen unterstützen zusätzlich das Konzept der [Prepared
+Statements](https://de.wikipedia.org/wiki/Prepared_Statement), das ebenfalls
+SQL-Injections verhindert.
+
+</div>
+
+
+
 **„You have an error in your SQL syntax; check the manual that corresponds to
 your MySQL server version for the right syntax to use near '…' at line …“ /
 „Warning: mysql_fetch_row() expects parameter 1 to be resource, boolean

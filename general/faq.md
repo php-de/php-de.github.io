@@ -105,6 +105,51 @@ einen Stringbegrenzer, ein Semikolon oder eine Klammer vergessen. Siehe:
 
 
 
+**„Warum werden auf meiner Seite die Umlaute falsch dargestellt, obwohl ich
+UTF-8 im HTML-Dokument angegeben habe?“**
+<a href="#html-charset">#html-charset</a>
+{: #html-charset}
+
+<div style="margin-left: 20px;">
+
+Die Zeichensatz-Angabe im `meta`-Element im HTML-Code ist nur eine von mehreren
+Möglichkeiten, den Zeichensatz, in dem der Inhalt einer Seite kodiert ist, zu
+benennen. Das `meta`-Element hat dabei nur die vierthöchste Priorität.
+
+> In the case of conflict between multiple encoding declarations, precedence
+rules apply to determine which declaration wins out. For XHTML and HTML, the
+precedence is as follows, with 1 being the highest.
+>
+> 1. HTTP Content-Type header
+> 2. byte-order mark (BOM)
+> 3. XML declaration
+> 4. meta element
+> 5. link charset attribute
+
+* [Declaring character encodings in HTML](http://www.w3.org/International/questions/qa-html-encoding-declarations)
+
+Die Punkte 2 und 3 der Liste kommen in der Praxis selten vor und sind zu
+vernachlässigen. Interessant ist allerdings Punkt 1, der `Content-Type`-Header
+der HTTP-Response. Dieser hat die höchste Priorität und kann in der
+Webserver-Konfiguration mit einem Standardwert vorbelegt werden, der dann die
+`meta`-Angabe im HTML-Code überschreibt. Das ist in aller Regel die Ursache für
+die falsche Darstellung der Nicht-ASCII-Zeichen. Welche Charset-Angaben für
+eine Seite gesetzt sind, kann beispielsweise mit dem [Internationalization
+Checker](http://validator.w3.org/i18n-checker/) des W3C geprüft werden. Der
+`Content-Type`-Header kann über die Konfiguration des Webservers gesetzt werden
+oder auch direkt im PHP-Code:
+
+~~~ php
+header('Content-Type: text/html; charset=UTF-8');
+~~~
+
+Das Hinzufügen dieser Zeile löst das Problem meist. Wie jeder `header`-Aufruf
+muss auch dieser vor der ersten Ausgabe des Scripts erfolgen.
+
+</div>
+
+
+
 **„Was sind SQL-Injections und was kann ich dagegen unternehmen?“**
 <a href="#sql-injection">#sql-injection</a>
 {: #sql-injection}

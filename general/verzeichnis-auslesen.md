@@ -15,6 +15,10 @@ inhalt:
         anchor: hinweis
         simple: ""
 
+    -   name: "Der moderne Weg"
+        anchor: der-moderne-weg
+        simple: ""
+
     -   name: "Grundlage"
         anchor: grundlage
         simple: ""
@@ -44,6 +48,31 @@ entry-type: in-discussion
   teilweise weggelassen.
 * Die Beispielcodes machen Gebrauch von sogenanntem „linksgehaltenem Code“. Es
   ist sinnvoll, sich vor der Lektüre mit diesem Ansatz vertraut zu machen.
+
+
+
+### Der moderne Weg
+
+Das folgende Beispiel nutzt
+[SPL-Klassen](http://us3.php.net/manual/en/book.spl.php), die in PHP 5.3
+hinzugefügt wurden. Iteratoren sind der empfohlene Weg, das Dateisystem
+rekursiv zu durchlaufen.
+
+~~~ php
+$iterator = new RecursiveIteratorIterator(
+    new RecursiveDirectoryIterator(__DIR__)
+);
+
+foreach ($iterator as $file) {
+    /* @var $file SplFileInfo */
+
+    if (false === $file->isFile()) {
+        continue;
+    }
+
+    echo $file->getPathname() . "\n";
+}
+~~~
 
 
 
@@ -170,7 +199,7 @@ function readDirRecursive($dir)
     }
     closedir($handle);
 
-return true;
+    return true;
 }
 
 
@@ -244,7 +273,7 @@ function readDirRecursive($dir)
     }
     closedir($handle);
 
-return $result;
+    return $result;
 }
 
 
@@ -298,7 +327,7 @@ function readDirRecursive($dir , & $result)
     }
     closedir($handle);
 
-return true;
+    return true;
 }
 
 

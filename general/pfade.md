@@ -34,9 +34,7 @@ inhalt:
         anchor: besonderheiten
         simple: ""
 
-
 entry-type: in-discussion
-
 ---
 
 ### Serverpfade
@@ -66,9 +64,9 @@ generelle Verwendung von `/`, auch unter Windows-Serversystemen.
 Wurzelverzeichnis des Mount points (Linux, Unix) bzw. das Laufwerk (Windows),
 in dessen Subpfad sich das aktuell gestartete PHP-Script befindet.
 
-Beispiel: index.php liegt unter Windows in `C:\xampp\htdocs\test\`. Eine darin
-referenzierte Pfadangabe `/abc/cde/` bezieht sich dann auf den Systempfad
-`C:\abc\cde\`.
+Beispiel: index.php liegt unter Windows in `C:\xampp\htdocs\test`. Eine darin
+referenzierte Pfadangabe `/abc/cde` bezieht sich dann auf den Systempfad
+`C:\abc\cde`.
 
 Alle anderen Pfade werden als relativ interpretiert.
 
@@ -79,7 +77,7 @@ oder mehrere Verzeichnisse durch `/` getrennt) oder sind leer (für das aktuelle
 Verzeichnis). Sie beziehen sich stets auf den kompletten Serverpfad des aktuell
 gestarteten PHP-Scripts.
 
-Beispiel: index.php liegt unter Linux in `/homepages/47/u110815/htdocs/` eines
+Beispiel: index.php liegt unter Linux in `/homepages/47/u110815/htdocs` eines
 Mount points. Eine darin referenzierte Pfadangabe `../abc/cde/test.txt`
 bezieht sich dann auf den Systempfad `/homepages/47/u110815/abc/cde/test.txt`.
 
@@ -147,10 +145,10 @@ konkrete Pfade gemappt werden. In der Regel sind das:
   abbilden.
 - Pfadangaben in der URL werden relativ zum Userverzeichnis adressiert.
 
-Beispiel: Ein Nutzer reserviert sich die Domain `http://example.com` bei seinem
-Hoster HostingXY. HostingXY richtet dem Nutzer jetzt auf seinem Server das
-Userverzeichnis `/homepages/47/u110815/` ein und mappt die Domain
-`http://example.com/` auf `/homepages/47/u110815/htdocs/`. Legt der User nun
+Beispiel: Ein Nutzer reserviert sich die Domain `http://example.com/` bei seinem
+Hoster *HostingXY*. *HostingXY* richtet dem Nutzer jetzt auf seinem Server das
+Userverzeichnis `/homepages/47/u110815` ein und mappt die Domain
+`http://example.com/` auf `/homepages/47/u110815/htdocs`. Legt der User nun
 eine Datei in dieses Verzeichnis (`/homepages/47/u110815/htdocs/index.html`),
 so wird der Server den URL `http://example.com/index.html` entsprechend
 auflösen und das Dokument ausliefern.
@@ -163,14 +161,14 @@ Für diese gilt eben Gesagtes. Domain und Subdomain bestimmen das physische
 Serververzeichnis, weitere URL-Pfadangaben werden relativ zum Serververzeichnis
 benutzt, sofern kein Rewriting im Spiel ist.
 
-Beispiel: Bezieht sich die Domain `http://example.com` auf das Verzeichnis
-`/homepages/47/u110815/htdocs/`, so referenziert die URL
+Beispiel: Bezieht sich die Domain `http://example.com/` auf das Verzeichnis
+`/homepages/47/u110815/htdocs`, so referenziert die URL
 `http://example.com/images/test.jpg` die Datei
 `/homepages/47/u110815/htdocs/images/test.jpg` auf der entsprechenden Maschine.
 
 #### Absolute Webpfade
 
-Die aktuelle Domain (oben `http://example.com`) kann durch `/` angesprochen
+Die aktuelle Domain (oben `http://example.com/`) kann durch `/` angesprochen
 werden. Es ergibt sich eine absolute Pfadangabe, etwa `/images/test.jpg`, für
 eben genanntes Beispiel.
 
@@ -179,10 +177,8 @@ eben genanntes Beispiel.
 Analog zu absoluten Serverpfaden kann eine Ressource auch relativ zum aktuellen
 Dokument referenziert werden. Wiederum sind die Angaben `.`, `..`, ein
 Verzeichnispfad oder der leere String gültig. Die Angabe ist dabei relativ zum
-sogenannten Doc Root. Das ist physisch der o.g. Mapping-Ordner für die aktuelle
-Domain, aus Sicht der URL-Adressierung ist das Serverdateisystem aber nicht
-transparent. Das bedeutet, der Doc Root bildet aus Sicht der URL das
-Wurzelverzeichnis, das auch nicht mit `..` verlassen werden kann.
+URL des HTML-Dokuments. Es ist dabei natürlich nicht möglich, den Document-Root
+zu verlassen, indem ausreichend oft `../` in den Pfad eingefügt wird.
 
 #### Analogie
 
@@ -190,17 +186,23 @@ Der Serverpfad ist ein Dateisystempfad auf einer konkreten Maschine. Webpfade
 kann man sich so vorstellen, dass ein Subpfad dieses Dateisystems als eigenes
 Laufwerk „gemountet“ wird (unter Windows: subst). Damit ergibt sich ein neues
 Wurzelverzeichnis, das nach „oben hin“ nicht verlassen werden kann und
-ansonsten normals absolut oder relativ adressiert werden kann.
+ansonsten normal absolut oder relativ adressiert werden kann.
 
 Hinweise:
 
-- Sowohl absolute als auch relative Webpfad sind relativ zur aktuellen Domain. „Absolut“ bzw. „relativ“ bezieht sich hier nur auf den Rootpfad der Domain (Doc Root).  
-- Wie gesagt, ist das referenzierende Dokument relevant. Gerade bei CSS-Dateien mit `url()`-Stylesheetangaben ist hier der Webpfad der CSS-Datei maßgebich, nicht der Pfad des (HTML-)Dokuments, das im Browser aufgerufen wurde.  
-  
+- Sowohl absolute als auch relative Webpfade sind relativ zur aktuellen Domain.
+  „Absolut“ beziehungsweise „relativ“ bezieht sich hier nur auf den Rootpfad
+  der Domain (Document-Root).
+
+- Wie gesagt, ist das referenzierende Dokument relevant. Gerade bei CSS-Dateien
+  mit `url()`-Stylesheet-Angaben ist hier der Webpfad der CSS-Datei maßgeblich,
+  nicht der Pfad des (HTML-)Dokuments, das im Browser aufgerufen wurde.
+
+
 
 ### Komplettbeispiel
- 
-Struktur des Projektes im Dateisystem
+
+Struktur des Projekts im Dateisystem:
 
 ~~~
 /
@@ -220,18 +222,17 @@ Struktur des Projektes im Dateisystem
           index.php
 ~~~
 
-index.php
+index.php:
 
 ~~~ php
 <?php
- 
+
 // absoluter Serverpfad als Konstante
 define('PATH_PROJECT' , '/homepages/47/u110815/htdocs/');
- 
- 
+
 // relativer Serverpfad
-require('includes/function.php'); 
- 
+require('includes/function.php');
+
 ?><html>
 <head>
   <title />
@@ -239,61 +240,60 @@ require('includes/function.php');
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
- 
+
   <div id="logo"></div>
   <?php echo getContent ('inhalt.txt'); ?>
- 
+
 </body>
 </html>
 ~~~
 
-function.php
+function.php:
 
 ~~~ php
 <?php
- 
+
 function getContent ($file)
 {
   // absoluter Serverpfad
   $path= PATH_PROJECT . 'contents/' . $file;
- 
+
   return(file_get_contents($path));
 }
 ~~~
 
-styles.css
+styles.css:
 
 ~~~ php
  #logo {
    width :100px;
    height:100px;
- 
+
    background-image:url(../images/test.jpg); /* relativer Webpfad */
  }
 ~~~
 
-inhalt.txt 
+inhalt.txt:
 
 ~~~ php
 <h1>Dies ist ein Text</h1>
 <p>
    <!-- Webpfad mit vollständiger URL -->
-   <img src="http://example.com/images/title.jpg" /> 
- 
+   <img src="http://example.com/images/title.jpg" />
+
    Dies ist ein Text.
 </p>
 ~~~
 
 ### Sichtbarkeit
 
-Als logische Konsequenz aus den obigen Aussagen zum DocRoot ergibt sich, dass
-jenseits des DocRoots abgelegte Dateien nicht öffentlich über den Webserver
-erreichbar sind. Serverseitig (bspw. durch PHP) kann dagegen frei auf solche
-Dateien zugegriffen werden, die entspr. Userrechte vorausgesetzt.
+Als logische Konsequenz aus den obigen Aussagen zum Document-Root ergibt sich, dass
+jenseits des Document-Roots abgelegte Dateien nicht öffentlich über den Webserver
+erreichbar sind. Serverseitig (beispielsweise durch PHP) kann dagegen frei auf solche
+Dateien zugegriffen werden, die entsprechenden Userrechte vorausgesetzt.
 
-„Jenseits des Docroot“ bezeichnet alle Pfade, die oberhalb oder parallel zum
-DocRoot (und selbst nicht als DocRoot gemappt sind).
-
+„Jenseits des Document-Roots“ bezeichnet alle Pfade, die oberhalb oder parallel zum
+Document-Root existieren (und selbst nicht als Document-Root gemappt sind).
 
 ~~~
 + homepages
@@ -313,11 +313,12 @@ DocRoot (und selbst nicht als DocRoot gemappt sind).
 Eine alternative Zugriffssicherung wird in der Praxis durch Einsatz einer .htaccess-Datei erreicht.
 
 
+
 ### Besonderheiten
 
-#### mod rewrite
+#### mod_rewrite
 
 #### URL-Wrapper
 
 #### (Dateisystem)-Links
- 
+

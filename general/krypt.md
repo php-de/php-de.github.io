@@ -1,7 +1,7 @@
 ---
 layout: guide
 title: "Hashing, Kodierung, Verschlüsselung"
-group: "General"
+group: "[DRAFT]"
 creator: hausl
 author:
     -   name: hausl

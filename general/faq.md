@@ -158,6 +158,7 @@ muss auch dieser vor der ersten Ausgabe des Scripts erfolgen.
 
 SQL-Injections fallen in den Bereich der
 [Kontextwechsel-Probleme](http://php-de.github.io/general/kontextwechsel.html).
+
 SQL-Queries werden in PHP als normaler String zusammengebaut. Dynamisch
 hinzugefügte Werte (etwa eine Benutzereingabe in `$_POST['name']`) können dabei
 die vorgesehene Logik der Query verändern, wenn sie für den Kontext syntaktisch

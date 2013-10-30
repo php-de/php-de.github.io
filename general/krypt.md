@@ -109,7 +109,6 @@ echo $str_base64;
 // RnJhbnogamFndCBpbSBrb21wbGV0dCB2ZXJ3YWhybG9zdGVuIFRheGkgcXVlciBkdXJjaCBCYXllcm4u
 
 // und wieder zurück
-
 echo base64_decode($str_base64);
 // Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
 ~~~

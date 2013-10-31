@@ -72,15 +72,6 @@ Jedoch sind die Meinungen und Empfehlungen zu diesem Thema unterschiedlich:
 Ein mehrmaliges hashen eines Passwortes bringt keinen Vorteil, mehr einen Nachteil. Der Grund darin liegt daran, das der Ergebnis-Hash "nur" aus den Ziffern 0 bis 9 und den Buchstaben a bis f besteht. Durch erneutes hashen verkleinert man somit nur unötig die Ausgabgs-Wertebasis.
 
 
-##### Gesalzene Hashes
-
-Dazu aus [Wikipedia](http://de.wikipedia.org/wiki/Salt_(Kryptologie))
-
-> Salt (englisch für Salz) bezeichnet in der Kryptographie eine zufällig gewählte Zeichenfolge, die an einen gegebenen Klartext vor der Verwendung als Eingabe einer Hashfunktion angehängt wird, um die Entropie der Eingabe zu erhöhen. Es wird häufig für die Speicherung und Übermittlung von Computer-Passwörtern benutzt.
-
-Das Prinzip ist, vor dem hashen dem Ausgangswert noch einen weitern Wert, den "Salt", hinzuzufügen. Dadurch ergibt sich ein anderer Hashwert und unterbindet/erschwert somit das herausfinden des Ausgangswertes über die bereits erwähnten [Rainbow-Tables](http://de.wikipedia.org/wiki/Rainbow_Table).
-
-
 ##### Beispiele
 
 Beispiele mit sha256-Algorithmus - PHP stellt dazu die Funktion [hash()](http://php.net/manual/de/book.hash.php) zur Verfügung.
@@ -116,6 +107,25 @@ echo hash("sha256", $str);
 ~~~
 
 
+Längere Texte werden duch den Algorithmus ebenfalls auf die idente Länge gebracht
+
+~~~ php
+$str = "Das Problem zu erkennen ist wichtiger, als die Lösung zu erkennen, denn die genaue Darstellung des Problems führt zur Lösung. (Albert Einstein)";
+echo hash("sha256", $str);
+// ergibt:
+// 39a448a529b271542bd12ddcd19779c3a0bcaa750442da2e1ad6fbbe0645dd91
+~~~
+
+
+##### Gesalzene Hashes
+
+Dazu aus [Wikipedia](http://de.wikipedia.org/wiki/Salt_(Kryptologie))
+
+> Salt (englisch für Salz) bezeichnet in der Kryptographie eine zufällig gewählte Zeichenfolge, die an einen gegebenen Klartext vor der Verwendung als Eingabe einer Hashfunktion angehängt wird, um die Entropie der Eingabe zu erhöhen. Es wird häufig für die Speicherung und Übermittlung von Computer-Passwörtern benutzt.
+
+Das Prinzip ist, vor dem hashen dem Ausgangswert noch einen weitern Wert, den "Salt", hinzuzufügen. Dadurch ergibt sich ein anderer Hashwert und unterbindet/erschwert somit das herausfinden des Ausgangswertes über die bereits erwähnten [Rainbow-Tables](http://de.wikipedia.org/wiki/Rainbow_Table).
+
+
 Beispiel mit "Salz". Gäbe es in einer Rainbow-Table bereits die Kombination zwischen Frank und dem ungesalzenen Hash, dann kann mit Hilfe des Salz und des daraus entstehenden abweichenden Hash die Feststellung jedenfalls erschwert werden.
 
 **WICHTIG**: Ändert sich der Salt oder wird dieser "verloren", kann kann eine korrekte Berechnung des richigen Hash durchgeführt werden und es muss ein neues Passwort erstellt werden.
@@ -126,16 +136,6 @@ $salt = "sAit,4#";
 echo hash("sha256", $str.$salt);
 // ergibt:
 // af5340996c00a6fcc3146c276e172aa866d0f6ef4ce6df7c44987c5f2bcf6774
-~~~
-
-
-Längere Texte werden duch den Algorithmus ebenfalls auf die idente Länge gebracht
-
-~~~ php
-$str = "Das Problem zu erkennen ist wichtiger, als die Lösung zu erkennen, denn die genaue Darstellung des Problems führt zur Lösung. (Albert Einstein)";
-echo hash("sha256", $str);
-// ergibt:
-// 39a448a529b271542bd12ddcd19779c3a0bcaa750442da2e1ad6fbbe0645dd91
 ~~~
 
 

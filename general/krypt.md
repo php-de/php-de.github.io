@@ -116,7 +116,10 @@ echo hash("sha256", $str);
 ~~~
 
 
-Gleiches Prinzip beim "Salzen", sprich der Verwendung eines Salt. Gäbe es in einer Rainbow-Table bereits die Kombination zwischen Frank und dem obigen Hash, dann kann mit Hilfe des Salt und des daraus entstehenden abweichenden Hash die Feststellung verhindert werden. **WICHTIG** Ändert sich der Salt oder wird dieser "verloren", kann kann eine korrekte Berechnung des richigen Hash durchgeführt werden und es muss ein neues Passwort erstellt werden.
+Gleiches Prinzip beim "Salzen", sprich der Verwendung eines Salt. Gäbe es in einer Rainbow-Table bereits die Kombination zwischen Frank und dem obigen Hash, dann kann mit Hilfe des Salt und des daraus entstehenden abweichenden Hash die Feststellung verhindert werden.
+
+**WICHTIG**
+Ändert sich der Salt oder wird dieser "verloren", kann kann eine korrekte Berechnung des richigen Hash durchgeführt werden und es muss ein neues Passwort erstellt werden.
 
 ~~~ php
 $str = "Frank";

@@ -78,12 +78,12 @@ Dazu aus [Wikipedia](http://de.wikipedia.org/wiki/Salt_(Kryptologie))
 
 > Salt (englisch für Salz) bezeichnet in der Kryptographie eine zufällig gewählte Zeichenfolge, die an einen gegebenen Klartext vor der Verwendung als Eingabe einer Hashfunktion angehängt wird, um die Entropie der Eingabe zu erhöhen. Es wird häufig für die Speicherung und Übermittlung von Computer-Passwörtern benutzt.
 
-Das Prinzip ist, vor dem hashen dem Ausgangswert noch einen weitern Wert hinzuzufügen. Dadurch ergibt sich ein anderer Hashwert und unterbindet/erschwert somit das "einfache" herausefinden des Ausgangswertes über die bereits erwähnten [Rainbow-Tables](http://de.wikipedia.org/wiki/Rainbow_Table).
+Das Prinzip ist, vor dem hashen dem Ausgangswert noch einen weitern Wert, den "Salt", hinzuzufügen. Dadurch ergibt sich ein anderer Hashwert und unterbindet/erschwert somit das herausfinden des Ausgangswertes über die bereits erwähnten [Rainbow-Tables](http://de.wikipedia.org/wiki/Rainbow_Table).
 
 
 ##### Beispiele
 
-Beispiele mit sha256-Algorithmus - PHP kennt dazu die Funktion [hash()](http://php.net/manual/de/book.hash.php)
+Beispiele mit sha256-Algorithmus - PHP stellt dazu die Funktion [hash()](http://php.net/manual/de/book.hash.php) zur Verfügung.
 
 
 Leerstring als Ausgabgsstring
@@ -106,7 +106,7 @@ echo hash("sha256", $str);
 ~~~
 
 
-Zur Demonstration - nur ein Buchstabe Unterschied zum vorigen Beispiel. Er jedoch einen völlig anderen Hash
+Zur Demonstration - nur ein Buchstabe Unterschied zum vorigen Beispiel. Es ergibt sich eine völlig anderer Hash
 
 ~~~ php
 $str = "Frank";
@@ -116,10 +116,9 @@ echo hash("sha256", $str);
 ~~~
 
 
-Gleiches Prinzip beim "Salzen", sprich der Verwendung eines Salt. Gäbe es in einer Rainbow-Table bereits die Kombination zwischen Frank und dem obigen Hash, dann kann mit Hilfe des Salt und des daraus entstehenden abweichenden Hash die Feststellung verhindert werden.
+Beispiel mit "Salz". Gäbe es in einer Rainbow-Table bereits die Kombination zwischen Frank und dem ungesalzenen Hash, dann kann mit Hilfe des Salz und des daraus entstehenden abweichenden Hash die Feststellung jedenfalls erschwert werden.
 
-**WICHTIG**
-Ändert sich der Salt oder wird dieser "verloren", kann kann eine korrekte Berechnung des richigen Hash durchgeführt werden und es muss ein neues Passwort erstellt werden.
+**WICHTIG**: Ändert sich der Salt oder wird dieser "verloren", kann kann eine korrekte Berechnung des richigen Hash durchgeführt werden und es muss ein neues Passwort erstellt werden.
 
 ~~~ php
 $str = "Frank";
@@ -130,14 +129,13 @@ echo hash("sha256", $str.$salt);
 ~~~
 
 
-
 Längere Texte werden duch den Algorithmus ebenfalls auf die idente Länge gebracht
 
 ~~~ php
-$str = "Das Problem zu erkennen ist wichtiger, als die Lösung zu erkennen, denn die genaue Darstellung des Problems führt zur Lösung (Albert Einstein).";
+$str = "Das Problem zu erkennen ist wichtiger, als die Lösung zu erkennen, denn die genaue Darstellung des Problems führt zur Lösung. (Albert Einstein)";
 echo hash("sha256", $str);
 // ergibt:
-// 5daa2b9455bdd2a4d6a954d55a724d3886a94445d3cec6727346624141c638b2
+// 39a448a529b271542bd12ddcd19779c3a0bcaa750442da2e1ad6fbbe0645dd91
 ~~~
 
 

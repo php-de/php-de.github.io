@@ -87,6 +87,7 @@ Beispiele mit sha256-Algorithmus - PHP kennt dazu die Funktion [hash()](http://p
 
 
 Leerstring als Ausgabgsstring
+
 ~~~ php
 $str = "";
 echo hash("sha256", $str);
@@ -96,6 +97,7 @@ echo hash("sha256", $str);
 
 
 "Normaler" String
+
 ~~~ php
 $str = "Franz";
 echo hash("sha256", $str);
@@ -105,6 +107,7 @@ echo hash("sha256", $str);
 
 
 Zur Demonstration - nur ein Buchstabe Unterschied zum vorigen Beispiel. Er jedoch einen völlig anderen Hash
+
 ~~~ php
 $str = "Frank";
 echo hash("sha256", $str);
@@ -126,6 +129,7 @@ echo hash("sha256", $str.$salt);
 
 
 Längere Texte werden duch den Algorithmus ebenfalls auf die idente Länge gebracht
+
 ~~~ php
 $str = "Das Problem zu erkennen ist wichtiger, als die Lösung zu erkennen, denn die genaue Darstellung des Problems führt zur Lösung (Albert Einstein).";
 echo hash("sha256", $str);

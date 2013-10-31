@@ -50,7 +50,7 @@ Das mögliche Sicherheitsrikiso bei Hash-Werten liegt in der grundsätzlichen M�
 
 Auf sogenannten [Rainbow-Tables](http://de.wikipedia.org/wiki/Rainbow_Table) werden Paare aus Klartext und dem dazugehörigen Hash "gesammelt" um diese im Einsatz von Brute-Force-Attacken zu verwenden. Der Einsatz  
 
-Aus diesem Grund wird von der Verwendung von md5() abgeraten. Ebenso wie für die Funktionen der SHA-1 Familie.
+Aus diesem Grund wird von der Verwendung von md5() abgeraten. Ebenso wie für die Funktionen der [SHA-1 Familie](http://de.wikipedia.org/wiki/Secure_Hash_Algorithm#SHA.2FSHA-1).
 
 Zu diesem Thema sind die Meinungen und Empfehlungen unterschiedlich.
 
@@ -62,17 +62,18 @@ Zu diesem Thema sind die Meinungen und Empfehlungen unterschiedlich.
 [php.net FAQ "Save Password Hashing"](http://www.php.net/manual/de/faq.passwords.php)
 
 > Hashing algorithms such as MD5, SHA1 and SHA256 are designed to be very fast and efficient. With modern techniques and computer equipment, it has become trivial to "brute force" the output of these algorithms, in order to determine the original input. 
-
+> 
 > Because of how quickly a modern computer can "reverse" these hashing algorithms, many security professionals strongly suggest against their use for password hashing.   
 
 
-<div class="alert alert-info"><strong>Information!</strong>In den nachfolgenden Beispielen wird zur Demonstartion des grundlegenden Prinzipes sha256() verwendet. Auch wären die entstehenden Hashes bei sha512() um einiges länger.</div>
+<div class="alert alert-info">In den nachfolgenden Beispielen wird zur Demonstartion des grundlegenden Prinzipes sha256() verwendet, auch weil die dadurch entstehenden Hashes um einiges kürzer sind als bsp. von sha512().</div>
 
 
 Ein mehrmaliges hashen eines Passwortes bringt keinen Vorteil, mehr einen Nachteil. Der Grund darin liegt daran, das der Ergebnis-Hash "nur" aus den Ziffern 0 bis 9 und den Buchstaben a bis f besteht. Durch erneutes hashen verkleinert man somit nur unötig die Ausgabgs-Wertebasis.
 
 
-#### Gesalzene Hashes
+##### Gesalzene Hashes
+
 Dazu aus [Wikipedia](http://de.wikipedia.org/wiki/Salt_(Kryptologie))
 
 > Salt (englisch für Salz) bezeichnet in der Kryptographie eine zufällig gewählte Zeichenfolge, die an einen gegebenen Klartext vor der Verwendung als Eingabe einer Hashfunktion angehängt wird, um die Entropie der Eingabe zu erhöhen. Es wird häufig für die Speicherung und Übermittlung von Computer-Passwörtern benutzt.

@@ -37,7 +37,7 @@ Diese Übersicht gibt einen kurzen Überblick über die unterschiedlichen Verfah
 
 ##### Anwendung
 
-Paswörter werden gesasht, bevor diese in der Datenbank gespeichert werden. Damit sind diese grundsätzlich nutzlos, auch wenn man Zugang zu diesen (dem gespeicherten Hash) erlangt.
+Die übliche Anwendung besteht darin, Paswörter zu hashen, bevor diese in der Datenbank gespeichert werden. Damit sind diese grundsätzlich nutzlos, auch wenn man Zugang zu diesen (dem gespeicherten Hash) erlangt.
 
 Beim Login-Vorgang wird das im Login-Formular eingegebene Klartext Passwort mit dem selben Algorithmus wie oben gehasht und dann dieser eben errechnete Hash mit dem Hash in der Datenbank verglichen. Stimmen diese beiden überein, ist das Login-Passwort korrekt.
 

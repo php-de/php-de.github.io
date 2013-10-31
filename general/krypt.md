@@ -37,7 +37,7 @@ Diese Übersicht gibt einen kurzen Überblick über die unterschiedlichen Verfah
 
 ##### Anwendung
 
-Die übliche Anwendung ist das Hashen von Paswörtern bevor diese in der Datenbank gespeichert werden. Damit sind diese unkenntlich (und somit quasi nutzlos) sind, auch wenn man Zugang zu diesen erlangt.
+Paswörter werden gesasht, bevor diese in der Datenbank gespeichert werden. Damit sind diese grundsätzlich nutzlos, auch wenn man Zugang zu diesen (dem gespeicherten Hash) erlangt.
 
 Beim Login-Vorgang wird das im Login-Formular eingegebene Klartext Passwort mit dem selben Algorithmus wie oben gehasht und dann dieser eben errechnete Hash mit dem Hash in der Datenbank verglichen. Stimmen diese beiden überein, ist das Login-Passwort korrekt.
 
@@ -46,13 +46,13 @@ Hash-Werte können nicht direkt (im Gegensatz zu einer Verschlüsselung) zurück
 
 ##### Sicherheit
 
-Das mögliche Sicherheitsrikiso bei Hash-Werten liegt in der grundsätzlichen Möglichkeit von Kollisionen. Dabei geht es nicht darum "das Passwort" zu erraten, sondern einen Ausgangswert zu finden, der nach dem Hash-Vorgang den selben Hash-Wert als Ergbnis hat. Dies ist bei [md5() bereits gelungen](http://de.wikipedia.org/wiki/Message-Digest_Algorithm_5#Kollisionsresistenz).
+Das Sicherheitsrikiso bei Hash-Werten liegt in der grundsätzlichen Möglichkeit von Kollisionen. Dabei geht es nicht darum "das" Passwort zu erraten, sondern einen Ausgangswert zu finden, der nach dem Hash-Vorgang den selben Hash-Wert als Ergbnis hat. Dies ist bei [md5() bereits gelungen](http://de.wikipedia.org/wiki/Message-Digest_Algorithm_5#Kollisionsresistenz).
 
-Auf sogenannten [Rainbow-Tables](http://de.wikipedia.org/wiki/Rainbow_Table) werden Paare aus Klartext und dem dazugehörigen Hash "gesammelt" um diese im Einsatz von Brute-Force-Attacken zu verwenden. Der Einsatz  
+Auf sogenannten [Rainbow-Tables](http://de.wikipedia.org/wiki/Rainbow_Table) werden Paare aus Klartext und dem dazugehörigen Hash "gesammelt" um diese im Einsatz von Brute-Force-Attacken zu verwenden. 
 
-Aus diesem Grund wird von der Verwendung von md5() abgeraten. Ebenso wie für die Funktionen der [SHA-1 Familie](http://de.wikipedia.org/wiki/Secure_Hash_Algorithm#SHA.2FSHA-1).
+Aus diesem Grund wird von der weiteren Verwendung von md5() abgeraten. Ebenso wie für die Funktionen der [SHA-1 Familie](http://de.wikipedia.org/wiki/Secure_Hash_Algorithm#SHA.2FSHA-1).
 
-Zu diesem Thema sind die Meinungen und Empfehlungen unterschiedlich.
+Jedoch sind die Meinungen und Empfehlungen zu diesem Thema unterschiedlich:
 
 [Wikipedia](http://de.wikipedia.org/wiki/Secure_Hash_Algorithm#Empfehlungen)
 

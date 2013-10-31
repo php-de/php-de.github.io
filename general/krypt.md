@@ -66,7 +66,7 @@ Zu diesem Thema sind die Meinungen und Empfehlungen unterschiedlich.
 > Because of how quickly a modern computer can "reverse" these hashing algorithms, many security professionals strongly suggest against their use for password hashing.   
 
 
-<div class="alert alert-info">In den nachfolgenden Beispielen wird zur Demonstartion des grundlegenden Prinzipes sha256() verwendet, auch weil die dadurch entstehenden Hashes um einiges kürzer sind als bsp. von sha512().</div>
+<div class="alert alert-info"><strong>Information!</strong> In den nachfolgenden Beispielen wird zur Demonstartion des grundlegenden Prinzipes sha256() verwendet, auch weil die dadurch entstehenden Hashes um einiges kürzer sind als bsp. von sha512().</div>
 
 
 Ein mehrmaliges hashen eines Passwortes bringt keinen Vorteil, mehr einen Nachteil. Der Grund darin liegt daran, das der Ergebnis-Hash "nur" aus den Ziffern 0 bis 9 und den Buchstaben a bis f besteht. Durch erneutes hashen verkleinert man somit nur unötig die Ausgabgs-Wertebasis.

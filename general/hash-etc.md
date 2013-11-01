@@ -1,7 +1,7 @@
 ---
 layout: guide
 title: "Hashing, Kodierung, Verschlüsselung"
-group: "[DRAFT]"
+group: "Allgemein"
 creator: hausl
 author:
     -   name: hausl
@@ -126,7 +126,7 @@ Dazu aus [Wikipedia](http://de.wikipedia.org/wiki/Salt_(Kryptologie))
 Das Prinzip ist, vor dem hashen dem Ausgangswert noch einen weitern Wert, den "Salt", hinzuzufügen. Dadurch ergibt sich ein anderer Hashwert und unterbindet/erschwert somit das herausfinden des Ausgangswertes über die bereits erwähnten [Rainbow-Tables](http://de.wikipedia.org/wiki/Rainbow_Table).
 
 
-Beispiel mit "Salz". Gäbe es in einer Rainbow-Table bereits die Kombination zwischen Frank und dem ungesalzenen Hash, dann kann mit Hilfe des Salz und des daraus entstehenden abweichenden Hash die Feststellung jedenfalls erschwert werden.
+Beispiel mit "Salz". Gäbe es in einer Rainbow-Table bereits die Kombination zwischen *Frank* und dem ungesalzenen Hash, dann kann mit Hilfe des Salz und des daraus entstehenden abweichenden Hash die direkte Feststellung verhindert werden.
 
 
 ~~~ php

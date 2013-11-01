@@ -8,9 +8,8 @@ author:
         profile: 21246
 
 inhalt:
-    -   name: "Hash-Funktionen"
-        anchor: hash-funktionen
-        simple: "md5(), sha256(), sha512(), etc."
+    -   name: "Hashing"
+        anchor: hashing
 
     -   name: "Kodierung"
         anchor: kodierung
@@ -28,31 +27,34 @@ entry-type: in-progress
 Diese Übersicht gibt einen kurzen Überblick über die unterschiedlichen Verfahren. Weitere Detailinformationen gibt es dazu u.a. bei den verlinkten Quellen.
 
 
-### Hash-Funktionen
+### Hashing (Hash-Funktion)
 
-[Wikipedia:](http://de.wikipedia.org/wiki/Hashfunktion)
+Zweck des Hashing ist es aus einem Ausgangswert einen nicht rückrechenbaren Hash zu generieren. Unabhängig der Länge des Ausgangswertes entsteht je nach verwendeter Funktion ein gleich langer Hash. Beispiele siehe weiter unten. Hierfür stehen in PHP für verschiedene Hash-Algorithmen (zB MD5, SHA256, SHA512, etc..) entsprechende Funktionen zur Verfügung (zB md5(), hash(), ...). 
 
-> Eine Hashfunktion (auch Streuwertfunktion) ist eine Abbildung, die eine große Eingabemenge (die Schlüssel) auf eine kleinere Zielmenge (die Hashwerte) abbildet ... Dabei kann die Eingabemenge auch Elemente mit unterschiedlichen Längen enthalten, die Elemente der Zielmenge haben dagegen meist eine feste Länge.
+[Weiters Details bei Wikipedia: Hashfunktion](http://de.wikipedia.org/wiki/Hashfunktion)
 
 
 ##### Anwendung
 
-Die Anwendung besteht darin, Paswörter zu hashen, bevor diese in der Datenbank gespeichert werden. Damit sind diese in der gehashten Form grundsätzlich nutzlos, auch wenn man Zugang zu diesen erlangt.
+Paswörter werden gehasht, bevor diese in der Datenbank gespeichert werden. Damit sind diese in der gehashten Form soweit nutzlos, selbst wenn man Zugriff darauf erlangt.
 
-Beim Login-Vorgang wird das im Login-Formular eingegebene Klartext Passwort mit dem selben Algorithmus wie oben gehasht und dann dieser eben errechnete Hash mit dem Hash in der Datenbank verglichen. Stimmen diese beiden überein, ist das Login-Passwort korrekt.
-
-Hash-Werte können nicht direkt (im Gegensatz zu einer Verschlüsselung) zurückgerechnet werden, ein Leerstring ("") ergibt genauso wie z.B. dieser Artikel nach Anwendung der jeweiligen Hash-Funktion einen String identer/fixer Länge, siehe Beispiele dazu weiter unten.
+Beim Login-Vorgang wird das im Login-Formular eingegebene Klartext Passwort mit dem selben Algorithmus, wie jener der vor der Speicherung angewandt wurde, gehasht und dann dieser gerade  errechnete Hash mit dem Hash in der Datenbank verglichen. Stimmen diese beiden überein, ist das Login-Passwort korrekt.
 
 
-##### Sicherheit
+##### Sicherheit der Hash-Algorithmen
 
-Das Sicherheitsrikiso bei Hash-Werten liegt in der grundsätzlichen Möglichkeit von Kollisionen. Dabei geht es nicht darum "das" Passwort zu erraten, sondern einen Ausgangswert zu finden, der nach dem Hash-Vorgang den selben Hash-Wert als Ergbnis hat. Dies ist bei [md5() bereits gelungen](http://de.wikipedia.org/wiki/Message-Digest_Algorithm_5#Kollisionsresistenz).
+
+Das Sicherheitsrikiso bei Hash-Werten liegt in der grundsätzlichen Möglichkeit von Kollisionen. Dabei geht es in erster Linie darum, einen Ausgangswert zu finden, der nach dem Hash-Vorgang den selben Hash-Wert als Ergbnis hat. Dies ist bei [md5() bereits gelungen](http://de.wikipedia.org/wiki/Message-Digest_Algorithm_5#Kollisionsresistenz).
 
 Auf sogenannten [Rainbow-Tables](http://de.wikipedia.org/wiki/Rainbow_Table) werden Paare aus Klartext und dem dazugehörigen Hash "gesammelt" um diese im Einsatz von Brute-Force-Attacken zu verwenden. 
 
-Aus diesem Grund wird von der weiteren Verwendung von md5() abgeraten. Ebenso wie für die Funktionen der [SHA-1 Familie](http://de.wikipedia.org/wiki/Secure_Hash_Algorithm#SHA.2FSHA-1).
+<div class="alert alert-info"><strong>Hinweis!</strong> Ein mehrmaliges hashen eines Passwortes bringt keinen Vorteil, mehr einen Nachteil. Der Grund darin liegt daran, das der Ergebnis-Hash "nur" aus den Ziffern 0 bis 9 und den Buchstaben a bis f besteht (da Hexadezimal). Durch erneutes hashen verkleinert man somit nur unötig die Ausgabgs-Wertebasis.</div>
+ 
+ 
+Aus diesem Grund wird von der weiteren Verwendung von MD5 (PHP-Funktion md5()) abgeraten. Ebenso wie   die Funktionen der [SHA-1 Familie](http://de.wikipedia.org/wiki/Secure_Hash_Algorithm#SHA.2FSHA-1).
 
-Jedoch sind die Meinungen und Empfehlungen zu diesem Thema unterschiedlich:
+
+Jedoch sind die Meinungen und Empfehlungen zu diesem Thema teilweise unterschiedlich:
 
 [Wikipedia](http://de.wikipedia.org/wiki/Secure_Hash_Algorithm#Empfehlungen)
 
@@ -63,13 +65,10 @@ Jedoch sind die Meinungen und Empfehlungen zu diesem Thema unterschiedlich:
 
 > Hashing algorithms such as MD5, SHA1 and SHA256 are designed to be very fast and efficient. With modern techniques and computer equipment, it has become trivial to "brute force" the output of these algorithms, in order to determine the original input. 
 > 
-> Because of how quickly a modern computer can "reverse" these hashing algorithms, many security professionals strongly suggest against their use for password hashing.   
-
-
+> Because of how quickly a modern computer can "reverse" these hashing algorithms, many security professionals strongly suggest against their use for password hashing.    
+ 
+ 
 <div class="alert alert-info"><strong>Information!</strong> In den nachfolgenden Beispielen wird zur Demonstartion des grundlegenden Prinzipes sha256() verwendet, auch weil die dadurch entstehenden Hashes um einiges kürzer sind als bsp. von sha512().</div>
-
-
-Ein mehrmaliges hashen eines Passwortes bringt keinen Vorteil, mehr einen Nachteil. Der Grund darin liegt daran, das der Ergebnis-Hash "nur" aus den Ziffern 0 bis 9 und den Buchstaben a bis f besteht. Durch erneutes hashen verkleinert man somit nur unötig die Ausgabgs-Wertebasis.
 
 
 ##### Beispiele
@@ -184,5 +183,6 @@ echo base64_decode($str_base64);
 > Verschlüsselung nennt man den Vorgang, bei dem ein klar lesbarer Text (Klartext, oder auch Informationen anderer Art wie Ton- oder Bildaufzeichnungen) mit Hilfe eines Verschlüsselungsverfahrens (Kryptosystem) in eine "unleserliche", das heißt nicht einfach interpretierbare Zeichenfolge (also Geheimtext) umgewandelt wird. Als entscheidend wichtige Parameter der Verschlüsselung werden hierbei ein oder auch mehrere Schlüssel verwendet.
 
 
-PHP-Funktionen: 
+PHP-Funktionen z.B. über die Erweiterung MCrypt: 
 [mcrypt()](http://www.php.net/manual/de/book.mcrypt.php)
+

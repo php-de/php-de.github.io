@@ -8,8 +8,9 @@ author:
         profile: 21246
 
 inhalt:
-    -   name: "Hashing"
-        anchor: hashing
+    -   name: "Hashing (Hash-Funktion)"
+        anchor: hashing-hash-funktion
+        simple: "Anwendung, Sicherheit, Salt, Beispiele"
 
     -   name: "Kodierung"
         anchor: kodierung
@@ -127,7 +128,6 @@ Das Prinzip ist, vor dem hashen dem Ausgangswert noch einen weitern Wert, den "S
 
 Beispiel mit "Salz". Gäbe es in einer Rainbow-Table bereits die Kombination zwischen Frank und dem ungesalzenen Hash, dann kann mit Hilfe des Salz und des daraus entstehenden abweichenden Hash die Feststellung jedenfalls erschwert werden.
 
-**WICHTIG**: Ändert sich der Salt oder wird dieser "verloren", kann kann eine korrekte Berechnung des richigen Hash durchgeführt werden und es muss ein neues Passwort erstellt werden.
 
 ~~~ php
 $str = "Frank";

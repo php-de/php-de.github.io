@@ -10,7 +10,7 @@ author:
 inhalt:
     -   name: "Hashing (Hash-Funktion)"
         anchor: hashing-hash-funktion
-        simple: "Anwendung, Sicherheit, Salt, Beispiele"
+        simple: "Anwendung, Sicherheit, Beispiele, Gesalzene Hashes"
 
     -   name: "Kodierung"
         anchor: kodierung

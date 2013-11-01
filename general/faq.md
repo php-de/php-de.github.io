@@ -150,7 +150,7 @@ muss auch dieser vor der ersten Ausgabe des Scripts erfolgen.
 
 
 
-**„Was sind SQL-Injections und was kann ich dagegen unternehmen?“**
+**„Was ist eine SQL-Injection und was kann ich dagegen unternehmen?“**
 <a href="#sql-injection">#sql-injection</a>
 {: #sql-injection}
 

@@ -62,7 +62,7 @@ für den Versand von Spam an Dritte benutzen.
 
 **„Wie kann ich erreichen, dass mein Formular bei Unvollständigkeit wieder
 ausgefüllt wird?“**
-<a href="#formular-gefuellt">#formular-gefuellt</a>
+<a href="#formular-gefuellt">#</a>
 {: #formular-gefuellt}
 
 <div style="margin-left: 20px;">
@@ -75,7 +75,7 @@ Ein Affenformular bietet genau diese Funktionalität. siehe
 
 
 **„Was ist ein Affenformular?“**
-<a href="#affenformular">#affenformular</a>
+<a href="#affenformular">#</a>
 {: #affenformular}
 
 <div style="margin-left: 20px;">
@@ -87,7 +87,7 @@ Siehe: vorige Frage.
 
 
 **„Ich erhalte immer die Meldung ‚headers already sent‘.“**
-<a href="#headers-already-sent">#headers-already-sent</a>
+<a href="#headers-already-sent">#</a>
 {: #headers-already-sent}
 
 <div style="margin-left: 20px;">
@@ -101,7 +101,7 @@ oder Steuerzeichen außerhalb von <?php ... ?> genügt dafür. Siehe:
 
 
 **„Nach Aktion XY zeigt mein Browser nur noch eine weiße Seite.“**
-<a href="#weisse-seite">#weisse-seite</a>
+<a href="#weisse-seite">#</a>
 {: #weisse-seite}
 
 <div style="margin-left: 20px;">
@@ -116,7 +116,7 @@ einen Stringbegrenzer, ein Semikolon oder eine Klammer vergessen. Siehe:
 
 **„Warum werden auf meiner Seite die Umlaute falsch dargestellt, obwohl ich
 UTF-8 im HTML-Dokument angegeben habe?“**
-<a href="#html-charset">#html-charset</a>
+<a href="#html-charset">#</a>
 {: #html-charset}
 
 <div style="margin-left: 20px;">
@@ -160,7 +160,7 @@ muss auch dieser vor der ersten Ausgabe des Scripts erfolgen.
 
 
 **„Was ist eine SQL-Injection und was kann ich dagegen unternehmen?“**
-<a href="#sql-injection">#sql-injection</a>
+<a href="#sql-injection">#</a>
 {: #sql-injection}
 
 <div style="margin-left: 20px;">
@@ -243,7 +243,7 @@ SQL-Injections verhindert.
 your MySQL server version for the right syntax to use near '…' at line …“ /
 „Warning: mysql_fetch_row() expects parameter 1 to be resource, boolean
 given“**
-<a href="#sql-error">#sql-error</a>
+<a href="#sql-error">#</a>
 {: #sql-error}
 
 <div style="margin-left: 20px;">
@@ -258,7 +258,7 @@ String der entsprechenden Query vor der Anfrage testweise ausgeben. Siehe:
 
 **„Ist die mysql-Erweiterung wirklich veraltet und sollte nicht mehr genutzt
 werden?“**
-<a href="#deprecated-mysql">#deprecated-mysql</a>
+<a href="#deprecated-mysql">#</a>
 {: #deprecated-mysql}
 
 <div style="margin-left: 20px;">

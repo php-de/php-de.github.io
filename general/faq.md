@@ -24,28 +24,37 @@ Forums.
 
 
 
-**„Meine mit `mail` versendeten E-Mails haben fehlerhafte Umlaute.“**
-<a href="#mail-umlaute">#mail-umlaute</a>
-{: #mail-umlaute}
+**„Warum sollte ich eine Mailerklasse statt der `mail`-Funktion verwenden?“**
+<a href="#mailerklasse">#</a>
+{: #mailerklasse}
 
 <div style="margin-left: 20px;">
 
-Siehe nächste Frage.
+> Während es für die kleine, schnelle Info-Mail gerade noch okay ist, versuchen
+> Leute immer wieder, das Rad neu zu erfinden, wenn es um Dinge wie HTML-Mails,
+> Dateianhänge, eingebette Daten oder die passenden Mail-Header geht.
+>
+> Das muss heutzutage absolut nicht sein, denn dieses Rad wurde schon zu oft
+> neu erfunden, und die Chance, dass E-Mails wegen Kleinigkeiten (falscher Umbruch,
+> ungültiger Header, falsches Datumsformat, …) von anderen Mailservern als Spam
+> markiert oder ganz abgelehnt werden oder dass der Mailclient sie am Ende nicht
+> ordentlich darstellen kann, ist einfach zu groß.
+>
+> *\[Kleinere Fehler behoben.\]*
 
-</div>
+- [Mail() ist tot, es lebe mail()](http://www.robo47.net/text/38-Mail-ist-tot-es-lebe-mail)
 
+Geeignete Mailerklassen sind etwa [PHPMailer](http://phpmailer.worxware.com/)
+und [Swift Mailer](http://swiftmailer.org/). Siehe hierzu auch [diesen
+Artikel](http://php-de.github.io/email/mail-class.html).
 
+Bei der (nicht empfohlenen) direkten Nutzung der `mail`-Funktion muss
+sichergestellt werden, dass
+[E-Mail-Injection](http://de.wikipedia.org/wiki/E-Mail-Injection) nicht möglich
+ist. Findige Leute können sonst beispielsweise ein einfaches Kontaktformular
+für den Versand von Spam an Dritte benutzen.
 
-**„Wie kann ich mit `mail` Anhänge versenden?“**
-<a href="#mail-anhaenge">#mail-anhaenge</a>
-{: #mail-anhaenge}
-
-<div style="margin-left: 20px;">
-
-Benutze eine fertige Mailsoftware.
-[PHPMailer](http://phpmailer.worxware.com/),
-[Swift Mailer](http://swiftmailer.org/). Siehe hierzu auch
-[diesen Artikel](http://php-de.github.io/email/mail-class.html).
+- [Mail headers injections with PHP](http://www.phpsecure.info/v2/article/MailHeadersInject.en.php)
 
 </div>
 

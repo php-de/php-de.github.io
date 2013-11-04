@@ -103,7 +103,7 @@ Die Verwendung von Variablen, die durch register_globals automatisch initialisie
 
 <div class="alert alert-danger">
 <strong>Achtung!</strong> register_globals ist seit PHP 4.2.0 standardmäßig deaktiviert, seit PHP 5.3.0 DEPRECATED (veraltet) und wurde in PHP 5.4.0 endgültig entfernt.
-Es wird dringend empfohlen, stattdessen <a href="http://php-de.github.io/general/geltungsbereich-namensraum.html#superglobals">SuperGlobals</a> zu verwenden!
+Es wird dringend empfohlen, stattdessen <a href="{{ site.url }}/jumpto/geltungsbereich-namensraum/#superglobals">SuperGlobals</a> zu verwenden!
 </div>
 
 ##### Verfügbarkeit

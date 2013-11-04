@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/mysql-konsole-windows/
 title: "MySQL-Konsole und Umlaute unter Windows"
 group: "Allgemein"
 creator: dr.e.

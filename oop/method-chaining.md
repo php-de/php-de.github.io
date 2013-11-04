@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/method-chaining/
 title: "Method-Chaining"
 creator: Flor1an
 group: "Objektorientierte Programmierung (OOP)"

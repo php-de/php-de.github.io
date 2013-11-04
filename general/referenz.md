@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/referenz/
 title: "Referenz"
 group: "Allgemein"
 creator: Manko10

@@ -1,7 +1,7 @@
 ---
 layout: guide
 
-permalink: /jumpto/:title/
+permalink: /jumpto/was-ist-php/
 title: "Was ist PHP?"
 
 creator: hoefti

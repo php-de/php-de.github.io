@@ -1,7 +1,7 @@
 ---
 layout: guide
 
-permalink: /jumpto/:title/
+permalink: /jumpto/code-smells/
 title: "Code-Smells"
 
 author:

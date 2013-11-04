@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/hash-etc/
 title: "Hashing, Kodierung, Verschlüsselung"
 group: "Allgemein"
 creator: hausl

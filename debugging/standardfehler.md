@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/standardfehler/
 title: "Standardfehler"
 creator: nikosch
 group: "Debugging"

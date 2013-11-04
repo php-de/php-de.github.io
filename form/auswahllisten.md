@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/auswahllisten/
 group: "Formularverarbeitung"
 title: "Auswahllisten (Selections)"
 creator: nikosch

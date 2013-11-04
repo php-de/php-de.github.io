@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/affenformular/
 group: "Formularverarbeitung"
 title: "Affenformular (Standardverfahren)"
 creator: nikosch

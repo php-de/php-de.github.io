@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/sql/
 title: "SQL-Fehlerbehebung"
 creator: nikosch
 group: "Debugging"

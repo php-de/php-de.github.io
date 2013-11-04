@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/gpc/
 title: "GPC"
 creator: Manko10
 

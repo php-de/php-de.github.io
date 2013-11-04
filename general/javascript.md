@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/javascript/
 title: "JavaScript"
 group: "Allgemein"
 creator: Manko10

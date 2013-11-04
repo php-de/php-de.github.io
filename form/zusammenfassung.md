@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/zusammenfassung/
 group: "Formularverarbeitung"
 title: "Zusammenfassung"
 creator: nikosch

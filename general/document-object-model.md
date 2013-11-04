@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/document-object-model/
 title: "Document Object Model"
 group: "Allgemein"
 creator: Manko10

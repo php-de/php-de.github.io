@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/textfelder/
 group: "Formularverarbeitung"
 title: "Textfelder"
 creator: nikosch

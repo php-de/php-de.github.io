@@ -1,7 +1,7 @@
 ---
 layout: guide
 
-permalink: /jumpto/:title/
+permalink: /jumpto/eva-prinzip/
 title: "EVA-Prinzip (Standardverfahren)"
 
 author:

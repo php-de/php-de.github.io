@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/form/
 title: "Überblick"
 group: "Formularverarbeitung"
 creator: nikosch

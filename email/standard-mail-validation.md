@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/standard-mail-validation/
 title: "Standard E-Mail-Validierung"
 group: "E-Mail"
 creator: hausl

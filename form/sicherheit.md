@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/sicherheit/
 group: "Formularverarbeitung"
 title: "Sicherheit"
 creator: nikosch

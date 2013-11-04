@@ -1,7 +1,7 @@
 ---
 layout: guide
 
-permalink: /jumpto/:title/
+permalink: /jumpto/request/
 title: "Request"
 
 creator: nikosch

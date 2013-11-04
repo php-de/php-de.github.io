@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/vagrant/
 title: "Entwicklungsumgebung mit Vagrant"
 creator: BlackScorp
 group: "Entwicklungs Umgebung"

@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/mail-class/
 title: "E-Mail-Klassen"
 group: "E-Mail"
 creator: nikosch

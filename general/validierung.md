@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/validierung/
 group: "Allgemein"
 title: "Validierung"
 creator: nikosch

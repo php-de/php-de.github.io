@@ -1,7 +1,7 @@
 ---
 layout: guide
 
-permalink: /jumpto/:title/
+permalink: /jumpto/ich-will-das-selbst-schaffen-attituede/
 title: "Ich-will-das-selbst-schaffen-Attitüde"
 
 creator: Manko10

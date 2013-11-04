@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/geltungsbereich-namensraum/
 title: "Geltungsbereich (Scope) und Namensraum (Namespace)"
 group: "Allgemein"
 creator: Manko10

@@ -1,7 +1,7 @@
 ---
 layout: guide
 
-permalink: /jumpto/:title/
+permalink: /jumpto/php-ini/
 title: "php.ini - Wichtigsten Funktionen"
 
 creator: Manko10

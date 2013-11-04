@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/faq/
 title: "FAQ"
 group: "Allgemein"
 creator: nikosch

@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/auswahlfelder/
 group: "Formularverarbeitung"
 title: "Auswahlfelder"
 creator: nikosch

@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/inhalt-ein-und-ausblenden/
 title: "Inhalt ein- und ausblenden"
 group: "Allgemein"
 creator: Manko10

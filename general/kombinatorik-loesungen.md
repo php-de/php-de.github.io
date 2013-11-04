@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/kombinatorik-loesungen/
 title: "Lösungsvorschläge zu kombinatorischen Standardaufgaben"
 group: "Allgemein"
 creator: mermshaus

@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/mysql-and-utf8/
 title: "MySQL und UTF-8"
 creator: Manko10
 group: "Datenbanken"

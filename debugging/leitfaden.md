@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/leitfaden/
 title: "Leitfaden"
 creator: nikosch
 group: "Debugging"

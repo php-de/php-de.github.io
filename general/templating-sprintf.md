@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/templating-sprintf/
 title: "‚Templating‘ auf Basis von sprintf"
 group: "Allgemein"
 creator: nikosch

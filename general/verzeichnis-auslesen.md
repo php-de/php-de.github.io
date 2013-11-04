@@ -1,6 +1,6 @@
 ---
 layout: guide
-permalink: /jumpto/:title/
+permalink: /jumpto/verzeichnis-auslesen/
 title: "Verzeichnis auslesen"
 group: "Allgemein"
 creator: nikosch

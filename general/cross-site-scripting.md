@@ -279,7 +279,7 @@ Sicherheitslücken in Browsern entstehen kann, ist aber nie auszuräumen.
 Häufig gemachter Fehler: Es kann nicht oft genug gesagt werden, dass
 <strong>alle</strong> vom User kommenden Daten bösartiger Natur sein können,
 nicht nur <a
-href="http://php-de.github.io/request-handling/gpc.html">GPC-Werte</a>. Auch
+href="{{ site.url }}/jumpto/gpc/">GPC-Werte</a>. Auch
 manche Inhalte des <code>$_SERVER</code>-Arrays gehören zur Kategorie der
 gefährlichen Datenquellen, die unbedingt validiert werden müssen.
 

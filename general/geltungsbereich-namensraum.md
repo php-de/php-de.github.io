@@ -13,7 +13,7 @@ author:
 
     -   name: hausl
         profile: 21246
-        
+
     -   name: mermshaus
         profile: 15041
 
@@ -29,11 +29,11 @@ inhalt:
     -   name: "Schlüsselwort static"
         anchor: das-schlsselwort-static
         simple: ""
-        
+
     -   name: "Schlüsselwort global"
         anchor: das-schlsselwort-global
         simple: ""
-        
+
     -   name: "Superglobals"
         anchor: superglobals
         simple: ""
@@ -52,12 +52,12 @@ entry-type: in-discussion
 
 Als **Geltungsbereich** oder Sichtbarkeitsbereich (*scope*, engl. für Geltungsbereich, Wirkungsfeld) wird der Kontext bezeichnet, in dem eine Variable oder Funktion sichtbar ist.
 
-Die meisten Hochsprachen bieten die Möglichkeit, mehrere Namensräume zu definieren. Damit wird es möglich, mehrere Variablen gleichen Namens zu deklarieren, die nebeneinander existieren können, da sie sich in unterschiedlichen Namensräumen befinden. Der Sichtbarkeitsraum ist also eine praktische Sache, um Daten zu kapseln, bietet aber auch Tücken, wenn man nicht beachtet, wo eine Variable definiert wurde. 
+Die meisten Hochsprachen bieten die Möglichkeit, mehrere Namensräume zu definieren. Damit wird es möglich, mehrere Variablen gleichen Namens zu deklarieren, die nebeneinander existieren können, da sie sich in unterschiedlichen Namensräumen befinden. Der Sichtbarkeitsraum ist also eine praktische Sache, um Daten zu kapseln, bietet aber auch Tücken, wenn man nicht beachtet, wo eine Variable definiert wurde.
 
 
 ### Der globale Geltungsbereich
- 
-Standardmäßig werden Variablen im globalen Geltungsbereich definiert. "Global" ist der Geltungsbereich, in dem das Skript läuft. 
+
+Standardmäßig werden Variablen im globalen Geltungsbereich definiert. "Global" ist der Geltungsbereich, in dem das Skript läuft.
 
 ~~~ php
 // Variablendefinition im globalen Geltungsbereich
@@ -71,14 +71,14 @@ Das Ergebnis:
 5
 ~~~
 
-Diese Variable ist nun im folgenden Skriptverlauf sicht- und nutzbar, solange man sich im selben Geltungsbereich befindet. 
+Diese Variable ist nun im folgenden Skriptverlauf sicht- und nutzbar, solange man sich im selben Geltungsbereich befindet.
 
 
 ### Der lokale Geltungsbereich
- 
-Definiert man nun einen lokalen Geltungsbereich, so hat das zur Folge, dass die darin enthaltenen Variablen von außen nicht sichtbar sind. Ebenso gilt das Umgekehrte: Variablen aus dem globalen Geltungsbereich sind (im Regelfall) im lokalen Geltungsbereich nicht sichtbar. 
 
-Einen lokalen Geltungsbereich kann man durch eine Funktion definieren. Innerhalb dieser Funktion gilt eine andere Sichtbarkeit als außerhalb. 
+Definiert man nun einen lokalen Geltungsbereich, so hat das zur Folge, dass die darin enthaltenen Variablen von außen nicht sichtbar sind. Ebenso gilt das Umgekehrte: Variablen aus dem globalen Geltungsbereich sind (im Regelfall) im lokalen Geltungsbereich nicht sichtbar.
+
+Einen lokalen Geltungsbereich kann man durch eine Funktion definieren. Innerhalb dieser Funktion gilt eine andere Sichtbarkeit als außerhalb.
 
 ~~~ php
 function func()
@@ -101,9 +101,9 @@ Das Ergebnis:
 5
 ~~~
 
-Obwohl der Variablen `$var` innerhalb der Funktion der Wert `4` zugewiesen wurde, wurde der Wert außerhalb der Funktion nicht verändert. Das liegt daran, dass es sich nicht um dieselbe Variable handelt. Stattdessen existieren hier zwei gleichnamige Variablen zur selben Zeit. Da sie sich aber in zwei verschiedenen Namensräumen befinden, haben sie keinen Einfluss aufeinander. 
+Obwohl der Variablen `$var` innerhalb der Funktion der Wert `4` zugewiesen wurde, wurde der Wert außerhalb der Funktion nicht verändert. Das liegt daran, dass es sich nicht um dieselbe Variable handelt. Stattdessen existieren hier zwei gleichnamige Variablen zur selben Zeit. Da sie sich aber in zwei verschiedenen Namensräumen befinden, haben sie keinen Einfluss aufeinander.
 
-Noch deutlicher wird es bei folgendem Beispiel: 
+Noch deutlicher wird es bei folgendem Beispiel:
 
 ~~~ php
 function func()
@@ -115,7 +115,7 @@ $var = 5;
 func();
 ~~~
 
-Innerhalb des lokalen Geltungsbereiches existiert die Variable `$var` nicht, weshalb eine Notice ausgegeben wird: 
+Innerhalb des lokalen Geltungsbereiches existiert die Variable `$var` nicht, weshalb eine Notice ausgegeben wird:
 
 ~~~
 Notice: Undefined variable: var in /var/www/xyz/abc.php on line x
@@ -149,7 +149,7 @@ Das Ergebnis:
 
  Möchte man diese Variable nun erhalten, kann das Schlüsselwort `static` verwendet werden:
 
-~~~ php 
+~~~ php
 function func()
 {
     if (!isset($var)) {
@@ -199,12 +199,12 @@ Das Schlüsselwort `global` durchbricht den Geltungsbereich und macht eine Varia
 function func()
 {
     global $var;
-    echo $var; 
+    echo $var;
 }
 
 $var = 5;
 func();
-~~~ 
+~~~
 
 Das Ergebnis:
 
@@ -231,7 +231,7 @@ Das Ergebnis ist dasselbe:
 5
 ~~~
 
-<div class="alert alert-warning"><strong>Achtung: </strong>Durch die Verwendung von global wird das Prinzip des Geltungsbereiches außer Kraft gesetzt und es ist nicht mehr sicher, ob eine Variable bereits definiert wurde oder nicht. So kommt es leicht zu einer ungewollten Überschreibung von Variablen. Deshalb wird geraten, auf <code>global</code> zu verzichten. Wenn innerhalb einer Funktion auf eine Variable aus dem globalen Geltungsbereich zugegriffen werden muss, sollte lieber eine <a href="http://php-de.github.io/general/referenz.html">Referenz</a> als Parameter übergeben werden.</div>
+<div class="alert alert-warning"><strong>Achtung: </strong>Durch die Verwendung von global wird das Prinzip des Geltungsbereiches außer Kraft gesetzt und es ist nicht mehr sicher, ob eine Variable bereits definiert wurde oder nicht. So kommt es leicht zu einer ungewollten Überschreibung von Variablen. Deshalb wird geraten, auf <code>global</code> zu verzichten. Wenn innerhalb einer Funktion auf eine Variable aus dem globalen Geltungsbereich zugegriffen werden muss, sollte lieber eine <a href="{{ site.url }}/jumpto/referenz/">Referenz</a> als Parameter übergeben werden.</div>
 
 
 ### Superglobals
@@ -271,12 +271,12 @@ Das Ergebnis, wie erwartet:
 
 ### Bezeichnerklassen
 
-Streng genommen unterliegen alle Bezeichner der PHP-Syntax einer Namensraumregelung. So wird zwischen Funktionsnamen, Variablenbezeichnern, Klassenbezeichnern und Konstantennamen unterschieden. All diese Bezeichner benutzen in der PHP-Syntax unterschiedliche Namensräume, können also theoretisch in jedem Kontext mit dem selben Namen belegt werden. 
+Streng genommen unterliegen alle Bezeichner der PHP-Syntax einer Namensraumregelung. So wird zwischen Funktionsnamen, Variablenbezeichnern, Klassenbezeichnern und Konstantennamen unterschieden. All diese Bezeichner benutzen in der PHP-Syntax unterschiedliche Namensräume, können also theoretisch in jedem Kontext mit dem selben Namen belegt werden.
 Es obliegt dem Parser, den zuständigen Namensraum aufgrund der Syntax zu bestimmen. So wird bspw. ein Bezeichner mit folgenden Klammern stets als Funktion bzw. im Klassenkontext als Methode interpretiert werden.
 
 
 ### Geltungsbereich-Strukturen
 
-In PHP gibt es zwei Strukturen (oder drei, je nach Betrachtungsweise), die jenseits der globalen Sichtbarkeit einen eigenen lokalen (Variablen-)Geltungsbereich abbilden. Die Funktionen wurden bereits genannt. 
+In PHP gibt es zwei Strukturen (oder drei, je nach Betrachtungsweise), die jenseits der globalen Sichtbarkeit einen eigenen lokalen (Variablen-)Geltungsbereich abbilden. Die Funktionen wurden bereits genannt.
 Einen zweiten Geltungsbereich bilden Klassenstrukturen, auf deren Eigenschaften aus anderen Geltungsbereichen nur über ihr zugehöriges Objekt zugegriffen werden kann. Das Objekt muss dazu im aufrufenden Variablenraum als Variable verfügbar sein.
 Innerhalb eines Objektes sind weiterhin die Methoden zu nennen, die zur Auflösung von Zugriffen auf Objekteigenschaften das Schlüsselwort `$this` verwenden, was ebenfalls die Objektinstanz kennzeichnet.

@@ -69,7 +69,7 @@ Die Sprache PHP ist eng mit dem EVA-Prinzip verknüpft, weil der übliche Sprach
 
 PHP kommt hier die Rolle der Ausgabe einer Information zu. Diese ist zunächst statisch - „Hallo Welt“.
 
-Im nächsten Schritt soll das Script eine URL-Übergabe wiedergeben. Aus Gründen der [Scriptsicherheit]({{ site.url }}/jumpto/cross-site-scripting/) fügen wir einen htmlspecialchars-Befehl ein, der sich um die [Maskierung](http://php-de.github.io/general/kontextwechsel.html) (sog. Escaping) schädlicher Eingabewerte kümmert:
+Im nächsten Schritt soll das Script eine URL-Übergabe wiedergeben. Aus Gründen der [Scriptsicherheit]({{ site.url }}/jumpto/cross-site-scripting/) fügen wir einen htmlspecialchars-Befehl ein, der sich um die [Maskierung]({{ site.url }}/jumpto/kontextwechsel/) (sog. Escaping) schädlicher Eingabewerte kümmert:
 
 ~~~ php
 <html>

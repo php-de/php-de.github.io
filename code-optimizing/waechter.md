@@ -1,6 +1,7 @@
 ---
 layout: guide
 
+permalink: /jumpto/:title/
 title: "Wächter"
 
 author:

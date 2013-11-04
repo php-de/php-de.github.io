@@ -1,5 +1,6 @@
 ---
 layout: guide
+permalink: /jumpto/:title/
 title: "Headers already sent"
 group: "Allgemein"
 creator: nikosch

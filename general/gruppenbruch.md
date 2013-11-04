@@ -1,5 +1,6 @@
 ---
 layout: guide
+permalink: /jumpto/:title/
 title: "Gruppenbruch"
 group: "Allgemein"
 creator: nikosch

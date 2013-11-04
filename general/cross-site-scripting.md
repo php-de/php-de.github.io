@@ -1,5 +1,6 @@
 ---
 layout: guide
+permalink: /jumpto/:title/
 title: "Cross-Site-Scripting (XSS)"
 group: "Allgemein"
 creator: Manko10

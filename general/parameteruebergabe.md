@@ -1,5 +1,6 @@
 ---
 layout: guide
+permalink: /jumpto/:title/
 title: "Parameterübergabe"
 group: "Allgemein"
 creator: Manko10

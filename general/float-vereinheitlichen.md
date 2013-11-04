@@ -1,5 +1,6 @@
 ---
 layout: guide
+permalink: /jumpto/:title/
 title: "Float vereinheitlichen"
 group: "Allgemein"
 creator: nikosch

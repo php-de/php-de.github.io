@@ -1,5 +1,6 @@
 ---
 layout: guide
+permalink: /jumpto/:title/
 title: "Hashing, Kodierung, Verschlüsselung"
 group: "Allgemein"
 creator: hausl

@@ -1,5 +1,6 @@
 ---
 layout: guide
+permalink: /jumpto/:title/
 title: "Kontextwechsel"
 group: "Allgemein"
 creator: nikosch

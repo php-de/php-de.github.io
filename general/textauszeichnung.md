@@ -1,5 +1,6 @@
 ---
 layout: guide
+permalink: /jumpto/:title/
 title: "Textauszeichnung"
 group: "Allgemein"
 creator: nikosch

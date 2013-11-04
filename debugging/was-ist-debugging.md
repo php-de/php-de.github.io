@@ -1,5 +1,6 @@
 ---
 layout: guide
+permalink: /jumpto/:title/
 title: "Was ist Debugging?"
 creator: nikosch
 group: "Debugging"

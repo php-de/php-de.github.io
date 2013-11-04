@@ -1,5 +1,6 @@
 ---
 layout: guide
+permalink: /jumpto/:title/
 title: "Contribute Richtlinie"
 
 creator: tr0y

@@ -1,6 +1,7 @@
 ---
 layout: guide
 
+permalink: /jumpto/:title/
 title: "Ich-will-das-selbst-schaffen-Attitüde"
 
 creator: Manko10

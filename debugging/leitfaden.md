@@ -1,5 +1,6 @@
 ---
 layout: guide
+permalink: /jumpto/:title/
 title: "Leitfaden"
 creator: nikosch
 group: "Debugging"

@@ -1,5 +1,6 @@
 ---
 layout: guide
+permalink: /jumpto/:title/
 title: "Pfade in der Webentwicklung"
 group: "Allgemein"
 creator: nikosch

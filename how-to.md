@@ -13,7 +13,7 @@ entry-type: in-discussion
 
 1. [Repository](https://github.com/php-de/php-de.github.io) forken.
 
-   <a href="images/how-to-github-fork.png"><img src="{{ site.url }}/images/how-to-github-fork.png" width="320" /></a>
+   <a href="{{ site.url }}/images/how-to-github-fork.png"><img src="{{ site.url }}/images/how-to-github-fork.png" width="320" /></a>
 
 2. Fork clonen.
 
@@ -51,7 +51,7 @@ Namen des Repositories (`php-de.github.io`).
 Forks ausgelöst werden. Dazu kann jedes der hervorgehobenen UI-Elemente genutzt
 werden:
 
-   <a href="images/how-to-github-choose-branch.png"><img src="{{ site.url }}/images/how-to-github-choose-branch.png" width="320" /></a>
+   <a href="{{ site.url }}/images/how-to-github-choose-branch.png"><img src="{{ site.url }}/images/how-to-github-choose-branch.png" width="320" /></a>
 
    Liegt der Push des Branches noch nicht lange zurück, antizipiert GitHub den
 Wunsch, einen Pull-Request abzusenden, und bietet die Funktion automatisch gut
@@ -61,7 +61,7 @@ den Pull-Request zu beginnen.
 
    In jedem Fall wird daraufhin diese Seite erreicht:
 
-   <a href="images/how-to-github-pull-request.png"><img src="{{ site.url }}/images/how-to-github-pull-request.png" width="320" /></a>
+   <a href="{{ site.url }}/images/how-to-github-pull-request.png"><img src="{{ site.url }}/images/how-to-github-pull-request.png" width="320" /></a>
 
    Hier sollte in das obere Feld eine aussagekräftige Kurzbeschreibung der
 durchgeführten Änderungen eingetragen werden. Diese kann bei Bedarf durch

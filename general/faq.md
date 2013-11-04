@@ -47,7 +47,7 @@ Forums.
 
 Geeignete Mailerklassen sind etwa [PHPMailer](http://phpmailer.worxware.com/)
 und [Swift Mailer](http://swiftmailer.org/). Siehe hierzu auch [diesen
-Artikel](http://php-de.github.io/email/mail-class.html).
+Artikel]({{ site.url }}/jumpto/mail-class/).
 
 Bei der (nicht empfohlenen) direkten Nutzung der `mail`-Funktion muss
 sichergestellt werden, dass
@@ -69,7 +69,7 @@ ausgefüllt wird?“**
 <div style="margin-left: 20px;">
 
 Ein Affenformular bietet genau diese Funktionalität. siehe
-[Affenformular](http://php-de.github.io/form/affenformular.html)
+[Affenformular]({{ site.url }}/jumpto/affenformular/)
 
 </div>
 
@@ -95,7 +95,7 @@ Siehe: vorige Frage.
 
 Es darf absolut keine Ausgabe vor Header-Aktionen erfolgen. Bereits ein Leer-
 oder Steuerzeichen außerhalb von <?php ... ?> genügt dafür. Siehe:
-[Standardfehler](http://php-de.github.io/debugging/standardfehler.html).
+[Standardfehler]({{ site.url }}/jumpto/standardfehler/).
 
 </div>
 
@@ -109,7 +109,7 @@ oder Steuerzeichen außerhalb von <?php ... ?> genügt dafür. Siehe:
 
 Wahrscheinlich handelt es sich um einen Parser-Fehler. Üblicherweise hast Du
 einen Stringbegrenzer, ein Semikolon oder eine Klammer vergessen. Siehe:
-[Standardfehler](http://php-de.github.io/debugging/standardfehler.html).
+[Standardfehler]({{ site.url }}/jumpto/standardfehler/).
 
 </div>
 
@@ -167,7 +167,7 @@ muss auch dieser vor der ersten Ausgabe des Scripts erfolgen.
 <div style="margin-left: 20px;">
 
 SQL-Injections fallen in den Bereich der
-[Kontextwechsel-Probleme](http://php-de.github.io/general/kontextwechsel.html).
+[Kontextwechsel-Probleme]({{ site.url }}/jumpto/kontextwechsel/).
 
 SQL-Queries werden in PHP als normaler String zusammengebaut. Dynamisch
 hinzugefügte Werte (etwa eine Benutzereingabe in `$_POST['name']`) können dabei
@@ -251,7 +251,7 @@ given“**
 
 Der SQL-String für die Datenbankabfrage ist fehlerhaft. Lass dir den fertigen
 String der entsprechenden Query vor der Anfrage testweise ausgeben. Siehe:
-[SQL-Fehlerbehebung](http://php-de.github.io/debugging/sql.html).
+[SQL-Fehlerbehebung]({{ site.url }}/jumpto/sql/).
 
 </div>
 

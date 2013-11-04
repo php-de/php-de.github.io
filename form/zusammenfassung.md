@@ -47,12 +47,12 @@ HTML besitzt Sprachelemente für Formularfelder, Buttons und das Form selbst. Nu
 
 ### Übertragung
 
-Die Übertragungsmethode von Formulardaten wird durch das *method*-Attribut des `<form>`-Tags bestimmt. Mögliche Methoden sind [POST- und GET-Request](http://php-de.github.io/request-handling/request.html), die Formulardaten werden dabei je nach Typ im Anfragekörper oder in der URL übertragen. 
+Die Übertragungsmethode von Formulardaten wird durch das *method*-Attribut des `<form>`-Tags bestimmt. Mögliche Methoden sind [POST- und GET-Request]({{ site.url }}/jumpto/request/), die Formulardaten werden dabei je nach Typ im Anfragekörper oder in der URL übertragen.
 
 
 ### Gemeinsamkeiten
 
-Alle Eingaben und Auswahlen treten im Folgescript (*action*-Angabe des Formulars) stets als Wert des Requestparameterarrays auf, je nach *method*-Attributangabe des Formulars unter `$_POST` oder `$_GET`. Der oder die Elementwerte sind dabei jeweils unter einem assoziativen Arrayschlüssel hinterlegt, der dem *name*-Attribut des jeweiligen Formularelements entspricht. Ist das *name*-Attribut eine Arraynotation in HTML: 
+Alle Eingaben und Auswahlen treten im Folgescript (*action*-Angabe des Formulars) stets als Wert des Requestparameterarrays auf, je nach *method*-Attributangabe des Formulars unter `$_POST` oder `$_GET`. Der oder die Elementwerte sind dabei jeweils unter einem assoziativen Arrayschlüssel hinterlegt, der dem *name*-Attribut des jeweiligen Formularelements entspricht. Ist das *name*-Attribut eine Arraynotation in HTML:
 
 ~~~
 <input name="angaben[]" value="Angabe 1" />
@@ -99,7 +99,7 @@ Grundlegend betrachtet, unterscheidet die Verabeitung von Formularelementen aktu
 
 Dazu gehören alle Textfelder, Einfach-Selections und Radiobuttons. Nur ein Wert ist auswählbar oder direkt eingebbar. Zur Verarbeitung ist jeweils der Attributwert von value aus dem Formularelemnent Als Requestparametereintrag verfügbar. (Ausnahme: Textareas besitzen kein *value*-Attribut sondern benutzen den Taginhalt des Elements.
 
-Skalare Eingabefelder übermitteln in (ungefälschten) abgesendeten Formularen stets eine Stringtyp. Das gilt auch für numerische Angaben im HTML Bereich. Dieser Fakt ist durch das HTTP Protokoll bedingt und ist wichtig für die [Validierung](http://php-de.github.io/general/validierung.html) von Eingabedaten.
+Skalare Eingabefelder übermitteln in (ungefälschten) abgesendeten Formularen stets eine Stringtyp. Das gilt auch für numerische Angaben im HTML Bereich. Dieser Fakt ist durch das HTTP Protokoll bedingt und ist wichtig für die [Validierung]({{ site.url }}/jumpto/validierung/) von Eingabedaten.
 
 #### Mehrdimensionale Eingabetypen
 
@@ -114,9 +114,9 @@ Zur Verabeitung einer Gruppe bietet sich stets `foreach()` an:
 - Die Menge der übertragenen Werte muß nicht bekannt sein
 - Die Schlüssel müssen nicht fortlaufend sein (siehe oben, assoziative Schlüssel in HTML)
 
-Zur Verarbeitung einzelner Werte sollte stets eine Verfügbarkeitsprüfung über `empty()` oder `isset()` erfolgen. 
+Zur Verarbeitung einzelner Werte sollte stets eine Verfügbarkeitsprüfung über `empty()` oder `isset()` erfolgen.
 
-<div class="alert alert-danger"><strong>Achtung! </strong>Häufig gemachter Fehler:<br> 
+<div class="alert alert-danger"><strong>Achtung! </strong>Häufig gemachter Fehler:<br>
 Checkboxgruppen und Multiselections ermöglichen die Abwahl aller Einträge/Auswahlen. Wird nicht mindestens ein Wert ausgewählt, wird das gesamte Formularelement aber nicht übertragen! Dies ist bei Zugriffen auf Werte und Arrayschlüssel unbedingt zu beachten.</div>
 
 
@@ -163,4 +163,4 @@ Dabei werden konsequent alle ausgewählten Werte den vorhergehenden überschreib
 ### Komplettbeispiel
 
 Für die Themen Formularverarbeitung und Affenformular wurde ein Beispiel verfasst, das die meisten Eingabeelemente und deren Verarbeitung abdeckt.
-Komplettbeispiel, einfache Verarbeitung (Link folgt) und Lösung als [Affenformular](http://php-de.github.io/form/affenformular.html).
+Komplettbeispiel, einfache Verarbeitung (Link folgt) und Lösung als [Affenformular]({{ site.url }}/jumpto/affenformular/).

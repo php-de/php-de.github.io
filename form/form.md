@@ -35,52 +35,52 @@ inhalt:
 entry-type: in-discussion
 ---
 
-Die **Formularverarbeitung** ist ein Schwerpunktgebiet serverseitiger Programmiersprachen – und ein klassischer Grund, sich mit Sprachen wie PHP auseinanderzusetzen. 
+Die **Formularverarbeitung** ist ein Schwerpunktgebiet serverseitiger Programmiersprachen – und ein klassischer Grund, sich mit Sprachen wie PHP auseinanderzusetzen.
 
-HTML bietet verschiedene Eingabeelemente an, die ähnlich den Feldern einer Erfassungsmaske gestaltet sind. Das Angebot umfasst klassische Eingabefelder, Ankreuz- und Auswahlelemente. Aktuelle Webbrowser können die Daten solcher Elememente zwar verarbeiten ([JavaScript](http://php-de.github.io/general/javascript.html)), aber nicht speichern. Auch sind Eingabedaten meist eher relevant für den Anbieter eines Webdienstes, nicht aber den Nutzer selbst, weshalb die Verarbeitung serverseitig erfolgt. Hier können die Daten beliebig analysiert (vgl. [Eingabevalidierung](http://php-de.github.io/general/validierung.html)), manipuliert und verarbeitet werden. Das Spektrum reicht dabei von der Speicherung in einer Datenbank, über den Versand als Email bis hin zu aufwendigen Verarbeitungsmethoden. 
+HTML bietet verschiedene Eingabeelemente an, die ähnlich den Feldern einer Erfassungsmaske gestaltet sind. Das Angebot umfasst klassische Eingabefelder, Ankreuz- und Auswahlelemente. Aktuelle Webbrowser können die Daten solcher Elememente zwar verarbeiten ([JavaScript]({{ site.url }}/jumpto/javascript/)), aber nicht speichern. Auch sind Eingabedaten meist eher relevant für den Anbieter eines Webdienstes, nicht aber den Nutzer selbst, weshalb die Verarbeitung serverseitig erfolgt. Hier können die Daten beliebig analysiert (vgl. [Eingabevalidierung]({{ site.url }}/jumpto/validierung/)), manipuliert und verarbeitet werden. Das Spektrum reicht dabei von der Speicherung in einer Datenbank, über den Versand als Email bis hin zu aufwendigen Verarbeitungsmethoden.
 
-Da die Natur des Menschen (die, Fehler zu machen) dem zustandslosen Verbindungsverhalten (oder der Vergesslichkeit) PHPs entgegenläuft, hat sich als Standardmethode der Datenverarbeitung das sogenannte [Affenformular (Standardverfahren)](http://php-de.github.io/form/affenformular.html) etabliert, das sich solange mit bereits eingetragenen Daten selbst aufruft, bis die Eingabe vollständig und fehlerfrei ist. Das Verfahren ist so praktisch, dass ihm in diesem Wiki ein eigener Themenbereich gewidmet wurde. 
- 
+Da die Natur des Menschen (die, Fehler zu machen) dem zustandslosen Verbindungsverhalten (oder der Vergesslichkeit) PHPs entgegenläuft, hat sich als Standardmethode der Datenverarbeitung das sogenannte [Affenformular (Standardverfahren)]({{ site.url }}/jumpto/affenformular/) etabliert, das sich solange mit bereits eingetragenen Daten selbst aufruft, bis die Eingabe vollständig und fehlerfrei ist. Das Verfahren ist so praktisch, dass ihm in diesem Wiki ein eigener Themenbereich gewidmet wurde.
+
 
 ### Grundlagen
 
-Wichtig zu wissen ist, dass die Daten beim Aufruf des Serverscripts im [Request](http://php-de.github.io/request-handling/request.html) enthalten sind und dem Script dadurch zur Verfügung stehen. Die Kehrseite dieser Tatsache sind Sicherheitsaspekte, die auf der leichten Manipulierbarkeit von Formularen und Verbindungsdaten fußen. 
+Wichtig zu wissen ist, dass die Daten beim Aufruf des Serverscripts im [Request]({{ site.url }}/jumpto/request/) enthalten sind und dem Script dadurch zur Verfügung stehen. Die Kehrseite dieser Tatsache sind Sicherheitsaspekte, die auf der leichten Manipulierbarkeit von Formularen und Verbindungsdaten fußen.
 
 
 ### Parametermengen
 
-Je nachdem, wie die Datenübertragung erfolgt, gibt es für PHP verschiedene Array-Variablen, die Parameterdaten enthalten können. 
+Je nachdem, wie die Datenübertragung erfolgt, gibt es für PHP verschiedene Array-Variablen, die Parameterdaten enthalten können.
 
-Siehe dazu auch:  
-[Hauptartikel Request](http://php-de.github.io/request-handling/request.html)  
-[Hauptartikel GPC](http://php-de.github.io/request-handling/gpc.html)  
+Siehe dazu auch:
+[Hauptartikel Request]({{ site.url }}/jumpto/request/)
+[Hauptartikel GPC]({{ site.url }}/jumpto/gpc/)
 
-Nachfolgend wird stets der POST Request bei der PHP-seitigen Verarbeitung zugrunde gelegt und `<form>` Tags im der HTML Code der Übersichtlichkeit halber weggelassen. 
+Nachfolgend wird stets der POST Request bei der PHP-seitigen Verarbeitung zugrunde gelegt und `<form>` Tags im der HTML Code der Übersichtlichkeit halber weggelassen.
 
 
 ### Parameterformat
 
-Formular-Parameterdaten (nachfolgend Formulardaten) kann man grob in zwei Datentypen einteilen: Skalare, d. h. eindimensionale Daten und mehrdimensionale Typen. 
+Formular-Parameterdaten (nachfolgend Formulardaten) kann man grob in zwei Datentypen einteilen: Skalare, d. h. eindimensionale Daten und mehrdimensionale Typen.
 
 
 #### Skalare Elementtypen
 
-Klassische eindimensionale Formulardaten sind Einträge einer Textbox oder eines Inputfeldes vom Typ `'text'`. Hier steht ein konkreter Wert einem Namen gegenüber. Auch der Eintrag einer Gruppe von Radioboxes ist ein solcher Typ, weil nur jeweils eine der möglichen Auswahlen als Wert übertragen wird. 
+Klassische eindimensionale Formulardaten sind Einträge einer Textbox oder eines Inputfeldes vom Typ `'text'`. Hier steht ein konkreter Wert einem Namen gegenüber. Auch der Eintrag einer Gruppe von Radioboxes ist ein solcher Typ, weil nur jeweils eine der möglichen Auswahlen als Wert übertragen wird.
 
 ~~~ php
 <input type="text" name="Textfeld" value="abc">
 <textarea name="Textbox">123</textarea>
- 
+
 <input type="radio" name="Auswahlfeld" value="Auswahl 1"> wähle mich
 <input type="radio" name="Auswahlfeld" value="Auswahl 2"> oder wähle mich
- 
+
 <select name="EinfachSelektion">
     <option value="Option 1">wähle mich</option>
     <option value="Option 2">oder wähle mich</option>
 </select>
 ~~~
 
-Der Zugriff auf einen Wert dieses Typs erfolgt einfach über den Namen als Arrayschlüssel, bspw. so für ein per POST übermitteltes Formular: 
+Der Zugriff auf einen Wert dieses Typs erfolgt einfach über den Namen als Arrayschlüssel, bspw. so für ein per POST übermitteltes Formular:
 
 ~~~ php
 echo $_POST['Textfeld'];
@@ -89,45 +89,45 @@ echo $_POST['Auswahlfeld'];
 echo $_POST['EinfachSelektion'];
 ~~~
 
-Dieses Script wird mit den oben vorgegebenen Felddaten nacheinander "*abc*", "*123*" und – je nach Auswahl – "*Auswahl 1*" bzw. "*Auswahl 2*", "*Option 1*" bzw. "*Option 2*" ausgeben. 
+Dieses Script wird mit den oben vorgegebenen Felddaten nacheinander "*abc*", "*123*" und – je nach Auswahl – "*Auswahl 1*" bzw. "*Auswahl 2*", "*Option 1*" bzw. "*Option 2*" ausgeben.
 
 
 #### Mehrdimensionale Elementtypen
 
-Alle anderen Eingabeelemente (außer Buttons, die genau genommen auch als solche benutzt werden können) erzeugen mehrdimensionale Daten. Das liegt in der Natur der Eingabe begründet: Sobald mehrere Optionen auswählbar sind, müssen diese Werte auch als Wertmenge übertragen werden. Zu nennen sind hier Checkbox-Elemente und Select-Auswahlen mit einem `multiple` Attribut. 
+Alle anderen Eingabeelemente (außer Buttons, die genau genommen auch als solche benutzt werden können) erzeugen mehrdimensionale Daten. Das liegt in der Natur der Eingabe begründet: Sobald mehrere Optionen auswählbar sind, müssen diese Werte auch als Wertmenge übertragen werden. Zu nennen sind hier Checkbox-Elemente und Select-Auswahlen mit einem `multiple` Attribut.
 
 ~~~ php
 <input type="checkbox" name="Auswahlfeld[]" value="Auswahl 1"> wähle mich
 <input type="checkbox" name="Auswahlfeld[]" value="Auswahl 2"> wähle mich auch
- 
+
 <select name="MehrfachSelektion[]">
     <option value="Option 1">wähle mich</option>
     <option value="Option 2">und wähle mich</option>
 </select>
 ~~~
 
-Entscheidend sind hier die [] im name Attribut, die das Feld als Mehrfachauswahl kennzeichnen. 
+Entscheidend sind hier die [] im name Attribut, die das Feld als Mehrfachauswahl kennzeichnen.
 
 ~~~ php
 // Ausgabe der Mengen der ausgewählten Werte
 print_r($_POST['Auswahlfeld']);
 print_r($_POST['MehrfachSelektion']);
- 
+
 // Ausgabe der ersten Auswahl des Selektfeldes
 echo $_POST['MehrfachSelektion'][0];
 ~~~
 
-Wiederum wird auf einen Wert über den Namen als Arrayschlüssel zugegriffen. Genauer gesagt auf die übertragene Menge von Werten, denn die Abfrage wird stets ein Array zurückliefern. Ein konkreter Auswahlwert läßt sich wiederum durch einen numerischen Schlüssel auslesen. Dabei werden die ausgewählten Werte fortlaufend numeriert im Array aufgeschlüsselt. 
+Wiederum wird auf einen Wert über den Namen als Arrayschlüssel zugegriffen. Genauer gesagt auf die übertragene Menge von Werten, denn die Abfrage wird stets ein Array zurückliefern. Ein konkreter Auswahlwert läßt sich wiederum durch einen numerischen Schlüssel auslesen. Dabei werden die ausgewählten Werte fortlaufend numeriert im Array aufgeschlüsselt.
 
 <div class="alert alert-info"><strong>Information! </strong>Genau betrachtet können auch oben genannte 'skalare' Elementtypen mit einem [] erweitert werden, um ihre Werte in der Parametermenge als Array abzubilden. In bestimmten Fällen – meist um eine JavaScript Funktionalität umzusetzen – kann dieses Verhalten sinnvoll sein.</div>
 
 ##### Vorhergehende Existenz-Prüfung
 
-Der Zugriff auf einen konkreten Wert einer Mehrfachauswahl kann tückisch sein. Werden bspw. keine Elemente angewählt oder ist die Anzahl der ausgewählten Optionen kleiner als der angeforderte Index, wird PHP angewiesen, auf einen nicht existierenden Wert (genauer: Arrayschlüssel) zuzugreifen und wird diesen Versuch mit einer Fehlermeldung quittieren. 
+Der Zugriff auf einen konkreten Wert einer Mehrfachauswahl kann tückisch sein. Werden bspw. keine Elemente angewählt oder ist die Anzahl der ausgewählten Optionen kleiner als der angeforderte Index, wird PHP angewiesen, auf einen nicht existierenden Wert (genauer: Arrayschlüssel) zuzugreifen und wird diesen Versuch mit einer Fehlermeldung quittieren.
 
-Dieser Effekt läßt sich durch eine vorhergehende Variablenprüfung verhindern. Bspw. stehen die Befehle `isset()`, `array_key_exists()` und `empty()` zur Verfügung, wobei letzterer noch einen Mehrwert erfüllt. 
+Dieser Effekt läßt sich durch eine vorhergehende Variablenprüfung verhindern. Bspw. stehen die Befehle `isset()`, `array_key_exists()` und `empty()` zur Verfügung, wobei letzterer noch einen Mehrwert erfüllt.
 
-Bezugnehmend auf den obigen Code erfüllt `isset()` hier seinen Zweck 
+Bezugnehmend auf den obigen Code erfüllt `isset()` hier seinen Zweck
 
 ~~~ php
 // Ausgabe der ersten Auswahl des Selektfeldes
@@ -136,22 +136,22 @@ if (isset($_POST['MehrfachSelektion'][0])) {
 }
 ~~~
 
-solange nicht unterschieden werden soll, ob nur der erste Eintrag des Feldes "MehrfachSelektion" existiert (also mindestens ein Wert gewählt wurde) oder ob "MehrfachSelektion" *überhaupt* existiert. 
+solange nicht unterschieden werden soll, ob nur der erste Eintrag des Feldes "MehrfachSelektion" existiert (also mindestens ein Wert gewählt wurde) oder ob "MehrfachSelektion" *überhaupt* existiert.
 
 
 ##### Vorbestimmte Wertmengenschlüssel
 
-Ein anderer Ansatz, der dieses Problem weiter beleuchtet, besteht darin, die automatische Numerierung übertragener Feldwerte zu unterbinden, indem im HTML Formelement bereits konkrete Schlüssel vergeben werden. Üblicherweise werden hier Strings verwendet, numerische Schlüssel sind aber auch durchaus möglich. 
+Ein anderer Ansatz, der dieses Problem weiter beleuchtet, besteht darin, die automatische Numerierung übertragener Feldwerte zu unterbinden, indem im HTML Formelement bereits konkrete Schlüssel vergeben werden. Üblicherweise werden hier Strings verwendet, numerische Schlüssel sind aber auch durchaus möglich.
 
 ~~~ php
 <input type="checkbox" name="AuswahlfeldAssoc[a]" value="Auswahl 1"> wähle mich
 <input type="checkbox" name="AuswahlfeldAssoc[b]" value="Auswahl 2"> wähle mich auch
- 
+
 <input type="checkbox" name="AuswahlfeldNum[3]" value="Auswahl 1"> wähle mich
 <input type="checkbox" name="AuswahlfeldNum[1000]" value="Auswahl 2"> wähle mich auch
 ~~~
 
-Ein `print_r($_POST)` nach Ankreuzen aller Felder wird also liefern: 
+Ein `print_r($_POST)` nach Ankreuzen aller Felder wird also liefern:
 
 ~~~ php
 Array (
@@ -247,7 +247,7 @@ Beispielhaft soll hier ein minimaler Personendatensatz übertragen und von PHP s
                 <option value="Frau">Frau</option>
             </select><br>
 
-            <label>Name:</label> 
+            <label>Name:</label>
             <input type="text" name="Name" value=""><br>
 
             <label>Alter:</label>
@@ -267,29 +267,29 @@ Beispielhaft soll hier ein minimaler Personendatensatz übertragen und von PHP s
     </head>
     <body>
 <?php
- 
+
 // minimale Validierung: Altersprüfung
- 
+
 if (empty($_POST['Alter']) || false === is_numeric($_POST['Alter'])) {
     die('<p>Es wurde kein gültiges Alter angegeben. Die Anmeldung wurde abgebrochen.</p></body></html>');
 }
- 
+
 if ($_POST['Alter'] < 18) {
     die('<p>Du bist leider zu jung für eine Anmeldung. Die Anmeldung wurde abgebrochen.</p></body></html>');
 }
- 
+
 // hier existieren ungeprüfte und ungefilterte Werte. Kein Beispiel für ein Livesystem!
- 
+
 echo '<p>Hallo ' . $_POST['Anrede'] . ' ' . $_POST['Name'] . ', willkommen in unserer Anmeldung.</p>';
 echo '<p>Ihre Wahl:</p><ul>';
 if (isset($_POST['Raucher'])) {
     echo '<li>Raucherzimmer</li>';
 }
- 
+
 $kost = 'voll' == $_POST['Kost'] ? 'Vollpension' : 'Halbpension';
 echo '<li>' . $kost . '</li>';
 echo '</ul>';
- 
+
 ?>
     </body>
 </html>
@@ -299,6 +299,6 @@ Wie dieses Beispiel als Affenformular und mit kompletter Eingabeprüfung aussieh
 
 ### Weitere Beiträge zum Thema
 
-[Affenformular (Standardverfahren)](http://php-de.github.io/form/affenformular.html) 
-[Eingabevalidierung](http://php-de.github.io/general/validierung.html) 
+[Affenformular (Standardverfahren)]({{ site.url }}/jumpto/affenformular/)
+[Eingabevalidierung]({{ site.url }}/jumpto/validierung/)
 Parametersicherheit (Link folgt)

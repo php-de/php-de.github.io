@@ -58,7 +58,7 @@ diesem Zeitpunkt bereits zu spät.
 </div>
 
 Der Begriff Ausgabe bezeichnet alle Daten eines
-[Requests](http://php-de.github.io/request-handling/request.html) (nicht
+[Requests]({{ site.url }}/jumpto/request/) (nicht
 Scripts!), also die Gesamtheit aller Ausgabedaten, die durch die Kombination
 von Scripten via Include/Require entsteht.
 
@@ -221,7 +221,7 @@ physisch aber eben existiert (unteres Beispiel).
 ### Analyse
 
 Mit [eingeschaltetem
-Fehlermanagement](http://php-de.github.io/debugging/leitfaden.html) meldet PHP
+Fehlermanagement]({{ site.url }}/jumpto/leitfaden/) meldet PHP
 eine Ausgabe vor einem header-Befehl mit einem Warning.
 
 ~~~

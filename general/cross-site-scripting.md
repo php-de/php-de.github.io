@@ -40,7 +40,7 @@ entry-type: in-discussion
 
 **Cross-Site-Scripting** (**XSS**) ist eine Angriffstechnik auf die Besucher
 eine Webseite mittels
-[JavaScript](http://php-de.github.io/general/javascript.html) oder anderer
+[JavaScript]({{ site.url }}/jumpto/javascript/) oder anderer
 clientbasierter Skriptsprachen. Dabei wird eine unzureichende Prüfung der
 eingegebenen Daten ausgenutzt.
 
@@ -75,7 +75,7 @@ nicht zu den Cross-Site-Scripting-Attacken gezählt werden.
 Dynamische Websiteprogrammierung fußt auf einer Kombination von statischen
 HTML-Codeelementen und darin eingefügten Inhaltsteilen. Das fertige Produkt
 wird als HTML-Quellcode vom Webserver ausgeliefert (vgl.
-[Was_ist_PHP](http://php-de.github.io/general/was-ist-php.html)). Daraus
+[Was_ist_PHP]({{ site.url }}/jumpto/was-ist-php/)). Daraus
 entsteht ein ungewöhnlicher Effekt, wenn die Möglichkeit der Flexibilität zu
 einseitig betrachtet wird.
 
@@ -165,8 +165,8 @@ demnach zur Ausführung. Dem Besucher wird eine `alert`-Box mit dem Inhalt
 #### Problem magic_quotes_gpc
 
 Ist die Direktive
-[magic_quotes_gpc](http://php-de.github.io/general/php-ini.html#magicquotesgpc)
-in der [php.ini](http://php-de.github.io/general/php-ini.html) eingeschaltet,
+[magic_quotes_gpc]({{ site.url }}/jumpto/php-ini/#magicquotesgpc)
+in der [php.ini]({{ site.url }}/jumpto/php-ini/) eingeschaltet,
 wird der obige Code unter Umständen nicht funktionieren, da die Stringbegrenzer
 `"` und `'` nicht funktionieren werden. Dies stellt jedoch kein Problem dar, da
 die Angabe `type="text/javascript"` für die Ausführung in den meisten Browsern

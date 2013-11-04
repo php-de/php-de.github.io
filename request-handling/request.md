@@ -8,7 +8,7 @@ creator: nikosch
 
 group: "Request-Handling"
 
-author: 
+author:
     - name: nikosch
       profile: 2314
 
@@ -68,12 +68,12 @@ vereinfachtes Beispiel (ohne Protokoll, Port und Domain):
 >
     scriptname.php?parameter1=wert1&parameter2=wert2
 >
-    Diese URL fordert das Dokument scriptname.php an und übergibt dabei zwei Werte. 
-    Die gegebenen Werte sind serverseitig (in diesem Fall z.B. in der angegebenen PHP-Datei) 
-    unter den gegebenen Parameternamen abrufbar. 
+    Diese URL fordert das Dokument scriptname.php an und übergibt dabei zwei Werte.
+    Die gegebenen Werte sind serverseitig (in diesem Fall z.B. in der angegebenen PHP-Datei)
+    unter den gegebenen Parameternamen abrufbar.
 
 <div class="alert alert-info"><strong>Information</strong>
-Abweichende Trennzeichen für Paramater können in der php.ini 
+Abweichende Trennzeichen für Paramater können in der php.ini
 unter den Einstellungen arg_separator.output und arg_separator.input angegeben werden.</div>
 
 
@@ -86,11 +86,11 @@ Bsp.
 ~~~php
 <!-- im HTML Bereich -->
 <a href="next.php?start=<?php echo $startvalue; ?>" alt="nächste Seite">weiter</a>
- 
+
 <?php
 // reine PHP Ausgabe
 echo '<a href="next.php?start=' . $startvalue . '" alt="nächste Seite">weiter</a>';
- 
+
 ?>
 ~~~
 
@@ -115,7 +115,7 @@ Zunächst wird die Sendemethode (hier: POST) angegeben, gefolgt von der URL, an 
 Es folgen weiter die Angabe des für einen POST-Request erforderlichen Content-Types sowie die Länge des Requests. Hier wird in Bytes angegeben, wie lang der Body des Requests ist.
 
 Eine Leerzeile trennt schließlich den Headerbereich vom Body. In diesem befinden sich nun die Parameter, vergleichbar mit denen eines GET-Requests.
-Die Länge der gesendeten Daten eines POST-Requests ist theoretisch nur von der Einstellung post_max_size  in der [php.ini](http://php-de.github.io/general/php-ini.html) abhängig. Allerdings kann es sein, dass das Skript dennoch vorzeitig abbricht, da die Übertragung zu lange dauert oder das Speicherlimit erreicht wurde.
+Die Länge der gesendeten Daten eines POST-Requests ist theoretisch nur von der Einstellung post_max_size  in der [php.ini]({{ site.url }}/jumpto/php-ini/) abhängig. Allerdings kann es sein, dass das Skript dennoch vorzeitig abbricht, da die Übertragung zu lange dauert oder das Speicherlimit erreicht wurde.
 
 ##### Anwendungsgebiet
 
@@ -137,8 +137,8 @@ Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
 Keep-Alive: 300
 Proxy-Connection: keep-alive
 Referer: http://www.google.de/firefox?client=firefox-a&rls=org.mozilla:de:official
-Cookie: PREF=ID=d9c2c4a7b3934e4f:TM=1985477463:LM=1212637463:S=PO9u0uh--zL4ComF; 
-  NID=14=OaGtP3LajSdudj7ehTKS_cbMP4teQ6ddfreBQ6XbOZqIevMjpKVoUKvyAhQY6rV2R8pm7_ 
+Cookie: PREF=ID=d9c2c4a7b3934e4f:TM=1985477463:LM=1212637463:S=PO9u0uh--zL4ComF;
+  NID=14=OaGtP3LajSdudj7ehTKS_cbMP4teQ6ddfreBQ6XbOZqIevMjpKVoUKvyAhQY6rV2R8pm7_
   VhqIsiuz34D0peRoxInh4J3A24Skt0DvdL3pWLmkSFMB_VZ9hXt85RmJN9y
 If-Modified-Since: Wed, 23 Jan 2008 19:15:23 GMT
 Cache-Control: max-age=0

@@ -153,7 +153,7 @@ Solange wir PHP in seiner Grundfunktion als Ausgabesprache nutzen, brauchen wir 
 <br>
 
 
-All diese Funktionen müssen vor jeglichen Textausgaben des Dokuments geschehen, sonst resultieren sie in einem [headers-sent-Fehler](http://php-de.github.io/general/headers-already-sent.html).
+All diese Funktionen müssen vor jeglichen Textausgaben des Dokuments geschehen, sonst resultieren sie in einem [headers-sent-Fehler]({{ site.url }}/jumpto/headers-already-sent/).
 
 ### Umsetzung
 

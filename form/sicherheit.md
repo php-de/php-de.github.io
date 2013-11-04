@@ -89,7 +89,7 @@ beispielsweise als Browser-Plugins zur Verfügung stehen. Hier wird das
 technische Prinzip ausgenutzt, dass eine vom Browser oder anderen
 Client-Anwendungen ausgehende Anfrage an den Server zunächst in einen
 Datenstrom umgewandelt und als klar spezifiziertes
-[HTTP-Paket](http://php-de.github.io/request-handling/request.html) aufbereitet
+[HTTP-Paket]({{ site.url }}/jumpto/request/) aufbereitet
 wird, um dann durch die Schichten des Clientsystems gereicht und schließlich
 physisch an den Server geschickt zu werden. Während dieses Vorgangs können
 clientseitige Anwendungen die Pakete vor Weitergabe an den Server nach ihren
@@ -107,7 +107,7 @@ Angriff.
 HTTP-Parameter werden immer als Strings übergeben. Im PHP-Bereich werden jedoch
 mehrere gleichartige Parameter unter bestimmten Voraussetzungen der
 PHP-Umgebung als Array zur Verfügung gestellt (Näheres ist im [Artikel für
-Selections](http://php-de.github.io/form/auswahllisten.html) beschrieben). Oben
+Selections]({{ site.url }}/jumpto/auswahllisten/) beschrieben). Oben
 wurde beschrieben, dass Formulare gefälscht werden können oder gar freie
 Parameterangaben übermittelt werden. Damit kann serverseitig nicht davon
 ausgegangen werden, dass ein namentlich bekannter Parameter im erwarteten
@@ -124,7 +124,7 @@ Kontexte überführt werden:
 
 * Bei der Ausgabe (Eingabefeedback, Wiederausfüllen eines Formularelements)
 besteht die Gefahr des sogenannten
-[Cross-Site-Scripting](http://php-de.github.io/general/cross-site-scripting.html),
+[Cross-Site-Scripting]({{ site.url }}/jumpto/cross-site-scripting/),
 wobei im Eingabewert Syntaxbestandteile der Ausgabesprache – meist HTML –
 enthalten sind, die dann die HTML-Ausgabe im Browser manipulieren oder sogar
 clientseitiges Scripting (JavaScript) erzeugen.
@@ -144,7 +144,7 @@ Scriptsicherheit ist ein komplexes Gebilde verschiedener Einzelbestandteile. Es
 gibt kein Verfahren, das an einer lokalen Stelle eine Gesamtsicherheit erzeugen
 kann. Wichtig ist also, bei jedem Schritt die richtige Maßnahmen zu treffen.
 Vor der Ausgabe eine
-[Zeichenmaskierung](http://php-de.github.io/general/kontextwechsel.html) bspw.
+[Zeichenmaskierung]({{ site.url }}/jumpto/kontextwechsel/) bspw.
 
 #### Fehlende Elemente
 
@@ -165,7 +165,7 @@ einem einzeiligen Eingabefeld Enter betätigt wird. Je nach Browserverhalten
 wird dabei oft der Buttonwert *nicht* mitgesendet. Damit stellt dieses
 Verhalten nicht unbedingt einen Angriff auf die Anwendung dar. Wie mit diesem
 Umstand umgegangen werden kann, [ist hier
-beschrieben](http://php-de.github.io/form/affenformular.html).
+beschrieben]({{ site.url }}/jumpto/affenformular/).
 
 #### Unbekannte Elemente
 
@@ -177,7 +177,7 @@ entstehen. Wichtig ist, dass unerwartete Eingaben ignoriert werden.
 ##### Register Globals
 
 [Hauptartikel Register
-Globals](http://php-de.github.io/general/php-ini.html#registerglobals)
+Globals]({{ site.url }}/jumpto/php-ini/#registerglobals)
 
 Mit dieser veralteten Servereinstellung werden alle Eingabedaten nicht nur in
 den Requestvariablen (`$_POST`, `$_GET`), sondern auch als lokale Variablen

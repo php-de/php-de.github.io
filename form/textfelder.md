@@ -148,7 +148,7 @@ Deshalb ist das nachfolgende Thema unbedingt zu beachten.
 #### Scriptsicherheit
 
 Die obigen Beispiele sind fehleranfällig, weil die Eingaben keine
-[Zeichenmaskierung](http://php-de.github.io/general/kontextwechsel.html)
+[Zeichenmaskierung]({{ site.url }}/jumpto/kontextwechsel/)
 vornehmen. So können in den Eingaben potentiell Zeichen wie `"` oder Strings
 wie `</textarea>` enthalten sein. Beide Fälle sind geeignet jeweils eines der
 Elementtypen syntaktisch zu stören. Der Grund ist, dass PHP nicht

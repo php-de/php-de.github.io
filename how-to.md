@@ -1,6 +1,6 @@
 ---
 layout: guide
-url: "/jekyll/url/test/how-to.html"
+permalink: "/jekyll/url/test/how-to.html"
 title: "Wie am Projekt teilnehmen?"
 creator: mermshaus
 author:

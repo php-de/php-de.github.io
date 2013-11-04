@@ -1,12 +1,12 @@
 ---
 layout: guide
-permalink: "/jekyll/url/test/how-to.html"
+permalink: "/jumpto/how-to/"
 title: "Wie am Projekt teilnehmen?"
 creator: mermshaus
 author:
 
     -   name: mermshaus
-        profile: 25041
+        profile: 15041
 
 entry-type: in-discussion
 ---

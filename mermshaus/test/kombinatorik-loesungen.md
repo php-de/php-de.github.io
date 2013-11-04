@@ -1,5 +1,6 @@
 ---
 layout: guide
+permalink: "/test/kombinatorik.html"
 title: "Lösungsvorschläge zu kombinatorischen Standardaufgaben"
 group: "Allgemein"
 creator: mermshaus

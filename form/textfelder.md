@@ -96,7 +96,7 @@ echo $_POST['MeinPasswort']; // 123Kaffepause
 
 Für alle Ausgaben von Formularwerten besteht die Gefahr von Code-Injection und
 <a
-href="{{ site.url }}/jumpto/cross-site-scripting.html">Cross-Site-Scripting</a>.
+href="{{ site.url }}/jumpto/cross-site-scripting/">Cross-Site-Scripting</a>.
 Die Lehrbeispiele werden zunächst ohne entsprechende Maßnahmen reduziert
 dargestellt.
 

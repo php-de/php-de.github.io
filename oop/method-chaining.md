@@ -59,7 +59,7 @@ class Person
         $this->__age = $age;
     }
  
-    public function displayPerson() 
+    public function toString() 
     {
         return 'My Name is ' , $this->__name , '! And I am ' , $this->__age , ' years old!<br />';
     }
@@ -69,7 +69,7 @@ class Person
 $person = new Person();
 $person->setName('Flo');
 $person->setAge(21);
-echo $person->displayPerson();
+echo $person->toString();
 ~~~
 
 ~~~
@@ -101,7 +101,7 @@ class Person_chaining
         return $this;
     }
  
-    public function displayPerson() 
+    public function toString() 
     {
         return 'My Name is ' . $this->__name . '! And I am ' . $this->__age . ' years old!<br />';
     }
@@ -109,7 +109,7 @@ class Person_chaining
 }
  
 $person = new Person_chaining();
-echo $person->setName('Flo')->setAge(21)->displayPerson();
+echo $person->setName('Flo')->setAge(21)->toString();
 ~~~
 
 ~~~

@@ -31,7 +31,7 @@ Diese Übersicht gibt einen kurzen Überblick über die unterschiedlichen Verfah
 
 ### Hashing (Hash-Funktion)
 
-Zweck des Hashing ist es aus einem Ausgangswert einen nicht rückrechenbaren Hash zu generieren. Unabhängig der Länge des Ausgangswertes entsteht je nach verwendeter Funktion ein gleich langer Hash. Beispiele siehe weiter unten. Hierfür stehen in PHP für verschiedene Hash-Algorithmen (zB MD5, SHA256, SHA512, etc..) entsprechende Funktionen zur Verfügung (zB md5(), hash(), ...). 
+Zweck des Hashing ist es aus einem Ausgangswert einen nicht rückrechenbaren Hash zu generieren. Unabhängig der Länge des Ausgangswertes entsteht je nach verwendeter Funktion ein gleich langer Hash. Beispiele siehe weiter unten. Hierfür stehen in PHP für verschiedene Hash-Algorithmen (zB MD5, SHA256, SHA512, etc..) entsprechende Funktionen zur Verfügung (zB hash(), crypt()...). 
 
 [Weiters Details bei Wikipedia: Hashfunktion](http://de.wikipedia.org/wiki/Hashfunktion)
 
@@ -46,76 +46,19 @@ Beim Login-Vorgang wird das im Login-Formular eingegebene Klartext Passwort mit 
 ##### Sicherheit der Hash-Algorithmen
 
 
-Das Sicherheitsrikiso bei Hash-Werten liegt in der grundsätzlichen Möglichkeit von Kollisionen. Dabei geht es in erster Linie darum, einen Ausgangswert zu finden, der nach dem Hash-Vorgang den selben Hash-Wert als Ergbnis hat. Dies ist bei [md5() bereits gelungen](http://de.wikipedia.org/wiki/Message-Digest_Algorithm_5#Kollisionsresistenz).
+Das Sicherheitsrikiso bei Hash-Werten liegt in der grundsätzlichen Möglichkeit von Kollisionen. Dabei geht es in erster Linie darum, einen Ausgangswert zu finden, der nach dem Hash-Vorgang den selben Hash-Wert als Ergebnis hat.
 
-Auf sogenannten [Rainbow-Tables](http://de.wikipedia.org/wiki/Rainbow_Table) werden Paare aus Klartext und dem dazugehörigen Hash "gesammelt" um diese im Einsatz von Brute-Force-Attacken zu verwenden. 
+Weitere Informationen dazu:
 
-<div class="alert alert-info"><strong>Hinweis!</strong> Ein mehrmaliges hashen eines Passwortes bringt keinen Vorteil, mehr einen Nachteil. Der Grund darin liegt daran, das der Ergebnis-Hash "nur" aus den Ziffern 0 bis 9 und den Buchstaben a bis f besteht (da Hexadezimal). Durch erneutes hashen verkleinert man somit nur unötig die Ausgabgs-Wertebasis.</div>
- 
- 
-Aus diesem Grund wird von der weiteren Verwendung von MD5 (PHP-Funktion md5()) abgeraten. Ebenso wie   die Funktionen der [SHA-1 Familie](http://de.wikipedia.org/wiki/Secure_Hash_Algorithm#SHA.2FSHA-1).
+Warum man [md5() nicht mehr verwenden sollte](http://de.wikipedia.org/wiki/Message-Digest_Algorithm_5#Kollisionsresistenz)
 
+Stichwort [Rainbow-Tables](http://de.wikipedia.org/wiki/Rainbow_Table) 
 
-Jedoch sind die Meinungen und Empfehlungen zu diesem Thema teilweise unterschiedlich:
+Aus diesem Grund wird von der weiteren Verwendung von MD5 (PHP-Funktion md5()) abgeraten. Ebenso wie  die Funktionen der [SHA-1 Familie](http://de.wikipedia.org/wiki/Secure_Hash_Algorithm#SHA.2FSHA-1).
 
-[Wikipedia](http://de.wikipedia.org/wiki/Secure_Hash_Algorithm#Empfehlungen)
-
-> Das [NIST](http://de.wikipedia.org/wiki/National_Institute_of_Standards_and_Technology) (National Institute of Standards and Technology) empfiehlt den Übergang von SHA-1 zu Hashfunktionen der [SHA-2-Familie](http://de.wikipedia.org/wiki/SHA-2) (SHA-224, SHA-256, SHA-384, SHA-512) ... SHA-2 wird aber weiterhin als sicher betrachtet und zur Benutzung empfohlen.
-
+PHP.net empfiehlt an dieser Stelle, auf den SHA256 Algorithmus ebenfalls zu verzichten.
 
 [php.net FAQ "Save Password Hashing"](http://www.php.net/manual/de/faq.passwords.php)
-
-> Hashing algorithms such as MD5, SHA1 and SHA256 are designed to be very fast and efficient. With modern techniques and computer equipment, it has become trivial to "brute force" the output of these algorithms, in order to determine the original input. 
-> 
-> Because of how quickly a modern computer can "reverse" these hashing algorithms, many security professionals strongly suggest against their use for password hashing.    
- 
- 
-<div class="alert alert-info"><strong>Information!</strong> In den nachfolgenden Beispielen wird zur Demonstartion des grundlegenden Prinzipes sha256() verwendet, auch weil die dadurch entstehenden Hashes um einiges kürzer sind als bsp. von sha512().</div>
-
-
-##### Beispiele
-
-Beispiele mit sha256-Algorithmus - PHP stellt dazu die Funktion [hash()](http://php.net/manual/de/book.hash.php) zur Verfügung.
-
-
-Leerstring als Ausgabgsstring
-
-~~~ php
-$str = "";
-echo hash("sha256", $str);
-// ergibt:
-// e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-~~~
-
-
-"Normaler" String
-
-~~~ php
-$str = "Franz";
-echo hash("sha256", $str);
-// ergibt:
-// bae10942b11649e784f7e4c2728203612368ff3f871fe0a6c0c706eb52318223
-~~~
-
-
-Zur Demonstration - nur ein Buchstabe Unterschied zum vorigen Beispiel. Es ergibt sich eine völlig anderer Hash
-
-~~~ php
-$str = "Frank";
-echo hash("sha256", $str);
-// ergibt:
-// db605e8f71913d1f3966ad908d78b8a8084f5047122037b2b91a7192b598a9ad
-~~~
-
-
-Längere Texte werden duch den Algorithmus ebenfalls auf die idente Länge gebracht
-
-~~~ php
-$str = "Das Problem zu erkennen ist wichtiger, als die Lösung zu erkennen, denn die genaue Darstellung des Problems führt zur Lösung. (Albert Einstein)";
-echo hash("sha256", $str);
-// ergibt:
-// 39a448a529b271542bd12ddcd19779c3a0bcaa750442da2e1ad6fbbe0645dd91
-~~~
 
 
 ##### Gesalzene Hashes
@@ -129,14 +72,6 @@ Das Prinzip ist, vor dem hashen dem Ausgangswert noch einen weitern Wert, den "S
 
 Beispiel mit "Salz". Gäbe es in einer Rainbow-Table bereits die Kombination zwischen *Frank* und dem ungesalzenen Hash, dann kann mit Hilfe des Salz und des daraus entstehenden abweichenden Hash die direkte Feststellung verhindert werden.
 
-
-~~~ php
-$str = "Frank";
-$salt = "sAit,4#";
-echo hash("sha256", $str.$salt);
-// ergibt:
-// af5340996c00a6fcc3146c276e172aa866d0f6ef4ce6df7c44987c5f2bcf6774
-~~~
 
 
 ### Kodierung
@@ -155,26 +90,6 @@ In PHP stehen dafür die Funktionen [base64_encode()](http://php.net/manual/de/f
 
 
 <div class="alert alert-info"><strong>Hinweis!</strong> Die oben erwähnten Funktionen zu verwenden, um Texte "geheim" zu halten oder "unleserlich" zu machen, macht wenig Sinn. Zumeist ist schon am kodierten Ergebnis relativ eindeutig ersichtlich das es sich um das Produkt einer Base64-Kodierung handelt. Hierzu ist eine Verschlüsselung anzuwenden, siehe dazu weiter unten.</div>
-
-
-##### Beispiel
-
-~~~ php
-$str = "Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.";
-
-// kodieren 
-$str_base64 = base64_encode($str);
-
-echo $str_base64;
-// ergibt:
-// RnJhbnogamFndCBpbSBrb21wbGV0dCB2ZXJ3YWhybG9zdGVuIFRheGkgcXVlciBkdXJjaCBCYXllcm4u
-
-// und wieder zurück
-
-echo base64_decode($str_base64);
-// ergibt:
-// Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
-~~~
 
 
 ### Verschlüsselung

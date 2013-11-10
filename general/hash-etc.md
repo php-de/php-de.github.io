@@ -1,9 +1,14 @@
 ---
 layout: guide
+
 permalink: /jumpto/hash-etc/
+
 title: "Hashing, Kodierung, Verschlüsselung"
+
 group: "Allgemein"
+
 creator: hausl
+
 author:
     -   name: hausl
         profile: 21246
@@ -22,7 +27,7 @@ inhalt:
         simple: "Mcrypt-Erweiterung"
 
 
-entry-type: in-progress
+entry-type: in-discussion
 ---
 
 
@@ -31,20 +36,21 @@ Diese Übersicht gibt einen kurzen Überblick über die unterschiedlichen Verfah
 
 ### Hashing (Hash-Funktion)
 
-Zweck des Hashing ist es aus einem Ausgangswert einen nicht rückrechenbaren Hash zu generieren. Unabhängig der Länge des Ausgangswertes entsteht je nach verwendeter Funktion ein gleich langer Hash. Beispiele siehe weiter unten. Hierfür stehen in PHP für verschiedene Hash-Algorithmen (zB MD5, SHA256, SHA512, etc..) entsprechende Funktionen zur Verfügung (zB hash(), crypt()...). 
+Zweck des Hashing ist es aus einem Ausgangswert einen nicht rückrechenbaren Hash zu generieren. Unabhängig der Länge des Ausgangswertes entsteht je nach verwendeter Funktion ein gleich langer Hash. Hierfür stehen in PHP für verschiedene Hash-Algorithmen entsprechende Funktionen zur Verfügung (zB hash(), crypt()...). 
 
 [Weiters Details bei Wikipedia: Hashfunktion](http://de.wikipedia.org/wiki/Hashfunktion)
+
+[PHP.de - Hash](http://php.net/manual/de/book.hash.php)
 
 
 ##### Anwendung
 
-Paswörter werden gehasht, bevor diese in der Datenbank gespeichert werden. Damit sind diese in der gehashten Form soweit nutzlos, selbst wenn man Zugriff darauf erlangt.
+Die übliche Anwendung besteht darin, Paswörter zu hashen, bevor diese in der Datenbank gespeichert werden. Damit sind diese in der gehashten Form soweit nutzlos, selbst wenn man Zugriff darauf erlangt.
 
-Beim Login-Vorgang wird das im Login-Formular eingegebene Klartext Passwort mit dem selben Algorithmus, wie jener der vor der Speicherung angewandt wurde, gehasht und dann dieser gerade  errechnete Hash mit dem Hash in der Datenbank verglichen. Stimmen diese beiden überein, ist das Login-Passwort korrekt.
+Beim Login-Vorgang wird dann das im Login-Formular eingegebene Klartext Passwort mit dem selben Algorithmus, wie jener der vor der Speicherung angewandt wurde, gehasht und dann dieser eben errechnete Hash mit dem bestehenden Hash in der Datenbank verglichen. Stimmen diese beiden überein, ist das Login-Passwort korrekt.
 
 
 ##### Sicherheit der Hash-Algorithmen
-
 
 Das Sicherheitsrikiso bei Hash-Werten liegt in der grundsätzlichen Möglichkeit von Kollisionen. Dabei geht es in erster Linie darum, einen Ausgangswert zu finden, der nach dem Hash-Vorgang den selben Hash-Wert als Ergebnis hat.
 

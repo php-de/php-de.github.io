@@ -9,21 +9,21 @@ author:
         profile: 21246
     
 inhalt:
-    -   name: ""
-        anchor: 
-        simple: ""
+    -   name: "Mythos if-Schleife"
+        anchor: mythos-if-schleife
+        simple: "if ist eine Kontrollstruktur"
         
-    -   name: ""
-        anchor: 
-        simple: ""
+    -   name: "Notierung"
+        anchor: notierung
+        simple: "Korrekte Notierung gem. PEAR-Standard"
 
-    -   name: ""
-        anchor: 
-        simple: ""
+    -   name: "Syntaktische Fallstricke"
+        anchor: syntaktische-fallstricke
+        simple: "Diese Fallen lauern"
 
-    -   name: ""
-        anchor: 
-        simple: ""
+    -   name: "Sinnlose Konstrukte"
+        anchor: sinnlose-konstrukte
+        simple: "So geht es besser"
 
 
 #entry-type: in-discussion
@@ -129,7 +129,7 @@ if ($ampel == "gruen")
 ~~~
 
 
-### Logische, sinnlose Angabe
+### Sinnlose Konstruke
 
 #### Unnötige Prüfungen zu bool (*true* oder *false*) hin
 

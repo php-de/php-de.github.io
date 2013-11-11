@@ -30,7 +30,7 @@ entry-type: in-discussion
 ---
 
 
-### Mythos `if`-Schleife
+### Mythos if-Schleife
 
 Zuerst sei ein oft vorkommender Mythos aufgeklärt:
 

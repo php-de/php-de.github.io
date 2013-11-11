@@ -26,21 +26,20 @@ inhalt:
         simple: "So geht es besser"
 
 
-#entry-type: in-discussion
-entry-type: in-progress
+entry-type: in-discussion
 ---
 
 
-### Mythos if-Schleife
+### Mythos `if`-Schleife
 
 Zuerst sei ein oft vorkommender Mythos aufgeklärt:
 
-- Es gibt keine if-Schleifen.
-- Es gibt keine if-Schlaufen.
+- Es gibt keine `if`-Schleifen.
+- Es gibt keine `if`-Schlaufen.
   
-Das Wesen einer Schleife ist die Wiederholung. if bildet einen Block aus Anweisungen und Ausdrücken.
+Das Wesen einer Schleife ist die Wiederholung. `if` bildet einen Block aus Anweisungen und Ausdrücken.
 
-if ist eine [Kontrollstruktur](http://www.php.net/manual/de/language.control-structures.php) aber deshalb noch lange keine Schleife.
+`if` ist eine [Kontrollstruktur](http://www.php.net/manual/de/language.control-structures.php) aber deshalb noch lange keine Schleife.
 
 
 ### Notierung  
@@ -59,9 +58,9 @@ if (Bedingung1) {
 }
 ~~~
 
-#### Übliche Darstellung if / else
+#### Übliche Darstellung `if` / `else`
 
-Die übliche Darstellung entspricht somit entweder / oder 
+Die übliche Darstellung entspricht somit *entweder / oder* 
 
 ~~~ php
 if (!empty($_POST['action'])) {
@@ -72,7 +71,7 @@ if (!empty($_POST['action'])) {
 ~~~
 
 
-#### Verkürzte Notierung mit Default-Vorbelegung
+#### Etwas verkürzte Notierung mit default-Vorbelegung
 
 Eine alternative, etwas kürzere Variante, mit Wert-Vorbelegung und Übersteuerung, wenn die Bedingung zutrifft.
 
@@ -86,7 +85,7 @@ if (!empty($_POST['action'])) {
 
 #### Trinitäts Operator (Ternärer Operator)
 
-Eine weitere alternative Darstellungsweise ist der [Trinitäts Operator](http://php.net/manual/de/language.operators.comparison.php), auch Ternärer Operator genannt. Dieser bietet sich gerade dann an, wenn es nur ein if / else relevant ist. 
+Eine weitere alternative Darstellungsweise ist der [Trinitäts Operator](http://php.net/manual/de/language.operators.comparison.php), auch Ternärer Operator genannt. Dieser bietet sich ins Besondere an, wenn es nur ein *entweder / oder* gibt. Sollte mehr als das nötig sein (`elseif`, ...), kann diese Variante jedoch sehr schnell unübersichtlich werden. Hier empfiehlt es sich oft zur herkömmlichen Variante zu greifen.
 
 ~~~ php
 (Bedingung) ? Aktion1 : Standardakion;
@@ -98,8 +97,7 @@ Beispiel entspricht den oberen beiden:
 $action = (!empty($_POST['action'])) ? $_POST['action'] : 'standard';
 ~~~
 
-Anmerkung: Die Klammerung der Bedingung im Trinitäts Operator ist nicht nötig, wird jedoch der besseren Lesbarkeit empfohlen. Sollten mehr als eine Bedingung nötig sein, kann diese Variante jedoch sehr schnell unübersichtlich werden. Hier empfiehlt es sich oft zur herkömmlichen Varainte zu greifen.
-
+Anmerkung: Die Klammerung der Bedingung im Trinitäts Operator ist nicht nötig, wird jedoch der besseren Lesbarkeit empfohlen. 
 
 
 ### Syntaktische Fallstricke
@@ -118,7 +116,7 @@ Nur ein `=` Zeichen ist eine Zuweisung und würde immer als *true* gewertet. Zum
 
 #### Schreibweise ohne geschweifte Klammern
 
-Nur die erste Zeile nach dem if() wird als Aktion behandelt. Die nächste Zeile nicht mehr, diese wird immer ausgeführt. Zur besseren Lesbarkeit wird von dieser Notaiton abgeraten, diese findet auch im PEAR Standard keine Anwendung.
+Nur die erste Zeile nach dem `if` wird als Aktion behandelt. Die nächste Zeile nicht mehr, diese wird immer ausgeführt. Zur besseren Lesbarkeit wird von dieser Notaiton abgeraten, diese findet auch im PEAR Standard keine Anwendung.
 
 Negativbeispiel
 
@@ -133,7 +131,7 @@ if ($ampel == "gruen")
 
 #### Unnötige Prüfungen zu bool (*true* oder *false*) hin
 
-Das Audruck in der Klammer ( ) nach dem if wird direkt immer zu *true* oder *false* ausgewertet. Mit diesem Hintergrundwissen fällt auf, das es oft unnötige Anwendungen des if() Konstruktes gibt.
+Das Audruck in der Klammer ( ) nach dem `if` wird direkt immer zu *true* oder *false* ausgewertet. Mit diesem Hintergrundwissen fällt auf, das es oft unnötige Anwendungen des `if` Konstruktes gibt.
 
 Beispiel, eine Prüfung ob ein User Volljährig ist, könnte so aussehen:
 

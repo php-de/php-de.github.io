@@ -137,9 +137,9 @@ Die Klasse flugs auf dem Server installiert, Pfade angepasst und das Dauerfeuer 
 
 Überblick der aktuell publiken Mailer-Klassen-Kandidaten:
 
-[http://swiftmailer.org/](http://swiftmailer.org/)
-[http://sourceforge.net/projects/phpmailer/](http://sourceforge.net/projects/phpmailer/)
-[http://pear.php.net/package/Mail/](http://pear.php.net/package/Mail/)
+[http://swiftmailer.org/](http://swiftmailer.org/)  
+[http://sourceforge.net/projects/phpmailer/](http://sourceforge.net/projects/phpmailer/)  
+[http://pear.php.net/package/Mail/](http://pear.php.net/package/Mail/)  
 
 
 Auch Zend und ezComponents stellen Mailer bereit, die aber nur in Verbindung mit den jeweiligen Umgebungen funktionieren.

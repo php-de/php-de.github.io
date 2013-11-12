@@ -39,7 +39,7 @@ Markdowns bereitgestellt wurden erfährst du in diesem Beitrag.
 <strong>Wichtig!</strong> Beiträge werden nur alle 10 Minuten von JEKYLL auf Github erneuert. Dieser Interval ist nicht davon abhängig wann du Dinge veränderst, es ist ein fester Zeit-Interval.
 </div>
 
-#### Beitragsregeln
+### Beitragsregeln
 
 Respektiere folgende Regeln wenn du Beiträge hinzufügen oder bearbeiten möchtest:
 
@@ -54,14 +54,14 @@ Respektiere folgende Regeln wenn du Beiträge hinzufügen oder bearbeiten möcht
 * Wenn du einen Beitrag diskutieren möchtest, erstelle einen Beitrag im [Wiki-Forum](http://www.php.de/wiki-diskussionsforum/).
 * Der Issue-Tracker des Repository kann ebenfalls als To-Do-Liste der einzelnen Beiträge benutzt werden. Beiträge die eine Todo-Liste im Bug-Tracker haben, sollten als `in-progress` oder `in-discussion` markiert sein. Der Eintrag im Bug-Tracker bedarf eines <span class="label label-success">To-Do</span> Labels. Anhand dieser ToDo-Liste können im Zweifelsfall andere deine Arbeit fortführen, außerdem erhalten wir so etwas Einblick in den Status deines Beitrag.
 
-#### Markdown-Aufbau
+### Markdown-Aufbau
 
 <div class="alert alert-warning">
     <strong>Wichtig:</strong> Änderungen am JEKYLL sind diskutabel und sollten im Forum diskutiert werden.
 </div>
-Das JEKYLL-System benutzt [kramdown](http://kramdown.rubyforge.org/quickref.html)-Syntax und erlaubt inline HTML, du kannst also auch Bootstrap-Komponenten wie das obige Warning mit in deinen Beitrag einbauen. Nutze bitte nur folgende Bootstrap-Elemente: Warnings, Wells, Media-Objects, Labels. Nutze HTML **nicht** dazu Demonstrationen deiner Quellcodes auszuliefern. Deine HTML-Elemente dürfen kein Javascript ausführen oder Ziel einer Javascript-Komponente der Seite werden.
+Das JEKYLL-System benutzt [kramdown](http://kramdown.rubyforge.org/quickref.html)-Syntax und erlaubt inline HTML. Du kannst also auch Bootstrap-Komponenten wie das obige Warning mit in deinen Beitrag einbauen. Nutze bitte nur folgende Bootstrap-Elemente: Warnings, Wells, Media-Objects, Labels. Nutze HTML **nicht** dazu Demonstrationen deiner Quellcodes auszuliefern. Deine HTML-Elemente dürfen kein Javascript ausführen oder Ziel einer Javascript-Komponente der Seite werden. Die statischen HTML-Seiten werden mit dem HTML5-Doctype erstellt (kein XHTML).
 
-##### YAML
+#### YAML
 
 Jedes Dokument fängt mit einem YAML-Kopf an und muss zumindest den Eintrag `layout: guide` und `permalink: "/jump-to/dateiname-ohne-extension"` besitzen. Damit wird JEKYLL angewiesen das entsprechende Layout für Beiträge zu benutzen und den Permanent-Link richtig zu aggregieren.
 
@@ -154,7 +154,22 @@ inhalt:
 
 Grundsätzlich kann die Hauptübersicht aller Beiträge sortiert werden. Generell sortiert jekyll diese Beiträge nicht. Durch angabe des feldes `orderId` kannst du beeinflussen nach welchem Beitrag dein Beitrag eingeordnet wird. Dieser Wert muss zwischen `0` und `25` definiert werden. Für den Fall das unsere Beiträge irgendwann diese Zahl pro Gruppe in der Übersicht übersteigt, werden wir dort mehr spielraum schaffen. Generell nimmt diese Zahl allerdings direkten Einfluss auf die Generierungzeit die unser Repository in Anspruch nimmt.
 
-#### Komponenten Vernetzung
+
+#### Interne Verlinkung von Artikel oder Resourcen / Pfade
+
+Etwaige Bilder in Beiträgen liegen unter `/images` der jeweiligen Kategorie, in der auch der entsprechende Beitrag liegt, z.B. `general/images/whatever.png`
+
+Die Jekyll-Variable `{{ site.url }}` kann in *.md-Dateien genutzt werden, um auf den Document-Root-URL zuzugreifen.
+
+Interne Verlinkungen sollten somit so aussehen (Verzeichnisse sind Beispiele, geht um das `{{ site.url }}` und die absolute Verankerung):
+
+~~~
+[...]({{ site.url }}/jumpto/whatever/)
+<a href="{{ site.url }}/jumpto/whatever/">...</a>
+<img src="{{ site.url }}/whatever/images/foo.png">
+~~~
+
+### Komponenten Vernetzung
 
 Grundsätzlich ist es kein Problem wenn du PHP-Komponenten die nicht zum PHP-Kern gehören oder auch Klassen aus Bibliotheken in deinen Beiträgen verlinkst. Wir setzen allerdings voraus, dass die Klasse unter der bis zum Veröffentlichungszeitpunkt aktuellsten PHP-Version fehlerfrei läuft und noch einen aktiven Maintainer besitzt ( also weiterentwickelt und betreut wird ). Du solltest auch den Zustand berücksichigen das die meisten Hosting-Platformen noch ältere PHP-Versionen ausliefern. Als groben Schnitt sollte dein Quellcode mindestens noch PHP 5.3 unterstützen.
 
@@ -162,6 +177,6 @@ Prüfe bitte ebenso ob deine Komponenten mit [Composer](http://getcomposer.org) 
 
 Für den Fall das du dir nicht sicher bist ob du diese Komponente in diesem Repository verlinken darfst, sprich uns an. Für den Fall das du dir nicht sicher bist ob diese Komponente aus Lizenz-Sicht verlinkt werden darf, sprech entweder uns an oder bitte den Entwickler der Komponente um Klärung.
 
-#### Das Git Repository
+### Das Git Repository
 
 Unser Wissens-Repository basiert auf GIT und wird auf Github gehostet. Um etwas über den Umgang mit GIT zu erfahren und wie du dich auf Github an diesem Repository beteiligen kannst, haben wir ebenfalls einen [Beitrag](/jumpto/how-to/) bereitgestellt.

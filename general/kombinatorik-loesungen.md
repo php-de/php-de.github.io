@@ -20,6 +20,9 @@ inhalt:
     -   name: "Alle Kombinationen einer bestimmten Anzahl der Elemente eines Arrays"
         anchor: alle-kombinationen-einer-bestimmten-anzahl-der-elemente-eines-arrays
 
+    -   name: "Weblinks"
+        anchor: weblinks
+
 entry-type: in-discussion
 ---
 
@@ -280,3 +283,8 @@ $path3 = getPathByNumber($n, $k, 10000, $fibTable);
 echo implode('-', $path3) . "\n"; // 1-2-3-17-28-39
 ~~~
 
+
+
+### Weblinks
+
+- [Finding All Permutations of an Array (PHP Cookbook)](http://docstore.mik.ua/orelly/webprog/pcook/ch04_26.htm)

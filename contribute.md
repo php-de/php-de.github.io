@@ -159,14 +159,19 @@ Grundsätzlich kann die Hauptübersicht aller Beiträge sortiert werden. Generel
 
 Etwaige Bilder in Beiträgen liegen unter `/images` der jeweiligen Kategorie, in der auch der entsprechende Beitrag liegt, z.B. `general/images/whatever.png`
 
-Die Jekyll-Variable `{{ site.url }}` kann in *.md-Dateien genutzt werden, um auf den Document-Root-URL zuzugreifen.
+Die Jekyll-Variable `{{ "{{ site.url " }}}}` kann in *.md-Dateien genutzt werden, um auf den Document-Root-URL zuzugreifen.
 
-Interne Verlinkungen sollten somit so aussehen (Verzeichnisse sind Beispiele, geht um das `{{ site.url }}` und die absolute Verankerung):
+Interne Verlinkungen sollten somit so aussehen. Verzeichnisse sind Beispiele, es geht um das `{{ "{{ site.url " }}}}` und die absolute Verankerung:
 
-~~~
-[...]({{ site.url }}/jumpto/whatever/)
-<a href="{{ site.url }}/jumpto/whatever/">...</a>
-<img src="{{ site.url }}/whatever/images/foo.png">
+Link:
+`[Linktext]({{ "{{ site.url " }}}}/jumpto/whatever/)`
+
+HTML-Link (nur wenn nötig verwenden)
+`<a href="{{ "{{ site.url " }}}}/jumpto/whatever/">...</a>`
+
+Bild HTML Notierung (nur wenn nicht anders möglich)
+`<img src="{{ "{{ site.url " }}}}/whatever/images/foo.png">`
+
 ~~~
 
 ### Komponenten Vernetzung

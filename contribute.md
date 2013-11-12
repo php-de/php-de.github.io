@@ -163,10 +163,11 @@ Die Jekyll-Variable `{{ "{{ site.url " }}}}` kann in *.md-Dateien genutzt werden
 
 Interne Verlinkungen sollten somit so aussehen. Verzeichnisse sind Beispiele, es geht um das `{{ "{{ site.url " }}}}` und die absolute Verankerung:
 
-
-`[Linktext]({{ "{{ site.url " }}}}/jumpto/whatever/)`   
-`<a href="{{ "{{ site.url " }}}}/jumpto/whatever/">...</a>`  
-`<img src="{{ "{{ site.url " }}}}/whatever/images/foo.png">`  
+~~~ 
+[Linktext]({{ "{{ site.url " }}}}/jumpto/whatever/)  
+<a href="{{ "{{ site.url " }}}}/jumpto/whatever/">...</a>  
+<img src="{{ "{{ site.url " }}}}/whatever/images/foo.png">  
+~~~
 
 
 ### Komponenten Vernetzung

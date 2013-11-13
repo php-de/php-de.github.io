@@ -28,7 +28,7 @@ entry-type: in-discussion
 
 Das sogenannte **Affenformular** ist eine Codebasis bei der Verarbeitung von Webformularen. Sein Hauptzweck ist die Erstellung einer grundlegenden Formularverarbeitung: Darstellung eines Forms, Prüfung des Status, Selbstaufruf mit wiederaufgefüllten Eingabefeldern.
 
-![Affenformular, Funktionsprinzip des Arbeitsprozesses]({{ site.url }}/form/images/affenformular_prozess.jpg)
+![Affenformular, Funktionsprinzip des Arbeitsprozesses]({{ site.url }}/images/affenformular_prozess.jpg)
 
 In jedem Fall registriert ein solcher Code einen erfolgreichen Submit (i.A. einen [POST Request]({{ site.url }}/jumpto/request/#post)) und führt eine Folgeaktion (Parameterverarbeitung oder erneutes Darstellen des Formularcodes) aus. Ob eine [Validierung]({{ site.url }}/jumpto/validierung/) der übertragenen Feldwerte noch zum Affenformular gehört ist Ansichtssache.
 
@@ -45,24 +45,24 @@ Beide Punkte werden durch eine klassische Fomularverarbeitung allenfalls ansatzw
 
 Am Anfang steht die klassische Formularverarbeitung. Wir haben ein HTML-basiertes Formularscript, dessen Form-Action auf ein serverbasiertes Aktionsscript verweist. Ein Button erzeugt einen Request auf dieses Script und startet dessen Aktion.
 
-![lineare Formularverarbeitung]({{ site.url }}/form/images/affenform_herleitung_1.gif)
+![lineare Formularverarbeitung]({{ site.url }}/images/affenform_herleitung_1.gif)
 
 Das Aktionsscript prüft die Eingabe und zeigt bei fehlenden oder fehlerhaften Daten eine Meldung an. Anderenfalls werden die Daten verarbeitet. Aus Nutzeraspekten ist so ein Script unglücklich gebaut, da der Nutzerwunsch ja die Ausführung der Scriptaktion mit seinen Eingabedaten ist. Im Fehlerfall ist die Art der Rückmeldung, erst recht die Möglichkeit zur Anpassung der Eingabedaten hier bescheiden: Meldungstexte und Browser-Back-Button.
 
 Mehr Komfort bietet ein dynamisches Formular, das bei fehlerhaften Daten die bisherigen Daten in einem baugleichen Formular wieder darstellt. Für den Nutzer ergibt sich der Eindruck, das Formular würde erneut angezeigt.
 
-![lineare Formularverarbeitung mit Wiederbefüllung]({{ site.url }}/form/images/affenform_herleitung_2.gif)
+![lineare Formularverarbeitung mit Wiederbefüllung]({{ site.url }}/images/affenform_herleitung_2.gif)
 
 Das Eingabescript wird hierbei dupliziert und mit einem dynamischen Teil (Befüllen der Eingabeelemente mit Vorgabewerten) erweitert. Die Aktion zeigt weiterhin auf das ursprüngliche Aktionsscript. Selbiges prüft, ob es eine Folgeaktion (Datenverarbeitung) ausführt oder das dynamische Formular darstellt. Beide Komponenten können dabei durchaus zusammen in einem Script als Bedingungsblöcke notiert sein.
 
 
 Nun stellt sich die Frage, ob nicht ein Formular beide Zwecke erfüllen kann, die Initialanzeige (leer) und die Fehleranzeige (befüllt). Erhält unser dynamisches Formular eine Auswertung der Art seines Aufrufs, kann es an die Stelle des initialen Formulars treten und man spart damit ein Script ein. Und noch viel wichtiger: Doppelungen, bspw. bei der Änderung der Formularmaske entfallen.
 
-![lineare Formularverarbeitung mit dynamischer Eingabemaske]({{ site.url }}/form/images/affenform_herleitung_3.gif)
+![lineare Formularverarbeitung mit dynamischer Eingabemaske]({{ site.url }}/images/affenform_herleitung_3.gif)
 
 Führt man diesen Schritt konsequent weiter, kann auch die Aktionsfunktionen mit in das Script integrieren. Das ist sinnvoll, weil unser dynamisches Formularscript ohnehin schon Informationen über den Zustand der aktuellen Formularverarbeitung verwaltet. Die Aktion unseres Formulars zeigt also auf das aktuelle Script.
 
-![echtes Affenformular]({{ site.url }}/form/images/affenform_herleitung_4.gif)
+![echtes Affenformular]({{ site.url }}/images/affenform_herleitung_4.gif)
 
 
 ### Umsetzung

@@ -72,7 +72,7 @@ Der Aufruf einer HTML Seite liefert ein Hypertextdokument, das durch den Browser
 Der Aufruf einer PHP Seite startet ein Programm, das ein Hypertextdokument erzeugt. Das Hypertextdokument wird wiederum durch den Server ausgeliefert und im Browser gerendert.
 
 
-![Client-Server]({{ site.url }}/general/images/client-server.jpg)
+![Client-Server]({{ site.url }}/images/client-server.jpg)
 
 
 PHP geschieht also vor allen Sprachen und Formatierungen, die im Browser zum Einsatz kommen (HTML, Javascript, CSS). PHP ist von einem Server (also so gesehen von einer bestehenden Internetverbindung) abhängig, clientseitige Sprachen sind es nicht (insofern der Quelltext lokal auf dem Client PC existiert). Ein HTML Code mit Stylesheets und Javascript Funktionalität kann also auf einen Client PC heruntergeladen lokal vom Browser verarbeitet werden. PHP Code dagegen nicht.

@@ -25,9 +25,9 @@ inhalt:
 ---
 
 
-| **Selections** oder **Auswahllisten** sind HTML Formularelemente, die eine Liste von Werten einer fest definierten Menge zur Auswahl bereitstellen. Selections können als Einfach- oder Mehrfachauswahl notiert werden. Dabei wird in Einfachlisten üblicherweise immer ein Wert übertragen, in Mehrfachlisten kann kein, ein oder mehrere Werte ausgewählt und übertragen werden. | ![select]({{ site.url }}/form/images/select_single_closed.gif) | ![select]({{ site.url }}/form/images/select_single_open.gif) |
+| **Selections** oder **Auswahllisten** sind HTML Formularelemente, die eine Liste von Werten einer fest definierten Menge zur Auswahl bereitstellen. Selections können als Einfach- oder Mehrfachauswahl notiert werden. Dabei wird in Einfachlisten üblicherweise immer ein Wert übertragen, in Mehrfachlisten kann kein, ein oder mehrere Werte ausgewählt und übertragen werden. | ![select]({{ site.url }}/images/select_single_closed.gif) | ![select]({{ site.url }}/images/select_single_open.gif) |
 
-| Je nach Selectiontyp unterscheiden sich die Verfahren zur Verarbeitung und Darstellung. Die jeweiligen Verfahren sind dabei mit denen für Optionsfelder (Radiogroups bzw. Checkboxes) verwandt/identisch. | ![select]({{ site.url }}/form/images/select_multi_off.gif) | ![select]({{ site.url }}/form/images/select_multi_selected.gif) |
+| Je nach Selectiontyp unterscheiden sich die Verfahren zur Verarbeitung und Darstellung. Die jeweiligen Verfahren sind dabei mit denen für Optionsfelder (Radiogroups bzw. Checkboxes) verwandt/identisch. | ![select]({{ site.url }}/images/select_multi_off.gif) | ![select]({{ site.url }}/images/select_multi_selected.gif) |
 
 
 ### Selections auswerten

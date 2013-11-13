@@ -160,7 +160,7 @@ Grundsätzlich kann die Hauptübersicht aller Beiträge sortiert werden. Generel
 
 #### Pfade für interne Verlinkung von Artikel, Bilder, etc.
 
-In Beiträgen verlinkte Bilder liegen jeweils unter `/images` der jeweiligen Kategorie, in der auch der entsprechende Beitrag liegt, z.B. `general/images/whatever.png` für einen Beitrag der ebenfalls unter `general/` liegt
+In Beiträgen verlinkte Bilder liegen zentral im Verzeichnis `/images/` im Root.
 
 Die Jekyll-Variable `{{ "{{ site.url " }}}}` kann in *.md-Dateien genutzt werden, um auf den Document-Root-URL zuzugreifen.
 
@@ -169,7 +169,7 @@ Interne Verlinkungen sollten somit so aussehen. Verzeichnisse sind Beispiele, es
 
 - `[...]({{ "{{ site.url " }}}}/jumpto/whatever/)`  
 - `<a href="{{ "{{ site.url " }}}}/jumpto/whatever/">...</a>`  
-- `<img src="{{ "{{ site.url " }}}}/whatever/images/foo.png">`  
+- `<img src="{{ "{{ site.url " }}}}/images/foo.png">`  
 
 
 ### Komponenten Vernetzung

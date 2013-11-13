@@ -43,7 +43,7 @@ inhalt:
     <a href="http://get.adobe.com/de/reader/">Adobe Reader</a>.
     <br>
     <br>
-    <img src="{{ site.url }}/email/images/party_smiley.png" alt="party smiley">  Let the good times roll!
+    <img src="{{ site.url }}/images/party_smiley.png" alt="party smiley">  Let the good times roll!
     <br>
     <br>
     Euer Max!
@@ -131,7 +131,7 @@ if ($mailer->send($message)) {
 Die Klasse flugs auf dem Server installiert, Pfade angepasst und das Dauerfeuer kann losgehen; Herz was willst du mehr?
 
 
-![email]({{ site.url }}/email/images/email.png)
+![email]({{ site.url }}/images/email.png)
 
 
 

@@ -17,7 +17,7 @@ layout: default
         {% when 'deprecated' %}<p><strong>Dieser Beitrag wurde von <a href="http://www.php.de/member.php?u={{ currentEditor.profile }}">{{ currentEditor.name }}</a> als veraltet gekennzeichnet.</strong></p><p>Beiträge die als veraltet gekennzeichnet wurden müssen überarbeitet werden. Wir geben uns mühe die notwendigen Informationen so schnell es geht zusammenzutragen und einzupflegen. Solltest du etwas beisteuern möchten, kannst du im Issue-Tracker unseres Repository einen Eintrag erstellen.</p>
         {% else %}<p><strong>Dieser Beitrag ist fertiggestellt und wurde zuletzt von <a href="http://www.php.de/member.php?u={{ currentEditor.profile }}">{{ currentEditor.name }}</a> bearbeitet.</strong></p>
     {% endcase %}
-    <hr /><p>{% if page.license-url %}<b>Differenzierte Sourcecode-Lizenz:</b> Der Sourcecode der mit diesem Beitrag weitergegeben wird unterliegt <a href="{{ page.license-url }}">einer anderen Lizenz</a> und wird nicht durch die Gesamtwerk-Lizenz dieses Repositories abgedeckt.{% else %}Der Sourcecode der mit diesem Beitrag weitergeben wird unterliegt der Gesamtwerk-Lizenz, die Gesamtwerk-Lizenz ist im Footer jeder Seite dieses Repository verlinkt.{% endif %}</p>
+    {% if page.license-url %}<hr /><p><b>Differenzierte Sourcecode-Lizenz:</b> Der Sourcecode der mit diesem Beitrag weitergegeben wird unterliegt <a href="{{ page.license-url }}">einer anderen Lizenz</a> und wird nicht durch die Gesamtwerk-Lizenz dieses Repositories abgedeckt.</p>{% endif %}
 </div>
 <div id="guide">
     <div class="group-panel panel panel-default">

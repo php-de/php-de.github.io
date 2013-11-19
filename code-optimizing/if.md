@@ -60,7 +60,7 @@ if (Bedingung1) {
 
 #### Übliche Darstellung `if` / `else`
 
-Die übliche Darstellung entspricht somit *entweder / oder* 
+Nachfolgend eine übliche Darstellung, diese entspricht einem *entweder / oder*.
 
 ~~~ php
 if (!empty($_POST['action'])) {

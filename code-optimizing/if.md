@@ -44,7 +44,7 @@ Das Wesen einer Schleife ist die Wiederholung. `if` bildet einen Block aus Anwei
 
 ### Notierung  
 
-Die korrekte Notierung gemäß [PEAR Standard](http://pear.php.net/manual/de/standards.control.php) beschreibt die Angabe immer mit Klammern.
+Die korrekte Notierung gemäß [PEAR Standard](http://pear.php.net/manual/de/standards.control.php) beschreibt die Angabe immer mit geschweiften/geschwungenen  Klammern `{ }`.
 
 Beispiel 
 

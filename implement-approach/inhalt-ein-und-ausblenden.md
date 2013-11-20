@@ -2,7 +2,7 @@
 layout: guide
 permalink: /jumpto/inhalt-ein-und-ausblenden/
 title: "Inhalt ein- und ausblenden"
-group: "Allgemein"
+group: "Standard Implementierungsansätze"
 creator: Manko10
 author:
     -   name: Manko10

@@ -2,7 +2,7 @@
 layout: guide
 permalink: /jumpto/kombinatorik-loesungen/
 title: "Lösungsvorschläge zu kombinatorischen Standardaufgaben"
-group: "Allgemein"
+group: "Standard Implementierungsansätze"
 creator: mermshaus
 author:
     -   name: mermshaus

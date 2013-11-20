@@ -6,7 +6,7 @@ title: "Ich-will-das-selbst-schaffen-Attitüde"
 
 creator: Manko10
 
-group: "Allgemein"
+group: "Einführung"
 
 author:
     - name: Manko10

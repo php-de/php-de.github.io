@@ -2,7 +2,7 @@
 layout: guide
 permalink: /jumpto/kontextwechsel/
 title: "Kontextwechsel"
-group: "Allgemein"
+group: "Sicherheit"
 creator: nikosch
 author:
     -   name: nikosch

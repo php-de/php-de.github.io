@@ -2,7 +2,7 @@
 layout: guide
 permalink: /jumpto/cross-site-scripting/
 title: "Cross-Site-Scripting (XSS)"
-group: "Allgemein"
+group: "Sicherheit"
 creator: Manko10
 author:
     -   name: Manko10

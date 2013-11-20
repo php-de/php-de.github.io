@@ -1,18 +1,12 @@
 ---
 layout: guide
-
 permalink: /jumpto/hash-etc/
-
 title: "Hashing, Kodierung, Verschlüsselung"
-
-group: "Allgemein"
-
+group: "Sicherheit"
 creator: hausl
-
 author:
     -   name: hausl
         profile: 21246
-
 inhalt:
     -   name: "Hashing (Hash-Funktion)"
         anchor: hashing-hash-funktion
@@ -25,7 +19,6 @@ inhalt:
     -   name: "Verschlüsselung"
         anchor: verschlsselung
         simple: "Mcrypt-Erweiterung"
-
 
 entry-type: in-discussion
 ---

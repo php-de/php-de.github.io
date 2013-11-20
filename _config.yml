@@ -24,9 +24,14 @@ orderId: 26
 
 groups:
 
+    - name: "Einführung"
+      path: "/introduction"
+      desc: "Grundlegende Informationen zum Einstieg in PHP"
+      anchor: "introduction"
+
     - name: "Allgemein"
       path: "/general"
-      desc: "Grundlegende Informationen zum Einstieg in PHP"
+      desc: "Allgemeine Themen rund um PHP"
       anchor: "general"
 
 #    - name: "Entwicklungs Umgebung"
@@ -38,6 +43,16 @@ groups:
       path: "/code-optimizing"
       desc: "Code-Optimierung von A bis Z."
       anchor: "code-optimizing"
+
+    - name: "Standard Implementierungsansätze"
+      path: "/implement-approach"
+      desc: "Gezielte Lösungsansätze für oft gefragtes"
+      anchor: "implement-approach"
+
+    - name: "Sicherheit"
+      path: "/security"
+      desc: "Allgemeine Themen rund um die Sicherheit"
+      anchor: "security"
 
     - name: "Datenbanken"
       path: "/database"
@@ -63,6 +78,11 @@ groups:
       path: "/oop"
       desc: "OOP unter PHP"
       anchor: "oop"
+
+    - name: "URL / Dateisystem"
+      path: "/url-filesystem"
+      desc: "Informationen zur URL und das Dateisystem"
+      anchor: "url-filesystem"
 
     - name: "Request-Handling"
       path: "/request-handling"

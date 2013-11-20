@@ -1,7 +1,7 @@
 ---
 layout: guide
 permalink: /jumpto/validierung/
-group: "Allgemein"
+group: "Sicherheit"
 title: "Validierung"
 creator: nikosch
 author:

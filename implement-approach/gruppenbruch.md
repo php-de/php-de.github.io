@@ -2,7 +2,7 @@
 layout: guide
 permalink: /jumpto/gruppenbruch/
 title: "Gruppenbruch"
-group: "Allgemein"
+group: "Standard Implementierungsansätze"
 creator: nikosch
 author:
     -   name: nikosch

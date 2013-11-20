@@ -2,7 +2,7 @@
 layout: guide
 permalink: /jumpto/pfade/
 title: "Pfade in der Webentwicklung"
-group: "Allgemein"
+group: "URL / Dateisystem"
 creator: nikosch
 author:
     -   name: nikosch

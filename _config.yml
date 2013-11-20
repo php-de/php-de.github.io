@@ -44,25 +44,30 @@ groups:
       desc: "Code-Optimierung von A bis Z."
       anchor: "code-optimizing"
 
-    - name: "Standard Implementierungsansätze"
-      path: "/implement-approach"
-      desc: "Gezielte Lösungsansätze für oft gefragtes"
-      anchor: "implement-approach"
-
     - name: "Sicherheit"
       path: "/security"
       desc: "Allgemeine Themen rund um die Sicherheit"
       anchor: "security"
 
-    - name: "Datenbanken"
-      path: "/database"
-      desc: "MySQL & Co."
-      anchor: "database"
-
     - name: "Debugging"
       path: "/debugging"
       desc: "Auf Fehlersuche"
       anchor: "debugging"
+
+    - name: "URL / Dateisystem"
+      path: "/url-filesystem"
+      desc: "Informationen rund um die URL und dem Dateisystem"
+      anchor: "url-filesystem"
+
+    - name: "Request-Handling"
+      path: "/request-handling"
+      desc: "Wissenswertes über das Request Handling in PHP."
+      anchor: "request-handling"
+
+    - name: "Datenbanken"
+      path: "/database"
+      desc: "MySQL & Co."
+      anchor: "database"
 
     - name: "E-Mail"
       path: "/email"
@@ -79,12 +84,7 @@ groups:
       desc: "OOP unter PHP"
       anchor: "oop"
 
-    - name: "URL / Dateisystem"
-      path: "/url-filesystem"
-      desc: "Informationen zur URL und das Dateisystem"
-      anchor: "url-filesystem"
-
-    - name: "Request-Handling"
-      path: "/request-handling"
-      desc: "Wissenswertes über das Request Handling in PHP."
-      anchor: "request-handling"
+    - name: "Standard Implementierungsansätze"
+      path: "/implement-approach"
+      desc: "Gezielte Lösungsansätze für oft gefragtes"
+      anchor: "implement-approach"

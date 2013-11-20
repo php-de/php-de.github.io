@@ -2,7 +2,7 @@
 layout: guide
 permalink: /jumpto/auswahlfelder/
 group: "Formularverarbeitung"
-title: "Auswahlfelder"
+title: "Auswahlfelder (Checkbox, Radiobox)"
 orderId: 8
 creator: nikosch
 author:

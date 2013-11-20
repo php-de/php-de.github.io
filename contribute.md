@@ -155,7 +155,7 @@ inhalt:
 
 #### Sortierung
 
-Grundsätzlich kann die Hauptübersicht aller Beiträge sortiert werden. Generell sortiert jekyll diese Beiträge nicht. Durch angabe des feldes `orderId` kannst du beeinflussen nach welchem Beitrag dein Beitrag eingeordnet wird. Dieser Wert muss zwischen `0` und `25` definiert werden. Für den Fall das unsere Beiträge irgendwann diese Zahl pro Gruppe in der Übersicht übersteigt, werden wir dort mehr spielraum schaffen. Generell nimmt diese Zahl allerdings direkten Einfluss auf die Generierungzeit die unser Repository in Anspruch nimmt.
+Grundsätzlich kann für die Anzeige in der Hauptübersicht die Reihenfolge der Beiträge innerhalb einer Kategorie sortiert werden. Generell sortiert jekyll diese Beiträge nicht. Durch Angabe des Wertess `orderId` im jeweiligen Beitrag, kannst du beeinflussen nach welchem Beitrag dein Beitrag eingeordnet wird. Dieser Wert muss zwischen `0` und `25` definiert werden. Für den Fall das unsere Beiträge irgendwann diese Zahl pro Gruppe in der Übersicht übersteigt, werden wir dort mehr spielraum schaffen. Generell nimmt diese Zahl allerdings direkten Einfluss auf die Generierungzeit die unser Repository in Anspruch nimmt.
 
 
 #### Pfade für interne Verlinkung von Artikel, Bilder, etc.

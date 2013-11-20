@@ -1,12 +1,11 @@
 ---
 layout: guide
-
 permalink: /jumpto/ich-will-das-selbst-schaffen-attituede/
 title: "Ich-will-das-selbst-schaffen-Attitüde"
+group: "Einführung"
+orderId: 4
 
 creator: Manko10
-
-group: "Einführung"
 
 author:
     - name: Manko10

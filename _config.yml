@@ -59,11 +59,6 @@ groups:
       desc: "Informationen zu HTTP, URL, Requests und Dateisystem"
       anchor: "url-filesystem"
 
-    - name: "Request-Handling"
-      path: "/request-handling"
-      desc: "Wissenswertes über das Request Handling in PHP."
-      anchor: "request-handling"
-
     - name: "Datenbanken"
       path: "/database"
       desc: "MySQL & Co."

@@ -166,9 +166,6 @@ muss auch dieser vor der ersten Ausgabe des Scripts erfolgen.
 
 <div style="margin-left: 20px;">
 
-SQL-Injections fallen in den Bereich der
-[Kontextwechsel-Probleme]({{ site.url }}/jumpto/kontextwechsel/).
-
 SQL-Queries werden in PHP als normaler String zusammengebaut. Dynamisch
 hinzugefügte Werte (etwa eine Benutzereingabe in `$_POST['name']`) können dabei
 die vorgesehene Logik der Query verändern, wenn sie für den Kontext syntaktisch

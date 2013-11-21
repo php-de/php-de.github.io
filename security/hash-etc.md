@@ -1,9 +1,13 @@
 ---
 layout: guide
+
 permalink: /jumpto/hash-etc/
 title: "Hashing, Kodierung, Verschlüsselung"
 group: "Sicherheit"
+orderId: 11
+
 creator: hausl
+
 author:
     -   name: hausl
         profile: 21246

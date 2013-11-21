@@ -1,5 +1,6 @@
 ---
 layout: guide
+
 permalink: /jumpto/was-ist-php/
 title: "Was ist PHP?"
 group: "Einführung"

@@ -3,8 +3,8 @@ layout: guide
 
 permalink: /jumpto/faq/
 title: "FAQ"
-group: "Allgemein"
-orderId: 1
+group: "Einführung"
+orderId: 7
 
 creator: nikosch
 

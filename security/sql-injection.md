@@ -4,7 +4,7 @@ layout: guide
 permalink: /jumpto/sql-injection/
 title: "SQL-Injection"
 group: "Sicherheit"
-orderId: 9
+orderId: 10
 
 creator: nikosch
 
@@ -19,16 +19,31 @@ author:
         profile: 21246
 
 inhalt:
-    -   name: ""
-        anchor: 
+    -   name: "Ursprung"
+        anchor: ursprung
         simple: ""
+        
+    -   name: "Gegenmaßnahmen"
+        anchor: gegenmanahmen
+        simple: ""
+
+    -   name: "Anwendung"
+        anchor: anwendung
+        simple: ""
+
+    -   name: "Sicher ist sicher"
+        anchor: sicher-ist-sicher
+        simple: ""
+
+    -   name: "Prepared-Statements"
+        anchor: prepared-statements
+        simple: ""
+
 
 entry-type: in-discussion
 ---
 
-
-### SQL-Injection
-
+### Ursprung
 
 SQL-Injections fallen in den Bereich der
 [Kontextwechsel-Probleme]({{ site.url }}/jumpto/kontextwechsel/).
@@ -58,12 +73,19 @@ Wie bei allen Kontextwechseln muss derlei unerwünschten Effekten kein gezielter
 Angriffsversuch vorausgehen. Im Beispiel würde bereits die Eingabe eines Namens
 wie `O'Brian` die Query syntaktisch ungültig werden und fehlschlagen lassen.
 
+
+### Gegenmaßnahmen
+
+
 Zur Vermeidung von SQL-Injections dienen Funktionen, die die syntaktisch
 relevanten Zeichen, die in Eingaben enthalten sein können, durch Escaping so
 anpassen, dass sie nicht mehr zu einem Kontextwechsel führen. Aus `"` wird so
 beispielsweise `\"`. Das verdeutlicht dem Datenbanksystem, dass hier kein
 Stringbegrenzer gemeint ist (syntaktische Funktion), sondern lediglich das
 konkrete Zeichen `"` (reiner Inhalt).
+
+
+### Anwendung 
 
 Für jede Datenbankschnittstelle existiert mindestens eine spezielle Funktion
 oder Methode, die dieses Escaping durchführen kann. Es *muss* diese zur
@@ -87,6 +109,10 @@ $query = "
 ";
 ~~~
 
+
+### Sicher ist sicher
+
+
 Es ist zu empfehlen, *jeden* variablen Wert, der in Query-Strings eingefügt
 wird, durch die passende Escape-Funktion zu schicken. Also auch dann, wenn der
 Wert je nach Logik der Anwendung nur beispielsweise aus `[0-9A-Za-z]` bestehen
@@ -96,7 +122,9 @@ aufbringen müssen, darüber nachzudenken, warum an einer Stelle eine
 Escape-Funktion fehlt. Schließlich wäre es denkbar, dass sie versehentlich
 vergessen wurde.
 
+
+### Prepared-Statements
+
 Viele Datenbankschnittstellen unterstützen zusätzlich das Konzept der [Prepared
 Statements](https://de.wikipedia.org/wiki/Prepared_Statement), das ebenfalls
 SQL-Injections verhindert.
-

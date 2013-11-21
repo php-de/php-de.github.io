@@ -1,8 +1,11 @@
 ---
 layout: guide
+
 permalink: /jumpto/standard-mail-validation/
 title: "Standard E-Mail-Validierung"
 group: "E-Mail"
+orderId: 2
+
 creator: hausl
 author:
     -   name: hausl

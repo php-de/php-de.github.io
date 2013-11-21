@@ -1,8 +1,11 @@
 ---
 layout: guide
+
 permalink: /jumpto/mail-class/
 title: "E-Mail-Klassen"
 group: "E-Mail"
+orderId: 5
+
 creator: nikosch
 author:
     -   name: nikosch

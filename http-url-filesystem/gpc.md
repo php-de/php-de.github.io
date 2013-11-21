@@ -3,7 +3,7 @@ layout: guide
 
 permalink: /jumpto/gpc/
 title: "GPC (GET, POST, COOKIE)"
-group: "Informationen zu HTTP, URL, Requests und Dateisystem"
+group: "HTTP / URL / Requests / Dateisystem"
 
 creator: Manko10
 

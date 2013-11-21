@@ -3,16 +3,16 @@ layout: guide
 
 permalink: /jumpto/waechter/
 title: "Wächter"
+group: "Code-Optimierung"
+orderId: 6
+
+creator: nikosch
 
 author:
     -   name: nikosch
         profile: 2314
     -   name: hausl
         profile: 21246
-
-group: "Code-Optimierung"
-
-creator: nikosch
 
 inhalt:
     -   name: "Wächter vs. Schachtel-If"

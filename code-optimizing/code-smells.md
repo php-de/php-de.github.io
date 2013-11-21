@@ -3,16 +3,16 @@ layout: guide
 
 permalink: /jumpto/code-smells/
 title: "Code-Smells"
+group: "Code-Optimierung"
+orderId: 2
+
+creator: nikosch
 
 author:
     -   name: nikosch
         profile: 2314
     -   name: hausl
         profile: 21246
-
-group: "Code-Optimierung"
-
-creator: nikosch
 
 inhalt:
     -   name: "Leere Strings"

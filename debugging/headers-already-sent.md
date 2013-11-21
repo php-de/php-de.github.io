@@ -1,8 +1,11 @@
 ---
 layout: guide
+
 permalink: /jumpto/headers-already-sent/
 title: "Headers already sent"
-group: "Allgemein"
+group: "Debugging"
+orderId: 8
+
 creator: nikosch
 author:
     -   name: nikosch

@@ -1,8 +1,11 @@
 ---
 layout: guide
+
 permalink: /jumpto/templating-sprintf/
 title: "\"Templating\" auf Basis von sprintf"
 group: "Allgemein"
+orderId: 7
+
 creator: nikosch
 author:
     -   name: nikosch

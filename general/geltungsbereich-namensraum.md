@@ -1,8 +1,11 @@
 ---
 layout: guide
+
 permalink: /jumpto/geltungsbereich-namensraum/
 title: "Geltungsbereich (Scope) und Namensraum (Namespace)"
 group: "Allgemein"
+orderId: 16
+
 creator: Manko10
 author:
     -   name: Manko10

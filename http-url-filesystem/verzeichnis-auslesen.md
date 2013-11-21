@@ -1,8 +1,10 @@
 ---
 layout: guide
+
 permalink: /jumpto/verzeichnis-auslesen/
 title: "Verzeichnis auslesen"
-group: "URL / Dateisystem"
+group: "Informationen zu HTTP, URL, Requests und Dateisystem"
+
 creator: nikosch
 author:
     -   name: nikosch

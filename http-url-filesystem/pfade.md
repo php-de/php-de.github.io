@@ -1,8 +1,10 @@
 ---
 layout: guide
+
 permalink: /jumpto/pfade/
 title: "Pfade in der Webentwicklung"
-group: "URL / Dateisystem"
+group: "Informationen zu HTTP, URL, Requests und Dateisystem"
+
 creator: nikosch
 author:
     -   name: nikosch

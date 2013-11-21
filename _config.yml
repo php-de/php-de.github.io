@@ -54,9 +54,9 @@ groups:
       desc: "Auf Fehlersuche"
       anchor: "debugging"
 
-    - name: "URL / Dateisystem"
-      path: "/url-filesystem"
-      desc: "Informationen rund um die URL und dem Dateisystem"
+    - name: "HTTP / URL / Dateisystem"
+      path: "/http-url-filesystem"
+      desc: "Informationen zu HTTP, URL, Requests und Dateisystem"
       anchor: "url-filesystem"
 
     - name: "Request-Handling"

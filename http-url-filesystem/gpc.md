@@ -1,10 +1,11 @@
 ---
 layout: guide
+
 permalink: /jumpto/gpc/
 title: "GPC"
-creator: Manko10
+group: "Informationen zu HTTP, URL, Requests und Dateisystem"
 
-group: "Request-Handling"
+creator: Manko10
 
 author:
     -   name: Manko10

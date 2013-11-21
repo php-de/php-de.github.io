@@ -3,11 +3,9 @@ layout: guide
 
 permalink: /jumpto/request/
 title: "Request"
-orderId: 1
+group: "Informationen zu HTTP, URL, Requests und Dateisystem"
 
 creator: nikosch
-
-group: "Request-Handling"
 
 author:
     - name: nikosch

@@ -1,9 +1,12 @@
 ---
 layout: guide
+
 permalink: /jumpto/sql/
 title: "SQL-Fehlerbehebung"
-creator: nikosch
 group: "Debugging"
+orderId: 8
+
+creator: nikosch
 author:
     -   name: nikosch
         profile: 2314

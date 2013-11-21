@@ -1,9 +1,13 @@
 ---
 layout: guide
+
 permalink: /jumpto/was-ist-debugging/
 title: "Was ist Debugging?"
-creator: nikosch
 group: "Debugging"
+orderId: 2
+
+creator: nikosch
+
 author:
     -   name: nikosch
         profile: 2314

@@ -26,7 +26,7 @@ inhalt:
         simple: "Diese Fallen lauern"
 
     -   name: "Sinnlose Konstrukte"
-        anchor: sinnlose-konstrukte
+        anchor: unntige-konstrukte
         simple: "So geht es besser"
 
 
@@ -133,7 +133,7 @@ if ($ampel == "gruen")
 ~~~
 
 
-### Sinnlose Konstruke
+### Unnötige Konstrukte
 
 #### Unnötige Prüfungen zu bool (*true* oder *false*) hin
 

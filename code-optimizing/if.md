@@ -89,13 +89,15 @@ if (!empty($_POST['action'])) {
 
 #### Trinitäts Operator (Ternärer Operator)
 
-Eine weitere alternative Darstellungsweise ist der [Trinitäts Operator](http://php.net/manual/de/language.operators.comparison.php), auch Ternärer Operator genannt. Dieser bietet sich ins Besondere an, wenn es nur ein *entweder / oder* gibt. Sollte mehr als das nötig sein (`elseif`, ...), kann diese Variante jedoch sehr schnell unübersichtlich werden. Hier empfiehlt es sich oft zur herkömmlichen Variante zu greifen.
+Eine weitere alternative Darstellungsweise ist der [Trinitäts Operator](http://php.net/manual/de/language.operators.comparison.php), auch Ternärer Operator genannt. Dieser bietet sich ins Besondere an, wenn es nur ein *entweder / oder* gibt. Dieser wird wie folgt angegeben:  
 
 ~~~ php
 (Bedingung) ? Aktion1 : Standardakion;
 ~~~
 
-Beispiel entspricht den oberen beiden:
+Sollte mehr als das nötig sein (`elseif`, ...), kann diese Variante jedoch sehr schnell unübersichtlich werden. Hier empfiehlt es sich oft zur herkömmlichen Variante zu greifen.
+
+Nachfolgendes Beispiel entspricht den oberen beiden Beispielen:
 
 ~~~ php
 $action = (!empty($_POST['action'])) ? $_POST['action'] : 'standard';

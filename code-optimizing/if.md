@@ -128,7 +128,7 @@ Negativbeispiel
 
 ~~~ php
 if ($ampel == "gruen")
-    echo "Na endlich!"; // nur diese Zeile wird gem if ausgeführt
+    echo "Na endlich!"; // nur diese Zeile wird gem. dem if ausgeführt
     echo "Go!";         // diese Zeile wird immer(!) ausgeführt
 ~~~
 

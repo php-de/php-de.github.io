@@ -117,7 +117,7 @@ if ($ampel = "gruen") {
 }
 ~~~
 
-Nur ein `=` Zeichen ist eine Zuweisung und würde immer als *true* gewertet. Zum direkten Vergleich sind zwei `==` oder drei `===` Zeichen nötig. Details dazu zum Thema typschwacher und typsicherer Vergleich gibt es [ebenfalls hier](http://php.net/manual/de/language.operators.comparison.php).
+Nur ein `=` Zeichen ist eine Zuweisung und würde immer als *true* gewertet. Zum direkten Vergleich sind zwei `==` oder drei `===` Zeichen nötig. Details dazu zum Thema *typschwacher* und *typsicherer* Vergleich gibt es [ebenfalls hier](http://php.net/manual/de/language.operators.comparison.php).
 
 
 #### Schreibweise ohne geschweifte Klammern
@@ -125,7 +125,7 @@ Nur ein `=` Zeichen ist eine Zuweisung und würde immer als *true* gewertet. Zum
 Nur die erste Zeile nach dem `if` wird als Aktion behandelt. Die nächste Zeile nicht mehr, diese wird immer ausgeführt. Zur besseren Lesbarkeit wird von dieser Notaiton abgeraten, diese findet auch im PEAR Standard keine Anwendung.
 
 Negativbeispiel
-
+ 
 ~~~ php
 if ($ampel == "gruen")
     echo "Na endlich!"; // nur diese Zeile wird gem. dem if ausgeführt

@@ -25,7 +25,7 @@ inhalt:
         anchor: syntaktische-fallstricke
         simple: "Diese Fallen lauern"
 
-    -   name: "Sinnlose Konstrukte"
+    -   name: "Unnötige Konstrukte"
         anchor: unntige-konstrukte
         simple: "So geht es besser"
 

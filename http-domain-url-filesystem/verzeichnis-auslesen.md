@@ -3,7 +3,7 @@ layout: guide
 
 permalink: /jumpto/verzeichnis-auslesen/
 title: "Verzeichnis auslesen"
-group: "HTTP / URL / Requests / Dateisystem"
+group: "HTTP / Domain / URL / Requests / Dateisystem"
 orderId: 8
 
 creator: nikosch

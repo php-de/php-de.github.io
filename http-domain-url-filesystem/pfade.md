@@ -3,7 +3,7 @@ layout: guide
 
 permalink: /jumpto/pfade/
 title: "Pfade in der Webentwicklung"
-group: "HTTP / URL / Requests / Dateisystem"
+group: "HTTP / Domain / URL / Requests / Dateisystem"
 orderId: 6
 
 creator: nikosch

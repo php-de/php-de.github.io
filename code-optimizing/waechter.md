@@ -17,20 +17,23 @@ author:
 inhalt:
     -   name: "Wächter vs. Schachtel-If"
         anchor: wchter-vs-schachtel-if
-        simple: "Grundlagen<br>
-                Beispiel 1<br>
-                Beispiel 2"
+        simple: >
+                  Grundlagen<br>
+                  Beispiel 1<br>
+                  Beispiel 2
 
     -   name: "Möglichkeiten"
         anchor: mglichkeiten
-        simple: "Schleifenabbrüche mit break<br>
-		Schleifenabbrüche mit continue<br>
-        	Funktionsabbrüche mit return"
+        simple: >
+                  Schleifenabbrüche mit break<br>
+                  Schleifenabbrüche mit continue<br>
+                  Funktionsabbrüche mit return
 
     -   name:  "Spezialfälle"
         anchor: spezialflle
-        simple: "Verlassen tieferer Strukturen<br>
-        	Bedingter Abbruch mit künstlichem Blockelement"
+        simple: >
+                  Verlassen tieferer Strukturen<br>
+                  Bedingter Abbruch mit künstlichem Blockelement
 
     -   name: "Siehe auch"
         anchor: siehe-auch

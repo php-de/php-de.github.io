@@ -29,7 +29,7 @@ inhalt:
         simple: ""
 
 
-entry-type: in-disucssion
+entry-type: in-discussion
 ---
 
 

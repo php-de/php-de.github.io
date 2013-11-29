@@ -24,12 +24,12 @@ inhalt:
         anchor: konvertierung
         simple: "externe Klassen, PHP-Boardmittel"
 
-    -   name: "Quellen, RFC"
-        anchor: quellen-rfc
-        simple: "Weiterführendes"
+    -   name: "RFC zum Thema IDN(A) / Punycode"
+        anchor: rfc-zum-thema-idna--punycode
+        simple: ""
 
 
-entry-type: in-progress
+entry-type: in-disucssion
 ---
 
 
@@ -70,7 +70,7 @@ Sämtliche Funktionen die Operationen mit Domains durchführen, benötigen bei d
 
 - `file_get_contens()`
 - `checkdnsrr()`
-- filter_var zur [E-Mail-Validierung]({{ site.url }}/jumpto/standard-mail-validation/#filtervar)
+- `filter_var()` zur [E-Mail-Validierung]({{ site.url }}/jumpto/standard-mail-validation/#filtervar)
 - etc ...
 
 

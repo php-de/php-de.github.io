@@ -35,7 +35,7 @@ entry-type: in-disucssion
 
 ### Begriffserklärung
 
-#### IDN
+#### IDN (*Internationalized domain name*)
 
 [Wikipedia:](http://de.wikipedia.org/wiki/Internationalisierter_Domainname)
 

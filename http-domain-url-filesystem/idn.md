@@ -2,7 +2,7 @@
 layout: guide
 
 permalink: /jumpto/idna/
-title: " Internationalisierte Domainnamen (IDN)"
+title: " Internationalisierte Domainnamen (IDN) / Punycode"
 group: "HTTP / Domain / URL / Requests / Dateisystem"
 orderId: 9
 
@@ -25,7 +25,7 @@ inhalt:
         simple: "externe Klassen, PHP-Boardmittel"
 
     -   name: "Quellen, RFC"
-        anchor: rfc-zum-thema
+        anchor: quellen-rfc
         simple: "Weiterführendes"
 
 
@@ -70,9 +70,12 @@ Sämtliche Funktionen die Operationen mit Domains durchführen, benötigen bei d
 
 - `file_get_contens()`
 - `checkdnsrr()`
+- filter_var zur [E-Mail-Validierung]({{ site.url }}/jumpto/standard-mail-validation/#filtervar)
 - etc ...
 
-Info - *cURL*-Bibliothek:
+
+##### cURL - Zusatzinfo:
+
 Bei der Anwendung von cURL ist es möglicherweise nicht separat nötig, die Sonderzeichendomains (IDN) vorher in Punycode zu wandeln. Ob cURL mit IDN-Unterstützung verfügbar ist, ist in der phpinfo() ersichtlich.
 
 ![cURL phpinfo()]({{ site.url }}/images/idn-phpinfo.jpg)
@@ -84,7 +87,7 @@ Bei der Anwendung von cURL ist es möglicherweise nicht separat nötig, die Sond
 
 Für die Punycodeumwandlung gibt es einige PHP-Klassen im Web, dazu am besten mal [Tante G.](https://www.google.at/search?q=php+punycode+OR+idna+converter) fragen.
 
-Durch eine derartige Klasse wird die E-Mail-Adresse in Punycode konvertiert und anschliessend [ mittels filter_var()](#filtervar) geprüft. Nachfolgend ein Beispiel mit der PHP-Klasse [idna_convert von Matthias Sommerfeld](http://phlymail.com/de/downloads/idna-convert.html) - dort gibts es überdies einen [Online-Punycode-Konverter](http://idnaconv.phlymail.de/?lang=de).
+Weit verbreitet ist die PHP-Klasse [idna_convert von Matthias Sommerfeld](http://phlymail.com/de/downloads/idna-convert.html) - dort gibts es überdies einen [Online-Punycode-Konverter](http://idnaconv.phlymail.de/?lang=de).
 
 
 #### PHP-Boardmittel

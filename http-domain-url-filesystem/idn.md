@@ -53,20 +53,21 @@ entry-type: in-discussion
 
 #### Beipiele
 
-Beispiele von IDN - mit entsprechender Punycodedarstellung,  .example wird hier als Beispiel-Topleveldomain verwendet.
+Beispiele von IDN - mit entsprechender Punycodedarstellung
 
 ~~~
-dömäin.example   →  xn--dmin-moa0i.example  
-äaaa.example     →  xn--aaa-pla.example  
-aaaä.example     →  xn--aaa-sla.example  
-déjà.vu.example  →  xn--dj-kia8a.vu.example  
-ñandú.example    →  xn--and-6ma2c.example  
+müller.de    →  xn--mller-kva
+übung.de     →  xn--bung-zra.de
+dömäin.com   →  xn--dmin-moa0i.com  
+äaaa.com     →  xn--aaa-pla.com  
+déjà.vu.com  →  xn--dj-kia8a.vu.com  
+ñandú.com    →  xn--and-6ma2c.com  
 ~~~
 
 
 ### Anwendungsgebiete in PHP
 
-Sämtliche Funktionen die Operationen mit Domains durchführen, benötigen bei der Anwendung mit Sonderzeichendomains eine vorherige Umwandlung dieser in Punycode. Beispiele dafür wären zB:
+Sämtliche Funktionen die Operationen mit Domains durchführen, benötigen bei der Anwendung mit Sonderzeichendomains eine vorherige Umwandlung in Punycode. Dies betrifft beispielsweise:
 
 - `file_get_contens()`
 - `checkdnsrr()`

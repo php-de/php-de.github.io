@@ -169,12 +169,20 @@ muss auch dieser vor der ersten Ausgabe des Scripts erfolgen.
 
 <div style="margin-left: 20px;">
 
-SQL-Queries werden in PHP als normaler String zusammengebaut. Dynamisch
-hinzugefügte Werte (etwa eine Benutzereingabe in `$_POST['name']`) können dabei
-die vorgesehene Logik der Query verändern, wenn sie für den Kontext syntaktisch
-relevante Zeichen (etwa die Anführungszeichen `"` und `'`) enthalten.
+Vor dem Absenden an das Datenbanksystem werden SQL-Queries in PHP in der
+Regel wie normale Strings behandelt. Dynamisch hinzugefügte Werte (etwa eine
+Benutzereingabe in `$_POST['name']`) können deshalb die vorgesehene Syntax
+der Query verändern, wenn sie Zeichen enthalten, die in PHP-Strings
+unproblematisch sind, die aber später syntaktische Bedeutung für den
+SQL-Kontext haben. Ein Beispiel dafür sind die Anführungszeichen `"` und `'`.
+Enthält eine Eingabe wie `$_POST['name']` den Wert `O'Brian`, bringt das
+die Syntax eines Query-Strings wie `"WHERE name = '" . $_POST['name'] . "'"`
+durcheinander, da der String, mit dem verglichen werden soll, bereits
+nach dem `O` geschlossen wird.
 
-Weitere Informationen inkl. sinnvoller Gegemaßnahmen findest du hier im [Hauptartikel SQL-Injection]({{ site.url }}/jumpto/sql-injection/).
+Weitere Informationen und sinnvolle Gegemaßnahmen sind im [Hauptartikel
+SQL-Injection]({{ site.url }}/jumpto/sql-injection/) zu finden.
+
 </div>
 
 
@@ -211,4 +219,3 @@ PHP zur Kommunikation mit MySQL-Datenbanken nutzen kann. Die anderen beiden
 PHP-Dokumentation](http://php.net/manual/en/mysqlinfo.api.choosing.php).
 
 </div>
-

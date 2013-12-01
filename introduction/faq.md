@@ -96,8 +96,19 @@ Siehe: vorige Frage.
 
 <div style="margin-left: 20px;">
 
-Es darf absolut keine Ausgabe vor Header-Aktionen erfolgen. Bereits ein Leer-
-oder Steuerzeichen außerhalb von <?php ... ?> genügt dafür. Siehe:
+Das HTTP schreibt vor, dass der Header einer Response vor dem Body an den
+Client geschickt werden muss. Deshalb muss PHP den Header-String generieren
+und absenden, sobald die erste Ausgabe erfolgt. Da es danach keinen Sinn
+mehr ergibt, die bereits abgeschickten Header-Daten zu bearbeiten, meldet
+PHP eben genau das als Fehler.
+
+Um derartige Fehler zu beheben, darf keine Ausgabe vor Header-Aktionen
+(Aufrufe der `header`-Funktion) erfolgen. Ausgaben sind alles, was vom
+Skript an den Besucher geschickt wird. Das ist beispielsweise HTML-Code
+außerhalb von `<?php ... ?>`-Tags oder Aufrufe von Konstrukten/Funktionen
+wie `print`, `echo`, `readfile`. Besonders schwierig zu entdecken sind
+Leerzeilen hinter einem `?>`-Tag am Dateiende oder [Byte Order
+Marks](https://de.wikipedia.org/wiki/Byte_Order_Mark). Siehe auch:
 [Standardfehler]({{ site.url }}/jumpto/standardfehler/).
 
 </div>

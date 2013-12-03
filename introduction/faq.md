@@ -102,14 +102,15 @@ und absenden, sobald die erste Ausgabe erfolgt. Da es danach keinen Sinn
 mehr ergibt, die bereits abgeschickten Header-Daten zu bearbeiten, meldet
 PHP eben genau das als Fehler.
 
-Um derartige Fehler zu beheben, darf keine Ausgabe vor Header-Aktionen
+Um derartige Situationen zu vermeiden, darf keine Ausgabe vor Header-Aktionen
 (Aufrufe der `header`-Funktion) erfolgen. Ausgaben sind alles, was vom
 Skript an den Besucher geschickt wird. Das ist beispielsweise HTML-Code
 außerhalb von `<?php ... ?>`-Tags oder Aufrufe von Konstrukten/Funktionen
 wie `print`, `echo`, `readfile`. Besonders schwierig zu entdecken sind
 Leerzeilen hinter einem `?>`-Tag am Dateiende oder [Byte Order
 Marks](https://de.wikipedia.org/wiki/Byte_Order_Mark). Siehe auch:
-[Standardfehler]({{ site.url }}/jumpto/standardfehler/).
+[Standardfehler]({{ site.url }}/jumpto/standardfehler/),
+[EVA-Prinzip]({{ site.url }}/jumpto/eva-prinzip/).
 
 </div>
 

@@ -154,15 +154,16 @@ precedence is as follows, with 1 being the highest.
 * [Declaring character encodings in HTML](http://www.w3.org/International/questions/qa-html-encoding-declarations)
 
 Die Punkte 2 und 3 der Liste kommen in der Praxis selten vor und sind zu
-vernachlässigen. Interessant ist allerdings Punkt 1, der `Content-Type`-Header
-der HTTP-Response. Dieser hat die höchste Priorität und kann in der
-Webserver-Konfiguration mit einem Standardwert vorbelegt werden, der dann die
-`meta`-Angabe im HTML-Code überschreibt. Das ist in aller Regel die Ursache für
-die falsche Darstellung der Nicht-ASCII-Zeichen. Welche Charset-Angaben für
-eine Seite gesetzt sind, kann beispielsweise mit dem [Internationalization
-Checker](http://validator.w3.org/i18n-checker/) des W3C geprüft werden. Der
-`Content-Type`-Header kann über die Konfiguration des Webservers gesetzt werden
-oder auch direkt im PHP-Code:
+vernachlässigen. (Quellcode sollte in der Regel als UTF-8 *ohne* BOM
+abgespeichert werden.) Interessant ist allerdings Punkt 1, der
+`Content-Type`-Header der HTTP-Response. Dieser hat die höchste Priorität und
+kann in der Webserver-Konfiguration mit einem Standardwert vorbelegt werden, der
+dann die `meta`-Angabe im HTML-Code überschreibt. Das ist in aller Regel die
+Ursache für die falsche Darstellung der Nicht-ASCII-Zeichen. Welche
+Charset-Angaben für eine Seite gesetzt sind, kann beispielsweise mit dem
+[Internationalization Checker](http://validator.w3.org/i18n-checker/) des
+W3C geprüft werden. Der `Content-Type`-Header kann über die Konfiguration
+des Webservers gesetzt werden oder auch direkt im PHP-Code:
 
 ~~~ php
 header('Content-Type: text/html; charset=UTF-8');

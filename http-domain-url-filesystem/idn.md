@@ -75,7 +75,7 @@ Sämtliche Funktionen die Operationen mit Domains durchführen, benötigen bei d
 - etc ...
 
 
-##### cURL - Zusatzinfo:
+##### cURL - Zusatzinfo
 
 Bei der Anwendung von cURL ist es möglicherweise nicht separat nötig, die Sonderzeichendomains (IDN) vorher in Punycode zu wandeln. Ob cURL mit IDN-Unterstützung verfügbar ist, ist in der phpinfo() ersichtlich.
 
@@ -89,6 +89,25 @@ Bei der Anwendung von cURL ist es möglicherweise nicht separat nötig, die Sond
 Für die Punycodeumwandlung gibt es einige PHP-Klassen im Web, dazu am besten mal [Tante G.](https://www.google.at/search?q=php+punycode+OR+idna+converter) fragen.
 
 Weit verbreitet ist die PHP-Klasse [idna_convert von Matthias Sommerfeld](http://phlymail.com/de/downloads/idna-convert.html) - dort gibts es überdies einen [Online-Punycode-Konverter](http://idnaconv.phlymail.de/?lang=de).
+
+Einige Beispiele mit dieser Klasse
+
+~~~ php
+require "idna_convert.class.php";
+$idn = new idna_convert();
+
+$domain = "example.com";
+echo $idn->encode($domain);
+// example.com
+
+$domain = "österreich.at";
+echo $idn->encode($domain);
+// xn--sterreich-z7a.at
+
+$domain = "übärbrübär.de";
+echo $idn->encode($domain);
+// xn--brbrbr-buae3sf.de
+~~~
 
 
 #### PHP-Boardmittel

@@ -48,7 +48,7 @@ entry-type: in-discussion
 
 [Wikipedia:](http://de.wikipedia.org/wiki/Punycode)
 
-> Punycode ist ein im RFC 3492 standardisiertes Kodierungsverfahren zum Umwandeln von Unicode-Zeichenketten in ASCII-kompatible Zeichenketten, die aus den Zeichen a bis z, 0 bis 9 und dem Bindestrich bestehen. Punycode wurde entworfen, um internationalisierte Domainnamen aus Unicode-Zeichen eindeutig und umkehrbar durch ASCII-Zeichen darzustellen.
+> Punycode ist ein im [RFC 3492](http://tools.ietf.org/html/rfc3492) standardisiertes Kodierungsverfahren zum Umwandeln von Unicode-Zeichenketten in ASCII-kompatible Zeichenketten, die aus den Zeichen a bis z, 0 bis 9 und dem Bindestrich bestehen. Punycode wurde entworfen, um internationalisierte Domainnamen aus Unicode-Zeichen eindeutig und umkehrbar durch ASCII-Zeichen darzustellen.
 
 
 #### Beipiele

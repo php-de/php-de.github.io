@@ -69,7 +69,7 @@ déjà.vu.com  →  xn--dj-kia8a.vu.com
 
 Sämtliche Funktionen die Operationen mit Domains durchführen, benötigen bei der Anwendung mit Sonderzeichendomains eine vorherige Umwandlung in Punycode. Dies betrifft beispielsweise:
 
-- `file_get_contens()`
+- `file_get_contents()`
 - `checkdnsrr()`
 - `filter_var()` zur [E-Mail-Validierung]({{ site.url }}/jumpto/standard-mail-validation/#filtervar)
 - etc ...
@@ -77,7 +77,7 @@ Sämtliche Funktionen die Operationen mit Domains durchführen, benötigen bei d
 
 ##### cURL - Zusatzinfo
 
-Bei der Anwendung von cURL ist es möglicherweise nicht separat nötig, die Sonderzeichendomains (IDN) vorher in Punycode zu wandeln. Ob cURL mit IDN-Unterstützung verfügbar ist, ist in der phpinfo() ersichtlich.
+Bei der Anwendung von cURL ist es möglicherweise nicht separat nötig, die Sonderzeichendomains (IDN) vorher in Punycode zu wandeln. Ob cURL bereits mit IDN-Unterstützung verfügbar ist, ist in der phpinfo() ersichtlich.
 
 ![cURL phpinfo()]({{ site.url }}/images/idn-phpinfo.jpg)
 

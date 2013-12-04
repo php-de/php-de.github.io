@@ -97,6 +97,7 @@ Einige Beispiele mit dieser Klasse
 require 'idna_convert.class.php';
 $idn = new idna_convert();
 
+// kein Unicode
 $domain = 'example.com';
 echo $idn->encode($domain);
 // example.com

@@ -104,9 +104,9 @@ $domain = "österreich.at";
 echo $idn->encode($domain);
 // xn--sterreich-z7a.at
 
-$domain = "übärbrübär.de";
+$domain = "übärdrübär.de";
 echo $idn->encode($domain);
-// xn--brbrbr-buae3sf.de
+// xn--brdrbr-buae3sf.de
 ~~~
 
 

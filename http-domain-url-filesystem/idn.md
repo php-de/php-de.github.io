@@ -94,24 +94,25 @@ Einige Beispiele mit dieser Klasse
 
 
 ~~~ php
-require "idna_convert.class.php";
+require 'idna_convert.class.php';
 $idn = new idna_convert();
 
-$domain = "example.com";
+$domain = 'example.com';
 echo $idn->encode($domain);
 // example.com
 
-// deutsche Umlaute$domain = 'frühlingsgefühle.de';
+// deutsche Umlaute
+$domain = 'frühlingsgefühle.de';
 echo $idn->encode($domain);
 // xn--frhlingsgefhle-hsbj.de
 
 // griechische Zeichen
-$domain = "παράδειγμα.δοκιμή";
+$domain = 'παράδειγμα.δοκιμή';
 echo $idn->encode($domain);
 // xn--hxajbheg2az3al.xn--jxalpdlp
 
 // kyrillische Zeichen
-$domain = "ящик-с-апельсинами.рф";
+$domain = 'ящик-с-апельсинами.рф';
 echo $idn->encode($domain);
 // xn-----8kcayoeblonkwzf2jqc1b.xn--p1ai
 ~~~

@@ -108,6 +108,14 @@ echo $idn->encode($domain);
 $domain = "übärbrübär.de";
 echo $idn->encode($domain);
 // xn--brbrbr-buae3sf.de
+
+$domain = "παράδειγμα.δοκιμή";
+echo $idn->encode($domain);
+// xn--hxajbheg2az3al.xn--jxalpdlp
+
+$domain = "ящик-с-апельсинами.рф";
+echo $idn->encode($domain);
+// xn-----8kcayoeblonkwzf2jqc1b.xn--p1ai
 ~~~
 
 

@@ -74,7 +74,6 @@ Für E-Mail-Adressen gilt insgesamt selbiges wie oben erwähnt.
 ~~~
 Pelé@example.com                 →  xn--pel-dma@example.com
 δοκιμή@παράδειγμα.δοκιμή         →  xn--jxalpdlp@xn--hxajbheg2az3al.xn--jxalpdlp
-甲斐@黒川.日本                   →  xn--hevw16a@xn--5rtw95l.xn--wgv71a
 чебурашка@ящик-с-апельсинами.рф  →  xn--80aabp1a8au3ao@xn-----8kcayoeblonkwzf2jqc1b.xn--p1ai
 ~~~
 

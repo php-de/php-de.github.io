@@ -19,7 +19,7 @@ inhalt:
         anchor: filtervar
         simple: "als Standard-Weg"
         
-    -   name: "Internationale Domainnamen"
+    -   name: "Internationale Domainnamen / Punycode"
         anchor: internationalisierte-domainnamen-idn
         simple: "Domains mit Sonderzeichen"
 

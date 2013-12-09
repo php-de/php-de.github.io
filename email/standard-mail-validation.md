@@ -84,7 +84,7 @@ Dies kann alternativ zu filter_var() verwendet werden. Ebenso wie [oben bei filt
   
 ### Internationalisierte Domainnamen (IDN)
 
-Um auch internationalisierte Domains auf grundsätzliche formelle Korrektheit zu prüfen ist die Konvertierung in [Punycode](http://de.wikipedia.org/wiki/Punycode) **vor** der eigentlichen Prüfung nötig. Weitere Informationen und Möglichkeiten zur Konvertierung gibt es [hier]({{ site.url }}/jumpto/idna/).
+Um auch internationalisierte Domains / E-Mail-Adressen auf grundsätzliche formelle Korrektheit zu prüfen ist die Konvertierung in [Punycode](http://de.wikipedia.org/wiki/Punycode) **vor** der eigentlichen Prüfung nötig. Weitere Informationen und Möglichkeiten zur Konvertierung gibt es [hier]({{ site.url }}/jumpto/idna/).
 
 
 ### Ohne Punycode - Lose Rahmenprüfung mittels regulären Ausdrücken (Regex)

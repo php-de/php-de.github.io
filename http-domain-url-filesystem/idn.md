@@ -64,14 +64,25 @@ déjà.vu.com  →  xn--dj-kia8a.vu.com
 ñandú.com    →  xn--and-6ma2c.com  
 ~~~
 
+#### E-Mail-Adressen
+
+Für E-Mail-Adressen gilt insgesamt selbiges wie oben erwähnt.
+
+[Beispiele von Wikipedia (en)](http://en.wikipedia.org/wiki/Email_address#Internationalization_examples):
+
+> * Latin Alphabet (with diacritics): Pelé@example.com
+> * Greek Alphabet: δοκιμή@παράδειγμα.δοκιμή
+> * Japanese Characters: 甲斐@黒川.日本
+> * Cyrillic Characters: чебурашка@ящик-с-апельсинами.рф
+
 
 ### Anwendungsgebiete in PHP
 
-Sämtliche Funktionen die Operationen mit Domains durchführen, benötigen bei der Anwendung mit Sonderzeichendomains eine vorherige Umwandlung in Punycode. Dies betrifft beispielsweise:
+Sämtliche Funktionen die Operationen mit Domains oder E-Mail-Adressen durchführen, benötigen bei der Anwendung mit Sonderzeichendomains eine vorherige Umwandlung in Punycode. Dies betrifft beispielsweise:
 
 - `file_get_contents()`
 - `checkdnsrr()`
-- `filter_var()` zur [E-Mail-Validierung]({{ site.url }}/jumpto/standard-mail-validation/#filtervar)
+- `filter_var($email, FILTER_VALIDATE_EMAIL)` zur [E-Mail-Validierung]({{ site.url }}/jumpto/standard-mail-validation/#filtervar)
 - etc ...
 
 
@@ -116,6 +127,19 @@ echo $idn->encode($domain);
 $domain = 'ящик-с-апельсинами.рф';
 echo $idn->encode($domain);
 // xn-----8kcayoeblonkwzf2jqc1b.xn--p1ai
+~~~
+
+
+E-Mail-Adressen
+
+~~~ php
+$email = 'pelé@example.com';
+echo $idn->encode($email);
+// xn--pel-dma@example.com
+
+$email = 'mail@übung.de';
+echo $idn->encode($email);
+// mail@xn--bung-zra.de
 ~~~
 
 

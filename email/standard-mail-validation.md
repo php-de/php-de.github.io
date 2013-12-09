@@ -20,13 +20,9 @@ inhalt:
         simple: "als Standard-Weg"
         
     -   name: "Internationale Domainnamen"
-        anchor: exkurs-internationalisierte-domainnamen-idn
+        anchor: internationalisierte-domainnamen-idn
         simple: "Domains mit Sonderzeichen"
-    
-    -   name: "Konvertierung nach Punycode"
-        anchor: konvertierung-durch-eine-externe-punycode-klasse
-        simple: "Externe Klassen"
-        
+
     -   name: "Ohne Punycode"
         anchor: ohne-punycode---lose-rahmenprfung-mittels-regulren-ausdrcken-regex
         simple: "Lose Rahmenprüfung durch reguläre Ausdrücke"

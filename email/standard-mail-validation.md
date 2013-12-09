@@ -27,10 +27,6 @@ inhalt:
         anchor: konvertierung-durch-eine-externe-punycode-klasse
         simple: "Externe Klassen"
         
-    -   name: "Konvertierung nach Punycode"
-        anchor: konvertierung-durch-php-boardmittel
-        simple: "mit PHP Bordmitteln"
-
     -   name: "Ohne Punycode"
         anchor: ohne-punycode---lose-rahmenprfung-mittels-regulren-ausdrcken-regex
         simple: "Lose Rahmenprüfung durch reguläre Ausdrücke"

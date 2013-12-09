@@ -14,7 +14,7 @@ author:
 inhalt:
     -   name: "Begriffserklärung"
         anchor: begriffserklrung
-        simple: "IDN, Punycode, Beispiele"
+        simple: "IDN, Punycode, Beispiele, E-Mail-Adressen"
 
     -   name: "Anwendungsgebiete in PHP"
         anchor: anwendungsgebiete-in-php

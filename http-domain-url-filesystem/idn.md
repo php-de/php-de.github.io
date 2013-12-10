@@ -55,14 +55,14 @@ entry-type: in-discussion
 
 Beispiele von IDN - mit entsprechender Punycodedarstellung
 
-```no-highlight
+~~~
 müller.de    →  xn--mller-kva
 übung.de     →  xn--bung-zra.de
 dömäin.com   →  xn--dmin-moa0i.com
 äaaa.com     →  xn--aaa-pla.com
 déjà.vu.com  →  xn--dj-kia8a.vu.com
 ñandú.com    →  xn--and-6ma2c.com
-```
+~~~
 
 #### E-Mail-Adressen
 
@@ -70,11 +70,11 @@ Für E-Mail-Adressen gilt insgesamt selbiges wie oben erwähnt.
 
 [Beispiele von Wikipedia (en)](http://en.wikipedia.org/wiki/Email_address#Internationalization_examples):
 
-```no-highlight
+~~~
 Pelé@example.com                 →  xn--pel-dma@example.com
 δοκιμή@παράδειγμα.δοκιμή         →  xn--jxalpdlp@xn--hxajbheg2az3al.xn--jxalpdlp
 чебурашка@ящик-с-апельсинами.рф  →  xn--80aabp1a8au3ao@xn-----8kcayoeblonkwzf2jqc1b.xn--p1ai
-```
+~~~
 
 
 ### Anwendungsgebiete in PHP

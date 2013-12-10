@@ -2,7 +2,6 @@ markdown: kramdown
 
 kramdown:
     use_coderay: true
-    default_lang: nil
 
 # user defined variables
 

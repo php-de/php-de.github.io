@@ -32,6 +32,9 @@ inhalt:
 entry-type: in-discussion
 ---
 
+{::options coderay_default_lang=nil /}
+
+
 
 ### Begriffserklärung
 

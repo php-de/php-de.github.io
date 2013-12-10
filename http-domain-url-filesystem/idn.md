@@ -71,11 +71,10 @@ Für E-Mail-Adressen gilt insgesamt selbiges wie oben erwähnt.
 [Beispiele von Wikipedia (en)](http://en.wikipedia.org/wiki/Email_address#Internationalization_examples):
 
 
-~~~
-Pelé@example.com                 →  xn--pel-dma@example.com
-δοκιμή@παράδειγμα.δοκιμή         →  xn--jxalpdlp@xn--hxajbheg2az3al.xn--jxalpdlp
-чебурашка@ящик-с-апельсинами.рф  →  xn--80aabp1a8au3ao@xn-----8kcayoeblonkwzf2jqc1b.xn--p1ai
-~~~
+    Pelé@example.com                 →  xn--pel-dma@example.com
+    δοκιμή@παράδειγμα.δοκιμή         →  xn--jxalpdlp@xn--hxajbheg2az3al.xn--jxalpdlp
+    чебурашка@ящик-с-апельсинами.рф  →  xn--80aabp1a8au3ao@xn-----8kcayoeblonkwzf2jqc1b.xn--p1ai
+
 
 
 ### Anwendungsgebiete in PHP

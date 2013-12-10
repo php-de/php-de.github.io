@@ -32,7 +32,7 @@ inhalt:
         simple: "zusätzliche Existenz-Prüfung"
 
     -   name: "Weiterführende Quellen"
-        anchor: links
+        anchor: quellen
         simple: "Links, RFCs"
 
 
@@ -130,9 +130,9 @@ var_dump(checkEMailDomainDNS('mail@example.com'));  // true
 ~~~
 
 ### Weiterführende Quellen
+{: #quellen}
 
 #### Links
-{: #links}
 
 Wer sich genauer für die Regex-Prüfung interessiert, dem sei [dieser Link](http://squiloople.com/2009/12/20/email-address-validation/) empfohlen. Danke an [Trainmaster](http://www.php.de/member.php?u=20243) für den Link.
 

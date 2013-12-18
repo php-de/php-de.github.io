@@ -77,8 +77,8 @@ nicht zu den Cross-Site-Scripting-Attacken gezählt werden.
 
 Dynamische Websiteprogrammierung fußt auf einer Kombination von statischen
 HTML-Codeelementen und darin eingefügten Inhaltsteilen. Das fertige Produkt
-wird als HTML-Quellcode vom Webserver ausgeliefert (vgl.
-[Was_ist_PHP]({{ site.url }}/jumpto/was-ist-php/)). Daraus
+wird als HTML-Quellcode vom Webserver ausgeliefert (siehe
+[Was ist PHP?]({{ site.url }}/jumpto/was-ist-php/)). Daraus
 entsteht ein ungewöhnlicher Effekt, wenn die Möglichkeit der Flexibilität zu
 einseitig betrachtet wird.
 
@@ -281,10 +281,11 @@ Sicherheitslücken in Browsern entstehen kann, ist aber nie auszuräumen.
 
 Häufig gemachter Fehler: Es kann nicht oft genug gesagt werden, dass
 <strong>alle</strong> vom User kommenden Daten bösartiger Natur sein können,
-nicht nur <a
-href="{{ site.url }}/jumpto/gpc/">GPC-Werte</a>. Auch
-manche Inhalte des <code>$_SERVER</code>-Arrays gehören zur Kategorie der
-gefährlichen Datenquellen, die unbedingt validiert werden müssen.
+nicht nur <a href="{{ site.url }}/jumpto/gpc/">GPC-Werte</a>. Auch manche
+Inhalte des <code>$_SERVER</code>-Arrays (etwa <a
+href="http://blog.oncode.info/2008/05/07/php_self-ist-boese-potentielles-cross-site-scripting-xss/">PHP_SELF</a>)
+gehören zur Kategorie der gefährlichen Datenquellen, die unbedingt validiert
+werden müssen.
 
 </div>
 

@@ -23,12 +23,14 @@ inhalt:
 entry-type: in-progress
 ---
 
+
+**Dieser Thread enthält Links auf wertvolle Webquellen rund um das Thema Webentwicklung.**
+
+
 <div class="alert alert-info">
 <a href="http://www.php.de/board-support/63911-lerne-grundlagen-liste-mit-tutorials-diskussion-und-materialsammlung-post487949.html#post487949">Mach mit und erweitere diese Sammlung!</a>
 </div>
 
-
-**Dieser Thread enthält Links auf wertvolle Webquellen rund um das Thema Webentwicklung.**
 
 Du hast **„Lerne Grundlagen“** als Antwort bekommen? Das ist keineswegs böse gemeint, vielmehr spiegelt das unser Verständnis für ein sinnvolles Forenprinzip dar. Unsere Comunity besteht aus vielen fleißigen Helfern, die freiwillig Dir und anderen bei der Lösung Ihrer Probleme helfen. Was wir dabei voraussetzen ist
 

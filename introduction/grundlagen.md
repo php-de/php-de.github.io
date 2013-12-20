@@ -23,6 +23,20 @@ inhalt:
 entry-type: in-progress
 ---
 
+### Dokumentationen (Manuals) und Nachschlagewerke:
+
+#### HMTL
+
+* **HTML**
+ 
+    [SELFHTML: HTML/XHTML](http://de.selfhtml.org/html/index.htm)  
+    Sehr gutes Nachschlagewerk zu allen HTML Tags. Viele Beispiele und Erklärungen zu HTML. Ein Muss für jeden der HTML verwendet.  
+    Die Referenz enthält auch einige Grundlagen zu Client-Server-Prinzipien, regulären Ausdrücken und Webdesignprinzipien.  
+    **Vorteile:** Referenzliste zu HTML Elementen, Attributen, Zeichen und Varianten 
+
+
+#### CSS
+
 * **CSS**
 
     * [CSS 4 You - The Finest in Stylesheets](http://www.css4you.de/)  

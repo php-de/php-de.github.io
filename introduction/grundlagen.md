@@ -57,7 +57,7 @@ Die Referenz enthält auch einige Grundlagen zu Client-Server-Prinzipien, regul�
 **Vorteile:** Referenzliste zu HTML Elementen, Attributen, Zeichen und Varianten 
 
 
-##### CSS
+#### CSS
 
 * [CSS 4 You - The Finest in Stylesheets](http://www.css4you.de/)  
 Sehr gutes Nachschlagewerk zu CSS. Viele Beispiele und Erklärungen zu CSS Eigenschaften. Enthält Workshops zur Nutzung von Selektoren. Zwar nicht ganz aktuell, bietet aber eine Übersicht welche Eigenschaften von welchen Browsern unterstützt werden (leider nur bis IE7, Opera 7)  
@@ -83,6 +83,25 @@ Sehr gutes Nachschlagewerk zu CSS. Viele Beispiele und Erklärungen zu CSS Eigen
 
 
 #### javascript
+
+
+* [SELFHTML: JavaScript/DOM](http://de.selfhtml.org/javascript/index.htm)
+Sehr gutes Nachschlagewerk zu JavaScript. Viele Beispiele und Erklärungen zu JavaScript Befehlen.  
+**Vorteile:** Erklärung zu vielen JavaScript-Sprachelementen, Objektreferenzliste
+
+* **Frameworks**
+
+    * **prototype**
+        * [Prototype API documentation | Home](http://api.prototypejs.org/)
+        API-Dokumentation zu prototype. 
+
+    * **ExtJS**
+        * [Ext JS - Client-side JavaScript Framework](http://www.extjs.com/products/extjs/?ref=learnmorebluebutton)
+        Dokumentation zu ExtJS. Beispiele und API Dokumentation. 
+
+    * **jQuery**
+        * [Main Page - jQuery JavaScript Library](http://docs.jquery.com/Main_Page)
+        Dokumentation zu jQuery. Bietet Erklärungen und Beispiele zu allen jQuery Funktionen. 
 
 
 #### PHP

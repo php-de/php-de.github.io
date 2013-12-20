@@ -1,7 +1,7 @@
 ---
 layout: guide
 
-permalink: /jumpto/grundlagen-quellen/
+permalink: /jumpto/grundlagen-quellen2/
 title: "Grundlagen - Quellensammlung"
 #group: "Einführung"
 orderId: 1

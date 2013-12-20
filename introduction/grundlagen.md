@@ -106,7 +106,7 @@ Sehr gutes Nachschlagewerk zu JavaScript. Viele Beispiele und Erklärungen zu Ja
 
 #### PHP
 
-* [http://www.php.net/manual/de/](PHP: PHP-Handbuch - Manual)  
+* [PHP: PHP-Handbuch - Manual](http://www.php.net/manual/de/)  
 Offizielle PHP Dokumentation. Als Funktionsreferenz zum Nachschlagen oder suchen von Funktionen zu empfehlen, auch für das Nachlesen von Themen, aber eher nicht als Tutorial für Anfänger zu empfehlen.  
 **Vorteile:** ausführlichste Installation und Konfiguration (viele Systeme und Software), großes Kapitel über Sicherheit, einige von Nutzern geschriebene Beispiele, Lösungen und Notizen, volle Funktionsreferenz  
 **Nachteile:** teilweise nicht Übersetzt ( englische Fragmente bzw. ganze Kapitel)
@@ -116,7 +116,7 @@ Eine ausführliche Referenz in Form eines Wikis. Die häufigsten Themen werden �
 **Vorteile:** Große Themenvielfalt  
 **Nachteile:** Die Erklärungen fallen manchmal etwas spärlich aus und die Inhalte sind auch nicht immer ganz aktuell
 
-* Frameworks
+* **Frameworks**
     
     * **Adventure-PHP-Framework**
         * [Startseite :: Adventure PHP Framework (APF)](http://adventure-php-framework.org/)  
@@ -131,7 +131,7 @@ Eine ausführliche Referenz in Form eines Wikis. Die häufigsten Themen werden �
         CakePHP ist ein weiteres sehr bekanntes PHP Framework. Es setzt auf das MVC Entwurfsmuster und bietet ORM. 
 
     * **CodeIgniter**
-        * http://codeigniter.com/  
+        * [http://codeigniter.com/](http://codeigniter.com/)  
         CodeIgniter ist ein schnelles und leichtgewichtiges PHP Framework. 
     
     * **Symfony**

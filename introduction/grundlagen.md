@@ -27,17 +27,13 @@ entry-type: in-progress
 
 #### HMTL
 
-* **HTML**
- 
-    [SELFHTML: HTML/XHTML](http://de.selfhtml.org/html/index.htm)  
+    * [SELFHTML: HTML/XHTML](http://de.selfhtml.org/html/index.htm)  
     Sehr gutes Nachschlagewerk zu allen HTML Tags. Viele Beispiele und Erklärungen zu HTML. Ein Muss für jeden der HTML verwendet.  
     Die Referenz enthält auch einige Grundlagen zu Client-Server-Prinzipien, regulären Ausdrücken und Webdesignprinzipien.  
     **Vorteile:** Referenzliste zu HTML Elementen, Attributen, Zeichen und Varianten 
 
 
 #### CSS
-
-* **CSS**
 
     * [CSS 4 You - The Finest in Stylesheets](http://www.css4you.de/)  
     Sehr gutes Nachschlagewerk zu CSS. Viele Beispiele und Erklärungen zu CSS Eigenschaften. Enthält Workshops zur Nutzung von Selektoren. Zwar nicht ganz aktuell, bietet aber eine Übersicht welche Eigenschaften von welchen Browsern unterstützt werden (leider nur bis IE7, Opera 7)  

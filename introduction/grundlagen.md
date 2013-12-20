@@ -85,26 +85,62 @@ Sehr gutes Nachschlagewerk zu CSS. Viele Beispiele und Erklärungen zu CSS Eigen
 #### javascript
 
 
-* [SELFHTML: JavaScript/DOM](http://de.selfhtml.org/javascript/index.htm)
+* [SELFHTML: JavaScript/DOM](http://de.selfhtml.org/javascript/index.htm)  
 Sehr gutes Nachschlagewerk zu JavaScript. Viele Beispiele und Erklärungen zu JavaScript Befehlen.  
 **Vorteile:** Erklärung zu vielen JavaScript-Sprachelementen, Objektreferenzliste
 
 * **Frameworks**
 
     * **prototype**
-        * [Prototype API documentation | Home](http://api.prototypejs.org/)
+        * [Prototype API documentation | Home](http://api.prototypejs.org/)  
         API-Dokumentation zu prototype. 
 
     * **ExtJS**
-        * [Ext JS - Client-side JavaScript Framework](http://www.extjs.com/products/extjs/?ref=learnmorebluebutton)
+        * [Ext JS - Client-side JavaScript Framework](http://www.extjs.com/products/extjs/?ref=learnmorebluebutton)  
         Dokumentation zu ExtJS. Beispiele und API Dokumentation. 
 
     * **jQuery**
-        * [Main Page - jQuery JavaScript Library](http://docs.jquery.com/Main_Page)
+        * [Main Page - jQuery JavaScript Library](http://docs.jquery.com/Main_Page)  
         Dokumentation zu jQuery. Bietet Erklärungen und Beispiele zu allen jQuery Funktionen. 
 
 
 #### PHP
+
+* [http://www.php.net/manual/de/](PHP: PHP-Handbuch - Manual)  
+Offizielle PHP Dokumentation. Als Funktionsreferenz zum Nachschlagen oder suchen von Funktionen zu empfehlen, auch für das Nachlesen von Themen, aber eher nicht als Tutorial für Anfänger zu empfehlen.  
+**Vorteile:** ausführlichste Installation und Konfiguration (viele Systeme und Software), großes Kapitel über Sicherheit, einige von Nutzern geschriebene Beispiele, Lösungen und Notizen, volle Funktionsreferenz  
+**Nachteile:** teilweise nicht Übersetzt ( englische Fragmente bzw. ganze Kapitel)
+
+* [Willkommen im PHP Wiki von php::bar! - php bar](http://www.phpbar.de/w/Hauptseite)  
+Eine ausführliche Referenz in Form eines Wikis. Die häufigsten Themen werden ähnlich wie in der Wikipedia in der Art eines Lexikons präsentiert.  
+**Vorteile:** Große Themenvielfalt  
+**Nachteile:** Die Erklärungen fallen manchmal etwas spärlich aus und die Inhalte sind auch nicht immer ganz aktuell
+
+* Frameworks
+    
+    * **Adventure-PHP-Framework**
+        * [Startseite :: Adventure PHP Framework (APF)](http://adventure-php-framework.org/)  
+        Dieses Framework wurde von unserem Moderator dr.e. entwickelt. Fragen zum Framework werden gerne hier von dr.e. beantwortet. Ihr habt somit einen direkten Draht zum Entwickler.
+        
+    * **Zend-Framework**
+        * [Zend-Framework](http://framework.zend.com/)  
+        Das Zend Framework ist ein Komponenten-orientiertes Framework für PHP 5, das heißt die Klassen und Pakete können unabhängig voneinander und auch in Kombination mit denen anderer Hersteller genutzt werden. Die Funktionen sind komplett objektorientiert realisiert und erfordern PHP ab Version 5. Das Framework wird von der Zend Technologies entwickelt, den Entwicklern von PHP. 
+
+    * **Cake-PHP**
+        * [CakePHP: the rapid development php framework. Home](http://cakephp.org/)  
+        CakePHP ist ein weiteres sehr bekanntes PHP Framework. Es setzt auf das MVC Entwurfsmuster und bietet ORM. 
+
+    * **CodeIgniter**
+        * http://codeigniter.com/  
+        CodeIgniter ist ein schnelles und leichtgewichtiges PHP Framework. 
+    
+    * **Symfony**
+        * [symfony | Web PHP Framework](http://symfony.com/get_started)  
+        Symfony ist ein weiteres PHP Framework das auf dem MVC Entwurfsmuster aufbaut. Symfony gilt als schnell zu erlernendes Framework. 
+
+    * **Flow**
+        * [TYPO3 Flow Enterprise PHP Framework](http://flow.typo3.org/)  
+        Das MVC-Framework Flow ist die Basis für TYPO3 Neos, wird aber eigenständig entwickelt und steht somit auch für andere Projekte zur Verfügung. 
 
 
 #### MySQL

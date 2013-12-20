@@ -32,16 +32,16 @@ entry-type: in-progress
 </div>
 
 
-Du hast **„Lerne Grundlagen“** als Antwort bekommen? Das ist keineswegs böse gemeint, vielmehr spiegelt das unser Verständnis für ein sinnvolles Forenprinzip dar. Unsere Comunity besteht aus vielen fleißigen Helfern, die freiwillig Dir und anderen bei der Lösung Ihrer Probleme helfen. Was wir dabei voraussetzen ist
+Du hast *„Lerne Grundlagen“* als Antwort bekommen? Das ist keineswegs böse gemeint, vielmehr spiegelt das unser Verständnis für ein sinnvolles Forenprinzip dar. Unsere Comunity besteht aus vielen fleißigen Helfern, die freiwillig Dir und anderen bei der Lösung Ihrer Probleme helfen. Was wir dabei voraussetzen ist
 
-* das *Einhalten* [unserer Regeln](http://www.php.de/php-einsteiger/announcements.html) (was ein Mindestmaß an die Form des Postings miteinschließt) 
+* das **Einhalten** [unserer Regeln](http://www.php.de/php-einsteiger/announcements.html) (was ein Mindestmaß an die Form des Postings miteinschließt) 
 * Dein persönliches Engagement bei der Diskussion und Lösung der Probleme  
 Wir erwarten vernünftige Fragestellungen, aktive Mitarbeit an der Problemlösung (Debugging, Posten von Fortschritten), Geduld und Respekt vor unserer Person. Wir sind hilfsbereit, aber keine Dienstleister. 
-* Dein *Grundverständnis für die verwendeten Programmiersprachen* 
+* Dein **Grundverständnis für die verwendeten Programmiersprachen** 
 
 Dem letzten Punkt soll dieser Thread Rechnung tragen. Du bist aufgerufen, Dich im Vorfeld eigenständig ausreichend mit der Materie Webentwicklung auseinanderzusetzen. Ob Du das in einem Buch oder Tutorial besser kannst, ist Deine Sache, jeder lernt anders.
 
-Zu wissen, worüber man redet, ist unabdingbar für jegliche fachliche Diskussion. Du wirst hier keine Privatlektionen erhalten, niemand wird Dir Syntaxnachhilfe geben oder aus dem Manual vorlesen. *Hilfe zur Selbsthilfe*, das soll der Ansatz für unser Forum sein.
+Zu wissen, worüber man redet, ist unabdingbar für jegliche fachliche Diskussion. Du wirst hier keine Privatlektionen erhalten, niemand wird Dir Syntaxnachhilfe geben oder aus dem Manual vorlesen. **Hilfe zur Selbsthilfe**, das soll der Ansatz für unser Forum sein.
 
 So, und nun ein erfolgreiches Selbststudium!
 

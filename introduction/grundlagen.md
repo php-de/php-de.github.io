@@ -43,14 +43,14 @@ entry-type: in-progress
         
         
         * YUI 3:
-            * YUI 3: Grids CSS
-            Das CSS Framework von den Yahoo Entwicklern. 
-        
-        
+            * YUI 3: Grids CSS  
+            Das CSS Framework von den Yahoo Entwicklern.   
+          
+          
         * 960 Grid System:
             * 960 Grid System
+            
             960 Grid System ist ein weiteres beliebtes CSS Framework. 
-
 
 
 

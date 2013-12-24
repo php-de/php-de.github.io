@@ -21,7 +21,7 @@ layout: default
         </thead>
         <tbody>{% for sortrange in (0..26) %}{% for current in site.pages %}{% if current.orderId %}{% assign orderId = current.orderId %}{% else %}{% assign orderId = site.orderId %}{% endif %}{% if sitegroup.name == current.group and orderId == sortrange %}
             <tr>
-                <td class="topic"><a href="{{ current.url }}"><span class="glyphicon glyphicon-bookmark"></span> {{ current.title }}</a></td>
+                <td class="topic"><a href="{{ current.url }}"><span class="glyphicon bookmark"></span> {{ current.title }}</a></td>
                 <td class="state left-alerted">{% case current.entry-type %}{% when 'in-progress' %}<div class="alert alert-danger">In Bearbeitung</div>{% when 'in-discussion' %}<div class="alert alert-warning">In Diskussion</div>{% when 'deprecated' %}<div class="alert-info">Veraltet</div>{% else %}<div class="alert alert-success">Fertiggestellt</div>{% endcase %}</td>
             </tr>{% endif %}{% endfor %}{% endfor %}
         </tbody>

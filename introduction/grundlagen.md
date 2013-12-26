@@ -30,7 +30,9 @@ entry-type: in-progress
 </div>
 
 
-**Dieser Thread enthält Links auf wertvolle Webquellen rund um das Thema Webentwicklung.**Du hast „Lerne Grundlagen“ als Antwort bekommen? Das ist keineswegs böse
+**Dieser Thread enthält Links auf wertvolle Webquellen rund um das Thema Webentwicklung.**
+
+Du hast *„Lerne Grundlagen“* als Antwort bekommen? Das ist keineswegs böse
 gemeint, vielmehr spiegelt das unser Verständnis für ein sinnvolles
 Forenprinzip dar. Unsere Comunity besteht aus vielen fleißigen Helfern,
 die freiwillig Dir und anderen bei der Lösung Ihrer Probleme helfen. Was
@@ -85,7 +87,8 @@ So, und nun ein erfolgreiches Selbststudium!
     **Vorteile:** Stichwortverzeichnis zu CSS-Eigenschaften, Erklärung
     zu vielen CSS Eigenschaften, Attribut-Referenz, einige Tipps und
     Tricks  
-    **Nachteile:** Nicht mehr aktuell, wird nicht weiter gepflegt.
+    **Nachteile:** Nicht mehr aktuell, wird nicht weiter gepflegt.  
+
   * [CSS Compatibility and Internet Explorer](http://msdn.microsoft.com/en-us/library/cc351024%28VS.85%29.aspx){: target="_blank"}  
     Übersicht über alle vom Internet Explorer unterstützten CSS
     Selektoren, Attributen und Werten. Dabei wird genau angegeben in
@@ -118,7 +121,8 @@ So, und nun ein erfolgreiches Selbststudium!
     Sehr gutes Nachschlagewerk zu JavaScript. Viele Beispiele und
     Erklärungen zu JavaScript Befehlen.  
     **Vorteile:** Erklärung zu vielen JavaScript-Sprachelementen,
-    Objektreferenzliste
+    Objektreferenzliste  
+
   * **Frameworks:**
     * **prototype:**
       * [Prototype API documentation \| Home](http://api.prototypejs.org/){: target="_blank"}  
@@ -149,6 +153,7 @@ So, und nun ein erfolgreiches Selbststudium!
     Funktionsreferenz  
     **Nachteile:** teilweise nicht Übersetzt ( englische Fragmente bzw.
     ganze Kapitel)
+
   * [Willkommen im PHP Wiki von php::bar! - php bar](http://www.phpbar.de/w/Hauptseite){: target="_blank"}  
     Eine ausführliche Referenz in Form eines Wikis. Die häufigsten
     Themen werden ähnlich wie in der Wikipedia in der Art eines Lexikons

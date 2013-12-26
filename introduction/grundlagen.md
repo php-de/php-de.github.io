@@ -540,7 +540,8 @@ So, und nun ein erfolgreiches Selbststudium!
 ### Sicherheit
 {: #security}
 
- Lesenswerte Artikel zum Thema Sicherheit bei Webapplikationen:
+Lesenswerte Artikel zum Thema Sicherheit bei Webapplikationen:  
+
 * [OWASP Guide 2.0.1](http://www.owasp.org/index.php/Category:OWASP_Guide_Project){: target="_blank"} (Englisch)
 
 

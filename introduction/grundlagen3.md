@@ -35,14 +35,17 @@ gemeint, vielmehr spiegelt das unser Verständnis für ein sinnvolles
 Forenprinzip dar. Unsere Comunity besteht aus vielen fleißigen Helfern,
 die freiwillig Dir und anderen bei der Lösung Ihrer Probleme helfen. Was
 wir dabei voraussetzen ist
-* das **Einhalten [unserer Regeln][1]{: target="_blank"}** (was ein
+
+* das **Einhalten [unserer Regeln](http://www.php.de/php-einsteiger/announcements.html){: target="_blank"}** (was ein
   Mindestmaß an die Form des Postings miteinschließt)
+
 * Dein **persönliches Engagement** bei der Diskussion und Lösung der
   Probleme  
    Wir erwarten vernünftige Fragestellungen, aktive Mitarbeit an der
   Problemlösung (Debugging, Posten von Fortschritten), Geduld und
   Respekt vor unserer Person. Wir sind hilfsbereit, aber keine
   Dienstleister.
+
 * Dein **Grundverständnis für die verwendeten Programmiersprachen**
 
 Dem letzten Punkt soll dieser Thread Rechnung tragen. Du bist
@@ -57,8 +60,11 @@ Selbsthilfe**, das soll der Ansatz für unser Forum sein.
    
  So, und nun ein erfolgreiches Selbststudium!  
    
- **Dokumentationen (Manuals) und Nachschlagewerke:**
-* **HTML:**
+### Dokumentationen (Manuals) und Nachschlagewerke
+
+
+##### HTML
+
   * [SELFHTML: HTML/XHTML][2]{: rel="nofollow" target="_blank"}  
      *Sehr gutes Nachschlagewerk zu allen HTML Tags. Viele Beispiele und
     Erklärungen zu HTML. Ein Muss für jeden der HTML verwendet.  
@@ -69,7 +75,8 @@ Selbsthilfe**, das soll der Ansatz für unser Forum sein.
     und Varianten
 
 
-* **CSS:**
+##### CSS
+
   * [CSS 4 You - The Finest in Stylesheets][3]{: rel="nofollow"
     target="_blank"}  
      *Sehr gutes Nachschlagewerk zu CSS. Viele Beispiele und Erklärungen
@@ -86,6 +93,7 @@ Selbsthilfe**, das soll der Ansatz für unser Forum sein.
      *Übersicht über alle vom Internet Explorer unterstützten CSS
     Selektoren, Attributen und Werten. Dabei wird genau angegeben in
     welchern Browserversionen welche Eigenschaft unterstützt wird.*
+
   * **Frameworks:**
     * **YAML:**
       * [Home: Yet Another Multicolumn Layout \| An (X)HTML/CSS
@@ -107,7 +115,8 @@ Selbsthilfe**, das soll der Ansatz für unser Forum sein.
          *960 Grid System ist ein weiteres beliebtes CSS Framework.*
 
 
-* **javascript:**
+##### javascript
+  
   * [SELFHTML: JavaScript/DOM][8]{: rel="nofollow" target="_blank"}  
      *Sehr gutes Nachschlagewerk zu JavaScript. Viele Beispiele und
     Erklärungen zu JavaScript Befehlen.*  
@@ -133,7 +142,8 @@ Selbsthilfe**, das soll der Ansatz für unser Forum sein.
         allen jQuery Funktionen.*
 
 
-* **PHP:**
+##### PHP
+
   * [PHP: PHP-Handbuch - Manual][12]{: rel="nofollow" target="_blank"}  
      *Offizielle PHP Dokumentation. Als Funktionsreferenz zum
     Nachschlagen oder suchen von Funktionen zu empfehlen, auch für das
@@ -201,7 +211,8 @@ Selbsthilfe**, das soll der Ansatz für unser Forum sein.
         zur Verfügung.*
 
 
-* **MySQL:**
+##### MySQL
+
   * [MySQL :: MySQL 5.1 Referenzhandbuch][20]{: rel="nofollow"
     target="_blank"}  
      *Deutsches Handbuch zu MySQL 5.1. Handbücher zu anderen MySQL
@@ -212,20 +223,24 @@ Selbsthilfe**, das soll der Ansatz für unser Forum sein.
      **Nachteile:** teilweise etwas unübersichtlich
 
 
-* **Webentwicklung, divers:**
+##### Webentwicklung, divers
+
   * ![](http://www.php.de/picture.php?albumid=13&amp;pictureid=158){:
     border="0"}[http://dochub.io/ Referenz][21]{: rel="nofollow"
     target="_blank"}
 
 
-* **Unzulänglichkeiten:**
+##### Unzulänglichkeiten
+
   * ![](http://www.php.de/picture.php?albumid=13&amp;pictureid=158){:
     border="0"}[http://me.veekun.com/blog/2012/04/09...of-bad-design/][22]{:
     rel="nofollow" target="_blank"}  
      *Auch sowas ist mal lesenswert.*
 
-**Tutorials:**
-* **HTML:**
+### Tutorials
+
+##### HTML
+
   * [Peter Kropff - HTML - Überblick][23]{: rel="nofollow"
     target="_blank"}  
      *Umfangreiches Tutorial zu HTML, CSS, JavaScript, PHP und MySQL.
@@ -234,7 +249,8 @@ Selbsthilfe**, das soll der Ansatz für unser Forum sein.
      **Vorteile:** Grundlagen vom absoluten Anfang, kein Fachchinesisch,
     Umfang
 
-* **CSS:**
+##### CSS
+
   * [Peter Kropff - CSS - Überblick][24]{: rel="nofollow"
     target="_blank"}  
      *Umfangreiches Tutorial zu HTML, CSS, JavaScript, PHP und MySQL.
@@ -244,7 +260,8 @@ Selbsthilfe**, das soll der Ansatz für unser Forum sein.
     Umfang
 
 
-* **javascript:**
+##### javascript
+
   * [Peter Kropff - JavaScript - Einleitung][25]{: rel="nofollow"
     target="_blank"}  
      *Umfangreiches Tutorial zu HTML, CSS, JavaScript, PHP und MySQL.
@@ -281,7 +298,8 @@ Selbsthilfe**, das soll der Ansatz für unser Forum sein.
          **Vorteile:** große Auswahl an Plugins, viele Live Demos
 
 
-* **PHP Anfänger:**
+##### PHP Anfänger
+
   * [Quakenet/#php Tutorial - de - Einleitung][31]{: rel="nofollow"
     target="_blank"}  
      *Sehr gutes Tutorial für den Anfang, aber nur für Leser die fertige
@@ -365,7 +383,8 @@ Selbsthilfe**, das soll der Ansatz für unser Forum sein.
        *Anregungen zur Abwehr von Spam ohne grafische Captchas.*
 
 
-* **PHP Fortgeschrittene:**
+##### PHP Fortgeschrittene
+
   * [Professionelle Softwareentwicklung mit PHP 5][41]{: rel="nofollow"
     target="_blank"}  
      *Dieses Tutorial stellt neben der objektorientierten Programmierung
@@ -380,7 +399,8 @@ Selbsthilfe**, das soll der Ansatz für unser Forum sein.
      **Nachteile:** hoher Anspruch, nur für Fortgeschrittene
 
 
-* **MySQL:**
+##### MySQL
+
   * [Peter Kropff - MySQL - Einleitung][42]{: rel="nofollow"
     target="_blank"}  
      Umfangreiches Tutorial zu HTML, CSS, JavaScript, PHP und MySQL.
@@ -390,14 +410,16 @@ Selbsthilfe**, das soll der Ansatz für unser Forum sein.
     Umfang
 
 
-* **javascript:**
+##### javascript
+
   * ![](http://www.php.de/picture.php?albumid=13&amp;pictureid=158){:
     border="0"}  
      [appendTo () - diverse Videotutorials zu JS und jQuery
     Basics][43]{: rel="nofollow" target="_blank"}
 
 
-* **Sicherheit:**
+##### Sicherheit
+
   * [http://www.cms-sicherheit.de/][44]{: rel="nofollow"
     target="_blank"}  
      *Eine sehr gute Tutorial-Seite zum Thema Sicherheit. Dort werden
@@ -411,7 +433,8 @@ Selbsthilfe**, das soll der Ansatz für unser Forum sein.
      **Nachteile:** Die Ausführungen sind trotz der guten Erklärungen
     manchmal etwas kurz geraten
 
-**Bücher**
+### Bücher
+
 * [Galileo Computing : Buch : Besser PHP programmieren][45]{:
   rel="nofollow" target="_blank"}  
    *Dieses Buch führt sehr gut in PHP ein und beleuchtet viele Aspekte
@@ -421,6 +444,7 @@ Selbsthilfe**, das soll der Ansatz für unser Forum sein.
   sollte allerdings noch viele Verbesserungen liefern.*  
    **Vorteile:** Umfangreich, gut erklärt, teils auch etwas humorvoll  
    **Nachteile:** Die Themen werden nicht immer erschöpfend behandelt
+
 * [Galileo Computing : Buch : PHP 5.3 und MySQL 5.1][46]{:
   rel="nofollow" target="_blank"}  
    *Ein Buch, dass zunächst auf die Grundlagen von PHP eingeht, dann
@@ -432,6 +456,7 @@ Selbsthilfe**, das soll der Ansatz für unser Forum sein.
   und ein paar Anwendungsimplementierungen sind auch leicht fragwürdig
   (bieten aber dennoch einen guten Anreiz und fördern das Verständnis
   dessen, was man tut)
+
 * [PHP Security Consortium: Projects][47]{: rel="nofollow"
   target="_blank"}  
    *Kostenloses Ebook zu den wichtigsten Sicherheitsproblemen in PHP
@@ -439,6 +464,7 @@ Selbsthilfe**, das soll der Ansatz für unser Forum sein.
    **Vorteile:** kostenlos, umfasst die wichtigsten Themen, verschiedene
   Formate (PDF/HTML/DocBook Lite)  
    **Nachteile:** englische Version besser formatiert als die Deutsche
+
 * [PHP Design Patterns - 2.Auflage][48]{: rel="nofollow"
   target="_blank"}  
    *Um auch ein Buch zu nennen, das nicht von Galileo Computing ist: wer
@@ -453,6 +479,7 @@ Selbsthilfe**, das soll der Ansatz für unser Forum sein.
   strukturiert  
    **Nachteile:** Wie leider viele O\'Reilly-Bücher enthält auch dieses
   relativ viele Rechtschreibfehler
+
 * [dpunkt.verlag \| Bücher][49]{: rel="nofollow" target="_blank"}  
    *Wer sich mit dem Thema Sicherheit intensiv beschäftigen will, dem
   sei dieses Buch dringend empfohlen, es bietet ein umfassendes Wissen
@@ -464,6 +491,7 @@ Selbsthilfe**, das soll der Ansatz für unser Forum sein.
   target="_blank"} stellt dieses Buch eine lohnende Investition dar.*  
    **Vorteile:** Gut ausgeführt, sehr umfangreich, es wird ein gutes
   Verständnis von möglichen Sicherheitsrisiken vermittelt
+
 * [Galileo Computing : Buch : Reguläre Ausdrücke][50]{: rel="nofollow"
   target="_blank"}  
    *PHP bietet noch weitaus mehr als nur simple print- und
@@ -477,6 +505,7 @@ Selbsthilfe**, das soll der Ansatz für unser Forum sein.
   offen  
    **Nachteile:** Die Erklärungen sind nicht immer ganz leicht zu
   verstehen und erfordern manchmal einiges an Konzentration
+
 * [Galileo Computing : Buch : PHP PEAR][51]{: rel="nofollow"
   target="_blank"}  
    *Eine Einführung in die Arbeit mit dem PHP-Repository PEAR. Dabei
@@ -487,6 +516,7 @@ Selbsthilfe**, das soll der Ansatz für unser Forum sein.
    **Vorteile:** Das Buch eignet sich gut als Nachschlagewerk für
   bestimmte PEAR-Klassen, auch wenn es natürlich keinen Wert auf
   Vollständigkeit legen kann
+
 * [Produktion von Open-Source-Software][53]{: rel="nofollow"
   target="_blank"}  
    *Kostenloses Ebook über die Produktion von Open-Source-Software. Das
@@ -495,6 +525,7 @@ Selbsthilfe**, das soll der Ansatz für unser Forum sein.
   ab.*  
    **Vorteile:** kostenlos, interessante Themen die jeder der
   Open-Source-Software entwickelt beachten sollte
+
 * [Franzis: JavaScript - Objektorientierung und Entwurfsmuster][54]{:
   rel="nofollow" target="_blank"}  
    *Sehr gut Beschreibung von Objektorientierung und Design patterns im
@@ -511,24 +542,25 @@ Selbsthilfe**, das soll der Ansatz für unser Forum sein.
   beschreibt bspw. keine Javascript-Basis-Syntax o.ä. Auch von OOP und
   Entwurfsmustern sollte man (bspw. in anderen Sprachen) schon mal
   gehört haben.
+
 * ![](http://www.php.de/picture.php?albumid=13&amp;pictureid=158){:
   border="0"}[Diverse][55]{: rel="nofollow" target="_blank"}
 
-**Sicherheit**  
+### Sicherheit
+
  Lesenswerte Artikel zum Thema Sicherheit bei Webapplikationen:
 * [OWASP Guide 2.0.1][56]{: rel="nofollow" target="_blank"} (Englisch)
 
-**weitere Links**  
+
+### weitere Links
+
  Weitere Links zu verschiedenen Themen gibt es unter:
 * [php.de\'s Bookmarks on Delicious][57]{: rel="nofollow"
   target="_blank"}
 * [Hauptseite - PHP.de Wiki][58]{: target="_blank"}
 
-.
 
 
-
-[1]: http://www.php.de/php-einsteiger/announcements.html 
 [2]: http://de.selfhtml.org/html/index.htm 
 [3]: http://www.css4you.de/ 
 [4]: http://msdn.microsoft.com/en-us/library/cc351024%28VS.85%29.aspx 
@@ -586,5 +618,3 @@ Selbsthilfe**, das soll der Ansatz für unser Forum sein.
 [56]: http://www.owasp.org/index.php/Category:OWASP_Guide_Project 
 [57]: http://delicious.com/php.de 
 [58]: http://www.php.de/wiki-php/index.php/Hauptseite 
-
- 

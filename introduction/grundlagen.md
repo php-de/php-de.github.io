@@ -16,8 +16,24 @@ author:
       profile: 21246
 
 inhalt:
-    - name: ""
-      anchor: 
+    - name: "Dokumentationen (Manuals) und Nachschlagewerke"
+      anchor: dokus
+      simple: ""
+
+    - name: "Tutorials"
+      anchor: tutorials
+      simple: ""
+
+    - name: "Bücher"
+      anchor: books
+      simple: ""
+
+    - name: "Sicherheit"
+      anchor: sicherheit
+      simple: ""
+
+    - name: "weitere Links"
+      anchor: weitere-links
       simple: ""
 
 entry-type: in-progress
@@ -61,7 +77,7 @@ Dir Syntaxnachhilfe geben oder aus dem Manual vorlesen.
 So, und nun ein erfolgreiches Selbststudium!  
 
 
-### Dokumentationen (Manuals) und Nachschlagewerke
+### Dokumentationen (Manuals) und Nachschlagewerke {: #dokus}
 
 
 ##### HTML
@@ -229,7 +245,7 @@ So, und nun ein erfolgreiches Selbststudium!
     border="0"}[http://me.veekun.com/blog/2012/04/09...of-bad-design/](http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/){: target="_blank"}  
     Auch sowas ist mal lesenswert.
 
-### Tutorials
+### Tutorials  {: #tutorials}
 
 ##### HTML
 
@@ -415,7 +431,7 @@ So, und nun ein erfolgreiches Selbststudium!
     **Nachteile:** Die Ausführungen sind trotz der guten Erklärungen
     manchmal etwas kurz geraten
 
-### Bücher
+### Bücher  {: #books}
 
 * [Galileo Computing : Buch : Besser PHP programmieren](http://www.galileocomputing.de/katalog/buecher/titel/gp/titelID-1670){: target="_blank"}  
   Dieses Buch führt sehr gut in PHP ein und beleuchtet viele Aspekte
@@ -518,13 +534,13 @@ So, und nun ein erfolgreiches Selbststudium!
 * ![](http://www.php.de/picture.php?albumid=13&amp;pictureid=158){:
   border="0"}[Diverse](http://stackoverflow.com/questions/194812/list-of-freely-available-programming-books/392926#392926){: target="_blank"}
 
-### Sicherheit
+### Sicherheit {: #sicherheit}
 
  Lesenswerte Artikel zum Thema Sicherheit bei Webapplikationen:
 * [OWASP Guide 2.0.1](http://www.owasp.org/index.php/Category:OWASP_Guide_Project){: target="_blank"} (Englisch)
 
 
-### weitere Links
+### weitere Links {: #weitere-links}
 
  Weitere Links zu verschiedenen Themen gibt es unter:
 

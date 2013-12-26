@@ -29,7 +29,7 @@ inhalt:
       simple: ""
 
     - name: "Sicherheit"
-      anchor: sicherheit
+      anchor: security
       simple: ""
 
     - name: "weitere Links"
@@ -538,7 +538,7 @@ So, und nun ein erfolgreiches Selbststudium!
   border="0"}[Diverse](http://stackoverflow.com/questions/194812/list-of-freely-available-programming-books/392926#392926){: target="_blank"}
 
 ### Sicherheit
-{: #sicherheit}
+{: #security}
 
  Lesenswerte Artikel zum Thema Sicherheit bei Webapplikationen:
 * [OWASP Guide 2.0.1](http://www.owasp.org/index.php/Category:OWASP_Guide_Project){: target="_blank"} (Englisch)

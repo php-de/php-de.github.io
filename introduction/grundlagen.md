@@ -35,8 +35,6 @@ inhalt:
     - name: "weitere Links"
       anchor: weitere-links
       simple: ""
-
-entry-type: in-progress
 ---
 
 

@@ -236,13 +236,13 @@ So, und nun ein erfolgreiches Selbststudium!
 
 ##### Webentwicklung, divers
 
-  * ![]({{ site.url }}/images/global-new.png){:
+  * ![]({{ site.url }}/images/global-new.jpg){:
     border="0"}[http://dochub.io/ Referenz](http://dochub.io/){: target="_blank"}
 
 
 ##### Unzulänglichkeiten
 
-  * ![]({{ site.url }}/images/global-new.png){:
+  * ![]({{ site.url }}/images/global-new.jpg){:
     border="0"}[http://me.veekun.com/blog/2012/04/09...of-bad-design/](http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/){: target="_blank"}  
     Auch sowas ist mal lesenswert.
 
@@ -413,7 +413,7 @@ So, und nun ein erfolgreiches Selbststudium!
 
 ##### javascript
 
-  * ![]({{ site.url }}/images/global-new.png){:
+  * ![]({{ site.url }}/images/global-new.jpg){:
     border="0"}  
      [appendTo () - diverse Videotutorials zu JS und jQuery
     Basics](http://learn.appendto.com/){: target="_blank"}
@@ -534,7 +534,7 @@ So, und nun ein erfolgreiches Selbststudium!
   Entwurfsmustern sollte man (bspw. in anderen Sprachen) schon mal
   gehört haben.
 
-* ![]({{ site.url }}/images/global-new.png){:
+* ![]({{ site.url }}/images/global-new.jpg){:
   border="0"}[Diverse](http://stackoverflow.com/questions/194812/list-of-freely-available-programming-books/392926#392926){: target="_blank"}
 
 ### Sicherheit

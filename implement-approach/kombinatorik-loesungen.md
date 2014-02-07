@@ -294,71 +294,54 @@ echo implode('-', $path3) . "\n"; // 1-2-3-17-28-39
 ### Ziehen mit Zurücklegen
 
 ~~~ php
-// Ziehe viermal mit Zurücklegen aus [a, b, c, d]
-$elements = array('a', 'b', 'c', 'd');
-$draw = 4;
+<?php
 
-// Anzahl Elemente
-$elements_count = count($elements);
+/**
+ * Liefert die $i-te Permutation von $k Elementen aus $data (Ziehen mit
+ * Zurücklegen)
+ *
+ * @param array $data
+ * @param int $k
+ * @param int $i
+ * @return array
+ */
+function get_perm(array $data, $k, $i)
+{
+    $ret = array();
+    $n = count($data);
 
-// Anzahl möglicher Resultate
-$n = pow($elements_count, $draw);
+    for ($exp = $k - 1; $exp >= 0; $exp--) {
+        $pow = pow($n, $exp);
+        $idx = (int) ($i / $pow);
 
-// Jedes Resultat ermitteln
-for ($i = 0; $i < $n; $i++) {
-    $tmp = str_pad(base_convert($i, 10, $elements_count), $draw, '0', STR_PAD_LEFT);
-    $tmp2 = str_replace(array_keys($elements), $elements, $tmp);
+        $ret[] = $data[$idx];
 
-    echo $tmp2 . "\n";
+        $i -= $idx * $pow;
+    }
+
+    return $ret;
 }
-~~~
 
-`base_convert` unterstützt eine Anzahl an Elementen zwischen 2 und 36.
+// Ziehe achtmal mit Zurücklegen aus [a..f]
+$elements = range('a', 'f');
+$draw = 8;
+$pow = pow(count($elements), $draw);
 
-Ausgabe:
+echo implode(', ', get_perm($elements, $draw, 0)) . "\n";
+echo implode(', ', get_perm($elements, $draw, 1)) . "\n";
+echo implode(', ', get_perm($elements, $draw, 2)) . "\n";
+echo '...' . "\n";
+echo implode(', ', get_perm($elements, $draw, $pow - 3)) . "\n";
+echo implode(', ', get_perm($elements, $draw, $pow - 2)) . "\n";
+echo implode(', ', get_perm($elements, $draw, $pow - 1)) . "\n";
 
-~~~
-aaaa
-aaab
-aaac
-aaad
-aaba
-aabb
-aabc
-aabd
-aaca
-aacb
-aacc
-aacd
-aada
-aadb
-aadc
-aadd
-abaa
-...
-dccb
-dccc
-dccd
-dcda
-dcdb
-dcdc
-dcdd
-ddaa
-ddab
-ddac
-ddad
-ddba
-ddbb
-ddbc
-ddbd
-ddca
-ddcb
-ddcc
-ddcd
-ddda
-dddb
-dddc
-dddd
+// a, a, a, a, a, a, a, a
+// a, a, a, a, a, a, a, b
+// a, a, a, a, a, a, a, c
+// ...
+// f, f, f, f, f, f, f, d
+// f, f, f, f, f, f, f, e
+// f, f, f, f, f, f, f, f
 ~~~
 
 

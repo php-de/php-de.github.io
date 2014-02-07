@@ -22,6 +22,9 @@ inhalt:
 
     -   name: "Alle Kombinationen einer bestimmten Anzahl der Elemente eines Arrays"
         anchor: alle-kombinationen-einer-bestimmten-anzahl-der-elemente-eines-arrays
+        
+    -   name: "Ziehen mit Zurücklegen"
+        anchor: ziehen-mit-zurcklegen
 
     -   name: "Weblinks"
         anchor: weblinks
@@ -284,6 +287,78 @@ echo implode('-', $path2) . "\n"; // 1-2-3-4-5-6
 
 $path3 = getPathByNumber($n, $k, 10000, $fibTable);
 echo implode('-', $path3) . "\n"; // 1-2-3-17-28-39
+~~~
+
+
+
+### Ziehen mit Zurücklegen
+
+~~~ php
+// Ziehe viermal mit Zurücklegen aus [a, b, c, d]
+$elements = array('a', 'b', 'c', 'd');
+$draw = 4;
+
+// Anzahl Elemente
+$elements_count = count($elements);
+
+// Anzahl möglicher Resultate
+$n = pow($elements_count, $draw);
+
+// Jedes Resultat ermitteln
+for ($i = 0; $i < $n; $i++) {
+    $tmp = str_pad(base_convert($i, 10, $elements_count), $draw, '0', STR_PAD_LEFT);
+    $tmp2 = str_replace(array_keys($elements), $elements, $tmp);
+
+    echo $tmp2 . "\n";
+}
+~~~
+
+`base_convert` unterstützt eine Anzahl an Elementen zwischen 2 und 36.
+
+Ausgabe:
+
+~~~
+aaaa
+aaab
+aaac
+aaad
+aaba
+aabb
+aabc
+aabd
+aaca
+aacb
+aacc
+aacd
+aada
+aadb
+aadc
+aadd
+abaa
+...
+dccb
+dccc
+dccd
+dcda
+dcdb
+dcdc
+dcdd
+ddaa
+ddab
+ddac
+ddad
+ddba
+ddbb
+ddbc
+ddbd
+ddca
+ddcb
+ddcc
+ddcd
+ddda
+dddb
+dddc
+dddd
 ~~~
 
 

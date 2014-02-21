@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<author>
+		<name>PHP.de Community</name>
+	</author>
+	<title>{{ page.title }}</title>
+	<id>http://php.de/virtual/feed/atom/full</id>
+	<updated>{{ site.time | date_to_xmlschema }}</updated>
+
+	{% for sitegroup in site.groups %}
+	{% assign cgcount = 0 %}
+	    {% for current in site.pages %}{% if sitegroup.name == current.group %}{% assign cgcount = cgcount |plus:1 %}{% endif %}{% endfor %}
+	        {% for sortrange in (0..26) %}{% for current in site.pages %}{% if current.orderId %}{% assign orderId = current.orderId %}{% else %}{% assign orderId = site.orderId %}{% endif %}{% if sitegroup.name == current.group and orderId == sortrange %}
+	<entry>
+		<title>{{ current.title }}</title>
+		<link href="http://php-de.github.io{{ current.url }}" />
+		<id>http://php.de/virtual{{ current.url }}#inexisting-url</id>
+		<updated>{{ site.time | date_to_xmlschema }}</updated>
+		<author>
+			<name>{{ current.author[0].name }}</name>
+		</author>
+	</entry>{% endif %}{% endfor %}{% endfor %}
+	{% endfor %}
+</feed>

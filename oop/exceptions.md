@@ -206,10 +206,10 @@ Wir müssen also darauf achten, Exceptions an der perfekten Stelle abzufangen, d
 
 Denn spielen wir das Szenario mal für den Fall durch, dass erst unsere Bootstrap-Datei den Fehler fängt:
 
-**Szenario 1** 
+**Szenario 1**  
 Die Bootstrap wird vermutlich nurnoch dazu in der Lage sein eine Fehlermeldung zu schreiben und abzubrechen. Erinnern wir uns: Exceptions verlassen ihren Programmkontext bis zum nächsten catch! Wenn wir die Exception nicht früh genug abfangen wird der dahinterliegende Code überhaupt nicht mehr ausgeführt. Wir sind (ohne den Prozess neu anzustossen) garnicht mehr in der Lage die restlichen Bilder auszugeben!
 
-**Szenario 2** 
+**Szenario 2**  
 Unsere Image-Klasse zum Laden der Grafik und Berechnen der Größe fängt ihren eigenen Fehler sofort auf:
 
 Es könnte nur mit 2 Aktionen auf den Fehler reagieren:

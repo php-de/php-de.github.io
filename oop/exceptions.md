@@ -56,7 +56,7 @@ Vorweg: Tut mir Leid für diesen Text-Overhead, er war plötzlich da! :-)
 
 *Exception* bedeutet übersetzt *Ausnahme* und stellt in der objekt-orientierten Programmierung eine elegante Möglichkeit dar, bei besonderen oder schweren Fehlern den aktuellen Programmkontext zu verlassen (!) um ihn mit einer Fehlerbehandlung fortzuführen.
 
-Ähnlich wie ´return´ für das Abliefern eines Ergebnisses funktioniert, funktioniert das Werfen (throw) von Exceptions, also einem Fehler-Objekt, nur wird das Programm nun nicht zwingend in der übergeordneten, aufrufenden Umgebung landen, sondern dort, wo es erwartet und aufgefangen (catch) wird.
+Ähnlich wie `return` für das Abliefern eines Ergebnisses funktioniert, funktioniert das Werfen (throw) von Exceptions, also einem Fehler-Objekt, nur wird das Programm nun nicht zwingend in der übergeordneten, aufrufenden Umgebung landen, sondern dort, wo es erwartet und aufgefangen (catch) wird.
 
 
 ### Wie wirft und fängt man Exceptions?
@@ -95,7 +95,7 @@ try {
 ?> 
 ~~~
 
-Von ´throw new Exception("invalid counter value");´ aus springen wir direkt in den catch-Block und lassen uns die Fehlermeldung ausgeben!
+Von `throw new Exception("invalid counter value");` aus springen wir direkt in den catch-Block und lassen uns die Fehlermeldung ausgeben!
 
 Dabei spielt es keine Rolle, ob die Exception im try-Block direkt geworfen wurde oder nur von einer Funktion, die darin verwendet wurde.
 
@@ -135,7 +135,7 @@ Exceptions sind Ausnahmen und ich teile die Meinung aus "Der Pragmatische Progra
 
 Das gewählte Beispiel ist absichtlich ein schlechtes! Warum?
 
-Es ist davon auszugehen, dass bei der ersten Verwendung des Skriptes die counter.txt nicht existiert und somit ´is_numeric($counter)´ fehlschlägt. Es ist also keine Ausnahme, sondern ein Zustand, der garantiert eintreten wird (wenn auch nur hoffentlich nur einmalig bei der Initiierung).
+Es ist davon auszugehen, dass bei der ersten Verwendung des Skriptes die counter.txt nicht existiert und somit `is_numeric($counter)` fehlschlägt. Es ist also keine Ausnahme, sondern ein Zustand, der garantiert eintreten wird (wenn auch nur hoffentlich nur einmalig bei der Initiierung).
 
 Richtigerweise sollte man die Datei auf Nicht-Existenz prüfen und dann mit einer 0 initiiert anlegen. Erst wenn dann der Lese- oder sogar Schreibvorgang fehlschlägt, kann man von einer echten Ausnahme reden und eine Exception werfen.
 
@@ -175,7 +175,7 @@ Auch dieses Beispiel ist natürlich ungeschickt gewählt, da sich die Fehlerbeha
 Exceptions fängt man dort, wo man das Problem am besten lösen kann. Das heißt in dem Block, an dem man mit ausreichender Sicherheit sagen kann, die Ausnahme und ihre Tragweite verstanden zu haben.
 
 Gehen wir von einer einfachen Variante aus:
-Eine zentrale index.php (eine sogenannte Bootstrap-Datei) bekommt die Parameter ´module=gallery&show=silvester0607´ übergeben. Das Modul "gallery" soll also die Bilder von "silvester0607" laden und anzeigen.
+Eine zentrale index.php (eine sogenannte Bootstrap-Datei) bekommt die Parameter `module=gallery&show=silvester0607` übergeben. Das Modul "gallery" soll also die Bilder von "silvester0607" laden und anzeigen.
 Nun wird versucht ein Bild zu laden, dessen Thumbnail nicht mehr existiert. Zum Beispiel weil man gebeten wurde das Bild zu entfernen, auf die schnelle aber nur per FTP verbunden hat und dort auch zu allem Unglück nur den Thumbnail gelöscht hat, und nicht das vergrößerte Bild.
 
 Das Fehlen von Dateien in einem Projekt, dass eigene Mechanismen zur Administration bietet, ist eine solche Exception. "Das sollte eigentlich nie passieren".
@@ -253,7 +253,7 @@ class My_Beloved_Exception extends My_Exception
 ?> 
 ~~~
 
-Diese Unterteilung ist sehr sinnvoll und erzeugt nur einen lächerlich geringen Overhead (der durch den Einsatz von ´__autoload´ sowieso in aberwitzige Dimensionen schrumpft).
+Diese Unterteilung ist sehr sinnvoll und erzeugt nur einen lächerlich geringen Overhead (der durch den Einsatz von `__autoload` sowieso in aberwitzige Dimensionen schrumpft).
 
 Denkbar wären nun also
 
@@ -305,9 +305,9 @@ try {
 "oben" sei in diesem Fall im Kontext des Gallery-Moduls zu sehen. Wir müssen uns vorstellen, dass dieser try-catch Block irgendwo im Bauch der Gallery-Klasse ablduft.
 
 Etwas ist dem aufmerksamen Leser vielleicht aufgefallen:
-Statt ´catch (Exception $e)´ wird plötzlich ´catch (Image_Exception $e)´ verwendet! Diese Notation, die übrigens seit PHP 5 auch für alle normalen Funktions und Methodendeklarationen erlaubt ist, schränkt den übergebenen Parameter auf ein Objekt der deklarierten Klasse (oder einer ihrer Ableitungen) ein.
+Statt `catch (Exception $e)` wird plötzlich `catch (Image_Exception $e)` verwendet! Diese Notation, die übrigens seit PHP 5 auch für alle normalen Funktions und Methodendeklarationen erlaubt ist, schränkt den übergebenen Parameter auf ein Objekt der deklarierten Klasse (oder einer ihrer Ableitungen) ein.
 
-Demnach fängt ´catch (Exception $e)´ alle in seinem try-Block gefangenen Exceptions ab, während ´catch (Image_Exception $e)´ nur mit ´throw new Image_Exception()´ erzeugte Exceptions abfängt (oder eben solche Exceptions, die von Image_Exception geerbt haben). Schließlich könnte die Image-Klasse ja auch einen kontextübergreifend-schweren Fehler werfen, von der sogar die Image-Klasse weiß, dass die Gallery hier nichts mehr retten kann/soll/darf. Zum Beispiel, wenn die Image-Klasse keine Grafik übergeben bekommt, sondern eine EXE-Datei (warum auch immer).
+Demnach fängt `catch (Exception $e)` alle in seinem try-Block gefangenen Exceptions ab, während `catch (Image_Exception $e)` nur mit `throw new Image_Exception()` erzeugte Exceptions abfängt (oder eben solche Exceptions, die von Image_Exception geerbt haben). Schließlich könnte die Image-Klasse ja auch einen kontextübergreifend-schweren Fehler werfen, von der sogar die Image-Klasse weiß, dass die Gallery hier nichts mehr retten kann/soll/darf. Zum Beispiel, wenn die Image-Klasse keine Grafik übergeben bekommt, sondern eine EXE-Datei (warum auch immer).
 
 Natürlich darf die Image-Klasse keine *Ueberspring_die_Gallery_Exception* werfen, die Image-Klasse sollte soetwas nicht wissen müssen. Aber sie sollte die Möglichkeit haben auch derbere Ausnahmen auszulösen. Eine (nennen wir sie) *System_Exception* zum Beispiel.
 
@@ -361,7 +361,7 @@ try {
 ?> 
 ~~~
 
-Beachtet werden sollte, dass man nicht in den ´catch (My_Stupid_Exception $e)´ gelangt, obwohl eine Exception diesen Typs geworfen wurde, sondern ´catch (My_Exception $e)´, denn ´My_Stupid_Exception´ ist nach Deklaration ein Kind von ´My_Stupid_Exception´.
+Beachtet werden sollte, dass man nicht in den `catch (My_Stupid_Exception $e)` gelangt, obwohl eine Exception diesen Typs geworfen wurde, sondern `catch (My_Exception $e)`, denn `My_Stupid_Exception` ist nach Deklaration ein Kind von `My_Stupid_Exception`.
 
 **Der erste Treffer zählt.**
 

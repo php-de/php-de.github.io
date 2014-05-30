@@ -48,10 +48,6 @@ inhalt:
 
 ---
 
-
-Vorweg: Tut mir Leid für diesen Text-Overhead, er war plötzlich da! :-) 
-
-
 ### Was sind Exceptions?
 
 *Exception* bedeutet übersetzt *Ausnahme* und stellt in der objekt-orientierten Programmierung eine elegante Möglichkeit dar, bei besonderen oder schweren Fehlern den aktuellen Programmkontext zu verlassen (!) um ihn mit einer Fehlerbehandlung fortzuführen.

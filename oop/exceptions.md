@@ -16,27 +16,27 @@ inhalt:
         anchor: was-sind-exceptions
         simple: ""
 
-    -   name: "Wie wirft und fängt man Exceptions?"
+    -   name: "Exceptions werfen und fangen, wie?"
         anchor: wie-wirft-und-fngt-man-exceptions
         simple: ""
 
-    -   name: "Wann bzw. wo wirft man Exceptions?"
+    -   name: "Exceptions werfen, wann/wo?"
         anchor: wann-bzw-wo-wirft-man-exceptions
         simple: ""
 
-    -   name: "Wann bzw. wo fängt man Exceptions?"
+    -   name: "Exceptions fangen, wann/wo?"
         anchor: wann-bzw-wo-fngt-man-exceptions
         simple: ""
 
-    -   name: "Wie unterscheidet man Exceptions?"
+    -   name: "Exceptions unterscheiden"
         anchor: wie-unterscheidet-man-exceptions
         simple: ""
 
-    -   name: "Wie fängt man mehrere Exceptions?"
+    -   name: "Mehrere Exceptions fangen"
         anchor: wie-fngt-man-mehrere-exceptions
         simple: ""
 
-    -   name: "Wie wirft man eine Exception weiter?"
+    -   name: "Exception weiter werfen"
         anchor: wie-wirft-man-eine-exception-weiter
         simple: ""
 
@@ -408,4 +408,4 @@ Danke für eure Aufmerksamkeit!
 
 ### Quellen
 
-Link zum Originalbeitrag im php.de Forum: http://www.php.de/tutorials/45124-php-exceptions-teil-1-a.html
+[Link zum Originalbeitrag im php.de Forum](http://www.php.de/tutorials/45124-php-exceptions-teil-1-a.html)

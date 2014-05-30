@@ -4,6 +4,8 @@ permalink: /jumpto/exceptions/
 title: "Exceptions - Tutorial"
 creator: Zergling-new
 group: "Objektorientierte Programmierung (OOP)"
+orderId: 2
+
 author:
     -   name: Zergling-new
         profile: 2313
@@ -44,8 +46,6 @@ inhalt:
         anchor: quellen
         simple: ""
 
-
-entry-type: in-progress
 ---
 
 

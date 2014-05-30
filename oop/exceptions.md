@@ -142,10 +142,10 @@ Richtigerweise sollte man die Datei auf Nicht-Existenz prüfen und dann mit eine
 **Eine Faustregel**  
 Exceptions nur verwenden, wenn man behaupten könnte, dass dieser Fehler nie passieren sollte!
 
-Eine ziemlich schwammige Aussage eigentlich, denn letztlich sollte eine Exception ja nie ausgelöst werden, die Übergänge sind sowieso fließend. Trotzdem gibt es einen Unterschied zwischen "sollte nie" und "kommt schonmal vor".
+Eine ziemlich schwammige Aussage eigentlich, denn letztlich sollte eine Exception ja nie ausgelöst werden, die Übergänge sind sowieso fließend. Trotzdem gibt es einen Unterschied zwischen "sollte nie" und "kommt schon mal vor".
 
 
-für unser Beispiel hieße das also:
+Für unser Beispiel hieße das also:
 
 ~~~ php
 <?php 
@@ -207,7 +207,7 @@ Wir müssen also darauf achten, Exceptions an der perfekten Stelle abzufangen, d
 Denn spielen wir das Szenario mal für den Fall durch, dass erst unsere Bootstrap-Datei den Fehler fängt:
 
 **Szenario 1**  
-Die Bootstrap wird vermutlich nurnoch dazu in der Lage sein eine Fehlermeldung zu schreiben und abzubrechen. Erinnern wir uns: Exceptions verlassen ihren Programmkontext bis zum nächsten catch! Wenn wir die Exception nicht früh genug abfangen wird der dahinterliegende Code überhaupt nicht mehr ausgeführt. Wir sind (ohne den Prozess neu anzustossen) garnicht mehr in der Lage die restlichen Bilder auszugeben!
+Die Bootstrap wird vermutlich nurnoch dazu in der Lage sein eine Fehlermeldung zu schreiben und abzubrechen. Erinnern wir uns: Exceptions verlassen ihren Programmkontext bis zum nächsten catch! Wenn wir die Exception nicht früh genug abfangen wird der dahinterliegende Code überhaupt nicht mehr ausgeführt. Wir sind (ohne den Prozess neu anzustossen) gar     nicht mehr in der Lage die restlichen Bilder auszugeben!
 
 **Szenario 2**  
 Unsere Image-Klasse zum Laden der Grafik und Berechnen der Größe fängt ihren eigenen Fehler sofort auf:
@@ -218,7 +218,7 @@ Es könnte nur mit 2 Aktionen auf den Fehler reagieren:
 * Standardbild laden
 
 
-Was aber, wenn wir dem Betrachter mit einer Nachricht mitteilen möchten, dass ein Bild nicht gefunden wurde, an einer Stelle, an der die Image-Klasse keinen Einfluß auf die Anzeige hat?
+Was aber, wenn wir dem Betrachter mit einer Nachricht mitteilen möchten, dass ein Bild nicht gefunden wurde, an einer Stelle, an der die Image-Klasse keinen Einfluss auf die Anzeige hat?
 
 
 Das Gallery-Modul scheint also der richtige Ort zum Fangen dieser Exception zu sein!
@@ -258,7 +258,7 @@ Diese Unterteilung ist sehr sinnvoll und erzeugt nur einen lächerlich geringen 
 Denkbar wären nun also
 
 * eine Bootstrap_Exception (Modul Gallery wird nicht gefunden, ..)
-* eine Gallery_Exception (keine Leserechte für den Bilderordner, aber eher nicht für den Fehlerfall, dass die angefragte Gallery silvester0607 nicht existiert, Verlinkungs- oder Copy&paste-Fehler treten stdndig auf)
+* eine Gallery_Exception (keine Leserechte für den Bilderordner, aber eher nicht für den Fehlerfall, dass die angefragte Gallery silvester0607 nicht existiert, Verlinkungs- oder copy & paste-Fehler treten ständig auf)
 * eine Image_Exception (siehe Beispiel)
 
 
@@ -330,7 +330,7 @@ Der catch-Block wird nie zur Ausführung kommen.
 
 Ein Gallery-Modul muss ihre Aufgaben nicht nur an Image-Klassen weiterdelegieren. Der Einsatz vielerlei Klassen ist denkbar, sie müssten nicht einmal direkt etwas mit Bildern zu tun haben .. eine File-Klasse zum Zugriff auf Bilder wäre denkbar oder der Einsatz eines Log-Tools.
 
-All diese Klassen können Ausnahmen erzeugen und viele von ihnen sollte vermutlich die Gallery abfangen, da es wohl niemanden außerhalb der Gallery interessiert, ob ein Bild nicht gefunden wurde oder eine Log-Datei nicht richtig funktioniert. Schon garnicht den Anwender.
+All diese Klassen können Ausnahmen erzeugen und viele von ihnen sollte vermutlich die Gallery abfangen, da es wohl niemanden außerhalb der Gallery interessiert, ob ein Bild nicht gefunden wurde oder eine Log-Datei nicht richtig funktioniert. Schon gar nicht den Anwender.
 
 Darum ist es möglich an einen try-Block mehrere catch-Blocke anzuhängen, denen nacheinander versucht wird, die Exception zu übergeben. Hinweis: Der erste Treffer zählt, egal ob Ableitung oder direkt:
 

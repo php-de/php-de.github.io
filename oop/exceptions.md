@@ -62,7 +62,7 @@ Vorweg: Tut mir Leid für diesen Text-Overhead, er war plötzlich da! :-)
 ### Wie wirft und fängt man Exceptions?
 
 Exception-Handling unterteilt sich in zwei Blocke, logisch wie syntaktisch.
-In try wird ein Algorithmus ausgeführt, der, schlägt er fehl, eine Exception werfen könnte.
+In `try` wird ein Algorithmus ausgeführt, der, schlägt er fehl, eine Exception werfen könnte.
 
 
 ~~~ php
@@ -139,7 +139,7 @@ Es ist davon auszugehen, dass bei der ersten Verwendung des Skriptes die counter
 
 Richtigerweise sollte man die Datei auf Nicht-Existenz prüfen und dann mit einer 0 initiiert anlegen. Erst wenn dann der Lese- oder sogar Schreibvorgang fehlschlägt, kann man von einer echten Ausnahme reden und eine Exception werfen.
 
-**Eine Faustregel**
+**Eine Faustregel**  
 Exceptions nur verwenden, wenn man behaupten könnte, dass dieser Fehler nie passieren sollte!
 
 Eine ziemlich schwammige Aussage eigentlich, denn letztlich sollte eine Exception ja nie ausgelöst werden, die Übergänge sind sowieso fließend. Trotzdem gibt es einen Unterschied zwischen "sollte nie" und "kommt schonmal vor".
@@ -206,10 +206,10 @@ Wir müssen also darauf achten, Exceptions an der perfekten Stelle abzufangen, d
 
 Denn spielen wir das Szenario mal für den Fall durch, dass erst unsere Bootstrap-Datei den Fehler fängt:
 
-**Szenario 1**
+**Szenario 1** 
 Die Bootstrap wird vermutlich nurnoch dazu in der Lage sein eine Fehlermeldung zu schreiben und abzubrechen. Erinnern wir uns: Exceptions verlassen ihren Programmkontext bis zum nächsten catch! Wenn wir die Exception nicht früh genug abfangen wird der dahinterliegende Code überhaupt nicht mehr ausgeführt. Wir sind (ohne den Prozess neu anzustossen) garnicht mehr in der Lage die restlichen Bilder auszugeben!
 
-**Szenario 2**
+**Szenario 2** 
 Unsere Image-Klasse zum Laden der Grafik und Berechnen der Größe fängt ihren eigenen Fehler sofort auf:
 
 Es könnte nur mit 2 Aktionen auf den Fehler reagieren:
@@ -302,10 +302,10 @@ try {
 ?> 
 ~~~
 
-"oben" sei in diesem Fall im Kontext des Gallery-Moduls zu sehen. Wir müssen uns vorstellen, dass dieser try-catch Block irgendwo im Bauch der Gallery-Klasse ablduft.
+"oben" sei in diesem Fall im Kontext des Gallery-Moduls zu sehen. Wir müssen uns vorstellen, dass dieser try-catch Block irgendwo im Bauch der Gallery-Klasse abläuft.
 
 Etwas ist dem aufmerksamen Leser vielleicht aufgefallen:
-Statt `catch (Exception $e)` wird plötzlich `catch (Image_Exception $e)` verwendet! Diese Notation, die übrigens seit PHP 5 auch für alle normalen Funktions und Methodendeklarationen erlaubt ist, schränkt den übergebenen Parameter auf ein Objekt der deklarierten Klasse (oder einer ihrer Ableitungen) ein.
+Statt `catch (Exception $e)` wird plötzlich `catch (Image_Exception $e)` verwendet! Diese Notation, die übrigens seit PHP 5 auch für alle normalen Funktions- und Methodendeklarationen erlaubt ist, schränkt den übergebenen Parameter auf ein Objekt der deklarierten Klasse (oder einer ihrer Ableitungen) ein.
 
 Demnach fängt `catch (Exception $e)` alle in seinem try-Block gefangenen Exceptions ab, während `catch (Image_Exception $e)` nur mit `throw new Image_Exception()` erzeugte Exceptions abfängt (oder eben solche Exceptions, die von Image_Exception geerbt haben). Schließlich könnte die Image-Klasse ja auch einen kontextübergreifend-schweren Fehler werfen, von der sogar die Image-Klasse weiß, dass die Gallery hier nichts mehr retten kann/soll/darf. Zum Beispiel, wenn die Image-Klasse keine Grafik übergeben bekommt, sondern eine EXE-Datei (warum auch immer).
 
@@ -361,9 +361,9 @@ try {
 ?> 
 ~~~
 
-Beachtet werden sollte, dass man nicht in den `catch (My_Stupid_Exception $e)` gelangt, obwohl eine Exception diesen Typs geworfen wurde, sondern `catch (My_Exception $e)`, denn `My_Stupid_Exception` ist nach Deklaration ein Kind von `My_Stupid_Exception`.
+Beachtet werden sollte, dass man nicht in den `catch (My_Stupid_Exception $e)` gelangt, obwohl eine Exception diesen Typs geworfen wurde, sondern `catch (My_Exception $e)`, denn `My_Stupid_Exception` ist nach Deklaration ein Kind von `My_Stupid_Exception`. 
 
-**Der erste Treffer zählt.**
+*Der erste Treffer zählt.*
 
 
 ### Wie wirft man eine Exception weiter?

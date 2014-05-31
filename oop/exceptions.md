@@ -399,8 +399,6 @@ Die Ausgabe lautet, wie erwartet:
 
 Hoffentlich konntet ihr einen kleinen Einblick in Exceptions bekommen und gebt eure Fehler nun nicht mehr nur durch return FALSE und Konsorten zurück, sondern lasst das die Exceptions erledigen. Dafür sind sie da.
 
-Danke für eure Aufmerksamkeit! 
-
 
 ### Quellen
 

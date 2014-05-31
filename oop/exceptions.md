@@ -65,11 +65,11 @@ In `try` wird ein Algorithmus ausgeführt, der, schlägt er fehl, eine Exception
 <?php 
 // ein kleiner dateibasierter Counter 
 try { 
-  $counter = file_get_contents("counter.txt"); 
-  if (!is_numeric($counter)) { // kein gültiger Counter-Wert in der Datei? 
-    throw new Exception("invalid counter value"); // dann Exception werfen 
-  } 
-  file_put_contents("counter.txt", $counter + 1); 
+    $counter = file_get_contents("counter.txt"); 
+    if (!is_numeric($counter)) { // kein gültiger Counter-Wert in der Datei? 
+        throw new Exception("invalid counter value"); // dann Exception werfen 
+    } 
+    file_put_contents("counter.txt", $counter + 1); 
 } 
 ?> 
 ~~~
@@ -79,14 +79,14 @@ Diese Exception können wir auffangen, wenn der Versuch (try) fehlgeschlagen ist
 ~~~ php
 <?php 
 try { 
-  $counter = file_get_contents("counter.txt"); 
-  if (!is_numeric($counter)) { 
-    throw new Exception("invalid counter value"); 
-  } 
-  file_put_contents("counter.txt", $counter + 1); 
-  echo $counter + 1; 
+    $counter = file_get_contents("counter.txt"); 
+    if (!is_numeric($counter)) { 
+        throw new Exception("invalid counter value"); 
+    } 
+    file_put_contents("counter.txt", $counter + 1); 
+    echo $counter + 1; 
 } catch (Exception $e) { 
-  echo $e->getMessage(); // die Klasse Exception stellt diese Methode zur Verfügung 
+    echo $e->getMessage(); // die Klasse Exception stellt diese Methode zur Verfügung 
 } 
 ?> 
 ~~~
@@ -101,23 +101,24 @@ Denkbar wäre also auch folgendes Konstrukt:
 <?php 
 function getCounterValue() 
 { 
-  $counter = file_get_contents("counter.txt"); 
-  if (!is_numeric($counter)) { 
-    throw new Exception("invalid counter value"); 
-  } 
-  return $counter; 
+    $counter = file_get_contents("counter.txt"); 
+    if (!is_numeric($counter)) { 
+        throw new Exception("invalid counter value"); 
+    } 
+    return $counter; 
 } 
+
 function setCounterValue($value) 
 { 
-  file_put_contents("counter.txt", $value);   
+    file_put_contents("counter.txt", $value);   
 } 
 
 try { 
-  $counter = getCounterValue() + 1; 
-  setCounterValue($counter); 
-  echo "Hello visitor number ", $counter; 
+    $counter = getCounterValue() + 1; 
+    setCounterValue($counter); 
+    echo "Hello visitor number ", $counter; 
 } catch (Exception $e) { 
-  echo $e->getMessage(); // "invalid counter value" 
+    echo $e->getMessage(); // "invalid counter value" 
 } 
 ?> 
 ~~~
@@ -146,19 +147,19 @@ Für unser Beispiel hieße das also:
 ~~~ php
 <?php 
 try { 
-  if (!file_exists("counter.txt")) { 
-    $counter = 0; 
-  } else { 
-    $counter = file_get_contents("counter.txt"); 
-  } 
-  if (!is_numeric($counter)) { 
-    throw new Exception("invalid counter value"); 
-  } 
-  $counter++; 
-  file_put_contents("counter.txt", $counter); 
-  echo "Hello visitor number ", $counter; 
+    if (!file_exists("counter.txt")) { 
+        $counter = 0; 
+    } else { 
+        $counter = file_get_contents("counter.txt"); 
+    } 
+    if (!is_numeric($counter)) { 
+        throw new Exception("invalid counter value"); 
+    } 
+    $counter++; 
+    file_put_contents("counter.txt", $counter); 
+    echo "Hello visitor number ", $counter; 
 } catch (Exception $e) { 
-  echo $e->getMessage(); 
+    echo $e->getMessage(); 
 } 
 ?> 
 ~~~
@@ -266,7 +267,7 @@ throw new Image_Exception("Thumbnail ist plötzlich weg", 1);
 ?> 
 ~~~
 
-Schlie_lich könnte die Image-Klasse ja noch mehr Fehler werfen, zum Beispiel diesen:
+Schließlich könnte die Image-Klasse ja noch mehr Fehler werfen, zum Beispiel diesen:
 
 ~~~ php
 <?php 
@@ -279,21 +280,21 @@ Es wäre nun möglich, die Fehler getrennt zu behandeln:
 ~~~ php
 <?php 
 try { 
-  $image = new Image($pfad_der_aus_der_datenbank_kommt); 
-  $image->showThumbnail(); 
+    $image = new Image($pfad_der_aus_der_datenbank_kommt); 
+    $image->showThumbnail(); 
 } catch (Image_Exception $e) { 
-  if ($e->getCode() == 1) { 
-     // thumbnail ist offenbar weg, nicht so tragisch, nehmen wir 
-     // das gro_e, html schrumpelt das schon kleiner 
-     // (natürlich bad-style, aber einfache beispiele erfordern das nunmal) 
-     $image->setThumbnail($image->getBigImage()); 
-     $image->showThumbnail(); 
-  } 
-  if ($e->getCode() == 2) { 
-    // ok das gro_e Bild ist weg, was nun? am besten kein  
-    // kleistern, einfach nur "oben" bescheid geben 
-    $this->addMessage($e->getMessage()); // addMessage sei eine Methode des Gallery-Objektes, in dessen Kontext dieses Beispiel zu sehen ist 
-  } 
+    if ($e->getCode() == 1) { 
+        // thumbnail ist offenbar weg, nicht so tragisch, nehmen wir 
+        // das große, html schrumpelt das schon kleiner 
+        // (natürlich bad-style, aber einfache beispiele erfordern das nunmal) 
+        $image->setThumbnail($image->getBigImage()); 
+        $image->showThumbnail(); 
+    } 
+    if ($e->getCode() == 2) { 
+        // ok das große Bild ist weg, was nun? am besten kein  
+        // kleistern, einfach nur "oben" bescheid geben 
+        $this->addMessage($e->getMessage()); // addMessage sei eine Methode des Gallery-Objektes, in dessen Kontext dieses Beispiel zu sehen ist 
+    } 
 } 
 ?> 
 ~~~
@@ -312,9 +313,9 @@ Zur Verdeutlichung:
 ~~~ php
 <?php 
 try { 
-  throw new Exception("mieser Fehler"); 
+    throw new Exception("mieser Fehler"); 
 } catch (Image_Exception $e) { 
-  echo $e->getMessage(); 
+    echo $e->getMessage(); 
 } 
 ?> 
 ~~~

@@ -48,9 +48,11 @@ inhalt:
 
 ---
 
-![Composer]({{ site.url }}/images/composer-logo.png)
 
-Dieser Guide soll (allem voran Einsteigern) einen Einblick in das Abhängigkeits-Management-Werkzeug [Composer](http://getcomposer.org/) und das Komponenten-Repository [Packagist.org](http://packagist.org/) bieten. In diesem Guide wird speziell auf den Installations- und Verwendungsprozess unter Microsoft Windows eingegangen.
+| Dieser Guide soll (allem voran Einsteigern) einen Einblick in das Abhängigkeits-Management-Werkzeug [Composer](http://getcomposer.org/) und das Komponenten-Repository [Packagist.org](http://packagist.org/) bieten. In diesem Guide wird speziell auf den Installations- und Verwendungsprozess unter Microsoft Windows eingegangen.  
+  
+  
+| ![Composer]({{ site.url }}/images/composer-logo.png) |
 
 
 ### Was ist Composer?
@@ -81,13 +83,13 @@ Lade dir Git-SCM [herunter](http://git-scm.com/download/win) und installiere es 
 
 * Starte den Installer durch einen doppelklick auf die heruntergeladene Datei. Alle Windowsversionen mit aktivierter Benutzerkontrolle werden dich danach fragen ob dem Installer erlaubt werden soll ausgeführt zu werden, bestätige diese anfrage mit **Ja**.  
 
-* Bestätige die Lizenz mit klick auf **Next >>**  
+* Bestätige die Lizenz mit klick auf **Next >**  
 
-* Bestätige die Komponenten mit klick auf **Next >>**  
+* Bestätige die Komponenten mit klick auf **Next >**  
 
-* Wähle beim *Path-Environment*, **Run git from the Windows-Prompt** aus und bestätige mit klick auf **Next >>** (Wichtig für den Betrieb von Composer)  
+* Wähle beim *Path-Environment*, **Run git from the Windows-Prompt** aus und bestätige mit klick auf **Next >** (Wichtig für den Betrieb von Composer)  
 
-* Wähle beim *Line Ending Conversion*, **Checkout Windows-Style, commit Linux-Style line endings** aus und bestätige mit klick auf **Next >>**  
+* Wähle beim *Line Ending Conversion*, **Checkout Windows-Style, commit Linux-Style line endings** aus und bestätige mit klick auf **Next >**  
 
 * Bestätige den Abschluss der Installation mit klick auf **Finish**  
 

@@ -19,16 +19,16 @@ inhalt:
         simple: ""
 
     -   name:   "Wozu Packagist.org?"
-        anchor: wozu-packagistorg
+        anchor: wozu-dient-packagistorg
         simple: ""
 
     -   name:   "Brauche ich Composer als Anfänger?"
-        anchor: brauche-ich-composer-als-anfnger
+        anchor: ich-bin-anfnger-brauche-ich-composer
         simple: ""
 
     -   name:   "Composer Installation"
         anchor: composer-installation
-        simple: ""
+        simple: "Vorbereiten, ausführen und testen der Installation"
 
     -   name:   "Komponenten Installieren"
         anchor: komponenten-installieren
@@ -180,16 +180,18 @@ Die Installation von Composer ist nun abgeschlossen. Im folgenden beschäftigst 
 
 ### Komponenten Installieren
 
-Composer benötigt zum durchführen der Installation und dem einspielen von Updates eine Datei mit dem Namen **composer.json** im Hauptverzeichnis deiner Anwendung. Wie die Datei-Erweiterung schon verrät ist diese Datei im JSON-Format gehalten. Composer wird bei der Installation der Komponenten automatisch ein **vendor**-Verzeichnis anlegen, in dem der Autoloader und alle installierten Komponenten hinterlegt werden. Später, wenn dein Knowhow und der Umgang mit Composer sicherer geworden ist kannst du dieses Verhalten auch verändern, dieses Guide bezieht sich allerdings auf die Vorgabe von Composer.
+Composer benötigt zum durchführen der Installation und dem einspielen von Updates eine Datei mit dem Namen **composer.json** im Hauptverzeichnis deiner Anwendung. Wie die Datei-Erweiterung schon verrät ist diese Datei im JSON-Format gehalten. Composer wird bei der Installation der Komponenten automatisch ein *vendor*-Verzeichnis anlegen, in dem der Autoloader und alle installierten Komponenten hinterlegt werden. Später, wenn dein Knowhow und der Umgang mit Composer sicherer geworden ist kannst du dieses Verhalten auch verändern, dieses Guide bezieht sich allerdings auf die Vorgabe von Composer.
 
 Ein Beispiel: Auf Packagist.org hast du 2 Komponenten gefunden, die du gerne für dein Projekt verwenden möchtest: [Swiftmailer](https://packagist.org/packages/swiftmailer/swiftmailer) und das [Microframework](https://packagist.org/search/?tags=microframework) [Silex](https://packagist.org/packages/silex/silex). Auf den jeweiligen Packagist.org-Seiten zu den jeweiligen Komponenten siehst du einige Informationen, folgende Abschnitte sind für die Installation relevant:
 
 * Swiftmailer:
+
 ~~~
 require: "swiftmailer/swiftmailer": "4.3.*@dev"
 ~~~
 
 * Silex:
+
 ~~~
 require: "silex/silex": "1.0.*@dev"
 ~~~
@@ -206,7 +208,7 @@ Diese musst du nun in validem JSON in deiner composer.json-Datei notieren, diese
 }
 ~~~
 
-Navigiere nun in dein Anwendungsverzeichnis (dorthin wo du deine composer.json angelegt hast) und drücke die &uArr;-Taste (Shift-Taste), halte die Taste und rechtsklicke auf der freien Fläche des Ordners (ohne irgendetwas zu selektieren). Das Kontext-Menü das sich dann öffnet verfügt über den Eintrag *Eingabeaufforderung hier öffnen*, wähle diesen aus.
+Navigiere nun in dein Anwendungsverzeichnis (dorthin wo du deine composer.json angelegt hast) und drücke &uArr; (Shift-Taste), halte die Taste und rechtsklicke auf der freien Fläche des Ordners (ohne irgendetwas zu selektieren). Das Kontext-Menü das sich dann öffnet verfügt über den Eintrag *Eingabeaufforderung hier öffnen*, wähle diesen aus.
 
 In der Eingabeaufforderung gib 
 
@@ -281,7 +283,7 @@ composer update
 
 ### Komponenten verwenden
 
-Um die Komponenten verwenden zu können ist nicht viel Mühe notwendig. Als beispiel erstell ein PHP-Script im Anwendungsverzeichnis mit dem Namen *index.php*, dort testen wir aus der vorherigen Installation eine einfache Silex-basierende Anwendung:
+Um die Komponenten verwenden zu können ist nicht viel Mühe notwendig. Als Beispiel erstelle ein PHP-Script im Anwendungsverzeichnis mit dem Namen *index.php*, dort testen wir aus der vorherigen Installation eine einfache Silex-basierende Anwendung:
 
 
 ~~~
@@ -307,4 +309,4 @@ Glückwunsch, du hast nun Composer erfolgreich getestet und verfügst nun über 
 
 ### Appendix
 
-Vorschläge und Anregungen zur Erweiterung? Dann bitte [hier in diesem Forumsthread](http://www.php.de/php-einsteiger/98949-guide-composer-kickstart-guide.html) posten.
+Vorschläge, Anregungen, Feedback? Dann bitte [hier in diesem Forumsthread](http://www.php.de/php-einsteiger/98949-guide-composer-kickstart-guide.html) posten.

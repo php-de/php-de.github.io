@@ -48,9 +48,9 @@ inhalt:
 
 ---
 
+![Composer]({{ site.url }}/images/composer-logo.png){: class="pull-right"} 
 
-| Dieser Guide soll (allem voran Einsteigern) einen Einblick in das Abhängigkeits-Management-Werkzeug [Composer](http://getcomposer.org/) und das Komponenten-Repository [Packagist.org](http://packagist.org/) bieten. In diesem Guide wird speziell auf den Installations- und Verwendungsprozess unter Microsoft Windows eingegangen. | ![Composer]({{ site.url }}/images/composer-logo.png) |
-
+Dieser Guide soll (allem voran Einsteigern) einen Einblick in das Abhängigkeits-Management-Werkzeug [Composer](http://getcomposer.org/) und das Komponenten-Repository [Packagist.org](http://packagist.org/) bieten. In diesem Guide wird speziell auf den Installations- und Verwendungsprozess unter Microsoft Windows eingegangen.
 
 ### Was ist Composer?
 

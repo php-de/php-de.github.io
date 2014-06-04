@@ -26,9 +26,9 @@ inhalt:
         anchor: ich-bin-anfnger-brauche-ich-composer
         simple: ""
 
-    -   name:   "Composer Installation"
+    -   name:   "Composer - Vorbereitung, Installation, Tests"
         anchor: composer-installation
-        simple: "Vorbereiten, ausführen und testen der Installation"
+        simple: ""
 
     -   name:   "Komponenten Installieren"
         anchor: komponenten-installieren
@@ -186,15 +186,13 @@ Ein Beispiel: Auf Packagist.org hast du 2 Komponenten gefunden, die du gerne fü
 
 * Swiftmailer:
 
-~~~
-require: "swiftmailer/swiftmailer": "4.3.*@dev"
-~~~
+        require: "swiftmailer/swiftmailer": "4.3.*@dev"
+
 
 * Silex:
 
-~~~
-require: "silex/silex": "1.0.*@dev"
-~~~
+        require: "silex/silex": "1.0.*@dev"
+
 
 Diese musst du nun in validem JSON in deiner composer.json-Datei notieren, diese Datei **muss** im UTF-8 Format abgespeichert werden:
 

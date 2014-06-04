@@ -34,10 +34,10 @@ groups:
       desc: "Allgemeine Themen rund um PHP"
       anchor: "general"
 
-#    - name: "Entwicklungs Umgebung"
-#      path: "/dev-enviroment"
-#      desc: "XAMPP, LAMPP, VirtualBox, ZendServer & Co."
-#      anchor: "dev-enviroment"
+    - name: "Entwicklungsumgebung"
+      path: "/dev-enviroment"
+      desc: "Infos zu Editoren, IDE, Webserver, Tools, Komponenten, etc..."
+      anchor: "dev-enviroment"
 
     - name: "Code-Optimierung"
       path: "/code-optimizing"

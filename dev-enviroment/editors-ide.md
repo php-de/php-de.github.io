@@ -22,15 +22,15 @@ entry-type: in-progress
 
 ---
 
-Viele von euch besch‰ftigt das Thema sicherlich weniger, einige von euch schlagen sich noch mit Software aus der Steinzeit herum, dieser Beitrag soll euch eine Mˆglichkeit zur Orientierung bieten durch den Editor- und IDE-Jungle durchzublicken. Der ein oder anderen von euch ist Sicher auf der Suche nach **dem Editor**, viel Gl¸ck, den gibt es nicht.
+Viele von euch besch√§ftigt das Thema sicherlich weniger, einige von euch schlagen sich noch mit Software aus der Steinzeit herum, dieser Beitrag soll euch eine M√∂glichkeit zur Orientierung bieten durch den Editor- und IDE-Jungle durchzublicken. Der ein oder anderen von euch ist Sicher auf der Suche nach **dem Editor**, viel Gl√ºck, den gibt es nicht.
 
-Damit ihr einen Anreiz bekommt wer so mit der ein oder anderen IDE arbeitet, erw‰hne ich auch noch namhafte Mitstreiter unserer Zunft. Wer aus diesem Forum seine Wahl mit ver‰uﬂern mˆchte ist dazu in [diesem Beitrag](http://www.php.de/php-einsteiger/101627-editor-ide-let-me-tell-you-something.html) herzlich dazu eingeladen.
+Damit ihr einen Anreiz bekommt wer so mit der ein oder anderen IDE arbeitet, erw√§hne ich auch noch namhafte Mitstreiter unserer Zunft. Wer aus diesem Forum seine Wahl mit ver√§u√üern m√∂chte ist dazu in [diesem Beitrag](http://www.php.de/php-einsteiger/101627-editor-ide-let-me-tell-you-something.html) herzlich dazu eingeladen.
 
-Es folgt nun eine Vorstellung der (kostenlosen wie kostenpflichtigen) Editoren und Integrierten Entwicklungsumgebungen (IDEs) die auf PHP (weitestgehend) ausgelegt sind. Die F¸r (Quer-)Einsteiger und Fortgeschrittene empfohlenen Editoren **markiere**{: style="color: #006400"} ich entsprechend.
+Es folgt nun eine Vorstellung der (kostenlosen wie kostenpflichtigen) Editoren und Integrierten Entwicklungsumgebungen (IDEs) die auf PHP (weitestgehend) ausgelegt sind. Die F√ºr (Quer-)Einsteiger und Fortgeschrittene empfohlenen Editoren **markiere**{: style="color: #006400"} ich entsprechend.
 
 ### PHP Editoren
 
-Ein PHP Editor ist eine Anwendung die grundlegende Editor-Funktionen kˆnnen muss, aber nicht direkt mit PHP interagiert, kein Debugging unterst¸tzt und auch sonstige Qualit‰tssicherung f¸r die eigene Anwendung gew‰hrt. Er erleichtert eure Arbeit indem er euch via Syntax-Highlighting auf entsprechende Typos und Syntaxfehler hinweiﬂt.
+Ein PHP Editor ist eine Anwendung die grundlegende Editor-Funktionen k√∂nnen muss, aber nicht direkt mit PHP interagiert, kein Debugging unterst√ºtzt und auch sonstige Qualit√§tssicherung f√ºr die eigene Anwendung gew√§hrt. Er erleichtert eure Arbeit indem er euch via Syntax-Highlighting auf entsprechende Typos und Syntaxfehler hinwei√üt.
 
 * **Sublime Text** - **empfohlen**{: style="color: #006400"}
 Webseite: [http://www.sublimetext.com](http://www.sublimetext.com)
@@ -41,7 +41,7 @@ Kostet: 70 US-Dollar
 Platform: Windows, Linux, Mac
 Benutzer: **Twitter**
 
-Sublime Text 2 ist einer der Editoren mit den meisten Features und f¸r den Performance bei groﬂen Dateien kein Problem ist. Die Download-Version ist voll funktionsf‰hig, die 70 US-Dollar zahlt man quasi nur f¸r das entfernen eines Popups das alle 30-60 Minuten beim Speichervorgang erscheint, aber sofort schlieﬂbar ist.
+Sublime Text 2 ist einer der Editoren mit den meisten Features und f√ºr den Performance bei gro√üen Dateien kein Problem ist. Die Download-Version ist voll funktionsf√§hig, die 70 US-Dollar zahlt man quasi nur f√ºr das entfernen eines Popups das alle 30-60 Minuten beim Speichervorgang erscheint, aber sofort schlie√übar ist.
 
 * **Kate** - by KDE Group
 Webseite: [http://www.kate-editor.org](http://www.kate-editor.org)
@@ -61,7 +61,7 @@ Erweiterbar: Ja - Plugins (c-basiert)
 Kostet: kostenlos
 Plattform: Windows
 
-Notepad++ ist ein solides Meisterwerk der Opensource Community und wird stetig weiterentwickelt. Grunds‰tzlich genauso zuverl‰ssig wie Sublime Text 2, leider nicht so Funktionsreich und von der Handhabung her auch etwas umst‰ndlicher.
+Notepad++ ist ein solides Meisterwerk der Opensource Community und wird stetig weiterentwickelt. Grunds√§tzlich genauso zuverl√§ssig wie Sublime Text 2, leider nicht so Funktionsreich und von der Handhabung her auch etwas umst√§ndlicher.
 
 Coda
 Webseite: https://panic.com/coda/
@@ -70,7 +70,7 @@ Features: Viele - Siehe Webseite
 Kostet: 99$ (auf Aktionen achten auf der Webseite)
 Platform: Mac only
 
-Coda ist brilliant und w‰re eine echte Konkurrenz f¸r Sublime Text, allerdings nur f¸r den Mac.
+Coda ist brilliant und w√§re eine echte Konkurrenz f√ºr Sublime Text, allerdings nur f√ºr den Mac.
 
 ActiveState Komodo Edit - empfohlen
 Webseite: http://www.activestate.com/komodo-edit
@@ -88,16 +88,16 @@ Features: http://bluefish.openoffice.nl/features.html
 Kostet: kostenlos, hier und da nerven
 Platform: Windows, Linux, Mac
 
-Bluefish ist aus der Produktfamilie der Content Editing Environments der Open Office Foundation und ebendso wie Notepad++, Sublime Text 2 und Coda ein leistungsf‰higer Editor, der hier und da mit der ein oder anderen Gehirnwindung Gassi geht. 
+Bluefish ist aus der Produktfamilie der Content Editing Environments der Open Office Foundation und ebendso wie Notepad++, Sublime Text 2 und Coda ein leistungsf√§higer Editor, der hier und da mit der ein oder anderen Gehirnwindung Gassi geht. 
 
 ### Integrierte PHP Entwicklungsumgebungen (PHP IDE)
 
-Integrierte Entwicklungsumgebungen interagieren immer mit PHP und vernetzen eure Scripts so das ihr jederzeit (auch grafisch) durch die Scripts navigieren kˆnnt und schon beim Autocomplete seht wo die Funktion die ihr gerade benutzt definiert wurde und welche Parameter sie hat. Qualit‰tssicherung steht nicht bei jeder IDE im Vordergrund, wird jedoch in jeder IDE zumindest Ansatzweise implementiert.
+Integrierte Entwicklungsumgebungen interagieren immer mit PHP und vernetzen eure Scripts so das ihr jederzeit (auch grafisch) durch die Scripts navigieren k√∂nnt und schon beim Autocomplete seht wo die Funktion die ihr gerade benutzt definiert wurde und welche Parameter sie hat. Qualit√§tssicherung steht nicht bei jeder IDE im Vordergrund, wird jedoch in jeder IDE zumindest Ansatzweise implementiert.
 JetBrains PHPStorm - empfohlen
 Webseite: http://www.jetbrains.com/phpstorm/
 Ui-Sprache: englisch
 Features: http://www.jetbrains.com/phpstorm/features/index.html
-Kostet: 89 Ä + Steuern Vollversion / 44 Ä + Steuern Upgrade pro Entwickler
+Kostet: 89 ‚Ç¨ + Steuern Vollversion / 44 ‚Ç¨ + Steuern Upgrade pro Entwickler
 Platform: Windows, Linux, Mac
 Benutzer: Valve, Paypal, MediaWiki
 
@@ -109,7 +109,7 @@ Ui-Sprache: englisch
 Features: Siehe Webseite
 Kostet: 382 $
 
-Eine etwas teurere IDE aus dem Hause ActiveState, zeitige Objektive Erfahrungen zur Verbesserung dieses Beitrags erw¸nscht.
+Eine etwas teurere IDE aus dem Hause ActiveState, zeitige Objektive Erfahrungen zur Verbesserung dieses Beitrags erw√ºnscht.
 
 Oracle Netbeans
 Webseite: https://netbeans.org/
@@ -117,7 +117,7 @@ Ui-Sprache: lokalisierbar
 Features: https://netbeans.org/features/index.html
 Kostet: kostenlos
 
-Netbeans ist die Basis einiger IDEs und nat¸rlich als Ur-Element auch nicht zu verachten. Basiert auf Java und ist erweiterbar.
+Netbeans ist die Basis einiger IDEs und nat√ºrlich als Ur-Element auch nicht zu verachten. Basiert auf Java und ist erweiterbar.
 
 Eclipse
 Webseite: http://www.eclipse.org/
@@ -131,7 +131,7 @@ Zend's ZendStudio
 Webseite: http://www.zend.com/de/products/studio/
 Ui-Sprache: lokalisiert
 Features: http://www.zend.com/de/products/studio/features
-Kostet: 299 Ä (ab und zu sind Rabatt-Aktionen, siehe Webseite)
+Kostet: 299 ‚Ç¨ (ab und zu sind Rabatt-Aktionen, siehe Webseite)
 Specials: Hoch kompatibel mit dem PHP-Stack aus eigenem Hause (Zend Server)
 
 ZendStudio ist ziemlich nah an PHP entwickelt und basiert auf Eclipse.
@@ -142,27 +142,27 @@ Ui-Sprache: englisch
 Features: http://aptana.com/products/studio3
 Kostet: kostenlos
 
-Aptana Studio ist das Sublime Text unter den IDEs, aber nicht ganz so funktionsreich wie PHPStorm, dennoch die kostenlose Empfehlung f¸r Einsteigende und Fortgeschrittene PHP-Entwickler.
+Aptana Studio ist das Sublime Text unter den IDEs, aber nicht ganz so funktionsreich wie PHPStorm, dennoch die kostenlose Empfehlung f√ºr Einsteigende und Fortgeschrittene PHP-Entwickler.
 
 CSE HTML Validator
 Website: http://www.htmlvalidator.com/
 Ui-Sprache: englisch
 Features: http://www.htmlvalidator.com/htmlval...isonchart.html
-Kostet: abh‰ngig von der Version - Kostenlos als Lite-Version, 299 Ä als Enterprise-Version, siehe Compairson-Chart
+Kostet: abh√§ngig von der Version - Kostenlos als Lite-Version, 299 ‚Ç¨ als Enterprise-Version, siehe Compairson-Chart
 
-CSE HTML Validator ist ein ausgereifter Mix-Type aus Editor, Validator und IDE mit Fokus auf Validierung. Ob dieser Typ Anwendung den Anforderungen entspricht h‰ngt wie bei jeder anderen IDE oder Editor vom Entwickler ab. CSE HTML Validator ist definitiv einen Blick wert.
+CSE HTML Validator ist ein ausgereifter Mix-Type aus Editor, Validator und IDE mit Fokus auf Validierung. Ob dieser Typ Anwendung den Anforderungen entspricht h√§ngt wie bei jeder anderen IDE oder Editor vom Entwickler ab. CSE HTML Validator ist definitiv einen Blick wert.
 
 phpDesigner 8
 Website: http://www.mpsoftware.dk/
 Ui-Sprache: englisch
 Features: http://www.mpsoftware.dk/phpdesigner.php
-Kostet: abh‰ngig von der Version - Personal f¸r 29 Ä, Commerical f¸r 69 Ä
+Kostet: abh√§ngig von der Version - Personal f√ºr 29 ‚Ç¨, Commerical f√ºr 69 ‚Ç¨
 
-phpDesigner ist eine der kosteng¸stigeren IDEs, nicht ganz so umfangreich wie phpStorm, dennoch mit allem ger¸stet was den t‰glichen Einsatz als Software-Entwickler leichter macht. 
-Insofern hier die ein oder andere IDE fehlt, mˆge man mir das Verzeihen und sie einfach im Selben Typus wie hier gelistet als Antwort auf diesen Beitrag darreichen. Einige Editoren werden es nicht in diese ‹bersicht schaffen, da sie entweder nicht PHP-Spezifisch und wenn zwar nicht zu wenig verbreitet in der PHP Welt sind. Da diese Editoren nicht g‰nzlich ungenannt bleiben sollten, findet ihr sie in der folgenden Link-Liste:
+phpDesigner ist eine der kosteng√ºstigeren IDEs, nicht ganz so umfangreich wie phpStorm, dennoch mit allem ger√ºstet was den t√§glichen Einsatz als Software-Entwickler leichter macht. 
+Insofern hier die ein oder andere IDE fehlt, m√∂ge man mir das Verzeihen und sie einfach im Selben Typus wie hier gelistet als Antwort auf diesen Beitrag darreichen. Einige Editoren werden es nicht in diese √úbersicht schaffen, da sie entweder nicht PHP-Spezifisch und wenn zwar nicht zu wenig verbreitet in der PHP Welt sind. Da diese Editoren nicht g√§nzlich ungenannt bleiben sollten, findet ihr sie in der folgenden Link-Liste:
 TextPad - Wenig verbreitet 
-VIM - Zwar verbreitet, aber nur geringe Anf‰nger-Tauglichkeit 
-emacs - Verbreitet, aber auch geringe Anf‰nger-Tauglichkeit - Sehr hohe Erweiterbarkeit 
-Mˆge euch diese Liste auf den Geschmack kommen lassen, viel Erfolg.
+VIM - Zwar verbreitet, aber nur geringe Anf√§nger-Tauglichkeit 
+emacs - Verbreitet, aber auch geringe Anf√§nger-Tauglichkeit - Sehr hohe Erweiterbarkeit 
+M√∂ge euch diese Liste auf den Geschmack kommen lassen, viel Erfolg.
 
 Danksagung an: mermshaus, drsoong.

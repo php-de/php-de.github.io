@@ -4,7 +4,7 @@ permalink: /jumpto/composer/
 title:     "Composer Kickstart-Guide"
 creator:   tr0y
 group:     "Entwicklungsumgebung"
-orderId:   2
+orderId:   6
 
 author:
     -   name: tr0y

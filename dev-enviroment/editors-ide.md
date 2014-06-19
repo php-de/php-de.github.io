@@ -41,12 +41,12 @@ Kostet: 70 US-Dollar
 Platform: Windows, Linux, Mac
 Benutzer: **Twitter**
 
-Sublime Text 2 ist einer der Editoren mit den meisten Features und für den Performance bei großen Dateien kein Problem ist. Die Download-Version ist voll funktionsfähig, die 70 US-Dollar zahlt man quasi nur für das entfernen eines Popups das alle 30-60 Minuten beim Speichervorgang erscheint, aber sofort schließbar ist.
+    Sublime Text 2 ist einer der Editoren mit den meisten Features und für den Performance bei großen Dateien kein Problem ist. Die Download-Version ist voll funktionsfähig, die 70 US-Dollar zahlt man quasi nur für das entfernen eines Popups das alle 30-60 Minuten beim Speichervorgang erscheint, aber sofort schließbar ist.
 
 * **Kate** - by KDE Group
 Webseite: [http://www.kate-editor.org](http://www.kate-editor.org)
 UI-Sprache: sehr viele
-Features: Viele - Siehe Webseite und [http://de.wikipedia.org/wiki/Kate_(KDE)](http://de.wikipedia.org/wiki/Kate_(KDE))
+Features: Viele - Siehe Webseite und [http://de.wikipedia.org/wiki/Kate_(KDE)](http://de.wikipedia.org/wiki/Kate_(KDE) )
 Erweiterbar: Ja
 Kostet: **kostenlos; freie Software**
 Platform: Windows, Linux, Mac

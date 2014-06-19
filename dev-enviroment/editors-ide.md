@@ -26,7 +26,7 @@ entry-type: in-progress
 
 ---
 
-Viele von euch beschäftigt das Thema sicherlich weniger, einige von euch schlagen sich noch mit Software aus der Steinzeit herum, dieser Beitrag soll euch eine Möglichkeit zur Orientierung bieten durch den Editor- und IDE-Jungle durchzublicken. Der ein oder anderen von euch ist Sicher auf der Suche nach **dem Editor**, viel Glück, den gibt es nicht.
+Viele von euch beschäftigt das Thema sicherlich weniger, einige von euch schlagen sich noch mit Software aus der Steinzeit herum, dieser Beitrag soll euch eine Möglichkeit zur Orientierung bieten durch den Editor- und IDE-Jungle durchzublicken. Der ein oder anderen von euch ist sicher auf der Suche nach **dem Editor**, viel Glück, den gibt es nicht.
 
 Damit ihr einen Anreiz bekommt wer so mit der ein oder anderen IDE arbeitet, erwähne ich auch noch namhafte Mitstreiter unserer Zunft. Wer aus diesem Forum seine Wahl mit veräußern möchte ist dazu in [diesem Beitrag](http://www.php.de/php-einsteiger/101627-editor-ide-let-me-tell-you-something.html) herzlich dazu eingeladen.
 
@@ -93,7 +93,7 @@ Ein PHP Editor ist eine Anwendung die grundlegende Editor-Funktionen können mus
     Webseite: [http://bluefish.openoffice.nl/index.html](http://bluefish.openoffice.nl/index.html)  
     Ui-Sprache: englisch  
     Features: [http://bluefish.openoffice.nl/features.html](http://bluefish.openoffice.nl/features.html)  
-    Kostet: kostenlos, hier und da nerven  
+    Kostet: **kostenlos**, hier und da nerven  
     Platform: Windows, Linux, Mac  
     
     Bluefish ist aus der Produktfamilie der Content Editing Environments der Open Office Foundation und ebendso wie Notepad++, Sublime Text 2 und Coda ein leistungsfähiger Editor, der hier und da mit der ein oder anderen Gehirnwindung Gassi geht. 
@@ -110,7 +110,7 @@ Integrierte Entwicklungsumgebungen interagieren immer mit PHP und vernetzen eure
     Features: [http://www.jetbrains.com/phpstorm/features/index.html](http://www.jetbrains.com/phpstorm/features/index.html)  
     Kostet: 89 € + Steuern Vollversion / 44 € + Steuern Upgrade pro Entwickler  
     Platform: Windows, Linux, Mac  
-    Benutzer: Valve, Paypal, MediaWiki  
+    Benutzer: **Valve, Paypal, MediaWiki**  
     
     Eine der weiterentwickelten IDEs auf dem Markt aus dem Hause Jetbrains, java basiert.
 
@@ -121,7 +121,7 @@ Integrierte Entwicklungsumgebungen interagieren immer mit PHP und vernetzen eure
     Features: Siehe Webseite  
     Kostet: 382 $  
     
-    Eine etwas teurere IDE aus dem Hause ActiveState, zeitige Objektive Erfahrungen zur Verbesserung dieses Beitrags erwünscht.
+    Eine etwas teurere IDE aus dem Hause ActiveState, *zeitige Objektive Erfahrungen zur Verbesserung dieses Beitrags erwünscht*.
 
 
 * **Oracle Netbeans**  
@@ -164,7 +164,7 @@ Integrierte Entwicklungsumgebungen interagieren immer mit PHP und vernetzen eure
 * **CSE HTML Validator**  
     Website: [http://www.htmlvalidator.com/](http://www.htmlvalidator.com/)  
     Ui-Sprache: englisch  
-    Features: [http://www.htmlvalidator.com/htmlval/comparisonchart.html](http://www.htmlvalidator.com/htmlval/comparisonchart.html)
+    Features: [http://www.htmlvalidator.com/htmlval/comparisonchart.html](http://www.htmlvalidator.com/htmlval/comparisonchart.html)  
     Kostet: abhängig von der Version - Kostenlos als Lite-Version, 299 € als Enterprise-Version, siehe Compairson-Chart  
     
     CSE HTML Validator ist ein ausgereifter Mix-Type aus Editor, Validator und IDE mit Fokus auf Validierung. Ob dieser Typ Anwendung den Anforderungen entspricht hängt wie bei jeder anderen IDE oder Editor vom Entwickler ab. CSE HTML Validator ist definitiv einen Blick wert.
@@ -179,7 +179,8 @@ Integrierte Entwicklungsumgebungen interagieren immer mit PHP und vernetzen eure
     phpDesigner ist eine der kostengüstigeren IDEs, nicht ganz so umfangreich wie phpStorm, dennoch mit allem gerüstet was den täglichen Einsatz als Software-Entwickler leichter macht. 
 
 
-Insofern hier die ein oder andere IDE fehlt, möge man mir das Verzeihen und sie einfach im Selben Typus wie hier gelistet als Antwort auf diesen Beitrag darreichen. Einige Editoren werden es nicht in diese Übersicht schaffen, da sie entweder nicht PHP-Spezifisch und wenn zwar nicht zu wenig verbreitet in der PHP Welt sind. Da diese Editoren nicht gänzlich ungenannt bleiben sollten, findet ihr sie in der folgenden Link-Liste:
+Insofern hier die ein oder andere IDE fehlt, möge man mir das Verzeihen und sie einfach im Selben Typus wie hier gelistet als Antwort auf [diesen Beitrag](http://www.php.de/php-einsteiger/101627-editor-ide-let-me-tell-you-something.html) darreichen. Einige Editoren werden es nicht in diese Übersicht schaffen, da sie entweder nicht PHP-Spezifisch und wenn zwar nicht zu wenig verbreitet in der PHP Welt sind. Da diese Editoren nicht gänzlich ungenannt bleiben sollten, findet ihr sie in der folgenden Link-Liste:
+
 
 * [TextPad](http://www.textpad.com/products/textpad/index.html) - Wenig verbreitet  
 * [VIM](http://www.vim.org/index.php) - Zwar verbreitet, aber nur geringe Anfänger-Tauglichkeit  

@@ -36,7 +36,7 @@ Viele von euch beschäftigt das Thema sicherlich weniger, einige von euch schlag
 
 Damit ihr einen Anreiz bekommt wer so mit der ein oder anderen IDE arbeitet, werden auch noch namhafte Mitstreiter unserer Zunft jeweils erwähnt. Wer seine Wahl ebenfalls äußern möchte, ist in [diesem Beitrag](http://www.php.de/php-einsteiger/101627-editor-ide-let-me-tell-you-something.html) herzlich dazu eingeladen.
 
-Es folgt nun eine Vorstellung der (kostenlosen wie kostenpflichtigen) Editoren und Integrierten Entwicklungsumgebungen (IDEs) die auf PHP (weitestgehend) ausgelegt sind. Die Für (Quer-)Einsteiger und Fortgeschrittene empfohlenen Editoren sind entsprechend **markiere**{: style="color: #006400"}.
+Es folgt nun eine Vorstellung der (kostenlosen wie kostenpflichtigen) Editoren und Integrierten Entwicklungsumgebungen (IDEs) die auf PHP (weitestgehend) ausgelegt sind. Die Für (Quer-)Einsteiger und Fortgeschrittene empfohlenen Editoren sind entsprechend **markiert**{: style="color: #006400"}.
 
 ### PHP Editoren
 

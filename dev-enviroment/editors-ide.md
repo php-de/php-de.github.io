@@ -21,8 +21,14 @@ inhalt:
     -   name:   "Integrierte PHP Entwicklungsumgebungen (PHP IDE)"
         anchor: integrierte-php-entwicklungsumgebungen-php-ide
         simple: ""
+        
+    -   name: Sonstige
+        anchor: sonstige
+        simple: ""
 
-entry-type: in-progress
+    -   name: Schlusswort
+        anchor: schlusswort
+        simple: ""
 
 ---
 
@@ -179,7 +185,9 @@ Integrierte Entwicklungsumgebungen interagieren immer mit PHP und vernetzen eure
     phpDesigner ist eine der kostengüstigeren IDEs, nicht ganz so umfangreich wie phpStorm, dennoch mit allem gerüstet was den täglichen Einsatz als Software-Entwickler leichter macht. 
 
 
-Insofern hier die ein oder andere IDE fehlt, möge man mir das Verzeihen und sie einfach im Selben Typus wie hier gelistet als Antwort auf [diesen Beitrag](http://www.php.de/php-einsteiger/101627-editor-ide-let-me-tell-you-something.html) darreichen. Einige Editoren werden es nicht in diese Übersicht schaffen, da sie entweder nicht PHP-Spezifisch und wenn zwar nicht zu wenig verbreitet in der PHP Welt sind. Da diese Editoren nicht gänzlich ungenannt bleiben sollten, findet ihr sie in der folgenden Link-Liste:
+### Sonstige
+
+Einige Editoren werden es nicht in diese Übersicht schaffen, da sie entweder nicht PHP-Spezifisch und wenn zwar nicht zu wenig verbreitet in der PHP Welt sind. Da diese Editoren nicht gänzlich ungenannt bleiben sollten, findet ihr sie in der folgenden Link-Liste:
 
 
 * [TextPad](http://www.textpad.com/products/textpad/index.html) - Wenig verbreitet  
@@ -187,7 +195,11 @@ Insofern hier die ein oder andere IDE fehlt, möge man mir das Verzeihen und sie
 * [emacs](http://www.gnu.org/software/emacs/) - Verbreitet, aber auch geringe Anfänger-Tauglichkeit - Sehr hohe Erweiterbarkeit  
 
 
+### Schlusswort
+
+Insofern hier die eine oder andere Editor-/IDE-Software fehlt, bitte diese einfach im Selben Typus wie hier gelistet als Antwort auf [diesen Beitrag](http://www.php.de/php-einsteiger/101627-editor-ide-let-me-tell-you-something.html) darreichen.
+
 Möge euch diese Liste auf den Geschmack kommen lassen, viel Erfolg.
 
-Danksagung an: [mermshaus](http://www.php.de/member.php?u=15041), [drsoong](http://www.php.de/member.php?u=6084).
+Und ein Danke an: [mermshaus](http://www.php.de/member.php?u=15041), [drsoong](http://www.php.de/member.php?u=6084).
 

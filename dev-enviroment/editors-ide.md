@@ -14,8 +14,12 @@ author:
         profile: 21246
 
 inhalt:
-    -   name:   ""
-        anchor: 
+    -   name:   "PHP Editoren"
+        anchor: php-editoren
+        simple: ""
+
+    -   name:   "Integrierte PHP Entwicklungsumgebungen (PHP IDE)"
+        anchor: integrierte-php-entwicklungsumgebungen-php-ide
         simple: ""
 
 entry-type: in-progress
@@ -47,7 +51,7 @@ Ein PHP Editor ist eine Anwendung die grundlegende Editor-Funktionen können mus
 * **Kate** - by KDE Group  
     Webseite: [http://www.kate-editor.org](http://www.kate-editor.org)  
     UI-Sprache: sehr viele  
-    Features: Viele - Siehe Webseite und <a href="http://de.wikipedia.org/wiki/Kate_(KDE)">http://de.wikipedia.org/wiki/Kate_(KDE)</a>
+    Features: Viele - Siehe Webseite und <a href="http://de.wikipedia.org/wiki/Kate_(KDE)">http://de.wikipedia.org/wiki/Kate_(KDE)</a> 
     Erweiterbar: Ja  
     Kostet: **kostenlos; freie Software**  
     Platform: Windows, Linux, Mac  

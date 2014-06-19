@@ -32,26 +32,28 @@ Es folgt nun eine Vorstellung der (kostenlosen wie kostenpflichtigen) Editoren u
 
 Ein PHP Editor ist eine Anwendung die grundlegende Editor-Funktionen können muss, aber nicht direkt mit PHP interagiert, kein Debugging unterstützt und auch sonstige Qualitätssicherung für die eigene Anwendung gewährt. Er erleichtert eure Arbeit indem er euch via Syntax-Highlighting auf entsprechende Typos und Syntaxfehler hinweißt.
 
-* **Sublime Text** - **empfohlen**{: style="color: #006400"}
-    Webseite: [http://www.sublimetext.com](http://www.sublimetext.com)
-    UI-Sprache: Englisch
-    Features: Viele - Siehe Webseite
-    Erweiterbar: Ja - Scriptbasiert (LUA), XML-Basiert
-    Kostet: 70 US-Dollar
-    Platform: Windows, Linux, Mac
-    Benutzer: **Twitter**
+* **Sublime Text** - **empfohlen**{: style="color: #006400"}  
+    Webseite: [http://www.sublimetext.com](http://www.sublimetext.com)  
+    UI-Sprache: Englisch  
+    Features: Viele - Siehe Webseite  
+    Erweiterbar: Ja - Scriptbasiert (LUA), XML-Basiert  
+    Kostet: 70 US-Dollar  
+    Platform: Windows, Linux, Mac  
+    Benutzer: **Twitter**  
 
     Sublime Text 2 ist einer der Editoren mit den meisten Features und für den Performance bei großen Dateien kein Problem ist. Die Download-Version ist voll funktionsfähig, die 70 US-Dollar zahlt man quasi nur für das entfernen eines Popups das alle 30-60 Minuten beim Speichervorgang erscheint, aber sofort schließbar ist.
 
-* **Kate** - by KDE Group
-    Webseite: [http://www.kate-editor.org](http://www.kate-editor.org)
-    UI-Sprache: sehr viele
-    Features: Viele - Siehe Webseite und [http://de.wikipedia.org/wiki/Kate_(KDE)](http://de.wikipedia.org/wiki/Kate_\(KDE\))
-    Erweiterbar: Ja
-    Kostet: **kostenlos; freie Software**
-    Platform: Windows, Linux, Mac
+
+* **Kate** - by KDE Group  
+    Webseite: [http://www.kate-editor.org](http://www.kate-editor.org)  
+    UI-Sprache: sehr viele  
+    Features: Viele - Siehe Webseite und <a href="http://de.wikipedia.org/wiki/Kate_(KDE)">http://de.wikipedia.org/wiki/Kate_(KDE)</a>
+    Erweiterbar: Ja  
+    Kostet: **kostenlos; freie Software**  
+    Platform: Windows, Linux, Mac  
 
     Kate ist der Editor der KDE-Jungs, durchaus vergleichbar mit Notepad++ und Sublime Text, allerdings nicht so "feature-rich" wie Sublime Text.
+
 
 * **Notepad++**
     Webseite: [http://notepad-plus-plus.org/](http://notepad-plus-plus.org/)

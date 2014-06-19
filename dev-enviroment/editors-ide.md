@@ -32,9 +32,9 @@ inhalt:
 
 ---
 
-Viele von euch beschäftigt das Thema sicherlich weniger, einige von euch schlagen sich noch mit Software aus der Steinzeit herum, dieser Beitrag soll eine Möglichkeit zur Orientierung bieten, um durch den Editor- und IDE-Dschungel durchzublicken. Der ein oder anderen von euch ist sicher auf der Suche nach **dem Editor**, viel Glück, den gibt es leider nicht.
+Viele von euch beschäftigt das Thema sicherlich weniger, einige von euch schlagen sich noch mit Software aus der Steinzeit herum, dieser Beitrag soll eine Möglichkeit zur Orientierung bieten, um durch den Editor- und IDE-Dschungel durchzublicken. Der eine oder andere von euch ist sicher auf der Suche nach **dem Editor**, viel Glück, den gibt es leider nicht.
 
-Damit ihr einen Anreiz bekommt wer so mit der ein oder anderen IDE arbeitet, werden auch noch namhafte Mitstreiter unserer Zunft jeweils erwähnt. Wer aus diesem Forum seine Wahl mit veräußern möchte ist dazu in [diesem Beitrag](http://www.php.de/php-einsteiger/101627-editor-ide-let-me-tell-you-something.html) herzlich dazu eingeladen.
+Damit ihr einen Anreiz bekommt wer so mit der ein oder anderen IDE arbeitet, werden auch noch namhafte Mitstreiter unserer Zunft jeweils erwähnt. Wer seine Wahl ebenfalls äußern möchte, ist in [diesem Beitrag](http://www.php.de/php-einsteiger/101627-editor-ide-let-me-tell-you-something.html) herzlich dazu eingeladen.
 
 Es folgt nun eine Vorstellung der (kostenlosen wie kostenpflichtigen) Editoren und Integrierten Entwicklungsumgebungen (IDEs) die auf PHP (weitestgehend) ausgelegt sind. Die Für (Quer-)Einsteiger und Fortgeschrittene empfohlenen Editoren sind entsprechend **markiere**{: style="color: #006400"}.
 

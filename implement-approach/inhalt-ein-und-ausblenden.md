@@ -318,7 +318,7 @@ $states = array(
                'hidden' => 'visible' ,
                );
 
-$display = 'visible'; // dies ist der Initialzustand
+$display = 'hidden'; // dies ist der Initialzustand
 
 if (! empty ($_GET['display'])) {
   // wir nehmen nur 'visible' oder 'hidden an
@@ -334,7 +334,7 @@ $link = '?display=' . $states[$display]; // Gegenteil in den Link
   .visible {display:block;}
 </style>
 ...
-<a href="?display=<?php echo $link; ?>">Click me!</a>
+<a href="<?php echo $link; ?>">Click me!</a>
 <div class="<?php echo $display; ?>">
 Here ist some content for you!
 </div>

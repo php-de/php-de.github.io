@@ -57,11 +57,11 @@ Warum man [md5() nicht mehr verwenden sollte](http://de.wikipedia.org/wiki/Messa
 
 Stichwort [Rainbow-Tables](http://de.wikipedia.org/wiki/Rainbow_Table) 
 
-Aus diesem Grund wird von der weiteren Verwendung von MD5 (PHP-Funktion md5()) abgeraten. Ebenso wie  die Funktionen der [SHA-1 Familie](http://de.wikipedia.org/wiki/Secure_Hash_Algorithm#SHA.2FSHA-1).
+Aus diesem Grund wird von der weiteren Verwendung von MD5 (PHP-Funktion md5()) abgeraten. Ebenso wie  die Funktionen der [SHA-1 Familie](http://de.wikipedia.org/wiki/Secure_Hash_Algorithm#SHA-1).
 
 PHP.net empfiehlt an dieser Stelle, auf den SHA256 Algorithmus ebenfalls zu verzichten.
 
-[php.net FAQ "Save Password Hashing"](http://www.php.net/manual/de/faq.passwords.php)
+[php.net FAQ "Save Password Hashing"](http://php.net/manual/de/faq.passwords.php)
 
 
 ##### Gesalzene Hashes
@@ -89,7 +89,7 @@ Beispiel mit "Salz". Gäbe es in einer Rainbow-Table bereits die Kombination zwi
 > ... findet im Internet-Standard MIME (Multipurpose Internet Mail Extensions) Anwendung und wird damit hauptsächlich zum Versenden von E-Mail-Anhängen verwendet. Nötig ist dies, um den problemlosen Transport von beliebigen Binärdaten zu gewährleisten, da SMTP in seiner ursprünglichen Fassung nur für den Versand von 7-Bit-ASCII-Zeichen ausgelegt war. Durch die Kodierung steigt der Platzbedarf des Datenstroms um 33–36 % (33 % durch die Kodierung selbst, bis zu weitere 3 % durch die im kodierten Datenstrom eingefügten Zeilenumbrüche).
 
 
-In PHP stehen dafür die Funktionen [base64_encode()](http://php.net/manual/de/function.base64-encode.php) und [base64_decode()](http://www.php.net/manual/de/function.base64-decode.php) zur Verfügung.
+In PHP stehen dafür die Funktionen [base64_encode()](http://php.net/manual/de/function.base64-encode.php) und [base64_decode()](http://php.net/manual/de/function.base64-decode.php) zur Verfügung.
 
 
 <div class="alert alert-info"><strong>Hinweis!</strong> Die oben erwähnten Funktionen zu verwenden, um Texte "geheim" zu halten oder "unleserlich" zu machen, macht wenig Sinn. Zumeist ist schon am kodierten Ergebnis relativ eindeutig ersichtlich das es sich um das Produkt einer Base64-Kodierung handelt. Hierzu ist eine Verschlüsselung anzuwenden, siehe dazu weiter unten.</div>
@@ -103,5 +103,5 @@ In PHP stehen dafür die Funktionen [base64_encode()](http://php.net/manual/de/f
 
 
 PHP-Funktionen z.B. über die Erweiterung MCrypt: 
-[mcrypt()](http://www.php.net/manual/de/book.mcrypt.php)
+[mcrypt()](http://php.net/manual/de/book.mcrypt.php)
 

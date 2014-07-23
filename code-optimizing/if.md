@@ -43,7 +43,7 @@ Zuerst sei ein oft vorkommender Mythos aufgeklärt:
   
 Das Wesen einer Schleife ist die Wiederholung. `if` bildet einen Block aus Anweisungen und Ausdrücken.
 
-`if` ist eine [Kontrollstruktur](http://www.php.net/manual/de/language.control-structures.php) aber deshalb noch lange keine Schleife.
+`if` ist eine [Kontrollstruktur](http://php.net/manual/de/language.control-structures.php) aber deshalb noch lange keine Schleife.
 
 
 ### Notierung  

@@ -93,10 +93,10 @@ Schnittstelle gehörende Funktion genutzt werden. Eine allgemeine Funktion wie
 `addslashes` ist *nicht* ausreichend. Eine Auswahl dieser Funktionen für einige
 Schnittstellen:
 
-* mysql (veraltet): [`mysql_real_escape_string`](http://us1.php.net/manual/en/function.mysql-real-escape-string.php)
-* mysqli: [`mysqli_real_escape_string`](http://us1.php.net/manual/en/mysqli.real-escape-string.php)
-* PDO: [`PDO::Quote`](http://www.php.net/manual/en/pdo.quote.php)
-* postgresql: [`pg_escape_string`](http://www.php.net/manual/en/function.pg-escape-string.php) (und andere)
+* mysql (veraltet): [`mysql_real_escape_string`](http://php.net/manual/en/function.mysql-real-escape-string.php)
+* mysqli: [`mysqli_real_escape_string`](http://php.net/manual/en/mysqli.real-escape-string.php)
+* PDO: [`PDO::Quote`](http://php.net/manual/en/pdo.quote.php)
+* postgresql: [`pg_escape_string`](http://php.net/manual/en/function.pg-escape-string.php) (und andere)
 
 Die Anwendung dieser Funktionen ist quasi immer gleich und nicht sonderlich
 kompliziert: Bevor ein Wert in den Query-String eingefügt wird, muss er die

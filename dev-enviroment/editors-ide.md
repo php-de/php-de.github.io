@@ -55,7 +55,7 @@ Ein PHP Editor ist eine Anwendung die grundlegende Editor-Funktionen können mus
 
 
 * **Kate** - by KDE Group  
-    Webseite: [http://www.kate-editor.org](http://www.kate-editor.org)  
+    Webseite: [http://kate-editor.org](http://kate-editor.org)  
     UI-Sprache: sehr viele  
     Features: Viele - Siehe Webseite und <a href="http://de.wikipedia.org/wiki/Kate_(KDE)">http://de.wikipedia.org/wiki/Kate_(KDE)</a>  
     Erweiterbar: Ja  
@@ -86,7 +86,7 @@ Ein PHP Editor ist eine Anwendung die grundlegende Editor-Funktionen können mus
 
 
 * **ActiveState Komodo Edit** - **empfohlen**{: style="color: #006400"}  
-    Webseite: [http://www.activestate.com/komodo-edit](http://www.activestate.com/komodo-edit)  
+    Webseite: [http://komodoide.com/](http://komodoide.com/)  
     Ui-Sprache: englisch  
     Features: Siehe Webseite  
     Kostet: **kostenlos**  

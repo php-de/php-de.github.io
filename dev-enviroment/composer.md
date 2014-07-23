@@ -102,7 +102,7 @@ Composer selbst steht zum einen als phar-Executable bereit, verwenden wirst du a
 * Starte den Installer durch einen doppelklick auf die heruntergeladene Datei. Alle Windowsversionen mit aktivierter Benutzerkontrolle werden dich danach fragen ob dem Installer erlaubt werden soll ausgeführt zu werden, bestätige diese anfrage mit **Ja**.  
 
 * Klicke auf **Next >**  
-Überprüfe den Pfad zu deiner PHP-Installation. Dieses Guide setzt voraus das du bereits eine Funktionierende [XAMPP](http://www.apachefriends.org/de/xampp.html), [WampServer](http://www.wampserver.com/en/), [SecureWAMP](http://securewamp.org/de/), [ZendServer](http://www.zend.com/de/products/server/) oder [WPN-XM](http://wpn-xm.org/) Installation hast. In der Regel brauchst du hier nichts verändern, der Installer arretiert das Verzeichnis zur PHP Installation der Jeweiligen PHP-Umgebungen selbst. Bestätige dort bitte mit Klick auf **Next >**  
+Überprüfe den Pfad zu deiner PHP-Installation. Dieses Guide setzt voraus das du bereits eine Funktionierende [XAMPP](http://www.apachefriends.org/de/index.html), [WampServer](http://www.wampserver.com/en/), [SecureWAMP](http://securewamp.org/de/), [ZendServer](http://www.zend.com/de/products/server/) oder [WPN-XM](http://wpn-xm.org/) Installation hast. In der Regel brauchst du hier nichts verändern, der Installer arretiert das Verzeichnis zur PHP Installation der Jeweiligen PHP-Umgebungen selbst. Bestätige dort bitte mit Klick auf **Next >**  
 
 * Klicke auf **Install**  
 

@@ -112,7 +112,7 @@ So, und nun ein erfolgreiches Selbststudium!
   * **Frameworks:**
     * **YAML:**
       * [Home: Yet Another Multicolumn Layout \| An (X)HTML/CSS
-        Framework](http://www.yaml.de/de/home.html){: target="_blank"}  
+        Framework](http://www.yaml.de/){: target="_blank"}  
         Die Webseite zum CSS Framework YAML. Das Framework stammt vom
         deutschen Entwickler Dirk Jesse. Auf der Webseite gibt es einen
         YAML Builder mit dem man sehr einfach CSS Layouts gestallten
@@ -145,19 +145,19 @@ So, und nun ein erfolgreiches Selbststudium!
     
     
     * **ExtJS:**
-      * [Ext JS - Client-side JavaScript Framework](http://www.extjs.com/products/extjs/?ref=learnmorebluebutton){: target="_blank"}  
+      * [Ext JS - Client-side JavaScript Framework](http://www.sencha.com/products/extjs/?ref=learnmorebluebutton){: target="_blank"}  
         Dokumentation zu ExtJS. Beispiele und API Dokumentation.
     
     
     * **jQuery:**
-      * [Main Page - jQuery JavaScript Library](http://docs.jquery.com/Main_Page){: target="_blank"}  
+      * [Main Page - jQuery JavaScript Library](http://api.jquery.com/){: target="_blank"}  
         Dokumentation zu jQuery. Bietet Erklärungen und Beispiele zu
         allen jQuery Funktionen.
 
 
 ##### PHP
 
-  * [PHP: PHP-Handbuch - Manual](http://www.php.net/manual/de/){: target="_blank"}  
+  * [PHP: PHP-Handbuch - Manual](http://php.net/manual/de/){: target="_blank"}  
     Offizielle PHP Dokumentation. Als Funktionsreferenz zum
     Nachschlagen oder suchen von Funktionen zu empfehlen, auch für das
     Nachlesen von Themen, aber eher nicht als Tutorial für Anfänger zu
@@ -203,7 +203,7 @@ So, und nun ein erfolgreiches Selbststudium!
     
     
     * **CodeIgniter**
-      * [http://codeigniter.com/](http://codeigniter.com/){: target="_blank"} 
+      * [http://ellislab.com/codeigniter](http://ellislab.com/codeigniter){: target="_blank"} 
         CodeIgniter ist ein schnelles und leichtgewichtiges PHP
         Framework.
     
@@ -285,7 +285,7 @@ So, und nun ein erfolgreiches Selbststudium!
       * [Using prototype.js v1.5.0](http://www.sergiopereira.com/articles/prototype.js.html){: target="_blank"}  
         Einführung in die Nutzung von prototype.
       * [Prototype JavaScript framework: Prototype Tips and
-        Tutorials](http://www.prototypejs.org/learn){: target="_blank"}  
+        Tutorials](http://prototypejs.org/learn/){: target="_blank"}  
         Einführung zu prototype von den Entwicklern selbst.  
         **Nachteile:** englisch
     
@@ -390,7 +390,7 @@ So, und nun ein erfolgreiches Selbststudium!
 
 ##### PHP Fortgeschrittene
 
-  * [Professionelle Softwareentwicklung mit PHP 5](http://www.professionelle-softwareentwicklung-mit-php5.de/){: target="_blank"}  
+  * [Professionelle Softwareentwicklung mit PHP 5](http://professionelle-softwareentwicklung-mit-php5.de/){: target="_blank"}  
     Dieses Tutorial stellt neben der objektorientierten Programmierung
     auch Entwurfsmuster (Design Patterns) und Entwicklungswerkzeuge vor.
     Außerdem umfasst es Themen zur Verarbeitung von XML-Dokumenten, der
@@ -434,7 +434,7 @@ So, und nun ein erfolgreiches Selbststudium!
 ### Bücher
 {: #books}
 
-* [Galileo Computing : Buch : Besser PHP programmieren](http://www.galileocomputing.de/katalog/buecher/titel/gp/titelID-1670){: target="_blank"}  
+* [Galileo Computing : Buch : Besser PHP programmieren](https://www.galileo-press.de/besser-php-programmieren_1670/){: target="_blank"}  
   Dieses Buch führt sehr gut in PHP ein und beleuchtet viele Aspekte
   der Webprogrammierung mit PHP. Zuerst werden die Grundlagen erklärt,
   dann kommt man aber auch schnell zu komplexeren Themen.  
@@ -443,7 +443,7 @@ So, und nun ein erfolgreiches Selbststudium!
   **Vorteile:** Umfangreich, gut erklärt, teils auch etwas humorvoll  
   **Nachteile:** Die Themen werden nicht immer erschöpfend behandelt
 
-* [Galileo Computing : Buch : PHP 5.3 und MySQL 5.1](http://www.galileocomputing.de/katalog/buecher/titel/gp/titelID-2078){: target="_blank"}  
+* [Galileo Computing : Buch : PHP 5.3 und MySQL 5.1](https://www.galileo-press.de/php-53-und-mysql-51_2078/){: target="_blank"}  
   Ein Buch, dass zunächst auf die Grundlagen von PHP eingeht, dann
   aber schnell zu fortgeschrittenen Themen übergeht. Vor allem die
   Datenbankanbindung spielt eine große Rolle.  
@@ -486,7 +486,7 @@ So, und nun ein erfolgreiches Selbststudium!
    **Vorteile:** Gut ausgeführt, sehr umfangreich, es wird ein gutes
   Verständnis von möglichen Sicherheitsrisiken vermittelt
 
-* [Galileo Computing : Buch : Reguläre Ausdrücke](http://www.galileocomputing.de/katalog/buecher/titel/gp/titelID-967){: target="_blank"}  
+* [Galileo Computing : Buch : Reguläre Ausdrücke](https://www.galileo-press.de/regulare-ausdrucke_967/){: target="_blank"}  
   PHP bietet noch weitaus mehr als nur simple print- und
   echo-Anweisungen. Ein großes Thema sind beispielsweise reguläre
   Ausdrücke. Ein weites Themengebiet, das auch nicht immer ganz leicht
@@ -499,7 +499,7 @@ So, und nun ein erfolgreiches Selbststudium!
   **Nachteile:** Die Erklärungen sind nicht immer ganz leicht zu
   verstehen und erfordern manchmal einiges an Konzentration
 
-* [Galileo Computing : Buch : PHP PEAR](http://www.galileocomputing.de/katalog/buecher/titel/gp/titelID-891){: target="_blank"}  
+* [Galileo Computing : Buch : PHP PEAR](https://www.galileo-press.de/php-pear_891/){: target="_blank"}  
   Eine Einführung in die Arbeit mit dem PHP-Repository PEAR. Dabei
   werden sowohl die Installation wie auch ausgewählte PEAR-Pakete
   erklärt.  

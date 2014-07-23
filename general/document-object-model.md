@@ -86,7 +86,7 @@ Gecko-Browser interpretieren die Leerzeichen und Zeilenumbrüche zwischen den
 Elementen ebenfalls als <code>#text</code>-Knoten, weshalb es oft zu
 unerwarteten Skript-Fehlern kommt. Dieses Verhalten ist laut W3C-Standard
 allerdings nicht korrekt. Eine mögliche Lösung dieses Problems gibt es im <a
-href="http://developer.mozilla.org/en/whitespace_in_the_DOM">Mozilla Developer
+href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Whitespace_in_the_DOM">Mozilla Developer
 Center</a>.
 
 </div>
@@ -193,5 +193,4 @@ var div = document.getElementById('wrapper'),
 * [W3C Document Object Model](http://www.w3.org/DOM/)
 * [Document Object Model - Wikipedia](http://de.wikipedia.org/wiki/Document_Object_Model)
 * [JavaScript DOM](http://krook.org/jsdom/)
-* [Javascript Dom objects](http://www.w3schools.com/js/js_obj_htmldom.asp)
 

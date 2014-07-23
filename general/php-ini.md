@@ -35,8 +35,8 @@ inhalt:
       anchor: fremdinitialiserung
       simple: ""
 
-    - name: "Kollision von Parameterangaben"
-      anchor: kollision-von-parameterangaben
+    - name: "Kollision von Parametern"
+      anchor: kollision-von-parametern
       simple: ""
 
     - name: "Alternative Verwendung von Superglobalen Arrays"

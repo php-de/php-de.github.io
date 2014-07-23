@@ -55,7 +55,7 @@ Es gibt zwei prinzipielle Lösungsansätze. Der erste besteht darin, die gesamte
 
 Näheres findet man im Hauptartikel zum [EVA Prinzip]({{ site.url }}/jumpto/eva-prinzip/).
 
-Variante zwei nutzt den sogenannten [Ausgabepuffer](http://www.php.net/manual/de/intro.outcontrol.php), den man nutzen kann, um Bildschirmausgaben vorübergehend in eine Variable umzuleiten. Das funktioniert sogar mit Inline-HTML:
+Variante zwei nutzt den sogenannten [Ausgabepuffer](http://php.net/manual/de/intro.outcontrol.php), den man nutzen kann, um Bildschirmausgaben vorübergehend in eine Variable umzuleiten. Das funktioniert sogar mit Inline-HTML:
 
 ~~~ php
 <?php

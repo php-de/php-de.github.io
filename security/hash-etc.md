@@ -33,48 +33,23 @@ Diese Übersicht gibt einen kurzen Überblick über die unterschiedlichen Verfah
 
 ### Hashing (Hash-Funktion)
 
-Zweck des Hashing ist es aus einem Ausgangswert einen nicht rückrechenbaren Hash zu generieren. Unabhängig der Länge des Ausgangswertes entsteht je nach verwendeter Funktion ein gleich langer Hash. Hierfür stehen in PHP für verschiedene Hash-Algorithmen entsprechende Funktionen zur Verfügung (zB hash(), crypt()...). 
+Zweck des Hashing ist es aus einem Ausgangswert einen nicht rückrechenbaren Hash zu generieren. Unabhängig der Länge des Ausgangswertes entsteht je nach verwendeter Funktion ein gleich langer Hash. Hierfür stehen in PHP für verschiedene Hash-Algorithmen entsprechende Funktionen zur Verfügung. 
 
-[Weiters Details bei Wikipedia: Hashfunktion](http://de.wikipedia.org/wiki/Hashfunktion)
-
-[PHP.de - Hash](http://php.net/manual/de/book.hash.php)
+[Wikipedia Artikel zu Hashfunktion.](http://de.wikipedia.org/wiki/Hashfunktion)
 
 
 ##### Anwendung
 
 Die übliche Anwendung besteht darin, Paswörter zu hashen, bevor diese in der Datenbank gespeichert werden. Damit sind diese in der gehashten Form soweit nutzlos, selbst wenn man Zugriff darauf erlangt.
 
-Beim Login-Vorgang wird dann das im Login-Formular eingegebene Klartext Passwort mit dem selben Algorithmus, wie jener der vor der Speicherung angewandt wurde, gehasht und dann dieser eben errechnete Hash mit dem bestehenden Hash in der Datenbank verglichen. Stimmen diese beiden überein, ist das Login-Passwort korrekt.
+Beim Login-Vorgang wird dann das im Login-Formular eingegebene Klartext-Passwort mit dem selben Algorithmus, wie jener der vor der Speicherung angewandt wurde, gehasht und dann dieser eben errechnete Hash mit dem bestehenden Hash in der Datenbank verglichen. Stimmen diese beiden überein, ist das Login-Passwort korrekt.
 
 
-##### Sicherheit der Hash-Algorithmen
+##### Sicherheit der Hash-Algorithmen, salted Hashes
 
-Das Sicherheitsrikiso bei Hash-Werten liegt in der grundsätzlichen Möglichkeit von Kollisionen. Dabei geht es in erster Linie darum, einen Ausgangswert zu finden, der nach dem Hash-Vorgang den selben Hash-Wert als Ergebnis hat.
+Das Sicherheitsrikiso bei Hash-Werten liegt in der grundsätzlichen Möglichkeit von Kollisionen, Stichwort:  ["Rainbow-Tables"](http://de.wikipedia.org/wiki/Rainbow_Table). Dabei geht es in erster Linie darum, einen Ausgangswert zu finden, der nach dem Hash-Vorgang den selben Hash-Wert als Ergebnis hat.
 
-Weitere Informationen dazu:
-
-Warum man [md5() nicht mehr verwenden sollte](http://de.wikipedia.org/wiki/Message-Digest_Algorithm_5#Kollisionsresistenz)
-
-Stichwort [Rainbow-Tables](http://de.wikipedia.org/wiki/Rainbow_Table) 
-
-Aus diesem Grund wird von der weiteren Verwendung von MD5 (PHP-Funktion md5()) abgeraten. Ebenso wie  die Funktionen der [SHA-1 Familie](http://de.wikipedia.org/wiki/Secure_Hash_Algorithm#SHA-1).
-
-PHP.net empfiehlt an dieser Stelle, auf den SHA256 Algorithmus ebenfalls zu verzichten.
-
-[php.net FAQ "Save Password Hashing"](http://php.net/manual/de/faq.passwords.php)
-
-
-##### Gesalzene Hashes
-
-Dazu aus [Wikipedia](http://de.wikipedia.org/wiki/Salt_(Kryptologie))
-
-> Salt (englisch für Salz) bezeichnet in der Kryptographie eine zufällig gewählte Zeichenfolge, die an einen gegebenen Klartext vor der Verwendung als Eingabe einer Hashfunktion angehängt wird, um die Entropie der Eingabe zu erhöhen. Es wird häufig für die Speicherung und Übermittlung von Computer-Passwörtern benutzt.
-
-Das Prinzip ist, vor dem hashen dem Ausgangswert noch einen weitern Wert, den "Salt", hinzuzufügen. Dadurch ergibt sich ein anderer Hashwert und unterbindet/erschwert somit das herausfinden des Ausgangswertes über die bereits erwähnten [Rainbow-Tables](http://de.wikipedia.org/wiki/Rainbow_Table).
-
-
-Beispiel mit "Salz". Gäbe es in einer Rainbow-Table bereits die Kombination zwischen *Frank* und dem ungesalzenen Hash, dann kann mit Hilfe des Salz und des daraus entstehenden abweichenden Hash die direkte Feststellung verhindert werden.
-
+Weitere Informationen dazu, welche Algorithmen man aktuell vermeiden und verwenden sollte und bzgl. "salted" Hashes sind in kompakter Form hier angeführt: [Sicheres Password Hashing (php.net)](http://php.net/manual/de/faq.passwords.php)
 
 
 ### Kodierung

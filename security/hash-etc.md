@@ -14,7 +14,7 @@ author:
 inhalt:
     -   name: "Hashing (Hash-Funktion)"
         anchor: hashing-hash-funktion
-        simple: "Anwendung, Sicherheit, Beispiele, Gesalzene Hashes"
+        simple: "Anwendung, Sicherheit, Gesalzene Hashes"
 
     -   name: "Kodierung"
         anchor: kodierung
@@ -35,7 +35,7 @@ Diese Übersicht gibt einen kurzen Überblick über die unterschiedlichen Verfah
 
 Zweck des Hashing ist es aus einem Ausgangswert einen nicht rückrechenbaren Hash zu generieren. Unabhängig der Länge des Ausgangswertes entsteht je nach verwendeter Funktion ein gleich langer Hash. Hierfür stehen in PHP für verschiedene Hash-Algorithmen entsprechende Funktionen zur Verfügung. 
 
-[Wikipedia Artikel zu Hashfunktion.](http://de.wikipedia.org/wiki/Hashfunktion)
+[Wikipedia Artikel zu "Hashfunktion".](http://de.wikipedia.org/wiki/Hashfunktion)
 
 
 ##### Anwendung
@@ -49,7 +49,7 @@ Beim Login-Vorgang wird dann das im Login-Formular eingegebene Klartext-Passwort
 
 Das Sicherheitsrikiso bei Hash-Werten liegt in der grundsätzlichen Möglichkeit von Kollisionen, Stichwort:  ["Rainbow-Tables"](http://de.wikipedia.org/wiki/Rainbow_Table). Dabei geht es in erster Linie darum, einen Ausgangswert zu finden, der nach dem Hash-Vorgang den selben Hash-Wert als Ergebnis hat.
 
-Weitere Informationen dazu, welche Algorithmen man aktuell vermeiden und verwenden sollte und bzgl. "salted" Hashes sind in kompakter Form hier angeführt: [Sicheres Password Hashing (php.net)](http://php.net/manual/de/faq.passwords.php)
+Weitere Informationen dazu, welche Algorithmen man aktuell vermeiden und verwenden sollte und bzgl. "salted" Hashes sind in kompakter Form hier angeführt: [Sicheres Password Hashing (php.net)](http://php.net/manual/de/faq.passwords.php).
 
 
 ### Kodierung

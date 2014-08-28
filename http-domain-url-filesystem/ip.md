@@ -4,7 +4,7 @@ layout: guide
 permalink: /jumpto/ip/
 title: "IP-Adressen"
 group: "HTTP / Domain / URL / Requests / Dateisystem"
-orderId: 2
+orderId: 8
 
 creator: tr0y
 
@@ -25,23 +25,23 @@ inhalt:
       simple: "IPv4, IPv6"
 
     - name: "PHP und extrem große Zahlen"
-      anchor: 
+      anchor: php-typen-und-der-umgang-mit-extrem-groen-zahlen
       simple: "32bit, 64bit, 128bit"
 
     - name: "Magie der Binär-Strings"
-      anchor: 
+      anchor: die-magie-der-binr-strings
       simple: ""
 
     - name: "Der falsche Weg"
-      anchor: 
+      anchor: der-falsche-weg
       simple: "ip2long, long2ip"
 
     - name: "Der richtige Weg"
-      anchor: 
+      anchor: der-richtige-weg
       simple: "Binäre Darstellung"
 
     - name: "Der MySQL Weg"
-      anchor: 
+      anchor: der-mysq-weg
       simple: ""
 
     - name: "Quellen"
@@ -59,18 +59,18 @@ Diese Anleitung zeigt übliche Methoden um `IPv4`- und `IPv6`-Adressen in ihre `
 
 IP-Adressen sind für Menschen lesbare Zeichenfolgen, um Geräte innerhalb von TCP/IP-basierten Netzwerken eindeutig zu identifizieren. In der Vergangenheit des Internets waren IPv4-Adressen der übliche Weg, um einen Server zu adressieren, Clients zu Servern oder zu anderen Clients zu verbinden, um E-Mails zu versenden oder andere netzwerkbezogene Aufgaben durchzuführen. IPs sind im Prinzip gleich wie Telefonnummern (mit lediglich anderem Format), jedoch sind Telefonnummern nicht durch einen bestimmten Bereich beschränkt. 
 
-Heutzutage haben wir die Grenzen des Adressbereiches von IPv4-Adressen erreicht, d.h. ´4.294.967.296´ gleichzeitg angeschlossene Clients. Aus diesem Grund wurde ein neues Adressformat definiert, um die Aufgaben des IPv4 in der Zukunft erfüllen: IPv6. Mittels IPv6 kann das Internet für eine Weile weiter wachsen, denn  ´340.282.366.920.938.463.463.374.607.431.768.211.456´ Clients können so zum größten, weltweiten Netzwerk verbunden werden. Ja, das ist eine Zahl mit 39 Stellen.
+Heutzutage haben wir die Grenzen des Adressbereiches von IPv4-Adressen erreicht, d.h. `4.294.967.296` gleichzeitg angeschlossene Clients. Aus diesem Grund wurde ein neues Adressformat definiert, um die Aufgaben des IPv4 in der Zukunft erfüllen: IPv6. Mittels IPv6 kann das Internet für eine Weile weiter wachsen, denn  `340.282.366.920.938.463.463.374.607.431.768.211.456` Clients können so zum größten, weltweiten Netzwerk verbunden werden. Ja, das ist eine Zahl mit 39 Stellen.
 
 
 ### Formate 
 
-IPv4-Adressen bestehen aus einer Folge von vorzeichenlosen Ganzzahlen (*unsigned integer*), die in 4 Gruppen, getrennt durch ein ´.´, unterteilt sind. Jede Gruppe kann einen Wert von 0 bis 255 haben.
+IPv4-Adressen bestehen aus einer Folge von vorzeichenlosen Ganzzahlen (*unsigned integer*), die in 4 Gruppen, getrennt durch ein `.`, unterteilt sind. Jede Gruppe kann einen Wert von 0 bis 255 haben.
 
-´127.0.0.1´ Der lokale Loopback, der gut bekannte ´localhost´.
+`127.0.0.1` Der lokale Loopback, der gut bekannte `localhost`.
 
-IPv6-Adressen sind eine Folge von Hexadezimalzahlen, die in 8 Gruppen, getrennt durch ein ´:´, dargestellt werden. Jede Gruppe kann einen Wert zwischen 0 und ffff haben, führende Nullen können, ebenso wie Folgen von Nullen, ausgelassen werden: 
+IPv6-Adressen sind eine Folge von Hexadezimalzahlen, die in 8 Gruppen, getrennt durch ein `:`, dargestellt werden. Jede Gruppe kann einen Wert zwischen 0 und ffff haben, führende Nullen können, ebenso wie Folgen von Nullen, ausgelassen werden: 
 
-´0000:0000:0000:0000:0000:0000:0000:0001´ oder: ´::1´ Ja, auch das ist der lokale Loopback. 
+`0000:0000:0000:0000:0000:0000:0000:0001` oder: `::1` Ja, auch das ist der lokale Loopback. 
 
 
 ### PHP, Typen und der Umgang mit extrem großen Zahlen 
@@ -85,7 +85,7 @@ Binär-Strings werden im weitern Verlauf zur Darstellung von IP-Adressen unsere 
 
 ### Der falsche Weg
 
-**Verwenden Sie nicht ip2long oder long2ip!**. ip2long wandelt eine IPv4-Adresse in einer für Menschen lesbaren `integer`-darstellung. Auf 32-Bit-Plattformen, kann das vorzeitig mit dem Wert der ´PHP_MAX_INT´ als Obergrenze enden, wenn die angegebene IP-Adresse Darstellung höher als die ´PHP_MAX_INT´ ist. Dies wird definitiv passieren wenn das erste Segment der IP-Adresse höher als ´127´ ist.
+**Verwenden Sie nicht ip2long oder long2ip!**. ip2long wandelt eine IPv4-Adresse in einer für Menschen lesbaren `integer`-darstellung. Auf 32-Bit-Plattformen, kann das vorzeitig mit dem Wert der `PHP_MAX_INT` als Obergrenze enden, wenn die angegebene IP-Adresse Darstellung höher als die `PHP_MAX_INT` ist. Dies wird definitiv passieren wenn das erste Segment der IP-Adresse höher als `127` ist.
 
 
 ### Der richtige Weg
@@ -182,7 +182,7 @@ FROM `ip_address_ranges`
          inet6_aton('::5') BETWEEN `start` AND `end` 
 
 SELECT 
-     inet6_ntoa(`start`) AS `start-IP`, 
+     inet6_ntoa(`start`) AS `start-IP`,
      inet6_ntoa(`end`) AS `end-IP` 
 FROM `ip_address_ranges` 
      WHERE

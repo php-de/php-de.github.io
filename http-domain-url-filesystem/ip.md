@@ -80,12 +80,12 @@ PHP kommt "out of the box" mit Unterstützung für eine "32-Bit-Integer mit Vorz
 
 ### Die Magie der Binär-Strings 
 
-Binär-Strings werden im weitern Verlauf zur Darstellung von IP-Adressen unsere Wahl sein. Denn in dieser Formkönnen die IP-Adressen in die Datenbank abgespeichert werden, dort auf Datenbankebene abgefragt bzw. mit anderen IP-Adressen verglichen, oder auch direkt in PHP entsprechend verarbeitet werden.
+Binär-Strings werden im weitern Verlauf zur Darstellung von IP-Adressen unsere Wahl sein. Denn in dieser Form können die IP-Adressen in der Datenbank abgespeichert werden, dort abgefragt bzw. mit anderen IP-Adressen verglichen, oder aber auch direkt in PHP verarbeitet werden.
 
 
 ### Der falsche Weg
 
-**Verwenden Sie nicht ip2long oder long2ip!**. ip2long wandelt eine IPv4-Adresse in einer für Menschen lesbaren `integer`-darstellung. Auf 32-Bit-Plattformen, kann das vorzeitig mit dem Wert der `PHP_MAX_INT` als Obergrenze enden, wenn die angegebene IP-Adresse Darstellung höher als die `PHP_MAX_INT` ist. Dies wird definitiv passieren wenn das erste Segment der IP-Adresse höher als `127` ist.
+*Verwenden Sie nicht ip2long oder long2ip*. ip2long wandelt eine IPv4-Adresse in einer für Menschen lesbaren `integer`-Darstellung. Auf 32-Bit-Plattformen, kann das vorzeitig mit dem Wert der `PHP_MAX_INT` als Obergrenze enden, wenn die angegebene IP-Adresse Darstellung höher als die `PHP_MAX_INT` ist. Dies wird definitiv passieren wenn das erste Segment der IP-Adresse höher als `127` ist.
 
 
 ### Der richtige Weg

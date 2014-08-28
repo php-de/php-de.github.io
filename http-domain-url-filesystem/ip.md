@@ -30,7 +30,7 @@ inhalt:
 
     - name: "Magie der Binär-Strings"
       anchor: die-magie-der-binr-strings
-      simple: ""
+      simple: "zur Darstellung von IPs"
 
     - name: "Der falsche Weg"
       anchor: der-falsche-weg
@@ -41,7 +41,7 @@ inhalt:
       simple: "Binäre Darstellung"
 
     - name: "Der MySQL Weg"
-      anchor: der-mysq-weg
+      anchor: der-mysql-weg-die-konvertierung-auslagern
       simple: ""
 
     - name: "Quellen"

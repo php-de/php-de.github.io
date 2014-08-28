@@ -208,7 +208,7 @@ Beide SELECT-Statements geben jeweils ein Zeile aus, mit den für Menschen lesba
 
 Hinweis: MySQL hat ebenfalls `inet_aton`- und `inet_ntoa`-Funktionen. Die `inet6_*`-Funktionen sind jedoch wegen der Kompatibilität für IPv6 und IPv4 zu bevorzugen, denn die `inet_*`-Funktionen sind nur für die Verarbeitung von IPv4-Adressen implementiert.
 
+
 ### Quellen
 
-[https://gist.github.com/Golpha/1a79868b6598f2c6a531](Beitrag im englischen Original von tr0y)
-
+[Beitrag im englischen Original von tr0y](https://gist.github.com/Golpha/1a79868b6598f2c6a531)

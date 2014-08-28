@@ -40,9 +40,9 @@ inhalt:
       anchor: der-richtige-weg
       simple: "Binäre Darstellung"
 
-    - name: "Der MySQL Weg"
+    - name: "Der MySQL-Weg"
       anchor: der-mysql-weg-die-konvertierung-auslagern
-      simple: ""
+      simple: "die Konvertierung auslagern"
 
     - name: "Quellen"
       anchor: quellen

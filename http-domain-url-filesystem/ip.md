@@ -57,9 +57,9 @@ Diese Anleitung zeigt übliche Methoden um `IPv4`- und `IPv6`-Adressen in ihre `
 
 ### Grundlagen
 
-IP-Adressen sind für Menschen lesbare Zeichenfolgen, um Geräte innerhalb von TCP/IP-basierten Netzwerken eindeutig zu identifizieren. In der Vergangenheit des Internets waren IPv4-Adressen der übliche Weg, um einen Server zu adressieren, Clients zu Servern oder zu anderen Clients zu verbinden, um E-Mails zu versenden oder andere netzwerkbezogene Aufgaben durchzuführen. IPs sind im Prinzip gleich wie Telefonnummern (mit lediglich anderem Format), jedoch sind Telefonnummern nicht durch einen bestimmten Bereich beschränkt. 
+IP-Adressen sind für Menschen lesbare Zeichenfolgen, um Geräte innerhalb von TCP/IP-basierten Netzwerken eindeutig zu identifizieren. In der Vergangenheit des Internets waren IPv4-Adressen der übliche Weg, um einen Server zu adressieren, Clients zu Servern oder zu anderen Clients zu verbinden, um E-Mails zu versenden oder andere netzwerkbezogene Aufgaben durchzuführen. IPs sind im Prinzip wie Telefonnummern (mit lediglich anderem Format), jedoch sind Telefonnummern nicht durch einen bestimmten Bereich beschränkt. 
 
-Heutzutage haben wir die Grenzen des Adressbereiches von IPv4-Adressen erreicht, d.h. `4.294.967.296` gleichzeitg angeschlossene Clients. Aus diesem Grund wurde ein neues Adressformat definiert, um die Aufgaben des IPv4 in der Zukunft erfüllen: IPv6. Mittels IPv6 kann das Internet für eine Weile weiter wachsen, denn  `340.282.366.920.938.463.463.374.607.431.768.211.456` Clients können so zum größten, weltweiten Netzwerk verbunden werden. Ja, das ist eine Zahl mit 39 Stellen.
+Heutzutage haben wir die Grenzen des Adressbereiches von IPv4-Adressen erreicht, d.h. `4.294.967.296` gleichzeitg angeschlossene Clients. Aus diesem Grund wurde ein neues Adressformat festgelegt, um die Aufgaben des IPv4 in der Zukunft erfüllen: IPv6. Mittels IPv6 kann das Internet für eine Weile weiter wachsen, denn  `340.282.366.920.938.463.463.374.607.431.768.211.456` Clients können so zum größten, weltweiten Netzwerk verbunden werden. Ja, das ist eine Zahl mit 39 Stellen.
 
 
 ### Formate 
@@ -75,12 +75,12 @@ IPv6-Adressen sind eine Folge von Hexadezimalzahlen, die in 8 Gruppen, getrennt 
 
 ### PHP, Typen und der Umgang mit extrem großen Zahlen 
 
-PHP kommt "out of the box" mit Unterstützung für eine "32-Bit-Integer mit Vorzeichen" auf 32-Bit-Plattformen und mit einer "64-Bit-Integer mit Vorzeichen" auf einem 64-Bit-Plattform. Was hier weiter unten aufgezeigt wird: 32-Bit-Integers sind die falsche Wahl um IPv4 Adressen zu speichern, denn diese scheitern bereits an dem Wert der höchsten IPv4-Adresse. 64-Bit-Integers sind ebenfalls nicht in der Lage, IPv6-Adressen zu verarbeiten, denn diese benötigen mindestens 128-Bit. PHP ist in der Lage, eine große Zahl bitweise mit Hilfe von bcmath behandeln. Im Detail: Mit bcmath jede Zahl wird als Zeichenfolge dargestellt werden. Wir werden jedoch Binär-Strings verwenden. 
+PHP kommt "out of the box" mit Unterstützung für eine "32-Bit-Integer mit Vorzeichen" auf 32-Bit-Plattformen und mit einer "64-Bit-Integer mit Vorzeichen" auf einem 64-Bit-Plattform. Was weiter unten aufgezeigt wird: 32-Bit-Integers sind die falsche Wahl um IPv4 Adressen zu speichern, denn diese scheitern bereits an dem Wert der höchsten IPv4-Adresse. 64-Bit-Integers sind ebenfalls nicht in der Lage, IPv6-Adressen zu verarbeiten, denn diese benötigen 128-Bit. PHP ist in der Lage, eine große Zahl bitweise mit Hilfe von bcmath zu behandeln. Im Detail: Mit bcmath jede Zahl wird als Zeichenfolge dargestellt werden. Wir werden jedoch Binär-Strings verwenden. 
 
 
 ### Die Magie der Binär-Strings 
 
-Binär-Strings werden im weitern Verlauf zur Darstellung von IP-Adressen unsere Wahl sein. Denn in dieser Form können die IP-Adressen in der Datenbank abgespeichert werden, dort abgefragt bzw. mit anderen IP-Adressen verglichen, oder aber auch direkt in PHP verarbeitet werden.
+Binär-Strings werden im weitern Verlauf zur Darstellung von IP-Adressen unsere Wahl sein. Denn in dieser Form können die IP-Adressen auch in der Datenbank abgespeichert werden, dort abgefragt bzw. mit anderen IP-Adressen verglichen, oder aber auch direkt in PHP verarbeitet werden.
 
 
 ### Der falsche Weg

@@ -48,8 +48,7 @@ inhalt:
       anchor: quellen
       simple: ""
 
-
-entry-type: in-progress
+entry-type: in-discussion
 ---
 
 Diese Anleitung zeigt übliche Methoden um `IPv4`- und `IPv6`-Adressen in ihre `binäre` Darstellung zu konvertieren. 
@@ -59,7 +58,7 @@ Diese Anleitung zeigt übliche Methoden um `IPv4`- und `IPv6`-Adressen in ihre `
 
 IP-Adressen sind für Menschen lesbare Zeichenfolgen, um Geräte innerhalb von TCP/IP-basierten Netzwerken eindeutig zu identifizieren. In der Vergangenheit des Internets waren IPv4-Adressen der übliche Weg, um einen Server zu adressieren, Clients zu Servern oder zu anderen Clients zu verbinden, um E-Mails zu versenden oder andere netzwerkbezogene Aufgaben durchzuführen. IPs sind im Prinzip wie Telefonnummern (mit lediglich anderem Format), jedoch sind Telefonnummern nicht durch einen bestimmten Bereich beschränkt. 
 
-Heutzutage haben wir die Grenzen des Adressbereiches von IPv4-Adressen erreicht, d.h. `4.294.967.296` gleichzeitg angeschlossene Clients. Aus diesem Grund wurde ein neues Adressformat festgelegt, um die Aufgaben des IPv4 in der Zukunft erfüllen: IPv6. Mittels IPv6 kann das Internet für eine Weile weiter wachsen, denn  `340.282.366.920.938.463.463.374.607.431.768.211.456` Clients können so zum größten, weltweiten Netzwerk verbunden werden. Ja, das ist eine Zahl mit 39 Stellen.
+Heutzutage haben wir die Grenzen des Adressbereiches von IPv4-Adressen erreicht, d.h. `4.294.967.296` gleichzeitg angeschlossene Clients. Aus diesem Grund wurde ein neues Adressformat festgelegt, das die Aufgaben des IPv4 auch in der Zukunft erfüllen kann: IPv6. Mittels IPv6 kann das Internet für eine Weile weiter wachsen, denn `340.282.366.920.938.463.463.374.607.431.768.211.456` Clients können so zum größten, weltweiten Netzwerk verbunden werden. Ja, das ist eine Zahl mit 39 Stellen.
 
 
 ### Formate 
@@ -80,7 +79,7 @@ PHP kommt "out of the box" mit Unterstützung für eine "32-Bit-Integer mit Vorz
 
 ### Die Magie der Binär-Strings 
 
-Binär-Strings werden im weitern Verlauf zur Darstellung von IP-Adressen unsere Wahl sein. Denn in dieser Form können die IP-Adressen auch in der Datenbank abgespeichert werden, dort abgefragt bzw. mit anderen IP-Adressen verglichen, oder aber auch direkt in PHP verarbeitet werden.
+Binär-Strings werden im weitern Verlauf zur Darstellung von IP-Adressen unsere Wahl sein. Denn in dieser Form können die IP-Adressen auch in der Datenbank abgespeichert, verarbeitet bzw. mit anderen IP-Adressen verglichen, oder aber auch direkt in PHP verarbeitet werden.
 
 
 ### Der falsche Weg

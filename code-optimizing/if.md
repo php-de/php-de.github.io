@@ -122,7 +122,7 @@ Nur ein `=` Zeichen ist eine Zuweisung und würde immer als *true* gewertet. Zum
 
 #### Schreibweise ohne geschweifte Klammern
 
-Nur die erste Zeile nach dem `if` wird als Aktion behandelt. Die nächste Zeile nicht mehr, diese wird immer ausgeführt. Zur besseren Lesbarkeit wird von dieser Notaiton abgeraten, diese findet auch im PEAR Standard keine Anwendung.
+Nur die erste Zeile nach dem `if` wird als Aktion behandelt. Die nächste Zeile nicht mehr, diese wird immer ausgeführt. Zur besseren Lesbarkeit wird von dieser Notaiton abgeraten, diese findet auch im [PEAR-Standard](http://pear.php.net/manual/en/standards.control.php) keine Anwendung.
 
 Negativbeispiel
  

@@ -92,7 +92,7 @@ if (!empty($_POST['action'])) {
 Eine weitere alternative Darstellungsweise ist der [Trinitäts Operator](http://php.net/manual/de/language.operators.comparison.php), auch Ternärer Operator genannt. Dieser bietet sich ins Besondere an, wenn es nur ein *entweder / oder* gibt. Dieser wird wie folgt angegeben:  
 
 ~~~ php
-(Bedingung) ? Aktion1 : Standardakion;
+(Bedingung) ? Aktion1 : Standardaktion;
 ~~~
 
 Sollte mehr als das nötig sein (`elseif`, ...), kann diese Variante jedoch sehr schnell unübersichtlich werden. Hier empfiehlt es sich oft zur herkömmlichen Variante zu greifen.

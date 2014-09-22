@@ -89,13 +89,17 @@ if (!empty($_POST['action'])) {
 
 #### Trinitäts Operator (Ternärer Operator)
 
-Eine weitere alternative Darstellungsweise ist der [Trinitäts Operator](http://php.net/manual/de/language.operators.comparison.php), auch Ternärer Operator genannt. Dieser bietet sich ins Besondere an, wenn es nur ein *entweder / oder* gibt. Dieser wird wie folgt angegeben:  
+Der [Trinitäts Operator](http://php.net/manual/de/language.operators.comparison.php) (auch "Ternärer Operator) kann unter gewissen Umständen eine Alternative zum `if` darstellen.  
+
+Dieser ist primär ein Zuweisungsoperator, dementsprechend können seine Operanden nur Ausdrücke darstellen und insbesondere keine Blöcke aus Anweisungen - es sei denn, diese sind als Ausdruck kombinierbar. Dieser bietet sich ins Besondere als Alternative an, wenn es nur ein *entweder / oder* gibt.  
+
+Die grundsätzliche Notation lautet wie folgt:  
 
 ~~~ php
 (Bedingung) ? Aktion1 : Standardaktion;
 ~~~
 
-Sollte mehr als das nötig sein (`elseif`, ...), kann diese Variante jedoch sehr schnell unübersichtlich werden. Hier empfiehlt es sich oft zur herkömmlichen Variante zu greifen.
+Sollte mehr als das nötig sein (`elseif`, ...), kann diese Variante jedoch sehr schnell unübersichtlich werden. Hier empfiehlt es sich die herkömmliche Variante zu nutzen.
 
 Nachfolgendes Beispiel entspricht den oberen beiden Beispielen:
 
@@ -122,14 +126,14 @@ Nur ein `=` Zeichen ist eine Zuweisung und würde immer als *true* gewertet. Zum
 
 #### Schreibweise ohne geschweifte Klammern
 
-Nur die erste Zeile nach dem `if` wird als Aktion behandelt. Die nächste Zeile nicht mehr, diese wird immer ausgeführt. Zur besseren Lesbarkeit wird von dieser Notaiton abgeraten, diese findet auch im [PEAR-Standard](http://pear.php.net/manual/en/standards.control.php) keine Anwendung.
+Ohne den geschweiften Klammern wird jeweils nur die erste Anweisung nach dem `if` ausgeführt. Nachfolgende Anweisungen werden,  unabhängig davon, immer ausgeführt. Zur besseren Lesbarkeit wird von dieser Notaiton abgeraten, diese findet auch im [PEAR-Standard](http://pear.php.net/manual/en/standards.control.php) keine Anwendung.
 
 Negativbeispiel
  
 ~~~ php
 if ($ampel == "gruen")
-    echo "Na endlich!"; // nur diese Zeile wird gem. dem if ausgeführt
-    echo "Go!";         // diese Zeile wird immer(!) ausgeführt
+    echo "Na endlich!"; // nur diese Anweisung wird gemäß der `if`-Bedingung ausgeführt
+    echo "Go!";         // diese Anweisung wird unabhängig von `if` immer ausgeführt
 ~~~
 
 

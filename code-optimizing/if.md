@@ -132,8 +132,8 @@ Negativbeispiel
  
 ~~~ php
 if ($ampel == "gruen")
-    echo "Na endlich!"; // nur diese Anweisung wird gemäß der `if`-Bedingung ausgeführt
-    echo "Go!";         // diese Anweisung wird unabhängig von `if` immer ausgeführt
+    echo "Na endlich!"; // nur diese Anweisung wird gemäß der if-Bedingung ausgeführt
+    echo "Go!";         // diese Anweisung wird unabhängig von if immer ausgeführt
 ~~~
 
 

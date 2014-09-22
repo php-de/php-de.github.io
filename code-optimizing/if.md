@@ -89,9 +89,9 @@ if (!empty($_POST['action'])) {
 
 #### Trinitäts Operator (Ternärer Operator)
 
-Der [Trinitäts Operator](http://php.net/manual/de/language.operators.comparison.php) (auch "Ternärer Operator) kann unter gewissen Umständen eine Alternative zum `if` darstellen.  
+Der [Trinitäts Operator](http://php.net/manual/de/language.operators.comparison.php) (auch "Ternärer Operator") kann unter gewissen Umständen eine Alternative zum `if` darstellen.  
 
-Dieser ist primär ein Zuweisungsoperator, dementsprechend können seine Operanden nur Ausdrücke darstellen und insbesondere keine Blöcke aus Anweisungen - es sei denn, diese sind als Ausdruck kombinierbar. Dieser bietet sich ins Besondere als Alternative an, wenn es nur ein *entweder / oder* gibt.  
+Dieser ist primär ein Zuweisungsoperator, dementsprechend können seine Operanden nur Ausdrücke darstellen, und insbesondere keine Blöcke aus Anweisungen - es sei denn, diese sind als Ausdruck kombinierbar. Dieser bietet sich beispielsweise als Alternative an, wenn es nur ein *entweder / oder* gibt.  
 
 Die grundsätzliche Notation lautet wie folgt:  
 
@@ -107,7 +107,7 @@ Nachfolgendes Beispiel entspricht den oberen beiden Beispielen:
 $action = (!empty($_POST['action'])) ? $_POST['action'] : 'standard';
 ~~~
 
-Anmerkung: Die Klammerung der Bedingung im Trinitäts Operator ist nicht nötig, wird jedoch der besseren Lesbarkeit empfohlen. 
+Anmerkung: Die Klammerung der Bedingung ist nicht nötig, wird jedoch der besseren Lesbarkeit empfohlen. 
 
 
 ### Syntaktische Fallstricke
@@ -126,7 +126,7 @@ Nur ein `=` Zeichen ist eine Zuweisung und würde immer als *true* gewertet. Zum
 
 #### Schreibweise ohne geschweifte Klammern
 
-Ohne den geschweiften Klammern wird jeweils nur die erste Anweisung nach dem `if` ausgeführt. Nachfolgende Anweisungen werden,  unabhängig davon, immer ausgeführt. Zur besseren Lesbarkeit wird von dieser Notaiton abgeraten, diese findet auch im [PEAR-Standard](http://pear.php.net/manual/en/standards.control.php) keine Anwendung.
+Ohne den geschweiften Klammern wird jeweils nur die erste Anweisung nach dem `if` ausgeführt. Nachfolgende Anweisungen werden,  unabhängig davon, immer ausgeführt. Zur besseren Lesbarkeit wird grundsätzich von dieser Notaiton abgeraten, diese findet auch im [PEAR-Standard](http://pear.php.net/manual/en/standards.control.php) keine Anwendung.
 
 Negativbeispiel
  

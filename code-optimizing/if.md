@@ -29,8 +29,6 @@ inhalt:
         anchor: unntige-konstrukte
         simple: "So geht es besser"
 
-
-entry-type: in-discussion
 ---
 
 

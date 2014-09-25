@@ -300,6 +300,5 @@ Wie dieses Beispiel als Affenformular und mit kompletter Eingabeprüfung aussieh
 
 ### Weitere Beiträge zum Thema
 
-[Affenformular (Standardverfahren)]({{ site.url }}/jumpto/affenformular/)
-[Eingabevalidierung]({{ site.url }}/jumpto/validierung/)
-Parametersicherheit (Link folgt)
+* [Affenformular (Standardverfahren)]({{ site.url }}/jumpto/affenformular/)  
+* [Eingabevalidierung]({{ site.url }}/jumpto/validierung/)  

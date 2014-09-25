@@ -55,13 +55,13 @@ Mithilfe weniger Zeilen CSS-Code wird die Box zum Leben erweckt.
 span.hover-box {
     border: 1px solid #fc6;
     color: #000;
-    display: none;
+    display: none; /* Element standardmäßig nicht darstellen */
     position: absolute;
     text-decoration: none;
     top: 40px;
 }
 a:hover span.hover-box {
-    display: block;
+    display: block; /* Beim Überfahren des Links einblenden */
 }
 ~~~
 

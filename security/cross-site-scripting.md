@@ -224,6 +224,17 @@ möglich ist:
 <img src="javascript:alert(/XSS!/.source)">
 ~~~
 
+Außerdem lassen sich viele auf den ersten Blick sinnvoll wirkende Regex-Pattern durch geschickten Aufbau der Eingabe recht leicht überlisten:
+
+~~~ php
+$pattern = '@<script[^>]*?>.*?</script>@si';
+
+$input = '<scrip<script></script>t>alert("XSS");<<script></script>/script>';
+
+echo preg_replace($pattern, '', $input);
+    // <script>alert("XSS");</script>
+~~~
+
 #### Entfernen des Markups
 
 Eine Entfernung der `<script>`-Tags mindert das Risiko also nur, verhindert

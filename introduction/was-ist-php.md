@@ -18,6 +18,9 @@ author:
     - name: hausl
       profile: 21246
 
+    - name: mermshaus
+      profile: 15041
+
 inhalt:
     - name: "Was PHP ist"
       anchor: was-php-ist
@@ -37,6 +40,10 @@ inhalt:
 
 Oft zeigt sich bei PHP-Einsteigern, dass ein grundlegendes Verständnis dafür fehlt, was PHP eigentlich genau ist, wofür es zu gebrauchen ist und eben auch, wofür es nicht zu gebrauchen ist.
 
+<div class="alert alert-info">
+    <strong>Information:</strong><br>
+    Dieser Artikel beschreibt den klassischen Einsatzzweck von PHP als serverseitiger Skriptsprache. Der Fokus liegt darauf, die Rolle von PHP im Zusammenspiel von Client und Server bei der Interaktion mit Webseiten über das HTTP zu erklären. Darüber hinaus kann PHP wie viele Programmiersprachen auch zu allgemeineren Zwecken genutzt werden. Auf einem entsprechend konfigurierten System können etwa in PHP geschriebene Konsolenanwendungen oder Hintergrunddienste ausgeführt werden. Es existieren sogar Ansätze, interaktive, grafische Desktopanwendungen in PHP zu erstellen. Diese Verwendungsmöglichkeiten sind allerdings höchstens noch am Rande dem Bereich der Web-Entwicklung zuzuordnen und werden deshalb an dieser Stelle derzeit nicht näher beschrieben.
+</div>
 
 ### Was PHP ist
 PHP ist eine Skript-Sprache, die komplett auf dem Server verarbeitet wird. Das heißt, der Benutzer kommt mit dem Quelltext des Skripts gar nicht erst in Berührung.

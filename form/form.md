@@ -52,9 +52,9 @@ Wichtig zu wissen ist, dass die Daten beim Aufruf des Serverscripts im [Request]
 
 Je nachdem, wie die Datenübertragung erfolgt, gibt es für PHP verschiedene Array-Variablen, die Parameterdaten enthalten können.
 
-Siehe dazu auch:
-[Hauptartikel Request]({{ site.url }}/jumpto/request/)
-[Hauptartikel GPC]({{ site.url }}/jumpto/gpc/)
+Siehe dazu auch:  
+[Hauptartikel Request]({{ site.url }}/jumpto/request/)  
+[Hauptartikel GPC]({{ site.url }}/jumpto/gpc/)  
 
 Nachfolgend wird stets der POST Request bei der PHP-seitigen Verarbeitung zugrunde gelegt und `<form>` Tags im der HTML Code der Übersichtlichkeit halber weggelassen.
 

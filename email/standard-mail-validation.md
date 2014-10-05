@@ -13,12 +13,12 @@ author:
 
     -   name: tr0y
         profile: 21125
-        
+ 
 inhalt:
     -   name: "filter_var()"
         anchor: filtervar
         simple: "als Standard-Weg"
-        
+
     -   name: "Internationale Domainnamen / Punycode"
         anchor: internationalisierte-domainnamen-idn
         simple: "Domains mit Sonderzeichen"
@@ -80,8 +80,8 @@ var_dump(isValidEmail("mail@übung.de"));     // false
 ~~~
 
 Dies kann alternativ zu filter_var() verwendet werden. Ebenso wie [oben bei filter_var()](#filtervar) schlägt die Prüfung von internationalisierten Domains fehl (was hier bereits am Pattern erkennbar ist).
-   
-  
+
+
 ### Internationalisierte Domainnamen (IDN)
 
 Um auch internationalisierte Domains / E-Mail-Adressen auf grundsätzliche formelle Korrektheit zu prüfen ist die Konvertierung in [Punycode](http://de.wikipedia.org/wiki/Punycode) **vor** der eigentlichen Prüfung nötig. Weitere Informationen und Möglichkeiten zur Konvertierung gibt es [hier]({{ site.url }}/jumpto/idna/).
@@ -91,11 +91,11 @@ Um auch internationalisierte Domains / E-Mail-Adressen auf grundsätzliche forme
  
 Diese Variante kommt ohne Punycode-Konvertierung aus. Hierbei spielen die verwendeten Zeichen kaum eine Rolle, denn es wird nur der grobe Rahmen geprüft und ob keine Whitespaces (Leerzeichen, Tabstopps, etc.) vorhanden sind.
 
-~~~ php    
+~~~ php
 function isValidEmail($mail)
 { 
     // Gesamtlänge check
-    // http://de.wikipedia.org/wiki/E-Mail-Adresse#L.C3.A4nge_der_E-Mail-Adresse  
+    // http://de.wikipedia.org/wiki/E-Mail-Adresse#L.C3.A4nge_der_E-Mail-Adresse 
     if (strlen($mail) > 256) {
         return false; 
     }
@@ -105,11 +105,11 @@ function isValidEmail($mail)
              . '(?:[^\s.](?:[^\s.]*[^\s.])?\\.)+[^\s.](?:[^\s.]*[^\s.])?'
              . '$#i';
     return (bool) preg_match($pattern, $mail); 
-}  
+} 
 
 var_dump(isValidEmail("test@.....com"));                              // false 
 var_dump(isValidEmail("test@sub.mail.dot.anything.example.com"));     // true 
-var_dump(isValidEmail("test@übärdrübär.com"));                        // true  
+var_dump(isValidEmail("test@übärdrübär.com"));                        // true 
 var_dump(isValidEmail("test@sub.mail.dot.anything.übärdrübär.com"));  // true 
 ~~~ 
 
@@ -141,12 +141,11 @@ Wer sich dafür interessiert wie eigentlich filter_var() validiert, dem sei ein 
 
 #### RFC zum Thema E-Mail
 
-[RFC 2142](http://tools.ietf.org/html/rfc2142) - Mailbox Names for Common Services, Roles and Functions  
-[RFC 2368](http://tools.ietf.org/html/rfc2368) - The mailto URL scheme  
-[RFC 2822](http://tools.ietf.org/html/rfc2822) - Internet Message Format  
-[RFC 3696](http://tools.ietf.org/html/rfc3696) - Application Techniques for Checking and Transformation of Names  
-[RFC 4021](http://tools.ietf.org/html/rfc4021) - Registration of Mail and MIME Header Fields  
-[RFC 5321](http://tools.ietf.org/html/rfc5321) - Simple Mail Transfer Protocol  
-[RFC 5322](http://tools.ietf.org/html/rfc5322) - Internet Message Format  
-[RFC 5335](http://tools.ietf.org/html/rfc5335) - Internationalized Email Headers  
-
+[RFC 2142](http://tools.ietf.org/html/rfc2142) - Mailbox Names for Common Services, Roles and Functions<br>
+[RFC 2368](http://tools.ietf.org/html/rfc2368) - The mailto URL scheme<br>
+[RFC 2822](http://tools.ietf.org/html/rfc2822) - Internet Message Format<br>
+[RFC 3696](http://tools.ietf.org/html/rfc3696) - Application Techniques for Checking and Transformation of Names<br>
+[RFC 4021](http://tools.ietf.org/html/rfc4021) - Registration of Mail and MIME Header Fields<br>
+[RFC 5321](http://tools.ietf.org/html/rfc5321) - Simple Mail Transfer Protocol<br>
+[RFC 5322](http://tools.ietf.org/html/rfc5322) - Internet Message Format<br>
+[RFC 5335](http://tools.ietf.org/html/rfc5335) - Internationalized Email Headers<br>

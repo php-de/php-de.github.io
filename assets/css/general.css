@@ -38,13 +38,16 @@
         padding-left:11px;
     }
 
-    .alert a {
-        text-decoration: none;
-        border-bottom: 1px dashed;
-    }
-
     .alert.alert-default {
         border-color:#ddd !important;
+    }
+
+    .alert.alert-success a, 
+    .alert.alert-info a, 
+    .alert.alert-warning a, 
+    .alert.alert-error a {
+        text-decoration: none;
+        border-bottom: 1px dashed;
     }
 
     .left-alerted .alert {

@@ -42,6 +42,11 @@
         border-color:#ddd !important;
     }
 
+    .alert.alert-info a {
+        text-decoration: none;
+        border-bottom: 1px dashed;
+    }
+
     .left-alerted .alert {
         border:0 !important;
         border-right:5px solid !important;
@@ -99,10 +104,12 @@
         margin-bottom:15px;
     }
 
+    /*
     #guide .alert.alert-info a {
         text-decoration: none;
         border-bottom: 1px dashed;
     }
+    */
 
     #guide .group-panel.panel {
         border-radius:0 !important;

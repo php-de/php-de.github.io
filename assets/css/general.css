@@ -42,10 +42,10 @@
         border-color:#ddd !important;
     }
 
-    .alert.alert-success a, 
-    .alert.alert-info a, 
-    .alert.alert-warning a, 
-    .alert.alert-error a {
+    .alert-success a, 
+    .alert-info a, 
+    .alert-warning a, 
+    .alert-error a {
         text-decoration: none;
         border-bottom: 1px dashed;
     }

@@ -45,7 +45,8 @@
     .alert-success a, 
     .alert-info a, 
     .alert-warning a, 
-    .alert-error a {
+    .alert-error a,
+    .alert-danger a {
         text-decoration: none;
         border-bottom: 1px dashed;
     }

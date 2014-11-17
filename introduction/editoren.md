@@ -98,7 +98,7 @@ Integrierte Entwicklungsumgebungen interagieren immer mit PHP und vernetzen eure
   Webseite: <a href="http://www.jetbrains.com/phpstorm/">http://www.jetbrains.com/phpstorm/</a><br/>
   Ui-Sprache: englisch<br/>
   Features: <a href="http://www.jetbrains.com/phpstorm/features/index.html">http://www.jetbrains.com/phpstorm/features/index.html</a><br/>
-  Kostet: 89 € + Steuern Vollversion / 44 € + Steuern Upgrade pro Entwickler<br/>
+  Kostet: 89 € + Steuern Vollversion / 44 € + Steuern Upgrade pro Entwickler (<a href="http://blog.jetbrains.com/blog/2014/09/23/jetbrains-makes-its-products-free-for-students/">für Studierende bei Nachweis kostenlos</a>)<br/>
   Platform: Windows, Linux, Mac<br/>
   Benutzer: Valve, Paypal, MediaWiki</div>
 

@@ -154,8 +154,10 @@ Integrierte Entwicklungsumgebungen interagieren immer mit PHP und vernetzen eure
 
   phpDesigner ist eine der kostengüstigeren IDEs, nicht ganz so umfangreich wie phpStorm, dennoch mit allem gerüstet was den täglichen Einsatz als Software-Entwickler leichter macht.
 
-Insofern hier die ein oder andere IDE fehlt, möge man mir das verzeihen und sie einfach im selben Typus wie hier gelistet als Antwort auf diesen Beitrag darreichen. Einige Editoren werden es nicht in diese Übersicht schaffen, da sie entweder nicht PHP-Spezifisch und wenn zwar nicht zu wenig verbreitet in der PHP Welt sind. Da diese Editoren nicht gänzlich ungenannt bleiben sollten, findet ihr sie in der folgenden Link-Liste:
+Insofern hier die ein oder andere IDE fehlt, möge man das verzeihen und sie gegebenenfalls hinzufügen. Einige Editoren werden es nicht in diese Übersicht schaffen, da sie entweder nicht PHP-spezifisch oder zu wenig verbreitet in der PHP-Welt sind. Da diese Editoren nicht gänzlich ungenannt bleiben sollten, sind sie in der folgenden Link-Liste erwähnt:
 
 - [**TextPad**](http://www.textpad.com/products/textpad/index.html) - Wenig verbreitet
 - [**Vim**](http://www.vim.org/index.php) - Zwar verbreitet, aber nur geringe Anfänger-Tauglichkeit
 - [**Emacs**](http://www.gnu.org/software/emacs/) - Verbreitet, aber auch geringe Anfänger-Tauglichkeit - Sehr hohe Erweiterbarkeit
+
+Weiterführend ist [auch in der Wikipedia](https://en.wikipedia.org/wiki/List_of_PHP_editors) eine Liste von PHP-Editoren zu finden.

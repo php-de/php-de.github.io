@@ -154,6 +154,4 @@ Anwendung, die mit Usereingaben und dynamischen Ausdrücken hantiert.
 
 ### Referenzen
 
-* [http://aktuell.de.selfhtml.org/artikel/php/kontextwechsel/](http://aktuell.de.selfhtml.org/artikel/php/kontextwechsel/)  
-
-
+* [http://wiki.selfhtml.org/wiki/Artikel:Kontextwechsel](http://wiki.selfhtml.org/wiki/Artikel:Kontextwechsel)

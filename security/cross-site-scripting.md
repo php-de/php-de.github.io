@@ -208,23 +208,51 @@ Zugangsdaten oder E-Mail-Adressen der Benutzer herauszufinden (Phishing).
 
 #### Als Webmaster
 
-Der Webmaster beziehungsweise Programmierer besitzt hier besondere
-Verantwortung, da das Wohl der eigenen Besucher von den getroffenen
-Sicherheitsvorkehrungen abhängt.
+Der Webmaster beziehungsweise Programmierer besitzt hier besondere Verantwortung, da das Wohl der eigenen Besucher von den getroffenen Sicherheitsvorkehrungen abhängt.
 
-Es ist unumgänglich, alle vom Benutzer eingegebenen Daten als potenziell
-gefährlich einzustufen. Um Cross-Site-Scripting zu verhindern, ist es
-notwendig, die `<script>`-Tags unschädlich zu machen. Oftmals wird der Fehler
-gemacht, diese einfach durch einen regulären Ausdruck zu entfernen, doch ist es
-damit nicht getan, da in Browsern wie dem Internet-Explorer auch solches
-möglich ist:
+Es ist unumgänglich, alle vom Benutzer eingegebenen Daten als potenziell gefährlich einzustufen und entsprechend zu behandeln. Dazu gibt es verschiedene Ansätze.
+
+<div class="alert alert-danger">
+    <strong>Achtung!</strong>
+
+    Häufig gemachter Fehler: Es kann nicht oft genug gesagt werden, dass <strong>alle</strong> vom User kommenden Daten bösartiger Natur sein können, nicht nur <a href="{{ site.url }}/jumpto/gpc/">GPC-Werte</a>. Auch manche Inhalte des <code>$_SERVER</code>-Arrays (etwa <a href="http://blog.oncode.info/2008/05/07/php_self-ist-boese-potentielles-cross-site-scripting-xss/">PHP_SELF</a>) gehören zur Kategorie der gefährlichen Datenquellen, die unbedingt validiert werden müssen.
+</div>
+
+<div class="alert alert-info">
+    <strong>Hinweis:</strong>
+
+    Um den Benutzern trotz Bearbeitung des HTML-Codes Formatierungsmöglichkeiten für ihre Inhalte zu bieten, können BB-Codes oder ähnliche Textauszeichnungsformate eingeführt werden.
+</div>
+
+#### Maskieren des Markups
+
+Die standardmäßige und oftmals beste Vorgehensweise zur Verhinderung von Cross-Site-Scripting ist das korrekte Behandeln des Kontextwechsels nach HTML. Dabei werden alle HTML-Steuerzeichen (wie `<`, `>`, `"` oder `&`) durch ihre Entitäten ersetzt (`&lt;`, `&gt;`, `&quot;`, `&amp;`). PHP bietet dazu die beiden Funktion `htmlspecialchars` (empfohlen) und `htmlentities` an. Während letztgenannte Funktion diverse „Sonderzeichen“ (so auch deutsche Umlaute) in HTML-Code umschreibt, beschränkt sich `htmlspecialchars` auf syntaxrelevante Sprachbestandteile, was für den Anwendungszweck der Funktion ausreichend ist.
+
+#### Entfernen des Markups
+
+Bei dieser Option werden mit der Funktion `strip_tags` sämtliche HTML-Tags (sowie PHP-Tags und NUL-Bytes) aus einem String entfernt. Je nach konkreter Anwendung kann das eine unnötige Einschränkung für die Inhalte sein, da möglicherweise verhindert wird, einen Artikel wie diesen schreiben zu können, in dem HTML-Tags wie `<script>` im Fließtext vorkommen. Auch ersetzt `strip_tags` nicht die Notwendigkeit, den Kontextwechsel nach HTML durchzuführen, da Zeichen wie `<`, `>` und `&` auch außerhalb von HTML-Tags auftreten können (etwa als Kleiner-als-Zeichen).
+
+<div class="alert alert-info">
+    <strong>Hinweis:</strong>
+
+    Das vollständige Entfernen des HTML-Markups ist nur sehr situativ sinnvoll anwendbar. Häufig ist es vorzuziehen, Daten, die keine HTML-Tags enthalten sollten (etwa Telefonnummern oder Adressen), bereits bei der Eingabevalidierung entsprechend zu prüfen und als Eingabefehler zurückzuweisen.
+</div>
+
+#### Softwaregestütztes Whitelisting
+
+Abgesehen von den oben genannten Lösungen kann zudem der Einsatz von HTML-Validierungswerkzeugen wie [HTML Purifier](http://htmlpurifier.org/) in Betracht gezogen werden. Diese bieten eine extrem hohe Sicherheit gegen Cross-Site-Scripting. Ein kleines Restrisiko, das durch neu entdeckte Sicherheitslücken in Browsern entstehen kann, ist aber nie auszuräumen.
+
+#### Unvollständige Maßnahmen
+
+Es ist an vielen Stellen im Web zu lesen, aber es reicht nicht aus, beispielsweise lediglich die `<script>`-Tags unschädlich zu machen, da JavaScript prinzipiell auch über Attribute anderer Elemente eingeschleust werden kann.
 
 ~~~ html
-<img src="javascript:alert('XSS!')">
-<img src="javascript:alert(/XSS!/.source)">
+<img src="javascript:alert('XSS')">
+<img src="javascript:alert(/XSS/.source)">
+<span onmouseover="alert('XSS')">demo</span>
 ~~~
 
-Außerdem lassen sich viele auf den ersten Blick sinnvoll wirkende Regex-Pattern durch geschickten Aufbau der Eingabe recht leicht überlisten:
+Zudem lassen sich viele auf den ersten Blick sinnvoll wirkende Regex-Pattern zum Entfernen bestimmter Tags durch geschickten Aufbau der Eingabe überlisten.
 
 ~~~ php
 $pattern = '@<script[^>]*?>.*?</script>@si';
@@ -234,71 +262,6 @@ $input = '<scrip<script></script>t>alert("XSS");<<script></script>/script>';
 echo preg_replace($pattern, '', $input);
     // <script>alert("XSS");</script>
 ~~~
-
-#### Entfernen des Markups
-
-Eine Entfernung der `<script>`-Tags mindert das Risiko also nur, verhindert
-aber noch lange kein Cross-Site-Scripting. Besser ist es, *alle*
-HTML-Auszeichnungen in Parameterinhalten zu zerstören. Um den Benutzern dennoch
-Formatierungsmöglichkeiten zu bieten, können BB-Codes oder ähnliche
-Textauszeichnungsformate eingeführt werden.
-
-Eine Möglichkeit, XSS zu verhindern, ist die Entfernung aller Tags mit
-`strip_tags`. Dies ist die empfohlene Vorgehensweise, wenn es sich um Daten
-handelt, in denen HTML nichts zu suchen hat (etwa Angabe des Namens, der
-Adresse oder der Telefonnummer).
-
-<div class="alert alert-info">
-
-<strong>Hinweis:</strong>
-
-Besser als eine Anpassung von Daten an eine erlaubte Zeichenmenge kann ein
-frühzeitiger Abbruch bei der Eingabevalidierung sein. Gegebenenfalls ist dort
-eine Unterscheidung sinnvoll zwischen eindeutig angriffscharakteristischen
-Angaben und Fehldaten, die beispielsweise durch Tippfehler entstehen.
-
-</div>
-
-#### Maskieren des Markups
-
-Die zweite Möglichkeit ist es, HTML-eigene Zeichen zu maskieren. Dabei werden alle
-HTML-Steuerzeichen (wie `<`, `>`, `"` oder `&`) durch ihre Entitäten ersetzt
-(`&lt;`, `&gt;`, `&quot;`, `&amp;`).
-
-Dies ist vor allem dann notwendig, wenn Benutzer HTML-Codes (oder einzelne
-Zeichen aus dem HTML-Zeichenvorrat) posten können sollen, es dabei aber nicht
-zur Ausführung oder ungewünschten Nebeneffekten kommen soll. Beispiele dafür
-sind Beiträge in Foren und Mailinglisten oder sogenannte ASCII-Art-Einträge wie
-Signaturen und dergleichen.
-
-PHP bietet zur Maskierung von HTML-eigenen Zeichen neben allgemeinen Befehlen
-zur Stringersetzung die beiden speziellen Funktion `htmlspecialchars` und
-`htmlentities` an. Während letztgenannte versucht, möglichst viele Sonderzeichen
-(so auch deutsche Umlaute) in HTML-Code umzusetzen, beschränkt sich
-`htmlspecialchars` auf syntaxrelevante Sprachbestandteile und ist für einen Schutz
-gegen XSS ausreichend.
-
-#### Softwaregestütztes Whitelisting
-
-Abgesehen von den oben genannten Lösungen kann zudem der Einsatz von
-HTML-Validierungswerkzeugen wie [HTML Purifier](http://htmlpurifier.org/) in
-Betracht gezogen werden. Diese bieten eine extrem hohe Sicherheit gegen
-Cross-Site-Scripting. Ein kleines Restrisiko, das durch neu entdeckte
-Sicherheitslücken in Browsern entstehen kann, ist aber nie auszuräumen.
-
-<div class="alert alert-danger">
-
-<strong>Achtung!</strong>
-
-Häufig gemachter Fehler: Es kann nicht oft genug gesagt werden, dass
-<strong>alle</strong> vom User kommenden Daten bösartiger Natur sein können,
-nicht nur <a href="{{ site.url }}/jumpto/gpc/">GPC-Werte</a>. Auch manche
-Inhalte des <code>$_SERVER</code>-Arrays (etwa <a
-href="http://blog.oncode.info/2008/05/07/php_self-ist-boese-potentielles-cross-site-scripting-xss/">PHP_SELF</a>)
-gehören zur Kategorie der gefährlichen Datenquellen, die unbedingt validiert
-werden müssen.
-
-</div>
 
 #### Als Benutzer
 

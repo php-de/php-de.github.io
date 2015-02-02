@@ -12,28 +12,63 @@ author:
         profile: 21246
 
 inhalt:
-    -   name: ""
-        anchor:
+    -   name: "DateTime-Objekt erstellen"
+        anchor: datetime-objekt-erstellen
         simple: ""
 
-    -   name: ""
-        anchor:
+    -   name: "DateTime-Objekte von abweichenden Formaten"
+        anchor: von-abweichenden-formaten-erzeugen
         simple: ""
 
-    -   name: ""
-        anchor:
+    -   name: "Berechnungen auf DateTime-Objekte"
+        anchor: berechnungen-auf-vorhandene-datetime-objekte
         simple: ""
 
+    -   name: "Schaltjahr"
+        anchor: schaltjahr
+        simple: ""
+
+    -   name: "Differenzen"
+        anchor: differenzen
+        simple: ""
+
+    -   name: "Vergleiche"
+        anchor: vergleiche
+        simple: ""
+
+    -   name: "Kalenderwochen"
+        anchor: kalenderwochen
+        simple: ""
+
+    -   name: "Deutsche Wochentage"
+        anchor: deutsche-wochentage
+        simple: ""
+
+    -   name: "Deutsche Montasnamen"
+        anchor: deutsche-monatsnamen
+        simple: ""
+
+    -   name: "Überschneidungen Zeiträume"
+        anchor: ueberschneidungen
+        simple: ""
+
+    -   name: "Ostern"
+        anchor: ostern
+        simple: ""
+
+    -   name: "Links"
+        anchor: links
+        simple: ""
 
 entry-type: in-progress
 ---
 
-Dieses Tutorial zeigt, an Hand von der in PHP ausgelieferten Klasse DateTime, eine Sammlung an üblichen Anwendungsszenarien. Bei den Beispielen wird durchgängig die objektorientierte Variante von DateTime verwendet. Bei etwaigen fremden/externen Beispielen kann dies abweichen. Diese sind am Quellennachweis erkennbar.
+Dieses Tutorial zeigt, an Hand von der in PHP ausgelieferten Klasse DateTime, eine Sammlung an üblichen Anwendungsszenarien. Bei den Beispielen wird durchgängig die objektorientierte Variante von DateTime verwendet. Bei etwaigen externen Beispielen kann dies abweichen oder bewusst auf alternative Methoden zurückgegriffen werden. Dies wird explizit erwähnt.
 
 
 Nachfolgende Seiten aus der PHP-Dokumentation finden in den Beispielen laufend Verwendung.
 
-- [Formate](http://php.net/manual/de/datetime.formats.php)  
+- [Formate Datum und Uhrzeit](http://php.net/manual/de/datetime.formats.php)  
 - [Relative Formate](http://php.net/manual/de/datetime.formats.relative.php)  
 - [DateTime::createFromFormat](http://php.net/manual/de/datetime.createfromformat.php)  
 
@@ -62,7 +97,7 @@ echo $dt->format('Y-m-d');
 
 
 
-### Von abweichenden Formaten erzeugen:
+### Von abweichenden Formaten erzeugen
 
 ~~~ php
 $oTimezone = new DateTimeZone('Europe/Berlin');
@@ -114,8 +149,6 @@ echo $dt->format('L');
 
 
 
-
-
 ### Differenzen
 
 
@@ -128,7 +161,26 @@ $dt2 = new DateTime('2015-01-12', $oTimezone);
 $dtInterval = $dt1->diff($dt2);
 echo $dtInterval->format('%R%a days');
 // +11 days
+
+// ist Benutzer schon seit 30 Tagen registriert?
+$regDate = new DateTime('2014-12-15', $oTimezone);
+$now     = new DateTime(null, $oTimezone); // 2015-01-19
+
+if ( $now->modify('-30 days') >= $regDate ) {
+    echo "Ja!";
+}
+// Ja!
+   
+// oder
+
+$regDate = new DateTime('2014-12-15', $oTimezone);
+$now     = new DateTime(null, $oTimezone); // 2015-01-19
+
+echo $now->diff($regDate)->days; // 35
+// somit:
+var_dump($now->diff($regDate)->days > 30); // true
 ~~~
+
 
 
 ### Vergleiche
@@ -202,9 +254,11 @@ echo $aMonthNamesDE[$dt->format('n')-1];
 
 
 
-### Überschneidungen Zeiträume 
+### Überschneidungen Zeiträume
+{: #ueberschneidungen}
 
-Üblicherweise lagert man diese Vergleiche direkt an die Datebank aus (SQL). Hier dennoch als Beispiel eine PHP-Variante.
+
+Üblicherweise lagert man diese Vergleiche direkt an die Datebank aus. Hier dennoch als Beispiel eine PHP-Variante.
 
 ~~~ php
 function overlap_timespans($sBegin1, $sEnd1, $sBegin2, $sEnd2, $sTimeTolerance = '', $sTZ = 'Europe/Berlin') {
@@ -217,13 +271,13 @@ function overlap_timespans($sBegin1, $sEnd1, $sBegin2, $sEnd2, $sTimeTolerance =
     $dt2_begin = new DateTime($sBegin2, $oTimezone);
     $dt2_end   = new DateTime($sEnd2, $oTimezone);
    
-    // correct tolerance
+    // correct tolerance if given
     if (!empty($sTimeTolerance)) {
         $dt1_begin->modify('-'.$sTimeTolerance);
         $dt1_end->modify('-'.$sTimeTolerance);
     }
 
-    // check possible overlaps
+    // check for possible overlaps
     
     // 2 encolsures 1, or is the same
     if ($dt2_begin <= $dt1_begin && $dt2_end >= $dt1_end) {
@@ -255,33 +309,7 @@ var_dump( overlap_timespans('2015-02-01', '2015-02-02', '2015-02-02', '2015-02-0
 ~~~
 
 
-
-### Schon länger her als ... ?
-
-~~~ php
-$oTimezone = new DateTimeZone('Europe/Berlin');
-
-// ist Benutzer schon seit 30 Tagen registriert?
-$regDate = new DateTime('2014-12-15', $oTimezone);
-$now     = new DateTime(null, $oTimezone); // 2015-01-19
-
-if ( $now->modify('-30 days') >= $regDate ) {
-    echo "Ja!";
-}
-// Ja!
-   
-// oder
-
-$regDate = new DateTime('2014-12-15', $oTimezone);
-$now     = new DateTime(null, $oTimezone); // 2015-01-19
-
-echo $now->diff($regDate)->days; // 35
-// somit:
-var_dump($now->diff($regDate)->days > 30); // true
-~~~
-
-
-#### Ostern  
+### Ostern  
 
 Zu diesem Thema gibt es im Forum einige Threads
 

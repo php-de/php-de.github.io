@@ -44,7 +44,7 @@ inhalt:
         anchor: deutsche-wochentage
         simple: ""
 
-    -   name: "Deutsche Montasnamen"
+    -   name: "Deutsche Monatsnamen"
         anchor: deutsche-monatsnamen
         simple: ""
 
@@ -63,7 +63,7 @@ inhalt:
 entry-type: in-progress
 ---
 
-Dieses Tutorial zeigt, an Hand von der in PHP ausgelieferten Klasse DateTime, eine Sammlung an üblichen Anwendungsszenarien. Bei den Beispielen wird durchgängig die objektorientierte Variante von DateTime verwendet. Bei etwaigen externen Beispielen kann dies abweichen oder bewusst auf alternative Methoden zurückgegriffen werden. Dies wird explizit erwähnt.
+Dieses Tutorial zeigt, an Hand von der in PHP ausgelieferten Klasse DateTime, eine Sammlung an üblichen Anwendungsszenarien. Bei den Beispielen wird durchgängig die objektorientierte Variante von DateTime verwendet. Bei etwaigen externen Beispielen kann dies abweichen bzw. wenn bewusst auf alternative Methoden zurückgegriffen wird, so wird dies explizit erwähnt.
 
 
 Nachfolgende Seiten aus der PHP-Dokumentation finden in den Beispielen laufend Verwendung.

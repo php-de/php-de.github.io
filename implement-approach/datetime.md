@@ -16,11 +16,11 @@ inhalt:
         anchor: datetime-objekt-erstellen
         simple: ""
 
-    -   name: "DateTime-Objekte von abweichenden Formaten"
+    -   name: "DateTime-Objekt von abweichenden Formaten"
         anchor: von-abweichenden-formaten-erzeugen
         simple: ""
 
-    -   name: "Berechnungen auf DateTime-Objekte"
+    -   name: "Berechnungen auf bestehende DateTime-Objekte"
         anchor: berechnungen-auf-vorhandene-datetime-objekte
         simple: ""
 
@@ -28,7 +28,7 @@ inhalt:
         anchor: schaltjahr
         simple: ""
 
-    -   name: "Differenzen"
+    -   name: "Differenzen, Interval"
         anchor: differenzen
         simple: ""
 
@@ -240,6 +240,8 @@ echo $aWeekdayNamesDE[$dt->format('w')];  // 'w': 0 (für Sonntag) bis 6 (für S
 // Montag (Heute Mo. 2015-01-12)
 ~~~
 
+Hierzu sein auch noch auf diesen Thread hingewiesen: [http://www.php.de/php-einsteiger/112963-kalendermonat-und-kalendertag-bestimmten.html#post831698](http://www.php.de/php-einsteiger/112963-kalendermonat-und-kalendertag-bestimmten.html#post831698)
+
 
 ### Deutsche Monatsnamen
 
@@ -251,6 +253,8 @@ $dt = new DateTime(null, $oTimezone);
 echo $aMonthNamesDE[$dt->format('n')-1];
 // Jänner (Heute 2015-01-12)
 ~~~
+
+Hierzu sein auch noch auf diesen Thread hingewiesen: [http://www.php.de/php-einsteiger/112963-kalendermonat-und-kalendertag-bestimmten.html#post831698](http://www.php.de/php-einsteiger/112963-kalendermonat-und-kalendertag-bestimmten.html#post831698)
 
 
 

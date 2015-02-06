@@ -73,98 +73,111 @@ Nachfolgende Seiten aus der PHP-Dokumentation finden in den Beispielen laufend V
 - [DateTime::createFromFormat](http://php.net/manual/de/datetime.createfromformat.php)  
 
 
+<div class="alert alert-info">
+  Für alle nachfolgenden Beispiele wird mittels <code>date_default_timezone_set('Europe/Berlin');</code> 
+  die verwendete <strong>Standard-Zeitzone</strong> gesetzt.
+</div>
+
 
 ### DateTime-Objekt erstellen
 
 ~~~ php
-$oTimezone = new DateTimeZone('Europe/Berlin');
-
 // Jetzt
-$dt = new DateTime(null, $oTimezone);
+$dt = new DateTime();
 echo $dt->format('Y-m-d');
 // 2015-01-19
+~~~
 
+Ebenso können auch gleich relative Formate verwendet werden.
+
+~~~ php
 // Morgen
-$dt = new DateTime('tomorrow', $oTimezone);
+$dt = new DateTime('tomorrow');
 echo $dt->format('Y-m-d');
 // 2015-01-20
 
 // Übermorgen
-$dt = new DateTime('+2 days', $oTimezone);
+$dt = new DateTime('+2 days');
 echo $dt->format('Y-m-d');
 // 2015-01-21
+
+// Letzter Freitag im Januar (des aktuellen Jahres)
+$dt = new DateTime('last friday of january');  
+echo $dt->format('Y-m-d');  
+// 2015-01-30   
+
+// Letzter Freitag im Januar 2016
+$dt = new DateTime('last friday of january 2016');  
+echo $dt->format('Y-m-d');  
+// 2016-01-29  
+
+// Erster Tag (Montag) der KW2 (Kalenderwoche) von 2015
+$dt = new DateTime('2015-W03'); // Woche muss zweistellig sein
+echo $dt->format('Y-m-d');
+// 2015-01-12 (Montag)
 ~~~
 
 
+### Von abweichenden Format-Strings erzeugen
 
-### Von abweichenden Formaten erzeugen
 
 ~~~ php
-$oTimezone = new DateTimeZone('Europe/Berlin');
-
 $str = '13012015';
 $format = 'dmY';
-$dt = DateTime::createFromFormat($format, $str, $oTimezone);
+$dt = DateTime::createFromFormat($format, $str);
 echo $dt->format('Y-m-d');
 // 2015-01-13
+~~~
 
 
+~~~ php
 $d = 18;   // 18. Tag
 $y = 2015; // des Jahres 2015
-$dt = DateTime::createFromFormat('z Y', sprintf('%s %s', $d - 1, $y), $oTimezone); 
+$dt = DateTime::createFromFormat('z Y', sprintf('%s %s', $d - 1, $y)); 
 echo $dt->format('Y-m-d');
 // 2015-01-18
 ~~~
 
 
+### Schaltjahr
+
+
+~~~ php
+$dt = DateTime::createFromFormat('Y', '2015');
+echo $dt->format('L');
+// 0 (kein Schaltjahr)
+
+$dt = DateTime::createFromFormat('Y', '2016');
+echo $dt->format('L');
+// 1 (Schaltjahr)
+~~~
 
 
 ### Berechnungen auf vorhandene DateTime-Objekte
 
-~~~ php
-$oTimezone = new DateTimeZone('Europe/Berlin');
 
-$dt = new DateTime(null, $oTimezone);
+~~~ php
+$dt = new DateTime(); // 2015-01-19
 $dt->modify('+2 months');
 echo $dt->format('Y-m-d');
 // 2015-03-19
 ~~~
 
 
-
-
-### Schaltjahr
-
-~~~ php
-$oTimezone = new DateTimeZone('Europe/Berlin');
-
-$dt = DateTime::createFromFormat('Y', '2015', $oTimezone);
-echo $dt->format('L');
-// 0 (kein Schaltjahr)
-
-$dt = DateTime::createFromFormat('Y', '2016', $oTimezone);
-echo $dt->format('L');
-// 1 (Schaltjahr)
-~~~
-
-
-
 ### Differenzen
 
 
 ~~~ php
-$oTimezone = new DateTimeZone('Europe/Berlin');
-
-$dt1 = new DateTime('2015-01-01', $oTimezone);
-$dt2 = new DateTime('2015-01-12', $oTimezone);
+$dt1 = new DateTime('2015-01-01');
+$dt2 = new DateTime('2015-01-12');
 
 $dtInterval = $dt1->diff($dt2);
 echo $dtInterval->format('%R%a days');
 // +11 days
 
 // ist Benutzer schon seit 30 Tagen registriert?
-$regDate = new DateTime('2014-12-15', $oTimezone);
-$now     = new DateTime(null, $oTimezone); // 2015-01-19
+$regDate = new DateTime('2014-12-15');
+$now     = new DateTime(); // 2015-01-19
 
 if ( $now->modify('-30 days') >= $regDate ) {
     echo "Ja!";
@@ -173,8 +186,8 @@ if ( $now->modify('-30 days') >= $regDate ) {
    
 // oder
 
-$regDate = new DateTime('2014-12-15', $oTimezone);
-$now     = new DateTime(null, $oTimezone); // 2015-01-19
+$regDate = new DateTime('2014-12-15');
+$now     = new DateTime(); // 2015-01-19
 
 echo $now->diff($regDate)->days; // 35
 // somit:
@@ -186,12 +199,10 @@ var_dump($now->diff($regDate)->days > 30); // true
 ### Vergleiche
 
 ~~~ php
-$oTimezone = new DateTimeZone('Europe/Berlin');
+$dt1 = new DateTime('now');
+$dt2 = new DateTime('tomorrow');
 
-$dt1 = new DateTime('now', $oTimezone);
-$dt2 = new DateTime('tomorrow', $oTimezone);
-
-// ab PHP 5.2.2
+// ab PHP 5.2.2 - davor siehe Doku
 var_dump($dt1 == $dt2); // false
 var_dump($dt1 < $dt2);  // true
 var_dump($dt1 > $dt2);  // false
@@ -202,27 +213,31 @@ var_dump($dt1 > $dt2);  // false
 ### Kalenderwochen
 
 ~~~ php
-$oTimezone = new DateTimeZone('Europe/Berlin');
-
 // erster Tag von KW2 in 2015
-$dt = new DateTime('2015-W03', $oTimezone); // Woche muss zweistellig sein
+$dt = new DateTime('2015-W03'); // Woche muss zweistellig sein
 echo $dt->format('Y-m-d');
 // 2015-01-12 (Montag)
 
 // alternativ
-$dt = new DateTime(null, $oTimezone);
+$dt = new DateTime();
 $dt->setISODate(2015, 3);
 echo $dt->format('Y-m-d');
 // 2015-01-12 (Montag)
+~~~
 
+
+~~~ php
 // Tag gehört zu welcher Kalenderwoche
-$dt = new DateTime('2015-01-15', $oTimezone);
+$dt = new DateTime('2015-01-15');
 echo $dt->format('W');
 // 03
+~~~
 
+
+~~~ php
 // Wie viele Kalenderwochen hat das Jahr ... ?
 $ultimo = '2015-12-31';
-$dt = new DateTime($ultimo, $oTimezone);
+$dt = new DateTime($ultimo);
 echo ($dt->format('W') > 52) ? 53 : 52;
 // 53
 ~~~
@@ -232,12 +247,10 @@ echo ($dt->format('W') > 52) ? 53 : 52;
 ### Deutsche Wochentage
 
 ~~~ php
-$oTimezone = new DateTimeZone('Europe/Berlin');
-
 $aWeekdayNamesDE = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
-$dt = new DateTime(null, $oTimezone);
+$dt = new DateTime();
 echo $aWeekdayNamesDE[$dt->format('w')];  // 'w': 0 (für Sonntag) bis 6 (für Samstag)
-// Montag (Heute Mo. 2015-01-12)
+// Montag (Mo. 2015-01-12)
 ~~~
 
 Hierzu sein auch noch auf diesen Thread hingewiesen: [http://www.php.de/php-einsteiger/112963-kalendermonat-und-kalendertag-bestimmten.html#post831698](http://www.php.de/php-einsteiger/112963-kalendermonat-und-kalendertag-bestimmten.html#post831698)
@@ -246,12 +259,10 @@ Hierzu sein auch noch auf diesen Thread hingewiesen: [http://www.php.de/php-eins
 ### Deutsche Monatsnamen
 
 ~~~ php
-$oTimezone = new DateTimeZone('Europe/Berlin');
-
 $aMonthNamesDE = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
-$dt = new DateTime(null, $oTimezone);
+$dt = new DateTime();
 echo $aMonthNamesDE[$dt->format('n')-1];
-// Jänner (Heute 2015-01-12)
+// Januar (2015-01-12)
 ~~~
 
 Hierzu sein auch noch auf diesen Thread hingewiesen: [http://www.php.de/php-einsteiger/112963-kalendermonat-und-kalendertag-bestimmten.html#post831698](http://www.php.de/php-einsteiger/112963-kalendermonat-und-kalendertag-bestimmten.html#post831698)
@@ -265,15 +276,13 @@ Hierzu sein auch noch auf diesen Thread hingewiesen: [http://www.php.de/php-eins
 Üblicherweise lagert man diese Vergleiche direkt an die Datebank aus. Hier dennoch als Beispiel eine PHP-Variante.
 
 ~~~ php
-function overlap_timespans($sBegin1, $sEnd1, $sBegin2, $sEnd2, $sTimeTolerance = '', $sTZ = 'Europe/Berlin') {
+function overlap_timespans($sBegin1, $sEnd1, $sBegin2, $sEnd2, $sTimeTolerance = '') {
     
-    $oTimezone = new DateTimezone($sTZ);
+    $dt1_begin = new DateTime($sBegin1);
+    $dt1_end   = new DateTime($sEnd1);
     
-    $dt1_begin = new DateTime($sBegin1, $oTimezone);
-    $dt1_end   = new DateTime($sEnd1, $oTimezone);
-    
-    $dt2_begin = new DateTime($sBegin2, $oTimezone);
-    $dt2_end   = new DateTime($sEnd2, $oTimezone);
+    $dt2_begin = new DateTime($sBegin2);
+    $dt2_end   = new DateTime($sEnd2);
    
     // correct tolerance if given
     if (!empty($sTimeTolerance)) {
@@ -302,8 +311,6 @@ function overlap_timespans($sBegin1, $sEnd1, $sBegin2, $sEnd2, $sTimeTolerance =
     return false;
 }
 
-
-$oTimezone = new DateTimeZone('Europe/Berlin');
 
 var_dump( overlap_timespans('14:00', '15:00', '15:00', '16:00') ); // true
 var_dump( overlap_timespans('14:00', '15:00', '15:00', '16:00', '1 minute') ); // false

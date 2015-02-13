@@ -22,9 +22,10 @@ $(function() {
         && location.hostname == this.hostname) {
             var $target = $(this.hash);
             $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
+            var $atrgethash = $(this).attr('href');
             if ($target.length) {
                 var targetOffset = $target.offset().top;
-                $('html,body').animate({scrollTop: targetOffset}, 1000, function (){location.hash = $target;} );
+                $('html,body').animate({scrollTop: targetOffset}, 1000, function (){location.hash = $targethash;} );
                 return false;
             }
         }

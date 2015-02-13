@@ -1,5 +1,5 @@
 /*
-$(function(){
+$(function() {
     $('a[href*=#]').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
         && location.hostname == this.hostname) {
@@ -15,6 +15,24 @@ $(function(){
 });
 */
 
+
+$(function() {
+    $('a[href*=#]').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+        && location.hostname == this.hostname) {
+            var $target = $(this.hash);
+            $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
+            if ($target.length) {
+                var targetOffset = $target.offset().top;
+                $('html,body').animate({scrollTop: targetOffset}, 1000, function (){location.hash = ziel;} );
+                return false;
+            }
+        }
+    });
+});
+
+
+/*
 $(document).ready(function() {
 	// Alle internen Links auswählen
 	$('a[href*=#]').bind("click", function(event) {
@@ -32,3 +50,4 @@ $(document).ready(function() {
    });
 return false;
 });
+*/

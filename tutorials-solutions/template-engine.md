@@ -391,17 +391,20 @@ In diesem Test-Beispiel wird [Composer](http://php-de.github.io/jumpto/composer/
 für das Autoloading Verwendet.
 
 `test.phtml`
-~~~ html
+
+~~~ php
 <h1>Hallo Welt!</h1>
 <?= $this->render('@here/another-template', array('today' => $this->today)) ?>
 ~~~
 
 `another-template.phtml`
-~~~ html
+
+~~~ php
 <p>Heute ist der: <?= $this->today ?></p>
 ~~~
 
 `test.php`
+
 ~~~ php
 <?php
 
@@ -417,10 +420,12 @@ echo $engine->render('@here/test', array('today' => new DateTime));
 ~~~
 
 Resultat:
+
 ~~~ html
 <h1>Hallo Welt!</h1>
 <p>Heute ist der: 30.11.2014</p>
 ~~~
+
 
 Aus technischer Sicht sind den Möglichkeiten dieser Template-Engine keine Grenzen gesetzt. 
 Du solltest dir aber darüber im klaren sein, was eine Template-Engine für Aufgaben übernehmen 

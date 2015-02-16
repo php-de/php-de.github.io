@@ -16,19 +16,19 @@ author:
 
 inhalt:
     -   name:   "Was sind Template Engines?"
-        anchor: 
+        anchor: was-sind-template-engines
         simple: ""
 
     -   name:   "Wann sind Template Engines sinnvoll?"
-        anchor: 
+        anchor: wann-sind-template-engines-sinnvoll
         simple: ""
 
     -   name:   "Welche Template Engine sollte ich benutzen?"
-        anchor: 
+        anchor: welche-template-engine-sollte-ich-benutzen
         simple: ""
 
     -   name:   "Was ist nötig für eine leicht erweiterbare solide Template Engine?"
-        anchor: 
+        anchor: was-ist-ntig-fr-eine-leicht-erweiterbare-solide-template-engine
         simple: ""
 
 

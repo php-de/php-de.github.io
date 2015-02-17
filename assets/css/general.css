@@ -135,7 +135,7 @@
     }
 
     #guide h3 {
-        font-size:1.6em !important;
+        font-size:1.5em !important;
         font-weight:bold;
     }
 
@@ -146,6 +146,11 @@
 
     #guide h5 {
         font-size:1.0em !important;
+        font-weight:bold;
+    }
+    
+    #guide h6 {
+        font-size:0.8em !important;
         font-weight:bold;
     }
 

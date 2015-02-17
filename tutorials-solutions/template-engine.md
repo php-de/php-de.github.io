@@ -1,7 +1,7 @@
 ---
 layout: guide
 
-permalink: /jumpto/tutorials-solutions/
+permalink: /jumpto/template-engine/
 title: "Template-Engine"
 group: "Tutorials / Fertiglösungen"
 orderId: 3

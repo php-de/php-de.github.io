@@ -35,15 +35,11 @@ inhalt:
     -   name:   "Implementierung"
         anchor: implementierung
         simple: ""
-
-
-entry-type: in-progress
-
 ---
 
 #### Was sind Template Engines?
 
-Template Engines sind Bibliotheken die den notwendigen Aufwand zur Trennung von 
+Template Engines sind Bibliotheken, die den notwendigen Aufwand zur Trennung von 
 HTML und PHP so gering wie möglich halten. Template Engines haben dabei die Aufgabe 
 Methoden und Variablen in einen für sich geschlossenen Bereich ( Scope ) bereit zu stellen. 
 Viele Template Engines heben sich von PHP ab, indem sie eine eigene Template-Sprache 
@@ -68,9 +64,9 @@ vertraut machen musst, als deine eigentliche Anwendung je sein wird.
 
 #### Was ist nötig für eine leicht erweiterbare solide Template Engine?
 
-Aus technischer Sicht benötigt eine Template Engine 2 Klassen. Eine Klasse die es ermöglicht 
-globale Variablen und Template-eigene Funktionen zu registrieren und eine Methode liefert 
-das Rendern des Templates anzustoßen. Eine weitere Klasse die als Template-Instanz dient und 
+Aus technischer Sicht benötigt eine Template Engine zwei Klassen. Eine Klasse, die es ermöglicht 
+globale Variablen und Template-eigene Funktionen zu registrieren und eine Methode liefert, 
+die das Rendern des Templates anzustoßen. Eine weitere Klasse, die als Template-Instanz dient, und 
 die es der Render-Methode ermöglicht dem Template zur Verfügung stehende Methoden von den 
 eigentlichen Engine-Funktionen zu trennen. Mehr ist aus technischer Sicht für eine traditionelle 
 Template Engine nicht notwendig.
@@ -289,7 +285,7 @@ Templates weitere Templates aufgerufen werden können.
 
 ##### Die Template-Klasse
 
-Die Template-Klasse dient als Handler und wird in dieser Implementierung als `final` definiert 
+Die Template-Klasse dient als Handler und wird in dieser Implementierung als `final` definiert, 
 um zu verhindern das die Template-Klasse selbst erweitert wird. Dies soll Methoden und 
 Eigenschaften-Konflikte innerhalb der Templates verhindern.
 

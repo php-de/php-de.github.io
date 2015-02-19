@@ -15,18 +15,21 @@ author:
         profile: 21246
 
 inhalt:
-    -   name: ""
-        anchor: 
+    -   name: "Beispiel"
+        anchor: beispiel
+        simple: ""
+
+    -   name: "Ausgabe"
+        anchor: ausgabe
         simple: ""
 
 ---
-
-### Arrays mit Objekten als PHP-Quellcode ausgeben
 
 Manchmal besteht der Wunsch, Arrays die auch Objekte vom Typ `stdClass` enthalten,
 als PHP-Quellcode zu exportieren. Die folgende Funktion hilft da `var_export()` etwas nach.
 
 ~~~ php
+// Funktion
 function dump_arrobj($arrobj) { 
     echo '<pre>'.str_ireplace( 'stdClass::__set_state', '(object)', var_export($arrobj,true) ).'</pre>'; 
 }  
@@ -74,4 +77,5 @@ array (
 Eine Variable und = davorgesetzt und ein Semikolon am Ende, und schon kann dies in einem Skript zum Testen benutzt werden.
 
 
-Quelle-Originalbeitrag: [http://www.php.de/php-fortgeschrittene/109293-erledigt-arrays-mit-objekten-als-php-quellcode-ausgeben.html](http://www.php.de/php-fortgeschrittene/109293-erledigt-arrays-mit-objekten-als-php-quellcode-ausgeben.html)
+##### Quelle-Originalbeitrag
+[http://www.php.de/php-fortgeschrittene/109293-erledigt-arrays-mit-objekten-als-php-quellcode-ausgeben.html](http://www.php.de/php-fortgeschrittene/109293-erledigt-arrays-mit-objekten-als-php-quellcode-ausgeben.html)

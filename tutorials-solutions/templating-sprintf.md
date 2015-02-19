@@ -1,7 +1,7 @@
 ---
 layout: guide
 
-title: "\"Templating\" auf Basis von sprintf"
+title: "\"Templating\" auf Basis von sprintf()"
 group: "Tutorials / Fertiglösungen"
 permalink: /jumpto/templating-sprintf/
 orderId: 6

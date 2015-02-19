@@ -1,10 +1,10 @@
 ---
 layout: guide
 
-permalink: /jumpto/templating-sprintf/
 title: "\"Templating\" auf Basis von sprintf"
-group: "Allgemein"
-orderId: 7
+group: "Tutorials / Fertiglösungen"
+permalink: /jumpto/templating-sprintf/
+orderId: 6
 
 creator: nikosch
 author:

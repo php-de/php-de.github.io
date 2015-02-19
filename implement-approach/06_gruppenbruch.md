@@ -3,7 +3,7 @@ layout: guide
 
 permalink: /jumpto/gruppenbruch/
 title: "Gruppenbruch"
-group: "Standard Implementierungsansätze"
+group: "Standard Implementierungsansätze / Code-Snippets"
 orderId: 6
 
 creator: nikosch

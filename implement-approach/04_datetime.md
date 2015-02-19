@@ -3,7 +3,7 @@ layout: guide
 
 permalink: /jumpto/datetime/
 title: "Datum und Uhrzeit"
-group: "Standard Implementierungsansätze"
+group: "Standard Implementierungsansätze / Code-Snippets"
 orderId: 4
 
 creator: hausl

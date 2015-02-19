@@ -3,7 +3,7 @@ layout: guide
 
 permalink: /jumpto/float-vereinheitlichen/
 title: "Float vereinheitlichen"
-group: "Standard Implementierungsansätze"
+group: "Standard Implementierungsansätze / Code-Snippets"
 orderId: 10
 
 creator: nikosch

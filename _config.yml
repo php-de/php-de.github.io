@@ -79,8 +79,8 @@ groups:
       path:   "/oop"
       anchor: "oop"
 
-    - name:   "Standard Implementierungsansätze"
-      desc:   "Gezielte Lösungsansätze für oft gefragtes"
+    - name:   "Standard Implementierungsansätze / Code-Snippets"
+      desc:   "Gezielte Lösungsansätze und nützliche Code-Schnipsel für oft gefragtes"
       path:   "/implement-approach"
       anchor: "implement-approach"
 

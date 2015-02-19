@@ -3,7 +3,7 @@ layout: guide
 
 permalink: /jumpto/kombinatorik-loesungen/
 title: "Lösungsvorschläge zu kombinatorischen Standardaufgaben"
-group: "Standard Implementierungsansätze"
+group: "Standard Implementierungsansätze / Code-Snippets"
 orderId: 12
 
 creator: mermshaus

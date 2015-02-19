@@ -29,7 +29,6 @@ Manchmal besteht der Wunsch, Arrays die auch Objekte vom Typ `stdClass` enthalte
 als PHP-Quellcode zu exportieren. Die folgende Funktion hilft da `var_export()` etwas nach.
 
 ~~~ php
-// Funktion
 function dump_arrobj($arrobj) { 
     echo '<pre>'.str_ireplace( 'stdClass::__set_state', '(object)', var_export($arrobj,true) ).'</pre>'; 
 }  

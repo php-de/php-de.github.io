@@ -26,7 +26,7 @@ inhalt:
 ---
 
 Kleine komplexe Arrays mal schnell in eine SQL-Datenbank zu schreiben wird häufiger gewünscht. 
-Hinweise findet man genug, kurze nachvollziehbare C&P-Beispiele schon weniger. 
+Hinweise findet man genug, kurze nachvollziehbare Copy&Paste-Beispiele schon weniger. 
 Das liegt wohl auch daran, dass immer eine Datenbank benötigt wird. 
 Für solche kleinen Tests eignet sich SQLite hervorragend, zumal die Datenbank auch im Speicher erstellt werden kann.
 

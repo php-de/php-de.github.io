@@ -7,6 +7,18 @@ group: "Einführung"
 orderId: 4
 
 creator: nikosch
+author:
+    - name: nikosch
+      profile: 2314
+
+    - name: Manko10
+      profile: 1139
+
+    - name: mermshaus
+      profile: 15041
+      
+    - name: hausl
+      profile: 21246
 
 inhalt:
     -   name:   "Ist die mysql-Erweiterung wirklich veraltet und sollte nicht mehr genutzt werden?"
@@ -41,26 +53,12 @@ inhalt:
         anchor: sql-injection
         simple: ""
 
-    -   name:   "You have an error in your SQL syntax; check the manual that corresponds to ..."
+    -   name:   "You have an error in your SQL syntax;  ... Warning: mysql_fetch_row() expects parameter 1 to be resource, boolean given"
         anchor: sql-error
         simple: ""
 
-author:
-    - name: nikosch
-      profile: 2314
-
-    - name: Manko10
-      profile: 1139
-
-    - name: mermshaus
-      profile: 15041
-      
-    - name: hausl
-      profile: 21246
-      
 
 entry-type: in-discussion
-
 ---
 
 #### Ist die mysql-Erweiterung wirklich veraltet und sollte nicht mehr genutzt werden?
@@ -144,8 +142,7 @@ einen Stringbegrenzer, ein Semikolon oder eine Klammer vergessen. Siehe:
 
 
 
-#### Warum werden auf meiner Seite die Umlaute falsch dargestellt, obwohl ich
-UTF-8 im HTML-Dokument angegeben habe?
+#### Warum werden auf meiner Seite die Umlaute falsch dargestellt, obwohl ich UTF-8 im HTML-Dokument angegeben habe?
 {: #html-charset}
 
 Die Zeichensatz-Angabe im `meta`-Element im HTML-Code ist nur eine von mehreren
@@ -204,11 +201,7 @@ SQL-Injection]({{ site.url }}/jumpto/sql-injection/) zu finden.
 
 
 
-#### You have an error in your SQL syntax; check the manual that corresponds to
-your MySQL server version for the right syntax to use near '…' at line …“ /
-„Warning: mysql_fetch_row() expects parameter 1 to be resource, boolean
-given“
-{: #sql-error}
+#### You have an error in your SQL syntax; ... Warning: mysql_fetch_row() expects parameter 1 to be resource, boolean given {: #sql-error}
 
 Der SQL-String für die Datenbankabfrage ist fehlerhaft. Lass dir den fertigen
 String der entsprechenden Query vor der Anfrage testweise ausgeben. Siehe:

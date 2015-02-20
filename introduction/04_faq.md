@@ -21,7 +21,7 @@ inhalt:
         anchor: affenformular
         simple: ""
 
-    -   name:   "Ich erhalte immer die Meldung "headers already sent"
+    -   name:   "Ich erhalte immer die Meldung \"headers already sent\""
         anchor: headers-already-sent
         simple: ""
 

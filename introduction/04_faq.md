@@ -2,13 +2,17 @@
 layout: guide
 
 permalink: /jumpto/faq/
-title: "FAQ"
+title: "FAQ - Häufig gestellte Fragen aus dem Themenbereich des Forums."
 group: "Einführung"
 orderId: 4
 
 creator: nikosch
 
 inhalt:
+    -   name:   "Ist die mysql-Erweiterung wirklich veraltet und sollte nicht mehr genutzt werden?"
+        anchor: deprecated-mysql
+        simple: ""
+
     -   name:   "Warum sollte ich eine Mailerklasse statt der mail()-Funktion verwenden?"
         anchor: mailerklasse
         simple: ""
@@ -41,10 +45,6 @@ inhalt:
         anchor: sql-error
         simple: ""
 
-    -   name:   "Ist die mysql-Erweiterung wirklich veraltet und sollte nicht mehr genutzt werden?"
-        anchor: deprecated-mysql
-        simple: ""
-
 author:
     - name: nikosch
       profile: 2314
@@ -54,13 +54,25 @@ author:
 
     - name: mermshaus
       profile: 15041
+      
+    - name: hausl
+      profile: 21246
+      
 
 entry-type: in-discussion
 
 ---
 
-Frequently Asked Questions -- häufig gestellte Fragen aus dem Themenbereich des
-Forums.
+#### Ist die mysql-Erweiterung wirklich veraltet und sollte nicht mehr genutzt werden?
+{: #deprecated-mysql}
+
+Ja. Das „mysql“ bezieht sich hier allerdings *nicht* auf das komplette
+Datenbanksystem MySQL, sondern ist lediglich der Name eines der drei APIs, die
+PHP zur Kommunikation mit MySQL-Datenbanken nutzen kann. Die anderen beiden
+(nicht veralteten) APIs sind [mysqli](http://php.net/mysqli) und
+[PDO](http://php.net/pdo). Mehr Hintergründe und Empfehlungen stehen [in der
+PHP-Dokumentation](http://php.net/manual/en/mysqlinfo.api.choosing.php).
+
 
 
 #### Warum sollte ich eine Mailerklasse statt der `mail()`-Funktion verwenden?
@@ -202,14 +214,3 @@ Der SQL-String für die Datenbankabfrage ist fehlerhaft. Lass dir den fertigen
 String der entsprechenden Query vor der Anfrage testweise ausgeben. Siehe:
 [SQL-Fehlerbehebung]({{ site.url }}/jumpto/sql/).
 
-
-
-#### Ist die mysql-Erweiterung wirklich veraltet und sollte nicht mehr genutzt werden?
-{: #deprecated-mysql}
-
-Ja. Das „mysql“ bezieht sich hier allerdings *nicht* auf das komplette
-Datenbanksystem MySQL, sondern ist lediglich der Name eines der drei APIs, die
-PHP zur Kommunikation mit MySQL-Datenbanken nutzen kann. Die anderen beiden
-(nicht veralteten) APIs sind [mysqli](http://php.net/mysqli) und
-[PDO](http://php.net/pdo). Mehr Hintergründe und Empfehlungen stehen [in der
-PHP-Dokumentation](http://php.net/manual/en/mysqlinfo.api.choosing.php).

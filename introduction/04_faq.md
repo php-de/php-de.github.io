@@ -8,6 +8,43 @@ orderId: 4
 
 creator: nikosch
 
+inhalt:
+    -   name:   "Warum sollte ich eine Mailerklasse statt der mail()-Funktion verwenden?"
+        anchor: mailerklasse
+        simple: ""
+
+    -   name:   "Wie kann ich erreichen, dass mein Formular bei Unvollständigkeit wieder ausgefüllt wird?"
+        anchor: formular-gefuellt
+        simple: ""
+
+    -   name:   "Was ist ein Affenformular?"
+        anchor: affenformular
+        simple: ""
+
+    -   name:   "Ich erhalte immer die Meldung "headers already sent"
+        anchor: headers-already-sent
+        simple: ""
+
+    -   name:   "Nach Aktion XY zeigt mein Browser nur noch eine weiße Seite"
+        anchor: weisse-seite
+        simple: ""
+
+    -   name:   "Warum werden auf meiner Seite die Umlaute falsch dargestellt, obwohl ich UTF-8 im HTML-Dokument angegeben habe?"
+        anchor: html-charset
+        simple: ""
+
+    -   name:   "Was ist eine SQL-Injection und was kann ich dagegen unternehmen?"
+        anchor: sql-injection
+        simple: ""
+
+    -   name:   "You have an error in your SQL syntax; check the manual that corresponds to ..."
+        anchor: sql-error
+        simple: ""
+
+    -   name:   "Ist die mysql-Erweiterung wirklich veraltet und sollte nicht mehr genutzt werden?"
+        anchor: deprecated-mysql
+        simple: ""
+
 author:
     - name: nikosch
       profile: 2314
@@ -19,40 +56,33 @@ author:
       profile: 15041
 
 entry-type: in-discussion
----
 
-{::options parse_block_html="true" /}
+---
 
 Frequently Asked Questions -- häufig gestellte Fragen aus dem Themenbereich des
 Forums.
 
 
-
-**„Warum sollte ich eine Mailerklasse statt der `mail`-Funktion verwenden?“**
-<a href="#mailerklasse">#</a>
+#### Warum sollte ich eine Mailerklasse statt der `mail()`-Funktion verwenden?
 {: #mailerklasse}
 
-<div style="margin-left: 20px;">
+Während es für die kleine, schnelle Info-Mail gerade noch okay ist, versuchen
+Leute immer wieder, das Rad neu zu erfinden, wenn es um Dinge wie HTML-Mails,
+Dateianhänge, eingebette Daten oder die passenden Mail-Header geht.
 
-> Während es für die kleine, schnelle Info-Mail gerade noch okay ist, versuchen
-> Leute immer wieder, das Rad neu zu erfinden, wenn es um Dinge wie HTML-Mails,
-> Dateianhänge, eingebette Daten oder die passenden Mail-Header geht.
->
-> Das muss heutzutage absolut nicht sein, denn dieses Rad wurde schon zu oft
-> neu erfunden, und die Chance, dass E-Mails wegen Kleinigkeiten (falscher Umbruch,
-> ungültiger Header, falsches Datumsformat, …) von anderen Mailservern als Spam
-> markiert oder ganz abgelehnt werden oder dass der Mailclient sie am Ende nicht
-> ordentlich darstellen kann, ist einfach zu groß.
->
-> *\[Kleinere Fehler behoben.\]*
+Das muss heutzutage absolut nicht sein, denn dieses Rad wurde schon zu oft
+neu erfunden, und die Chance, dass E-Mails wegen Kleinigkeiten (falscher Umbruch,
+ungültiger Header, falsches Datumsformat, …) von anderen Mailservern als Spam
+markiert oder ganz abgelehnt werden oder dass der Mailclient sie am Ende nicht
+ordentlich darstellen kann, ist einfach zu groß.
 
-- [Mail() ist tot, es lebe mail()](http://www.robo47.net/text/38-Mail-ist-tot-es-lebe-mail)
+- [Mail-Klassen](http://php-de.github.io/jumpto/mail-class/)
 
 Geeignete Mailerklassen sind etwa [PHPMailer](http://phpmailer.worxware.com/)
 und [Swift Mailer](http://swiftmailer.org/). Siehe hierzu auch [diesen
 Artikel]({{ site.url }}/jumpto/mail-class/).
 
-Bei der (nicht empfohlenen) direkten Nutzung der `mail`-Funktion muss
+Bei der (nicht empfohlenen) direkten Nutzung der `mail()`-Funktion muss
 sichergestellt werden, dass
 [E-Mail-Injection](http://de.wikipedia.org/wiki/E-Mail-Injection) nicht möglich
 ist. Findige Leute können sonst beispielsweise ein einfaches Kontaktformular
@@ -60,41 +90,20 @@ für den Versand von Spam an Dritte benutzen.
 
 - [Mail headers injections with PHP](http://www.phpsecure.info/v2/article/MailHeadersInject.en.php)
 
-</div>
 
-
-
-**„Wie kann ich erreichen, dass mein Formular bei Unvollständigkeit wieder
-ausgefüllt wird?“**
-<a href="#formular-gefuellt">#</a>
+#### Wie kann ich erreichen, dass mein Formular bei Unvollständigkeit wieder ausgefüllt wird?
 {: #formular-gefuellt}
 
-<div style="margin-left: 20px;">
-
-Ein Affenformular bietet genau diese Funktionalität. siehe
-[Affenformular]({{ site.url }}/jumpto/affenformular/)
-
-</div>
+Ein Affenformular bietet genau diese Funktionalität. Siehe [Affenformular]({{ site.url }}/jumpto/affenformular/)
 
 
-
-**„Was ist ein Affenformular?“**
-<a href="#affenformular">#</a>
+#### Was ist ein Affenformular? 
 {: #affenformular}
-
-<div style="margin-left: 20px;">
-
 Siehe: vorige Frage.
 
-</div>
 
-
-
-**„Ich erhalte immer die Meldung ‚headers already sent‘.“**
-<a href="#headers-already-sent">#</a>
+#### Ich erhalte immer die Meldung "headers already sent"
 {: #headers-already-sent}
-
-<div style="margin-left: 20px;">
 
 Das HTTP schreibt vor, dass der Header einer Response vor dem Body an den
 Client geschickt werden muss. Deshalb muss PHP den Header-String generieren
@@ -112,30 +121,20 @@ Marks](https://de.wikipedia.org/wiki/Byte_Order_Mark). Siehe auch:
 [Standardfehler]({{ site.url }}/jumpto/standardfehler/),
 [EVA-Prinzip]({{ site.url }}/jumpto/eva-prinzip/).
 
-</div>
 
 
-
-**„Nach Aktion XY zeigt mein Browser nur noch eine weiße Seite.“**
-<a href="#weisse-seite">#</a>
+#### Nach Aktion XY zeigt mein Browser nur noch eine weiße Seite.
 {: #weisse-seite}
-
-<div style="margin-left: 20px;">
 
 Wahrscheinlich handelt es sich um einen Parser-Fehler. Üblicherweise hast Du
 einen Stringbegrenzer, ein Semikolon oder eine Klammer vergessen. Siehe:
 [Standardfehler]({{ site.url }}/jumpto/standardfehler/).
 
-</div>
 
 
-
-**„Warum werden auf meiner Seite die Umlaute falsch dargestellt, obwohl ich
-UTF-8 im HTML-Dokument angegeben habe?“**
-<a href="#html-charset">#</a>
+#### Warum werden auf meiner Seite die Umlaute falsch dargestellt, obwohl ich
+UTF-8 im HTML-Dokument angegeben habe?
 {: #html-charset}
-
-<div style="margin-left: 20px;">
 
 Die Zeichensatz-Angabe im `meta`-Element im HTML-Code ist nur eine von mehreren
 Möglichkeiten, den Zeichensatz, in dem der Inhalt einer Seite kodiert ist, zu
@@ -172,15 +171,10 @@ header('Content-Type: text/html; charset=UTF-8');
 Das Hinzufügen dieser Zeile löst das Problem meist. Wie jeder `header`-Aufruf
 muss auch dieser vor der ersten Ausgabe des Scripts erfolgen.
 
-</div>
 
 
-
-**„Was ist eine SQL-Injection und was kann ich dagegen unternehmen?“**
-<a href="#sql-injection">#</a>
+#### Was ist eine SQL-Injection und was kann ich dagegen unternehmen?
 {: #sql-injection}
-
-<div style="margin-left: 20px;">
 
 Vor dem Absenden an das Datenbanksystem werden SQL-Queries in PHP in der
 Regel wie normale Strings behandelt. Dynamisch hinzugefügte Werte (etwa eine
@@ -196,33 +190,22 @@ nach dem `O` geschlossen wird.
 Weitere Informationen und sinnvolle Gegemaßnahmen sind im [Hauptartikel
 SQL-Injection]({{ site.url }}/jumpto/sql-injection/) zu finden.
 
-</div>
 
 
-
-**„You have an error in your SQL syntax; check the manual that corresponds to
+#### You have an error in your SQL syntax; check the manual that corresponds to
 your MySQL server version for the right syntax to use near '…' at line …“ /
 „Warning: mysql_fetch_row() expects parameter 1 to be resource, boolean
-given“**
-<a href="#sql-error">#</a>
+given“
 {: #sql-error}
-
-<div style="margin-left: 20px;">
 
 Der SQL-String für die Datenbankabfrage ist fehlerhaft. Lass dir den fertigen
 String der entsprechenden Query vor der Anfrage testweise ausgeben. Siehe:
 [SQL-Fehlerbehebung]({{ site.url }}/jumpto/sql/).
 
-</div>
 
 
-
-**„Ist die mysql-Erweiterung wirklich veraltet und sollte nicht mehr genutzt
-werden?“**
-<a href="#deprecated-mysql">#</a>
+#### Ist die mysql-Erweiterung wirklich veraltet und sollte nicht mehr genutzt werden?
 {: #deprecated-mysql}
-
-<div style="margin-left: 20px;">
 
 Ja. Das „mysql“ bezieht sich hier allerdings *nicht* auf das komplette
 Datenbanksystem MySQL, sondern ist lediglich der Name eines der drei APIs, die
@@ -230,5 +213,3 @@ PHP zur Kommunikation mit MySQL-Datenbanken nutzen kann. Die anderen beiden
 (nicht veralteten) APIs sind [mysqli](http://php.net/mysqli) und
 [PDO](http://php.net/pdo). Mehr Hintergründe und Empfehlungen stehen [in der
 PHP-Dokumentation](http://php.net/manual/en/mysqlinfo.api.choosing.php).
-
-</div>

@@ -201,7 +201,8 @@ SQL-Injection]({{ site.url }}/jumpto/sql-injection/) zu finden.
 
 
 
-#### You have an error in your SQL syntax; ... Warning: mysql_fetch_row() expects parameter 1 to be resource, boolean given {: #sql-error}
+#### You have an error in your SQL syntax; ... Warning: mysql_fetch_row() expects parameter 1 to be resource, boolean given 
+{: #sql-error}
 
 Der SQL-String für die Datenbankabfrage ist fehlerhaft. Lass dir den fertigen
 String der entsprechenden Query vor der Anfrage testweise ausgeben. Siehe:

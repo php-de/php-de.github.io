@@ -28,8 +28,9 @@ inhalt:
 entry-type: in-progress
 ---
 
-Oft möchte man eine spezielle, abweichende Sortierung erhalten, welche mit dem üblichen 
-`ORDER BY field1, field2, ...` nicht erreicht werden kann. Nachfolgend ein paar Beispiele dazu.
+Oft möchte man eine spezielle Sortierung der Ausgabe erhalten, welche mit dem üblichen 
+`ORDER BY field1, field2, ...` nicht erreicht werden kann. Nachfolgend ein paar Beispiele 
+mit Lösungsansätzen dazu.
 
 
 ### Sortierung nach unterschiedlichen Logiken
@@ -73,8 +74,8 @@ SELECT name, date_birth FROM persons LIMIT 3
 ~~~
 
   
-Wollen wir jedoch die ältersten drei Personen ausgeben, diese jedoch entgegen der obigen, 
-für `LIMIT` nötigen, Sortierung von jung nach alt soriteren lasen, benötigen wir ein Sub-Select.
+Wollen wir jedoch die ältersten drei Personen ausgeben, und diese entgegen der obigen, 
+für `LIMIT` nötigen, Sortierung von jung nach alt sortieren lasen, benötigen wir ein Sub-Select.
 
 ~~~ sql
 SELECT * FROM
@@ -138,14 +139,13 @@ SELECT name, date_birth FROM persons
 ~~~
 
   
-Nun wollen wir uns zuerst alle ausgeben lassen, die noch kein Gebturtsdatum haben,
-und danach alle anderen, aber alphabetisch sortiert. Da dies mittels `ORDER BY date_birth, 
-name` nicht mehr wie gewünscht funktioniert, müssen wir in diesem Fall ein zusätzliches 
-`IS NULL` in der `ORDER`-Klausel verwenden.
+Nun wollen wir uns zuerst alle Personen ausgeben lassen, die noch kein Geburtsdatum haben,
+und danach alle anderen, und das alphabetisch sortiert. Da dies mittels einem einfachen 
+`ORDER BY date_birth, name` nicht wie gewünscht funktioniert, müssen wir in diesem Fall 
+ein zusätzliches `IS NULL` in der `ORDER`-Klausel verwenden.
 
 ~~~ sql
 SELECT name, date_birth FROM persons ORDER BY date_birth IS NULL DESC, name
-
 
 +---------+------------+
 | name    | date_birth |

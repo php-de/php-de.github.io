@@ -12,7 +12,7 @@ author:
         profile: 21246
 
 inhalt:
-    -   name:   "Soriterung nach unterschiedlichen Kriterien"
+    -   name:   "Sortierung nach unterschiedlichen Kriterien"
         anchor: div-kriterien
         simple: ""
 
@@ -57,11 +57,11 @@ SELECT name, date_birth FROM persons
 8 rows in set (0.00 sec)
 ~~~
 
-
+  
 Möchten wir uns nun beispielsweise die ältersten drei Personen ausgeben lassen,
 so reicht bekannterweise ein `LIMIT 3` dafür aus.
 
-~~~
+~~~ sql
 SELECT name, date_birth FROM persons LIMIT 3
 ~~~
 
@@ -76,11 +76,11 @@ SELECT name, date_birth FROM persons LIMIT 3
 3 rows in set (0.00 sec)
 ~~~
 
-
+  
 Wollen wir jedoch die ältersten drei Personen ausgeben, diese jedoch entgegen der obigen, 
 für `LIMIT` nötigen, Sortierung von jung nach alt soriteren lasen, benötigen wir ein Sub-Select.
 
-~~~
+~~~ sql
 SELECT * FROM
   (SELECT name, date_birth FROM persons LIMIT 3) AS sub
 ORDER BY sub.date_birth DESC
@@ -97,16 +97,17 @@ ORDER BY sub.date_birth DESC
 3 rows in set (0.00 sec)
 ~~~
 
+  
 Je nach Belieben kann die `ORDER`-Klausel verändert werden, z.B die ältersen drei Personen, 
 jedoch alphabetisch sortiert.
 
-~~~
+~~~ sql
 SELECT * FROM
   (SELECT name, date_birth FROM persons LIMIT 3) AS sub
 ORDER BY sub.name
 ~~~
 
-~~~
+~~~ sql
 +--------+------------+
 | name   | date_birth |
 +--------+------------+
@@ -126,7 +127,7 @@ Ein etwas anderer Fall ist eine Art Vorsortierung nach einer gewissen Bedingung.
 Angenommen sein nun folgende Ausgangstabelle, in der uns das Geburtsdatum von 
 Sandra und Klaus noch nicht bekannt, und daher mit `NULL` gesetzt ist.
 
-~~~
+~~~ sql
 SELECT name, date_birth FROM persons
 ~~~
 
@@ -146,13 +147,13 @@ SELECT name, date_birth FROM persons
 8 rows in set (0.00 sec)
 ~~~
 
-
+  
 Nun wollen wir uns zuerst alle ausgeben lassen, die noch kein Gebturtsdatum haben,
 und danach alle anderen, aber alphabetisch sortiert. Da dies mittels `ORDER BY date_birth, 
 name` nicht mehr wie gewünscht funktioniert, müssen wir in diesem Fall ein zusätzliches 
 `IS NULL` in der `ORDER`-Klausel verwenden.
 
-~~~
+~~~ sql
 SELECT name, date_birth FROM persons ORDER BY date_birth IS NULL DESC, name
 ~~~
 

@@ -58,17 +58,17 @@ SELECT name, date_birth FROM persons
 
   
 Möchten wir uns nun beispielsweise die ältersten drei Personen ausgeben lassen,
-so reicht bekannterweise ein `LIMIT 3` dafür aus.
+so reicht dafür ein `LIMIT 3` mit der entsprechenden Sortierung aus.
 
 ~~~ sql
-SELECT name, date_birth FROM persons LIMIT 3
+SELECT name, date_birth FROM persons ORDER BY date_birth LIMIT 3
 
 +--------+------------+
 | name   | date_birth |
 +--------+------------+
+| Dieter | 1950-03-01 |
 | Stefan | 1955-08-01 |
 | Andrea | 1966-11-01 |
-| Klaus  | 1978-02-01 |
 +--------+------------+
 3 rows in set (0.00 sec)
 ~~~
@@ -79,15 +79,15 @@ Wollen wir nun wieder die ältersten drei Personen ausgeben, dieses mal jedoch, 
 
 ~~~ sql
 SELECT * FROM
-  (SELECT name, date_birth FROM persons LIMIT 3) AS sub
+  (SELECT name, date_birth FROM persons ORDER BY date_birth LIMIT 3) AS sub
 ORDER BY sub.date_birth DESC
 
 +--------+------------+
 | name   | date_birth |
 +--------+------------+
-| Klaus  | 1978-02-01 |
 | Andrea | 1966-11-01 |
 | Stefan | 1955-08-01 |
+| Dieter | 1950-03-01 |
 +--------+------------+
 3 rows in set (0.00 sec)
 ~~~
@@ -97,14 +97,14 @@ Je nach Belieben kann die `ORDER`-Klausel verändert werden, z.B. die ältersen 
 
 ~~~ sql
 SELECT * FROM
-  (SELECT name, date_birth FROM persons LIMIT 3) AS sub
+  (SELECT name, date_birth FROM persons ORDER BY date_birth LIMIT 3) AS sub
 ORDER BY sub.name
 
 +--------+------------+
 | name   | date_birth |
 +--------+------------+
 | Andrea | 1966-11-01 |
-| Klaus  | 1978-02-01 |
+| Dieter | 1950-03-01 |
 | Stefan | 1955-08-01 |
 +--------+------------+
 3 rows in set (0.00 sec)

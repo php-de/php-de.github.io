@@ -39,9 +39,7 @@ Dazu verwenden wir folgende Ausgangstabelle:
 
 ~~~ sql
 SELECT name, date_birth FROM persons
-~~~
 
-~~~
 +---------+------------+
 | name    | date_birth |
 +---------+------------+
@@ -63,9 +61,7 @@ so reicht bekannterweise ein `LIMIT 3` dafür aus.
 
 ~~~ sql
 SELECT name, date_birth FROM persons LIMIT 3
-~~~
 
-~~~
 +--------+------------+
 | name   | date_birth |
 +--------+------------+
@@ -84,9 +80,7 @@ für `LIMIT` nötigen, Sortierung von jung nach alt soriteren lasen, benötigen 
 SELECT * FROM
   (SELECT name, date_birth FROM persons LIMIT 3) AS sub
 ORDER BY sub.date_birth DESC
-~~~
 
-~~~
 +--------+------------+
 | name   | date_birth |
 +--------+------------+
@@ -105,9 +99,7 @@ jedoch alphabetisch sortiert.
 SELECT * FROM
   (SELECT name, date_birth FROM persons LIMIT 3) AS sub
 ORDER BY sub.name
-~~~
 
-~~~ sql
 +--------+------------+
 | name   | date_birth |
 +--------+------------+
@@ -129,9 +121,7 @@ Sandra und Klaus noch nicht bekannt, und daher mit `NULL` gesetzt ist.
 
 ~~~ sql
 SELECT name, date_birth FROM persons
-~~~
 
-~~~
 +---------+------------+
 | name    | date_birth |
 +---------+------------+
@@ -155,9 +145,8 @@ name` nicht mehr wie gewünscht funktioniert, müssen wir in diesem Fall ein zus
 
 ~~~ sql
 SELECT name, date_birth FROM persons ORDER BY date_birth IS NULL DESC, name
-~~~
 
-~~~
+
 +---------+------------+
 | name    | date_birth |
 +---------+------------+

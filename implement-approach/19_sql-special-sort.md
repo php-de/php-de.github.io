@@ -29,7 +29,7 @@ entry-type: in-progress
 ---
 
 Oft möchte man eine spezielle, abweichende Sortierung erhalten, welche mit dem üblichen 
-`ORDER BY field1, field2` nicht erreicht werden kann. Nachfolgend ein paar Beispiele dazu.
+`ORDER BY field1, field2, ...` nicht erreicht werden kann. Nachfolgend ein paar Beispiele dazu.
 
 
 ### Sortierung nach unterschiedlichen Logiken
@@ -59,7 +59,7 @@ SELECT name, date_birth FROM persons
 
 
 Möchten wir uns nun beispielsweise die ältersten drei Personen ausgeben lassen,
-so reicht bekannterweise ein LIMIT 3 dafür aus.
+so reicht bekannterweise ein `LIMIT 3` dafür aus.
 
 ~~~
 SELECT name, date_birth FROM persons LIMIT 3
@@ -78,7 +78,7 @@ SELECT name, date_birth FROM persons LIMIT 3
 
 
 Wollen wir jedoch die ältersten drei Personen ausgeben, diese jedoch entgegen der obigen, 
-für LIMIT nötigen, Sortierung von jung nach alt soriteren lasen, benötigen wir ein Sub-Select.
+für `LIMIT` nötigen, Sortierung von jung nach alt soriteren lasen, benötigen wir ein Sub-Select.
 
 ~~~
 SELECT * FROM
@@ -97,7 +97,7 @@ ORDER BY sub.date_birth DESC
 3 rows in set (0.00 sec)
 ~~~
 
-Je nach Belieben kann die ORDER-Klausel verändert werden, z.B die ältersen drei Personen, 
+Je nach Belieben kann die `ORDER`-Klausel verändert werden, z.B die ältersen drei Personen, 
 jedoch alphabetisch sortiert.
 
 ~~~
@@ -124,7 +124,7 @@ ORDER BY sub.name
 Ein etwas anderer Fall ist eine Art Vorsortierung nach einer gewissen Bedingung.
 
 Angenommen sein nun folgende Ausgangstabelle, in der uns das Geburtsdatum von 
-Sandra und Klaus noch nicht bekannt, und daher mit NULL gesetzt ist.
+Sandra und Klaus noch nicht bekannt, und daher mit `NULL` gesetzt ist.
 
 ~~~
 SELECT name, date_birth FROM persons
@@ -150,7 +150,7 @@ SELECT name, date_birth FROM persons
 Nun wollen wir uns zuerst alle ausgeben lassen, die noch kein Gebturtsdatum haben,
 und danach alle anderen, aber alphabetisch sortiert. Da dies mittels `ORDER BY date_birth, 
 name` nicht mehr wie gewünscht funktioniert, müssen wir in diesem Fall ein zusätzliches 
-`IS NULL` in der ORDER-Klausel verwenden.
+`IS NULL` in der `ORDER`-Klausel verwenden.
 
 ~~~
 SELECT name, date_birth FROM persons ORDER BY date_birth IS NULL DESC, name

@@ -25,15 +25,15 @@ inhalt:
         simple: ""
 
 
-entry-type: in-progress
+entry-type: in-discussion
 ---
 
-Oft möchte man eine spezielle Sortierung der Ausgabe erhalten, welche mit dem üblichen 
+Manchmal möchte man eine spezielle Sortierung der Ausgabe, welche mit dem üblichen 
 `ORDER BY field1, field2, ...` nicht erreicht werden kann. Nachfolgend ein paar Beispiele 
 mit Lösungsansätzen dazu.
 
 
-### Sortierung nach unterschiedlichen Logiken
+### Sortierung nach unterschiedlichen Kriterien
 {: #div-kriterien}
 
 Dazu verwenden wir folgende Ausgangstabelle:
@@ -74,8 +74,8 @@ SELECT name, date_birth FROM persons LIMIT 3
 ~~~
 
   
-Wollen wir jedoch die ältersten drei Personen ausgeben, und diese entgegen der obigen, 
-für `LIMIT` nötigen, Sortierung von jung nach alt sortieren lasen, benötigen wir ein Sub-Select.
+Wollen wir nun wieder die ältersten drei Personen ausgeben, dieses mal jedoch, entgegen der obigen für `LIMIT` nötigen Sortierlogik, 
+ von jung nach alt (also umgekehrt) sortieren lasen, benötigen wir ein Sub-Select.
 
 ~~~ sql
 SELECT * FROM
@@ -93,8 +93,7 @@ ORDER BY sub.date_birth DESC
 ~~~
 
   
-Je nach Belieben kann die `ORDER`-Klausel verändert werden, z.B die ältersen drei Personen, 
-jedoch alphabetisch sortiert.
+Je nach Belieben kann die `ORDER`-Klausel verändert werden, z.B. die ältersen drei Personen, alphabetisch sortiert.
 
 ~~~ sql
 SELECT * FROM
@@ -115,10 +114,10 @@ ORDER BY sub.name
 ### Vorsortierung nach einer Bedingung
 {: #bedingung}
 
-Ein etwas anderer Fall ist eine Art Vorsortierung nach einer gewissen Bedingung.
+Ein anderer Fall ist eine Art Vorsortierung nach einer gewissen Bedingung.
 
-Angenommen sein nun folgende Ausgangstabelle, in der uns das Geburtsdatum von 
-Sandra und Klaus noch nicht bekannt, und daher mit `NULL` gesetzt ist.
+Angenommen folgende Ausgangstabelle, in der das Geburtsdatum von 
+Klaus und Sandra noch nicht bekannt, und daher mit `NULL` gesetzt ist.
 
 ~~~ sql
 SELECT name, date_birth FROM persons

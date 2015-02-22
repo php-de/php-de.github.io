@@ -2,7 +2,7 @@
 layout: guide
 
 permalink: /jumpto/faq/
-title: "FAQ - Häufig gestellte Fragen aus dem Themenbereich des Forums."
+title: "FAQ - Häufig gestellte Fragen aus dem Themenbereich des Forums"
 group: "Einführung"
 orderId: 4
 
@@ -21,10 +21,6 @@ author:
       profile: 21246
 
 inhalt:
-    -   name:   "Ist die mysql-Erweiterung wirklich veraltet und sollte nicht mehr genutzt werden?"
-        anchor: deprecated-mysql
-        simple: ""
-
     -   name:   "Warum sollte ich eine Mailerklasse statt der mail()-Funktion verwenden?"
         anchor: mailerklasse
         simple: ""
@@ -49,6 +45,10 @@ inhalt:
         anchor: html-charset
         simple: ""
 
+    -   name:   "Ist die mysql-Erweiterung wirklich veraltet und sollte nicht mehr genutzt werden?"
+        anchor: deprecated-mysql
+        simple: ""
+
     -   name:   "Was ist eine SQL-Injection und was kann ich dagegen unternehmen?"
         anchor: sql-injection
         simple: ""
@@ -60,18 +60,6 @@ inhalt:
 
 entry-type: in-discussion
 ---
-
-#### Ist die mysql-Erweiterung wirklich veraltet und sollte nicht mehr genutzt werden?
-{: #deprecated-mysql}
-
-Ja. Das „mysql“ bezieht sich hier allerdings *nicht* auf das komplette
-Datenbanksystem MySQL, sondern ist lediglich der Name eines der drei APIs, die
-PHP zur Kommunikation mit MySQL-Datenbanken nutzen kann. Die anderen beiden
-(nicht veralteten) APIs sind [mysqli](http://php.net/mysqli) und
-[PDO](http://php.net/pdo). Mehr Hintergründe und Empfehlungen stehen [in der
-PHP-Dokumentation](http://php.net/manual/en/mysqlinfo.api.choosing.php).
-
-
 
 #### Warum sollte ich eine Mailerklasse statt der `mail()`-Funktion verwenden?
 {: #mailerklasse}
@@ -181,6 +169,16 @@ Das Hinzufügen dieser Zeile löst das Problem meist. Wie jeder `header`-Aufruf
 muss auch dieser vor der ersten Ausgabe des Scripts erfolgen.
 
 
+#### Ist die mysql-Erweiterung wirklich veraltet und sollte nicht mehr genutzt werden?
+{: #deprecated-mysql}
+
+Ja. Das „mysql“ bezieht sich hier allerdings *nicht* auf das komplette
+Datenbanksystem MySQL, sondern ist lediglich der Name eines der drei APIs, die
+PHP zur Kommunikation mit MySQL-Datenbanken nutzen kann. Die anderen beiden
+(nicht veralteten) APIs sind [mysqli](http://php.net/mysqli) und
+[PDO](http://php.net/pdo). Mehr Hintergründe und Empfehlungen stehen [in der
+PHP-Dokumentation](http://php.net/manual/en/mysqlinfo.api.choosing.php).
+
 
 #### Was ist eine SQL-Injection und was kann ich dagegen unternehmen?
 {: #sql-injection}
@@ -200,11 +198,9 @@ Weitere Informationen und sinnvolle Gegemaßnahmen sind im [Hauptartikel
 SQL-Injection]({{ site.url }}/jumpto/sql-injection/) zu finden.
 
 
-
 #### You have an error in your SQL syntax; ... Warning: mysql_fetch_row() expects parameter 1 to be resource, boolean given 
 {: #sql-error}
 
 Der SQL-String für die Datenbankabfrage ist fehlerhaft. Lass dir den fertigen
 String der entsprechenden Query vor der Anfrage testweise ausgeben. Siehe:
 [SQL-Fehlerbehebung]({{ site.url }}/jumpto/sql/).
-

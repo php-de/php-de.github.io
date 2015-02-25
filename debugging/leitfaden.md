@@ -53,10 +53,11 @@ Hier findest du einen Debugging Leitfaden, der Schritt für Schritt durch Grundl
 
 Dieser Leitfaden bezieht sich auf die Analyse von PHP Fehlern. Viele dieser Fehler können jedoch nur indirekt erkannt werden, da PHP erzeugte Fehler Teil der Browser-Ausgabe werden und somit den Anzeigegegebenenheiten des Browsers unterliegen. Es ist dringend zu empfehlen, zur Fehleranalyse immer den Browserquelltext heranzuziehen, da nur dort die Sichtbarkeit aller zur Verfügung stehenden Informationen gewährleistet ist. Nachfolgende Aussagen wie "Die Seite zeigt gar nichts an" beziehen sich immer auf den Browserquelltext.
 
+{::comment}
 Ein Analysefluss lässt sich linear nur schwer darstellen, deshalb nachfolgend und einleitend ein kleines Diagramm zur Fehlereingrenzung (für volle Größe - auf das Bild klicken):
 
 <a href="{{ site.url }}/images/debugging_analyse_1589px.jpg"><img alt="Analyse" src="{{ site.url }}/images/debugging_analyse_1589px.jpg" width="100%" /></a>
-
+{:/comment}
 
 ### Ausgangssituation 1
 

@@ -38,7 +38,7 @@ inhalt:
 
     -   name: "Proaktive Maßnahmen"
         anchor: proaktive-manahmen
-        simple: ""
+        simple: "Mehrzeilige Queries, Backticks, Stringbegrenzer"
 
     -   name: "Last but not least"
         anchor: last-but-not-least

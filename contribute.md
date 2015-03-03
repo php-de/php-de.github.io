@@ -67,21 +67,23 @@ Das JEKYLL-System benutzt [kramdown](http://kramdown.rubyforge.org/quickref.html
 
 #### YAML
 
-Jedes Dokument fängt mit einem YAML-Kopf an und muss zumindest den Eintrag `layout: guide` und `permalink: "/jump-to/dateiname-ohne-extension"` besitzen. Damit wird JEKYLL angewiesen das entsprechende Layout für Beiträge zu benutzen und den Permanent-Link richtig zu aggregieren.
+Jedes Dokument fängt mit einem YAML-Kopf an und muss zumindest die Einträge `layout: guide`, `permalink: "/jumpto/dateiname-ohne-extension/"` und `root: "../.."` besitzen. Damit wird JEKYLL angewiesen, das entsprechende Layout für Beiträge zu benutzen, den Permanent-Link richtig zu aggregieren und einen relativen Pfad in der Variablen `{{ "{{ page.root " }}}}` bereitzustellen, über den andere Seiten und sonstige Ressourcen verlinkt werden können.
 
 ~~~ yaml
 ---
 layout: guide
-permalink: "/jumpto/foobar"
+permalink: "/jumpto/foobar/"
+root: "../.."
 ---
 ~~~
 
-Zusätzlich ist es notwendig einen Titel anzugeben, dafür wurde das Feld `title` geschaffen.
+Zusätzlich ist es notwendig, einen Titel anzugeben. Dafür wurde das Feld `title` geschaffen.
 
 ~~~ yaml
 ---
 layout: guide
-permalink: "/jumpto/foobar"
+permalink: "/jumpto/foobar/"
+root: "../.."
 title: "Hallo Welt Tutorial"
 ---
 ~~~
@@ -91,7 +93,8 @@ Damit JEKYLL feststellen kann wer das Tutorial eigentlich ursprünglich verfasst
 ~~~ yaml
 ---
 layout: guide
-permalink: "/jumpto/foobar"
+permalink: "/jumpto/foobar/"
+root: "../.."
 title: "Hallo Welt Tutorial"
 
 creator: JohnDoe
@@ -108,7 +111,8 @@ Das Feld `name` ist notwendig, das Feld `profile` ist optional. Wenn einer der F
 ~~~ yaml
 ---
 layout: guide
-permalink: "/jumpto/foobar"
+permalink: "/jumpto/foobar/"
+root: "../.."
 title: "Hallo Welt Tutorial"
 
 creator: JohnDoe
@@ -132,7 +136,8 @@ Es wird kein Automatischer Index von deinem Beitrag erstellt, diesen musst du se
 ~~~ yaml
 ---
 layout: guide
-permalink: "/jumpto/foobar"
+permalink: "/jumpto/foobar/"
+root: "../.."
 title: "Hallo Welt Tutorial"
 
 creator: JohnDoe
@@ -156,21 +161,21 @@ inhalt:
 
 #### Sortierung
 
-Grundsätzlich kann für die Anzeige in der Hauptübersicht die Reihenfolge der Beiträge innerhalb einer Kategorie sortiert werden. Generell sortiert jekyll diese Beiträge nicht. Durch Angabe des Wertess `orderId` im jeweiligen Beitrag, kannst du beeinflussen nach welchem Beitrag dein Beitrag eingeordnet wird. Dieser Wert muss zwischen `0` und `25` definiert werden. Für den Fall das unsere Beiträge irgendwann diese Zahl pro Gruppe in der Übersicht übersteigt, werden wir dort mehr spielraum schaffen. Generell nimmt diese Zahl allerdings direkten Einfluss auf die Generierungzeit die unser Repository in Anspruch nimmt.
+Grundsätzlich kann für die Anzeige in der Hauptübersicht die Reihenfolge der Beiträge innerhalb einer Kategorie sortiert werden. Generell sortiert jekyll diese Beiträge nicht. Durch Angabe des Wertes `orderId` im jeweiligen Beitrag, kannst du beeinflussen nach welchem Beitrag dein Beitrag eingeordnet wird. Dieser Wert muss zwischen `0` und `25` definiert werden. Für den Fall das unsere Beiträge irgendwann diese Zahl pro Gruppe in der Übersicht übersteigt, werden wir dort mehr spielraum schaffen. Generell nimmt diese Zahl allerdings direkten Einfluss auf die Generierungzeit die unser Repository in Anspruch nimmt.
 
 
 #### Pfade für interne Verlinkung von Artikel, Bilder, etc.
 
-In Beiträgen verlinkte Bilder liegen zentral im Verzeichnis `/images/` im Root.
+In Beiträgen verlinkte Bilder liegen zentral im Verzeichnis `images` im Root.
 
-Die Jekyll-Variable `{{ "{{ site.url " }}}}` kann in *.md-Dateien genutzt werden, um auf den Document-Root-URL zuzugreifen.
+Die Jekyll-Variable `{{ "{{ page.root " }}}}` kann in *.md-Dateien genutzt werden, um einen (relativen) Pfad zum Document-Root zu erhalten.
 
-Interne Verlinkungen sollten somit so aussehen. Verzeichnisse sind Beispiele, es geht um das `{{ "{{ site.url " }}}}` und die absolute Verankerung:
+Interne Verlinkungen sollten somit so aussehen. Verzeichnisse sind Beispiele, es geht um das `{{ "{{ page.root " }}}}` und die Verankerung:
 
 
-- `[...]({{ "{{ site.url " }}}}/jumpto/whatever/)`
-- `<a href="{{ "{{ site.url " }}}}/jumpto/whatever/">...</a>`
-- `<img src="{{ "{{ site.url " }}}}/images/foo.png">`
+- `[...]({{ "{{ page.root " }}}}/jumpto/whatever/)`
+- `<a href="{{ "{{ page.root " }}}}/jumpto/whatever/">...</a>`
+- `<img src="{{ "{{ page.root " }}}}/images/foo.png">`
 
 
 ### Komponenten Vernetzung
@@ -183,4 +188,4 @@ Für den Fall das du dir nicht sicher bist ob du diese Komponente in diesem Repo
 
 ### Das Git Repository
 
-Unser Wissens-Repository basiert auf GIT und wird auf Github gehostet. Um etwas über den Umgang mit GIT zu erfahren und wie du dich auf Github an diesem Repository beteiligen kannst, haben wir ebenfalls einen [Beitrag](/jumpto/how-to/) bereitgestellt.
+Unser Wissens-Repository basiert auf GIT und wird auf Github gehostet. Um etwas über den Umgang mit GIT zu erfahren und wie du dich auf Github an diesem Repository beteiligen kannst, haben wir ebenfalls einen [Beitrag]({{ page.root }}/jumpto/how-to/) bereitgestellt.

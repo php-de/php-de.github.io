@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/inhalt-ein-und-ausblenden/
+root: ../..
 title: "Inhalt ein- und ausblenden"
 group: "Standard Implementierungsansätze / Code-Snippets"
 orderId: 8

@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/php-ini/
+root: ../..
 title: "php.ini - Wichtigsten Funktionen"
 group: "Allgemein"
 orderId: 19
@@ -93,7 +94,7 @@ Schon jetzt sollten <a href="http://www.php.net/manual/en/security.magicquotes.d
 
 ### register_globals
 
-Die Direktive register_globals in der php.ini bewirkt, dass alle Request-Parameter unter ihrem Namen als Variable im globalen [Scope]({{ site.url }}/jumpto/geltungsbereich-namensraum/) verfügbar sind. Wird einer PHP-Datei beispielsweise der GET-Parameter foo=bar übergeben, so ist bei aktiver register_globals Einstellung der Wert bar im Skript direkt unter dem Variablennamen $foo abrufbar.
+Die Direktive register_globals in der php.ini bewirkt, dass alle Request-Parameter unter ihrem Namen als Variable im globalen [Scope]({{ page.root }}/jumpto/geltungsbereich-namensraum/) verfügbar sind. Wird einer PHP-Datei beispielsweise der GET-Parameter foo=bar übergeben, so ist bei aktiver register_globals Einstellung der Wert bar im Skript direkt unter dem Variablennamen $foo abrufbar.
 
 Da register_globals in frühen PHP-Versionen Standard war, setzen viele alte (veraltete) Scripte noch auf dieses Verhalten. In neuen Serverumgebungen funktionieren diese Scripte jedoch out-of-the-box nicht mehr, da register_globals in aktuellen PHP-Versionen deaktiviert ist und damit die betreffenden Variablen nicht mehr automatisch im Scope deklariert werden.
 
@@ -103,7 +104,7 @@ Die Verwendung von Variablen, die durch register_globals automatisch initialisie
 
 <div class="alert alert-danger">
 <strong>Achtung!</strong> register_globals ist seit PHP 4.2.0 standardmäßig deaktiviert, seit PHP 5.3.0 DEPRECATED (veraltet) und wurde in PHP 5.4.0 endgültig entfernt.
-Es wird dringend empfohlen, stattdessen <a href="{{ site.url }}/jumpto/geltungsbereich-namensraum/#superglobals">SuperGlobals</a> zu verwenden!
+Es wird dringend empfohlen, stattdessen <a href="{{ page.root }}/jumpto/geltungsbereich-namensraum/#superglobals">SuperGlobals</a> zu verwenden!
 </div>
 
 ##### Verfügbarkeit
@@ -128,7 +129,7 @@ if (isset($passSecondIf) && true == $passSecondIf) {
 }
 ~~~
 
-Das Script ist so konzipiert, dass der [GPC]({{ site.url }}/jumpto/gpc/)-Parameter $param abgefragt wird. Ist dieser gesetzt, so wird die Variable **$passSeconfIf** deklariert und initialisiert, welche in der zweiten if-Abfrage benutzt wird. Da diese Variable aber nicht sicher initialisiert wurde, ist es einfach möglich, sie von außen zu manipulieren. Wird z.B. der GET- oder POST-Parameter **passSecondIf=abc** übergeben, so ist es möglich, das zweite if-Statement einzuleiten, ohne dass die Prüfung vorher erfolgreich sein muss.
+Das Script ist so konzipiert, dass der [GPC]({{ page.root }}/jumpto/gpc/)-Parameter $param abgefragt wird. Ist dieser gesetzt, so wird die Variable **$passSeconfIf** deklariert und initialisiert, welche in der zweiten if-Abfrage benutzt wird. Da diese Variable aber nicht sicher initialisiert wurde, ist es einfach möglich, sie von außen zu manipulieren. Wird z.B. der GET- oder POST-Parameter **passSecondIf=abc** übergeben, so ist es möglich, das zweite if-Statement einzuleiten, ohne dass die Prüfung vorher erfolgreich sein muss.
 
 Um diese Sicherheitslücke zu umgehen, sollten Variablen zuvor fest und ohne umschließende Bedingung initialisiert werden:
 

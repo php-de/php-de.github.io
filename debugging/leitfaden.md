@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/leitfaden/
+root: ../..
 title: "Leitfaden"
 group: "Debugging"
 orderId: 4
@@ -47,7 +48,7 @@ entry-type: in-discussion
 
 ---
 
-Hier findest du einen Debugging Leitfaden, der Schritt für Schritt durch Grundlagen der Fehlersuche führen soll. Die nachfolgenden Informationen beziehen sich vornehmlich auf die Analyse von Fehlern, die serverseitig in PHP auftreten. Konkrete Fehlersituationen klärt [Debugging-Standardfehler]({{ site.url }}/jumpto/standardfehler/).
+Hier findest du einen Debugging Leitfaden, der Schritt für Schritt durch Grundlagen der Fehlersuche führen soll. Die nachfolgenden Informationen beziehen sich vornehmlich auf die Analyse von Fehlern, die serverseitig in PHP auftreten. Konkrete Fehlersituationen klärt [Debugging-Standardfehler]({{ page.root }}/jumpto/standardfehler/).
 
 ### Hinweis
 
@@ -56,7 +57,7 @@ Dieser Leitfaden bezieht sich auf die Analyse von PHP Fehlern. Viele dieser Fehl
 {::comment}
 Ein Analysefluss lässt sich linear nur schwer darstellen, deshalb nachfolgend und einleitend ein kleines Diagramm zur Fehlereingrenzung (für volle Größe - auf das Bild klicken):
 
-<a href="{{ site.url }}/images/debugging_analyse_1589px.jpg"><img alt="Analyse" src="{{ site.url }}/images/debugging_analyse_1589px.jpg" width="100%" /></a>
+<a href="{{ page.root }}/images/debugging_analyse_1589px.jpg"><img alt="Analyse" src="{{ page.root }}/images/debugging_analyse_1589px.jpg" width="100%" /></a>
 {:/comment}
 
 ### Ausgangssituation 1
@@ -164,7 +165,7 @@ Damit ist es sinnvoll, bei der Fehleranalyse immer linear vorzugehen.
 
 #### Wirklich?
 
-Gerade für Anfänger ist es wichtig, sich immer wieder die [Zusammenhänge von server- und clientseitigem Code]({{ site.url }}/jumpto/was-ist-php/) klarzumachen. Da PHP vor browserseitigen Ausgaben erfolgt können Fehlermeldungen durchaus in HTML Text eingeschlossen und damit nur im Quelltext sichtbar sein. Sie können innerhalb einer Ausgabe von Javascript erzeugt worden sein und dadurch wiederum dort eine ungültige Syntax erzeugen und damit wiederum Javascript Fehlermeldungen. Schließlich haben Browser eine gewisse Fehlertoleranz auf ihr Markup, sodass irreguläre Angaben gänzlich unerkannt bleiben können.
+Gerade für Anfänger ist es wichtig, sich immer wieder die [Zusammenhänge von server- und clientseitigem Code]({{ page.root }}/jumpto/was-ist-php/) klarzumachen. Da PHP vor browserseitigen Ausgaben erfolgt können Fehlermeldungen durchaus in HTML Text eingeschlossen und damit nur im Quelltext sichtbar sein. Sie können innerhalb einer Ausgabe von Javascript erzeugt worden sein und dadurch wiederum dort eine ungültige Syntax erzeugen und damit wiederum Javascript Fehlermeldungen. Schließlich haben Browser eine gewisse Fehlertoleranz auf ihr Markup, sodass irreguläre Angaben gänzlich unerkannt bleiben können.
 
 Einfache Faustregel: PHP baut HTML und alle anderen Sprachen, die der Browser verarbeitet. Der erste Blick bei der Fehlersuche sollte also stets dem Browserquelltext dienen, die reine Bildschirmaussage sagt kaum etwas über die Probleme im Hintergrund aus.
 

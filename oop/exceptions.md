@@ -1,6 +1,7 @@
 ---
 layout: guide
 permalink: /jumpto/exceptions/
+root: ../..
 title: "Exceptions - Tutorial"
 creator: Zergling-new
 group: "Objektorientierte Programmierung (OOP)"
@@ -62,33 +63,33 @@ In `try` wird ein Algorithmus ausgeführt, der, schlägt er fehl, eine Exception
 
 
 ~~~ php
-<?php 
-// ein kleiner dateibasierter Counter 
-try { 
-    $counter = file_get_contents("counter.txt"); 
-    if (!is_numeric($counter)) { // kein gültiger Counter-Wert in der Datei? 
-        throw new Exception("invalid counter value"); // dann Exception werfen 
-    } 
-    file_put_contents("counter.txt", $counter + 1); 
-} 
-?> 
+<?php
+// ein kleiner dateibasierter Counter
+try {
+    $counter = file_get_contents("counter.txt");
+    if (!is_numeric($counter)) { // kein gültiger Counter-Wert in der Datei?
+        throw new Exception("invalid counter value"); // dann Exception werfen
+    }
+    file_put_contents("counter.txt", $counter + 1);
+}
+?>
 ~~~
 
 Diese Exception können wir auffangen, wenn der Versuch (try) fehlgeschlagen ist:
 
 ~~~ php
-<?php 
-try { 
-    $counter = file_get_contents("counter.txt"); 
-    if (!is_numeric($counter)) { 
-        throw new Exception("invalid counter value"); 
-    } 
-    file_put_contents("counter.txt", $counter + 1); 
-    echo $counter + 1; 
-} catch (Exception $e) { 
-    echo $e->getMessage(); // die Klasse Exception stellt diese Methode zur Verfügung 
-} 
-?> 
+<?php
+try {
+    $counter = file_get_contents("counter.txt");
+    if (!is_numeric($counter)) {
+        throw new Exception("invalid counter value");
+    }
+    file_put_contents("counter.txt", $counter + 1);
+    echo $counter + 1;
+} catch (Exception $e) {
+    echo $e->getMessage(); // die Klasse Exception stellt diese Methode zur Verfügung
+}
+?>
 ~~~
 
 Von `throw new Exception("invalid counter value");` aus springen wir direkt in den catch-Block und lassen uns die Fehlermeldung ausgeben!
@@ -98,29 +99,29 @@ Dabei spielt es keine Rolle, ob die Exception im try-Block direkt geworfen wurde
 Denkbar wäre also auch folgendes Konstrukt:
 
 ~~~ php
-<?php 
-function getCounterValue() 
-{ 
-    $counter = file_get_contents("counter.txt"); 
-    if (!is_numeric($counter)) { 
-        throw new Exception("invalid counter value"); 
-    } 
-    return $counter; 
-} 
+<?php
+function getCounterValue()
+{
+    $counter = file_get_contents("counter.txt");
+    if (!is_numeric($counter)) {
+        throw new Exception("invalid counter value");
+    }
+    return $counter;
+}
 
-function setCounterValue($value) 
-{ 
-    file_put_contents("counter.txt", $value);   
-} 
+function setCounterValue($value)
+{
+    file_put_contents("counter.txt", $value);
+}
 
-try { 
-    $counter = getCounterValue() + 1; 
-    setCounterValue($counter); 
-    echo "Hello visitor number ", $counter; 
-} catch (Exception $e) { 
-    echo $e->getMessage(); // "invalid counter value" 
-} 
-?> 
+try {
+    $counter = getCounterValue() + 1;
+    setCounterValue($counter);
+    echo "Hello visitor number ", $counter;
+} catch (Exception $e) {
+    echo $e->getMessage(); // "invalid counter value"
+}
+?>
 ~~~
 
 Das Werfen der Exception wird also sogar ausserhalb des try-Blockes deklariert. Relevant ist jedoch, ob dieser Code im try-Block ausgeführt wird und das ist hier der Fall.
@@ -136,7 +137,7 @@ Es ist davon auszugehen, dass bei der ersten Verwendung des Skriptes die counter
 
 Richtigerweise sollte man die Datei auf Nicht-Existenz prüfen und dann mit einer 0 initiiert anlegen. Erst wenn dann der Lese- oder sogar Schreibvorgang fehlschlägt, kann man von einer echten Ausnahme reden und eine Exception werfen.
 
-**Eine Faustregel**  
+**Eine Faustregel**
 Exceptions nur verwenden, wenn man behaupten könnte, dass dieser Fehler nie passieren sollte!
 
 Eine ziemlich schwammige Aussage eigentlich, denn letztlich sollte eine Exception ja nie ausgelöst werden, die Übergänge sind sowieso fließend. Trotzdem gibt es einen Unterschied zwischen "sollte nie" und "kommt schon mal vor".
@@ -145,23 +146,23 @@ Eine ziemlich schwammige Aussage eigentlich, denn letztlich sollte eine Exceptio
 Für unser Beispiel hieße das also:
 
 ~~~ php
-<?php 
-try { 
-    if (!file_exists("counter.txt")) { 
-        $counter = 0; 
-    } else { 
-        $counter = file_get_contents("counter.txt"); 
-    } 
-    if (!is_numeric($counter)) { 
-        throw new Exception("invalid counter value"); 
-    } 
-    $counter++; 
-    file_put_contents("counter.txt", $counter); 
-    echo "Hello visitor number ", $counter; 
-} catch (Exception $e) { 
-    echo $e->getMessage(); 
-} 
-?> 
+<?php
+try {
+    if (!file_exists("counter.txt")) {
+        $counter = 0;
+    } else {
+        $counter = file_get_contents("counter.txt");
+    }
+    if (!is_numeric($counter)) {
+        throw new Exception("invalid counter value");
+    }
+    $counter++;
+    file_put_contents("counter.txt", $counter);
+    echo "Hello visitor number ", $counter;
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+?>
 ~~~
 
 Auch dieses Beispiel ist natürlich ungeschickt gewählt, da sich die Fehlerbehandlung zufällig sogar direkt unter dem auslösenden Fehler befindet. Üblicherweise ist das nicht der Fall. Dazu kommen wir im nächsten Kapitel.
@@ -203,10 +204,10 @@ Wir müssen also darauf achten, Exceptions an der perfekten Stelle abzufangen, d
 
 Denn spielen wir das Szenario mal für den Fall durch, dass erst unsere Bootstrap-Datei den Fehler fängt:
 
-**Szenario 1**  
+**Szenario 1**
 Die Bootstrap wird vermutlich nurnoch dazu in der Lage sein eine Fehlermeldung zu schreiben und abzubrechen. Erinnern wir uns: Exceptions verlassen ihren Programmkontext bis zum nächsten catch! Wenn wir die Exception nicht früh genug abfangen wird der dahinterliegende Code überhaupt nicht mehr ausgeführt. Wir sind (ohne den Prozess neu anzustossen) gar     nicht mehr in der Lage die restlichen Bilder auszugeben!
 
-**Szenario 2**  
+**Szenario 2**
 Unsere Image-Klasse zum Laden der Grafik und Berechnen der Größe fängt ihren eigenen Fehler sofort auf:
 
 Es könnte nur mit 2 Aktionen auf den Fehler reagieren:
@@ -230,24 +231,24 @@ Technisch lassen sich Exceptions über ihre Klasse oder ihren Exception-Code unt
 Die Klasse "Exception" ist eine PHP interne Klasse. Von ihr kann abgeleitet werden (Stichwort Vererbung sollte für den Leser zumindest ein Begriff sein):
 
 ~~~ php
-<?php 
-class My_Exception extends Exception 
-{ 
-} 
-?> 
+<?php
+class My_Exception extends Exception
+{
+}
+?>
 ~~~
 
 Dies ist eine völlig akzeptable, lauffähige Klasse (besser gesagt Exception). Auch von ihr könnte nun abgeleitet werden:
 
 ~~~ php
-<?php 
-class My_Stupid_Exception extends My_Exception 
-{ 
-} 
-class My_Beloved_Exception extends My_Exception 
-{ 
-} 
-?> 
+<?php
+class My_Stupid_Exception extends My_Exception
+{
+}
+class My_Beloved_Exception extends My_Exception
+{
+}
+?>
 ~~~
 
 Diese Unterteilung ist sehr sinnvoll und erzeugt nur einen lächerlich geringen Overhead (der durch den Einsatz von `__autoload` sowieso in aberwitzige Dimensionen schrumpft).
@@ -262,41 +263,41 @@ Denkbar wären nun also
 Weiterhin ist es möglich, zusätzlich zur Message als 1. Parameter des Konstruktors, einen Fehlercode als 2. Parameter anzugeben. Dieser ist jedoch optional (Standard = 0):
 
 ~~~ php
-<?php 
-throw new Image_Exception("Thumbnail ist plötzlich weg", 1); 
-?> 
+<?php
+throw new Image_Exception("Thumbnail ist plötzlich weg", 1);
+?>
 ~~~
 
 Schließlich könnte die Image-Klasse ja noch mehr Fehler werfen, zum Beispiel diesen:
 
 ~~~ php
-<?php 
-throw new Image_Exception("Hauptbild ist plötzlich weg", 2); 
-?> 
+<?php
+throw new Image_Exception("Hauptbild ist plötzlich weg", 2);
+?>
 ~~~
 
 Es wäre nun möglich, die Fehler getrennt zu behandeln:
 
 ~~~ php
-<?php 
-try { 
-    $image = new Image($pfad_der_aus_der_datenbank_kommt); 
-    $image->showThumbnail(); 
-} catch (Image_Exception $e) { 
-    if ($e->getCode() == 1) { 
-        // thumbnail ist offenbar weg, nicht so tragisch, nehmen wir 
-        // das große, html schrumpelt das schon kleiner 
-        // (natürlich bad-style, aber einfache beispiele erfordern das nunmal) 
-        $image->setThumbnail($image->getBigImage()); 
-        $image->showThumbnail(); 
-    } 
-    if ($e->getCode() == 2) { 
-        // ok das große Bild ist weg, was nun? am besten kein  
-        // kleistern, einfach nur "oben" bescheid geben 
-        $this->addMessage($e->getMessage()); // addMessage sei eine Methode des Gallery-Objektes, in dessen Kontext dieses Beispiel zu sehen ist 
-    } 
-} 
-?> 
+<?php
+try {
+    $image = new Image($pfad_der_aus_der_datenbank_kommt);
+    $image->showThumbnail();
+} catch (Image_Exception $e) {
+    if ($e->getCode() == 1) {
+        // thumbnail ist offenbar weg, nicht so tragisch, nehmen wir
+        // das große, html schrumpelt das schon kleiner
+        // (natürlich bad-style, aber einfache beispiele erfordern das nunmal)
+        $image->setThumbnail($image->getBigImage());
+        $image->showThumbnail();
+    }
+    if ($e->getCode() == 2) {
+        // ok das große Bild ist weg, was nun? am besten kein
+        // kleistern, einfach nur "oben" bescheid geben
+        $this->addMessage($e->getMessage()); // addMessage sei eine Methode des Gallery-Objektes, in dessen Kontext dieses Beispiel zu sehen ist
+    }
+}
+?>
 ~~~
 
 "oben" sei in diesem Fall im Kontext des Gallery-Moduls zu sehen. Wir müssen uns vorstellen, dass dieser try-catch Block irgendwo im Bauch der Gallery-Klasse abläuft.
@@ -311,13 +312,13 @@ Natürlich darf die Image-Klasse keine *Ueberspring_die_Gallery_Exception* werfe
 Zur Verdeutlichung:
 
 ~~~ php
-<?php 
-try { 
-    throw new Exception("mieser Fehler"); 
-} catch (Image_Exception $e) { 
-    echo $e->getMessage(); 
-} 
-?> 
+<?php
+try {
+    throw new Exception("mieser Fehler");
+} catch (Image_Exception $e) {
+    echo $e->getMessage();
+}
+?>
 ~~~
 
 Der catch-Block wird nie zur Ausführung kommen.
@@ -333,32 +334,32 @@ Darum ist es möglich an einen try-Block mehrere catch-Blocke anzuhängen, denen
 
 
 ~~~ php
-<?php 
-class My_Exception extends Exception 
-{ 
-} 
-class My_Stupid_Exception extends My_Exception 
-{ 
-} 
-class My_Never_Used_Exception extends Exception 
-{ 
-} 
+<?php
+class My_Exception extends Exception
+{
+}
+class My_Stupid_Exception extends My_Exception
+{
+}
+class My_Never_Used_Exception extends Exception
+{
+}
 
-try { 
-    throw new My_Stupid_Exception("ach wie blvd"); 
-} catch (My_Never_Used_Exception $e) { 
-    echo "My_Never_Used_Exception-Block: ", $e->getMessage(); 
-} catch (My_Exception $e) { 
-    echo "My_Exception-Block: ", $e->getMessage(); 
-} catch (My_Stupid_Exception $e) { 
-    echo "My_Stupid_Exception-Block: ", $e->getMessage(); 
-} catch (Exception $e) { 
-    echo "Exception-Block: ", $e->getMessage(); 
-} 
-?> 
+try {
+    throw new My_Stupid_Exception("ach wie blvd");
+} catch (My_Never_Used_Exception $e) {
+    echo "My_Never_Used_Exception-Block: ", $e->getMessage();
+} catch (My_Exception $e) {
+    echo "My_Exception-Block: ", $e->getMessage();
+} catch (My_Stupid_Exception $e) {
+    echo "My_Stupid_Exception-Block: ", $e->getMessage();
+} catch (Exception $e) {
+    echo "Exception-Block: ", $e->getMessage();
+}
+?>
 ~~~
 
-Beachtet werden sollte, dass man nicht in den `catch (My_Stupid_Exception $e)` gelangt, obwohl eine Exception diesen Typs geworfen wurde, sondern `catch (My_Exception $e)`, denn `My_Stupid_Exception` ist nach Deklaration ein Kind von `My_Stupid_Exception`. 
+Beachtet werden sollte, dass man nicht in den `catch (My_Stupid_Exception $e)` gelangt, obwohl eine Exception diesen Typs geworfen wurde, sondern `catch (My_Exception $e)`, denn `My_Stupid_Exception` ist nach Deklaration ein Kind von `My_Stupid_Exception`.
 
 *Der erste Treffer zählt.*
 
@@ -370,26 +371,26 @@ Wenn der catch-Block (z.B. anhand des Exception-Codes) feststellt, dass das Prob
 Testen wir das Ganze mit einer Fußballer-Weisheit, in dem unser innerer catch-Block die Exception einfach weiterschmeißt:
 
 ~~~ php
-<?php 
-class My_Exception extends Exception 
-{ 
-} 
-class My_Stupid_Exception extends My_Exception 
-{ 
-} 
+<?php
+class My_Exception extends Exception
+{
+}
+class My_Stupid_Exception extends My_Exception
+{
+}
 
 
-try { 
-    try { 
-        throw new My_Stupid_Exception("ach wie blöd"); 
-    } catch (My_Exception $e) { 
-        echo ".. nimm du ihn, ich hab ihn sicher .. "; 
-        throw $e; 
-    } 
-} catch (My_Stupid_Exception $e) { 
-    echo "ich nehm ihn wohl besser"; 
-} 
-?> 
+try {
+    try {
+        throw new My_Stupid_Exception("ach wie blöd");
+    } catch (My_Exception $e) {
+        echo ".. nimm du ihn, ich hab ihn sicher .. ";
+        throw $e;
+    }
+} catch (My_Stupid_Exception $e) {
+    echo "ich nehm ihn wohl besser";
+}
+?>
 ~~~
 
 Die Ausgabe lautet, wie erwartet:

@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/objectsarray-to-code/
+root: ../..
 title: "Arrays mit Objekten als PHP-Quellcode ausgeben"
 group: "Standard Implementierungsansätze / Code-Snippets"
 orderId: 15
@@ -29,42 +30,42 @@ Manchmal besteht der Wunsch, Arrays die auch Objekte vom Typ `stdClass` enthalte
 als PHP-Quellcode zu exportieren. Die folgende Funktion hilft da `var_export()` etwas nach.
 
 ~~~ php
-function dump_arrobj($arrobj) { 
-    echo '<pre>'.str_ireplace( 'stdClass::__set_state', '(object)', var_export($arrobj,true) ).'</pre>'; 
-}  
+function dump_arrobj($arrobj) {
+    echo '<pre>'.str_ireplace( 'stdClass::__set_state', '(object)', var_export($arrobj,true) ).'</pre>';
+}
 ~~~
 
 #### Beispiel
 
 ~~~ php
-// Beispiele anlegen 
-$obj1 = new stdClass(); 
-$obj1->id = 12; 
-$obj1->spielername = "Hans"; 
-$obj1->allianz = "23"; 
+// Beispiele anlegen
+$obj1 = new stdClass();
+$obj1->id = 12;
+$obj1->spielername = "Hans";
+$obj1->allianz = "23";
 
-$obj2 = new stdClass(); 
-$obj2->id = 18; 
-$obj2->spielername = "Peter"; 
-$obj2->allianz = "58"; 
+$obj2 = new stdClass();
+$obj2->id = 18;
+$obj2->spielername = "Peter";
+$obj2->allianz = "58";
 
-$arr = array($obj1, $obj2); 
+$arr = array($obj1, $obj2);
 
-//PHP-Code ausgeben 
-dump_arrobj($arr);  
+//PHP-Code ausgeben
+dump_arrobj($arr);
 ~~~
 
 #### Ausgabe
 
 ~~~ php
 array (
-  0 => 
+  0 =>
   (object)(array(
      'id' => 12,
      'spielername' => 'Hans',
      'allianz' => '23',
   )),
-  1 => 
+  1 =>
   (object)(array(
      'id' => 18,
      'spielername' => 'Peter',

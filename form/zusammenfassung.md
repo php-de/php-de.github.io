@@ -1,6 +1,7 @@
 ---
 layout: guide
 permalink: /jumpto/zusammenfassung/
+root: ../..
 group: "Formularverarbeitung"
 title: "Zusammenfassung"
 orderId: 14
@@ -48,7 +49,7 @@ HTML besitzt Sprachelemente für Formularfelder, Buttons und das Form selbst. Nu
 
 ### Übertragung
 
-Die Übertragungsmethode von Formulardaten wird durch das *method*-Attribut des `<form>`-Tags bestimmt. Mögliche Methoden sind [POST- und GET-Request]({{ site.url }}/jumpto/request/), die Formulardaten werden dabei je nach Typ im Anfragekörper oder in der URL übertragen.
+Die Übertragungsmethode von Formulardaten wird durch das *method*-Attribut des `<form>`-Tags bestimmt. Mögliche Methoden sind [POST- und GET-Request]({{ page.root }}/jumpto/request/), die Formulardaten werden dabei je nach Typ im Anfragekörper oder in der URL übertragen.
 
 
 ### Gemeinsamkeiten
@@ -100,7 +101,7 @@ Grundlegend betrachtet, unterscheidet die Verabeitung von Formularelementen aktu
 
 Dazu gehören alle Textfelder, Einfach-Selections und Radiobuttons. Nur ein Wert ist auswählbar oder direkt eingebbar. Zur Verarbeitung ist jeweils der Attributwert von value aus dem Formularelemnent Als Requestparametereintrag verfügbar. (Ausnahme: Textareas besitzen kein *value*-Attribut sondern benutzen den Taginhalt des Elements.
 
-Skalare Eingabefelder übermitteln in (ungefälschten) abgesendeten Formularen stets eine Stringtyp. Das gilt auch für numerische Angaben im HTML Bereich. Dieser Fakt ist durch das HTTP Protokoll bedingt und ist wichtig für die [Validierung]({{ site.url }}/jumpto/validierung/) von Eingabedaten.
+Skalare Eingabefelder übermitteln in (ungefälschten) abgesendeten Formularen stets eine Stringtyp. Das gilt auch für numerische Angaben im HTML Bereich. Dieser Fakt ist durch das HTTP Protokoll bedingt und ist wichtig für die [Validierung]({{ page.root }}/jumpto/validierung/) von Eingabedaten.
 
 #### Mehrdimensionale Eingabetypen
 
@@ -164,4 +165,4 @@ Dabei werden konsequent alle ausgewählten Werte den vorhergehenden überschreib
 ### Komplettbeispiel
 
 Für die Themen Formularverarbeitung und Affenformular wurde ein Beispiel verfasst, das die meisten Eingabeelemente und deren Verarbeitung abdeckt.
-Komplettbeispiel, einfache Verarbeitung (Link folgt) und Lösung als [Affenformular]({{ site.url }}/jumpto/affenformular/).
+Komplettbeispiel, einfache Verarbeitung (Link folgt) und Lösung als [Affenformular]({{ page.root }}/jumpto/affenformular/).

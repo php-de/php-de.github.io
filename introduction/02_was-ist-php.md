@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/was-ist-php/
+root: ../..
 title: "Was ist PHP?"
 group: "Einführung"
 orderId: 2
@@ -49,7 +50,7 @@ Oft zeigt sich bei PHP-Einsteigern, dass ein grundlegendes Verständnis dafür f
 PHP ist eine Skript-Sprache, die komplett auf dem Server verarbeitet wird. Das heißt, der Benutzer kommt mit dem Quelltext des Skripts gar nicht erst in Berührung.
 PHP ist darauf ausgelegt, durch Programmoperationen eine andere Sprache, zumeist Hypertext-Markup (also HTML), zu erzeugen, die auf anderen Geräten weiterverarbeitet werden kann. Hieraus ergibt sich auch die Bedeutung des Backronyms PHP, welche PHP: Hypertext Preprocessor lautet.
 
-Um ein PHP-Skript aufzurufen, wird ein [Request]({{ site.url }}/jumpto/request/) an den Server abgesetzt, welcher dann den PHP-Parser anweist, das entsprechende Skript zu parsen. Anschließend wird die erzeugte Ausgabe wieder zurück an den Benutzer gesendet. Lediglich diese Ausgabe des Skripts ist es dann, welche der Benutzer zu Gesicht bekommt.
+Um ein PHP-Skript aufzurufen, wird ein [Request]({{ page.root }}/jumpto/request/) an den Server abgesetzt, welcher dann den PHP-Parser anweist, das entsprechende Skript zu parsen. Anschließend wird die erzeugte Ausgabe wieder zurück an den Benutzer gesendet. Lediglich diese Ausgabe des Skripts ist es dann, welche der Benutzer zu Gesicht bekommt.
 
 
 #### Somit ist mit PHP folgendes möglich:
@@ -62,7 +63,7 @@ Um ein PHP-Skript aufzurufen, wird ein [Request]({{ site.url }}/jumpto/request/)
 
 ### Was PHP nicht ist
 PHP ist hingegen nicht dazu gedacht, direkt mit dem Benutzer zu interagieren, sprich: es ist nicht möglich, direkt auf Eingaben vom Benutzer zu reagieren, sofern diese nicht durch einen erneuten Request an den Server gesendet wurden.
-Für direkte Interaktion mit dem Benutzer ist [JavaScript]({{ site.url }}/jumpto/javascript/) gedacht, welches (genau entgegengesetzt zu PHP) im Browser des Benutzers läuft, hingegen nicht auf dem Server ausgeführt wird.
+Für direkte Interaktion mit dem Benutzer ist [JavaScript]({{ page.root }}/jumpto/javascript/) gedacht, welches (genau entgegengesetzt zu PHP) im Browser des Benutzers läuft, hingegen nicht auf dem Server ausgeführt wird.
 
 #### Somit ist mit PHP folgendes nicht möglich:
 - Direkte Verarbeitung von Benutzereingaben bzw. aktive Interaktion mit dem Anwender
@@ -79,7 +80,7 @@ Der Aufruf einer HTML Seite liefert ein Hypertextdokument, das durch den Browser
 Der Aufruf einer PHP Seite startet ein Programm, das ein Hypertextdokument erzeugt. Das Hypertextdokument wird wiederum durch den Server ausgeliefert und im Browser gerendert.
 
 
-![Client-Server]({{ site.url }}/images/client-server.jpg)
+![Client-Server]({{ page.root }}/images/client-server.jpg)
 
 
 PHP geschieht also vor allen Sprachen und Formatierungen, die im Browser zum Einsatz kommen (HTML, Javascript, CSS). PHP ist von einem Server (also so gesehen von einer bestehenden Internetverbindung) abhängig, clientseitige Sprachen sind es nicht (insofern der Quelltext lokal auf dem Client PC existiert). Ein HTML Code mit Stylesheets und Javascript Funktionalität kann also auf einen Client PC heruntergeladen lokal vom Browser verarbeitet werden. PHP Code dagegen nicht.

@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/hash-etc/
+root: ../..
 title: "Hashing, Kodierung, Verschlüsselung"
 group: "Sicherheit"
 orderId: 14
@@ -33,7 +34,7 @@ Diese Übersicht gibt einen kurzen Überblick über die unterschiedlichen Verfah
 
 ### Hashing (Hash-Funktion)
 
-Zweck des Hashing ist es aus einem Ausgangswert einen nicht rückrechenbaren Hash zu generieren. Unabhängig der Länge des Ausgangswertes entsteht je nach verwendeter Funktion ein gleich langer Hash. Hierfür stehen in PHP für verschiedene Hash-Algorithmen entsprechende Funktionen zur Verfügung. 
+Zweck des Hashing ist es aus einem Ausgangswert einen nicht rückrechenbaren Hash zu generieren. Unabhängig der Länge des Ausgangswertes entsteht je nach verwendeter Funktion ein gleich langer Hash. Hierfür stehen in PHP für verschiedene Hash-Algorithmen entsprechende Funktionen zur Verfügung.
 
 [Wikipedia Artikel zu "Hashfunktion".](http://de.wikipedia.org/wiki/Hashfunktion)
 
@@ -59,7 +60,7 @@ Weitere Informationen dazu, welche Algorithmen man aktuell vermeiden und verwend
 > Ein Code ist eine Vorschrift, wie Nachrichten oder Befehle zur Übersetzung für ein Zielsystem umgewandelt werden. Beispielsweise stellt der Morsecode eine Beziehung zwischen Buchstaben und einer Abfolge kurzer und langer Tonsignale her. ... In der Kommunikationswissenschaft bezeichnet ein Code im weitesten Sinne eine Sprache.
 
 
-Üblichster Vertreter ist hier die [Base64-Kodierung](http://de.wikipedia.org/wiki/Base64) für  E-Mails. 
+Üblichster Vertreter ist hier die [Base64-Kodierung](http://de.wikipedia.org/wiki/Base64) für  E-Mails.
 
 > ... findet im Internet-Standard MIME (Multipurpose Internet Mail Extensions) Anwendung und wird damit hauptsächlich zum Versenden von E-Mail-Anhängen verwendet. Nötig ist dies, um den problemlosen Transport von beliebigen Binärdaten zu gewährleisten, da SMTP in seiner ursprünglichen Fassung nur für den Versand von 7-Bit-ASCII-Zeichen ausgelegt war. Durch die Kodierung steigt der Platzbedarf des Datenstroms um 33–36 % (33 % durch die Kodierung selbst, bis zu weitere 3 % durch die im kodierten Datenstrom eingefügten Zeilenumbrüche).
 
@@ -77,6 +78,6 @@ In PHP stehen dafür die Funktionen [base64_encode()](http://php.net/manual/de/f
 > Verschlüsselung nennt man den Vorgang, bei dem ein klar lesbarer Text (Klartext, oder auch Informationen anderer Art wie Ton- oder Bildaufzeichnungen) mit Hilfe eines Verschlüsselungsverfahrens (Kryptosystem) in eine "unleserliche", das heißt nicht einfach interpretierbare Zeichenfolge (also Geheimtext) umgewandelt wird. Als entscheidend wichtige Parameter der Verschlüsselung werden hierbei ein oder auch mehrere Schlüssel verwendet.
 
 
-PHP-Funktionen z.B. über die Erweiterung MCrypt: 
+PHP-Funktionen z.B. über die Erweiterung MCrypt:
 [mcrypt()](http://php.net/manual/de/book.mcrypt.php)
 

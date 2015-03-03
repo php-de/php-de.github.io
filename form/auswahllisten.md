@@ -1,6 +1,7 @@
 ---
 layout: guide
 permalink: /jumpto/auswahllisten/
+root: ../..
 group: "Formularverarbeitung"
 title: "Auswahllisten (Selections)"
 orderId: 6
@@ -26,14 +27,14 @@ inhalt:
 ---
 
 
-| **Selections** oder **Auswahllisten** sind HTML Formularelemente, die eine Liste von Werten einer fest definierten Menge zur Auswahl bereitstellen. Selections können als Einfach- oder Mehrfachauswahl notiert werden. Dabei wird in Einfachlisten üblicherweise immer ein Wert übertragen, in Mehrfachlisten kann kein, ein oder mehrere Werte ausgewählt und übertragen werden. | ![select]({{ site.url }}/images/select_single_closed.gif) | ![select]({{ site.url }}/images/select_single_open.gif) |
+| **Selections** oder **Auswahllisten** sind HTML Formularelemente, die eine Liste von Werten einer fest definierten Menge zur Auswahl bereitstellen. Selections können als Einfach- oder Mehrfachauswahl notiert werden. Dabei wird in Einfachlisten üblicherweise immer ein Wert übertragen, in Mehrfachlisten kann kein, ein oder mehrere Werte ausgewählt und übertragen werden. | ![select]({{ page.root }}/images/select_single_closed.gif) | ![select]({{ page.root }}/images/select_single_open.gif) |
 
-| Je nach Selectiontyp unterscheiden sich die Verfahren zur Verarbeitung und Darstellung. Die jeweiligen Verfahren sind dabei mit denen für Optionsfelder (Radiogroups bzw. Checkboxes) verwandt/identisch. | ![select]({{ site.url }}/images/select_multi_off.gif) | ![select]({{ site.url }}/images/select_multi_selected.gif) |
+| Je nach Selectiontyp unterscheiden sich die Verfahren zur Verarbeitung und Darstellung. Die jeweiligen Verfahren sind dabei mit denen für Optionsfelder (Radiogroups bzw. Checkboxes) verwandt/identisch. | ![select]({{ page.root }}/images/select_multi_off.gif) | ![select]({{ page.root }}/images/select_multi_selected.gif) |
 
 
 ### Selections auswerten
 
-Wie bei allen Formularelementen können die Werte eines innnerhalb eines `<form>`-Tags notierten `<select>`-Elements durch Auslesen eines Parameterarrays im Folgescript verarbeitet werden. Näheres dazu siehe unter [Formularverarbeitung Überblick]({{ site.url }}/jumpto/form/).
+Wie bei allen Formularelementen können die Werte eines innnerhalb eines `<form>`-Tags notierten `<select>`-Elements durch Auslesen eines Parameterarrays im Folgescript verarbeitet werden. Näheres dazu siehe unter [Formularverarbeitung Überblick]({{ page.root }}/jumpto/form/).
 
 
 #### Einfachauswahlen
@@ -103,7 +104,7 @@ foreach ($_POST['Auswahl'] as $value) {
 
 ### Selection mit Vorauswahl dynamisch erzeugen
 
-In verschiedenen Fällen kann es nötig sein, dass Selections bei der Ausgabe dynamisch mit einem oder mehreren gegebenen Auswahlwerten vorselektiert werden. Nachfolgend wird zunächst das Prinzip erklärt und dann eine optimierte Variante gezeigt. In allen Beispielen werden als gegebene Auswahlwerte die Eingabeparameter aus einem [POST-Submit]({{ site.url }}/jumpto/request/) angenommen, wie es bspw. beim [Affenformular]({{ site.url }}/jumpto/affenformular/) üblich ist. Natürlich kann statt der `$_POST`-Angabe auch jede andere Variable gleichen Typs genutzt werden.
+In verschiedenen Fällen kann es nötig sein, dass Selections bei der Ausgabe dynamisch mit einem oder mehreren gegebenen Auswahlwerten vorselektiert werden. Nachfolgend wird zunächst das Prinzip erklärt und dann eine optimierte Variante gezeigt. In allen Beispielen werden als gegebene Auswahlwerte die Eingabeparameter aus einem [POST-Submit]({{ page.root }}/jumpto/request/) angenommen, wie es bspw. beim [Affenformular]({{ page.root }}/jumpto/affenformular/) üblich ist. Natürlich kann statt der `$_POST`-Angabe auch jede andere Variable gleichen Typs genutzt werden.
 
 
 #### Funktionsprinzip

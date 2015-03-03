@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/cross-site-scripting/
+root: ../..
 title: "Cross-Site-Scripting (XSS)"
 group: "Sicherheit"
 creator: Manko10
@@ -43,7 +44,7 @@ entry-type: in-discussion
 
 **Cross-Site-Scripting** (**XSS**) ist eine Angriffstechnik auf die Besucher
 eine Webseite mittels
-[JavaScript]({{ site.url }}/jumpto/javascript/) oder anderer
+[JavaScript]({{ page.root }}/jumpto/javascript/) oder anderer
 clientbasierter Skriptsprachen. Dabei wird eine unzureichende Prüfung der
 eingegebenen Daten ausgenutzt.
 
@@ -78,7 +79,7 @@ nicht zu den Cross-Site-Scripting-Attacken gezählt werden.
 Dynamische Websiteprogrammierung fußt auf einer Kombination von statischen
 HTML-Codeelementen und darin eingefügten Inhaltsteilen. Das fertige Produkt
 wird als HTML-Quellcode vom Webserver ausgeliefert (siehe
-[Was ist PHP?]({{ site.url }}/jumpto/was-ist-php/)). Daraus
+[Was ist PHP?]({{ page.root }}/jumpto/was-ist-php/)). Daraus
 entsteht ein ungewöhnlicher Effekt, wenn die Möglichkeit der Flexibilität zu
 einseitig betrachtet wird.
 
@@ -168,8 +169,8 @@ demnach zur Ausführung. Dem Besucher wird eine `alert`-Box mit dem Inhalt
 #### Problem magic_quotes_gpc
 
 Ist die Direktive
-[magic_quotes_gpc]({{ site.url }}/jumpto/php-ini/#magicquotesgpc)
-in der [php.ini]({{ site.url }}/jumpto/php-ini/) eingeschaltet,
+[magic_quotes_gpc]({{ page.root }}/jumpto/php-ini/#magicquotesgpc)
+in der [php.ini]({{ page.root }}/jumpto/php-ini/) eingeschaltet,
 wird der obige Code unter Umständen nicht funktionieren, da die Stringbegrenzer
 `"` und `'` nicht funktionieren werden. Dies stellt jedoch kein Problem dar, da
 die Angabe `type="text/javascript"` für die Ausführung in den meisten Browsern
@@ -215,7 +216,7 @@ Es ist unumgänglich, alle vom Benutzer eingegebenen Daten als potenziell gefäh
 <div class="alert alert-danger">
     <strong>Achtung!</strong>
 
-    Häufig gemachter Fehler: Es kann nicht oft genug gesagt werden, dass <strong>alle</strong> vom User kommenden Daten bösartiger Natur sein können, nicht nur <a href="{{ site.url }}/jumpto/gpc/">GPC-Werte</a>. Auch manche Inhalte des <code>$_SERVER</code>-Arrays (etwa <a href="http://blog.oncode.info/2008/05/07/php_self-ist-boese-potentielles-cross-site-scripting-xss/">PHP_SELF</a>) gehören zur Kategorie der gefährlichen Datenquellen, die unbedingt validiert werden müssen.
+    Häufig gemachter Fehler: Es kann nicht oft genug gesagt werden, dass <strong>alle</strong> vom User kommenden Daten bösartiger Natur sein können, nicht nur <a href="{{ page.root }}/jumpto/gpc/">GPC-Werte</a>. Auch manche Inhalte des <code>$_SERVER</code>-Arrays (etwa <a href="http://blog.oncode.info/2008/05/07/php_self-ist-boese-potentielles-cross-site-scripting-xss/">PHP_SELF</a>) gehören zur Kategorie der gefährlichen Datenquellen, die unbedingt validiert werden müssen.
 </div>
 
 <div class="alert alert-info">

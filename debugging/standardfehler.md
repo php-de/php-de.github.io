@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/standardfehler/
+root: ../..
 title: "Standardfehler"
 group: "Debugging"
 orderId: 6
@@ -47,13 +48,13 @@ Bei einer Sessioninitialisierung (`session_start()`), einem Cookiesetzen oder ei
 
 Der Fehler kann mannigfaltige Ursachen haben, die aber alle die Gemeinsamkeit besitzen, dass sie vor der jeweiligen Headerausgabe Zeichenausgaben erzeugen.
 
-Liste möglicher Ursachen im [Hauptartikel zu Headers already sent]({{ site.url }}/jumpto/headers-already-sent/).
+Liste möglicher Ursachen im [Hauptartikel zu Headers already sent]({{ page.root }}/jumpto/headers-already-sent/).
 
 #### Lösung
 
 Es gibt zwei prinzipielle Lösungsansätze. Der erste besteht darin, die gesamte Scriptstruktur (aller beteiligten Scripte) so zu strukturieren, dass vor einer Aktion wie Sessionstart oder Header-Weiterleitung keine Ausgabe erfolgen kann. Dies kann im allgemeinen durch Ergänzen von Bedingungen oder Anlegen von Variablen für Ausgabestrings erreicht werden. Eine wichtige Maßnahme ist auch, alle Funktionen so einzurichten, dass sie keine Bildschirmausgabe erzeugen, sondern Code mittels `return` als String zurückgeben.
 
-Näheres findet man im Hauptartikel zum [EVA Prinzip]({{ site.url }}/jumpto/eva-prinzip/).
+Näheres findet man im Hauptartikel zum [EVA Prinzip]({{ page.root }}/jumpto/eva-prinzip/).
 
 Variante zwei nutzt den sogenannten [Ausgabepuffer](http://php.net/manual/de/intro.outcontrol.php), den man nutzen kann, um Bildschirmausgaben vorübergehend in eine Variable umzuleiten. Das funktioniert sogar mit Inline-HTML:
 

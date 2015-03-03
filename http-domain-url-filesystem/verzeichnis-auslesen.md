@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/verzeichnis-auslesen/
+root: ../..
 title: "Verzeichnis auslesen"
 group: "HTTP / Domain / URL / Requests / Dateisystem"
 orderId: 12

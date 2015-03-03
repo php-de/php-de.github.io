@@ -1,6 +1,7 @@
 ---
 layout: guide
 permalink: /jumpto/form/
+root: ../..
 title: "Überblick"
 group: "Formularverarbeitung"
 orderId: 2
@@ -38,14 +39,14 @@ entry-type: in-discussion
 
 Die **Formularverarbeitung** ist ein Schwerpunktgebiet serverseitiger Programmiersprachen – und ein klassischer Grund, sich mit Sprachen wie PHP auseinanderzusetzen.
 
-HTML bietet verschiedene Eingabeelemente an, die ähnlich den Feldern einer Erfassungsmaske gestaltet sind. Das Angebot umfasst klassische Eingabefelder, Ankreuz- und Auswahlelemente. Aktuelle Webbrowser können die Daten solcher Elememente zwar verarbeiten ([JavaScript]({{ site.url }}/jumpto/javascript/)), aber nicht speichern. Auch sind Eingabedaten meist eher relevant für den Anbieter eines Webdienstes, nicht aber den Nutzer selbst, weshalb die Verarbeitung serverseitig erfolgt. Hier können die Daten beliebig analysiert (vgl. [Eingabevalidierung]({{ site.url }}/jumpto/validierung/)), manipuliert und verarbeitet werden. Das Spektrum reicht dabei von der Speicherung in einer Datenbank, über den Versand als Email bis hin zu aufwendigen Verarbeitungsmethoden.
+HTML bietet verschiedene Eingabeelemente an, die ähnlich den Feldern einer Erfassungsmaske gestaltet sind. Das Angebot umfasst klassische Eingabefelder, Ankreuz- und Auswahlelemente. Aktuelle Webbrowser können die Daten solcher Elememente zwar verarbeiten ([JavaScript]({{ page.root }}/jumpto/javascript/)), aber nicht speichern. Auch sind Eingabedaten meist eher relevant für den Anbieter eines Webdienstes, nicht aber den Nutzer selbst, weshalb die Verarbeitung serverseitig erfolgt. Hier können die Daten beliebig analysiert (vgl. [Eingabevalidierung]({{ page.root }}/jumpto/validierung/)), manipuliert und verarbeitet werden. Das Spektrum reicht dabei von der Speicherung in einer Datenbank, über den Versand als Email bis hin zu aufwendigen Verarbeitungsmethoden.
 
-Da die Natur des Menschen (die, Fehler zu machen) dem zustandslosen Verbindungsverhalten (oder der Vergesslichkeit) PHPs entgegenläuft, hat sich als Standardmethode der Datenverarbeitung das sogenannte [Affenformular (Standardverfahren)]({{ site.url }}/jumpto/affenformular/) etabliert, das sich solange mit bereits eingetragenen Daten selbst aufruft, bis die Eingabe vollständig und fehlerfrei ist. Das Verfahren ist so praktisch, dass ihm in diesem Wiki ein eigener Themenbereich gewidmet wurde.
+Da die Natur des Menschen (die, Fehler zu machen) dem zustandslosen Verbindungsverhalten (oder der Vergesslichkeit) PHPs entgegenläuft, hat sich als Standardmethode der Datenverarbeitung das sogenannte [Affenformular (Standardverfahren)]({{ page.root }}/jumpto/affenformular/) etabliert, das sich solange mit bereits eingetragenen Daten selbst aufruft, bis die Eingabe vollständig und fehlerfrei ist. Das Verfahren ist so praktisch, dass ihm in diesem Wiki ein eigener Themenbereich gewidmet wurde.
 
 
 ### Grundlagen
 
-Wichtig zu wissen ist, dass die Daten beim Aufruf des Serverscripts im [Request]({{ site.url }}/jumpto/request/) enthalten sind und dem Script dadurch zur Verfügung stehen. Die Kehrseite dieser Tatsache sind Sicherheitsaspekte, die auf der leichten Manipulierbarkeit von Formularen und Verbindungsdaten fußen.
+Wichtig zu wissen ist, dass die Daten beim Aufruf des Serverscripts im [Request]({{ page.root }}/jumpto/request/) enthalten sind und dem Script dadurch zur Verfügung stehen. Die Kehrseite dieser Tatsache sind Sicherheitsaspekte, die auf der leichten Manipulierbarkeit von Formularen und Verbindungsdaten fußen.
 
 
 ### Parametermengen
@@ -54,8 +55,8 @@ Je nachdem, wie die Datenübertragung erfolgt, gibt es für PHP verschiedene Arr
 
 Siehe dazu auch:
 
-- [Hauptartikel Request]({{ site.url }}/jumpto/request/)
-- [Hauptartikel GPC]({{ site.url }}/jumpto/gpc/)
+- [Hauptartikel Request]({{ page.root }}/jumpto/request/)
+- [Hauptartikel GPC]({{ page.root }}/jumpto/gpc/)
 
 Nachfolgend wird stets der POST Request bei der PHP-seitigen Verarbeitung zugrunde gelegt und `<form>` Tags im der HTML Code der Übersichtlichkeit halber weggelassen.
 
@@ -301,5 +302,5 @@ Wie dieses Beispiel als Affenformular und mit kompletter Eingabeprüfung aussieh
 
 ### Weitere Beiträge zum Thema
 
-- [Affenformular (Standardverfahren)]({{ site.url }}/jumpto/affenformular/)
-- [Eingabevalidierung]({{ site.url }}/jumpto/validierung/)
+- [Affenformular (Standardverfahren)]({{ page.root }}/jumpto/affenformular/)
+- [Eingabevalidierung]({{ page.root }}/jumpto/validierung/)

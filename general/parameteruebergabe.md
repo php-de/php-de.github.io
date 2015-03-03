@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/parameteruebergabe/
+root: ../..
 title: "Parameterübergabe"
 group: "Allgemein"
 orderId: 10
@@ -34,7 +35,7 @@ inhalt:
 ---
 
 <div class="alert alert-info"><strong>Information:</strong><br>
-Dieser Artikel behandelt nicht die Parameterübergabe an ein PHP-Script. Diese Informationen sind in den Artikeln <a href="{{ site.url }}/jumpto/request/">Request</a> und <a href="{{ site.url }}/jumpto/gpc/">GPC</a> zu finden.</div>
+Dieser Artikel behandelt nicht die Parameterübergabe an ein PHP-Script. Diese Informationen sind in den Artikeln <a href="{{ page.root }}/jumpto/request/">Request</a> und <a href="{{ page.root }}/jumpto/gpc/">GPC</a> zu finden.</div>
 
 
 Die **Parameterübergabe** bezeichnet die Übergabe von Werten an eine Funktion oder Methode, welche die weitere Verarbeitung dieser Daten übernimmt. In aller Regel wird eine feste Anzahl von Parametern übergeben, die bei der Funktionsdeklaration bestimmt wird. Diese festgelegte Parameteranzahl nennt man *Funktions-* bzw. *Methodensignatur*. In vielen Hochsprachen stellen die Datentypen der einzelnen Parameter einen Teil der Signatur dar. Weil jedoch PHP eine schwach getypte Sprache ist, ist die Festlegung der Datentypen nur beschränkt möglich.
@@ -140,9 +141,9 @@ Wird ein Klassenname angegeben, so muss der Parameter eine Instanz dieser Klasse
 
 Die Parameter lassen sich auf zwei Arten übergeben. Zum einen durch *Call by Value*, welches einer normalen Übergabe entspricht und zum anderen durch *Call by Reference*.
 
-Bei der *Call by Value*-Übergabe wird eine Kopie des Wertes im lokalen [Namensraum]({{ site.url }}/jumpto/geltungsbereich-namensraum/) der Funktion bekannt gemacht. Dieser ist gekapselt und hat keine Verbindung mehr zur Ursprungsvariablen. Änderungen am Parameterwert wirken sich also nicht auf Variablen des globalen Namensraumes aus. Die Parameterübergaben aus den Beispielen zuvor sind allesamt *Call by Value*-Übergaben.
+Bei der *Call by Value*-Übergabe wird eine Kopie des Wertes im lokalen [Namensraum]({{ page.root }}/jumpto/geltungsbereich-namensraum/) der Funktion bekannt gemacht. Dieser ist gekapselt und hat keine Verbindung mehr zur Ursprungsvariablen. Änderungen am Parameterwert wirken sich also nicht auf Variablen des globalen Namensraumes aus. Die Parameterübergaben aus den Beispielen zuvor sind allesamt *Call by Value*-Übergaben.
 
-*Call by Reference*-Übergaben liefern keine Kopie des Wertes, sondern eine [Referenz]({{ site.url }}/jumpto/referenz/) auf die übergebene Variable. Änderungen am Parameter wirken sich also direkt auf die übergebene Variable des aufrufenden Namensraumes aus. Um einen Parameter als Referenz zu deklarieren, wird der Referenz-Operator `&` benutzt.
+*Call by Reference*-Übergaben liefern keine Kopie des Wertes, sondern eine [Referenz]({{ page.root }}/jumpto/referenz/) auf die übergebene Variable. Änderungen am Parameter wirken sich also direkt auf die übergebene Variable des aufrufenden Namensraumes aus. Um einen Parameter als Referenz zu deklarieren, wird der Referenz-Operator `&` benutzt.
 
 ~~~ php
 function func(&$param)

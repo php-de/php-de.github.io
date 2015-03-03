@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/headers-already-sent/
+root: ../..
 title: "Headers already sent"
 group: "Debugging"
 orderId: 8
@@ -61,7 +62,7 @@ diesem Zeitpunkt bereits zu spät.
 </div>
 
 Der Begriff Ausgabe bezeichnet alle Daten eines
-[Requests]({{ site.url }}/jumpto/request/) (nicht
+[Requests]({{ page.root }}/jumpto/request/) (nicht
 Scripts!), also die Gesamtheit aller Ausgabedaten, die durch die Kombination
 von Scripten via Include/Require entsteht.
 
@@ -224,7 +225,7 @@ physisch aber eben existiert (unteres Beispiel).
 ### Analyse
 
 Mit [eingeschaltetem
-Fehlermanagement]({{ site.url }}/jumpto/leitfaden/) meldet PHP
+Fehlermanagement]({{ page.root }}/jumpto/leitfaden/) meldet PHP
 eine Ausgabe vor einem header-Befehl mit einem Warning.
 
 ~~~

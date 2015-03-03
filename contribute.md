@@ -1,6 +1,7 @@
 ---
 layout: guide
 permalink: /jumpto/contribute/
+root: ../..
 title: "Contribute Richtlinie"
 
 creator: tr0y
@@ -167,9 +168,9 @@ Die Jekyll-Variable `{{ "{{ site.url " }}}}` kann in *.md-Dateien genutzt werden
 Interne Verlinkungen sollten somit so aussehen. Verzeichnisse sind Beispiele, es geht um das `{{ "{{ site.url " }}}}` und die absolute Verankerung:
 
 
-- `[...]({{ "{{ site.url " }}}}/jumpto/whatever/)`  
-- `<a href="{{ "{{ site.url " }}}}/jumpto/whatever/">...</a>`  
-- `<img src="{{ "{{ site.url " }}}}/images/foo.png">`  
+- `[...]({{ "{{ site.url " }}}}/jumpto/whatever/)`
+- `<a href="{{ "{{ site.url " }}}}/jumpto/whatever/">...</a>`
+- `<img src="{{ "{{ site.url " }}}}/images/foo.png">`
 
 
 ### Komponenten Vernetzung

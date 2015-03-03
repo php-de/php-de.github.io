@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/gruppenbruch/
+root: ../..
 title: "Gruppenbruch"
 group: "Standard Implementierungsansätze / Code-Snippets"
 orderId: 6

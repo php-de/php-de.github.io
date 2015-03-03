@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/waechter/
+root: ../..
 title: "Wächter"
 group: "Code-Optimierung"
 orderId: 6
@@ -43,28 +44,28 @@ inhalt:
 
 ### Wächter vs. Schachtel-If
 
-In komplexem Code kommt es oft zu einer mehrfachen Verschachtelung von Kontrollstrukturen. Infolge dessen werden relevante Codeteile oft erst in Blöcken 2. oder 3. Ordnung aufgerufen. Nicht immer ist diese Problematik mit AND/OR Operatoren im Bedingungsausdruck zu lösen, ohne gleichzeitig das DRY-Prinzip (don't repeat yourself - Maxime, die besagt, keinen redundanten Code zu schreiben) zu verletzen. 
+In komplexem Code kommt es oft zu einer mehrfachen Verschachtelung von Kontrollstrukturen. Infolge dessen werden relevante Codeteile oft erst in Blöcken 2. oder 3. Ordnung aufgerufen. Nicht immer ist diese Problematik mit AND/OR Operatoren im Bedingungsausdruck zu lösen, ohne gleichzeitig das DRY-Prinzip (don't repeat yourself - Maxime, die besagt, keinen redundanten Code zu schreiben) zu verletzen.
 
-Eine Lösung können hier sogenannte **Wächter** bilden, die auf der Grundlage von frühzeitigen Schleifen- bzw. Strukturabbrüchen basieren. 
+Eine Lösung können hier sogenannte **Wächter** bilden, die auf der Grundlage von frühzeitigen Schleifen- bzw. Strukturabbrüchen basieren.
 
 <div class="alert alert-info"><strong>Information:</strong> Vorzeitige Abbrüche sind unter Anhängern reiner Lehren wie der strukturierten Programmierung verpönt. Die Gratwanderung zwischem elegantem und verständlichem Code muß jeder selbst vollbringen. </div>
 
 #### Grundlagen
-Code funktioniert linear, wird also von oben nach unten, in einer Schleife auch mehrfach abgearbeitet. Jeder Code, der bedingt verarbeitet wird, wird in einem Block geklammert, der je nach Eintreffen der Bedingung durchlaufen wird oder nicht. In einer Schleife ist dies der gesamte zu wiederholende Block, der je nach Schleifenbedingung (Zählervergleich, Durchlaufen einer Menge oder dergl.) geloopt wird. Auch eine Funktion oder Methode ist ein solcher Anweisungsblock, der normalerweise als letztes ein Ergebnis oder einen boolschen Wert als Statusinformation zurückgibt. 
+Code funktioniert linear, wird also von oben nach unten, in einer Schleife auch mehrfach abgearbeitet. Jeder Code, der bedingt verarbeitet wird, wird in einem Block geklammert, der je nach Eintreffen der Bedingung durchlaufen wird oder nicht. In einer Schleife ist dies der gesamte zu wiederholende Block, der je nach Schleifenbedingung (Zählervergleich, Durchlaufen einer Menge oder dergl.) geloopt wird. Auch eine Funktion oder Methode ist ein solcher Anweisungsblock, der normalerweise als letztes ein Ergebnis oder einen boolschen Wert als Statusinformation zurückgibt.
 
-Bedingungen haben im Bereich der Datenverarbeitung zwei Zustände. Sie werden deshalb so ausgeführt: 
+Bedingungen haben im Bereich der Datenverarbeitung zwei Zustände. Sie werden deshalb so ausgeführt:
 
 ~~~
-Wenn Bedingung 1: 
+Wenn Bedingung 1:
     Führe Block 1 aus
-Sonst: 
+Sonst:
     Führe Block 2 aus
 ~~~
 
 Das alternative Wächterprinzip macht sich die Logik zunutze, dass eine nicht erfüllte Bedingung 1 ja zwangsläufig zur Ausführung des zweiten Blocks führt. Also
 
 ~~~
-Wenn Bedingung 1: 
+Wenn Bedingung 1:
     Führe Block 1 aus
     Verlasse die Bedingungsprüfung
 Führe Block 2 aus
@@ -72,10 +73,10 @@ Führe Block 2 aus
 
 #### Beispiel 1
 
-Im Vergleich: Ein Wertebereich soll durchlaufen werden und für alle enthaltenen Datensätze angeben, on sie 1 sind oder nicht.  
+Im Vergleich: Ein Wertebereich soll durchlaufen werden und für alle enthaltenen Datensätze angeben, on sie 1 sind oder nicht.
 
 Pseudocode:
-  
+
 Bsp. 1, klassischer Ansatz, Pseudocode
 
 ~~~
@@ -98,13 +99,13 @@ Schleifendurchlauf
 
   Bsp. 1, klassischer Ansatz, PHP Umsetzung
 
-~~~ php    
+~~~ php
 foreach ($array as $key => $value) {
 
     // positiver Bedingungszweig
     if ($value == 1) {
         echo $key . ' ist 1<br>';
-    
+
     // negativer Bedingungszweig
     } else {
         echo $key . ' ist ungleich 1<br>';
@@ -188,7 +189,7 @@ function dbQuery($querystring)
     $link = mysqli_connect('db_host', 'db_username', 'db_password');
 
     if ($link) {
-        // erfolgreiche Verbindung 
+        // erfolgreiche Verbindung
 
         // Datenbankwahl
         $db_selected = mysqli_select_db($link, 'db_name');
@@ -208,7 +209,7 @@ function dbQuery($querystring)
         mysqli_close($link);
 
     } else {
-        // fehlgeschlagene Verbindung 
+        // fehlgeschlagene Verbindung
         echo 'Verbindung fehlgeschlagen';
         $result = false;
     }
@@ -220,13 +221,13 @@ function dbQuery($querystring)
 Bsp. 2, alternativer Ansatz, PHP Umsetzung:
 
 ~~~ php
-function dbQuery($querystring) 
+function dbQuery($querystring)
 {
     // Verbindungsaufbau
     $link = mysqli_connect('db_host', 'db_username', 'db_password');
 
     if (false === $link) {
-        // fehlgeschlagene Verbindung 
+        // fehlgeschlagene Verbindung
 
         echo 'Datenbankverbindung fehlgeschlagen';
         return false;
@@ -242,7 +243,7 @@ function dbQuery($querystring)
         mysqli_close($link);
         return false;
     }
- 
+
     // Queryanfrage
     $result = mysqli_query($link, $querystring);
     return $result;
@@ -252,11 +253,11 @@ function dbQuery($querystring)
 Wie bereits dieses kurze Beispiel zeigt ist der Code nicht nur wesentlich kompakter und weniger geschachtelt, auch die Reihenfolge der Ausführung ist weit verständlicher, weil die else Zweige nicht in umgekehrter Reihenfolge wie ihre positiven Bedingungen abgearbeitet werden.
 Eine kleine Falle, der beim obigen Pseudocode unterschlagen wurde, enthält die Alternativlösung: Die Freigabe der Verbindungsressource durch mysqli_close($link); muß für zwei Fälle erfolgen: Für den positiven, aber auch den negativen Fall der Datenbankwahl. In der klassischen Umsetzung ist dies aufgrund der Schachtelung schon eingebaut.
 
-**Hinweis:**  
+**Hinweis:**
 Der obige Code dient als Beispiel zur Verdeutlichung einer Wächter-Implementierung, generell wird jedoch empfohlen, dass die Datenbank direkt beim Verbindungaufbau mittels mysqli_connect() ausgewählt wird:
 
 ~~~ php
-// Verbindungsaufbau mit direkt DB-Auswahl 
+// Verbindungsaufbau mit direkt DB-Auswahl
 $link = mysqli_connect('db_host', 'db_username', 'db_password', 'db_name');
 // ...
 ~~~
@@ -291,11 +292,11 @@ Eine Funktion durchläuft eine Menge von Wörtern und untersucht diese, ob sie v
 Bsp. 3, alternativer Ansatz, PHP Umsetzung:
 
 ~~~ php
-$buchstaben = array ('a' , 'b' , 'c'); 
-$worte = array ('abbabab' , 'babajaga' , 'acab'); 
+$buchstaben = array ('a' , 'b' , 'c');
+$worte = array ('abbabab' , 'babajaga' , 'acab');
 
 foreach ($worte as $wort) {
-    echo '<br>Prüfe ' . $wort . ': '; 
+    echo '<br>Prüfe ' . $wort . ': ';
 
     for ($i = 0 ; $i < strlen($wort) ; $i++) {
         // Anzeige aktueller Buchstabe
@@ -325,8 +326,8 @@ do {
 while (false);
 ~~~
 
-führt also alle Anweisungen (hier durch // Bedingungsblock repräsentiert) genau einmal aus. Der Vorteil, der sich gegenüber einer Ausführung ohne Blockelement ergibt, ist, dass die Schleife nun jederzeit mit einem break; vorzeitig verlassen werden. 
-Bezugnehmend auf das obige Beispiel könnte also bspw. ein Fehler bei der Datenbankverbindung so abgefangen werden:  
+führt also alle Anweisungen (hier durch // Bedingungsblock repräsentiert) genau einmal aus. Der Vorteil, der sich gegenüber einer Ausführung ohne Blockelement ergibt, ist, dass die Schleife nun jederzeit mit einem break; vorzeitig verlassen werden.
+Bezugnehmend auf das obige Beispiel könnte also bspw. ein Fehler bei der Datenbankverbindung so abgefangen werden:
 
 Ergänzung zu Bsp. 2, alternativer Ansatz ohne natives Blockelement, PHP Umsetzung:
 
@@ -336,7 +337,7 @@ do {
     $link = mysql_connect('localhost', 'db_user', 'db_password');
 
     if (false === $link) {
-        // fehlgeschlagene Verbindung 
+        // fehlgeschlagene Verbindung
 
         echo 'Datenbankverbindung fehlgeschlagen';
         break;
@@ -344,9 +345,9 @@ do {
     // ... weitere Datenbank-Operationen
 }
 while (false);
-~~~   
+~~~
 
 ### Siehe auch
 
-[http://c2.com/cgi/wiki?GuardClause](http://c2.com/cgi/wiki?GuardClause)  
+[http://c2.com/cgi/wiki?GuardClause](http://c2.com/cgi/wiki?GuardClause)
 [http://programming-php.net/de/clean-code/guard-clauses](http://programming-php.net/de/clean-code/guard-clauses)

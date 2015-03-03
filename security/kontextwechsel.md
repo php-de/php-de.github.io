@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/kontextwechsel/
+root: ../..
 title: "Kontextwechsel"
 group: "Sicherheit"
 orderId: 5

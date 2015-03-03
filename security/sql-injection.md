@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/sql-injection/
+root: ../..
 title: "SQL-Injection"
 group: "Sicherheit"
 orderId: 8
@@ -14,15 +15,15 @@ author:
 
     -   name: mermshaus
         profile: 15041
-        
-    -   name: hausl 
+
+    -   name: hausl
         profile: 21246
 
 inhalt:
     -   name: "Ursprung"
         anchor: ursprung
         simple: ""
-        
+
     -   name: "Gegenmaßnahmen"
         anchor: gegenmanahmen
         simple: ""
@@ -46,7 +47,7 @@ entry-type: in-discussion
 ### Ursprung
 
 SQL-Injections fallen in den Bereich der
-[Kontextwechsel-Probleme]({{ site.url }}/jumpto/kontextwechsel/).
+[Kontextwechsel-Probleme]({{ page.root }}/jumpto/kontextwechsel/).
 
 SQL-Queries werden in PHP als normaler String zusammengebaut. Dynamisch
 hinzugefügte Werte (etwa eine Benutzereingabe in `$_POST['name']`) können dabei
@@ -85,7 +86,7 @@ Stringbegrenzer gemeint ist (syntaktische Funktion), sondern lediglich das
 konkrete Zeichen `"` (reiner Inhalt).
 
 
-### Anwendung 
+### Anwendung
 
 Für jede Datenbankschnittstelle existiert mindestens eine spezielle Funktion
 oder Methode, die dieses Escaping durchführen kann. Es *muss* diese zur

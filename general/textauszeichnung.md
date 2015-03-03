@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/textauszeichnung/
+root: ../..
 title: "Textauszeichnung"
 group: "Allgemein"
 orderId: 4
@@ -299,5 +300,5 @@ This is only a test of the \b emergency broadcast system\b0 .\lang1031\f1\fs20\p
 
 Word-Formatierung, Binärcode mit nicht druckbaren Zeichen (Auszug):
 
-<img alt="Word-Formatierung" src="{{ site.url }}/images/textauszeichnung-wordformat.jpg" />
+<img alt="Word-Formatierung" src="{{ page.root }}/images/textauszeichnung-wordformat.jpg" />
 

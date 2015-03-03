@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/datetime/
+root: ../..
 title: "Datum und Uhrzeit"
 group: "Standard Implementierungsansätze / Code-Snippets"
 orderId: 4
@@ -68,13 +69,13 @@ Dieses Tutorial zeigt, an Hand von der in PHP ausgelieferten Klasse DateTime, ei
 
 Nachfolgende Seiten aus der PHP-Dokumentation finden in den Beispielen laufend Verwendung.
 
-- [Formate Datum und Uhrzeit](http://php.net/manual/de/datetime.formats.php)  
-- [Relative Formate](http://php.net/manual/de/datetime.formats.relative.php)  
-- [DateTime::createFromFormat](http://php.net/manual/de/datetime.createfromformat.php)  
+- [Formate Datum und Uhrzeit](http://php.net/manual/de/datetime.formats.php)
+- [Relative Formate](http://php.net/manual/de/datetime.formats.relative.php)
+- [DateTime::createFromFormat](http://php.net/manual/de/datetime.createfromformat.php)
 
 
 <div class="alert alert-info">
-  Für alle nachfolgenden Beispiele wird mittels <code>date_default_timezone_set('Europe/Berlin');</code> 
+  Für alle nachfolgenden Beispiele wird mittels <code>date_default_timezone_set('Europe/Berlin');</code>
   die verwendete <strong>Standard-Zeitzone</strong> gesetzt.
 </div>
 
@@ -102,14 +103,14 @@ echo $dt->format('Y-m-d');
 // 2015-01-21
 
 // Letzter Freitag im Januar (des aktuellen Jahres)
-$dt = new DateTime('last friday of january');  
-echo $dt->format('Y-m-d');  
-// 2015-01-30   
+$dt = new DateTime('last friday of january');
+echo $dt->format('Y-m-d');
+// 2015-01-30
 
 // Letzter Freitag im Januar 2016
-$dt = new DateTime('last friday of january 2016');  
-echo $dt->format('Y-m-d');  
-// 2016-01-29  
+$dt = new DateTime('last friday of january 2016');
+echo $dt->format('Y-m-d');
+// 2016-01-29
 
 // Erster Tag (Montag) der KW2 (Kalenderwoche) von 2015
 $dt = new DateTime('2015-W03'); // Woche muss zweistellig sein
@@ -133,7 +134,7 @@ echo $dt->format('Y-m-d');
 ~~~ php
 $d = 18;   // 18. Tag
 $y = 2015; // des Jahres 2015
-$dt = DateTime::createFromFormat('z Y', sprintf('%s %s', $d - 1, $y)); 
+$dt = DateTime::createFromFormat('z Y', sprintf('%s %s', $d - 1, $y));
 echo $dt->format('Y-m-d');
 // 2015-01-18
 ~~~
@@ -183,7 +184,7 @@ if ( $now->modify('-30 days') >= $regDate ) {
     echo "Ja!";
 }
 // Ja!
-   
+
 // oder
 
 $regDate = new DateTime('2014-12-15');
@@ -277,13 +278,13 @@ Hierzu sein auch noch auf diesen Thread hingewiesen: [http://www.php.de/php-eins
 
 ~~~ php
 function overlap_timespans($sBegin1, $sEnd1, $sBegin2, $sEnd2, $sTimeTolerance = '') {
-    
+
     $dt1_begin = new DateTime($sBegin1);
     $dt1_end   = new DateTime($sEnd1);
-    
+
     $dt2_begin = new DateTime($sBegin2);
     $dt2_end   = new DateTime($sEnd2);
-   
+
     // correct tolerance if given
     if (!empty($sTimeTolerance)) {
         $dt1_begin->modify('-'.$sTimeTolerance);
@@ -291,7 +292,7 @@ function overlap_timespans($sBegin1, $sEnd1, $sBegin2, $sEnd2, $sTimeTolerance =
     }
 
     // check for possible overlaps
-    
+
     // 2 encolsures 1, or is the same
     if ($dt2_begin <= $dt1_begin && $dt2_end >= $dt1_end) {
         return true;
@@ -320,7 +321,7 @@ var_dump( overlap_timespans('2015-02-01', '2015-02-02', '2015-02-02', '2015-02-0
 ~~~
 
 
-### Ostern  
+### Ostern
 
 Zu diesem Thema gibt es im Forum einige Threads
 

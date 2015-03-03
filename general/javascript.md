@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/javascript/
+root: ../..
 title: "JavaScript"
 group: "Allgemein"
 orderId: 24
@@ -33,7 +34,7 @@ inhalt:
 
 ---
 
-**JavaScript** ist eine auf ECMAScript ([ECMA 262](http://www.ecma-international.org/publications/standards/Ecma-262.htm)) basierende Skriptsprache, die im Browser des Anwenders läuft. Es ist mit JavaScript also möglich, Operationen auf Client-Ebene durchzuführen. Meist handelt es sich dabei um Manipulationen des [Document Object Model]({{ site.url }}/jumpto/document-object-model/) (DOM, Objektbaum eines HTML- oder XML-Dokumentes), Benutzerinteraktion oder Browserabfragen.
+**JavaScript** ist eine auf ECMAScript ([ECMA 262](http://www.ecma-international.org/publications/standards/Ecma-262.htm)) basierende Skriptsprache, die im Browser des Anwenders läuft. Es ist mit JavaScript also möglich, Operationen auf Client-Ebene durchzuführen. Meist handelt es sich dabei um Manipulationen des [Document Object Model]({{ page.root }}/jumpto/document-object-model/) (DOM, Objektbaum eines HTML- oder XML-Dokumentes), Benutzerinteraktion oder Browserabfragen.
 
 ### Sprachelemente und Systematik
 

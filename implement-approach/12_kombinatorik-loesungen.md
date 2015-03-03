@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/kombinatorik-loesungen/
+root: ../..
 title: "Lösungsvorschläge zu kombinatorischen Standardaufgaben"
 group: "Standard Implementierungsansätze / Code-Snippets"
 orderId: 12
@@ -22,7 +23,7 @@ inhalt:
 
     -   name: "Alle Kombinationen einer bestimmten Anzahl der Elemente eines Arrays"
         anchor: alle-kombinationen-einer-bestimmten-anzahl-der-elemente-eines-arrays
-        
+
     -   name: "Ziehen mit Zurücklegen"
         anchor: ziehen-mit-zurcklegen
 

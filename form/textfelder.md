@@ -1,6 +1,7 @@
 ---
 layout: guide
 permalink: /jumpto/textfelder/
+root: ../..
 group: "Formularverarbeitung"
 title: "Textfelder"
 orderId: 10
@@ -97,7 +98,7 @@ echo $_POST['MeinPasswort']; // 123Kaffepause
 
 Für alle Ausgaben von Formularwerten besteht die Gefahr von Code-Injection und
 <a
-href="{{ site.url }}/jumpto/cross-site-scripting/">Cross-Site-Scripting</a>.
+href="{{ page.root }}/jumpto/cross-site-scripting/">Cross-Site-Scripting</a>.
 Die Lehrbeispiele werden zunächst ohne entsprechende Maßnahmen reduziert
 dargestellt.
 
@@ -149,7 +150,7 @@ Deshalb ist das nachfolgende Thema unbedingt zu beachten.
 #### Scriptsicherheit
 
 Die obigen Beispiele sind fehleranfällig, weil die Eingaben keine
-[Zeichenmaskierung]({{ site.url }}/jumpto/kontextwechsel/)
+[Zeichenmaskierung]({{ page.root }}/jumpto/kontextwechsel/)
 vornehmen. So können in den Eingaben potentiell Zeichen wie `"` oder Strings
 wie `</textarea>` enthalten sein. Beide Fälle sind geeignet jeweils eines der
 Elementtypen syntaktisch zu stören. Der Grund ist, dass PHP nicht

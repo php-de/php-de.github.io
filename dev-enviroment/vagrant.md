@@ -1,6 +1,7 @@
 ---
 layout: guide
 permalink: /jumpto/vagrant/
+root: ../..
 title: "Entwicklungsumgebung mit Vagrant"
 creator: BlackScorp
 ##group: "Entwicklungsumgebung"
@@ -18,12 +19,12 @@ entry-type: in-progress
 
 ### Motivation
 
-In der Regel reicht eine XAMPP Installation unter Windows komplett aus, um mal eben mit PHP entwicklen zu können. 
+In der Regel reicht eine XAMPP Installation unter Windows komplett aus, um mal eben mit PHP entwicklen zu können.
 Doch sobald man unter umständen NodeJS oder nginx Server verwenden will, oder statt MySql MongoDB reicht da XAMPP nicht mehr aus.
 
 Dazu gibt es mehrere Alternativen.
 
-1) Man nimmt einen Alten PC oder Notebook, installiert dort Linux und alles was man für die Entwicklung benötigt. 
+1) Man nimmt einen Alten PC oder Notebook, installiert dort Linux und alles was man für die Entwicklung benötigt.
 Nachteil ist: wenn man entwickeln will, muss man das Notebook einschalten, gegebenfalls updates installieren usw..
 2) Man installiert sich Linux mit DualBoot und wechselt zwischen Windows und Linux beim booten
 Nachteil: Unter Windows kann man nicht entwickeln, nur noch unter Linux
@@ -33,4 +34,4 @@ Nachteil: Es tauchen ab und zu Probleme auf mit der virtuellen Festplatte der Vi
 Die Vorteile einer Virtuellen Machine sind:
 
 1) Testen im Internet Explorer ist Möglich
-2) Man hat die Möglichkeit unterschiedliche Server zu testen. 
+2) Man hat die Möglichkeit unterschiedliche Server zu testen.

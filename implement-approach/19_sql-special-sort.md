@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/sql-special-sort/
+root: ../..
 title: "SQL - Spezielle Sortierungen"
 group: "Standard Implementierungsansätze / Code-Snippets"
 orderId: 19
@@ -28,8 +29,8 @@ inhalt:
 entry-type: in-discussion
 ---
 
-Manchmal möchte man eine spezielle Sortierung der Ausgabe, welche mit dem üblichen 
-`ORDER BY field1, field2, ...` nicht erreicht werden kann. Nachfolgend ein paar Beispiele 
+Manchmal möchte man eine spezielle Sortierung der Ausgabe, welche mit dem üblichen
+`ORDER BY field1, field2, ...` nicht erreicht werden kann. Nachfolgend ein paar Beispiele
 mit Lösungsansätzen dazu.
 
 
@@ -56,7 +57,7 @@ SELECT name, date_birth FROM persons
 8 rows in set (0.00 sec)
 ~~~
 
-  
+
 Möchten wir uns nun beispielsweise die ältersten drei Personen ausgeben lassen,
 so reicht dafür ein `LIMIT 3` mit der entsprechenden Sortierung aus.
 
@@ -73,8 +74,8 @@ SELECT name, date_birth FROM persons ORDER BY date_birth LIMIT 3
 3 rows in set (0.00 sec)
 ~~~
 
-  
-Wollen wir nun wieder die ältersten drei Personen ausgeben, dieses mal jedoch, entgegen der obigen für `LIMIT` nötigen Sortierlogik, 
+
+Wollen wir nun wieder die ältersten drei Personen ausgeben, dieses mal jedoch, entgegen der obigen für `LIMIT` nötigen Sortierlogik,
  von jung nach alt (also umgekehrt) sortieren lasen, benötigen wir ein Sub-Select.
 
 ~~~ sql
@@ -92,7 +93,7 @@ ORDER BY sub.date_birth DESC
 3 rows in set (0.00 sec)
 ~~~
 
-  
+
 Je nach Belieben kann die `ORDER`-Klausel verändert werden, z.B. die ältersen drei Personen, alphabetisch sortiert.
 
 ~~~ sql
@@ -116,7 +117,7 @@ ORDER BY sub.name
 
 Ein anderer Fall ist eine Art Vorsortierung nach einer gewissen Bedingung.
 
-Angenommen folgende Ausgangstabelle, in der das Geburtsdatum von 
+Angenommen folgende Ausgangstabelle, in der das Geburtsdatum von
 Klaus und Sandra noch nicht bekannt, und daher mit `NULL` gesetzt ist.
 
 ~~~ sql
@@ -137,10 +138,10 @@ SELECT name, date_birth FROM persons
 8 rows in set (0.00 sec)
 ~~~
 
-  
+
 Nun wollen wir uns zuerst alle Personen ausgeben lassen, die noch kein Geburtsdatum haben,
-und danach alle anderen, und das alphabetisch sortiert. Da dies mittels einem einfachen 
-`ORDER BY date_birth, name` nicht wie gewünscht funktioniert, müssen wir in diesem Fall 
+und danach alle anderen, und das alphabetisch sortiert. Da dies mittels einem einfachen
+`ORDER BY date_birth, name` nicht wie gewünscht funktioniert, müssen wir in diesem Fall
 ein zusätzliches `IS NULL` in der `ORDER`-Klausel verwenden.
 
 ~~~ sql

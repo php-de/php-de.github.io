@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/faq/
+root: ../..
 title: "FAQ - Häufig gestellte Fragen aus dem Themenbereich des Forums"
 group: "Einführung"
 orderId: 4
@@ -16,7 +17,7 @@ author:
 
     - name: mermshaus
       profile: 15041
-      
+
     - name: hausl
       profile: 21246
 
@@ -78,7 +79,7 @@ ordentlich darstellen kann, ist einfach zu groß.
 
 Geeignete Mailerklassen sind etwa [PHPMailer](http://phpmailer.worxware.com/)
 und [Swift Mailer](http://swiftmailer.org/). Siehe hierzu auch [diesen
-Artikel]({{ site.url }}/jumpto/mail-class/).
+Artikel]({{ page.root }}/jumpto/mail-class/).
 
 Bei der (nicht empfohlenen) direkten Nutzung der `mail()`-Funktion muss
 sichergestellt werden, dass
@@ -92,10 +93,10 @@ für den Versand von Spam an Dritte benutzen.
 #### Wie kann ich erreichen, dass mein Formular bei Unvollständigkeit wieder ausgefüllt wird?
 {: #formular-gefuellt}
 
-Ein Affenformular bietet genau diese Funktionalität. Siehe [Affenformular]({{ site.url }}/jumpto/affenformular/)
+Ein Affenformular bietet genau diese Funktionalität. Siehe [Affenformular]({{ page.root }}/jumpto/affenformular/)
 
 
-#### Was ist ein Affenformular? 
+#### Was ist ein Affenformular?
 {: #affenformular}
 Siehe: vorige Frage.
 
@@ -116,8 +117,8 @@ außerhalb von `<?php ... ?>`-Tags oder Aufrufe von Konstrukten/Funktionen
 wie `print`, `echo`, `readfile`. Besonders schwierig zu entdecken sind
 Leerzeilen hinter einem `?>`-Tag am Dateiende oder [Byte Order
 Marks](https://de.wikipedia.org/wiki/Byte_Order_Mark). Siehe auch:
-[Standardfehler]({{ site.url }}/jumpto/standardfehler/),
-[EVA-Prinzip]({{ site.url }}/jumpto/eva-prinzip/).
+[Standardfehler]({{ page.root }}/jumpto/standardfehler/),
+[EVA-Prinzip]({{ page.root }}/jumpto/eva-prinzip/).
 
 
 
@@ -126,7 +127,7 @@ Marks](https://de.wikipedia.org/wiki/Byte_Order_Mark). Siehe auch:
 
 Wahrscheinlich handelt es sich um einen Parser-Fehler. Üblicherweise hast Du
 einen Stringbegrenzer, ein Semikolon oder eine Klammer vergessen. Siehe:
-[Standardfehler]({{ site.url }}/jumpto/standardfehler/).
+[Standardfehler]({{ page.root }}/jumpto/standardfehler/).
 
 
 
@@ -195,12 +196,12 @@ durcheinander, da der String, mit dem verglichen werden soll, bereits
 nach dem `O` geschlossen wird.
 
 Weitere Informationen und sinnvolle Gegemaßnahmen sind im [Hauptartikel
-SQL-Injection]({{ site.url }}/jumpto/sql-injection/) zu finden.
+SQL-Injection]({{ page.root }}/jumpto/sql-injection/) zu finden.
 
 
-#### You have an error in your SQL syntax; ... Warning: mysql_fetch_row() expects parameter 1 to be resource, boolean given 
+#### You have an error in your SQL syntax; ... Warning: mysql_fetch_row() expects parameter 1 to be resource, boolean given
 {: #sql-error}
 
 Der SQL-String für die Datenbankabfrage ist fehlerhaft. Lass dir den fertigen
 String der entsprechenden Query vor der Anfrage testweise ausgeben. Siehe:
-[SQL-Fehlerbehebung]({{ site.url }}/jumpto/sql/).
+[SQL-Fehlerbehebung]({{ page.root }}/jumpto/sql/).

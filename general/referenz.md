@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/referenz/
+root: ../..
 title: "Referenz"
 group: "Allgemein"
 orderId: 13
@@ -27,7 +28,7 @@ inhalt:
         simple: ""
 ---
 
-**Referenzen** in PHP sind gleichberechtigte Aliase für Variablennamen. Sie dienen dazu, mit verschiedenen Variablennamen auf dieselbe Speicherstelle zugreifen zu können. Referenzen können auch [namensraumübergreifend]({{ site.url }}/jumpto/geltungsbereich-namensraum/) eingesetzt werden.
+**Referenzen** in PHP sind gleichberechtigte Aliase für Variablennamen. Sie dienen dazu, mit verschiedenen Variablennamen auf dieselbe Speicherstelle zugreifen zu können. Referenzen können auch [namensraumübergreifend]({{ page.root }}/jumpto/geltungsbereich-namensraum/) eingesetzt werden.
 
 ### Variablen und Referenzen
 

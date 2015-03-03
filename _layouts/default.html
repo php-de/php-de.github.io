@@ -5,22 +5,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% if page.title != 'php.de' %}{{ page.title }} &middot; {% endif %}PHP.de Wissenssammlung</title>
 
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="/assets/css/general.css">
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{{ page.root }}/assets/css/general.css">
         {% if page.title == 'php.de' %}
         <!-- Atom Feed Autodiscovery -->
-        <link rel="alternate" href="http://php-de.github.io/feed/atom.xml" type="application/atom+xml" title="Atom Feed">
+        <link rel="alternate" href="{{ page.root }}/feed/atom.xml" type="application/atom+xml" title="Atom Feed">
         <!-- /Atom Feed -->
         {% endif %}
 
         <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-        <script type="text/javascript" src="/assets/scroll.js"></script>
+        <script type="text/javascript" src="{{ page.root }}/assets/scroll.js"></script>
     </head>
     <body>
         <div id="page" class="container">
             <div id="logoContainer" style="position:relative;">
                 <a id="top"></a>
-                <a href="{{ site.url }}" style="position: absolute; left: 0; top: 0; height: 80px; width: 270px;"></a>
+                <a href="{{ page.root }}/" style="position: absolute; left: 0; top: 0; height: 80px; width: 270px;"></a>
                 <div style="position:absolute; bottom:12px; right:10px;">
                     <div class="list-group" style="padding:0px 15px; margin-bottom:0; padding-right:0px;">
                         <a class="list-group-item" href="https://www.facebook.com/groups/133593673518416/" style="padding:4px 10px;">
@@ -37,10 +37,10 @@
                 {% if page.title == 'php.de' %}
                     <li class="active">PHP.de Wissen</li>
                 {% else %}
-                    <li><a href="{{ site.url }}">PHP.de Wissen</a></li>
+                    <li><a href="{{ page.root }}/">PHP.de Wissen</a></li>
                     {% for group in site.groups %}
                     {% if group.name == page.group %}
-                    <li><a href="{{ site.url }}#{{ group.anchor }}">{{ group.name }}</a></li>
+                    <li><a href="{{ page.root }}/#{{ group.anchor }}">{{ group.name }}</a></li>
                     {% endif %}
                     {% endfor %}
                     <li class="active">{{ page.title }}</li>
@@ -54,7 +54,7 @@
         <div class="container">
             <footer>
                 <p>
-                    <a href="{{ site.url }}{% if page.title != 'php.de' %}{{ page.url }}{% endif %}#top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+                    <a href="#top"><span class="glyphicon glyphicon-chevron-up"></span></a>
                 </p>
                 <p>
                     <small>&copy; Betreut durch die PHP.de Community - initiiert durch <strong>hausl</strong> und <strong>tr0y</strong>.</small>

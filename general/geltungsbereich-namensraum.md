@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/geltungsbereich-namensraum/
+root: ../..
 title: "Geltungsbereich (Scope) und Namensraum (Namespace)"
 group: "Allgemein"
 orderId: 16
@@ -234,7 +235,7 @@ Das Ergebnis ist dasselbe:
 5
 ~~~
 
-<div class="alert alert-warning"><strong>Achtung: </strong>Durch die Verwendung von global wird das Prinzip des Geltungsbereiches außer Kraft gesetzt und es ist nicht mehr sicher, ob eine Variable bereits definiert wurde oder nicht. So kommt es leicht zu einer ungewollten Überschreibung von Variablen. Deshalb wird geraten, auf <code>global</code> zu verzichten. Wenn innerhalb einer Funktion auf eine Variable aus dem globalen Geltungsbereich zugegriffen werden muss, sollte lieber eine <a href="{{ site.url }}/jumpto/referenz/">Referenz</a> als Parameter übergeben werden.</div>
+<div class="alert alert-warning"><strong>Achtung: </strong>Durch die Verwendung von global wird das Prinzip des Geltungsbereiches außer Kraft gesetzt und es ist nicht mehr sicher, ob eine Variable bereits definiert wurde oder nicht. So kommt es leicht zu einer ungewollten Überschreibung von Variablen. Deshalb wird geraten, auf <code>global</code> zu verzichten. Wenn innerhalb einer Funktion auf eine Variable aus dem globalen Geltungsbereich zugegriffen werden muss, sollte lieber eine <a href="{{ page.root }}/jumpto/referenz/">Referenz</a> als Parameter übergeben werden.</div>
 
 
 ### Superglobals

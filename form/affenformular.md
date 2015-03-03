@@ -1,6 +1,7 @@
 ---
 layout: guide
 permalink: /jumpto/affenformular/
+root: ../..
 group: "Formularverarbeitung"
 title: "Affenformular (Standardverfahren)"
 orderId: 4
@@ -29,9 +30,9 @@ entry-type: in-discussion
 
 Das sogenannte **Affenformular** ist eine Codebasis bei der Verarbeitung von Webformularen. Sein Hauptzweck ist die Erstellung einer grundlegenden Formularverarbeitung: Darstellung eines Forms, Prüfung des Status, Selbstaufruf mit wiederaufgefüllten Eingabefeldern.
 
-![Affenformular, Funktionsprinzip des Arbeitsprozesses]({{ site.url }}/images/affenformular_prozess.jpg)
+![Affenformular, Funktionsprinzip des Arbeitsprozesses]({{ page.root }}/images/affenformular_prozess.jpg)
 
-In jedem Fall registriert ein solcher Code einen erfolgreichen Submit (i.A. einen [POST Request]({{ site.url }}/jumpto/request/#post)) und führt eine Folgeaktion (Parameterverarbeitung oder erneutes Darstellen des Formularcodes) aus. Ob eine [Validierung]({{ site.url }}/jumpto/validierung/) der übertragenen Feldwerte noch zum Affenformular gehört ist Ansichtssache.
+In jedem Fall registriert ein solcher Code einen erfolgreichen Submit (i.A. einen [POST Request]({{ page.root }}/jumpto/request/#post)) und führt eine Folgeaktion (Parameterverarbeitung oder erneutes Darstellen des Formularcodes) aus. Ob eine [Validierung]({{ page.root }}/jumpto/validierung/) der übertragenen Feldwerte noch zum Affenformular gehört ist Ansichtssache.
 
 ### Abgrenzung
 
@@ -46,24 +47,24 @@ Beide Punkte werden durch eine klassische Fomularverarbeitung allenfalls ansatzw
 
 Am Anfang steht die klassische Formularverarbeitung. Wir haben ein HTML-basiertes Formularscript, dessen Form-Action auf ein serverbasiertes Aktionsscript verweist. Ein Button erzeugt einen Request auf dieses Script und startet dessen Aktion.
 
-![lineare Formularverarbeitung]({{ site.url }}/images/affenform_herleitung_1.gif)
+![lineare Formularverarbeitung]({{ page.root }}/images/affenform_herleitung_1.gif)
 
 Das Aktionsscript prüft die Eingabe und zeigt bei fehlenden oder fehlerhaften Daten eine Meldung an. Anderenfalls werden die Daten verarbeitet. Aus Nutzeraspekten ist so ein Script unglücklich gebaut, da der Nutzerwunsch ja die Ausführung der Scriptaktion mit seinen Eingabedaten ist. Im Fehlerfall ist die Art der Rückmeldung, erst recht die Möglichkeit zur Anpassung der Eingabedaten hier bescheiden: Meldungstexte und Browser-Back-Button.
 
 Mehr Komfort bietet ein dynamisches Formular, das bei fehlerhaften Daten die bisherigen Daten in einem baugleichen Formular wieder darstellt. Für den Nutzer ergibt sich der Eindruck, das Formular würde erneut angezeigt.
 
-![lineare Formularverarbeitung mit Wiederbefüllung]({{ site.url }}/images/affenform_herleitung_2.gif)
+![lineare Formularverarbeitung mit Wiederbefüllung]({{ page.root }}/images/affenform_herleitung_2.gif)
 
 Das Eingabescript wird hierbei dupliziert und mit einem dynamischen Teil (Befüllen der Eingabeelemente mit Vorgabewerten) erweitert. Die Aktion zeigt weiterhin auf das ursprüngliche Aktionsscript. Selbiges prüft, ob es eine Folgeaktion (Datenverarbeitung) ausführt oder das dynamische Formular darstellt. Beide Komponenten können dabei durchaus zusammen in einem Script als Bedingungsblöcke notiert sein.
 
 
 Nun stellt sich die Frage, ob nicht ein Formular beide Zwecke erfüllen kann, die Initialanzeige (leer) und die Fehleranzeige (befüllt). Erhält unser dynamisches Formular eine Auswertung der Art seines Aufrufs, kann es an die Stelle des initialen Formulars treten und man spart damit ein Script ein. Und noch viel wichtiger: Doppelungen, bspw. bei der Änderung der Formularmaske entfallen.
 
-![lineare Formularverarbeitung mit dynamischer Eingabemaske]({{ site.url }}/images/affenform_herleitung_3.gif)
+![lineare Formularverarbeitung mit dynamischer Eingabemaske]({{ page.root }}/images/affenform_herleitung_3.gif)
 
 Führt man diesen Schritt konsequent weiter, kann auch die Aktionsfunktionen mit in das Script integrieren. Das ist sinnvoll, weil unser dynamisches Formularscript ohnehin schon Informationen über den Zustand der aktuellen Formularverarbeitung verwaltet. Die Aktion unseres Formulars zeigt also auf das aktuelle Script.
 
-![echtes Affenformular]({{ site.url }}/images/affenform_herleitung_4.gif)
+![echtes Affenformular]({{ page.root }}/images/affenform_herleitung_4.gif)
 
 
 ### Umsetzung
@@ -113,10 +114,10 @@ if (isset($_POST['Name_des_Textfelds'])) {
 
 Für die Umsetzung des Abschicken & Wiederauffüllen-Verfahrens müssen die unterschiedlichen Verhalten der HTML Eingabefelder berücksichtigt werden. Besonderes Augenmerk verdienen hier nicht ausgewählte Checkboxen und Radiobuttons, deren Werte beim Submit nicht übertragen werden.
 
-Die Grundlagen zur Übergabe von Formular-Parameterdaten sind bereits unter [Formularverarbeitung]({{ site.url }}/jumpto/form/) beschrieben. Nachfolgend wird darauf aufbauend die Wiederbelegung der Elemente beschrieben.
+Die Grundlagen zur Übergabe von Formular-Parameterdaten sind bereits unter [Formularverarbeitung]({{ page.root }}/jumpto/form/) beschrieben. Nachfolgend wird darauf aufbauend die Wiederbelegung der Elemente beschrieben.
 
 ##### Textfeld und Inputfeld
-Hauptartikel [Formularverarbeitung Textfelder]({{ site.url }}/jumpto/textfelder/)
+Hauptartikel [Formularverarbeitung Textfelder]({{ page.root }}/jumpto/textfelder/)
 
 Die unkomliziertesten Felder. Die Ausgabe erfolgt im value Attribut bzw. zwischen den Tags. Bitte Kapitel *Problematik HTML Sonderzeichen* beachten.
 
@@ -126,7 +127,7 @@ Die unkomliziertesten Felder. Die Ausgabe erfolgt im value Attribut bzw. zwische
 ~~~
 
 ##### Auswahlelemente
-Hauptartikel Formularverarbeitung [Auswahlfelder]({{ site.url }}/jumpto/auswahlfelder/) | [Auswahllisten (Selections)]({{ site.url }}/jumpto/auswahllisten/)
+Hauptartikel Formularverarbeitung [Auswahlfelder]({{ page.root }}/jumpto/auswahlfelder/) | [Auswahllisten (Selections)]({{ page.root }}/jumpto/auswahllisten/)
 
 Für alle anderen Elemente muß die jeweilige Auswahl durch ein spezielles Attribut (je nach Typ checked oder selected) gekennzeichnet werden. Das Vorgehen unterscheidet sich lediglich im Datentyp, das das Element liefert.
 
@@ -151,7 +152,7 @@ ergäbe
 
 wobei der Browser *"Peter sagte "* als Attributwert für *value* interpretierte. Ein folgendes > würde auch das input Element verlassen usw.
 
-Analog kann über einen unbearbeiteten Parameter auch Stylesheet-Formatierung oder - weit mächtiger - JavaScript Code in das Script eingeschleust werden. Dieses Verfahren nennt man [Cross Site Scripting]({{ site.url }}/jumpto/cross-site-scripting/).
+Analog kann über einen unbearbeiteten Parameter auch Stylesheet-Formatierung oder - weit mächtiger - JavaScript Code in das Script eingeschleust werden. Dieses Verfahren nennt man [Cross Site Scripting]({{ page.root }}/jumpto/cross-site-scripting/).
 
 
 Abhilfe schafft bspw. die Bearbeitung des Eingabewertes mit `htmlentities()`. Dieser wandelt HTML Syntaxbestandteile in eine sogenannte Entity (einen HTML Ersatzcode) um, der vom Browser nur in der Anzeige als das gewünschte Zeichen gerendert wird. Obiges Beispiel erzeugte beispielsweise die HTML Ausgabe:
@@ -161,5 +162,5 @@ Abhilfe schafft bspw. die Bearbeitung des Eingabewertes mit `htmlentities()`. Di
 ~~~
 
 
-<div class="alert alert-warning"><strong>Achtung: </strong>Die vorliegenden Ausführungen sind auf das Funktionsprinzip reduziert. Eine Formularverarbeitung und -darstellung setzt zwingend eine Beschäftigung mit Unsicherheitsfaktoren wie <a href="{{ site.url }}/jumpto/cross-site-scripting/">XSS</a> voraus!</div>
+<div class="alert alert-warning"><strong>Achtung: </strong>Die vorliegenden Ausführungen sind auf das Funktionsprinzip reduziert. Eine Formularverarbeitung und -darstellung setzt zwingend eine Beschäftigung mit Unsicherheitsfaktoren wie <a href="{{ page.root }}/jumpto/cross-site-scripting/">XSS</a> voraus!</div>
 

@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/eva-prinzip/
+root: ../..
 title: "EVA-Prinzip (Standardverfahren)"
 orderId: 4
 group: "Code-Optimierung"
@@ -69,7 +70,7 @@ Die Sprache PHP ist eng mit dem EVA-Prinzip verknüpft, weil der übliche Sprach
 
 PHP kommt hier die Rolle der Ausgabe einer Information zu. Diese ist zunächst statisch - „Hallo Welt“.
 
-Im nächsten Schritt soll das Script eine URL-Übergabe wiedergeben. Aus Gründen der [Scriptsicherheit]({{ site.url }}/jumpto/cross-site-scripting/) fügen wir einen htmlspecialchars-Befehl ein, der sich um die [Maskierung]({{ site.url }}/jumpto/kontextwechsel/) (sog. Escaping) schädlicher Eingabewerte kümmert:
+Im nächsten Schritt soll das Script eine URL-Übergabe wiedergeben. Aus Gründen der [Scriptsicherheit]({{ page.root }}/jumpto/cross-site-scripting/) fügen wir einen htmlspecialchars-Befehl ein, der sich um die [Maskierung]({{ page.root }}/jumpto/kontextwechsel/) (sog. Escaping) schädlicher Eingabewerte kümmert:
 
 ~~~ php
 <html>
@@ -153,7 +154,7 @@ Solange wir PHP in seiner Grundfunktion als Ausgabesprache nutzen, brauchen wir 
 <br>
 
 
-All diese Funktionen müssen vor jeglichen Textausgaben des Dokuments geschehen, sonst resultieren sie in einem [headers-sent-Fehler]({{ site.url }}/jumpto/headers-already-sent/).
+All diese Funktionen müssen vor jeglichen Textausgaben des Dokuments geschehen, sonst resultieren sie in einem [headers-sent-Fehler]({{ page.root }}/jumpto/headers-already-sent/).
 
 ### Umsetzung
 

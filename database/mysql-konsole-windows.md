@@ -1,6 +1,7 @@
 ---
 layout: guide
 permalink: /jumpto/mysql-konsole-windows/
+root: ../..
 title: "MySQL-Konsole und Umlaute unter Windows"
 group: "Datenbanken"
 creator: dr.e.

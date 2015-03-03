@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/validierung/
+root: ../..
 group: "Sicherheit"
 title: "Validierung"
 orderId: 2
@@ -30,7 +31,7 @@ entry-type: in-discussion
 ---
 
 
-Unter **Validierung** oder **Eingabevalidierung** (engl. *valid* = gültig) versteht man allgemein die Prüfung der Integrität von Daten, also die Übereinstimmung eines gegebenen Wertes mit einem erwarteten Wertschema (Einzelheiten siehe unter Ansätze), sozusagen den Vergleich von Soll- und Ist-Zustand. Weiter gefasst meint Validierung meist die Prüfung von Werten, die einem PHP Script als [Parameterdaten]({{ site.url }}/jumpto/gpc/) übermittelt wurden.
+Unter **Validierung** oder **Eingabevalidierung** (engl. *valid* = gültig) versteht man allgemein die Prüfung der Integrität von Daten, also die Übereinstimmung eines gegebenen Wertes mit einem erwarteten Wertschema (Einzelheiten siehe unter Ansätze), sozusagen den Vergleich von Soll- und Ist-Zustand. Weiter gefasst meint Validierung meist die Prüfung von Werten, die einem PHP Script als [Parameterdaten]({{ page.root }}/jumpto/gpc/) übermittelt wurden.
 
 Die Eingabevalidierung muß sowohl Nutzerfehler (Fehleingaben, Fehlbedienung), gezielte Datenmanipulation als auch eventuelle Softwarefehler berücksichtigen. Deshalb müssen bei der Entwicklung mögliche Parameterabweichungen gründlich analysiert und Datentypen durch vorausgehende Spezifikation des Eingabe- und Verarbeitungsprozesses möglichst präzise definiert werden.
 
@@ -47,7 +48,7 @@ Je nach Maßgabe zum gewählten Prüfverhalten der Anwendung können daraus vers
 
 #### Typprüfung und semantische Validierung
 
-Diese Bereiche sind nicht vollständig voneinander zu trennen, besonders da PHP eine schwach typisierte Sprache ist und Request-Parameterdaten bspw. generell als String übertragen werden (vgl. [Formularverarbeitung]({{ site.url }}/jumpto/form/)).
+Diese Bereiche sind nicht vollständig voneinander zu trennen, besonders da PHP eine schwach typisierte Sprache ist und Request-Parameterdaten bspw. generell als String übertragen werden (vgl. [Formularverarbeitung]({{ page.root }}/jumpto/form/)).
 
 Typische Beispiele konkreter Datentypen:
 
@@ -109,7 +110,7 @@ Generell gilt:
 
 Die offensichtlichsten Daten sind die Parameter, die durch Auswertung der URL oder Eingabe in Formularfelder entstehen.
 
-Keinesfalls zu vergessen ist die Möglichkeit, dass weitere, nicht vorgesehene Parameter übersandt werden können. Gerade in Verbindung mit der Ini-Einstellung [register_globals_gpc]({{ site.url }}/jumpto/php-ini/#registerglobals) und nichtinitialiserten Variablen ist dies ein nicht zu unterschätzender Angriffsvektor. Möglichkeiten bietet sich dazu viele:
+Keinesfalls zu vergessen ist die Möglichkeit, dass weitere, nicht vorgesehene Parameter übersandt werden können. Gerade in Verbindung mit der Ini-Einstellung [register_globals_gpc]({{ page.root }}/jumpto/php-ini/#registerglobals) und nichtinitialiserten Variablen ist dies ein nicht zu unterschätzender Angriffsvektor. Möglichkeiten bietet sich dazu viele:
 
 - direktes Schreiben der Daten in die URL
 - Verwenden eines selbst erstellten Formulars

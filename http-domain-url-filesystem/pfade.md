@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/pfade/
+root: ../..
 title: "Pfade in der Webentwicklung"
 group: "HTTP / Domain / URL / Requests / Dateisystem"
 orderId: 6

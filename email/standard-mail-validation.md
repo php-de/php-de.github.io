@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/standard-mail-validation/
+root: ../..
 title: "Standard E-Mail-Validierung"
 group: "E-Mail"
 orderId: 2
@@ -13,7 +14,7 @@ author:
 
     -   name: tr0y
         profile: 21125
- 
+
 inhalt:
     -   name: "filter_var()"
         anchor: filtervar
@@ -40,7 +41,7 @@ entry-type: in-discussion
 ---
 
 Dieses Tutorial zeigt grundsätzliche (übliche) Möglichkeiten, eine E-Mail-Adresse *(wie sie für den Transport per SMTP im Internet verwendet wird, bestehend aus zwei Teilen, die durch ein @-Zeichen voneinander getrennt sind)*
- zu validieren. 
+ zu validieren.
 
 Vorweg sei an dieser Stelle erwähnt, dass eine Prüfung auf tatsächliche Existenz einer E-Mail-Adresse auf diesem Weg nicht möglich ist. Die nachfolgenden Ansätze dienen lediglich zur Feststellung ob die grundlegenden formellen Rahmenbedingungen erfüllt werden bzw. einer positiven [DNS](http://de.wikipedia.org/wiki/Domain_Name_System)-Antwort im Falle einer [Domain](http://de.wikipedia.org/wiki/Domain)-[DNS](http://de.wikipedia.org/wiki/Domain_Name_System)-Prüfung. Des Weiteren erhebt dieses Tutorial nicht den Anspruch, [sämtlichen RFC zu diesem Thema](#rfc-zum-thema-e-mail) zu genügen (wenn sich schon die meisten großen Provider und Mail-Anbieter nicht daran halten ...).
 
@@ -50,9 +51,9 @@ PHP stellt ab Version 5.2 die Funktion [filter_var()](http://php.net/manual/de/f
 
 ~~~ php
 function isValidEmail($mail)
-{ 
+{
     return (bool) filter_var($mail, FILTER_VALIDATE_EMAIL);
-} 
+}
 
 var_dump(isValidEmail("test@example.com"));  // true
 var_dump(isValidEmail("pelé@example.com"));  // false
@@ -63,20 +64,20 @@ var_dump(isValidEmail("mail@übung.de"));     // false
 
 Sollte filter_var() nicht verfügbar sein, dann den Provider kontaktieren (oder wechseln ;)). Im ungünstigsten Fall gibt es [auf dieser Seite](http://www.regular-expressions.info/email.html) unten (vorletzter Absatz) ein zu [RFC 2822](http://tools.ietf.org/html/rfc2822) empfohlenen regulären Ausdruck (Regex).
 
-> We get a more practical implementation of RFC 2822 if we omit the syntax using double quotes and square brackets. It will still match 99.99% of all email addresses in actual use today. 
+> We get a more practical implementation of RFC 2822 if we omit the syntax using double quotes and square brackets. It will still match 99.99% of all email addresses in actual use today.
 
 ~~~ php
 function isValidEmail($mail)
-{ 
+{
     $pattern = '#[a-z0-9!\\#$%&\'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!\#$%&\'*+/=?^_`{|}~-]+)*'
              . '@'
              . '(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?#i';
     return (bool) preg_match($pattern, $mail);
-} 
+}
 
 var_dump(isValidEmail("test@example.com"));  // true
 var_dump(isValidEmail("pelé@example.com"));  // false
-var_dump(isValidEmail("mail@übung.de"));     // false 
+var_dump(isValidEmail("mail@übung.de"));     // false
 ~~~
 
 Dies kann alternativ zu filter_var() verwendet werden. Ebenso wie [oben bei filter_var()](#filtervar) schlägt die Prüfung von internationalisierten Domains fehl (was hier bereits am Pattern erkennbar ist).
@@ -84,40 +85,40 @@ Dies kann alternativ zu filter_var() verwendet werden. Ebenso wie [oben bei filt
 
 ### Internationalisierte Domainnamen (IDN)
 
-Um auch internationalisierte Domains / E-Mail-Adressen auf grundsätzliche formelle Korrektheit zu prüfen ist die Konvertierung in [Punycode](http://de.wikipedia.org/wiki/Punycode) **vor** der eigentlichen Prüfung nötig. Weitere Informationen und Möglichkeiten zur Konvertierung gibt es [hier]({{ site.url }}/jumpto/idna/).
+Um auch internationalisierte Domains / E-Mail-Adressen auf grundsätzliche formelle Korrektheit zu prüfen ist die Konvertierung in [Punycode](http://de.wikipedia.org/wiki/Punycode) **vor** der eigentlichen Prüfung nötig. Weitere Informationen und Möglichkeiten zur Konvertierung gibt es [hier]({{ page.root }}/jumpto/idna/).
 
 
 ### Ohne Punycode - Lose Rahmenprüfung mittels regulären Ausdrücken (Regex)
- 
+
 Diese Variante kommt ohne Punycode-Konvertierung aus. Hierbei spielen die verwendeten Zeichen kaum eine Rolle, denn es wird nur der grobe Rahmen geprüft und ob keine Whitespaces (Leerzeichen, Tabstopps, etc.) vorhanden sind.
 
 ~~~ php
 function isValidEmail($mail)
-{ 
+{
     // Gesamtlänge check
-    // http://de.wikipedia.org/wiki/E-Mail-Adresse#L.C3.A4nge_der_E-Mail-Adresse 
+    // http://de.wikipedia.org/wiki/E-Mail-Adresse#L.C3.A4nge_der_E-Mail-Adresse
     if (strlen($mail) > 256) {
-        return false; 
+        return false;
     }
     $pattern = '#^'
              . '\S+'
              . '@'
              . '(?:[^\s.](?:[^\s.]*[^\s.])?\\.)+[^\s.](?:[^\s.]*[^\s.])?'
              . '$#i';
-    return (bool) preg_match($pattern, $mail); 
-} 
+    return (bool) preg_match($pattern, $mail);
+}
 
-var_dump(isValidEmail("test@.....com"));                              // false 
-var_dump(isValidEmail("test@sub.mail.dot.anything.example.com"));     // true 
-var_dump(isValidEmail("test@übärdrübär.com"));                        // true 
-var_dump(isValidEmail("test@sub.mail.dot.anything.übärdrübär.com"));  // true 
-~~~ 
+var_dump(isValidEmail("test@.....com"));                              // false
+var_dump(isValidEmail("test@sub.mail.dot.anything.example.com"));     // true
+var_dump(isValidEmail("test@übärdrübär.com"));                        // true
+var_dump(isValidEmail("test@sub.mail.dot.anything.übärdrübär.com"));  // true
+~~~
 
 ### Zusatz-Option: DNS-Domain-Prüfung
 
-Generell kann in jeder oben angeführten Varianten, wenn gewüscht, die Antwort des [DNS](http://de.wikipedia.org/wiki/Domain_Name_System) zur Domain (auf vorhandenen ["MX" oder "A"-Record](http://de.wikipedia.org/wiki/Domain_Name_System#Aufbau_der_DNS-Datenbank)) berücksichtigt werden. 
+Generell kann in jeder oben angeführten Varianten, wenn gewüscht, die Antwort des [DNS](http://de.wikipedia.org/wiki/Domain_Name_System) zur Domain (auf vorhandenen ["MX" oder "A"-Record](http://de.wikipedia.org/wiki/Domain_Name_System#Aufbau_der_DNS-Datenbank)) berücksichtigt werden.
 
-Hinweis: Die an das DNS übergebene Domain der E-Mail-Adresse muss für die Verwendung von internationalisierten Domains (wie bei filter_var()) ebenfalls in [Punycode konvertiert]({{ site.url }}/jumpto/idna/) sein.
+Hinweis: Die an das DNS übergebene Domain der E-Mail-Adresse muss für die Verwendung von internationalisierten Domains (wie bei filter_var()) ebenfalls in [Punycode konvertiert]({{ page.root }}/jumpto/idna/) sein.
 
 ~~~ php
 function checkEMailDomainDNS($mail)

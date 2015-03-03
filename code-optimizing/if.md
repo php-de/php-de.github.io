@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/if/
+root: ../..
 title: "if"
 group: "Code-Optimierung"
 orderId: 8

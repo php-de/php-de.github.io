@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/ip/
+root: ../..
 title: "IP-Adressen"
 group: "HTTP / Domain / URL / Requests / Dateisystem"
 orderId: 8
@@ -51,33 +52,33 @@ inhalt:
 entry-type: in-discussion
 ---
 
-Diese Anleitung zeigt übliche Methoden um `IPv4`- und `IPv6`-Adressen in ihre `binäre` Darstellung zu konvertieren. 
+Diese Anleitung zeigt übliche Methoden um `IPv4`- und `IPv6`-Adressen in ihre `binäre` Darstellung zu konvertieren.
 
 
 ### Grundlagen
 
-IP-Adressen sind für Menschen lesbare Zeichenfolgen, um Geräte innerhalb von TCP/IP-basierten Netzwerken eindeutig zu identifizieren. In der Vergangenheit des Internets waren IPv4-Adressen der übliche Weg, um einen Server zu adressieren, Clients zu Servern oder zu anderen Clients zu verbinden, um E-Mails zu versenden oder andere netzwerkbezogene Aufgaben durchzuführen. IPs sind im Prinzip wie Telefonnummern (mit lediglich anderem Format), jedoch sind Telefonnummern nicht durch einen bestimmten Bereich beschränkt. 
+IP-Adressen sind für Menschen lesbare Zeichenfolgen, um Geräte innerhalb von TCP/IP-basierten Netzwerken eindeutig zu identifizieren. In der Vergangenheit des Internets waren IPv4-Adressen der übliche Weg, um einen Server zu adressieren, Clients zu Servern oder zu anderen Clients zu verbinden, um E-Mails zu versenden oder andere netzwerkbezogene Aufgaben durchzuführen. IPs sind im Prinzip wie Telefonnummern (mit lediglich anderem Format), jedoch sind Telefonnummern nicht durch einen bestimmten Bereich beschränkt.
 
 Heutzutage haben wir die Grenzen des Adressbereiches von IPv4-Adressen erreicht, d.h. `4.294.967.296` gleichzeitg angeschlossene Clients. Aus diesem Grund wurde ein neues Adressformat festgelegt, das die Aufgaben des IPv4 auch in der Zukunft erfüllen kann: IPv6. Mittels IPv6 kann das Internet für eine Weile weiter wachsen, denn `340.282.366.920.938.463.463.374.607.431.768.211.456` Clients können so zum größten, weltweiten Netzwerk verbunden werden. Ja, das ist eine Zahl mit 39 Stellen.
 
 
-### Formate 
+### Formate
 
 IPv4-Adressen bestehen aus einer Folge von vorzeichenlosen Ganzzahlen (*unsigned integer*), die in 4 Gruppen, getrennt durch ein `.`, unterteilt sind. Jede Gruppe kann einen Wert von 0 bis 255 haben.
 
 `127.0.0.1` Der lokale Loopback, der gut bekannte `localhost`.
 
-IPv6-Adressen sind eine Folge von Hexadezimalzahlen, die in 8 Gruppen, getrennt durch ein `:`, dargestellt werden. Jede Gruppe kann einen Wert zwischen 0 und ffff haben, führende Nullen können, ebenso wie Folgen von Nullen, ausgelassen werden: 
+IPv6-Adressen sind eine Folge von Hexadezimalzahlen, die in 8 Gruppen, getrennt durch ein `:`, dargestellt werden. Jede Gruppe kann einen Wert zwischen 0 und ffff haben, führende Nullen können, ebenso wie Folgen von Nullen, ausgelassen werden:
 
-`0000:0000:0000:0000:0000:0000:0000:0001` oder: `::1` Ja, auch das ist der lokale Loopback. 
-
-
-### PHP, Typen und der Umgang mit extrem großen Zahlen 
-
-PHP kommt "out of the box" mit Unterstützung für eine "32-Bit-Integer mit Vorzeichen" auf 32-Bit-Plattformen und mit einer "64-Bit-Integer mit Vorzeichen" auf einem 64-Bit-Plattform. Was weiter unten aufgezeigt wird: 32-Bit-Integers sind die falsche Wahl um IPv4 Adressen zu speichern, denn diese scheitern bereits an dem Wert der höchsten IPv4-Adresse. 64-Bit-Integers sind ebenfalls nicht in der Lage, IPv6-Adressen zu verarbeiten, denn diese benötigen 128-Bit. PHP ist in der Lage, eine große Zahl bitweise mit Hilfe von bcmath zu behandeln. Im Detail: Mit bcmath jede Zahl wird als Zeichenfolge dargestellt werden. Wir werden jedoch Binär-Strings verwenden. 
+`0000:0000:0000:0000:0000:0000:0000:0001` oder: `::1` Ja, auch das ist der lokale Loopback.
 
 
-### Die Magie der Binär-Strings 
+### PHP, Typen und der Umgang mit extrem großen Zahlen
+
+PHP kommt "out of the box" mit Unterstützung für eine "32-Bit-Integer mit Vorzeichen" auf 32-Bit-Plattformen und mit einer "64-Bit-Integer mit Vorzeichen" auf einem 64-Bit-Plattform. Was weiter unten aufgezeigt wird: 32-Bit-Integers sind die falsche Wahl um IPv4 Adressen zu speichern, denn diese scheitern bereits an dem Wert der höchsten IPv4-Adresse. 64-Bit-Integers sind ebenfalls nicht in der Lage, IPv6-Adressen zu verarbeiten, denn diese benötigen 128-Bit. PHP ist in der Lage, eine große Zahl bitweise mit Hilfe von bcmath zu behandeln. Im Detail: Mit bcmath jede Zahl wird als Zeichenfolge dargestellt werden. Wir werden jedoch Binär-Strings verwenden.
+
+
+### Die Magie der Binär-Strings
 
 Binär-Strings werden im weitern Verlauf zur Darstellung von IP-Adressen unsere Wahl sein. Denn in dieser Form können die IP-Adressen auch in der Datenbank abgespeichert, verarbeitet bzw. mit anderen IP-Adressen verglichen, oder aber auch direkt in PHP verarbeitet werden.
 
@@ -89,13 +90,13 @@ Binär-Strings werden im weitern Verlauf zur Darstellung von IP-Adressen unsere 
 
 ### Der richtige Weg
 
-Zuerst beginnen wir mit der Umwandlung von `127.0.0.1` in die binäre Darstellung: 
+Zuerst beginnen wir mit der Umwandlung von `127.0.0.1` in die binäre Darstellung:
 
 ~~~ php
 $binaryIP = inet_pton('127.0.0.1');
 ~~~~
 
-Zu Erinnerung, wir haben nun einen Binär-String. `var_dump()` wird hier nicht helfen um herauszufinden was wir im Detail haben, denn `var_dump()` ist nicht in der Lage, binäre Strings anzuzeigen und wird daher einen leeren String zurückgeben. Daher prüfen wir, ob wir beim Zählen der Byte-Länge des Binär-Strings mit strlen() oder mb_strlen() eine 32-Bit-Darstellung bekommen: 
+Zu Erinnerung, wir haben nun einen Binär-String. `var_dump()` wird hier nicht helfen um herauszufinden was wir im Detail haben, denn `var_dump()` ist nicht in der Lage, binäre Strings anzuzeigen und wird daher einen leeren String zurückgeben. Daher prüfen wir, ob wir beim Zählen der Byte-Länge des Binär-Strings mit strlen() oder mb_strlen() eine 32-Bit-Darstellung bekommen:
 
 ~~~ php
 var_dump(strlen($binaryIP));
@@ -104,16 +105,16 @@ var_dump(strlen($binaryIP));
 ergibt `int(4)`
 
 
-Weiter mit der Umwandlung von `::1`, der IPv6-Darstellung von `127.0.0.1`: 
+Weiter mit der Umwandlung von `::1`, der IPv6-Darstellung von `127.0.0.1`:
 
 ~~~ php
-$binaryIPv6 = inet_pton('::1'); 
+$binaryIPv6 = inet_pton('::1');
 ~~~
 
 Wir überprüfen das Ergebnis wie oben, um sicherzustellen, das wir ein 128-Bit-Darstellung (16-Byte-String-Länge) bekommen haben:
 
 ~~~ php
-var_dump(strlen($binaryIP)); 
+var_dump(strlen($binaryIP));
 ~~~
 
 ergibt `int(16)`
@@ -128,18 +129,18 @@ function ip_between($ip, $ipStart, $ipEnd)
      $end = inet_pton($ipEnd);
      $value = inet_pton($ip);
 
-     return $start <= $value && $end >= $value; 
-} 
+     return $start <= $value && $end >= $value;
+}
 
 var_dump(ip_between('127.0.0.10', '127.0.0.1', '127.0.0.255'));
 ~~~
- 
+
 ergibt `bool(true)`
 
-Gleiche Funktion, diesmal  mit IPv6-Adressen: 
+Gleiche Funktion, diesmal  mit IPv6-Adressen:
 
 ~~~ php
-var_dump(ip_between('::DD', '::1', '::FFFF')); 
+var_dump(ip_between('::DD', '::1', '::FFFF'));
 ~~~
 
 ergibt ebenfalls `bool(true)`
@@ -154,38 +155,38 @@ Für einen kleinen Test erstellen wir die folgende Tabelle:
 
 ~~~
 CREATE TABLE `ip_address_ranges`(
-     `start` varbinary(16), 
-     `end` varbinary(16) 
-) 
+     `start` varbinary(16),
+     `end` varbinary(16)
+)
 ~~~
 
 
-Und fügen zwei Bereiche ein - einen für IPv4 und einen für IPv6: 
+Und fügen zwei Bereiche ein - einen für IPv4 und einen für IPv6:
 
 ~~~
-INSERT INTO `ip_address_ranges`(`start`, `end`) 
-VALUES 
-    ( Inet6_aton('::1'), inet6_aton('::FFFF') ), 
-    ( Inet6_aton('127.0.0.1'), inet6_aton('127.0.0.255') ) 
+INSERT INTO `ip_address_ranges`(`start`, `end`)
+VALUES
+    ( Inet6_aton('::1'), inet6_aton('::FFFF') ),
+    ( Inet6_aton('127.0.0.1'), inet6_aton('127.0.0.255') )
 ~~~
 
 
-Und zum Schluss noch jeweils eine IPv6- und eine IPv4 basierende BETWEEN Abfrage: 
+Und zum Schluss noch jeweils eine IPv6- und eine IPv4 basierende BETWEEN Abfrage:
 
 ~~~
-SELECT 
-     inet6_ntoa(`start`) AS `start-IP`, 
-     inet6_ntoa(`end`) AS `end-IP` 
-FROM `ip_address_ranges` 
-     WHERE
-         inet6_aton('::5') BETWEEN `start` AND `end` 
-
-SELECT 
+SELECT
      inet6_ntoa(`start`) AS `start-IP`,
-     inet6_ntoa(`end`) AS `end-IP` 
-FROM `ip_address_ranges` 
+     inet6_ntoa(`end`) AS `end-IP`
+FROM `ip_address_ranges`
      WHERE
-         inet6_aton('127.0.0.50') BETWEEN `start` AND `end` 
+         inet6_aton('::5') BETWEEN `start` AND `end`
+
+SELECT
+     inet6_ntoa(`start`) AS `start-IP`,
+     inet6_ntoa(`end`) AS `end-IP`
+FROM `ip_address_ranges`
+     WHERE
+         inet6_aton('127.0.0.50') BETWEEN `start` AND `end`
 ~~~
 
 Beide SELECT-Statements geben jeweils ein Zeile aus, mit den für Menschen lesbaren Darstellung des betreffenden Bereiches.
@@ -200,7 +201,7 @@ Beide SELECT-Statements geben jeweils ein Zeile aus, mit den für Menschen lesba
 +-----------+-------------+
 | start-IP  | end-IP      |
 +-----------+-------------+
-| 127.0.0.1 | 127.0.0.255 |   
+| 127.0.0.1 | 127.0.0.255 |
 +-----------+-------------+
 ~~~
 

@@ -2,6 +2,7 @@
 layout: guide
 
 permalink: /jumpto/document-object-model/
+root: ../..
 title: "Document Object Model"
 group: "Allgemein"
 orderId: 22

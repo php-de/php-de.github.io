@@ -1,6 +1,7 @@
 ---
 layout:    guide
 permalink: /jumpto/composer/
+root: ../..
 title:     "Composer Kickstart-Guide"
 creator:   tr0y
 group:     "Entwicklungsumgebung"
@@ -47,7 +48,7 @@ inhalt:
         simple: ""
 
 ---
-<p class="text-center"><img src="{{ site.url }}/images/composer-logo.png" width="116" height="150" title="Composer" alt="Composer"></p> 
+<p class="text-center"><img src="{{ page.root }}/images/composer-logo.png" width="116" height="150" title="Composer" alt="Composer"></p>
 
 Dieser Guide soll (allem voran Einsteigern) einen Einblick in das Abhängigkeits-Management-Werkzeug [Composer](http://getcomposer.org/) und das Komponenten-Repository [Packagist.org](http://packagist.org/) bieten. In diesem Guide wird speziell auf den Installations- und Verwendungsprozess unter Microsoft Windows eingegangen.
 
@@ -78,17 +79,17 @@ Composer selbst benötigt zum Reibungslosen ablauf des Paket-Imports der Packagi
 
 Lade dir Git-SCM [herunter](http://git-scm.com/download/win) und installiere es wie folgt:
 
-* Starte den Installer durch einen doppelklick auf die heruntergeladene Datei. Alle Windowsversionen mit aktivierter Benutzerkontrolle werden dich danach fragen ob dem Installer erlaubt werden soll ausgeführt zu werden, bestätige diese anfrage mit **Ja**.  
+* Starte den Installer durch einen doppelklick auf die heruntergeladene Datei. Alle Windowsversionen mit aktivierter Benutzerkontrolle werden dich danach fragen ob dem Installer erlaubt werden soll ausgeführt zu werden, bestätige diese anfrage mit **Ja**.
 
-* Bestätige die Lizenz mit klick auf **Next >**  
+* Bestätige die Lizenz mit klick auf **Next >**
 
-* Bestätige die Komponenten mit klick auf **Next >**  
+* Bestätige die Komponenten mit klick auf **Next >**
 
-* Wähle beim *Path-Environment*, **Run git from the Windows-Prompt** aus und bestätige mit klick auf **Next >** (Wichtig für den Betrieb von Composer)  
+* Wähle beim *Path-Environment*, **Run git from the Windows-Prompt** aus und bestätige mit klick auf **Next >** (Wichtig für den Betrieb von Composer)
 
-* Wähle beim *Line Ending Conversion*, **Checkout Windows-Style, commit Linux-Style line endings** aus und bestätige mit klick auf **Next >**  
+* Wähle beim *Line Ending Conversion*, **Checkout Windows-Style, commit Linux-Style line endings** aus und bestätige mit klick auf **Next >**
 
-* Bestätige den Abschluss der Installation mit klick auf **Finish**  
+* Bestätige den Abschluss der Installation mit klick auf **Finish**
 
 
 Gratulation, du verfügst nun über eine voll funktionsfähige Git-Installation.
@@ -99,14 +100,14 @@ Gratulation, du verfügst nun über eine voll funktionsfähige Git-Installation.
 Composer selbst steht zum einen als phar-Executable bereit, verwenden wirst du allerdings (da du unter Windows arbeitest) den Composer Windows Installer, welchen du hier [runterlädst](http://getcomposer.org/Composer-Setup.exe).
 
 
-* Starte den Installer durch einen doppelklick auf die heruntergeladene Datei. Alle Windowsversionen mit aktivierter Benutzerkontrolle werden dich danach fragen ob dem Installer erlaubt werden soll ausgeführt zu werden, bestätige diese anfrage mit **Ja**.  
+* Starte den Installer durch einen doppelklick auf die heruntergeladene Datei. Alle Windowsversionen mit aktivierter Benutzerkontrolle werden dich danach fragen ob dem Installer erlaubt werden soll ausgeführt zu werden, bestätige diese anfrage mit **Ja**.
 
-* Klicke auf **Next >**  
-Überprüfe den Pfad zu deiner PHP-Installation. Dieses Guide setzt voraus das du bereits eine Funktionierende [XAMPP](http://www.apachefriends.org/de/index.html), [WampServer](http://www.wampserver.com/en/), [SecureWAMP](http://securewamp.org/de/), [ZendServer](http://www.zend.com/de/products/server/) oder [WPN-XM](http://wpn-xm.org/) Installation hast. In der Regel brauchst du hier nichts verändern, der Installer arretiert das Verzeichnis zur PHP Installation der Jeweiligen PHP-Umgebungen selbst. Bestätige dort bitte mit Klick auf **Next >**  
+* Klicke auf **Next >**
+Überprüfe den Pfad zu deiner PHP-Installation. Dieses Guide setzt voraus das du bereits eine Funktionierende [XAMPP](http://www.apachefriends.org/de/index.html), [WampServer](http://www.wampserver.com/en/), [SecureWAMP](http://securewamp.org/de/), [ZendServer](http://www.zend.com/de/products/server/) oder [WPN-XM](http://wpn-xm.org/) Installation hast. In der Regel brauchst du hier nichts verändern, der Installer arretiert das Verzeichnis zur PHP Installation der Jeweiligen PHP-Umgebungen selbst. Bestätige dort bitte mit Klick auf **Next >**
 
-* Klicke auf **Install**  
+* Klicke auf **Install**
 
-* Bestätige die Erfolgreiche Installation durch Klick auf **Finish**  
+* Bestätige die Erfolgreiche Installation durch Klick auf **Finish**
 
 
 Gratulation, du verfügst nun über eine funktionierende Composer-Installation.
@@ -117,9 +118,9 @@ Gratulation, du verfügst nun über eine funktionierende Composer-Installation.
 In wenigen Netzwerkumgebungen kann es zu schwierigkeiten Zwischen deinem PC und dem Host den Composer nutzt kommen. Noch geringer ist die Chance das der Installationsprozess eine defekte Composer-Konfiguration mitgeliefert hat. Damit du diesem Problem vorbeugen kannst, teste die Konnektivität von Composer wie folgt:
 
 
-Drücke ![Windows Taste]({{ site.url }}/images/win_logo_2012_black.png) (Windows Taste) + R und gib in dem darauf erscheinenden *Ausführen...*-Dialog **cmd** ein und bestätige mit der &crarr;-Taste (Enter-Taste).
+Drücke ![Windows Taste]({{ page.root }}/images/win_logo_2012_black.png) (Windows Taste) + R und gib in dem darauf erscheinenden *Ausführen...*-Dialog **cmd** ein und bestätige mit der &crarr;-Taste (Enter-Taste).
 
-Du befindest dich nun in der Eingabeaufforderung deines Betriebssystems, gib dort 
+Du befindest dich nun in der Eingabeaufforderung deines Betriebssystems, gib dort
 
 ~~~
 composer diagnose
@@ -173,7 +174,7 @@ See 'git help <command>' for more information on a specific command.
 ~~~
 
 
-Soweit so gut, Composer ist nun einsatzbereit. 
+Soweit so gut, Composer ist nun einsatzbereit.
 
 Die Installation von Composer ist nun abgeschlossen. Im folgenden beschäftigst du dich nun damit Composer zu verwenden:
 
@@ -208,7 +209,7 @@ Diese musst du nun in validem JSON in deiner composer.json-Datei notieren, diese
 
 Navigiere nun in dein Anwendungsverzeichnis (dorthin wo du deine composer.json angelegt hast) und drücke &uArr; (Shift-Taste), halte die Taste und rechtsklicke auf der freien Fläche des Ordners (ohne irgendetwas zu selektieren). Das Kontext-Menü das sich dann öffnet verfügt über den Eintrag *Eingabeaufforderung hier öffnen*, wähle diesen aus.
 
-In der Eingabeaufforderung gib 
+In der Eingabeaufforderung gib
 
 ~~~
 composer install

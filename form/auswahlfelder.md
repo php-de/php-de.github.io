@@ -1,6 +1,7 @@
 ---
 layout: guide
 permalink: /jumpto/auswahlfelder/
+root: ../..
 group: "Formularverarbeitung"
 title: "Auswahlfelder (Checkbox, Radiobox)"
 orderId: 8
@@ -45,16 +46,16 @@ Auswahlfelder sind HTML Formularelemente, die die Auswahl einer atomaren Angabe 
 Je nach Verwendung und nach Elementtyp ergibt sich eine Funktion als
 <br>
 
-| An/Aus-Auswahl (Bestätigungsfeld) | ![Einfache Checkbox, Standardansicht]({{ site.url }}/images/check-single-off.jpg)  ![Einfache Checkbox, ausgewählt]({{ site.url }}/images/check-single-selected.jpg) |
+| An/Aus-Auswahl (Bestätigungsfeld) | ![Einfache Checkbox, Standardansicht]({{ page.root }}/images/check-single-off.jpg)  ![Einfache Checkbox, ausgewählt]({{ page.root }}/images/check-single-selected.jpg) |
 |  |  |
-| Auswahl 1-aus-n (Entscheidung aus mehreren Optionsvorgaben) | ![Radiobox-Gruppe, ohne Auswahl]({{ site.url }}/images/radio-multi-off.jpg)  ![Radiobox-Gruppe, mit Auswahl]({{ site.url }}/images/radio-multi-selected.jpg) |
+| Auswahl 1-aus-n (Entscheidung aus mehreren Optionsvorgaben) | ![Radiobox-Gruppe, ohne Auswahl]({{ page.root }}/images/radio-multi-off.jpg)  ![Radiobox-Gruppe, mit Auswahl]({{ page.root }}/images/radio-multi-selected.jpg) |
 |  |  |
-| Auswahl n-aus-m (Multiple choice Funktionalität) | ![Checkbox-Gruppe, ohne Auswahl]({{ site.url }}/images/check-multi-off.jpg)  ![Checkbox-Gruppe, mit Auswahl]({{ site.url }}/images/check-multi-selected.jpg) |
+| Auswahl n-aus-m (Multiple choice Funktionalität) | ![Checkbox-Gruppe, ohne Auswahl]({{ page.root }}/images/check-multi-off.jpg)  ![Checkbox-Gruppe, mit Auswahl]({{ page.root }}/images/check-multi-selected.jpg) |
 
 <br>
 
 
-Inhaltlich können die meisten diese Aufgaben auch durch [Auswahllisten]({{ site.url }}/jumpto/auswahllisten/) übernommen werden. Aus Aspekten der Usability werden Auswahlfelder aber als die bessere Alternative bewertet.
+Inhaltlich können die meisten diese Aufgaben auch durch [Auswahllisten]({{ page.root }}/jumpto/auswahllisten/) übernommen werden. Aus Aspekten der Usability werden Auswahlfelder aber als die bessere Alternative bewertet.
 
 ### Browserelemente
 
@@ -250,7 +251,7 @@ Beide Elementtypen können durch Setzen des *checked*-Attributs vorselektiert we
 
 #### Vorbelegen mit „sich selbst“
 
-Im sog. [Affenformular]({{ site.url }}/jumpto/affenformular/) werden bis zur Vollständigkeit einer Formulareingabe abgesendete Werte wieder als Vorauswahl Ihrer Formularelemente verwendet. Das Prinzip ist dabei abhängig von den oben beschriebenen Übergabemethoden.
+Im sog. [Affenformular]({{ page.root }}/jumpto/affenformular/) werden bis zur Vollständigkeit einer Formulareingabe abgesendete Werte wieder als Vorauswahl Ihrer Formularelemente verwendet. Das Prinzip ist dabei abhängig von den oben beschriebenen Übergabemethoden.
 
 ~~~ php
 <input type="checkbox" name="Farbe[]"  value="rot"
@@ -332,7 +333,7 @@ Gruppen aus Auswahlfeldern werden allerdings als benutzerfreundlicher angesehen.
 
 ### Sicherheit
 
-Für die Eingaben von Werten aus Auswahlfeldern gilt das übliche Gefahrenpotential von HTML-seitigen Ausgaben oder Verarbeitungen in Kontexten wie Datenbankqueries. Einen Überblick bieten die Artikel [Formularverarbeitung, Sicherheit]({{ site.url }}/jumpto/sicherheit/) und die [Ausführungen zum verwandten Selection-Element]({{ site.url }}/jumpto/auswahllisten/#sicherheit).
+Für die Eingaben von Werten aus Auswahlfeldern gilt das übliche Gefahrenpotential von HTML-seitigen Ausgaben oder Verarbeitungen in Kontexten wie Datenbankqueries. Einen Überblick bieten die Artikel [Formularverarbeitung, Sicherheit]({{ page.root }}/jumpto/sicherheit/) und die [Ausführungen zum verwandten Selection-Element]({{ page.root }}/jumpto/auswahllisten/#sicherheit).
 
 <div class="alert alert-danger"><strong>Achtung!</strong> Häufig gemachter Fehler:<br>
 Für Auswahlfelder und -listen werden die Gefahren von XSS oftmals unterschätzt, weil sie im Gegensatz zu Textfeldern keine direkte Eingabe von Schadcode ermöglichen. In Anbetracht der Tatsache, dass in einem gefälschten Formular allein die richtige Angabe des <em>name</em>-Attributs ausreicht, um beliebige Werte und Werttypen für beliebige Elemente übermitteln zu können, ist die Annahme jedoch haltlos und damit besonders gefährlich.</div>

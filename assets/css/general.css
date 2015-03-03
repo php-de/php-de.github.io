@@ -1,5 +1,43 @@
 @media screen {
-    
+
+    #page {
+        background: white;
+        border: 1px solid #ddd;
+    }
+
+    /* http://lea.verou.me/demos/css3-patterns.html */
+    .bg-stripes {
+        margin: 10px;
+
+        -webkit-background-size: 100px 100px;
+        -moz-background-size: 100px 100px;
+        background-size: 100px 100px; /* Controls the size of the stripes */
+    }
+    .bg-angled {
+        background-color: #c6c6c6;
+        background-attachment: fixed;
+        background-image: -webkit-gradient(linear, 0 100%, 100% 0,
+                                                color-stop(.25, rgba(255, 255, 255, .2)), color-stop(.25, transparent),
+                                                color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .2)),
+                                                color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent),
+                                                to(transparent));
+        background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+                                                transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+                                                transparent 75%, transparent);
+        background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+                                                transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+                                                transparent 75%, transparent);
+        background-image: -ms-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+                                                transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+                                                transparent 75%, transparent);
+        background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+                                                transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+                                                transparent 75%, transparent);
+        background-image: linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+                                                transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+                                                transparent 75%, transparent);
+    }
+
     .container {
         padding:0;
     }
@@ -22,12 +60,12 @@
     }
 
     #page {
-        border-left:1px solid #ddd;
+        /*border-left:1px solid #ddd;
         border-right:1px solid #ddd;
         border-bottom:1px solid #ddd;
         border-radius:5px;
         border-top-left-radius:0px;
-        border-top-right-radius:0px;
+        border-top-right-radius:0px;*/
     }
 
     #contents dt {
@@ -48,9 +86,9 @@
         border-color:#ddd !important;
     }
 
-    .alert-success a, 
-    .alert-info a, 
-    .alert-warning a, 
+    .alert-success a,
+    .alert-info a,
+    .alert-warning a,
     .alert-error a,
     .alert-danger a {
         text-decoration: none;
@@ -154,7 +192,7 @@
         font-size:1.0em !important;
         font-weight:bold;
     }
-    
+
     #guide h6 {
         font-size:0.9em !important;
         font-weight:bold;
@@ -218,5 +256,5 @@
 }
 
 @media print {
-    
+
 }

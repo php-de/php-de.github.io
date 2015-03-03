@@ -75,7 +75,7 @@ ungültiger Header, falsches Datumsformat, …) von anderen Mailservern als Spam
 markiert oder ganz abgelehnt werden oder dass der Mailclient sie am Ende nicht
 ordentlich darstellen kann, ist einfach zu groß.
 
-- [Mail-Klassen](http://php-de.github.io/jumpto/mail-class/)
+- [Mail-Klassen]({{ page.root }}/jumpto/mail-class/)
 
 Geeignete Mailerklassen sind etwa [PHPMailer](http://phpmailer.worxware.com/)
 und [Swift Mailer](http://swiftmailer.org/). Siehe hierzu auch [diesen

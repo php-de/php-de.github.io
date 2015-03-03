@@ -166,4 +166,4 @@ SELECT name, date_birth FROM persons ORDER BY date_birth IS NULL DESC, name
 ### Querverweise
 {: #links}
 
-- [Gruppenbruch](http://php-de.github.io/jumpto/gruppenbruch/)
+- [Gruppenbruch]({{ page.root }}/jumpto/gruppenbruch/)

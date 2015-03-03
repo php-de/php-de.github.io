@@ -384,7 +384,7 @@ für Arrays und andere Strukturen implementieren.
 
 #### Der Test
 
-In diesem Test-Beispiel wird [Composer](http://php-de.github.io/jumpto/composer/)
+In diesem Test-Beispiel wird [Composer]({{ page.root }}/jumpto/composer/)
 für das Autoloading Verwendet.
 
 `test.phtml`

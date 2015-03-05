@@ -111,6 +111,10 @@ inhalt:
     <br>**Vorteile:** Erklärung zu vielen JavaScript-Sprachelementen,
     Objektreferenzliste
 
+  * [https://bonsaiden.github.io/JavaScript-Garden/](https://bonsaiden.github.io/JavaScript-Garden/){: target="_blank"}
+
+  * [http://eloquentjavascript.net/](http://eloquentjavascript.net/){: target="_blank"}
+
   * **Frameworks:**
     * **prototype:**
       * [Prototype API documentation \| Home](http://api.prototypejs.org/){: target="_blank"} <br>
@@ -379,12 +383,6 @@ inhalt:
     Umfangreiches Tutorial zu HTML, CSS, JavaScript, PHP und MySQL.
     Deckt somit alle wichtigen Bereiche ab. Für Anfänger sehr zu empfehlen!
     <br>**Vorteile:** Grundlagen vom absoluten Anfang, kein Fachchinesisch, Umfang
-
-
-##### javascript
-
-  * [https://bonsaiden.github.io/JavaScript-Garden/](https://bonsaiden.github.io/JavaScript-Garden/){: target="_blank"}
-  * [http://eloquentjavascript.net/](http://eloquentjavascript.net/){: target="_blank"}
 
 
 ##### Sicherheit

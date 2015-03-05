@@ -60,7 +60,7 @@ inhalt:
      Die Referenz enthält auch einige Grundlagen zu
     Client-Server-Prinzipien, regulären Ausdrücken und
     Webdesignprinzipien.
-    **Vorteile:** Referenzliste zu HTML Elementen, Attributen, Zeichen
+    <br>**Vorteile:** Referenzliste zu HTML Elementen, Attributen, Zeichen
     und Varianten
 
 
@@ -72,10 +72,10 @@ inhalt:
     Zwar nicht ganz aktuell, bietet aber eine Übersicht welche
     Eigenschaften von welchen Browsern unterstützt werden (leider nur
     bis IE7, Opera 7)
-    **Vorteile:** Stichwortverzeichnis zu CSS-Eigenschaften, Erklärung
+    <br>**Vorteile:** Stichwortverzeichnis zu CSS-Eigenschaften, Erklärung
     zu vielen CSS Eigenschaften, Attribut-Referenz, einige Tipps und
     Tricks
-    **Nachteile:** Nicht mehr aktuell, wird nicht weiter gepflegt.
+    <br>**Nachteile:** Nicht mehr aktuell, wird nicht weiter gepflegt.
 
   * [CSS Compatibility and Internet Explorer](http://msdn.microsoft.com/en-us/library/cc351024%28VS.85%29.aspx){: target="_blank"}
     Übersicht über alle vom Internet Explorer unterstützten CSS
@@ -108,7 +108,7 @@ inhalt:
   * [SELFHTML: JavaScript/DOM](http://de.selfhtml.org/javascript/index.htm){: target="_blank"}
     Sehr gutes Nachschlagewerk zu JavaScript. Viele Beispiele und
     Erklärungen zu JavaScript Befehlen.
-    **Vorteile:** Erklärung zu vielen JavaScript-Sprachelementen,
+    <br>**Vorteile:** Erklärung zu vielen JavaScript-Sprachelementen,
     Objektreferenzliste
 
   * **Frameworks:**
@@ -135,19 +135,19 @@ inhalt:
     Nachschlagen oder suchen von Funktionen zu empfehlen, auch für das
     Nachlesen von Themen, aber eher nicht als Tutorial für Anfänger zu
     empfehlen.
-    **Vorteile:** ausführlichste Installation und Konfiguration (viele
+    <br>**Vorteile:** ausführlichste Installation und Konfiguration (viele
     Systeme und Software), großes Kapitel über Sicherheit, einige von
     Nutzern geschriebene Beispiele, Lösungen und Notizen, volle
     Funktionsreferenz
-    **Nachteile:** teilweise nicht Übersetzt ( englische Fragmente bzw.
+    <br>**Nachteile:** teilweise nicht Übersetzt ( englische Fragmente bzw.
     ganze Kapitel)
 
   * [Willkommen im PHP Wiki von php::bar! - php bar](http://www.phpbar.de/w/Hauptseite){: target="_blank"}
     Eine ausführliche Referenz in Form eines Wikis. Die häufigsten
     Themen werden ähnlich wie in der Wikipedia in der Art eines Lexikons
     <acronym title="Page Ranking">pr</acronym>äsentiert.
-    **Vorteile:** Große Themenvielfalt
-    **Nachteile:** Die Erklärungen fallen manchmal etwas spärlich aus
+    <br>**Vorteile:** Große Themenvielfalt
+    <br>**Nachteile:** Die Erklärungen fallen manchmal etwas spärlich aus
     und die Inhalte sind auch nicht immer ganz aktuell
 
   * **Frameworks**
@@ -201,8 +201,8 @@ inhalt:
     Versionen ebenfalls vorhanden. Sollte bei Problemen mit MySQL
     Funktionen weiter helfen. Enthält viele Tipps zum Arbeiten mit
     MySQL.
-    **Vorteile:** beschreibt alle Features aus MySQL, sehr detailiert
-    **Nachteile:** teilweise etwas unübersichtlich
+    <br>**Vorteile:** beschreibt alle Features aus MySQL, sehr detailiert
+    <br>**Nachteile:** teilweise etwas unübersichtlich
 
 
 ##### Webentwicklung, divers
@@ -226,7 +226,7 @@ inhalt:
     Umfangreiches Tutorial zu HTML, CSS, JavaScript, PHP und MySQL.
     Deckt somit alle wichtigen Bereiche ab. Für Anfänger sehr zu
     empfehlen!
-    **Vorteile:** Grundlagen vom absoluten Anfang, kein Fachchinesisch,
+    <br>**Vorteile:** Grundlagen vom absoluten Anfang, kein Fachchinesisch,
     Umfang
 
 ##### CSS
@@ -235,7 +235,7 @@ inhalt:
     Umfangreiches Tutorial zu HTML, CSS, JavaScript, PHP und MySQL.
     Deckt somit alle wichtigen Bereiche ab. Für Anfänger sehr zu
     empfehlen!
-    **Vorteile:** Grundlagen vom absoluten Anfang, kein Fachchinesisch,
+    <br>**Vorteile:** Grundlagen vom absoluten Anfang, kein Fachchinesisch,
     Umfang
 
 
@@ -245,13 +245,13 @@ inhalt:
     Umfangreiches Tutorial zu HTML, CSS, JavaScript, PHP und MySQL.
     Deckt somit alle wichtigen Bereiche ab. Für Anfänger sehr zu
     empfehlen!
-    **Vorteile:** Grundlagen vom absoluten Anfang, kein Fachchinesisch,
+    <br>**Vorteile:** Grundlagen vom absoluten Anfang, kein Fachchinesisch,
     Umfang
 
   * [Ajax Tutorial](http://ajax.frozenfox.at/index.html){: target="_blank"}
     Einfaches Tutorial das erklärt wie man AJAX umsetzt.
-    **Vorteile:** sehr einfach gehalten, bietet ein paar Beispiele
-    **Nachteile:** Verwendung von Frameworks wird nicht gezeigt
+    <br>**Vorteile:** sehr einfach gehalten, bietet ein paar Beispiele
+    <br>**Nachteile:** Verwendung von Frameworks wird nicht gezeigt
 
   * **Frameworks:**
     * **prototype:**
@@ -260,7 +260,7 @@ inhalt:
       * [Prototype JavaScript framework: Prototype Tips and
         Tutorials](http://prototypejs.org/learn/){: target="_blank"}
         Einführung zu prototype von den Entwicklern selbst.
-        **Nachteile:** englisch
+        <br>**Nachteile:** englisch
 
 
     * **ExtJS:**
@@ -272,7 +272,7 @@ inhalt:
     * **jQuery:**
       * [Plugins \| jQuery Plugins](http://plugins.jquery.com/){: target="_blank"}
       Sammlung von jQuery Plugins.
-      **Vorteile:** große Auswahl an Plugins, viele Live Demos
+      <br>**Vorteile:** große Auswahl an Plugins, viele Live Demos
 
 
 ##### PHP Anfänger
@@ -280,17 +280,16 @@ inhalt:
   * [Quakenet/#php Tutorial - de - Einleitung](http://tut.php-quake.net/de/){: target="_blank"}
     Sehr gutes Tutorial für den Anfang, aber nur für Leser die fertige
     Serverinstallationen nutzen oder ihren selbst konfigurieren können.
-
-    **Vorteile:** gute Erklärung der Funktionsweise von PHP,
+    <br>**Vorteile:** gute Erklärung der Funktionsweise von PHP,
     ausführliche Erklärung der Grundlagen, Kapitel zum Thema Fehler,
     Erklärung des Templatesystems
-    **Nachteile:** Konfiguration und Installation fehlen
+    <br>**Nachteile:** Konfiguration und Installation fehlen
 
   * [Peter Kropff - PHP - Einleitung](http://www.peterkropff.de/site/php/php.htm){: target="_blank"}
     Umfangreiches Tutorial zu HTML, CSS, JavaScript, PHP und MySQL.
     Deckt somit alle wichtigen Bereiche ab. Für Anfänger sehr zu
     empfehlen!
-    **Vorteile:** Grundlagen vom absoluten Anfang, kein Fachchinesisch,
+    <br>**Vorteile:** Grundlagen vom absoluten Anfang, kein Fachchinesisch,
     Umfang
 
   * [PHP-Kurs.com - PHP lernen und MySQL Tutorial mit vielen
@@ -299,7 +298,7 @@ inhalt:
     Anhand der Tutorials kann man sich gut Schritt für Schritt die
     Grundlagen von PHP aneignen. Dabei bauen die einzelnen Lektionen
     aufeinander auf.
-    **Vorteile:** Sehr gut erklärt, sehr ausführlich. Auch das Thema
+    <br>**Vorteile:** Sehr gut erklärt, sehr ausführlich. Auch das Thema
     Sicherheit hat ein eigenes Kapitel spendiert bekommen, das man sich
     auf jeden Fall zu Gemüte führen sollte. Der Autor hat mich sogar ob
     dieses Posts angeschrieben, um mich über Aktualisierungen zu
@@ -309,19 +308,19 @@ inhalt:
   * [PHP Essentials - Techotopia](http://www.techotopia.com/index.php/PHP_Essentials){: target="_blank"}
     Gutes Tutorial zu den Grundlagen. Geht bis zur Objektorientierung
     und dem Zugriff auf MySQL Dtaenbanken.
-    **Nachteile:** Englisch, wichtige Punkte wie SQL Injection werden
+    <br>**Nachteile:** Englisch, wichtige Punkte wie SQL Injection werden
     nicht behandelt.
 
   * [PHP - SELFPHP: Version 5.2.8 Befehlsreferenz - Tutorial &amp;ndash;
     Kochbuch &amp;ndash; Forum zum Thema PHP](http://www.selfphp.de/){: target="_blank"}
     Persönlich als empfehlenswertes Tutorial einzustufen, jedoch mit
     einigen Lücken. Aber auch mit speziellen Features.
-    **Vorteile:** ausführliche Funktionsreferenz, ausführliche
+    <br>**Vorteile:** ausführliche Funktionsreferenz, ausführliche
     Anleitung für Installation und Konfiguration (nötiger Software),
     Anschneiden von Entwicklungumgebungen, großes Syntaxkapitel, eigenes
     Datenbankkapitel, Abteilung mit \"Problem-Lösung\", Codeschnipsel
     für kleine Probleme
-    **Nachteile:** Referenz manchmal unübersichtlich, kurzes
+    <br>**Nachteile:** Referenz manchmal unübersichtlich, kurzes
     Anschneiden von Sicherheit(könnte mehr sein, keine Techniken zur
     Sicherung), \"Problem-Lösung\" mit z. T. umständlicher Darstellung
     für Anfänger
@@ -330,16 +329,16 @@ inhalt:
     Ein sehr ausführliches Tutorial, das aber eher einer Referenz
     ähnelt, aber dennoch Schritt für Schritt das Wissen aufbaut und gute
     Erklärungen liefert.
-    **Vorteile:** Sehr ausführlich, es werden die meisten Grundlagen
+    <br>**Vorteile:** Sehr ausführlich, es werden die meisten Grundlagen
     abgedeckt, auch einige fortgeschrittene Themen werden angerissen
      Nachteile: Das Thema Sicherheit kommt zu kurz, vor allem SQL
     Injections werden nicht behandelt
 
   * [PHP für dich - PHP und mySQL einfach und kurz erklärt](http://www.schattenbaum.net/php/index.php){: target="_blank"}
     Ein schon recht altes Tutorial zum Thema PHP und MySQL.
-    **Vorteile:** Recht nett geschrieben, für die ersten Versuche mit
+    <br>**Vorteile:** Recht nett geschrieben, für die ersten Versuche mit
     PHP geeignet
-    **Nachteile:** Alt und somit teilweise nicht mehr up-to-date, nur
+    <br>**Nachteile:** Alt und somit teilweise nicht mehr up-to-date, nur
     absolute Grundlagen, Teilweise fehlen wichtige Themen
     (Fehlerbehandlung, Sicherheit, Testen von GET/POST Parametern)
 
@@ -347,10 +346,10 @@ inhalt:
     und Fachbücher](http://de.wikibooks.org/wiki/Websiteentwicklung:_PHP){: target="_blank"}
     Zur Zeit nicht als Tutorial zu empfehlen für tiefergehendes
     Erlernen von PHP
-    **Vorteile:** Syntax grundlegend erklärt, Sicherheitsinformationen
+    <br>**Vorteile:** Syntax grundlegend erklärt, Sicherheitsinformationen
     zum Thema Benutzereingaben, Übungsaufgaben am Ende (mit Verweis zum
     Manual von php.net)
-    **Nachteile:** ist teilweise noch in Arbeit (oder sollte
+    <br>**Nachteile:** ist teilweise noch in Arbeit (oder sollte
     überarbeitet werden), Referenz zu kurz, MySQL bzw. andere
     Datenbanken zu kurz oder garnicht behandelt, Dateisystem viel zu
     kurz behandelt
@@ -370,8 +369,8 @@ inhalt:
     Programmierung mit Webdiensten (SOAP) und der MySQLi-Erweiterung
     sowie der Datenbankabstraktion mit Creole und der Speicherung von
     PHP-Objekten in einer relationalen Datenbank mit Hilfe von Propel.
-    **Vorteile:** tiefgehende Themen, von der wissenschaftlichen Perspektive beleuchtet
-    **Nachteile:** hoher Anspruch, nur für Fortgeschrittene
+    <br>**Vorteile:** tiefgehende Themen, von der wissenschaftlichen Perspektive beleuchtet
+    <br>**Nachteile:** hoher Anspruch, nur für Fortgeschrittene
 
 
 ##### MySQL
@@ -379,7 +378,7 @@ inhalt:
   * [Peter Kropff - MySQL - Einleitung](http://www.peterkropff.de/site/mysql/mysql.htm){: target="_blank"}
     Umfangreiches Tutorial zu HTML, CSS, JavaScript, PHP und MySQL.
     Deckt somit alle wichtigen Bereiche ab. Für Anfänger sehr zu empfehlen!
-    **Vorteile:** Grundlagen vom absoluten Anfang, kein Fachchinesisch, Umfang
+    <br>**Vorteile:** Grundlagen vom absoluten Anfang, kein Fachchinesisch, Umfang
 
 
 ##### javascript
@@ -397,11 +396,11 @@ inhalt:
     die häufigsten Fallen und Sicherheitslücken erklärt und Lösungen
     vorgeschlagen. Ein absolutes Muss, bevor man seine erste Anwendung
     online stellt.
-    **Vorteile:** Gute Erklärungen, es werden die meisten
+    <br>**Vorteile:** Gute Erklärungen, es werden die meisten
     Sicherheitslücken genannt, nach der Lektüre kann man sich relativ
     sicher sein, dass die Anwendung sicher ist (natürlich ist dies keine
     Garantie, hier also bitte Vorsicht walten lassen)
-    **Nachteile:** Die Ausführungen sind trotz der guten Erklärungen
+    <br>**Nachteile:** Die Ausführungen sind trotz der guten Erklärungen
     manchmal etwas kurz geraten
 
 ### Bücher
@@ -413,16 +412,16 @@ inhalt:
   dann kommt man aber auch schnell zu komplexeren Themen.
   Ich kann allerdings nur für die 2. Auflage sprechen, die 3. Auflage
   sollte allerdings noch viele Verbesserungen liefern.
-  **Vorteile:** Umfangreich, gut erklärt, teils auch etwas humorvoll
-  **Nachteile:** Die Themen werden nicht immer erschöpfend behandelt
+  <br>**Vorteile:** Umfangreich, gut erklärt, teils auch etwas humorvoll
+  <br>**Nachteile:** Die Themen werden nicht immer erschöpfend behandelt
 
 * [Galileo Computing : Buch : PHP 5.3 und MySQL 5.1](https://www.galileo-press.de/php-53-und-mysql-51_2078/){: target="_blank"}
   Ein Buch, dass zunächst auf die Grundlagen von PHP eingeht, dann
   aber schnell zu fortgeschrittenen Themen übergeht. Vor allem die
   Datenbankanbindung spielt eine große Rolle.
-   **Vorteile:** Sehr umfangreich und PHP-Einsteiger können viel
+   <br>**Vorteile:** Sehr umfangreich und PHP-Einsteiger können viel
   mitnehmen
-   **Nachteile:** Das Konzept des Buches ist nicht immer ganz schlüssig
+   <br>**Nachteile:** Das Konzept des Buches ist nicht immer ganz schlüssig
   und ein paar Anwendungsimplementierungen sind auch leicht fragwürdig
   (bieten aber dennoch einen guten Anreiz und fördern das Verständnis
   dessen, was man tut)
@@ -430,9 +429,9 @@ inhalt:
 * [PHP Security Consortium: Projects](http://phpsec.org/projects/){: target="_blank"}
   Kostenloses Ebook zu den wichtigsten Sicherheitsproblemen in PHP
   Anwendungen.
-  **Vorteile:** kostenlos, umfasst die wichtigsten Themen, verschiedene
+  <br>**Vorteile:** kostenlos, umfasst die wichtigsten Themen, verschiedene
   Formate (PDF/HTML/DocBook Lite)
-  **Nachteile:** englische Version besser formatiert als die Deutsche
+  <br>**Nachteile:** englische Version besser formatiert als die Deutsche
 
 * [PHP Design Patterns - 2.Auflage](http://www.phpdesignpatterns.de/auflage-2/){: target="_blank"}
   Um auch ein Buch zu nennen, das nicht von Galileo Computing ist: wer
@@ -443,9 +442,9 @@ inhalt:
   Leser Schritt für Schritt anhand eines Beispielprojektes die
   allermeisten Design Patterns näher bringt und dabei auch auf die
   Grundregeln eines sauberen Codes eingeht.
-  **Vorteile:** Meisterhaft geschrieben, leicht verständlich, gut
+  <br>**Vorteile:** Meisterhaft geschrieben, leicht verständlich, gut
   strukturiert
-  **Nachteile:** Wie leider viele O\'Reilly-Bücher enthält auch dieses
+  <br>**Nachteile:** Wie leider viele O\'Reilly-Bücher enthält auch dieses
   relativ viele Rechtschreibfehler
 
 * [dpunkt.verlag \| Bücher](http://dpunkt.de/buecher/2905.html){: target="_blank"}
@@ -456,7 +455,7 @@ inhalt:
   ihren Apache-Server sowie ihre PHP-Installation sicherer und
   resistenter gegen Angriffe machen wollen. Sehr zu empfehlen. Auch nach
   der Lektüre von [http://www.cms-sicherheit.de/](http://www.cms-sicherheit.de/){: target="_blank"} stellt dieses Buch eine lohnende Investition dar.
-   **Vorteile:** Gut ausgeführt, sehr umfangreich, es wird ein gutes
+   <br>**Vorteile:** Gut ausgeführt, sehr umfangreich, es wird ein gutes
   Verständnis von möglichen Sicherheitsrisiken vermittelt
 
 * [Galileo Computing : Buch : Reguläre Ausdrücke](https://www.galileo-press.de/regulare-ausdrucke_967/){: target="_blank"}
@@ -467,9 +466,9 @@ inhalt:
   Licht in das Dunkel der regulären Ausdrücke. Auch reguläre Ausdrücke
   in JavaScript und Apache-Konfigurationsdateien (z.B. ModRewrite)
   kommen zum Zuge.
-  **Vorteile:** Sehr erschöpfend behandelt, es bleiben wenige Fragen
+  <br>**Vorteile:** Sehr erschöpfend behandelt, es bleiben wenige Fragen
   offen
-  **Nachteile:** Die Erklärungen sind nicht immer ganz leicht zu
+  <br>**Nachteile:** Die Erklärungen sind nicht immer ganz leicht zu
   verstehen und erfordern manchmal einiges an Konzentration
 
 * [Galileo Computing : Buch : PHP PEAR](https://www.galileo-press.de/php-pear_891/){: target="_blank"}
@@ -477,7 +476,7 @@ inhalt:
   werden sowohl die Installation wie auch ausgewählte PEAR-Pakete
   erklärt.
   Es ist auch als kostenloses [Openbook](http://openbook.galileocomputing.de/php_pear/){: target="_blank"} verfügbar.
-  **Vorteile:** Das Buch eignet sich gut als Nachschlagewerk für
+  <br>**Vorteile:** Das Buch eignet sich gut als Nachschlagewerk für
   bestimmte PEAR-Klassen, auch wenn es natürlich keinen Wert auf
   Vollständigkeit legen kann
 
@@ -486,7 +485,7 @@ inhalt:
   Buch deckt dabei die Themen von der Planung über die Kommunikation,
   der Technischen Infrastruktur bis hin zum Marketing und der Verwaltung
   ab.
-  **Vorteile:** kostenlos, interessante Themen die jeder der
+  <br>**Vorteile:** kostenlos, interessante Themen die jeder der
   Open-Source-Software entwickelt beachten sollte
 
 * [Franzis: JavaScript - Objektorientierung und Entwurfsmuster](http://www.terrashop.de/Buch/JavaScript-Objektorientierung-und-Entwurfsmuster-Ross-Harmes-Dustin-Diaz-ISBN-3772364888/art/77236488/){: target="_blank"}
@@ -494,13 +493,13 @@ inhalt:
   Bereich Javascript. Die eigenwilligen Prinzipien von Javascript im
   Bereich Vererbung und die Auswirkungen auf die Pattern im Vergleich
   zur Umsetzung in anderen Sprachen werden sehr gut dargelegt.
-  **Vorteile:** Sehr gut geschriebenes Angebot an fortgeschrittene
+  <br>**Vorteile:** Sehr gut geschriebenes Angebot an fortgeschrittene
   Nutzer. Schneller Einstieg in den Themenbereich, die Ausführung von
   Javascript-Basics beschränkt sich auf wenige Seiten. Nötige Grundlagen
   wie Prototypenvererbung u.ä. werden aber beleuchtet. Didaktisch gut
   aufgebaut stützen sich die Kapitel auf im Buch früher erarbeitete
   Konzepte.
-  **Nachteile:** Sicher nichts für blutige Javascript-Newbies. Das Buch
+  <br>**Nachteile:** Sicher nichts für blutige Javascript-Newbies. Das Buch
   beschreibt bspw. keine Javascript-Basis-Syntax o.ä. Auch von OOP und
   Entwurfsmustern sollte man (bspw. in anderen Sprachen) schon mal
   gehört haben.

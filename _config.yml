@@ -1,19 +1,27 @@
+### Jekyll configuration
+
 markdown: kramdown
 
 kramdown:
     use_coderay: true
 
-# user defined variables
+exclude: [
+    README.md,
+    nbproject
+]
+
+relative_permalinks: false
+
+
+
+### user defined variables
 
 # entry-type
 # [ default, in-progress, deprecated, in-discussion, marked-to-delete ]
 entry-type: default
 
-# core url
+# core url (used in Atom feed)
 url: "http://php-de.github.io"
-
-# disabled by mermshaus for perma-urls ( noted by tr0y )
-relative_permalinks: false
 
 # global order id for unavailable orderId-Entries on guides
 # the orderId must be between 0 and 25. the global definition of this value sort automaticly

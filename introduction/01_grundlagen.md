@@ -311,8 +311,8 @@ inhalt:
     <br>**Nachteile:** Englisch, wichtige Punkte wie SQL Injection werden
     nicht behandelt.
 
-  * [PHP - SELFPHP: Version 5.2.8 Befehlsreferenz - Tutorial &amp;ndash;
-    Kochbuch &amp;ndash; Forum zum Thema PHP](http://www.selfphp.de/){: target="_blank"} <br>
+  * [PHP - SELFPHP: Version 5.2.8 Befehlsreferenz - Tutorial, Kochbuch und Forum
+    zum Thema PHP](http://www.selfphp.de/){: target="_blank"} <br>
     Persönlich als empfehlenswertes Tutorial einzustufen, jedoch mit
     einigen Lücken. Aber auch mit speziellen Features.
     <br>**Vorteile:** ausführliche Funktionsreferenz, ausführliche
@@ -355,8 +355,8 @@ inhalt:
     kurz behandelt
 
   * **Weiterführendes:**
-    * [Captchas sind Blödsinn - Alternativen gegen Spam](http://1ngo.de/web/captcha-spam.html){:rel="nofollow" target="_blank"} <br>
-      [Spam bekämpfen – aber richtig!](http://www.shiftedwork.de/blog/2010/08/10/spam-bekampfen-aber-richtig/){: target="_blank"} <br>
+    * [Captchas sind Blödsinn - Alternativen gegen Spam](http://1ngo.de/web/captcha-spam.html){:rel="nofollow" target="_blank"}
+    * [Spam bekämpfen – aber richtig!](http://www.shiftedwork.de/blog/2010/08/10/spam-bekampfen-aber-richtig/){: target="_blank"} <br>
       Anregungen zur Abwehr von Spam ohne grafische Captchas.
 
 
@@ -383,8 +383,8 @@ inhalt:
 
 ##### javascript
 
-  * [appendTo () - diverse Videotutorials zu JS und jQuery
-    Basics](http://learn.appendto.com/){: target="_blank"} <br>
+  * [https://bonsaiden.github.io/JavaScript-Garden/](https://bonsaiden.github.io/JavaScript-Garden/){: target="_blank"}
+  * [http://eloquentjavascript.net/](http://eloquentjavascript.net/){: target="_blank"}
 
 
 ##### Sicherheit

@@ -3,17 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% if page.title != 'php.de' %}{{ page.title }} &middot; {% endif %}PHP.de Wissenssammlung</title>
+        <title>{% if page.title != 'index' %}{{ page.title }} &middot; {% endif %}PHP.de Wissenssammlung</title>
 
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="{{ page.root }}/assets/css/general.css">
         <link rel="shortcut icon" href="{{ page.root }}/favicon.ico" />
 
-        {% if page.title == 'php.de' %}
-        <!-- Atom Feed Autodiscovery -->
         <link rel="alternate" href="{{ page.root }}/feed/atom.xml" type="application/atom+xml" title="Atom Feed">
-        <!-- /Atom Feed -->
-        {% endif %}
 
         <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
         <script type="text/javascript" src="{{ page.root }}/assets/scroll.js"></script>
@@ -36,7 +32,7 @@
             </div>
             <div id="breadcrumbs">
                 <ol class="breadcrumb">
-                {% if page.title == 'php.de' %}
+                {% if page.title == 'index' %}
                     <li class="active">PHP.de Wissen</li>
                 {% else %}
                     <li><a href="{{ page.root }}/">PHP.de Wissen</a></li>

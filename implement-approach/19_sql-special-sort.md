@@ -58,7 +58,7 @@ SELECT name, date_birth FROM persons
 ~~~
 
 
-Möchten wir uns nun beispielsweise die ältersten drei Personen ausgeben lassen,
+Möchten wir uns nun beispielsweise die ältesten drei Personen ausgeben lassen,
 so reicht dafür ein `LIMIT 3` mit der entsprechenden Sortierung aus.
 
 ~~~ sql

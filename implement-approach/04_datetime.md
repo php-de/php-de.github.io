@@ -53,6 +53,10 @@ inhalt:
         anchor: ueberschneidungen
         simple: ""
 
+    -   name: "Sternzeichen"
+        anchor: sternzeichen
+        simple: ""
+
     -   name: "Ostern"
         anchor: ostern
         simple: ""
@@ -318,6 +322,59 @@ var_dump( overlap_timespans('14:00', '15:00', '15:00', '16:00', '1 minute') ); /
 
 var_dump( overlap_timespans('2015-02-01', '2015-02-02', '2015-02-02', '2015-02-03') ); // true
 var_dump( overlap_timespans('2015-02-01', '2015-02-02', '2015-02-02', '2015-02-03', '1 minute') ); // false
+~~~
+
+
+### Sternzeichen
+{: #sternzeichen}
+
+Um das Sternzeichen eines Datums zu ermitteln, kann beispielsweise folgender Ansatz
+[aus dem PHP.de-Forum](http://www.php.de/php-einsteiger/114039-erledigt-monat-und-tag-aus-input-type-date-auslesen.html#post839874)
+verwendet werden.
+
+
+~~~ php
+function getSignOfZodiacFromDate($date) {
+    // $date is an object of DateTime or a string
+    if (is_string($date)) {
+         $date = new DateTime($date);
+    }
+    if (!$date instanceof DateTime) {
+        return false;
+    }
+    $monthDay = $date->format('md');
+    // SignsOfZodiac: to('md') => sign
+    $signs = array(
+        '0120' => 'Steinbock',
+        '0219' => 'Wassermann',
+        '0320' => 'Fische',
+        '0420' => 'Widder',
+        '0520' => 'Stier',
+        '0621' => 'Zwilling',
+        '0722' => 'Krebs',
+        '0823' => 'Löwe',
+        '0923' => 'Jungfrau',
+        '1023' => 'Waage',
+        '1122' => 'Skorpion',
+        '1221' => 'Schütze',
+        '1231' => 'Steinbock'
+    );
+    foreach ($signs as $toMonthDay => $sign) {
+        if ($monthDay <= $toMonthDay) {
+            return $sign;
+        }
+    }
+    return false;
+}
+
+
+// als string
+echo getSignOfZodiacFromDate('today'); // Fische (heute 10.03.2015)
+echo getSignOfZodiacFromDate('15.01.1984'); // Steinbock
+
+// als objekt
+$oDate = new DateTime('03.04.1981');
+echo getSignOfZodiacFromDate($oDate); // Widder
 ~~~
 
 

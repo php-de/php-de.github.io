@@ -143,6 +143,20 @@ if ($ampel == "gruen")
 ~~~
 
 
+#### Semikolon nach der Bedingung
+
+Ein Semikolon nach der Bedingung beendet für PHP die Anweisung sofort; Somit werden alle nachfolgende Anweisungen ausgeführt.
+
+~~~ php
+if (1 == 2); {
+    echo "Ja";
+}
+echo "Nein";
+
+// JaNein
+~~~
+
+
 ### Unnötige Konstrukte
 
 #### Unnötige Prüfungen zu bool (*true* oder *false*) hin

@@ -35,8 +35,6 @@ inhalt:
         anchor: quelle
         simple: ""
 
-entry-type: in-progress
-
 ---
 
 Häufig ist zu sehen, dass für Stringvergleiche, statt z.B. die in PHP eingebaute Funktion `strcmp()`, der typschwache Vergleichsoperator `==` verwendet wird.
@@ -90,7 +88,7 @@ switch ($selector) {
 ~~~
 
 Hier wird numerisch verglichen, daher tritt Fall 1 ein, obwohl `'7e0' !== '07'` ist.
-Im [PHP-Manual zu switch](http://php.net/manual/de/control-structures.switch.php) ist zwar der Hinweis zu lesen, dass `switch` typeschwache Vergleiche durchführt, ignoriert aber die Probleme durch *"Beispiel #2 switch gestattet den Vergleich mit Strings"*.
+Im [PHP-Manual zu switch](http://php.net/manual/de/control-structures.switch.php) ist zwar der Hinweis zu lesen, dass `switch` typschwache Vergleiche durchführt, ignoriert aber die Probleme durch *"Beispiel #2 switch gestattet den Vergleich mit Strings"*.
 
 Die folgende `switch`-Variante nutzt den strengen Vergleich, ist aber schlechter lesbar.
 

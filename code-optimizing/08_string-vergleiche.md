@@ -1,9 +1,9 @@
 ---
 layout:    guide
 
-permalink: /jumpto/string-vergleiche/
+permalink: /jumpto/stringvergleiche/
 root:      ../..
-title:     "String-Vergleiche - Fallstricke bei der typschwachen Variante"
+title:     "Stringvergleiche und die Fallstricke bei der typschwachen Variante"
 group:     "Code-Optimierung"
 orderId:   8
 
@@ -66,8 +66,7 @@ var_dump( $str == '1200.0000000000000000028' ); // true (32Bit System)
 
 Wie die Beispiele zeigen, werden auch Hexadezimalausdrücke als numerisch angesehen und führende Steuerzeichen werden auch großzügig ignoriert. Eine führende 0 führt dagegen nicht zu einer Interpretation als Oktalzahl.
 
-Diese Stolperfallen lauern versteckt auch in anderen Konstrukten, wie z.B. `switch` oder `usort`.<br>
-Dazu die folgenden Beispiele.
+Diese Stolperfallen lauern versteckt auch in anderen Konstrukten, wie z.B. `switch` oder `usort`. Dazu die folgenden Beispiele.
 
 
 ### Beispiel switch
@@ -93,7 +92,7 @@ switch ($selector) {
 Hier wird numerisch verglichen, daher tritt Fall 1 ein, obwohl `'7e0' !== '07'` ist.
 Im [PHP-Manual zu switch](http://php.net/manual/de/control-structures.switch.php) ist zwar der Hinweis zu lesen, dass `switch` typeschwache Vergleiche durchführt, ignoriert aber die Probleme durch *"Beispiel #2 switch gestattet den Vergleich mit Strings"*.
 
-Die folgende switch-Variante nutzt den strengen Vergleich, ist aber schlechter lesbar.
+Die folgende `switch`-Variante nutzt den strengen Vergleich, ist aber schlechter lesbar.
 
 ~~~php
 $selector = '07';

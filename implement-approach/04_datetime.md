@@ -249,6 +249,8 @@ echo ($dt->format('W') > 52) ? 53 : 52;
 ### Deutsche Tages- und Monatsnamen
 {: #deutsche-namen}
 
+#### Wochentage
+
 ~~~ php
 $aWeekdayNamesDE = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
 $dt = new DateTime();
@@ -256,12 +258,16 @@ echo $aWeekdayNamesDE[$dt->format('w')];  // 'w': 0 (für Sonntag) bis 6 (für S
 // Montag (heute Mo. 2015-01-12)
 ~~~
 
+#### Monate
+
 ~~~ php
 $aMonthNamesDE = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
 $dt = new DateTime();
 echo $aMonthNamesDE[$dt->format('n')-1];
 // Januar (heute 2015-01-12)
 ~~~
+
+Ergänzend sei auch auf diese Beiträge/Threads hingewiesen:
 
 * [http://www.php.de/php-einsteiger/112963-kalendermonat-und-kalendertag-bestimmten.html#post831698](http://www.php.de/php-einsteiger/112963-kalendermonat-und-kalendertag-bestimmten.html#post831698)
 * [http://www.php.de/php-einsteiger/114254-datum-plus-42-tage-deutsch.html#post841725](http://www.php.de/php-einsteiger/114254-datum-plus-42-tage-deutsch.html#post841725)

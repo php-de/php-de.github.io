@@ -41,12 +41,8 @@ inhalt:
         anchor: kalenderwochen
         simple: ""
 
-    -   name: "Deutsche Wochentage"
-        anchor: deutsche-wochentage
-        simple: ""
-
-    -   name: "Deutsche Monatsnamen"
-        anchor: deutsche-monatsnamen
+    -   name: "Deutsche Tages- und Monatsnamen"
+        anchor: deutsche-namen
         simple: ""
 
     -   name: "Überschneidungen Zeiträume"
@@ -250,34 +246,25 @@ echo ($dt->format('W') > 52) ? 53 : 52;
 ~~~
 
 
-### Deutsche Wochentage
-{: #deutsche-wochentage}
+### Deutsche Tages- und Monatsnamen
+{: #deutsche-namen}
 
 ~~~ php
 $aWeekdayNamesDE = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
 $dt = new DateTime();
 echo $aWeekdayNamesDE[$dt->format('w')];  // 'w': 0 (für Sonntag) bis 6 (für Samstag)
-// Montag (Mo. 2015-01-12)
+// Montag (heute Mo. 2015-01-12)
 ~~~
-
-Hierzu sein auch noch auf diese Beiträge/Threads hingewiesen:
-
-* [http://www.php.de/php-einsteiger/112963-kalendermonat-und-kalendertag-bestimmten.html#post831698](http://www.php.de/php-einsteiger/112963-kalendermonat-und-kalendertag-bestimmten.html#post831698)
-* [http://www.php.de/php-einsteiger/114254-datum-plus-42-tage-deutsch.html#post841725](http://www.php.de/php-einsteiger/114254-datum-plus-42-tage-deutsch.html#post841725)
-
-
-### Deutsche Monatsnamen
-{: #deutsche-monatsnamen}
 
 ~~~ php
 $aMonthNamesDE = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
 $dt = new DateTime();
 echo $aMonthNamesDE[$dt->format('n')-1];
-// Januar (2015-01-12)
+// Januar (heute 2015-01-12)
 ~~~
 
-Hierzu sein auch noch auf diesen Thread hingewiesen: [http://www.php.de/php-einsteiger/112963-kalendermonat-und-kalendertag-bestimmten.html#post831698](http://www.php.de/php-einsteiger/112963-kalendermonat-und-kalendertag-bestimmten.html#post831698)
-
+* [http://www.php.de/php-einsteiger/112963-kalendermonat-und-kalendertag-bestimmten.html#post831698](http://www.php.de/php-einsteiger/112963-kalendermonat-und-kalendertag-bestimmten.html#post831698)
+* [http://www.php.de/php-einsteiger/114254-datum-plus-42-tage-deutsch.html#post841725](http://www.php.de/php-einsteiger/114254-datum-plus-42-tage-deutsch.html#post841725)
 
 
 ### Überschneidungen Zeiträume

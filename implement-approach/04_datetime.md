@@ -14,19 +14,19 @@ author:
 
 inhalt:
     -   name: "DateTime-Objekt erstellen"
-        anchor: datetime-objekt-erstellen
+        anchor: datetime-erstellen
         simple: ""
 
     -   name: "DateTime-Objekt von abweichenden Formaten"
-        anchor: von-abweichenden-formaten-erzeugen
-        simple: ""
-
-    -   name: "Berechnungen auf bestehende DateTime-Objekte"
-        anchor: berechnungen-auf-vorhandene-datetime-objekte
+        anchor: von-abweichenden-formaten
         simple: ""
 
     -   name: "Schaltjahr"
         anchor: schaltjahr
+        simple: ""
+
+    -   name: "Berechnungen auf bestehende DateTime-Objekte"
+        anchor: berechnungen-auf-bestehende
         simple: ""
 
     -   name: "Differenzen, Interval"
@@ -85,6 +85,7 @@ Nachfolgende Seiten aus der PHP-Dokumentation finden in den Beispielen laufend V
 
 
 ### DateTime-Objekt erstellen
+{: #datetime-erstellen}
 
 ~~~ php
 // Jetzt
@@ -124,7 +125,7 @@ echo $dt->format('Y-m-d');
 
 
 ### Von abweichenden Format-Strings erzeugen
-
+{: #von-abweichenden-formaten}
 
 ~~~ php
 $str = '13012015';
@@ -145,7 +146,7 @@ echo $dt->format('Y-m-d');
 
 
 ### Schaltjahr
-
+{: #schaltjahr}
 
 ~~~ php
 $dt = DateTime::createFromFormat('Y', '2015');
@@ -159,7 +160,7 @@ echo $dt->format('L');
 
 
 ### Berechnungen auf vorhandene DateTime-Objekte
-
+{: #berechnungen-auf-bestehende}
 
 ~~~ php
 $dt = new DateTime(); // 2015-01-19
@@ -170,6 +171,7 @@ echo $dt->format('Y-m-d');
 
 
 ### Differenzen
+{: #differenzen}
 
 
 ~~~ php
@@ -200,8 +202,8 @@ var_dump($now->diff($regDate)->days > 30); // true
 ~~~
 
 
-
 ### Vergleiche
+{: #vergleiche}
 
 ~~~ php
 $dt1 = new DateTime('now');
@@ -214,8 +216,8 @@ var_dump($dt1 > $dt2);  // false
 ~~~
 
 
-
 ### Kalenderwochen
+{: #kalenderwochen}
 
 ~~~ php
 // erster Tag von KW2 in 2015
@@ -248,8 +250,8 @@ echo ($dt->format('W') > 52) ? 53 : 52;
 ~~~
 
 
-
 ### Deutsche Wochentage
+{: #deutsche-wochentage}
 
 ~~~ php
 $aWeekdayNamesDE = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
@@ -262,6 +264,7 @@ Hierzu sein auch noch auf diesen Thread hingewiesen: [http://www.php.de/php-eins
 
 
 ### Deutsche Monatsnamen
+{: #deutsche-monatsnamen}
 
 ~~~ php
 $aMonthNamesDE = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
@@ -379,6 +382,7 @@ echo getSignOfZodiacFromDate($oDate); // Widder
 
 
 ### Ostern
+{: #ostern}
 
 Zu diesem Thema gibt es im Forum einige Threads
 
@@ -387,5 +391,6 @@ Zu diesem Thema gibt es im Forum einige Threads
 
 
 ### Links
+{: #links}
 
 - [CARBON, a simple API extension for DateTime with PHP 5.3+](https://github.com/briannesbitt/Carbon)

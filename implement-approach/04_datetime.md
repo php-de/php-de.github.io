@@ -260,7 +260,10 @@ echo $aWeekdayNamesDE[$dt->format('w')];  // 'w': 0 (für Sonntag) bis 6 (für S
 // Montag (Mo. 2015-01-12)
 ~~~
 
-Hierzu sein auch noch auf diesen Thread hingewiesen: [http://www.php.de/php-einsteiger/112963-kalendermonat-und-kalendertag-bestimmten.html#post831698](http://www.php.de/php-einsteiger/112963-kalendermonat-und-kalendertag-bestimmten.html#post831698)
+Hierzu sein auch noch auf diese Beiträge/Threads hingewiesen:
+
+* [http://www.php.de/php-einsteiger/112963-kalendermonat-und-kalendertag-bestimmten.html#post831698](http://www.php.de/php-einsteiger/112963-kalendermonat-und-kalendertag-bestimmten.html#post831698)
+* [http://www.php.de/php-einsteiger/114254-datum-plus-42-tage-deutsch.html#post841725](http://www.php.de/php-einsteiger/114254-datum-plus-42-tage-deutsch.html#post841725)
 
 
 ### Deutsche Monatsnamen

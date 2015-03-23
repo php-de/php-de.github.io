@@ -61,7 +61,7 @@ inhalt:
         anchor: links
         simple: ""
 
-entry-type: in-progress
+entry-type: in-discussion
 ---
 
 Dieses Tutorial zeigt, an Hand von der in PHP ausgelieferten Klasse DateTime, eine Sammlung an üblichen Anwendungsszenarien. Bei den Beispielen wird durchgängig die objektorientierte Variante von DateTime verwendet. Bei etwaigen externen Beispielen kann dies abweichen bzw. wenn bewusst auf alternative Methoden zurückgegriffen wird, so wird dies explizit erwähnt.

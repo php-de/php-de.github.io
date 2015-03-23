@@ -35,7 +35,7 @@ entry-type: in-progress
 
 
 
-### INIT
+**INIT**
 
 ~~~ php
 $host = "localhost";
@@ -51,7 +51,7 @@ $pdo = new PDO('mysql:host='.$host.';dbname='.$name, $user, $pass, $options);
 ~~~
 
 
-### EINFACH ABFRAGE OHNE DATEN VON AUSSEN
+**EINFACH ABFRAGE OHNE DATEN VON AUSSEN**
 
 
 ~~~ php
@@ -75,11 +75,10 @@ if ($stmt->execute()) {
 }
 ~~~
 
-PREPARED STATMENT
+**PREPARED STATMENT**
 
 
-1. LOGIN
-
+**LOGIN**
 
 ~~~ php
 $username = "hans55";
@@ -97,7 +96,7 @@ if ($stmt->execute()) {
 ~~~
 
 
-2. INSERT
+**INSERT**
 
 
 ~~~ php

@@ -1,2 +1,2 @@
 
-[PHP.de Community Knowledge Repository](http://php-de.github.io)
+[PHP.de Wissenssammlung](http://php-de.github.io)

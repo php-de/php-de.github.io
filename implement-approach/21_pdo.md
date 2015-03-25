@@ -13,16 +13,20 @@ author:
         profile: 21246
 
 inhalt:
-    -   name:   ""
-        anchor:
+    -   name:   "Verbindung erstellen"
+        anchor: verbindung
         simple: ""
 
-    -   name:   ""
-        anchor:
+    -   name:   "Einfache Query ohne Parameter"
+        anchor: query
         simple: ""
 
-    -   name:   ""
-        anchor:
+    -   name:   "Prepared Statements"
+        anchor: prepared-statements
+        simple: "Welche Varianten gibt es?"
+
+    -   name:   "Verweise"
+        anchor: verweise
         simple: ""
 
 
@@ -31,88 +35,159 @@ entry-type: in-progress
 ---
 
 
-### in Arbeit ...
+Dieser Überblick beschäftigt sich mit konkreten Anwendungsbeispielen von PDO bzw. prepared Statements mit PDO. Weitere Informationen dazu sind in der PHP-Doku zu finden:
+
+* (PDO)[http://php.net/manual/de/intro.pdo.php]
+* (Prepared Statements)[http://php.net/manual/de/pdo.prepared-statements.php]
 
 
+### Verbindung herstellen
+{: #verbindung}
 
-**INIT**
+Zuerst wird die Verbinung zur Datebank hergestellt.
 
 ~~~ php
-$host = "localhost";
-$name = "test";
-$user = "root";
-$pass = "";
+$dsn  = 'mysql:dbname=test;host=localhost;charset=utf8';
+$user = 'root';
+$pass = '';
 $options = array(
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ
 );
+$pdo = new PDO($dsn, $user, $pass, $options);
+~~~
 
-$pdo = new PDO('mysql:host='.$host.';dbname='.$name, $user, $pass, $options);
+**Hinweise zu den Optionsparametern**
+
+Je nach Vorlieben bzw. Entwicklungsumgebung können Parameter auch anderweitig gesetzt werden.
+Hier wird durchgängig die objektorientierte (OO) Variante für den Zugriff auf die Eigenschaften verwendet.
+
+* `PDO::ERRMODE_EXCEPTION` Mögliche Error-Modi: (http://php.net/manual/de/pdo.error-handling.php)[http://php.net/manual/de/pdo.error-handling.php]
+
+* `PDO::FETCH_ASSOC` Fetch-Varianten: (http://php.net/manual/de/pdostatement.fetch.php)[http://php.net/manual/de/pdostatement.fetch.php]
+
+
+#### Wiederverwendung der Verbindung
+{: #verbindung-param}
+
+Benötigt eine Funktion oder ein Objekt eine DB-Verbindung, so wird die bestehende PDO-Instanz `$pdo` dorthin als Parameter übergeben.
+
+~~~ php
+function getUsernameById($userID, $pdo) {
+    // ...
+}
+
+// oder
+
+// Übergabe ins Objekt
+$user = new User($pdo);
 ~~~
 
 
-**EINFACH ABFRAGE OHNE DATEN VON AUSSEN**
 
+### Einfache Query ohne Parameter
+{: #query}
+
+Gibt es keine Parameter von "aussen", so ist der Einsatz von prepared Statements nicht nötig.
+Somit kann die Query direkt an die DB geschickt werden.
 
 ~~~ php
-$sql = "SELECT `name` FROM `user`";
+$sql = "SELECT `username` FROM `user`";
 
 $stmt = $pdo->query($sql);
 
-// Anzahl ausgeben
+// zB Anzahl ausgeben
 echo $stmt->rowCount();
 
-// alle Daten in Array holen
+// Namen einzeln ausgeben
+if ($stmt->execute()) {
+    while ($row = $stmt->fetch()) {
+        echo $row->username."<br>\n";
+    }
+}
+
+// ODER
+
+// alle Daten in ein Array holen
 $arr = $stmt->fetchAll();
 print_r($arr);
 
-// ODER
-// Alle Namen einzeln ausgeben lassen
-if ($stmt->execute()) {
-    while ($row = $stmt->fetch()) {
-        echo $row['name']."<br>\n";
-    }
-}
 ~~~
 
-**PREPARED STATMENT**
+
+### Prepared Statements
+{: #prepared-statements}
+
+Dazu sus der PHP-Doku:
+
+*Die Parameter für Prepared Statements müssen nicht maskiert werden. Der Treiber übernimmt das automatisch. Wenn eine Anwendung ausschließlich Prepared Statements benutzt, kann sich der Entwickler sicher sein, dass keine SQL-Injection auftreten wird. (Wenn aber trotzdem andere Teile der Abfrage aus nicht zuverlässigen Eingaben generiert werden, ist dies immer noch möglich.)*
+
+Nachfolgende Möglichkeiten bestehen (u.a.) um die Parameter zu übergeben bzw. an das Statement zu binden.
 
 
-**LOGIN**
+#### Parameter einzeln binden
+{: #bind-param}
 
 ~~~ php
-$username = "hans55";
+$username = "Joachim";
+$gender = 'M';
 
-$sql = "SELECT `name`, `password_hash` FROM `user` WHERE `name` = :username LIMIT 1";
-
+$sql = "SELECT `username`, `gender` FROM `user` WHERE `username` = :username AND `gender` = :gender";
 $stmt = $pdo->prepare($sql);
-$stmt->bindParam(':username', $username, PDO::PARAM_STR);
 
+$stmt->bindParam(':username', $username, PDO::PARAM_STR);
+$stmt->bindParam(':gender',   $gender,   PDO::PARAM_STR);
 if ($stmt->execute()) {
     $row = $stmt->fetch();
-    echo $row['name']."<br>\n";
-    echo $row['password_hash']."<br>\n";
+    echo $row->username;
 }
 ~~~
 
 
-**INSERT**
-
+#### Parameter per Array binden
+{: #bind-array}
 
 ~~~ php
-$sql = "INSERT INTO `user` (`name`, `gender`) VALUES (:name, :gender)";
+$username = 'Sarah';
+$gender = 'F';
+
+$sql = "SELECT `username`, `gender` FROM `user` WHERE `username` = :username AND `gender` = :gender";
+$stmt = $pdo->prepare($sql);
+
+// Parameter-Array
+$aParams = array(':username' => $username, ':gender' => $gender);
+$stmt->execute($aParams);
+
+echo $stmt->rowCount();
+~~~
+
+
+#### Multi-Execute
+{: #multi-execute}
+
+**Anmerkung: Dieses Beispiel dient der syntaktischen Demonstration der Anwendung. Speziell bei INSERT Operationen sollte eine einzige(!) Query erzeugt und an die DB geschitckt werden. Die DB mit Queries in Schleifen zu "befeuern" ist grundsätzlich zu vermeiden!**
+
+~~~ php
+$sql = "INSERT INTO `user` (`username`, `gender`) VALUES (:user, :gender)";
 
 $stmt = $pdo->prepare($sql);
-$stmt->bindParam(':name', $name);
+$stmt->bindParam(':username', $username);
 $stmt->bindParam(':gender', $gender);
 
-// eine Zeile einfügen
-$name = 'Sarah';
+// einen Datensatz einfügen
+$username = 'Sarah';
 $gender = 'F';
 $stmt->execute();
 
-// eine weitere Zeile mit anderen Werten einfügen
-$name = 'Rolf';
+// einen weiteren Datensatz mit anderen Werten einfügen
+$username = 'Rolf';
 $gender = 'M';
 $stmt->execute();
 ~~~
+
+
+### Querverweise
+{: #verweise}
+
+* (Einführung zur *"PHP Data Objects-Erweiterung (PDO)"* auf php.net)[http://php.net/manual/de/intro.pdo.php]
+* (Arrays als JSON-String in SQL-Datenbank speichern)[{{ page.root }}/jumpto/array-as-json-to-sqldb/]

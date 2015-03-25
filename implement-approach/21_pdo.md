@@ -61,11 +61,11 @@ $pdo = new PDO($dsn, $user, $pass, $options);
 
 Je nach Vorlieben bzw. Entwicklungsumgebung können Parameter auch anderweitig gesetzt werden. Nachfolgend zwei bekannte Beispiele - weitere Parameter sind in der Doku zu finden.
 
-* `PDO::FETCH_ASSOC` Fetch-Varianten: [http://php.net/manual/de/pdostatement.fetch.php](http://php.net/manual/de/pdostatement.fetch.php){:target="_blank"}
+* `PDO::FETCH_ASSOC` statt `PDO::FETCH_OBJ` Fetch-Varianten: [http://php.net/manual/de/pdostatement.fetch.php](http://php.net/manual/de/pdostatement.fetch.php){:target="_blank"}
 <br>
 Hier wird durchgängig die objektorientierte (OO) Variante für den Zugriff auf die Eigenschaften verwendet.
 
-* `PDO::ERRMODE_EXCEPTION` Mögliche Error-Modi: [http://php.net/manual/de/pdo.error-handling.php](http://php.net/manual/de/pdo.error-handling.php){:target="_blank"}
+* `PDO::ERRMODE_WARNING` statt `PDO::ERRMODE_EXCEPTION` Mögliche Error-Modi: [http://php.net/manual/de/pdo.error-handling.php](http://php.net/manual/de/pdo.error-handling.php){:target="_blank"}
 
 
 

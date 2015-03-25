@@ -3,7 +3,7 @@ layout: guide
 
 permalink: /jumpto/pdo/
 root: ../..
-title: "PDO"
+title: "PDO (PHP Data Objects)"
 group: "Standard Implementierungsansätze / Code-Snippets"
 orderId: 21
 
@@ -14,11 +14,11 @@ author:
 
 inhalt:
     -   name:   "Verbindung erstellen"
-        anchor: verbindung
+        anchor: create-conn
         simple: ""
 
     -   name:   "Einfache Query ohne Parameter"
-        anchor: query
+        anchor: simple-query
         simple: ""
 
     -   name:   "Prepared Statements"
@@ -26,7 +26,7 @@ inhalt:
         simple: "Welche Varianten gibt es?"
 
     -   name:   "Verweise"
-        anchor: verweise
+        anchor: links
         simple: ""
 
 
@@ -35,16 +35,16 @@ entry-type: in-progress
 ---
 
 
-Dieser Überblick beschäftigt sich mit konkreten Anwendungsbeispielen von PDO bzw. prepared Statements mit PDO. Weitere Informationen dazu sind in der PHP-Doku zu finden:
+Dieser Überblick beschäftigt sich mit konkreten Anwendungsbeispielen von PDO bzw. Prepared Statements mit PDO. Weitere Informationen dazu sind in der PHP-Doku zu finden:
 
-* (PDO)[http://php.net/manual/de/intro.pdo.php]
-* (Prepared Statements)[http://php.net/manual/de/pdo.prepared-statements.php]
+* [PDO](http://php.net/manual/de/intro.pdo.php)
+* [Prepared Statements](http://php.net/manual/de/pdo.prepared-statements.php)
 
 
 ### Verbindung herstellen
-{: #verbindung}
+{: #create-conn}
 
-Zuerst wird die Verbinung zur Datebank hergestellt.
+Zuerst wird die Verbindung zum DBMS hergestellt.
 
 ~~~ php
 $dsn  = 'mysql:dbname=test;host=localhost;charset=utf8';
@@ -59,12 +59,13 @@ $pdo = new PDO($dsn, $user, $pass, $options);
 
 **Hinweise zu den Optionsparametern**
 
-Je nach Vorlieben bzw. Entwicklungsumgebung können Parameter auch anderweitig gesetzt werden.
+Je nach Vorlieben bzw. Entwicklungsumgebung können Parameter auch anderweitig gesetzt werden. Nachfolgend zwei bekannte Beispiele - weitere Parameter sind in der Doku zu finden.
+
+* `PDO::FETCH_ASSOC` Fetch-Varianten: [http://php.net/manual/de/pdostatement.fetch.php]([http://php.net/manual/de/pdostatement.fetch.php)
 Hier wird durchgängig die objektorientierte (OO) Variante für den Zugriff auf die Eigenschaften verwendet.
 
-* `PDO::ERRMODE_EXCEPTION` Mögliche Error-Modi: (http://php.net/manual/de/pdo.error-handling.php)[http://php.net/manual/de/pdo.error-handling.php]
+* `PDO::ERRMODE_EXCEPTION` Mögliche Error-Modi: [http://php.net/manual/de/pdo.error-handling.php](http://php.net/manual/de/pdo.error-handling.php)
 
-* `PDO::FETCH_ASSOC` Fetch-Varianten: (http://php.net/manual/de/pdostatement.fetch.php)[http://php.net/manual/de/pdostatement.fetch.php]
 
 
 #### Wiederverwendung der Verbindung
@@ -86,10 +87,9 @@ $user = new User($pdo);
 
 
 ### Einfache Query ohne Parameter
-{: #query}
+{: #simple-query}
 
-Gibt es keine Parameter von "aussen", so ist der Einsatz von prepared Statements nicht nötig.
-Somit kann die Query direkt an die DB geschickt werden.
+Gibt es keine Parameter von "aussen", so ist der Einsatz von Prepared Statements nicht nötig.
 
 ~~~ php
 $sql = "SELECT `username` FROM `user`";
@@ -118,11 +118,12 @@ print_r($arr);
 ### Prepared Statements
 {: #prepared-statements}
 
-Dazu sus der PHP-Doku:
+PHP-Doku:
 
 *Die Parameter für Prepared Statements müssen nicht maskiert werden. Der Treiber übernimmt das automatisch. Wenn eine Anwendung ausschließlich Prepared Statements benutzt, kann sich der Entwickler sicher sein, dass keine SQL-Injection auftreten wird. (Wenn aber trotzdem andere Teile der Abfrage aus nicht zuverlässigen Eingaben generiert werden, ist dies immer noch möglich.)*
 
-Nachfolgende Möglichkeiten bestehen (u.a.) um die Parameter zu übergeben bzw. an das Statement zu binden.
+
+**Nachfolgende Möglichkeiten bestehen (u.a.) um die Parameter zu übergeben bzw. an das Statement zu binden.**
 
 
 #### Parameter einzeln binden
@@ -165,7 +166,8 @@ echo $stmt->rowCount();
 #### Multi-Execute
 {: #multi-execute}
 
-**Anmerkung: Dieses Beispiel dient der syntaktischen Demonstration der Anwendung. Speziell bei INSERT Operationen sollte eine einzige(!) Query erzeugt und an die DB geschitckt werden. Die DB mit Queries in Schleifen zu "befeuern" ist grundsätzlich zu vermeiden!**
+**Anmerkung:**<br>
+Dieses Beispiel dient der syntaktischen Demonstration der Anwendung. Speziell bei INSERT Operationen sollte eine einzige(!) Query erzeugt und an die DB geschickt werden. Die DB mit Queries in Schleifen zu "befeuern" ist grundsätzlich zu vermeiden!
 
 ~~~ php
 $sql = "INSERT INTO `user` (`username`, `gender`) VALUES (:user, :gender)";
@@ -187,7 +189,7 @@ $stmt->execute();
 
 
 ### Querverweise
-{: #verweise}
+{: #links}
 
-* (Einführung zur *"PHP Data Objects-Erweiterung (PDO)"* auf php.net)[http://php.net/manual/de/intro.pdo.php]
-* (Arrays als JSON-String in SQL-Datenbank speichern)[{{ page.root }}/jumpto/array-as-json-to-sqldb/]
+* [Einführung zur *"PHP Data Objects-Erweiterung (PDO)"* auf php.net](http://php.net/manual/de/intro.pdo.php)
+* [Arrays als JSON-String in SQL-Datenbank speichern]({{ page.root }}/jumpto/array-as-json-to-sqldb/)

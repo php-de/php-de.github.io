@@ -35,10 +35,10 @@ entry-type: in-progress
 ---
 
 
-Dieser Überblick beschäftigt sich mit konkreten Anwendungsbeispielen von PDO bzw. Prepared Statements mit PDO. Weitere Informationen dazu sind in der PHP-Doku zu finden:
+Dieser Überblick beschäftigt sich mit konkreten Anwendungsbeispielen von PDO bzw. Prepared Statements mittels PDO. Weitere Informationen dazu sind in der PHP-Doku zu finden:
 
-* [PDO](http://php.net/manual/de/intro.pdo.php)
-* [Prepared Statements](http://php.net/manual/de/pdo.prepared-statements.php)
+* [PDO](http://php.net/manual/de/intro.pdo.php){:target="_blank"}
+* [Prepared Statements](http://php.net/manual/de/pdo.prepared-statements.php){:target="_blank"}
 
 
 ### Verbindung herstellen
@@ -61,17 +61,18 @@ $pdo = new PDO($dsn, $user, $pass, $options);
 
 Je nach Vorlieben bzw. Entwicklungsumgebung können Parameter auch anderweitig gesetzt werden. Nachfolgend zwei bekannte Beispiele - weitere Parameter sind in der Doku zu finden.
 
-* `PDO::FETCH_ASSOC` Fetch-Varianten: [http://php.net/manual/de/pdostatement.fetch.php]([http://php.net/manual/de/pdostatement.fetch.php)
+* `PDO::FETCH_ASSOC` Fetch-Varianten: [http://php.net/manual/de/pdostatement.fetch.php]([http://php.net/manual/de/pdostatement.fetch.php){:target="_blank"}
+<br>
 Hier wird durchgängig die objektorientierte (OO) Variante für den Zugriff auf die Eigenschaften verwendet.
 
-* `PDO::ERRMODE_EXCEPTION` Mögliche Error-Modi: [http://php.net/manual/de/pdo.error-handling.php](http://php.net/manual/de/pdo.error-handling.php)
+* `PDO::ERRMODE_EXCEPTION` Mögliche Error-Modi: [http://php.net/manual/de/pdo.error-handling.php](http://php.net/manual/de/pdo.error-handling.php){:target="_blank"}
 
 
 
 #### Wiederverwendung der Verbindung
 {: #verbindung-param}
 
-Benötigt eine Funktion oder ein Objekt eine DB-Verbindung, so wird die bestehende PDO-Instanz `$pdo` dorthin als Parameter übergeben.
+Benötigt eine Funktion oder ein Objekt eine DB-Verbindung, so wird die bestehende PDO-Instanz `$pdo` als Parameter übergeben.
 
 ~~~ php
 function getUsernameById($userID, $pdo) {
@@ -118,7 +119,8 @@ print_r($arr);
 ### Prepared Statements
 {: #prepared-statements}
 
-PHP-Doku:
+
+[PHP-Doku](http://php.net/manual/de/pdo.prepared-statements.php){:target="_blank"}:
 
 *Die Parameter für Prepared Statements müssen nicht maskiert werden. Der Treiber übernimmt das automatisch. Wenn eine Anwendung ausschließlich Prepared Statements benutzt, kann sich der Entwickler sicher sein, dass keine SQL-Injection auftreten wird. (Wenn aber trotzdem andere Teile der Abfrage aus nicht zuverlässigen Eingaben generiert werden, ist dies immer noch möglich.)*
 
@@ -166,8 +168,7 @@ echo $stmt->rowCount();
 #### Multi-Execute
 {: #multi-execute}
 
-**Anmerkung:**<br>
-Dieses Beispiel dient der syntaktischen Demonstration der Anwendung. Speziell bei INSERT Operationen sollte eine einzige(!) Query erzeugt und an die DB geschickt werden. Die DB mit Queries in Schleifen zu "befeuern" ist grundsätzlich zu vermeiden!
+**Anmerkung:** Dieses Beispiel dient der Demonstration der syntaktischen Anwendung. Speziell bei INSERT-Operationen sollte nur eine einzige(!) Query erzeugt und an die DB geschickt werden. Die DB mit Queries in Schleifen zu "befeuern" ist grundsätzlich zu vermeiden!
 
 ~~~ php
 $sql = "INSERT INTO `user` (`username`, `gender`) VALUES (:user, :gender)";
@@ -191,5 +192,5 @@ $stmt->execute();
 ### Querverweise
 {: #links}
 
-* [Einführung zur *"PHP Data Objects-Erweiterung (PDO)"* auf php.net](http://php.net/manual/de/intro.pdo.php)
-* [Arrays als JSON-String in SQL-Datenbank speichern]({{ page.root }}/jumpto/array-as-json-to-sqldb/)
+* [PHP Data Objects-Erweiterung (PDO) auf php.net](http://php.net/manual/de/intro.pdo.php){:target="_blank"}
+* [Arrays als JSON-String in SQL-Datenbank speichern]({{ page.root }}/jumpto/array-as-json-to-sqldb/){:target="_blank"}

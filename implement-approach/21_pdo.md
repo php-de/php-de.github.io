@@ -61,7 +61,7 @@ $pdo = new PDO($dsn, $user, $pass, $options);
 
 Je nach Vorlieben bzw. Entwicklungsumgebung können Parameter auch anderweitig gesetzt werden. Nachfolgend zwei bekannte Beispiele - weitere Parameter sind in der Doku zu finden.
 
-* `PDO::FETCH_ASSOC` Fetch-Varianten: [http://php.net/manual/de/pdostatement.fetch.php]([http://php.net/manual/de/pdostatement.fetch.php){:target="_blank"}
+* `PDO::FETCH_ASSOC` Fetch-Varianten: [http://php.net/manual/de/pdostatement.fetch.php](http://php.net/manual/de/pdostatement.fetch.php){:target="_blank"}
 <br>
 Hier wird durchgängig die objektorientierte (OO) Variante für den Zugriff auf die Eigenschaften verwendet.
 
@@ -120,13 +120,12 @@ print_r($arr);
 {: #prepared-statements}
 
 
-[PHP-Doku](http://php.net/manual/de/pdo.prepared-statements.php){:target="_blank"}:
+[Dazu aus der PHP-Doku](http://php.net/manual/de/pdo.prepared-statements.php){:target="_blank"}
 
 *Die Parameter für Prepared Statements müssen nicht maskiert werden. Der Treiber übernimmt das automatisch. Wenn eine Anwendung ausschließlich Prepared Statements benutzt, kann sich der Entwickler sicher sein, dass keine SQL-Injection auftreten wird. (Wenn aber trotzdem andere Teile der Abfrage aus nicht zuverlässigen Eingaben generiert werden, ist dies immer noch möglich.)*
 
-
-**Nachfolgende Möglichkeiten bestehen (u.a.) um die Parameter zu übergeben bzw. an das Statement zu binden.**
-
+#### Nachfolgende Möglichkeiten bestehen (u.a.) um die Parameter zu übergeben bzw. an das Statement zu binden.
+{: #bindings}
 
 #### Parameter einzeln binden
 {: #bind-param}

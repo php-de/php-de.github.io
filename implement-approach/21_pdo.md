@@ -29,8 +29,6 @@ inhalt:
         anchor: links
         simple: ""
 
-
-entry-type: in-discussion
 ---
 
 
@@ -78,7 +76,6 @@ Benötigt eine Funktion oder ein Objekt eine DB-Verbindung, so wird die bestehen
 
 ~~~ php
 function getUsernameById($userID, $pdo) {
-
     // ...
 }
 
@@ -100,7 +97,6 @@ class User
         // per $this->pdo zur Verfügung.
         $this->pdo = $pdo;
     }
-
     // ...
 }
 
@@ -177,7 +173,7 @@ if ($stmt->execute()) {
 ~~~
 
 **Hinweis**<br>
-Die Parameterbindung kann alternativ zu `bindParam()` noch mit `bindValue()` vorgenommen werden. Die Unterschiede sind in [diesem stackoverflow-Beitrag](http://stackoverflow.com/a/14413428){:target="_blank"} mittels kurzen Beispielen dargestellt.
+Die Parameterbindung kann alternativ zu `bindParam()` mit `bindValue()` vorgenommen werden. Die Unterschiede sind in [diesem stackoverflow-Beitrag](http://stackoverflow.com/a/14413428){:target="_blank"} mittels kurzen Beispielen dargestellt.
 
 
 #### Parameter per Array binden

@@ -23,19 +23,18 @@ inhalt:
 
     -   name:   "Prepared Statements"
         anchor: prepared-statements
-        simple: "Welche Varianten gibt es?"
+        simple: "Varianten der Parameterbindung"
 
     -   name:   "Verweise"
         anchor: links
         simple: ""
 
 
-entry-type: in-progress
-
+entry-type: in-discussion
 ---
 
 
-Dieser Überblick beschäftigt sich mit konkreten Anwendungsbeispielen von PDO bzw. Prepared Statements mittels PDO. Weitere Informationen dazu sind in der PHP-Doku zu finden:
+Dieser Überblick beschäftigt sich mit konkreten Anwendungsbeispielen von PDO bzw. Prepared Statements mittels PDO. Weitere grundsätzliche Informationen dazu sind in der PHP-Doku zu finden:
 
 * [PDO](http://php.net/manual/de/intro.pdo.php){:target="_blank"}
 * [Prepared Statements](http://php.net/manual/de/pdo.prepared-statements.php){:target="_blank"}
@@ -59,7 +58,7 @@ $pdo = new PDO($dsn, $user, $pass, $options);
 
 **Hinweise zu den Optionsparametern**
 
-Je nach Vorlieben bzw. Entwicklungsumgebung können Parameter auch anderweitig gesetzt werden. Nachfolgend zwei bekannte Beispiele - weitere Parameter sind in der Doku zu finden.
+Je nach Vorlieben bzw. Entwicklungsstil können Parameter auch anderweitig gesetzt werden. Nachfolgend zwei bekannte Beispiele - weitere Parameter sind in der Doku zu finden.
 
 * `PDO::FETCH_ASSOC` statt `PDO::FETCH_OBJ`<br>
 Fetch-Varianten: [http://php.net/manual/de/pdostatement.fetch.php](http://php.net/manual/de/pdostatement.fetch.php){:target="_blank"}<br>
@@ -75,14 +74,38 @@ Mögliche Error-Modi: [http://php.net/manual/de/pdo.error-handling.php](http://p
 
 Benötigt eine Funktion oder ein Objekt eine DB-Verbindung, so wird die bestehende PDO-Instanz `$pdo` als Parameter übergeben.
 
+Beispiel - Funktion
+
 ~~~ php
 function getUsernameById($userID, $pdo) {
     // ...
+    return $username;
 }
 
-// oder
 
-// Übergabe ins Objekt
+// Funktionsaufruf
+$username = getUsernameById(23, $pdo);
+~~~
+
+Beispiel - Klasse
+
+~~~ php
+class User
+{
+    private $pdo; // Eigenschaft deklarieren
+
+    public function __construct($pdo) {
+        // PDO-Objekt an die Eigenschaft übergeben
+        // diese steht nun in der ganzen Klasse
+        // per $this->pdo zur Verfügung.
+        $this->pdo = $pdo;
+    }
+
+    // ...
+}
+
+
+// Aufruf / Instantiierung
 $user = new User($pdo);
 ~~~
 
@@ -91,7 +114,7 @@ $user = new User($pdo);
 ### Einfache Query ohne Parameter
 {: #simple-query}
 
-Gibt es keine Parameter von "aussen", so ist der Einsatz von Prepared Statements nicht nötig.
+Gibt es keine Parameter von "aussen", so ist der Einsatz von Prepared Statements nicht zwingend nötig.
 
 ~~~ php
 $sql = "SELECT `username` FROM `user`";
@@ -110,7 +133,7 @@ if ($stmt->execute()) {
 
 // ODER
 
-// alle Daten in ein Array holen
+// alle Daten in ein Array überführen
 $arr = $stmt->fetchAll();
 print_r($arr);
 
@@ -123,69 +146,55 @@ print_r($arr);
 
 [Dazu aus der PHP-Doku](http://php.net/manual/de/pdo.prepared-statements.php){:target="_blank"}
 
-*Die Parameter für Prepared Statements müssen nicht maskiert werden. Der Treiber übernimmt das automatisch. Wenn eine Anwendung ausschließlich Prepared Statements benutzt, kann sich der Entwickler sicher sein, dass keine SQL-Injection auftreten wird. (Wenn aber trotzdem andere Teile der Abfrage aus nicht zuverlässigen Eingaben generiert werden, ist dies immer noch möglich.)*
+> Die Parameter für Prepared Statements müssen nicht maskiert werden. Der Treiber übernimmt das automatisch. Wenn eine Anwendung ausschließlich Prepared Statements benutzt, kann sich der Entwickler sicher sein, dass keine SQL-Injection auftreten wird. (Wenn aber trotzdem andere Teile der Abfrage aus nicht zuverlässigen Eingaben generiert werden, ist dies immer noch möglich.)
 
-#### Nachfolgende Möglichkeiten bestehen (u.a.) um die Parameter zu übergeben bzw. an das Statement zu binden.
+
+#### Bindung der Parameter
 {: #bindings}
+
+Nachfolgende Möglichkeiten bestehen u.a., um die Parameter an das Statement zu binden.
+
 
 #### Parameter einzeln binden
 {: #bind-param}
 
 ~~~ php
-$username = "Joachim";
-$gender = 'M';
-
+// Query vorbereiten
 $sql = "SELECT `username`, `gender` FROM `user` WHERE `username` = :username AND `gender` = :gender";
 $stmt = $pdo->prepare($sql);
 
-$stmt->bindParam(':username', $username, PDO::PARAM_STR);
-$stmt->bindParam(':gender',   $gender,   PDO::PARAM_STR);
+// Parameter übergeben und verarbeiten
+$username = 'Joachim';
+$gender = 'M';
+
+$stmt->bindParam(':username', $username);
+$stmt->bindParam(':gender',   $gender);
+
 if ($stmt->execute()) {
     $row = $stmt->fetch();
     echo $row->username;
 }
 ~~~
 
+**Hinweis:** Die Parameterbindung kann alternativ zu `bindParam()` noch mit `bindValue()` vorgenommen werden. Die Unterschiede sind in [diesem stackoverflow-Beitrag](http://stackoverflow.com/a/14413428){:target="_blank"} kurz dargestellt.
+
 
 #### Parameter per Array binden
 {: #bind-array}
 
 ~~~ php
-$username = 'Sarah';
-$gender = 'F';
-
+// Query vorbereiten
 $sql = "SELECT `username`, `gender` FROM `user` WHERE `username` = :username AND `gender` = :gender";
 $stmt = $pdo->prepare($sql);
 
-// Parameter-Array
+// Parameter übergeben und verarbeiten
+$username = 'Sarah';
+$gender = 'F';
+
 $aParams = array(':username' => $username, ':gender' => $gender);
 $stmt->execute($aParams);
 
 echo $stmt->rowCount();
-~~~
-
-
-#### Multi-Execute
-{: #multi-execute}
-
-**Anmerkung:** Dieses Beispiel dient der Demonstration der syntaktischen Anwendung. Speziell bei INSERT-Operationen sollte nur eine einzige(!) Query erzeugt und an die DB geschickt werden. Die DB mit Queries in Schleifen zu "befeuern" ist grundsätzlich zu vermeiden!
-
-~~~ php
-$sql = "INSERT INTO `user` (`username`, `gender`) VALUES (:user, :gender)";
-
-$stmt = $pdo->prepare($sql);
-$stmt->bindParam(':username', $username);
-$stmt->bindParam(':gender', $gender);
-
-// einen Datensatz einfügen
-$username = 'Sarah';
-$gender = 'F';
-$stmt->execute();
-
-// einen weiteren Datensatz mit anderen Werten einfügen
-$username = 'Rolf';
-$gender = 'M';
-$stmt->execute();
 ~~~
 
 

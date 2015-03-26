@@ -66,31 +66,31 @@ mithilfe von Arrays ein alternatives Vorgehen verwendet werden (siehe unten).
 Bsp. 1, Gruppenbruch mit Vorgängervergleich, PHP Umsetzung:
 
 ~~~ php
-$array = array
-  (
-  'Alf' ,
-  'Bibi Blocksberg' ,
-  'Bibo' ,
-  'Biene Maja' ,
-  'Peter Pan' ,
-  'Urmel aus dem Eis' ,
+$array = array(
+  'Alf',
+  'Bibi Blocksberg',
+  'Bibo',
+  'Biene Maja',
+  'Peter Pan',
+  'Urmel aus dem Eis',
   );
 
-$last_character = null;
+$last_entry = null;
 
 // Elemente durchlaufen
-foreach ($array as $entry) {
-    $character = $entry[0];
-
+foreach ($array as $current_entry) {
+   
+    $first_char = $current_entry[0]; // erstes Zeichen des aktuellen Wertes
+   
     // Gruppenbruch, neuer Anfangsbuchstabe
-    if ($last_character != $character) {
-        echo 'Buchstabe: ' . $character . '<br />';
+    if ($first_char != $last_entry) {
+        echo 'Buchstabe: ' . $first_char . '<br />';
     }
-    echo '  ' . $entry . '<br />';
+    echo '  ' . $current_entry . '<br />';
 
     // neuen Vergleichswert setzen
-    $last_character = $character;
-    }
+    $last_entry = $first_char;
+} 
 ~~~
 
 Bsp. 1, Ausgabe:

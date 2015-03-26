@@ -74,12 +74,12 @@ Mögliche Error-Modi: [http://php.net/manual/de/pdo.error-handling.php](http://p
 
 Benötigt eine Funktion oder ein Objekt eine DB-Verbindung, so wird die bestehende PDO-Instanz `$pdo` als Parameter übergeben.
 
-Beispiel - Funktion
+Beispiel einer Funktion
 
 ~~~ php
 function getUsernameById($userID, $pdo) {
+
     // ...
-    return $username;
 }
 
 
@@ -87,7 +87,7 @@ function getUsernameById($userID, $pdo) {
 $username = getUsernameById(23, $pdo);
 ~~~
 
-Beispiel - Klasse
+Beispiel einer Klasse
 
 ~~~ php
 class User
@@ -176,7 +176,7 @@ if ($stmt->execute()) {
 }
 ~~~
 
-**Hinweis:** Die Parameterbindung kann alternativ zu `bindParam()` noch mit `bindValue()` vorgenommen werden. Die Unterschiede sind in [diesem stackoverflow-Beitrag](http://stackoverflow.com/a/14413428){:target="_blank"} kurz dargestellt.
+**Hinweis:** Die Parameterbindung kann alternativ zu `bindParam()` noch mit `bindValue()` vorgenommen werden. Die Unterschiede sind in [diesem stackoverflow-Beitrag](http://stackoverflow.com/a/14413428){:target="_blank"} mittels kurzen Beispielen dargestellt.
 
 
 #### Parameter per Array binden

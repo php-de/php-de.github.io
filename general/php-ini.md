@@ -76,8 +76,6 @@ inhalt:
       anchor: links-zum-thema
       simple: ""
 
-entry-type: in-progress
-
 ---
 
 ### magic_quotes_gpc

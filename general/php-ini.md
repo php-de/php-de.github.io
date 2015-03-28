@@ -63,6 +63,14 @@ inhalt:
     - name: "disable_classes"
       anchor: disableclasses
       simple: ""
+      
+    - name: "short_open_tag"
+      anchor: shortopentag
+      simple: ""  
+      
+    - name: "Abschluss"
+      anchor: abschluss
+      simple: ""      
 
     - name: "Links zum Thema"
       anchor: links-zum-thema
@@ -180,23 +188,72 @@ Entsprechend bündelt **$_POST** alle POST Parameter und **$_COOKIE** alle vom B
 
 ### expose_php
 
-Diese Funktion kann getrost deaktiviert werden, da hier nur Informationen gespeichert werden, die ein normaler User nicht benötigt. Je weniger Informationen dargelegt werden, desto sicherer ist Eure Seite.
+Erlaubt das Auslesen über einen Header *(z.B. X-Powered-By: PHP/5.3.7)*, ob PHP aktiviert ist. Des weiteren wird durch das Anhängen eines URL-Segments kontrolliert, ob das PHP-Logo erreichbar ist.
+Wenn expose_php ausgeschaltet ist, werden weder das Logo, noch die Credits bei **php_info()** dargestellt.
+
+Voreinstellung ist hier aktiv, kann aber getrost ausgeschaltet werdem, da diese Informationen ein normaler User nicht zu wissen braucht.
 
 ### allow_url_fopen
 
-Über diese Funktion wird der Zugriff mittels **fopen** auf externe Server gesteuert. Es wird empfohlen die Funktion zu deaktivieren, da durch das Sicherheitsrisiko verringert wird.
+Mit dieser Option wird der Zugriff mittels **fopen** auf externe Server gewährt. Es wird damit die Möglichkeit geschaffen auf URL-Objekte , wie normale Dateien zuzugreifen. 
+
+Es wird empfohlen die Option zu deaktivieren, da durch das Sicherheitsrisiko verringert wird.
 
 ### allow_url_include
 
-Über diese Funktion wird der Zugriff mittels **reuqire**, sowie **include** auf externe Server gesteuert. Es wird empfohlen die Funktion zu deaktivieren, da durch das Sicherheitsrisiko verringert wird.
+Über diese Option wird der Zugriff mittels **reuqire**, **reuqire_once**, **include**, sowie **include_once** auf externe Server ermöglicht. Um **allow_url_include** nutzen zu können, muss **allow_url_fopen** aktiviert sein.
+
+Es wird empfohlen die Funktion deaktiviert zu lassen, da durch das Sicherheitsrisiko verringert wird.
 
 ### disable_functions
 
-Mit dieser Funktion können alle nicht benötigten Funktionen über eine Kommatatrennung gesperrt werden.
+Mit dieser Option können ausschließlich interne Funktionen aus Sicherheitsgründen über eine Kommatatrennung deaktiviert werden. 
+
+Sie hat keinen Einfluss auf den **Safe Mode** und muss immer in der *php.ini* gesetzt werden. Ein Änderungen z.B.: über Apaches **httpd.conf** ist nicht möglich.
 
 ### disable_classes
 
-Mit dieser Funktion können alle nicht benötigten Klassen über eine Kommatatrennung gesperrt werden.
+Mit dieser Option können Klassen aus Sicherheitsgründen über eine Kommatatrennung deaktiviert werden. 
+
+Sie hat keinen Einfluss auf den **Safe Mode** und muss immer in der *php.ini* gesetzt werden. Ein Änderungen z.B.: über Apaches **httpd.conf** ist nicht möglich.
+
+### short_open_tag
+
+Durch diese Option wird die Kurzschreibweise für **php** eingeschaltet.
+
+~~~php
+// Standardschreibweise
+<?php ?>
+
+// Kurzform
+<? ?>
+~~~
+
+Besonderheiten gibt es in der Bearbeitung von **XML** und **PHP**.
+
+~~~php
+// short_open_tag ist ausgeschaltet
+<?xml ?>
+
+// <short_open_tag ist eingeschaltet
+<?php echo '<?xml version="1.0"'; ?>
+~~~
+
+Seit ***PHP 5.4*** ist die Kurzausgabe von *PHP* und *echo* standardgemäß eingeschaltet.
+
+~~~php
+// Kurzschreibweise
+<?= 'Ich bin die Kurzschreibweise' ?>
+
+// Langschreibweise
+<?php echo 'Ich bin die Langschreibweise'; ?>
+~~~
+
+Empfohlen wird diese Funktion zu deaktiviert, da es den Code besser les- und wartbar macht.
+
+### Abschluss
+
+Zum Abschluss sei noch gesagt, es gibt viele weitere **PHP-Direktive**, die einem das Leben einfacher, aber auch schwerer machen können. Dieser Artikel stellt nur eine sehr kleine Auswahl da. Für weiterführende Informationen steht [PHP.net: php.ini-Direktiven](http://php.net/manual/de/ini.list.php) zur Verfügung.
 
 ### Links zum Thema
 

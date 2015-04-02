@@ -15,13 +15,17 @@ author:
     - name: Manko10
       profile: 1139
 
-    - name: mermshaus
-      profile: 15041
-
     - name: hausl
       profile: 21246
 
+    - name: mermshaus
+      profile: 15041
+
 inhalt:
+    -   name:   "Was ist Debugging und wie debugge ich richtig?"
+        anchor: debugging
+        simple: ""
+
     -   name:   "Warum sollte ich eine Mailerklasse statt der mail()-Funktion verwenden?"
         anchor: mailerklasse
         simple: ""
@@ -61,6 +65,26 @@ inhalt:
 
 entry-type: in-discussion
 ---
+
+#### Was ist Debugging und wie debugge ich richtig?
+{: #debugging}
+
+Richtig debuggen
+
+1. Man bemerkt, dass ein Skript nicht das tut, was es soll.
+2. Man schreibt an den Anfang des Scriptes die Zeile: `error_reporting(-1);`
+3. Man verwendet `ini_set('display_errors', true);` damit die Fehler auch angezeigt werden.
+4. Man versucht, die Stelle die daran Schuld sein kann, schonmal einzugrenzen. Falls dies nicht geht, wird zunächst das komplette Skript als fehlerhaft angesehen.
+5. An markanten Stellen im Skript lässt man sich wichtige Variableninhalte ausgeben und ggf. auch in bedingten Anweisungen eine kurze Ausgabe machen, um zu überprüfen, welche Bedingung ausgeführt wurde. Wichtig bei MySQL Fehlern (*…not a valid MySQL result resource…*): `mysqli_error()` verwenden oder Abfrage ausgeben und zum Beispiel mit phpMyAdmin testen.
+6. Schritt 5 wird so lange wiederholt, bis Unstimmigkeiten im Skript auffallen
+7. Damit hat man das Problem (Unstimmigkeit) gefunden und kann versuchen diese zu beheben. Hierzu dienen dann die PHP-Dokumentation und andere Quellen als Ratgeber.
+8. Lässt sich das konkrete Problem trotzdem nicht beheben, kann man in Foren um Rat fragen.
+9. Das Programm läuft und man kann die Debug-Ausgaben wieder entfernen.
+
+Die Ausgaben per `var_dump` oder `echo` kann man sich ersparen, indem man einen Debugger einsetzt.
+
+- [Ausführlichere Informationen zum Thema Debugging]({{ page.root }}/#debugging)
+
 
 #### Warum sollte ich eine Mailerklasse statt der `mail()`-Funktion verwenden?
 {: #mailerklasse}

@@ -516,5 +516,3 @@ Lesenswerte Artikel zum Thema Sicherheit bei Webapplikationen:
  Weitere Links zu verschiedenen Themen gibt es unter:
 
 * [php.de\'s Bookmarks on Delicious](http://delicious.com/php.de){: target="_blank"}
-* [Hauptseite - PHP.de Wiki](http://www.php.de/wiki-php/index.php/Hauptseite){: target="_blank"}
-

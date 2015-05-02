@@ -142,7 +142,7 @@ In Backticks eingeschlossene Begriffe kollidieren nicht mit den Syntaxbestandtei
 **Achtung!** Das Backtick-Zeichen ist MySQL-spezifisch. Wird ein anderes DBMS als MySQL benutzt (z.b. MS-SQL, PostgreSQL, ...), so sind sehr warscheinlich andere Zeichen zu verwenden, um die selbe Wirkung zu erzielen. Ein Blick in die jeweilige Doku hilft hier weiter.
 
 
-#### Benutze richtige Backticks
+##### Benutze richtige Backticks
 
 Backticks sind keine String-Begrenzer!
 

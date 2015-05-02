@@ -141,7 +141,8 @@ $query = 'SELECT Name ,
 In Backticks eingeschlossene Begriffe kollidieren nicht mit den Syntaxbestandteilen der Sprache. Damit können Keyword-Probleme umgangen werden.<br>
 **Achtung!** Das Backtick-Zeichen ist MySQL-spezifisch. Wird ein anderes DBMS als MySQL benutzt (z.b. MS-SQL, PostgreSQL, ...), so sind sehr warscheinlich andere Zeichen zu verwenden, um die selbe Wirkung zu erzielen. Ein Blick in die jeweilige Doku hilft hier weiter.
 
-Benutze richtige Backticks
+
+#### Benutze richtige Backticks
 
 Backticks sind keine String-Begrenzer!
 
@@ -155,7 +156,8 @@ Begrenzer  Bedeutung
 
 Strings gehören nicht in Backticks, Feldnamen nicht in Stringbegrenzer. Auch wenn MySQL hier manchmal etwas weniger strikt ist, bitte gar nicht erst angewöhnen!
 
-Benutze Backticks richtig
+
+##### Benutze Backticks richtig
 
 Richtig:
 
@@ -171,6 +173,7 @@ Falsch:
 `Feldname `
 `Tabellenname.Feldname`
 ~~~
+
 
 #### Benutze Stringbegrenzer konsequent
 

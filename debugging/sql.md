@@ -136,13 +136,14 @@ $query = 'SELECT Name ,
                  OR `Register` < "2008-01-01"';
 ~~~
 
-#### Benutze Backticks
+#### Benutze Backticks (MySQL)
 
-Backticks sind umstritten, manche halten sie für guten Stil, manche nicht. In jedem Fall können sie besagte Keyword-Probleme umgehen. In Backticks eingeschlossene Begriffe kollidieren nicht mit den Syntaxbestandteilen der Sprache.
+In Backticks eingeschlossene Begriffe kollidieren nicht mit den Syntaxbestandteilen der Sprache. Damit können Keyword-Probleme umgangen werden.<br>
+**Achtung!** Das Backtick-Zeichen ist MySQL-spezifisch. Wird ein anderes DBMS als MySQL benutzt (z.b. MS-SQL, PostgreSQL, ...), so sind sehr warscheinlich andere Zeichen zu verwenden, um die selbe Wirkung zu erzielen. Ein Blick in die jeweilige Doku hilft hier weiter.
 
 Benutze richtige Backticks
 
-Backticks sind keine Stringsbegrenzer!
+Backticks sind keine String-Begrenzer!
 
 Begrenzer  Bedeutung
 

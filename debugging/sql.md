@@ -139,7 +139,7 @@ $query = 'SELECT Name ,
 #### Benutze Backticks (MySQL)
 
 In Backticks eingeschlossene Begriffe kollidieren nicht mit den Syntaxbestandteilen der Sprache. Damit können Keyword-Probleme umgangen werden.<br>
-**Achtung!** Das Backtick-Zeichen ist MySQL-spezifisch. Wird ein anderes DBMS als MySQL benutzt (z.b. MS-SQL, PostgreSQL, ...), so sind sehr warscheinlich andere Zeichen zu verwenden, um die selbe Wirkung zu erzielen. Ein Blick in die jeweilige Doku hilft hier weiter.
+**Achtung!** Backticks ist MySQL-spezifisch. Wird ein anderes DBMS als MySQL benutzt (z.b. MS-SQL, PostgreSQL, ...), so sind sehr warscheinlich andere Zeichen zu verwenden, um die selbe Wirkung zu erzielen. Ein Blick in die jeweilige Doku hilft hier weiter.
 
 
 ##### Benutze richtige Backticks

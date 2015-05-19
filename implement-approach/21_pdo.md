@@ -56,11 +56,11 @@ $pdo = new PDO($dsn, $user, $pass, $options);
 
 Je nach Vorlieben bzw. Entwicklungsstil können Parameter auch anderweitig gesetzt werden. Nachfolgend zwei übliche Beispiele - weitere Parameter sind in der Doku zu finden.
 
-* PDO::FETCH_ASSOC statt PDO::FETCH_OBJ<br>
+* `PDO::FETCH_ASSOC statt PDO::FETCH_OBJ`<br>
 Fetch-Varianten: [http://php.net/manual/de/pdostatement.fetch.php](http://php.net/manual/de/pdostatement.fetch.php){:target="_blank"}<br>
 Hier verwenden wir durchgängig die objektorientierte (OO) Variante für den Zugriff auf die Eigenschaften.
 
-* PDO::ERRMODE_WARNING statt PDO::ERRMODE_EXCEPTION<br>
+* `PDO::ERRMODE_WARNING statt PDO::ERRMODE_EXCEPTION`<br>
 Mögliche Error-Modi: [http://php.net/manual/de/pdo.error-handling.php](http://php.net/manual/de/pdo.error-handling.php){:target="_blank"}
 
 
@@ -68,7 +68,7 @@ Mögliche Error-Modi: [http://php.net/manual/de/pdo.error-handling.php](http://p
 #### Wiederverwendung der Verbindung
 {: #verbindung-param}
 
-Benötigt eine Funktion oder ein Objekt eine DB-Verbindung, so wird die bestehende PDO-Instanz $pdo als Parameter übergeben.
+Benötigt eine Funktion oder ein Objekt eine DB-Verbindung, so wird die bestehende PDO-Instanz `$pdo` als Parameter übergeben.
 
 **Beispiel - Funktion**
 
@@ -113,7 +113,7 @@ $user = new User($pdo);
 > Die Parameter für Prepared Statements müssen nicht maskiert werden. Der Treiber übernimmt das automatisch. Wenn eine Anwendung ausschließlich Prepared Statements benutzt, kann sich der Entwickler sicher sein, dass keine SQL-Injection auftreten wird. (Wenn aber trotzdem andere Teile der Abfrage aus nicht zuverlässigen Eingaben generiert werden, ist dies immer noch möglich.)
 
 
-<div class="alert alert-info">Einer der Vorteile von PDO ist die Portabilität zwischen den unterschiedlichen DBMS. Um dem zu entsprechen, sollten in der Query bspw. keine (MySQL spezifischen) `Backticks` verwendet werden. Daraus resultiert, das auf die Benennung der Spalten entsprechend zu achten ist, um nicht mit den reservierten Keywords des jeweiligen DBMS zu kollidieren.</div>
+<div class="alert alert-info"><strong>`Backticks` vermeiden</strong><br>Einer der Vorteile von PDO ist die Portabilität zwischen den unterschiedlichen DBMS. Um dem zu entsprechen, sollten in der Query <strong>keine</strong> (MySQL spezifischen) <strong>`Backticks`</strong> verwendet werden. Daraus resultiert, das auf die Benennung der Spalten entsprechend zu achten ist, um <strong>nicht mit den reservierten Keywords</strong> des jeweiligen DBMS <strong>zu kollidieren</strong>.</div>
 
 
 #### Query ohne Parameter
@@ -168,7 +168,7 @@ if ($stmt->execute()) {
 ~~~
 
 **Hinweis**<br>
-Die Parameterbindung kann alternativ zu bindParam() mit bindValue() vorgenommen werden. Die Unterschiede sind in [diesem stackoverflow-Beitrag](http://stackoverflow.com/a/14413428){:target="_blank"} mittels kurzen Beispielen dargestellt.
+Die Parameterbindung kann alternativ zu `bindParam()` mit `bindValue()` vorgenommen werden. Die Unterschiede sind in [diesem stackoverflow-Beitrag](http://stackoverflow.com/a/14413428){:target="_blank"} mittels kurzen Beispielen dargestellt.
 
 
 #### Parameter per Array binden

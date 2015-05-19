@@ -17,13 +17,9 @@ inhalt:
         anchor: create-conn
         simple: ""
 
-    -   name:   "Einfache Query ohne Parameter"
-        anchor: simple-query
-        simple: ""
-
     -   name:   "Prepared Statements"
         anchor: prepared-statements
-        simple: "Varianten der Parameterbindung"
+        simple: "mit und ohne Parameter, Varianten der Parameterbindung"
 
     -   name:   "Verweise"
         anchor: links
@@ -49,20 +45,21 @@ $user = 'root';
 $pass = '';
 $options = array(
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
+    PDO::ATTR_EMULATE_PREPARES => false
 );
 $pdo = new PDO($dsn, $user, $pass, $options);
 ~~~
 
 **Hinweise zu den Optionsparametern**
 
-Je nach Vorlieben bzw. Entwicklungsstil können Parameter auch anderweitig gesetzt werden. Nachfolgend zwei bekannte Beispiele - weitere Parameter sind in der Doku zu finden.
+Je nach Vorlieben bzw. Entwicklungsstil können Parameter auch anderweitig gesetzt werden. Nachfolgend zwei übliche Beispiele - weitere Parameter sind in der Doku zu finden.
 
-* `PDO::FETCH_ASSOC` statt `PDO::FETCH_OBJ`<br>
+* PDO::FETCH_ASSOC statt PDO::FETCH_OBJ<br>
 Fetch-Varianten: [http://php.net/manual/de/pdostatement.fetch.php](http://php.net/manual/de/pdostatement.fetch.php){:target="_blank"}<br>
 Hier verwenden wir durchgängig die objektorientierte (OO) Variante für den Zugriff auf die Eigenschaften.
 
-* `PDO::ERRMODE_WARNING` statt `PDO::ERRMODE_EXCEPTION`<br>
+* PDO::ERRMODE_WARNING statt PDO::ERRMODE_EXCEPTION<br>
 Mögliche Error-Modi: [http://php.net/manual/de/pdo.error-handling.php](http://php.net/manual/de/pdo.error-handling.php){:target="_blank"}
 
 
@@ -70,7 +67,7 @@ Mögliche Error-Modi: [http://php.net/manual/de/pdo.error-handling.php](http://p
 #### Wiederverwendung der Verbindung
 {: #verbindung-param}
 
-Benötigt eine Funktion oder ein Objekt eine DB-Verbindung, so wird die bestehende PDO-Instanz `$pdo` als Parameter übergeben.
+Benötigt eine Funktion oder ein Objekt eine DB-Verbindung, so wird die bestehende PDO-Instanz $pdo als Parameter übergeben.
 
 **Beispiel - Funktion**
 
@@ -106,19 +103,22 @@ $user = new User($pdo);
 ~~~
 
 
+### Prepared Statements
+{: #prepared-statements}
 
-### Einfache Query ohne Parameter
-{: #simple-query}
 
-Gibt es keine Parameter von "aussen", so ist der Einsatz von Prepared Statements nicht zwingend nötig.
+[Dazu aus der PHP-Doku](http://php.net/manual/de/pdo.prepared-statements.php){:target="_blank"}
+
+> Die Parameter für Prepared Statements müssen nicht maskiert werden. Der Treiber übernimmt das automatisch. Wenn eine Anwendung ausschließlich Prepared Statements benutzt, kann sich der Entwickler sicher sein, dass keine SQL-Injection auftreten wird. (Wenn aber trotzdem andere Teile der Abfrage aus nicht zuverlässigen Eingaben generiert werden, ist dies immer noch möglich.)
+
+
+
+#### Query ohne Parameter
+{: #no-param}
 
 ~~~ php
-$sql = "SELECT `username` FROM `user`";
-
-$stmt = $pdo->query($sql);
-
-// zB Anzahl ausgeben
-echo $stmt->rowCount();
+$sql = "SELECT username FROM user";
+$stmt = $pdo->prepare($sql);
 
 // Namen einzeln ausgeben
 if ($stmt->execute()) {
@@ -130,23 +130,15 @@ if ($stmt->execute()) {
 // ODER
 
 // alle Daten in ein Array überführen
+$stmt->execute();
 $arr = $stmt->fetchAll();
 print_r($arr);
-
 ~~~
 
 
-### Prepared Statements
-{: #prepared-statements}
 
-
-[Dazu aus der PHP-Doku](http://php.net/manual/de/pdo.prepared-statements.php){:target="_blank"}
-
-> Die Parameter für Prepared Statements müssen nicht maskiert werden. Der Treiber übernimmt das automatisch. Wenn eine Anwendung ausschließlich Prepared Statements benutzt, kann sich der Entwickler sicher sein, dass keine SQL-Injection auftreten wird. (Wenn aber trotzdem andere Teile der Abfrage aus nicht zuverlässigen Eingaben generiert werden, ist dies immer noch möglich.)
-
-
-#### Bindung der Parameter
-{: #bindings}
+#### Mit Parameter - Bindung der Parameter
+{: #with-param}
 
 Nachfolgende Möglichkeiten bestehen u.a., um die Parameter an das Statement zu binden.
 
@@ -156,7 +148,7 @@ Nachfolgende Möglichkeiten bestehen u.a., um die Parameter an das Statement zu 
 
 ~~~ php
 // Query vorbereiten
-$sql = "SELECT `username`, `gender` FROM `user` WHERE `username` = :username AND `gender` = :gender";
+$sql = "SELECT username, gender FROM user WHERE username = :username AND gender = :gender";
 $stmt = $pdo->prepare($sql);
 
 // Parameter übergeben und verarbeiten
@@ -173,15 +165,15 @@ if ($stmt->execute()) {
 ~~~
 
 **Hinweis**<br>
-Die Parameterbindung kann alternativ zu `bindParam()` mit `bindValue()` vorgenommen werden. Die Unterschiede sind in [diesem stackoverflow-Beitrag](http://stackoverflow.com/a/14413428){:target="_blank"} mittels kurzen Beispielen dargestellt.
+Die Parameterbindung kann alternativ zu bindParam() mit bindValue() vorgenommen werden. Die Unterschiede sind in [diesem stackoverflow-Beitrag](http://stackoverflow.com/a/14413428){:target="_blank"} mittels kurzen Beispielen dargestellt.
 
 
-#### Parameter per Array binden
+[#### Parameter per Array binden](#bind-array)
 {: #bind-array}
 
 ~~~ php
 // Query vorbereiten
-$sql = "SELECT `username`, `gender` FROM `user` WHERE `username` = :username AND `gender` = :gender";
+$sql = "SELECT username, gender FROM user WHERE username = :username AND gender = :gender";
 $stmt = $pdo->prepare($sql);
 
 // Parameter übergeben und verarbeiten
@@ -198,5 +190,6 @@ echo $stmt->rowCount();
 ### Querverweise
 {: #links}
 
+* [Forums-Thread zu diesem Beitrag](http://www.php.de/forum/php-de-intern/wiki-diskussionsforum/1431002-pdo-beitrag){:target="_blank"}
 * [PHP Data Objects-Erweiterung (PDO) auf php.net](http://php.net/manual/de/intro.pdo.php){:target="_blank"}
 * [Arrays als JSON-String in SQL-Datenbank speichern]({{ page.root }}/jumpto/array-as-json-to-sqldb/){:target="_blank"}

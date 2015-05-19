@@ -34,6 +34,7 @@ Dieser Überblick beschäftigt sich mit konkreten Anwendungsbeispielen von PDO b
 * [Prepared Statements](http://php.net/manual/de/pdo.prepared-statements.php){:target="_blank"}
 
 
+
 ### Verbindung herstellen
 {: #create-conn}
 
@@ -112,6 +113,8 @@ $user = new User($pdo);
 > Die Parameter für Prepared Statements müssen nicht maskiert werden. Der Treiber übernimmt das automatisch. Wenn eine Anwendung ausschließlich Prepared Statements benutzt, kann sich der Entwickler sicher sein, dass keine SQL-Injection auftreten wird. (Wenn aber trotzdem andere Teile der Abfrage aus nicht zuverlässigen Eingaben generiert werden, ist dies immer noch möglich.)
 
 
+<div class="alert alert-info">Einer der Vorteile von PDO ist die Portabilität zwischen den unterschiedlichen DBMS. Um dem zu entsprechen, sollten in der Query bspw. keine (MySQL spezifischen) `Backticks` verwendet werden. Daraus resultiert, das auf die Benennung der Spalten entsprechend zu achten ist, um nicht mit den reservierten Keywords des jeweiligen DBMS zu kollidieren.</div>
+
 
 #### Query ohne Parameter
 {: #no-param}
@@ -168,7 +171,7 @@ if ($stmt->execute()) {
 Die Parameterbindung kann alternativ zu bindParam() mit bindValue() vorgenommen werden. Die Unterschiede sind in [diesem stackoverflow-Beitrag](http://stackoverflow.com/a/14413428){:target="_blank"} mittels kurzen Beispielen dargestellt.
 
 
-[#### Parameter per Array binden](#bind-array)
+#### Parameter per Array binden
 {: #bind-array}
 
 ~~~ php

@@ -109,6 +109,7 @@ if (isset($_POST['Name_des_Textfelds'])) {
 }
 ~~~
 
+Der Vorteil dieser Methode ist, dass das versteckte Textfeld auch als Container für ein [CSRF-Token]({{ page.root }}/jumpto/cross-site-request-forgery/) dienen kann. In diesem Fall erfüllt das Feld gleich zwei Funktionen. Der Eintrag im Feld ist dann nicht mehr unerheblich.
 
 #### Wiederbefüllen/Wiederauswahl der Elemente
 

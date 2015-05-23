@@ -73,7 +73,7 @@ $max = getrandmax();
 $_SESSION['token'] = rand($min, $max);
 ~~~
 
-Im nächsten Beispiel wird davon ausgegangen, dass bereits ein Token-Wert generiert und in einer Session-Variable gespeichert wurde. Dieser wird nun ausgelesen und in das versteckte Feld geschrieben. Wenn das Formular an die Website gesendet wird, liest sie den übermittelten Token-Wert aus und vergleicht ihn mit dem, der in der Sesson gespeichert ist. Nur bei Übereinstimmung wird die Anfrage als gültig erachtet.
+Im nächsten Beispiel wird davon ausgegangen, dass bereits ein Token-Wert generiert und in einer Session-Variable gespeichert wurde. Dieser wird nun ausgelesen und in das versteckte Feld geschrieben. Wenn das Formular an die Website gesendet wird, liest sie den übermittelten Token-Wert aus und vergleicht ihn mit dem, der in der Session gespeichert ist. Nur bei Übereinstimmung wird die Anfrage als gültig erachtet.
 
 ~~~ php
 <form action="" method="POST">

@@ -161,7 +161,7 @@ inhalt:
 
 #### Sortierung
 
-Grundsätzlich kann für die Anzeige in der Hauptübersicht die Reihenfolge der Beiträge innerhalb einer Kategorie sortiert werden. Generell sortiert jekyll diese Beiträge nicht. Durch Angabe des Wertes `orderId` im jeweiligen Beitrag, kannst du beeinflussen nach welchem Beitrag dein Beitrag eingeordnet wird. Dieser Wert muss zwischen `0` und `25` definiert werden. Für den Fall das unsere Beiträge irgendwann diese Zahl pro Gruppe in der Übersicht übersteigt, werden wir dort mehr spielraum schaffen. Generell nimmt diese Zahl allerdings direkten Einfluss auf die Generierungzeit die unser Repository in Anspruch nimmt.
+Grundsätzlich kann für die Anzeige in der Hauptübersicht die Reihenfolge der Beiträge innerhalb einer Kategorie sortiert werden. Generell sortiert jekyll diese Beiträge nicht. Durch Angabe des Wertes `orderId` im jeweiligen Beitrag, kannst du beeinflussen nach welchem Beitrag dein Beitrag eingeordnet wird. Dieser Wert muss zwischen `0` und `25` definiert werden. Für den Fall das unsere Beiträge irgendwann diese Zahl pro Gruppe in der Übersicht übersteigt, werden wir dort mehr Spielraum schaffen. Generell nimmt diese Zahl allerdings direkten Einfluss auf die Generierungzeit die unser Repository in Anspruch nimmt.
 
 
 #### Pfade für interne Verlinkung von Artikel, Bilder, etc.
@@ -176,6 +176,9 @@ Interne Verlinkungen sollten somit so aussehen. Verzeichnisse sind Beispiele, es
 - `[...]({{ "{{ page.root " }}}}/jumpto/whatever/)`
 - `<a href="{{ "{{ page.root " }}}}/jumpto/whatever/">...</a>`
 - `<img src="{{ "{{ page.root " }}}}/images/foo.png">`
+
+
+**Verlinkungen sind generell (intern und extern) ohne dem a-Attribut `target` anzugeben.**
 
 
 ### Komponenten Vernetzung

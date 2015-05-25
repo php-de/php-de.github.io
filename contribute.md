@@ -177,8 +177,7 @@ Interne Verlinkungen sollten somit so aussehen. Verzeichnisse sind Beispiele, es
 - `<a href="{{ "{{ page.root " }}}}/jumpto/whatever/">...</a>`
 - `<img src="{{ "{{ page.root " }}}}/images/foo.png">`
 
-
-**Verlinkungen sind generell (intern und extern) ohne dem a-Attribut `target` anzugeben.**
+Verlinkungen sind generell (intern und extern) ohne dem a-Attribut `target` anzugeben.
 
 
 ### Komponenten Vernetzung

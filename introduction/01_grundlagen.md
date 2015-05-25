@@ -281,20 +281,25 @@ inhalt:
 
 ##### PHP Anfänger
 
-  * [Quakenet/#php Tutorial - de - Einleitung](http://tut.php-quake.net/de/) <br>
-    Sehr gutes Tutorial für den Anfang, aber nur für Leser die fertige
-    Serverinstallationen nutzen oder ihren selbst konfigurieren können.
-    <br>**Vorteile:** gute Erklärung der Funktionsweise von PHP,
-    ausführliche Erklärung der Grundlagen, Kapitel zum Thema Fehler,
-    Erklärung des Templatesystems
-    <br>**Nachteile:** Konfiguration und Installation fehlen
-
   * [Peter Kropff - PHP - Einleitung](http://www.peterkropff.de/site/php/php.htm) <br>
     Umfangreiches Tutorial zu HTML, CSS, JavaScript, PHP und MySQL.
     Deckt somit alle wichtigen Bereiche ab. Für Anfänger sehr zu
     empfehlen!
     <br>**Vorteile:** Grundlagen vom absoluten Anfang, kein Fachchinesisch,
     Umfang
+
+  * [http://www.phptherightway.com/](PHP: The Right Way)<br>
+    Eine Schnellreferenz zu PHP, mit dem Versuch von Best-Practices etc. in möglichst
+    aktueller Form darzulegen. <br>
+    Zum Teil In verschiedenen Übersetzungen (auch deutsch) vorhanden.
+
+  * [Quakenet/#php Tutorial - de - Einleitung](http://tut.php-quake.net/de/) <br>
+    Sehr gutes Tutorial für den Anfang, aber nur für Leser die fertige
+    Serverinstallationen nutzen oder ihren selbst konfigurieren können.<br>
+    **Vorteile:** gute Erklärung der Funktionsweise von PHP,
+    ausführliche Erklärung der Grundlagen, Kapitel zum Thema Fehler,
+    Erklärung des Templatesystems
+    <br>**Nachteile:** Konfiguration und Installation fehlen
 
   * [PHP-Kurs.com - PHP lernen und MySQL Tutorial mit vielen
     Beispielen](http://www.php-kurs.com/) <br>

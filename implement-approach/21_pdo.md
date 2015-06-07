@@ -66,7 +66,7 @@ Mögliche Error-Modi: [http://php.net/manual/de/pdo.error-handling.php](http://p
 
 
 #### Wiederverwendung der Verbindung
-{: #verbindung-param}
+{: #recycle-conn}
 
 Benötigt eine Funktion oder ein Objekt eine DB-Verbindung, so wird die bestehende PDO-Instanz `$pdo` als Parameter übergeben.
 

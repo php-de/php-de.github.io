@@ -164,38 +164,38 @@
     }
 
     #guide h1, #guide h2, #guide h3, #guide h4, #guide h5 {
-        margin-top:30px !important;
-        border-bottom:1px solid #eee;
+        margin-top: 30px !important;
+        border-bottom: 1px solid #eee;
+        font-weight: bold;
+    }
+
+    #guide h1 a, #guide h2 a, #guide h3 a, #guide h4 a, #guide h5 a {
+        color: #000;
+        text-decoration: none;
     }
 
     #guide h1 {
         font-size:1.8em !important;
-        font-weight:bold;
     }
 
     #guide h2 {
         font-size:1.6em !important;
-        font-weight:bold;
     }
 
     #guide h3 {
         font-size:1.4em !important;
-        font-weight:bold;
     }
 
     #guide h4 {
         font-size:1.2em !important;
-        font-weight:bold;
     }
 
     #guide h5 {
         font-size:1.0em !important;
-        font-weight:bold;
     }
 
     #guide h6 {
         font-size:0.9em !important;
-        font-weight:bold;
     }
 
     #guide dl dt {

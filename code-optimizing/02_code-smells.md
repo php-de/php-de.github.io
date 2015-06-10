@@ -17,15 +17,15 @@ author:
 
 inhalt:
     -   name: "Leere Strings"
-        anchor: leere-strings
+        anchor: emtpy-strings
         simple: ""
 
     -   name: "Unnötiges Variablen-Parsing in Doppelquotes"
-        anchor: unntiges-variablen-parsing-in-doppelquotes
+        anchor: useless-doubleqoutes
         simple: ""
 
     -   name: "SELECT *"
-        anchor: select-
+        anchor: select-all
         simple: ""
 
     -   name: "LIMIT vs. PHP-Counting"
@@ -33,7 +33,7 @@ inhalt:
         simple: ""
 
     -   name: "LIMIT und Schleife"
-        anchor: limit-und-schleife
+        anchor: limit-vs-loop
         simple: ""
 ---
 
@@ -43,9 +43,11 @@ Dieser Artikel richtet sich an Spracheinsteiger, Fortgeschrittene können [bei W
 
 <div class="alert alert-info"><strong>Achtung!</strong> Der Artikel nutzt reduzierte Lehrbeispiele. Der Übersichtlichkeit halber können wichtige Funktionen zur Eingabevalidierung o. ä. weggelassen worden sein.</div>
 
-### Leere Strings
+### [Leere Strings](#emtpy-strings)
+{: #emtpy-strings}
 
 #### Problem
+
 Code-Smells mit leeren Strings
 
 ~~~ php
@@ -59,6 +61,7 @@ $myString = '' . $myInt;
 ~~~
 
 #### Ersatz
+
 Leere Strings sind ausnahmslos zu streichen.
 
 ~~~ php
@@ -74,7 +77,8 @@ Wenn es darum geht, andere Typen nach String zu casten, sollte explizites Typ-Ca
 $myString = (string)$myInt;
 ~~~
 
-### Unnötiges Variablen-Parsing in Doppelquotes
+### [Unnötiges Variablen-Parsing in Doppelquotes](#useless-doubleqoutes)
+{: #useless-doubleqoutes}
 
 PHP unterstützt die Verwendung von Variablen innnerhalb von doppelten Anführungszeichen. Dort befindliche Variablen werden in Ihren Wert aufgelöst:
 
@@ -113,7 +117,10 @@ $stringvar = (string)$myInt;
 
 Wenn es darum geht, andere Typen nach String zu casten, sollte explizites Typ-Casting verwendet werden (siehe oben).
 
-### SELECT *
+
+### [SELECT *](#select-all)
+{: #select-all}
+
 
 #### Problem
 Code-Smells mit *-Select
@@ -135,7 +142,10 @@ $query = "SELECT `Id` , `Name` , `E-Mail` FROM Personen";
 
 Übrigens existiert dieses Problem auch vertikal: Wer sich sicher ist, dass eine Zeile mit einer bestimmten WHERE-Bedingung nur einmal vorkommen kann, hat sicher kein Problem damit, ein LIMIT 1 zu ergänzen.
 
-### LIMIT vs. PHP-Counting
+
+### [LIMIT vs. PHP-Counting](#limit-vs-php-counting)
+{: #limit-vs-php-counting}
+
 
 #### Problem
 Code-Smells mit Limit
@@ -173,7 +183,8 @@ while ($data = mysqli_fetch_assoc($ress)) {
 }
 ~~~
 
-### LIMIT und Schleife
+### [LIMIT und Schleife](#limit-vs-loop)
+{: #limit-vs-loop}
 
 #### Problem
 Code-Smells mit auslesenden Schleifen

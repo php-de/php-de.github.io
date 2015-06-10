@@ -66,7 +66,8 @@ Er kann dies nutzen, um sich sich selbst einen Benutzeraccount mit administrativ
 ### [Schutz vor Cross-Site-Request-Forgery](#schutz)
 {: #schutz}
 
-#### Als Webmaster
+#### [Als Webmaster](#webmaster)
+{: #webmaster}
 
 Um sicherzustellen, dass eine Abfrage an eine Website auch innerhalb ihres Kontext initiiert wurde, wird bei jeder Abfrage geprüft, ob sie ein gültiges CSRF-Token besitzt. Beispielsweise kann bei der Verwendung eines Formulars ein verstecktes (hidden) Feld eingebaut werden, dass diesen Token enthält. Der Token ist in der Regel eine zufällige Ziffern- oder/und Buchstabenkombination mit ausreichender Länge. Im nachfolgenden Beispiel wird eine Zahl, die mindestens vierstellig sein muss, als Token gespeichert:
 
@@ -86,6 +87,7 @@ Im nächsten Beispiel wird davon ausgegangen, dass bereits ein Token-Wert generi
 </form>
 ~~~
 
-#### Als Benutzer
+#### [Als Benutzer](#user)
+{: #user}
 
 Serverseitige Schutzmaßnahmen sind in jedem Fall notwendig. Grundsätzlich hat der Benutzer dennoch einige Möglichkeiten zu verhindern, dass er für CSRF-Angriffe missbraucht wird. So kann er sich nach Durchführung einer administrativen Tätigfkeit auf einer Website von selbiger abmelden. Auch Gegenmaßnahmen zur Verhinderung von XSS-Angriffen sind von Vorteil.

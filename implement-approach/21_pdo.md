@@ -190,7 +190,7 @@ echo $stmt->rowCount();
 ~~~
 
 
-### Querverweise [#](#links)
+### [Querverweise](#links)
 {: #links}
 
 * [Forums-Thread zu diesem Beitrag](http://www.php.de/forum/php-de-intern/wiki-diskussionsforum/1431002-pdo-beitrag)

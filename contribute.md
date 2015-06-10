@@ -160,10 +160,10 @@ inhalt:
 ---
 ~~~
 
-Für die entsprechende Headline sollte im Beitrag eine fixe Anker-Referenz vergeben werden. Nachfolgend wird z.B. der Anker `foo` fix für die Headline festgelegt.
+Für die entsprechende Headlines sollte im Beitrag fixe Anker-Referenzen vergeben werden. Nachfolgend wird z.B. der Anker `foo` fix für die Headline festgelegt und direkt auch als diese verlinkt.
 
 ~~~ yaml
-### Foo - The best friend
+### [Foo - The best friend](#foo)
 {: #foo}
 ~~~
 

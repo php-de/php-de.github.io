@@ -34,7 +34,7 @@ inhalt:
 Dieser Beitrag bietet eine Übersicht über Editoren und Entwicklungsumgebungen, die für die Arbeit mit PHP geeignet sind. Wer seine Wahl ebenfalls äußern möchte, ist in [diesem Beitrag](http://www.php.de/php-einsteiger/101627-editor-ide-let-me-tell-you-something.html) herzlich dazu eingeladen.
 
 
-### Editoren
+### [Editoren](#php-editoren)
 {: #php-editoren}
 
 Ein Editor ist eine Anwendung, die grundlegende Funktionen zur Text- und Quellcodebearbeitung bereitstellt, die aber nicht direkt mit PHP oder anderen Tools interagiert und die auch keine weiterführenden sprachspezifischen Features enthält. Editoren erleichtern die Arbeit, indem sie beispielsweise per Syntax-Highlighting auf Typos oder andere Syntaxfehler hinweisen.
@@ -98,8 +98,8 @@ Ein Editor ist eine Anwendung, die grundlegende Funktionen zur Text- und Quellco
     Bluefish ist aus der Produktfamilie der Content Editing Environments der Open Office Foundation und ebendso wie Notepad++, Sublime Text 2 und Coda ein leistungsfähiger Editor, der hier und da mit der ein oder anderen Gehirnwindung Gassi geht.
 
 
-### Integrierte Entwicklungsumgebungen (IDEs)
-{: #integrierte-php-entwicklungsumgebungen-php-ide}
+### [Integrierte Entwicklungsumgebungen (IDEs)](#php-ide)
+{: #php-ide}
 
 Integrierte Entwicklungsumgebungen interagieren immer mit PHP und vernetzen eure Scripts so das ihr jederzeit (auch grafisch) durch die Scripts navigieren könnt und schon beim Autocomplete seht wo die Funktion die ihr gerade benutzt definiert wurde und welche Parameter sie hat. Qualitätssicherung steht nicht bei jeder IDE im Vordergrund, wird jedoch in jeder IDE zumindest Ansatzweise implementiert.
 

@@ -36,14 +36,14 @@ entry-type: in-discussion
 
 Die konkrete Durchführung ist über verschiedene Angriffsvektoren möglich, darunter auch [Cross-Site-Scripting]({{ page.root }}/jumpto/cross-site-scripting/).
 
-### Voraussetzungen
+### [Voraussetzungen](#voraussetzungen)
 {: #voraussetzungen}
 
 Ein authentisierter Benutzer mit der nötigen Autorisation muss dazu gebracht werden können, von ihm selber unbemerkt manipulative Anfragen an die Website zu senden.
 
 Ein CSRF-Angriff kann gelingen, wenn von einer Webanwendung angenommen wird, dass alle Anfragen, die ein Benutzer an die Website sendet, auch tatsächlich von diesem selbst initiert worden sind und diese Annahme keiner Überprüfung unterzogen wird.
 
-### Beispiel
+### [Beispiel](#durchfuehrung)
 {: #durchfuehrung}
 
 Ein denkbar einfaches Beispiel ist eine Website A, auf der ein vermeintlich unverdächtiger Link eingebettet wird:
@@ -56,14 +56,14 @@ Achtet der Benutzer nicht auf die tatsächlich hinterlegete URL, klickt er den L
 
 Ein CSRF-Angriff ist dabei nicht auf eine GET-Anfrage reduziert sondern kann beispielsweise auch über ein Formular erfolgen.
 
-### Konsequenzen einer CSRF-Attacke
+### [Konsequenzen einer CSRF-Attacke](#konsequenzen)
 {: #konsequenzen}
 
 Je mehr Kenntnisse ein Angreifer über eine Website hat, desto umfangreicher kann er CSRF-Angriffe durchführen. Besteht überhaupt kein Schutz gegen solche Angriffe und kann er einem Benutzer mit entsprechend hoher Autorisationsstufe praktisch beliebig böswillige Aktionen unterschieben, so kann der Angreifer vollständige administrative Kontrolle über die Website erlangen.
 
 Er kann dies nutzen, um sich sich selbst einen Benutzeraccount mit administrativen Rechten anzulegen, andere Administratoren zu löschen und Inhalte zu entfernen, zu manipulieren oder neu zu erstellen. Fehlender Schutz gegen CSRF-Angriffe kann also zu äußerst negativen Konsequenzen führen.
 
-### Schutz vor Cross-Site-Request-Forgery
+### [Schutz vor Cross-Site-Request-Forgery](#schutz)
 {: #schutz}
 
 #### Als Webmaster

@@ -80,7 +80,7 @@ Nachfolgende Seiten aus der PHP-Dokumentation finden in den Beispielen laufend V
 </div>
 
 
-### DateTime-Objekt erstellen
+### [DateTime-Objekt erstellen](#datetime-erstellen)
 {: #datetime-erstellen}
 
 ~~~ php
@@ -120,7 +120,7 @@ echo $dt->format('Y-m-d');
 ~~~
 
 
-### Von abweichenden Format-Strings erzeugen
+### [Von abweichenden Format-Strings erzeugen](#von-abweichenden-formaten)
 {: #von-abweichenden-formaten}
 
 ~~~ php
@@ -141,7 +141,7 @@ echo $dt->format('Y-m-d');
 ~~~
 
 
-### Schaltjahr
+### [Schaltjahr](#schaltjahr)
 {: #schaltjahr}
 
 ~~~ php
@@ -155,7 +155,7 @@ echo $dt->format('L');
 ~~~
 
 
-### Berechnungen auf vorhandene DateTime-Objekte
+### [Berechnungen auf vorhandene DateTime-Objekte](#berechnungen-auf-bestehende)
 {: #berechnungen-auf-bestehende}
 
 ~~~ php
@@ -166,7 +166,7 @@ echo $dt->format('Y-m-d');
 ~~~
 
 
-### Differenzen
+### [Differenzen](#differenzen)
 {: #differenzen}
 
 
@@ -198,7 +198,7 @@ var_dump($now->diff($regDate)->days > 30); // true
 ~~~
 
 
-### Vergleiche
+### [Vergleiche](#vergleiche)
 {: #vergleiche}
 
 ~~~ php
@@ -212,7 +212,7 @@ var_dump($dt1 > $dt2);  // false
 ~~~
 
 
-### Kalenderwochen
+### [Kalenderwochen](#kalenderwochen)
 {: #kalenderwochen}
 
 ~~~ php
@@ -246,10 +246,11 @@ echo ($dt->format('W') > 52) ? 53 : 52;
 ~~~
 
 
-### Deutsche Tages- und Monatsnamen
+### [Deutsche Tages- und Monatsnamen](#deutsche-namen)
 {: #deutsche-namen}
 
-#### Wochentage
+#### [Wochentage](#deutsche-wochentage)
+{: #deutsche-wochentage}
 
 ~~~ php
 $aWeekdayNamesDE = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
@@ -258,7 +259,8 @@ echo $aWeekdayNamesDE[$dt->format('w')];  // 'w': 0 (für Sonntag) bis 6 (für S
 // Montag (heute Mo. 2015-01-12)
 ~~~
 
-#### Monate
+#### [Monate](#deutsche-monate)
+{: #deutsche-monate}
 
 ~~~ php
 $aMonthNamesDE = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
@@ -273,7 +275,7 @@ Ergänzend sei auch auf diese Beiträge/Threads hingewiesen:
 * [http://www.php.de/php-einsteiger/114254-datum-plus-42-tage-deutsch.html#post841725](http://www.php.de/php-einsteiger/114254-datum-plus-42-tage-deutsch.html#post841725)
 
 
-### Überschneidungen Zeiträume
+### [Überschneidungen Zeiträume](#ueberschneidungen)
 {: #ueberschneidungen}
 
 
@@ -324,7 +326,7 @@ var_dump( overlap_timespans('2015-02-01', '2015-02-02', '2015-02-02', '2015-02-0
 ~~~
 
 
-### Sternzeichen
+### [Sternzeichen](#sternzeichen)
 {: #sternzeichen}
 
 Um das Sternzeichen eines Datums zu ermitteln, kann beispielsweise folgender Ansatz
@@ -377,7 +379,7 @@ echo getSignOfZodiacFromDate($oDate); // Widder
 ~~~
 
 
-### Ostern
+### [Ostern](#ostern)
 {: #ostern}
 
 Zu diesem Thema gibt es im Forum einige Threads
@@ -386,7 +388,7 @@ Zu diesem Thema gibt es im Forum einige Threads
 - [http://www.php.de/php-fortgeschrittene/112772-zeitfehler.html#post830611](http://www.php.de/php-fortgeschrittene/112772-zeitfehler.html#post830611)
 
 
-### Links
+### [Links](#links)
 {: #links}
 
 - [CARBON, a simple API extension for DateTime with PHP 5.3+](https://github.com/briannesbitt/Carbon)

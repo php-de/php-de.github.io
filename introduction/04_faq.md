@@ -66,7 +66,7 @@ inhalt:
 entry-type: in-discussion
 ---
 
-#### Was ist Debugging und wie debugge ich richtig?
+#### [Was ist Debugging und wie debugge ich richtig?](#debugging)
 {: #debugging}
 
 Richtig debuggen
@@ -86,7 +86,7 @@ Die Ausgaben per `var_dump` oder `echo` kann man sich ersparen, indem man einen 
 - [Ausführlichere Informationen zum Thema Debugging]({{ page.root }}/#debugging)
 
 
-#### Warum sollte ich eine Mailerklasse statt der `mail()`-Funktion verwenden?
+#### [Warum sollte ich eine Mailerklasse statt der `mail()`-Funktion verwenden?](#mailerklasse)
 {: #mailerklasse}
 
 Während es für die kleine, schnelle Info-Mail gerade noch okay ist, versuchen
@@ -114,18 +114,18 @@ für den Versand von Spam an Dritte benutzen.
 - [Mail headers injections with PHP](http://www.phpsecure.info/v2/article/MailHeadersInject.en.php)
 
 
-#### Wie kann ich erreichen, dass mein Formular bei Unvollständigkeit wieder ausgefüllt wird?
+#### [Wie kann ich erreichen, dass mein Formular bei Unvollständigkeit wieder ausgefüllt wird?](#formular-gefuellt)
 {: #formular-gefuellt}
 
 Ein Affenformular bietet genau diese Funktionalität. Siehe [Affenformular]({{ page.root }}/jumpto/affenformular/)
 
 
-#### Was ist ein Affenformular?
+#### [Was ist ein Affenformular?](#affenformular)
 {: #affenformular}
 Siehe: vorige Frage.
 
 
-#### Ich erhalte immer die Meldung "headers already sent"
+#### [Ich erhalte immer die Meldung "headers already sent"](#headers-already-sent)
 {: #headers-already-sent}
 
 Das HTTP schreibt vor, dass der Header einer Response vor dem Body an den
@@ -146,7 +146,7 @@ Marks](https://de.wikipedia.org/wiki/Byte_Order_Mark). Siehe auch:
 
 
 
-#### Nach Aktion XY zeigt mein Browser nur noch eine weiße Seite.
+#### [Nach Aktion XY zeigt mein Browser nur noch eine weiße Seite.](#weisse-seite)
 {: #weisse-seite}
 
 Wahrscheinlich handelt es sich um einen Parser-Fehler. Üblicherweise hast Du
@@ -155,7 +155,7 @@ einen Stringbegrenzer, ein Semikolon oder eine Klammer vergessen. Siehe:
 
 
 
-#### Warum werden auf meiner Seite die Umlaute falsch dargestellt, obwohl ich UTF-8 im HTML-Dokument angegeben habe?
+#### [Warum werden auf meiner Seite die Umlaute falsch dargestellt, obwohl ich UTF-8 im HTML-Dokument angegeben habe?](#html-charset)
 {: #html-charset}
 
 Die Zeichensatz-Angabe im `meta`-Element im HTML-Code ist nur eine von mehreren
@@ -194,7 +194,7 @@ Das Hinzufügen dieser Zeile löst das Problem meist. Wie jeder `header`-Aufruf
 muss auch dieser vor der ersten Ausgabe des Scripts erfolgen.
 
 
-#### Ist die mysql-Erweiterung wirklich veraltet und sollte nicht mehr genutzt werden?
+#### [Ist die mysql-Erweiterung wirklich veraltet und sollte nicht mehr genutzt werden?](#deprecated-mysql)
 {: #deprecated-mysql}
 
 Ja. Das „mysql“ bezieht sich hier allerdings *nicht* auf das komplette
@@ -205,7 +205,7 @@ PHP zur Kommunikation mit MySQL-Datenbanken nutzen kann. Die anderen beiden
 PHP-Dokumentation](http://php.net/manual/en/mysqlinfo.api.choosing.php).
 
 
-#### Was ist eine SQL-Injection und was kann ich dagegen unternehmen?
+#### [Was ist eine SQL-Injection und was kann ich dagegen unternehmen?](#sql-injection)
 {: #sql-injection}
 
 Vor dem Absenden an das Datenbanksystem werden SQL-Queries in PHP in der
@@ -223,7 +223,7 @@ Weitere Informationen und sinnvolle Gegemaßnahmen sind im [Hauptartikel
 SQL-Injection]({{ page.root }}/jumpto/sql-injection/) zu finden.
 
 
-#### You have an error in your SQL syntax; ... Warning: mysql_fetch_row() expects parameter 1 to be resource, boolean given
+#### [You have an error in your SQL syntax; ... Warning: mysql_fetch_row() expects parameter 1 to be resource, boolean given](#sql-error)
 {: #sql-error}
 
 Der SQL-String für die Datenbankabfrage ist fehlerhaft. Lass dir den fertigen

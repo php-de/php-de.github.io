@@ -34,7 +34,7 @@ Manchmal möchte man eine spezielle Sortierung der Ausgabe, welche mit dem übli
 mit Lösungsansätzen dazu.
 
 
-### Sortierung nach unterschiedlichen Kriterien
+### [Sortierung nach unterschiedlichen Kriterien](#div-kriterien)
 {: #div-kriterien}
 
 Dazu verwenden wir folgende Ausgangstabelle:
@@ -112,7 +112,7 @@ ORDER BY sub.name
 ~~~
 
 
-### Vorsortierung nach einer Bedingung
+### [Vorsortierung nach einer Bedingung](#bedingung)
 {: #bedingung}
 
 Ein anderer Fall ist eine Art Vorsortierung nach einer gewissen Bedingung.
@@ -163,7 +163,7 @@ SELECT name, date_birth FROM persons ORDER BY date_birth IS NULL DESC, name
 ~~~
 
 
-### Querverweise
+### [Querverweise](#bedingung)
 {: #links}
 
 - [Gruppenbruch]({{ page.root }}/jumpto/gruppenbruch/)

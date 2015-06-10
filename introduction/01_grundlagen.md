@@ -48,7 +48,7 @@ inhalt:
 **Dieser Thread enthält Links auf wertvolle Webquellen rund um das Thema Webentwicklung.**
 
 
-### Dokumentationen (Manuals) und Nachschlagewerke
+### [Dokumentationen (Manuals) und Nachschlagewerke](#dokus)
 {: #dokus}
 
 
@@ -220,7 +220,7 @@ inhalt:
     Auch sowas ist mal lesenswert.
 
 
-### Tutorials
+### [Tutorials](#tutorials)
 {: #tutorials}
 
 
@@ -404,7 +404,7 @@ inhalt:
     <br>**Nachteile:** Die Ausführungen sind trotz der guten Erklärungen
     manchmal etwas kurz geraten
 
-### Bücher
+### [Bücher](#books)
 {: #books}
 
 * [Galileo Computing : Buch : Besser PHP programmieren](https://www.galileo-press.de/besser-php-programmieren_1670/) <br>
@@ -507,7 +507,7 @@ inhalt:
 
 * [Diverse](http://stackoverflow.com/questions/194812/list-of-freely-available-programming-books/392926#392926)
 
-### Sicherheit
+### [Sicherheit](#security)
 {: #security}
 
 Lesenswerte Artikel zum Thema Sicherheit bei Webapplikationen:
@@ -515,7 +515,7 @@ Lesenswerte Artikel zum Thema Sicherheit bei Webapplikationen:
 * [OWASP Guide 2.0.1](http://www.owasp.org/index.php/Category:OWASP_Guide_Project) (Englisch)
 
 
-### weitere Links
+### [weitere Links](#weitere-links)
 {: #weitere-links}
 
  Weitere Links zu verschiedenen Themen gibt es unter:

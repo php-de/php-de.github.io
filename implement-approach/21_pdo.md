@@ -65,7 +65,7 @@ Mögliche Error-Modi: [http://php.net/manual/de/pdo.error-handling.php](http://p
 
 
 
-#### Wiederverwendung der Verbindung
+#### Wiederverwendung der Verbindung [#](#recycle-conn)
 {: #recycle-conn}
 
 Benötigt eine Funktion oder ein Objekt eine DB-Verbindung, so wird die bestehende PDO-Instanz `$pdo` als Parameter übergeben.
@@ -104,7 +104,7 @@ $user = new User($pdo);
 ~~~
 
 
-### Prepared Statements
+### Prepared Statements  [#](#prepared-statements)
 {: #prepared-statements}
 
 
@@ -116,7 +116,7 @@ $user = new User($pdo);
 <div class="alert alert-info"><strong>`Backticks` vermeiden</strong><br>Einer der Vorteile von PDO ist die Portabilität zwischen den unterschiedlichen DBMS. Um dem zu entsprechen, sollten in der Query <strong>keine</strong> (MySQL spezifischen) <strong>`Backticks`</strong> verwendet werden. Daraus resultiert, das auf die <strong>Benennung der Spalten</strong> entsprechend zu achten ist, um <strong>nicht mit den reservierten Keywords</strong> des jeweilig verwendeten DBMS zu <strong>kollidieren</strong>.</div>
 
 
-#### Query ohne Parameter
+#### Query ohne Parameter [#](#no-param)
 {: #no-param}
 
 ~~~ php
@@ -140,13 +140,13 @@ print_r($arr);
 
 
 
-#### Mit Parameter - Bindung der Parameter
+#### Mit Parameter - Bindung der Parameter [#](#with-param)
 {: #with-param}
 
 Nachfolgende Möglichkeiten bestehen u.a., um die Parameter an das Statement zu binden.
 
 
-#### Parameter einzeln binden
+#### Parameter einzeln binden [#](#bind-param)
 {: #bind-param}
 
 ~~~ php
@@ -171,7 +171,7 @@ if ($stmt->execute()) {
 Die Parameterbindung kann alternativ zu `bindParam()` mit `bindValue()` vorgenommen werden. Die Unterschiede sind in [diesem stackoverflow-Beitrag](http://stackoverflow.com/a/14413428) mittels kurzen Beispielen dargestellt.
 
 
-#### Parameter per Array binden
+#### Parameter per Array binden [#](#bind-array)
 {: #bind-array}
 
 ~~~ php
@@ -190,7 +190,7 @@ echo $stmt->rowCount();
 ~~~
 
 
-### Querverweise
+### Querverweise [#](#links)
 {: #links}
 
 * [Forums-Thread zu diesem Beitrag](http://www.php.de/forum/php-de-intern/wiki-diskussionsforum/1431002-pdo-beitrag)

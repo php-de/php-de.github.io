@@ -25,11 +25,11 @@ inhalt:
         simple: ""
 
     -   name: "Verarbeitung des DOM-Baums"
-        anchor: verarbeitung-des-dom-baums
+        anchor: verarbeitung
         simple: ""
 
     -   name: "Weiterführende Links"
-        anchor: weiterfhrende-links
+        anchor: links
         simple: ""
 
 entry-type: in-discussion
@@ -42,7 +42,8 @@ hierbei um ein HTML- oder XML-Dokument.
 
 
 
-### Elementknoten
+### [Elementknoten](#elementknoten)
+{: #elementknoten}
 
 Im Folgenden soll ein HTML-Dokument den Aufbau eines DOM-Baums verdeutlichen:
 
@@ -93,8 +94,8 @@ Center</a>.
 </div>
 
 
-
-### Attributknoten
+### [Attributknoten](#attributknoten)
+{: #attributknoten}
 
 Nicht nur Elemente stellen Knoten im DOM-Baum dar, auch Attribute tun dies.
 
@@ -128,7 +129,9 @@ Der DOM-Baum sieht diesmal so aus:
 
 
 
-### Verarbeitung des DOM-Baums
+### [Verarbeitung des DOM-Baums](#verarbeitung)
+{: #verarbeitung}
+
 
 Der Zweck des Document Object Models ist die maschinelle Verarbeitung des
 dargestellten Dokuments. Deshalb bieten viele Programmiersprachen (nativ oder
@@ -188,10 +191,10 @@ var div = document.getElementById('wrapper'),
 ~~~
 
 
+### [Weiterführende Links](#links)
+{: #links}
 
-### Weiterführende Links
 
 * [W3C Document Object Model](http://www.w3.org/DOM/)
 * [Document Object Model - Wikipedia](http://de.wikipedia.org/wiki/Document_Object_Model)
 * [JavaScript DOM](http://krook.org/jsdom/)
-

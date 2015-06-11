@@ -21,22 +21,24 @@ author:
 
 inhalt:
     -   name: "Sprachelemente und Systematik"
-        anchor: sprachelemente-und-systematik
+        anchor: sprachelemente
         simple: ""
 
     -   name: "Prototypen vs. Klassen"
-        anchor: prototypen-vs-klassen
+        anchor: prototyp-vs-klassen
         simple: ""
 
     -   name: "Weiterführende Informationen"
-        anchor: weiterfhrende-informationen
+        anchor: links
         simple: ""
 
 ---
 
 **JavaScript** ist eine auf ECMAScript ([ECMA 262](http://www.ecma-international.org/publications/standards/Ecma-262.htm)) basierende Skriptsprache, die im Browser des Anwenders läuft. Es ist mit JavaScript also möglich, Operationen auf Client-Ebene durchzuführen. Meist handelt es sich dabei um Manipulationen des [Document Object Model]({{ page.root }}/jumpto/document-object-model/) (DOM, Objektbaum eines HTML- oder XML-Dokumentes), Benutzerinteraktion oder Browserabfragen.
 
-### Sprachelemente und Systematik
+
+### [Sprachelemente und Systematik](#sprachelemente)
+{: #sprachelemente}
 
 JavaScript zeichnet sich besonders durch seine vollständige Objektorientierung und Modularität sowie eine baumartige Objektstruktur aus, an dessen Wurzel das Objekt `window` steht. Alle weiteren Objekte sind diesem Hauptobjekt untergeordnet. Somit sind alle Variablen und Funktionen des globalen Namensraumes in Wirklichkeit nur Member des `window`-Objektes. Aus diesem Grund können in JavaScript die Begriffe *Variable* und *Eigenschaft* sowie *Methode* und *Funktion* synonym verwendet werden, da jede Variable eine Eigenschaft und jede Funktion eine Methode eines übergeordneten Objektes darstellt, das wiederum direkt oder indirekt ein Kind von `window` ist. Da `window` alle anderen Objekte in sich vereint, ist eine explizite Angabe nicht notwendig.
 
@@ -93,7 +95,9 @@ myObject.myMethod();
 
 Es zeigt sich auch, dass Methoden sich wie Eigenschaften verhalten, also der Wert einer Zuweisung sein können. Diese Notation der Zuweisung sogenannter *anonymer Funktionen* ist ein äußerst mächtiges Mittel und findet in vielen Bereichen Anwendung. Insbesondere für Callback-Übergaben werden anonyme Funktionen gern genutzt. Diese Art von Funktion wird auch „Lambda-Funktion“ oder „Funktion im Lambda-Stil“ genannt.
 
-### Prototypen vs. Klassen
+
+### [Prototypen vs. Klassen](#prototyp-vs-klassen)
+{: #prototyp-vs-klassen}
 
 JavaScript ist vollständig objektorientiert bzw. objektbasiert, jedoch sind im jetzigen Entwicklungsstand der Sprache keine Klassen vorgesehen (dennoch ist das Schlüsselwort `class` nach ECMAScript ein reservierter Bezeichner und kann deshalb nicht verwendet werden. Allerdings empfiehlt sich die Nutzung solcher Bezeichner ohnehin nicht).
 
@@ -129,9 +133,9 @@ Im obigen Beispiel wurde der (eingangs natürlich noch leere) Prototyp zunächst
 <strong>Achtung!</strong> Häufig gemachter Fehler:<br>
 JavaScript ist nicht Java! Diese beiden grundlegend verschiedenen Sprachen werden oft verwechselt. Bis auf den Namen und eine ähnliche Syntax haben sie aber nichts gemein.</div>
 
-### Weiterführende Informationen
+### [Weiterführende Informationen](#links)
+{: #links}
 
 [http://aktuell.de.selfhtml.org/artikel/javascript/oomodell/](http://aktuell.de.selfhtml.org/artikel/javascript/oomodell/)
 [http://mckoss.com/jscript/object.htm](http://mckoss.com/jscript/object.htm)
 [http://developer.yahoo.com/yui/theater/](http://developer.yahoo.com/yui/theater/) (Videos von Douglas Crockford)
-

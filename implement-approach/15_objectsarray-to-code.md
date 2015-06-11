@@ -35,7 +35,9 @@ function dump_arrobj($arrobj) {
 }
 ~~~
 
-#### Beispiel
+
+#### [Beispiel](#beispiel)
+{: #beispiel}
 
 ~~~ php
 // Beispiele anlegen
@@ -55,7 +57,9 @@ $arr = array($obj1, $obj2);
 dump_arrobj($arr);
 ~~~
 
-#### Ausgabe
+
+#### [Ausgabe](#ausgabe)
+{: #ausgabe}
 
 ~~~ php
 array (
@@ -77,5 +81,7 @@ array (
 Eine Variable und = davorgesetzt und ein Semikolon am Ende, und schon kann dies in einem Skript zum Testen benutzt werden.
 
 
-##### Quelle-Originalbeitrag
+##### [Quelle-Originalbeitrag](#quelle)
+{: #quelle}
+
 [http://www.php.de/php-fortgeschrittene/109293-erledigt-arrays-mit-objekten-als-php-quellcode-ausgeben.html](http://www.php.de/php-fortgeschrittene/109293-erledigt-arrays-mit-objekten-als-php-quellcode-ausgeben.html)

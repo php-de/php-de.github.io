@@ -44,7 +44,8 @@ inhalt:
 entry-type: in-discussion
 ---
 
-### Ursprung
+### [Ursprung](#ursprung)
+{: #ursprung}
 
 SQL-Injections fallen in den Bereich der
 [Kontextwechsel-Probleme]({{ page.root }}/jumpto/kontextwechsel/).
@@ -75,8 +76,8 @@ Angriffsversuch vorausgehen. Im Beispiel würde bereits die Eingabe eines Namens
 wie `O'Brian` die Query syntaktisch ungültig werden und fehlschlagen lassen.
 
 
-### Gegenmaßnahmen
-
+### [Gegenmaßnahmen](#gegenmanahmen)
+{: #gegenmanahmen}
 
 Zur Vermeidung von SQL-Injections dienen Funktionen, die die syntaktisch
 relevanten Zeichen, die in Eingaben enthalten sein können, durch Escaping so
@@ -86,7 +87,8 @@ Stringbegrenzer gemeint ist (syntaktische Funktion), sondern lediglich das
 konkrete Zeichen `"` (reiner Inhalt).
 
 
-### Anwendung
+### [Anwendung](#anwendung)
+{: #anwendung}
 
 Für jede Datenbankschnittstelle existiert mindestens eine spezielle Funktion
 oder Methode, die dieses Escaping durchführen kann. Es *muss* diese zur
@@ -111,8 +113,8 @@ $query = "
 ~~~
 
 
-### Sicher ist sicher
-
+### [Sicher ist sicher](#sicher-ist-sicher)
+{: #sicher-ist-sicher}
 
 Es ist zu empfehlen, *jeden* variablen Wert, der in Query-Strings eingefügt
 wird, durch die passende Escape-Funktion zu schicken. Also auch dann, wenn der
@@ -124,7 +126,8 @@ Escape-Funktion fehlt. Schließlich wäre es denkbar, dass sie versehentlich
 vergessen wurde.
 
 
-### Prepared-Statements
+### [Prepared-Statements](#prepared-statements)
+{: #prepared-statements}
 
 Viele Datenbankschnittstellen unterstützen zusätzlich das Konzept der [Prepared
 Statements](https://de.wikipedia.org/wiki/Prepared_Statement), das ebenfalls

@@ -136,6 +136,6 @@ JavaScript ist nicht Java! Diese beiden grundlegend verschiedenen Sprachen werde
 ### [Weiterführende Informationen](#links)
 {: #links}
 
-[http://aktuell.de.selfhtml.org/artikel/javascript/oomodell/](http://aktuell.de.selfhtml.org/artikel/javascript/oomodell/)
-[http://mckoss.com/jscript/object.htm](http://mckoss.com/jscript/object.htm)
-[http://developer.yahoo.com/yui/theater/](http://developer.yahoo.com/yui/theater/) (Videos von Douglas Crockford)
+* [http://aktuell.de.selfhtml.org/artikel/javascript/oomodell/](http://aktuell.de.selfhtml.org/artikel/javascript/oomodell/)
+* [http://mckoss.com/jscript/object.htm](http://mckoss.com/jscript/object.htm)
+* [http://developer.yahoo.com/yui/theater/](http://developer.yahoo.com/yui/theater/) (Videos von Douglas Crockford)

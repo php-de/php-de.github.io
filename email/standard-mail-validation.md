@@ -21,20 +21,20 @@ inhalt:
         simple: "als Standard-Weg"
 
     -   name: "Internationale Domainnamen / Punycode"
-        anchor: internationalisierte-domainnamen-idn
+        anchor: idn
         simple: "Domains mit Sonderzeichen"
 
     -   name: "Ohne Punycode"
-        anchor: ohne-punycode---lose-rahmenprfung-mittels-regulren-ausdrcken-regex
+        anchor: ohne-punycode
         simple: "Lose Rahmenprüfung durch reguläre Ausdrücke"
 
     -   name: "DNS Domain-Prüfung"
-        anchor: zusatz-option-dns-domain-prfung
+        anchor: dns
         simple: "zusätzliche Existenz-Prüfung"
 
     -   name: "Weiterführende Quellen"
         anchor: quellen
-        simple: "Links, RFCs"
+        simple: "Links und RFCs"
 
 
 entry-type: in-discussion
@@ -45,7 +45,9 @@ Dieses Tutorial zeigt grundsätzliche (übliche) Möglichkeiten, eine E-Mail-Adr
 
 Vorweg sei an dieser Stelle erwähnt, dass eine Prüfung auf tatsächliche Existenz einer E-Mail-Adresse auf diesem Weg nicht möglich ist. Die nachfolgenden Ansätze dienen lediglich zur Feststellung ob die grundlegenden formellen Rahmenbedingungen erfüllt werden bzw. einer positiven [DNS](http://de.wikipedia.org/wiki/Domain_Name_System)-Antwort im Falle einer [Domain](http://de.wikipedia.org/wiki/Domain)-[DNS](http://de.wikipedia.org/wiki/Domain_Name_System)-Prüfung. Des Weiteren erhebt dieses Tutorial nicht den Anspruch, [sämtlichen RFC zu diesem Thema](#rfc-zum-thema-e-mail) zu genügen (wenn sich schon die meisten großen Provider und Mail-Anbieter nicht daran halten ...).
 
-### filter_var()
+
+### [filter_var()](#filtervar)
+{: #filtervar}
 
 PHP stellt ab Version 5.2 die Funktion [filter_var()](http://php.net/manual/de/function.filter-var.php) zur Verfügung. Mit dem optionalen Parameter FILTER_VALIDATE_EMAIL kann diese grundsätzlich zur E-Mail-Validierung verwendet werden. Jedoch ist es damit nicht möglich internationalisierte E-Mail-Adressen zu prüfen - solche werden immer als falsch ausgewertet. Lösungsansätze folgen [weiter unten](#internationalisierte-domainnamen-idn).
 
@@ -83,12 +85,15 @@ var_dump(isValidEmail("mail@übung.de"));     // false
 Dies kann alternativ zu filter_var() verwendet werden. Ebenso wie [oben bei filter_var()](#filtervar) schlägt die Prüfung von internationalisierten Domains fehl (was hier bereits am Pattern erkennbar ist).
 
 
-### Internationalisierte Domainnamen (IDN)
+### [Internationalisierte Domainnamen (IDN)](#idn)
+{: #idn}
+
 
 Um auch internationalisierte Domains / E-Mail-Adressen auf grundsätzliche formelle Korrektheit zu prüfen ist die Konvertierung in [Punycode](http://de.wikipedia.org/wiki/Punycode) **vor** der eigentlichen Prüfung nötig. Weitere Informationen und Möglichkeiten zur Konvertierung gibt es [hier]({{ page.root }}/jumpto/idna/).
 
 
-### Ohne Punycode - Lose Rahmenprüfung mittels regulären Ausdrücken (Regex)
+### [Ohne Punycode - Lose Rahmenprüfung mittels regulären Ausdrücken (Regex)](#ohne-punycode)
+{: #ohne-punycode}
 
 Diese Variante kommt ohne Punycode-Konvertierung aus. Hierbei spielen die verwendeten Zeichen kaum eine Rolle, denn es wird nur der grobe Rahmen geprüft und ob keine Whitespaces (Leerzeichen, Tabstopps, etc.) vorhanden sind.
 
@@ -114,7 +119,8 @@ var_dump(isValidEmail("test@übärdrübär.com"));                        // tru
 var_dump(isValidEmail("test@sub.mail.dot.anything.übärdrübär.com"));  // true
 ~~~
 
-### Zusatz-Option: DNS-Domain-Prüfung
+### [Zusatz-Option: DNS-Domain-Prüfung](#dns)
+{: #dns}
 
 Generell kann in jeder oben angeführten Varianten, wenn gewüscht, die Antwort des [DNS](http://de.wikipedia.org/wiki/Domain_Name_System) zur Domain (auf vorhandenen ["MX" oder "A"-Record](http://de.wikipedia.org/wiki/Domain_Name_System#Aufbau_der_DNS-Datenbank)) berücksichtigt werden.
 
@@ -130,23 +136,27 @@ function checkEMailDomainDNS($mail)
 var_dump(checkEMailDomainDNS('mail@example.com'));  // true
 ~~~
 
-### Weiterführende Quellen
+
+### [Weiterführende Quellen](#quellen)
 {: #quellen}
 
-#### Links
+
+#### [Links](#links)
+{: #links}
 
 Wer sich genauer für die Regex-Prüfung interessiert, dem sei [dieser Link](http://squiloople.com/2009/12/20/email-address-validation/) empfohlen. Danke an [Trainmaster](http://www.php.de/member.php?u=20243) für den Link.
 
 Wer sich dafür interessiert wie eigentlich filter_var() validiert, dem sei ein Blick in den Quelltext von PHP empfohlen oder etwas einfacher hier in [diesem Forumsbeitrag](http://www.php.de/wiki-diskussionsforum/101439-erledigt-sinnvolle-standard-verfahren-zur-e-mail-validierung-3.html#post748505). Danke an [Asterixus](http://www.php.de/member.php?u=21236) für die Recherche.
 
 
-#### RFC zum Thema E-Mail
+#### [RFC zum Thema E-Mail](#rfc)
+{: #rfc}
 
-[RFC 2142](http://tools.ietf.org/html/rfc2142) - Mailbox Names for Common Services, Roles and Functions<br>
-[RFC 2368](http://tools.ietf.org/html/rfc2368) - The mailto URL scheme<br>
-[RFC 2822](http://tools.ietf.org/html/rfc2822) - Internet Message Format<br>
-[RFC 3696](http://tools.ietf.org/html/rfc3696) - Application Techniques for Checking and Transformation of Names<br>
-[RFC 4021](http://tools.ietf.org/html/rfc4021) - Registration of Mail and MIME Header Fields<br>
-[RFC 5321](http://tools.ietf.org/html/rfc5321) - Simple Mail Transfer Protocol<br>
-[RFC 5322](http://tools.ietf.org/html/rfc5322) - Internet Message Format<br>
-[RFC 5335](http://tools.ietf.org/html/rfc5335) - Internationalized Email Headers<br>
+* [RFC 2142](http://tools.ietf.org/html/rfc2142) - Mailbox Names for Common Services, Roles and Functions
+* [RFC 2368](http://tools.ietf.org/html/rfc2368) - The mailto URL scheme
+* [RFC 2822](http://tools.ietf.org/html/rfc2822) - Internet Message Format
+* [RFC 3696](http://tools.ietf.org/html/rfc3696) - Application Techniques for Checking and Transformation of Names
+* [RFC 4021](http://tools.ietf.org/html/rfc4021) - Registration of Mail and MIME Header Fields
+* [RFC 5321](http://tools.ietf.org/html/rfc5321) - Simple Mail Transfer Protocol
+* [RFC 5322](http://tools.ietf.org/html/rfc5322) - Internet Message Format
+* [RFC 5335](http://tools.ietf.org/html/rfc5335) - Internationalized Email Headers

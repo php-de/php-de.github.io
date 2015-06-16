@@ -22,7 +22,9 @@ inhalt:
 
 ---
 
-### E-Mail-Klassen
+
+### [E-Mail-Klassen](#e-mail-klassen)
+{: #e-mail-klassen}
 
 <p style="font-size: 10pt; font-family: Courier New, Consolas">
     Von: Max Spendabel<br>

@@ -19,11 +19,11 @@ author:
 
 inhalt:
     -   name:   "Editoren"
-        anchor: php-editoren
+        anchor: editoren
         simple: ""
 
     -   name:   "Integrierte Entwicklungsumgebungen (IDEs)"
-        anchor: integrierte-php-entwicklungsumgebungen-php-ide
+        anchor: ide
         simple: ""
 
     -   name: Sonstige
@@ -34,8 +34,8 @@ inhalt:
 Dieser Beitrag bietet eine Übersicht über Editoren und Entwicklungsumgebungen, die für die Arbeit mit PHP geeignet sind. Wer seine Wahl ebenfalls äußern möchte, ist in [diesem Beitrag](http://www.php.de/php-einsteiger/101627-editor-ide-let-me-tell-you-something.html) herzlich dazu eingeladen.
 
 
-### [Editoren](#php-editoren)
-{: #php-editoren}
+### [Editoren](#editoren)
+{: #editoren}
 
 Ein Editor ist eine Anwendung, die grundlegende Funktionen zur Text- und Quellcodebearbeitung bereitstellt, die aber nicht direkt mit PHP oder anderen Tools interagiert und die auch keine weiterführenden sprachspezifischen Features enthält. Editoren erleichtern die Arbeit, indem sie beispielsweise per Syntax-Highlighting auf Typos oder andere Syntaxfehler hinweisen.
 
@@ -98,8 +98,8 @@ Ein Editor ist eine Anwendung, die grundlegende Funktionen zur Text- und Quellco
     Bluefish ist aus der Produktfamilie der Content Editing Environments der Open Office Foundation und ebendso wie Notepad++, Sublime Text 2 und Coda ein leistungsfähiger Editor, der hier und da mit der ein oder anderen Gehirnwindung Gassi geht.
 
 
-### [Integrierte Entwicklungsumgebungen (IDEs)](#php-ide)
-{: #php-ide}
+### [Integrierte Entwicklungsumgebungen (IDEs)](#ide)
+{: #ide}
 
 Integrierte Entwicklungsumgebungen interagieren immer mit PHP und vernetzen eure Scripts so das ihr jederzeit (auch grafisch) durch die Scripts navigieren könnt und schon beim Autocomplete seht wo die Funktion die ihr gerade benutzt definiert wurde und welche Parameter sie hat. Qualitätssicherung steht nicht bei jeder IDE im Vordergrund, wird jedoch in jeder IDE zumindest Ansatzweise implementiert.
 
@@ -171,7 +171,8 @@ Integrierte Entwicklungsumgebungen interagieren immer mit PHP und vernetzen eure
     phpDesigner ist eine der kostengüstigeren IDEs, nicht ganz so umfangreich wie PhpStorm, dennoch mit allem gerüstet was den täglichen Einsatz als Software-Entwickler leichter macht.
 
 
-### Sonstige
+### [Sonstige](#sonstige)
+{: #sonstige}
 
 Einige Editoren werden es nicht in diese Übersicht schaffen, da sie entweder nicht PHP-spezifisch und wenn zwar nicht oder zu wenig verbreitet in der PHP-Welt sind. Da diese Editoren nicht gänzlich ungenannt bleiben sollten, findet ihr sie in der folgenden Liste:
 

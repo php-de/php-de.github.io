@@ -21,7 +21,7 @@ inhalt:
         simple: ""
 
     -   name: "Lösung"
-        anchor: lsung
+        anchor: loesung
         simple: ""
 
     -   name: "Quellen"
@@ -31,7 +31,9 @@ inhalt:
 entry-type: in-discussion
 ---
 
-### Ausgangssituation
+
+### [Ausgangssituation](#ausgangssituation)
+{: #ausgangssituation}
 
 Als Beispiel nehmen wir eine Methode eines Fehlerobjektes, die beliebige
 Fehlerdaten über einen variablen Formatstring in ein Logfile schreiben soll.
@@ -92,7 +94,8 @@ Parameters nach `int`, führende Nullen oder Leerzeichen.
 
 
 
-### Lösung
+### [Lösung](#loesung)
+{: #loesung}
 
 Zunächst die Funktion, die ich `vsprintf_assoc` getauft habe. Genauso denkbar
 wären natürlich Pendants für `printf`, `vprintf` und `vsprintf`:
@@ -251,10 +254,9 @@ Möglicherweise nicht das beste Ausgangsbeispiel, aber ich denke der ein oder
 andere wird eine geeignete Anwendung finden…
 
 
-
-### Quellen
+### [Quellen](#quellen)
+{: #quellen}
 
 * PHP Manual Funktionreferenzen: [`printf`](http://php.net/printf),
 [`sprintf`](http://php.net/sprintf), [`vprintf`](http://php.net/vprintf),
 [`vsprintf`](http://php.net/vsprintf)
-

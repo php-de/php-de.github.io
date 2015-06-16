@@ -21,12 +21,14 @@ author:
 
 inhalt:
     -   name: "Debugging"
-        anchor: begriffserklrung
+        anchor: begriff
         simple: "Was ist das?"
 
 ---
 
-### Begriffserklärung
+
+### [Begriffserklärung](#begriff)
+{: #begriff}
 
 Das **Debugging** bezeichnet im Prozess der Softwareentwicklung die gezielte Fehlersuche in einem vorhandenen Code. Das Wort leitet sich aus der Negation des Wortes *Bug* ab, das im Programmiererjargon einen Programmfehler bezeichnet.
 

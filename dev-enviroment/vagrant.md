@@ -17,7 +17,9 @@ inhalt:
 entry-type: in-progress
 ---
 
-### Motivation
+
+### [Motivation](#motivation)
+{: #motivation}
 
 In der Regel reicht eine XAMPP Installation unter Windows komplett aus, um mal eben mit PHP entwicklen zu können.
 Doch sobald man unter umständen NodeJS oder nginx Server verwenden will, oder statt MySql MongoDB reicht da XAMPP nicht mehr aus.

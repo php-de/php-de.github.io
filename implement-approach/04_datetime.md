@@ -177,7 +177,9 @@ $dt2 = new DateTime('2015-01-12');
 $dtInterval = $dt1->diff($dt2);
 echo $dtInterval->format('%R%a days');
 // +11 days
+~~~ 
 
+~~~ php
 // ist Benutzer schon seit 30 Tagen registriert?
 $regDate = new DateTime('2014-12-15');
 $now     = new DateTime(); // 2015-01-19

@@ -186,7 +186,7 @@ inhalt:
 
 
     * **Symfony**
-      * [symfony \| Web PHP Framework](http://symfony.com/get_started) <br>
+      * [symfony \| Web PHP Framework](http://symfony.com/) <br>
         Symfony ist ein weiteres PHP Framework das auf dem MVC
         Entwurfsmuster aufbaut. Symfony gilt als schnell zu erlernendes
         Framework.
@@ -200,13 +200,11 @@ inhalt:
 
 ##### MySQL
 
-  * [MySQL :: MySQL 5.1 Referenzhandbuch](http://dev.mysql.com/doc/refman/5.1/de/index.html) <br>
-    Deutsches Handbuch zu MySQL 5.1. Handbücher zu anderen MySQL
-    Versionen ebenfalls vorhanden. Sollte bei Problemen mit MySQL
-    Funktionen weiter helfen. Enthält viele Tipps zum Arbeiten mit
-    MySQL.
-    <br>**Vorteile:** beschreibt alle Features aus MySQL, sehr detailiert
-    <br>**Nachteile:** teilweise etwas unübersichtlich
+  * [MySQL Referenzhandbuch](http://dev.mysql.com/doc/) <br>
+    Handbücher zu MySQL. Sollte bei Problemen mit MySQL Funktionen weiter helfen.
+    Enthält viele Tipps zum Arbeiten mit MySQL. <br>
+    **Vorteile:** beschreibt alle Features aus MySQL, sehr detailiert <br>
+    **Nachteile:** teilweise etwas unübersichtlich
 
 
 ##### Webentwicklung, divers
@@ -288,7 +286,7 @@ inhalt:
     <br>**Vorteile:** Grundlagen vom absoluten Anfang, kein Fachchinesisch,
     Umfang
 
-  * [http://www.phptherightway.com/](PHP: The Right Way)<br>
+  * [PHP: The Right Way](http://www.phptherightway.com/)<br>
     Eine Schnellreferenz zu PHP, mit dem Versuch von Best-Practices etc. in möglichst
     aktueller Form darzulegen. <br>
     Zum Teil In verschiedenen Übersetzungen (auch deutsch) vorhanden.
@@ -505,7 +503,6 @@ inhalt:
   Entwurfsmustern sollte man (bspw. in anderen Sprachen) schon mal
   gehört haben.
 
-* [Diverse](http://stackoverflow.com/questions/194812/list-of-freely-available-programming-books/392926#392926)
 
 ### [Sicherheit](#security)
 {: #security}

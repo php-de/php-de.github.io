@@ -63,14 +63,14 @@ inhalt:
     - name: "disable_classes"
       anchor: disableclasses
       simple: ""
-      
+
     - name: "short_open_tag"
       anchor: shortopentag
-      simple: ""  
-      
+      simple: ""
+
     - name: "Abschluss"
       anchor: abschluss
-      simple: ""      
+      simple: ""
 
     - name: "Links zum Thema"
       anchor: links-zum-thema
@@ -193,7 +193,7 @@ Voreinstellung ist hier aktiv, kann aber getrost ausgeschaltet werdem, da diese 
 
 ### allow_url_fopen
 
-Mit dieser Option wird der Zugriff mittels **fopen** auf externe Server gewährt. Es wird damit die Möglichkeit geschaffen auf URL-Objekte , wie normale Dateien zuzugreifen. 
+Mit dieser Option wird der Zugriff mittels **fopen** auf externe Server gewährt. Es wird damit die Möglichkeit geschaffen auf URL-Objekte , wie normale Dateien zuzugreifen.
 
 Es wird empfohlen die Option zu deaktivieren, da durch das Sicherheitsrisiko verringert wird.
 
@@ -205,13 +205,13 @@ Es wird empfohlen die Funktion deaktiviert zu lassen, da durch das Sicherheitsri
 
 ### disable_functions
 
-Mit dieser Option können ausschließlich interne Funktionen aus Sicherheitsgründen über eine Kommatatrennung deaktiviert werden. 
+Mit dieser Option können ausschließlich interne Funktionen aus Sicherheitsgründen über eine Kommatatrennung deaktiviert werden.
 
 Sie hat keinen Einfluss auf den **Safe Mode** und muss immer in der *php.ini* gesetzt werden. Ein Änderungen z.B.: über Apaches **httpd.conf** ist nicht möglich.
 
 ### disable_classes
 
-Mit dieser Option können Klassen aus Sicherheitsgründen über eine Kommatatrennung deaktiviert werden. 
+Mit dieser Option können Klassen aus Sicherheitsgründen über eine Kommatatrennung deaktiviert werden.
 
 Sie hat keinen Einfluss auf den **Safe Mode** und muss immer in der *php.ini* gesetzt werden. Ein Änderungen z.B.: über Apaches **httpd.conf** ist nicht möglich.
 
@@ -257,5 +257,5 @@ Zum Abschluss sei noch gesagt, es gibt viele weitere **PHP-Direktive**, die eine
 
 * [RegisterGlobals, was ist das?](http://www.openwebboard.org/Tutorials/PHP_MySQL/RegisterGlobals_was_ist_das_1.html)
 * [PHP.net: Superglobals](http://de.php.net/manual/de/language.variables.superglobals.php)
-* [PHP.net: Verarbeitung von Daten](http://de.php.net/manual/de/ini.sect.data-handling.php#ini.register-globals)
+* [PHP.net: Register Globals](http://php.net/manual/de/ini.core.php#ini.register-globals)
 * [PHP.net: php.ini-Direktiven](http://php.net/manual/de/ini.list.php)

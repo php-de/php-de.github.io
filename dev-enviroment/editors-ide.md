@@ -149,7 +149,7 @@ Integrierte Entwicklungsumgebungen interagieren immer mit PHP und vernetzen eure
 * **Aptana Studio** - **empfohlen**{: style="color: #006400"}
     <br>Webseite: [http://aptana.com/](http://aptana.com/)
     <br>UI-Sprache: Englisch
-    <br>Features: [http://aptana.com/products/studio3](http://aptana.com/products/studio3)
+    <br>Features: [http://www.aptana.com/products/studio3.html](http://www.aptana.com/products/studio3.html)
     <br>Kostet: **kostenlos**
 
     Aptana Studio ist das Sublime Text unter den IDEs, aber nicht ganz so funktionsreich wie PhpStorm, dennoch die kostenlose Empfehlung für Einsteigende und Fortgeschrittene PHP-Entwickler.

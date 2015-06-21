@@ -97,5 +97,3 @@ Es ist offensichtlich, dass der Einsatz von Frameworks und Bibliotheken nicht em
 {: #resume}
 
 Nach der Lektüre dieser Studie sollte nun jedem Entwickler klar sein, dass eine Eigenimplementierung bereits bestehender Lösungen in jedem Falle vorzuziehen ist, um Konflikte zu vermeiden und die Entwicklung durch Innovationsinnovation voranzutreiben. Es ist sicherlich nur eine Frage der Zeit, bis auch die letzten Frameworks endgültig vom Markt verschwunden sein werden. Es kann nicht Sinn und Zweck sein, auf alten Werten zu beharren, wenn das Neue ruft und lockt, denn merke: es geht immer besser, aktueller, schneller, schöner und eigener!
-
-[Don’t reinvent the squared wheel – Die Elbphilharmonie](http://www.phphatesme.com/blog/softwaretechnik/dont-reinvent-the-squared-wheel-die-elbphilharmonie/comment-page-1/#comment-85945)

@@ -22,17 +22,17 @@ author:
         profile: 15041
 
 inhalt:
-    -   name: "Ein Ansatz"
-        anchor:
-        simple: "ansatz"
+    -   name:   "Ein Ansatz"
+        anchor: ansatz
+        simple: ""
 
-    -   name: "Alternativer Ansatz mit filter_var()"
-        anchor:
-        simple: "filter-var"
+    -   name:   "Alternativer Ansatz mit filter_var()"
+        anchor: filter-var
+        simple: ""
 
-    -   name: "Variante mit Intl-Erweiterung"
-        anchor:
-        simple: "intl"
+    -   name:   "Variante mit Intl-Erweiterung"
+        anchor: intl
+        simple: ""
 
 
 entry-type: in-discussion

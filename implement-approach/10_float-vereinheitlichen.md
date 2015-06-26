@@ -22,9 +22,18 @@ author:
         profile: 15041
 
 inhalt:
-    -   name: ""
+    -   name: "Ein Ansatz"
         anchor:
-        simple: ""
+        simple: "ansatz"
+
+    -   name: "Alternativer Ansatz mit filter_var()"
+        anchor:
+        simple: "filter-var"
+
+    -   name: "Variante mit Intl-Erweiterung"
+        anchor:
+        simple: "intl"
+
 
 entry-type: in-discussion
 ---
@@ -40,6 +49,11 @@ Diese Beispiele sind für einen Menschen noch relativ eindeutig interpretierbar.
 Letztlich gilt es also, eine Lösung für ein Problem zu finden, das überhaupt nur teilweise gelöst werden kann. Die folgenden Vorschläge sind deshalb als Ideen zu verstehen, die unterschiedliche Aspekte bei der Interpretation von Eingaben jeweils unterschiedlich strikt bewerten.
 
 Es soll auf verschiedene mögliche Ansätze hingewiesen werden, aber es soll auch vermittelt werden, dass die Frage nach der grundsätzlichen Entscheidbarkeit bei derlei Problemstellungen von zentraler Bedeutung ist.
+
+
+### [Ein Ansatz](#ansatz)
+{: #ansatz}
+
 
 ~~~ php
 // Vereinheitlicht alternative Formate von Kommazahlen-Eingaben unter
@@ -84,7 +98,9 @@ function get_float($value)
 }
 ~~~
 
-Ein anderer Ansatz per [`filter_var`](http://php.net/filter_var):
+
+### [Ein anderer Ansatz per `filter_var`](#filter-var)
+{: #filter-var}
 
 ~~~ php
 $floatAutoDetect = function ($value) {
@@ -113,6 +129,9 @@ $floatAutoDetect = function ($value) {
     return false;
 };
 ~~~
+
+### [Mit der Intl-Erweiterung](#intl)
+{: #intl}
 
 Zuletzt eine Variante, welche die [intl Erweiterung](http://www.php.net/manual/de/intro.intl.php) voraussetzt. Es muss bedacht werden, dass die übergebene Locale das Parsing beeinflusst (zur Veranschaulichung siehe Tests).
 

@@ -59,8 +59,8 @@ Dieser Leitfaden bezieht sich auf die Analyse von PHP Fehlern. Viele dieser Fehl
 - Der Browser-Quelltext ist leer.
 
 
-#### [Prüfe die Verfügbarkeit von PHP](# verfuegbarkeit-php)
-{: # verfuegbarkeit-php}
+#### [Prüfe die Verfügbarkeit von PHP](#verfuegbarkeit-php)
+{: #verfuegbarkeit-php}
 
 Wenn das Deine ersten Schritte mit PHP sind, erstelle eine Datei test.php mit folgendem Inhalt.
 
@@ -185,13 +185,13 @@ Da Dein Bildschirm keine Fehlermeldungen anzeigt, handelt es sich typischerweise
 
 
 #### [Zustände prüfen](#zustaende-prüfen)
-{: #zustaende-prüfen}
+{: #zustaende-pruefen}
 
 Auch wenn etwas noch so logisch oder noch so unmöglich erscheint - läuft das Programm nicht heißt es: Alle Zustände prüfen. Wird ein bestimmter Programmteil nach einer Bedingung überhaupt ausgeführt? Wie oft wird eine Schleife durchlaufen? Ist die Variable gesetzt?
 
 
 #### [Variablen prüfen](#variablen-prüfen)
-{: #variablen-prüfen}
+{: #variablen-pruefen}
 
 Eine Grundregel - lass Dir Variablen ausgeben!
 

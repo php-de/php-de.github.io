@@ -74,7 +74,7 @@ Lade die Datei in den öffentlich erreichbaren Kontext Deines Webspace und rufe 
 **Hinweis:** Bei allen nachfolgenden Beispielen wird das `<?php` nicht mehr explizit angeführt.
 
 
-#### [Erzwinge die Fehlerausgabe](fehlerausgabe)
+#### [Erzwinge die Fehlerausgabe](#fehlerausgabe)
 {: # fehlerausgabe}
 
 Mit hoher Wahrscheinlichkeit handelt es sich um einen Fehler vor der ersten Ausgabe oder einen sogenannten Parser Fehler. Das ist ein Fehler, den PHP generiert, weil der Parser aufgrund einer Syntaxverletzung die Ausführung des Scripts nicht zu Ende führen kann.
@@ -184,13 +184,13 @@ Da Dein Bildschirm keine Fehlermeldungen anzeigt, handelt es sich typischerweise
 <br>
 
 
-#### [Zustände prüfen](#zustaende-prüfen)
+#### [Zustände prüfen](#zustaende-pruefen)
 {: #zustaende-pruefen}
 
 Auch wenn etwas noch so logisch oder noch so unmöglich erscheint - läuft das Programm nicht heißt es: Alle Zustände prüfen. Wird ein bestimmter Programmteil nach einer Bedingung überhaupt ausgeführt? Wie oft wird eine Schleife durchlaufen? Ist die Variable gesetzt?
 
 
-#### [Variablen prüfen](#variablen-prüfen)
+#### [Variablen prüfen](#variablen-pruefen)
 {: #variablen-pruefen}
 
 Eine Grundregel - lass Dir Variablen ausgeben!

@@ -52,7 +52,7 @@ Hier findest du einen Debugging Leitfaden, der Schritt für Schritt durch Grundl
 Dieser Leitfaden bezieht sich auf die Analyse von PHP Fehlern. Viele dieser Fehler können jedoch nur indirekt erkannt werden, da PHP erzeugte Fehler Teil der Browser-Ausgabe werden und somit den Anzeigegegebenenheiten des Browsers unterliegen. Es ist dringend zu empfehlen, zur Fehleranalyse immer den Browserquelltext heranzuziehen, da nur dort die Sichtbarkeit aller zur Verfügung stehenden Informationen gewährleistet ist. Nachfolgende Aussagen wie "Die Seite zeigt gar nichts an" beziehen sich immer auf den Browserquelltext.
 
 
-### Ausgangssituation 1(#situation-1)
+### [Ausgangssituation 1](#situation-1)
 {: #situation-1}
 
 - Die Seite zeigt gar nichts an.

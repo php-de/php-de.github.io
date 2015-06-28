@@ -75,7 +75,7 @@ Lade die Datei in den öffentlich erreichbaren Kontext Deines Webspace und rufe 
 
 
 #### [Erzwinge die Fehlerausgabe](#fehlerausgabe)
-{: # fehlerausgabe}
+{: #fehlerausgabe}
 
 Mit hoher Wahrscheinlichkeit handelt es sich um einen Fehler vor der ersten Ausgabe oder einen sogenannten Parser Fehler. Das ist ein Fehler, den PHP generiert, weil der Parser aufgrund einer Syntaxverletzung die Ausführung des Scripts nicht zu Ende führen kann.
 

@@ -93,7 +93,7 @@ Parserfehler treten auf, bevor das Skript ausgeführt wird. Daher kann das Repor
 Je nachdem wie sich die Ausgabe ändert kannst Du jetzt unter 2 oder 3 fortfahren.
 
 
-### Ausgangssituation 2(#situation-2)
+### [Ausgangssituation 2](#situation-2)
 {: #situation-2}
 
 - Auf dem Bildschirm werden Fehlermeldungen ausgegeben.
@@ -106,7 +106,7 @@ Je nachdem wie sich die Ausgabe ändert kannst Du jetzt unter 2 oder 3 fortfahre
 Jede Fehlermeldung, die PHP erzeugt, enthält eine kurze Beschreibung, eine Angabe zu Script und Zeilennumer, in dem der Fehler auftrat und u.U. ein sogenanntes Parser Token, das die Zeichenkette bezeichnet, die den Fehler ausgelöst hat. Alle Parser Token sind im [PHP Manual](http://php.net/manual/de/tokens.php) nachlesbar. Somit kann man ergründen, welches Element vom Parser zum Zeitpunkt des Fehlers verarbeitet wurde.
 
 
-#### Sonderfall Parser Fehler(#parserfehler)
+#### [Sonderfall Parser Fehler](#parserfehler)
 {: #parserfehler}
 
 Parser Fehler sind Fehler, die durch eine ungültige oder unvollständige Syntax ausgelöst werden. Das können bspw. fehlende Semikolons, Klammern, PHP Begrenzer (?>) oder Stringbegrenzer (Hochkommata) sein. Oftmals bemerkt der Parser diese Probleme erst Zeilen später (siehe Beispiel) und gibt dann diese Zeilennummer in der Fehlermeldung an – das kann soweit gehen, dass eine fehlende geschweifte Klammer bis zum Ende des Scripts gesucht wird.
@@ -156,7 +156,7 @@ Erfolgt nun eine Fehlerausgabe vor einem solchen Funktionsaufruf (und bricht die
 Damit ist es sinnvoll, bei der Fehleranalyse immer linear vorzugehen.
 
 
-### Ausgangssituation 3(#situation-3)
+### [Ausgangssituation 3](#situation-3)
 {: #situation-3}
 
 - Auf dem Bildschirm werden keine Fehlermeldungen ausgegeben.

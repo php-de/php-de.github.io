@@ -16,25 +16,22 @@ author:
         profile: 21246
 
 inhalt:
-    -   name: "Wächter vs. Schachtel-If"
-        anchor: wchter-vs-schachtel-if
-        simple: >
-                  Grundlagen<br>
-                  Beispiel 1<br>
-                  Beispiel 2
+    -   name:   "Wächter vs. Schachtel-If"
+        anchor: waechter-vs-schachtel-if
+        simple: Grundlagen <br>
+                Beispiel 1 <br>
+                Beispiel 2
 
-    -   name: "Möglichkeiten"
-        anchor: mglichkeiten
-        simple: >
-                  Schleifenabbrüche mit break<br>
-                  Schleifenabbrüche mit continue<br>
-                  Funktionsabbrüche mit return
+    -   name:   "Möglichkeiten"
+        anchor: moeglichkeiten
+        simple: Schleifenabbrüche mit break <br>
+                Schleifenabbrüche mit continue <br>
+                Funktionsabbrüche mit return
 
     -   name:  "Spezialfälle"
-        anchor: spezialflle
-        simple: >
-                  Verlassen tieferer Strukturen<br>
-                  Bedingter Abbruch mit künstlichem Blockelement
+        anchor: spezialfaelle
+        simple: Verlassen tieferer Strukturen <br>
+                Bedingter Abbruch mit künstlichem Blockelement
 
     -   name: "Siehe auch"
         anchor: siehe-auch
@@ -42,7 +39,8 @@ inhalt:
 
 ---
 
-### Wächter vs. Schachtel-If
+### [Wächter vs. Schachtel-If](#waechter-vs-schachtel-if)
+{: #waechter-vs-schachtel-if}
 
 In komplexem Code kommt es oft zu einer mehrfachen Verschachtelung von Kontrollstrukturen. Infolge dessen werden relevante Codeteile oft erst in Blöcken 2. oder 3. Ordnung aufgerufen. Nicht immer ist diese Problematik mit AND/OR Operatoren im Bedingungsausdruck zu lösen, ohne gleichzeitig das DRY-Prinzip (don't repeat yourself - Maxime, die besagt, keinen redundanten Code zu schreiben) zu verletzen.
 
@@ -50,7 +48,10 @@ Eine Lösung können hier sogenannte **Wächter** bilden, die auf der Grundlage 
 
 <div class="alert alert-info"><strong>Information:</strong> Vorzeitige Abbrüche sind unter Anhängern reiner Lehren wie der strukturierten Programmierung verpönt. Die Gratwanderung zwischem elegantem und verständlichem Code muß jeder selbst vollbringen. </div>
 
-#### Grundlagen
+
+#### [Grundlagen](#grundlagen)
+{: #grundlagen}
+
 Code funktioniert linear, wird also von oben nach unten, in einer Schleife auch mehrfach abgearbeitet. Jeder Code, der bedingt verarbeitet wird, wird in einem Block geklammert, der je nach Eintreffen der Bedingung durchlaufen wird oder nicht. In einer Schleife ist dies der gesamte zu wiederholende Block, der je nach Schleifenbedingung (Zählervergleich, Durchlaufen einer Menge oder dergl.) geloopt wird. Auch eine Funktion oder Methode ist ein solcher Anweisungsblock, der normalerweise als letztes ein Ergebnis oder einen boolschen Wert als Statusinformation zurückgibt.
 
 Bedingungen haben im Bereich der Datenverarbeitung zwei Zustände. Sie werden deshalb so ausgeführt:
@@ -71,7 +72,9 @@ Wenn Bedingung 1:
 Führe Block 2 aus
 ~~~
 
-#### Beispiel 1
+
+#### [Beispiel 1](#beispiel-1)
+{: #beispiel-1}
 
 Im Vergleich: Ein Wertebereich soll durchlaufen werden und für alle enthaltenen Datensätze angeben, on sie 1 sind oder nicht.
 
@@ -128,7 +131,9 @@ foreach ($array as $key => $value) {
 }
 ~~~
 
-#### Beispiel 2
+
+#### [Beispiel 2](#beispiel-2)
+{: #beispiel-2}
 
 Besonders in Funktionen ist das Prinzip des vorzeitigen Abbruchs sehr verständlich und am weitesten verbreitet. Im Beispiel soll eine Query an eine Datenbank abgesetzt werden. Die Funktion erzeugt dabei eine Datenbankverbindung, wählt die Datenbank aus und führt die Query aus. Alle drei Operationen können zu Fehlern führen, die die Funktion berücksichtigen soll.
 Wieder klassische Lösung und alternative im Vergleich:
@@ -262,29 +267,41 @@ $link = mysqli_connect('db_host', 'db_username', 'db_password', 'db_name');
 // ...
 ~~~
 
-### Möglichkeiten
 
-#### Schleifenabbrüche mit break;
+### [Möglichkeiten](#moeglichkeiten)
+{: #moeglichkeiten}
+
+
+#### [Schleifenabbrüche mit break;](#break)
+{: #break}
 
 Prüfung einer Bedingung und Abarbeitung zugehöriger Operationen. Vorzeitiger Abbruch der Schleife, Unterbinden der Abarbeitung weiterer Schleifenelemente.
 
 * Fehlerkontrolle und -abbruch
 * Spezialisierter Suchalgorithmus mit Abbruch beim ersten Fund
 
-#### Schleifenabbrüche mit continue;
+
+#### [Schleifenabbrüche mit continue;](#continue)
+{: #continue}
 
 Prüfung einer Bedingung und Abarbeitung zugehöriger Operationen. Unterbinden weiterer Prüfungen und Operationen auf das laufende Schleifenelement.
 
 * Komplexe Verarbeitung von Elementen einer Menge.
 * Vereinfachung der Codestruktur.
 
-#### Funktionsabbrüche mit return;
+
+#### [Funktionsabbrüche mit return;](#return)
+{: #return}
 
 Synonym für Schleifenabbrüche mit break; im Bereich von Funktions und -methodenblöcken. Zusätzlich Rückgabe eines Wertes an den aufrufenden Kontext.
 
-### Spezialfälle
 
-#### Verlassen tieferer Strukturen
+### [Spezialfälle](#spezialfaelle)
+{: #spezialfaelle}
+
+
+#### [Verlassen tieferer Strukturen](#verlassen-tieferer-strukturen)
+{: #verlassen-tieferer-strukturen}
 
 Sowohl continue als auch break (nicht aber return) bieten die Möglichkeit, auch mehrfach verschachtelte Strukturen (Schleifen) vorzeitig zu beenden bzw. das nächste Element der äußeren Schleife auszuführen. Als Beispiel soll hier eine bewußt dumme Suchfunktion dienen:
 Eine Funktion durchläuft eine Menge von Wörtern und untersucht diese, ob sie vollständig aus Buchstaben einer Codemenge bestehen. Der bedingte Abbruch prüft hier, ob ein Buchstabe existiert, der nicht dieser Menge entspricht und bricht dann mit diesem hinreichenden Kriterium die Prüfung für das aktuelle Wort-Element ab. Die verbleibenden Buchstaben werden also übersprungen.
@@ -292,8 +309,8 @@ Eine Funktion durchläuft eine Menge von Wörtern und untersucht diese, ob sie v
 Bsp. 3, alternativer Ansatz, PHP Umsetzung:
 
 ~~~ php
-$buchstaben = array ('a' , 'b' , 'c');
-$worte = array ('abbabab' , 'babajaga' , 'acab');
+$buchstaben = array('a' , 'b' , 'c');
+$worte = array('abbabab' , 'babajaga' , 'acab');
 
 foreach ($worte as $wort) {
     echo '<br>Prüfe ' . $wort . ': ';
@@ -314,7 +331,9 @@ foreach ($worte as $wort) {
 
 Anmerkung: Verwendete man statt des continue 2; hier ein break 2; Statement, ergäbe sich eine andere Funktionalität: Statt jedes einzelne Wort hinsichtlich der gültigen Buchstabenmenge zu validieren, würde dann die Wortmenge geprüft, ob sie ausschließlich aus gültigen Buchstaben besteht.
 
-#### Bedingter Abbruch mit künstlichem Blockelement
+
+#### [Bedingter Abbruch mit künstlichem Blockelement](#bedingter-abbruch)
+{: #bedingter-abbruch}
 
 Es kann Codebeispiele geben, in denen kein Blockelement existiert, eine Wächterlösung aber trotzdem sinnvoll ist. Hier kann sich mit einem künstlichen Blockelement beholfen werden.
 Für Anwendungen wie dem Datenbankbeispiel kann eine mit FALSE initialisierte do-while Schleife benutzt werden. Das Besondere an diesem Schleifentyp ist, dass sie unabhängig von ihren Bedingungen mindestens einmal durchlaufen wird. Das FALSE als Bedingung garantiert die Beschränkung auf einen Durchlauf.
@@ -347,7 +366,9 @@ do {
 while (false);
 ~~~
 
-### Siehe auch
+
+### [Siehe auch](#siehe-auch)
+{: #siehe-auch}
 
 [http://c2.com/cgi/wiki?GuardClause](http://c2.com/cgi/wiki?GuardClause)
 [http://programming-php.net/de/clean-code/guard-clauses](http://programming-php.net/de/clean-code/guard-clauses)

@@ -272,7 +272,7 @@ $link = mysqli_connect('db_host', 'db_username', 'db_password', 'db_name');
 {: #moeglichkeiten}
 
 
-#### [Schleifenabbrüche mit break;](#break)
+#### [Schleifenabbrüche mit break](#break)
 {: #break}
 
 Prüfung einer Bedingung und Abarbeitung zugehöriger Operationen. Vorzeitiger Abbruch der Schleife, Unterbinden der Abarbeitung weiterer Schleifenelemente.
@@ -281,7 +281,7 @@ Prüfung einer Bedingung und Abarbeitung zugehöriger Operationen. Vorzeitiger A
 * Spezialisierter Suchalgorithmus mit Abbruch beim ersten Fund
 
 
-#### [Schleifenabbrüche mit continue;](#continue)
+#### [Schleifenabbrüche mit continue](#continue)
 {: #continue}
 
 Prüfung einer Bedingung und Abarbeitung zugehöriger Operationen. Unterbinden weiterer Prüfungen und Operationen auf das laufende Schleifenelement.
@@ -290,7 +290,7 @@ Prüfung einer Bedingung und Abarbeitung zugehöriger Operationen. Unterbinden w
 * Vereinfachung der Codestruktur.
 
 
-#### [Funktionsabbrüche mit return;](#return)
+#### [Funktionsabbrüche mit return](#return)
 {: #return}
 
 Synonym für Schleifenabbrüche mit break; im Bereich von Funktions und -methodenblöcken. Zusätzlich Rückgabe eines Wertes an den aufrufenden Kontext.
@@ -370,5 +370,5 @@ while (false);
 ### [Siehe auch](#siehe-auch)
 {: #siehe-auch}
 
-[http://c2.com/cgi/wiki?GuardClause](http://c2.com/cgi/wiki?GuardClause)
-[http://programming-php.net/de/clean-code/guard-clauses](http://programming-php.net/de/clean-code/guard-clauses)
+* [http://c2.com/cgi/wiki?GuardClause](http://c2.com/cgi/wiki?GuardClause)
+* [http://programming-php.net/de/clean-code/guard-clauses](http://programming-php.net/de/clean-code/guard-clauses)

@@ -26,11 +26,11 @@ author:
 
 inhalt:
     -   name: "Festlegung der Parameter"
-        anchor: festlegung-der-parameter
+        anchor: festlegung-parameter
         simple: ""
 
     -   name: "Art der Übergabe"
-        anchor: art-der-bergabe
+        anchor: uebergabe-art
         simple: ""
 ---
 
@@ -41,13 +41,13 @@ Dieser Artikel behandelt nicht die Parameterübergabe an ein PHP-Script. Diese I
 Die **Parameterübergabe** bezeichnet die Übergabe von Werten an eine Funktion oder Methode, welche die weitere Verarbeitung dieser Daten übernimmt. In aller Regel wird eine feste Anzahl von Parametern übergeben, die bei der Funktionsdeklaration bestimmt wird. Diese festgelegte Parameteranzahl nennt man *Funktions-* bzw. *Methodensignatur*. In vielen Hochsprachen stellen die Datentypen der einzelnen Parameter einen Teil der Signatur dar. Weil jedoch PHP eine schwach getypte Sprache ist, ist die Festlegung der Datentypen nur beschränkt möglich.
 
 
-### Festlegung der Parameter
+### [Festlegung der Parameter](#festlegung-parameter)
+{: #festlegung-parameter}
 
 Die Signatur wird bei der Funktionsdeklaration innerhalb der Klammern angegeben. Die verwendeten Variablennamen sind irrelevant, sollten allerdings die Art des zu übergebenden Wertes erklären.
 
 ~~~ php
-function func($param1, $param2)
-{
+function func($param1, $param2) {
 }
 ~~~
 
@@ -58,13 +58,13 @@ Dies deklariert eine Funktion, die zwei Parameter fordert. Übergeben werden die
 func('Wert1', 'Wert2');
 ~~~
 
-#### Optionale Parameter
+#### [Optionale Parameter](#optionale-parameter)
+{: #optionale-parameter}
 
 Es ist auch möglich, optionale Parameter festzulegen, indem in der Signatur gleich ein Wert zugewiesen wird. Dieser Standardwert wird benutzt, wenn der entsprechende Parameter beim Funktionsaufruf nicht definiert wird.
 
 ~~~ php
-function func($param1, $param2 = 'Standardwert2')
-{
+function func($param1, $param2 = 'Standardwert2') {
     echo $param1 . ' - ' . $param2;
 }
 
@@ -86,8 +86,7 @@ Beim zweiten Funktionsaufruf wird der zweite Parameter nicht übergeben, stattde
 Nach einem optionalen Parameter sollten nur noch weitere optionale Parameter folgen. Denn PHP bietet keine Möglichkeit, optionale Parameter zu überspringen.</div>
 
 ~~~ php
-function func($param1, $param2 = 'xyz', $param3)
-{
+function func($param1, $param2 = 'xyz', $param3) {
     echo $param1 . ' - ' . $param2 . ' - ' . $param3;
 }
 
@@ -103,7 +102,8 @@ Wert1 - Wert2 - Wert3
 ~~~
 
 
-#### Variable Parameter
+#### [Variable Parameter](#variable-parameter)
+{: #variable-parameter}
 
 Es ist in PHP auch möglich, auf die explizite Festlegung der Signatur zu verzichten und die Parameterübergabe dynamisch zu gestalten. Dies kann in manchen Fällen ganz praktisch sein (vgl. `array()`), sollte aber aus Gründen der Übersichtlichkeit eher sparsam eingesetzt werden.
 
@@ -111,33 +111,33 @@ Um dennoch auf die Parameter zugreifen zu können, bietet PHP die Funktion `func
 
 ~~~ php
 // Keine explizit angegebenen Parameter
-function func()
-{
+function func() {
     // Ggf. übergebene Parameter ausgeben
     echo '<pre>' . print_r(func_get_args(), true) . '</pre>';
 }
 ~~~
 
-#### Type Hinting
+
+#### [Type Hinting](#type-hinting)
+{: #type-hinting}
 
 Type Hinting bezeichnet die Festlegung des Datentyps in der Signatur, indem der Datentyp vor dem Parameternamen notiert wird. Übergebene Parameter müssen diesem Datentyp entsprechen, ansonsten wird eine Fehlermeldung von Typ *Catchable fatal error* geworfen. Type Hinting ist **nicht** mit skalaren (primitiven) Datentypen möglich!
 
 ~~~ php
 // Der Parameter muss ein Array sein
-func1(array $array)
-{
+func1(array $array) {
 }
 
 // Der Parameter muss vom Typ MyInterface sein
-func2(MyInterface)
-{
+func2(MyInterface) {
 }
 ~~~
 
 Wird ein Klassenname angegeben, so muss der Parameter eine Instanz dieser Klasse oder einer ihrer Kindklassen sein. Handelt es sich um eine Schnittstelle, muss der übergebene Parameter diese implementieren.
 
 
-### Art der Übergabe
+### [Art der Übergabe](#uebergabe-art)
+{: # uebergabe-art}
 
 Die Parameter lassen sich auf zwei Arten übergeben. Zum einen durch *Call by Value*, welches einer normalen Übergabe entspricht und zum anderen durch *Call by Reference*.
 
@@ -146,8 +146,7 @@ Bei der *Call by Value*-Übergabe wird eine Kopie des Wertes im lokalen [Namensr
 *Call by Reference*-Übergaben liefern keine Kopie des Wertes, sondern eine [Referenz]({{ page.root }}/jumpto/referenz/) auf die übergebene Variable. Änderungen am Parameter wirken sich also direkt auf die übergebene Variable des aufrufenden Namensraumes aus. Um einen Parameter als Referenz zu deklarieren, wird der Referenz-Operator `&` benutzt.
 
 ~~~ php
-function func(&$param)
-{
+function func(&$param) {
     $param = 6;
 }
 
@@ -167,8 +166,7 @@ Die Ausgabe:
 Aus diesem Verhalten ergibt sich auch, dass weder Funktionsrückgabewerte noch Literalwerte übergeben werden können:
 
 ~~~ php
-function func(&$param)
-{
+function func(&$param) {
     $param = 6;
 }
 
@@ -179,25 +177,25 @@ func(foobar());
 ~~~
 
 
-#### Copy on write
+#### [Copy on write](#copy-on-write)
+{: #copy-on-write}
 
 Ein beliebtes Missverständnis besteht darin, Funktionsparameter auch dann als Referenz zu übergeben, wenn die Werte während des Durchlaufs der Funktion nicht verändert werden. Der Gedanke dahinter ist, PHP auf diese Weise besonders bei umfangreichem Variableninhalt den vermeintlich aufwendigen Kopiervorgang des Inhalts in den Geltungsbereich der Funktion zu ersparen. Tatsächlich nimmt PHP diese Optimierung jedoch selbstständig vor und erstellt nach dem *Copy on write*-Prinzip nur dann eine Kopie des Variableninhalts, wenn dieser innerhalb des Funktionscodes verändert wird.
 
 
-#### Übergabe von Objekten
+#### [Übergabe von Objekten](#objekte)
+{: #objekte}
 
 Die Übergabe von Objekten an Funktionen folgt ebenfalls den Prinzipien *Call by Value* und *Call by Reference*. Dies lässt sich an einem Beispiel verdeutlichen:
 
 ~~~ php
 // Call by Value
-function a($obj)
-{
+function a($obj) {
     $obj = null;
 }
 
 // Call by Reference
-function b(&$obj)
-{
+function b(&$obj) {
     $obj = null;
 }
 

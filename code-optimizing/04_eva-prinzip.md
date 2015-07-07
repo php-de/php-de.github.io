@@ -1,11 +1,11 @@
 ---
-layout: guide
+layout:    guide
 
 permalink: /jumpto/eva-prinzip/
-root: ../..
-title: "EVA-Prinzip (Standardverfahren)"
-orderId: 4
-group: "Code-Optimierung"
+root:      ../..
+title:     "EVA-Prinzip (Standardverfahren)"
+orderId:   4
+group:     "Code-Optimierung"
 
 creator: nikosch
 
@@ -335,7 +335,7 @@ Die Antwort auf alle drei Fragen lautet: Geht nicht, das Funktionsprinzip ist fe
 ...
 
 
-#### [Templating](#tamplating)
+#### [Templating](#templating)
 {: #templating}
 
 ...

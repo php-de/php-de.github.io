@@ -28,7 +28,7 @@ inhalt:
         simple: ""
 
     -   name: "Exceptions fangen, wann/wo?"
-        anchor: wann-bzw-wo-fngt-man-exceptions
+        anchor: wann-bzw-wo-faengt-man-exceptions
         simple: ""
 
     -   name: "Exceptions unterscheiden"
@@ -36,7 +36,7 @@ inhalt:
         simple: ""
 
     -   name: "Mehrere Exceptions fangen"
-        anchor: wie-fngt-man-mehrere-exceptions
+        anchor: wie-faengt-man-mehrere-exceptions
         simple: ""
 
     -   name: "Exception weiter werfen"

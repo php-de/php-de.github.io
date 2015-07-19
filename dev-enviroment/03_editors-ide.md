@@ -5,7 +5,7 @@ root:      ../..
 title:     "Editoren und IDEs"
 creator:   tr0y
 group:     "Entwicklungsumgebung"
-orderId:   2
+orderId:   3
 
 author:
     -   name: tr0y

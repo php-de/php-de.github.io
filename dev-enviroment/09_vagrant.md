@@ -3,8 +3,15 @@ layout: guide
 permalink: /jumpto/vagrant/
 root: ../..
 title: "Entwicklungsumgebung mit Vagrant"
+
+{::comment}
+group: "Entwicklungsumgebung"
+{:/comment}
+
+orderId: 9
+
 creator: BlackScorp
-##group: "Entwicklungsumgebung"
+
 author:
     -   name: BlackScorp
         profile: 16579

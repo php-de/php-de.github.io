@@ -52,9 +52,10 @@ inhalt:
 {: #dokus}
 
 
-##### HTML
+##### [HTML](#html)
+{: #html}
 
-  * [SELFHTML: HTML/XHTML](http://de.selfhtml.org/html/index.htm) <br>
+* [SELFHTML: HTML/XHTML](http://de.selfhtml.org/html/index.htm) <br>
     Sehr gutes Nachschlagewerk zu allen HTML Tags. Viele Beispiele und
     Erklärungen zu HTML. Ein Muss für jeden der HTML verwendet.
      Die Referenz enthält auch einige Grundlagen zu
@@ -64,9 +65,10 @@ inhalt:
     und Varianten
 
 
-##### CSS
+##### [CSS](#css)
+{: #css}
 
-  * [CSS 4 You - The Finest in Stylesheets](http://www.css4you.de/) <br>
+* [CSS 4 You - The Finest in Stylesheets](http://www.css4you.de/) <br>
     Sehr gutes Nachschlagewerk zu CSS. Viele Beispiele und Erklärungen
     zu CSS Eigenschaften. Enthält Workshops zur Nutzung von Selektoren.
     Zwar nicht ganz aktuell, bietet aber eine Übersicht welche
@@ -103,9 +105,10 @@ inhalt:
         960 Grid System ist ein weiteres beliebtes CSS Framework.
 
 
-##### javascript
+##### [javascript](#javascript)
+{: #javascript}
 
-  * [SELFHTML: JavaScript/DOM](http://de.selfhtml.org/javascript/index.htm) <br>
+* [SELFHTML: JavaScript/DOM](http://de.selfhtml.org/javascript/index.htm) <br>
     Sehr gutes Nachschlagewerk zu JavaScript. Viele Beispiele und
     Erklärungen zu JavaScript Befehlen.
     <br>**Vorteile:** Erklärung zu vielen JavaScript-Sprachelementen,
@@ -132,9 +135,10 @@ inhalt:
         allen jQuery Funktionen.
 
 
-##### PHP
+##### [PHP](#php)
+{: #php}
 
-  * [PHP: PHP-Handbuch - Manual](http://php.net/manual/de/) <br>
+* [PHP: PHP-Handbuch - Manual](http://php.net/manual/de/) <br>
     Offizielle PHP Dokumentation. Als Funktionsreferenz zum
     Nachschlagen oder suchen von Funktionen zu empfehlen, auch für das
     Nachlesen von Themen, aber eher nicht als Tutorial für Anfänger zu
@@ -198,23 +202,26 @@ inhalt:
         zur Verfügung.
 
 
-##### MySQL
+##### [MySQL](#mysql)
+{: #mysql}
 
-  * [MySQL Referenzhandbuch](http://dev.mysql.com/doc/) <br>
+* [MySQL Referenzhandbuch](http://dev.mysql.com/doc/) <br>
     Handbücher zu MySQL. Sollte bei Problemen mit MySQL Funktionen weiter helfen.
     Enthält viele Tipps zum Arbeiten mit MySQL. <br>
     **Vorteile:** beschreibt alle Features aus MySQL, sehr detailiert <br>
     **Nachteile:** teilweise etwas unübersichtlich
 
 
-##### Webentwicklung, divers
+##### [Webentwicklung, divers](#webentwicklung-divers)
+{: #webentwicklung-divers}
 
-  * [http://dochub.io/ Referenz](http://dochub.io/) <br>
+* [http://dochub.io/ Referenz](http://dochub.io/) <br>
 
 
-##### Unzulänglichkeiten
+##### [Unzulänglichkeiten](#unzulaenglichkeiten)
+{: #unzulaenglichkeiten}
 
-  * [PHP: a fractal of bad design](http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/) <br>
+* [PHP: a fractal of bad design](http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/) <br>
     Auch sowas ist mal lesenswert.
 
 
@@ -222,18 +229,20 @@ inhalt:
 {: #tutorials}
 
 
-##### HTML
+##### [HTML](#html-2)
+{: #html-2}
 
-  * [Peter Kropff - HTML - Überblick](http://www.peterkropff.de/site/html/html.htm) <br>
+* [Peter Kropff - HTML - Überblick](http://www.peterkropff.de/site/html/html.htm) <br>
     Umfangreiches Tutorial zu HTML, CSS, JavaScript, PHP und MySQL.
     Deckt somit alle wichtigen Bereiche ab. Für Anfänger sehr zu
     empfehlen!
     <br>**Vorteile:** Grundlagen vom absoluten Anfang, kein Fachchinesisch,
     Umfang
 
-##### CSS
+##### [CSS](#css-2)
+{: #css-2}
 
-  * [Peter Kropff - CSS - Überblick](http://www.peterkropff.de/site/css/css.htm) <br>
+* [Peter Kropff - CSS - Überblick](http://www.peterkropff.de/site/css/css.htm) <br>
     Umfangreiches Tutorial zu HTML, CSS, JavaScript, PHP und MySQL.
     Deckt somit alle wichtigen Bereiche ab. Für Anfänger sehr zu
     empfehlen!
@@ -241,9 +250,10 @@ inhalt:
     Umfang
 
 
-##### javascript
+##### [javascript](#javascript-2)
+{: #javascript-2}
 
-  * [Peter Kropff - JavaScript - Einleitung](http://www.peterkropff.de/site/javascript/javascript.htm) <br>
+* [Peter Kropff - JavaScript - Einleitung](http://www.peterkropff.de/site/javascript/javascript.htm) <br>
     Umfangreiches Tutorial zu HTML, CSS, JavaScript, PHP und MySQL.
     Deckt somit alle wichtigen Bereiche ab. Für Anfänger sehr zu
     empfehlen!
@@ -277,9 +287,10 @@ inhalt:
       <br>**Vorteile:** große Auswahl an Plugins, viele Live Demos
 
 
-##### PHP Anfänger
+##### [PHP Anfänger](#php-anfaenger)
+{: #php-anfaenger}
 
-  * [Peter Kropff - PHP - Einleitung](http://www.peterkropff.de/site/php/php.htm) <br>
+* [Peter Kropff - PHP - Einleitung](http://www.peterkropff.de/site/php/php.htm) <br>
     Umfangreiches Tutorial zu HTML, CSS, JavaScript, PHP und MySQL.
     Deckt somit alle wichtigen Bereiche ab. Für Anfänger sehr zu
     empfehlen!
@@ -367,9 +378,10 @@ inhalt:
       Anregungen zur Abwehr von Spam ohne grafische Captchas.
 
 
-##### PHP Fortgeschrittene
+##### [PHP Fortgeschrittene](#php-fortgeschrittene)
+{: #php-fortgeschrittene}
 
-  * [Professionelle Softwareentwicklung mit PHP 5](http://professionelle-softwareentwicklung-mit-php5.de/) <br>
+* [Professionelle Softwareentwicklung mit PHP 5](http://professionelle-softwareentwicklung-mit-php5.de/) <br>
     Dieses Tutorial stellt neben der objektorientierten Programmierung
     auch Entwurfsmuster (Design Patterns) und Entwicklungswerkzeuge vor.
     Außerdem umfasst es Themen zur Verarbeitung von XML-Dokumenten, der
@@ -380,17 +392,19 @@ inhalt:
     <br>**Nachteile:** hoher Anspruch, nur für Fortgeschrittene
 
 
-##### MySQL
+##### [MySQL](#mysql-2)
+{: #mysql-2}
 
-  * [Peter Kropff - MySQL - Einleitung](http://www.peterkropff.de/site/mysql/mysql.htm) <br>
+* [Peter Kropff - MySQL - Einleitung](http://www.peterkropff.de/site/mysql/mysql.htm) <br>
     Umfangreiches Tutorial zu HTML, CSS, JavaScript, PHP und MySQL.
     Deckt somit alle wichtigen Bereiche ab. Für Anfänger sehr zu empfehlen!
     <br>**Vorteile:** Grundlagen vom absoluten Anfang, kein Fachchinesisch, Umfang
 
 
-##### Sicherheit
+##### [Sicherheit](#sicherheit)
+{: #sicherheit}
 
-  * [http://www.cms-sicherheit.de/](http://www.cms-sicherheit.de/) <br>
+* [http://www.cms-sicherheit.de/](http://www.cms-sicherheit.de/) <br>
     Eine sehr gute Tutorial-Seite zum Thema Sicherheit. Dort werden
     die häufigsten Fallen und Sicherheitslücken erklärt und Lösungen
     vorgeschlagen. Ein absolutes Muss, bevor man seine erste Anwendung

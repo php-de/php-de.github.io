@@ -29,7 +29,8 @@ inhalt:
 entry-type: in-discussion
 ---
 
-### Grundlegende Angriffsszenarien
+### [Grundlegende Angriffsszenarien](#grundlegende-angriffsszenarien)
+{: #grundlegende-angriffsszenarien}
 
 *„Never trust user input“* ist ein wichtiger Grundsatz der Softwaresicherheit,
 der insbesondere für die Webentwicklung gilt. Die Aussicht auf das Stehlen
@@ -42,7 +43,8 @@ Sendeprozess zumeist beliebig wiederholbar. Oftmals reicht ein Klick auf den
 „Zurück“-Button des Browsers aus, um ein Formular erneut aufrufen und
 abschicken zu können und somit einen weiteren potentiellen Angriff auszulösen.
 
-#### Manipulation durch Nachbau von Formularen
+#### [Manipulation durch Nachbau von Formularen](#manipulation-durch-nachbau-von-formularen)
+{: #manipulation-durch-nachbau-von-formularen}
 
 Kommunikation im Web erfolgt zwischen Client und Server nach dem
 Frage-Antwort-Muster. Prinzipbedingt hat der antwortende Server dabei keine
@@ -66,7 +68,8 @@ Passwortfeld eine Klartexteingabe. Daraus ergeben sich bereits diverse
 Sicherheitsaspekte, die bei der serverseitigen Auswertung zu bedenken sind
 (siehe unten).
 
-#### Manipulation durch Umschreiben von URL-Parametern
+#### [Manipulation durch Umschreiben von URL-Parametern](#manipulation-durch-umschreiben-von-url-parametern)
+{: #manipulation-durch-umschreiben-von-url-parametern}
 
 Noch offensichtlicher und einfacher zu manipulieren sind URL-Parametern. Die
 Möglichkeit dazu besteht immer dann, wenn Formulare mit der Methode GET
@@ -83,7 +86,8 @@ strukturell nicht von komplizierteren Vorgehensweisen. Durch die Veränderung
 der URL vor dem Aufruf wird die Client-Anwendung dazu veranlasst, eine
 modifizierte HTTP-Anfrage abzusenden.
 
-#### Manipulation durch direktes Verändern von HTTP-Anfragen
+#### [Manipulation durch direktes Verändern von HTTP-Anfragen](#manipulation-durch-direktes-veraendern-von-http-anfragen)
+{: #manipulation-durch-direktes-veraendern-von-http-anfragen}
 
 Sogar die direkte Manipulation der HTTP-Anfrage wird für potentielle Angreifer
 zunehmend einfacher, da immer mehr entsprechende, leicht zu bedienende Tools
@@ -102,9 +106,11 @@ Angriff.
 
 
 
-### Sicherheitsaspekte
+### [Sicherheitsaspekte](#sicherheitsaspekte)
+{: #sicherheitsaspekte}
 
-#### Typsicherheit
+#### [Typsicherheit](#typsicherheit)
+{: #typsicherheit}
 
 HTTP-Parameter werden immer als Strings übergeben. Im PHP-Bereich werden jedoch
 mehrere gleichartige Parameter unter bestimmten Voraussetzungen der
@@ -115,7 +121,8 @@ Parameterangaben übermittelt werden. Damit kann serverseitig nicht davon
 ausgegangen werden, dass ein namentlich bekannter Parameter im erwarteten
 Datentyp auftaucht.
 
-#### Wertmanipulation
+#### [Wertmanipulation](#wertmanipulation)
+{: #wertmanipulation}
 
 Gerade bei Auswahlelementen (Select, Checkbox …) wird oft übersehen, dass nicht
 garantiert ist, dass diese Werte nicht zwingend im Aktionsscript auftauchen
@@ -148,7 +155,8 @@ kann. Wichtig ist also, bei jedem Schritt die richtige Maßnahmen zu treffen.
 Vor der Ausgabe eine
 [Zeichenmaskierung]({{ page.root }}/jumpto/kontextwechsel/) bspw.
 
-#### Fehlende Elemente
+#### [Fehlende Elemente](#fehlende-elemente)
+{: #fehlende-elemente}
 
 Es gibt keine Garantie, dass eine Anfrage alle Parameter aufweist, die als
 Element im Formular gegeben waren. Teilweise ist dies sogar Normalverhalten. So
@@ -159,7 +167,8 @@ Das Fehlern von Parametern kann durch `empty` oder `isset` geprüft und
 entsprechend behandelt werden. Näheres beschreibt der Einzelartikel
 Formularverarbeitung, Auswahlfelder.
 
-##### Submit-Buttons
+##### [Submit-Buttons](#submit-buttons)
+{: #submit-buttons}
 
 Auch Submit-Buttons sind Formularelemente und können so geprüft werden. Hier
 gibt es eine Besonderheit. Einige Browser schicken Formulare auch ab, wenn in
@@ -169,14 +178,16 @@ Verhalten nicht unbedingt einen Angriff auf die Anwendung dar. Wie mit diesem
 Umstand umgegangen werden kann, [ist hier
 beschrieben]({{ page.root }}/jumpto/affenformular/).
 
-#### Unbekannte Elemente
+#### [Unbekannte Elemente](#unbekannte-elemente)
+{: #unbekannte-elemente}
 
 Es gibt keine Garantie, dass eine Anfrage nur Parameter eines bestimmten Forms
 enthält. GET-Anfragen enthalten oft weitere Parameter (wie solche zur
 Seitenkontrolle), POST-Anfragen können durch gefälschte Formulare o.ä.
 entstehen. Wichtig ist, dass unerwartete Eingaben ignoriert werden.
 
-##### Register Globals
+##### [Register Globals](#register-globals)
+{: #register-globals}
 
 [Hauptartikel Register
 Globals]({{ page.root }}/jumpto/php-ini/#registerglobals)
@@ -189,7 +200,8 @@ Ausschalten der PHP-Direktive `register_globals_gpc`, das konsequente
 Vorbelegen aller Variablen mit Initialwerten und das ausführen kritischer
 Anwendungsteile in geschlossenen Scopes (Funktionen, Objekte oder dergleichen).
 
-##### Image-Buttons
+##### [Image-Buttons](#image-buttons)
+{: #image-buttons}
 
 Auch das Verhalten von Image-Buttons ist browserübergreifend verschieden.
 Einige Browser erzeugen bei einem Submit zwei zusätzliche Parameter `<name>_x`
@@ -198,7 +210,8 @@ Parameter ergänzen die gegebenen Formularparameter um zusätzliche Eingaben.
 
 
 
-### Zusammenfassung
+### [Zusammenfassung](#zusammenfassung)
+{: #zusammenfassung}
 
 **Vertraue niemals Usereingaben!**
 

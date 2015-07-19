@@ -31,7 +31,7 @@ inhalt:
         simple: ""
 
     -   name: "Weitere Beiträge zum Thema"
-        anchor: weitere-beitrge-zum-thema
+        anchor: weitere-beitraege-zum-thema
         simple: ""
 
 entry-type: in-discussion

@@ -21,7 +21,7 @@ author:
 
 inhalt:
     -   name: "Headervorgänge und „Headers already sent"
-        anchor: headervorgnge-und-headers-already-sent
+        anchor: headervorgaenge-und-headers-already-sent
         simple: ""
 
     -   name: "Kontrollstrukturen: Zuweisung statt Vergleich"

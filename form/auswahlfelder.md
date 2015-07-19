@@ -83,8 +83,8 @@ Im Gegensatz zu Checkboxes sind alleinstehende Radiobox-Elemente fürgemein nich
 <div class="alert alert-warning"><strong>Achtung: </strong><br>
 Für alle Ausgaben von Formularwerten besteht die Gefahr von Code-injection und Cross Site Scripting. Die Lehrbeispiele werden zunächst ohne entsprechende Maßnahmen reduziert dargestellt. Weitere Hinweise dazu bietet das <a href="#sicherheit">Kapitel Sicherheit</a> weiter unten.</div>
 
-#### [Übertragung](#bertragung)
-{: #bertragung}
+#### [Übertragung](#uebertragung)
+{: #uebertragung}
 
 Ein wichtiger Punkt ist die fehlende Übertragung nicht ausgewählter Elemente. Gängige Browser erzeugen keinen Parameter zu einem Auswahlelement, das nicht im Browser selektiert wurde. Dies dürfte dem Umstand geschuldet sein, dass Auswahlfelder eine freie Angabe von value-Werten (prinzipiell also auch den leeren String) ermöglichen, was zu einer Verwechselungsmöglichkeit führen würde. Zudem würde ein Form-Submit eine große Anzahl von Parametern enthalten, die nicht ausgewählten Elementen entstammen.
 
@@ -96,8 +96,8 @@ Der Schlüssel für das Array richtet sich nach der Art des *name*-Attributs, da
 #### [Checkbox-Elemente](#checkbox-elemente-2)
 {: #checkbox-elemente-2}
 
-##### [Übergabe als Skalarwert](#bergabe-als-skalarwert)
-{: #bergabe-als-skalarwert}
+##### [Übergabe als Skalarwert](#uebergabe-als-skalarwert)
+{: #uebergabe-als-skalarwert}
 
 ~~~ php
 <input type="checkbox" name="AGB_Best" value="Ja"> AGB gelesen
@@ -144,8 +144,8 @@ echo $_POST['AGB_Best']; // Ja
 var_dump(isset($_POST['AGB_Best'])); // true
 ~~~
 
-##### [Übergabe als Wertgruppe](#bergabe-als-wertgruppe)
-{: #bergabe-als-wertgruppe}
+##### [Übergabe als Wertgruppe](#uebergabe-als-wertgruppe)
+{: #uebergabe-als-wertgruppe}
 
 Zusammengehörige Auswahlen können auch als Array übergeben werden. Im folgenden ergibt sich so
 bspw. eine n-aus-m-Auswahl für Farben:
@@ -198,8 +198,8 @@ Ausgabe Schleife: blau gelb
 Ausgabe Element: blau
 ~~~
 
-##### [Übergabe als assoziative Wertgruppe](#bergabe-als-assoziative-wertgruppe)
-{: #bergabe-als-assoziative-wertgruppe}
+##### [Übergabe als assoziative Wertgruppe](#uebergabe-als-assoziative-wertgruppe)
+{: #uebergabe-als-assoziative-wertgruppe}
 
 Dieser dritte Punkt kann verwendet werden, um eine dritte Übergabemethode zu schaffen, sozusagen die Kombination aus den beiden genannten Varianten. Hier wird der Schlüssel wieder Bedeutungsträger, durch eine gemeinsame Namensbasis werden die Elemente trotzdem als Array gruppiert:
 

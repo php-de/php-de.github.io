@@ -28,7 +28,7 @@ inhalt:
         simple: ""
 
     -   name: "Durchführung einer XSS-Attacke"
-        anchor: durchfhrung-einer-xss-attacke
+        anchor: durchfuehrung-einer-xss-attacke
         simple: ""
 
     -   name: "Konsequenzen einer XSS-Attacke"
@@ -57,7 +57,8 @@ Imageschaden für den Seitenbetreiber entstehen.
 
 
 
-### Voraussetzungen
+### [Voraussetzungen](#voraussetzungen)
+{: #voraussetzungen}
 
 Die Manipulation clientbasierter Sprachen funktioniert dann, wenn Teilinhalte
 dynamisch auf einem Server erzeugt und in die HTML Ausgabe (oder jede andere
@@ -74,7 +75,8 @@ nicht zu den Cross-Site-Scripting-Attacken gezählt werden.
 
 
 
-### Code Injection allgemein
+### [Code Injection allgemein](#code-injection-allgemein)
+{: #code-injection-allgemein}
 
 Dynamische Websiteprogrammierung fußt auf einer Kombination von statischen
 HTML-Codeelementen und darin eingefügten Inhaltsteilen. Das fertige Produkt
@@ -151,7 +153,8 @@ für andere Nutzer ausgegeben wird.
 
 
 
-### Durchführung einer XSS-Attacke
+### [Durchführung einer XSS-Attacke](#durchfuehrung-einer-xss-attacke)
+{: #durchfuehrung-einer-xss-attacke}
 
 Als Beispiel für einen erfolgreichen XSS-Angriff soll ein Gästebuch dienen.
 Werden die Daten unzureichend validiert, ist es dem Angreifer ein Leichtes,
@@ -166,7 +169,8 @@ behandelt), so ist er für jeden Besucher des Gästebuchs sichtbar und kommt
 demnach zur Ausführung. Dem Besucher wird eine `alert`-Box mit dem Inhalt
 „XSS!“ angezeigt.
 
-#### Problem magic_quotes_gpc
+#### [Problem magic_quotes_gpc](#problem-magic_quotes_gpc)
+{: #problem-magic_quotes_gpc}
 
 Ist die Direktive
 [magic_quotes_gpc]({{ page.root }}/jumpto/php-ini/#magicquotesgpc)
@@ -186,7 +190,8 @@ funktionstüchtig.
 
 
 
-### Konsequenzen einer XSS-Attacke
+### [Konsequenzen einer XSS-Attacke](#konsequenzen-einer-xss-attacke)
+{: #konsequenzen-einer-xss-attacke}
 
 Das obige Beispiel zum Einschleusen schädlichen Codes ist nur eine milde
 Variante dessen, was möglich ist. Möglich ist zum Beispiel Folgendes:
@@ -205,9 +210,11 @@ Zugangsdaten oder E-Mail-Adressen der Benutzer herauszufinden (Phishing).
 
 
 
-### Schutz vor Cross-Site-Scripting
+### [Schutz vor Cross-Site-Scripting](#schutz-vor-cross-site-scripting)
+{: #schutz-vor-cross-site-scripting}
 
-#### Als Webmaster
+#### [Als Webmaster](#als-webmaster)
+{: #als-webmaster}
 
 Der Webmaster beziehungsweise Programmierer besitzt hier besondere Verantwortung, da das Wohl der eigenen Besucher von den getroffenen Sicherheitsvorkehrungen abhängt.
 
@@ -225,11 +232,13 @@ Es ist unumgänglich, alle vom Benutzer eingegebenen Daten als potenziell gefäh
     Um den Benutzern trotz Bearbeitung des HTML-Codes Formatierungsmöglichkeiten für ihre Inhalte zu bieten, können BB-Codes oder ähnliche Textauszeichnungsformate eingeführt werden.
 </div>
 
-#### Maskieren des Markups
+#### [Maskieren des Markups](#maskieren-des-markups)
+{: #maskieren-des-markups}
 
 Die standardmäßige und oftmals beste Vorgehensweise zur Verhinderung von Cross-Site-Scripting ist das korrekte Behandeln des Kontextwechsels nach HTML. Dabei werden alle HTML-Steuerzeichen (wie `<`, `>`, `"` oder `&`) durch ihre Entitäten ersetzt (`&lt;`, `&gt;`, `&quot;`, `&amp;`). PHP bietet dazu die beiden Funktion `htmlspecialchars` (empfohlen) und `htmlentities` an. Während letztgenannte Funktion diverse „Sonderzeichen“ (so auch deutsche Umlaute) in HTML-Code umschreibt, beschränkt sich `htmlspecialchars` auf syntaxrelevante Sprachbestandteile, was für den Anwendungszweck der Funktion ausreichend ist.
 
-#### Entfernen des Markups
+#### [Entfernen des Markups](#entfernen-des-markups)
+{: #entfernen-des-markups}
 
 Bei dieser Option werden mit der Funktion `strip_tags` sämtliche HTML-Tags (sowie PHP-Tags und NUL-Bytes) aus einem String entfernt. Je nach konkreter Anwendung kann das eine unnötige Einschränkung für die Inhalte sein, da möglicherweise verhindert wird, einen Artikel wie diesen schreiben zu können, in dem HTML-Tags wie `<script>` im Fließtext vorkommen. Auch ersetzt `strip_tags` nicht die Notwendigkeit, den Kontextwechsel nach HTML durchzuführen, da Zeichen wie `<`, `>` und `&` auch außerhalb von HTML-Tags auftreten können (etwa als Kleiner-als-Zeichen).
 
@@ -239,11 +248,13 @@ Bei dieser Option werden mit der Funktion `strip_tags` sämtliche HTML-Tags (sow
     Das vollständige Entfernen des HTML-Markups ist nur sehr situativ sinnvoll anwendbar. Häufig ist es vorzuziehen, Daten, die keine HTML-Tags enthalten sollten (etwa Telefonnummern oder Adressen), bereits bei der Eingabevalidierung entsprechend zu prüfen und als Eingabefehler zurückzuweisen.
 </div>
 
-#### Softwaregestütztes Whitelisting
+#### [Softwaregestütztes Whitelisting](#softwaregestuetztes-whitelisting)
+{: #softwaregestuetztes-whitelisting}
 
 Abgesehen von den oben genannten Lösungen kann zudem der Einsatz von HTML-Validierungswerkzeugen wie [HTML Purifier](http://htmlpurifier.org/) in Betracht gezogen werden. Diese bieten eine extrem hohe Sicherheit gegen Cross-Site-Scripting. Ein kleines Restrisiko, das durch neu entdeckte Sicherheitslücken in Browsern entstehen kann, ist aber nie auszuräumen.
 
-#### Unvollständige Maßnahmen
+#### [Unvollständige Maßnahmen](#unvollstaendige-massnahmen)
+{: #unvollstaendige-massnahmen}
 
 Es ist an vielen Stellen im Web zu lesen, aber es reicht nicht aus, beispielsweise lediglich die `<script>`-Tags unschädlich zu machen, da JavaScript prinzipiell auch über Attribute anderer Elemente eingeschleust werden kann.
 
@@ -264,7 +275,8 @@ echo preg_replace($pattern, '', $input);
     // <script>alert("XSS");</script>
 ~~~
 
-#### Als Benutzer
+#### [Als Benutzer](#als-benutzer)
+{: #als-benutzer}
 
 Für Benutzer gibt es einige Tipps, mit denen ein besserer Schutz vor
 Cross-Site-Scripting möglich ist. Zunächst sollte die automatische

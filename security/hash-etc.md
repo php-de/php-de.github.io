@@ -22,7 +22,7 @@ inhalt:
         simple: "base64_encode(), base64_decode()"
 
     -   name: "Verschlüsselung"
-        anchor: verschlsselung
+        anchor: verschluesselung
         simple: "Mcrypt-Erweiterung"
 
 entry-type: in-discussion
@@ -32,28 +32,32 @@ entry-type: in-discussion
 Diese Übersicht gibt einen kurzen Überblick über die unterschiedlichen Verfahren. Weitere Detailinformationen gibt es dazu u.a. bei den verlinkten Quellen.
 
 
-### Hashing (Hash-Funktion)
+### [Hashing (Hash-Funktion)](#hashing-hash-funktion)
+{: #hashing-hash-funktion}
 
 Zweck des Hashing ist es aus einem Ausgangswert einen nicht rückrechenbaren Hash zu generieren. Unabhängig der Länge des Ausgangswertes entsteht je nach verwendeter Funktion ein gleich langer Hash. Hierfür stehen in PHP für verschiedene Hash-Algorithmen entsprechende Funktionen zur Verfügung.
 
 [Wikipedia Artikel zu "Hashfunktion".](http://de.wikipedia.org/wiki/Hashfunktion)
 
 
-##### Anwendung
+##### [Anwendung](#anwendung)
+{: #anwendung}
 
 Die übliche Anwendung besteht darin, Paswörter zu hashen, bevor diese in der Datenbank gespeichert werden. Damit sind diese in der gehashten Form soweit nutzlos, selbst wenn man Zugriff darauf erlangt.
 
 Beim Login-Vorgang wird dann das im Login-Formular eingegebene Klartext-Passwort mit dem selben Algorithmus, wie jener der vor der Speicherung angewandt wurde, gehasht und dann dieser eben errechnete Hash mit dem bestehenden Hash in der Datenbank verglichen. Stimmen diese beiden überein, ist das Login-Passwort korrekt.
 
 
-##### Sicherheit der Hash-Algorithmen, salted Hashes
+##### [Sicherheit der Hash-Algorithmen, salted Hashes](#sicherheit-der-hash-algorithmen-salted-hashes)
+{: #sicherheit-der-hash-algorithmen-salted-hashes}
 
 Das Sicherheitsrikiso bei Hash-Werten liegt in der grundsätzlichen Möglichkeit von Kollisionen, Stichwort:  ["Rainbow-Tables"](http://de.wikipedia.org/wiki/Rainbow_Table). Dabei geht es in erster Linie darum, einen Ausgangswert zu finden, der nach dem Hash-Vorgang den selben Hash-Wert als Ergebnis hat.
 
 Weitere Informationen dazu, welche Algorithmen man aktuell vermeiden und verwenden sollte und bzgl. "salted" Hashes sind in kompakter Form hier angeführt: [Sicheres Password Hashing (php.net)](http://php.net/manual/de/faq.passwords.php).
 
 
-### Kodierung
+### [Kodierung](#kodierung)
+{: #kodierung}
 
 [Wikipedia:](http://de.wikipedia.org/wiki/Code)
 
@@ -71,7 +75,8 @@ In PHP stehen dafür die Funktionen [base64_encode()](http://php.net/manual/de/f
 <div class="alert alert-info"><strong>Hinweis!</strong> Die oben erwähnten Funktionen zu verwenden, um Texte "geheim" zu halten oder "unleserlich" zu machen, macht wenig Sinn. Zumeist ist schon am kodierten Ergebnis relativ eindeutig ersichtlich das es sich um das Produkt einer Base64-Kodierung handelt. Hierzu ist eine Verschlüsselung anzuwenden, siehe dazu weiter unten.</div>
 
 
-### Verschlüsselung
+### [Verschlüsselung](#verschluesselung)
+{: #verschluesselung}
 
 [Wikipedia:](http://de.wikipedia.org/wiki/Verschl%C3%BCsselung)
 

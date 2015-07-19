@@ -48,7 +48,8 @@ sind klassische Kandidaten.
 
 
 
-### Faustregel
+### [Faustregel](#faustregel)
+{: #faustregel}
 
 <div class="alert alert-info">
 
@@ -68,7 +69,8 @@ von Scripten via Include/Require entsteht.
 
 
 
-### Negativbeispiele
+### [Negativbeispiele](#negativbeispiele)
+{: #negativbeispiele}
 
 Die Angabe `header('Content-Type: text/html; charset=utf-8');` steht
 nachfolgend exemplarisch für einen beliebigen Headeraufruf, auch für
@@ -76,7 +78,8 @@ Funktionen, die einen solchen erzeugen, wie session_start oder setcookie.
 Typisch ist auch der Versuch, nach einer Ausgabe mit dem Location-Header
 umzuleiten.
 
-#### Quelltext / Bildschirmausgaben
+#### [Quelltext / Bildschirmausgaben](#quelltext-bildschirmausgaben)
+{: #quelltext-bildschirmausgaben}
 
 Bsp. 1, HTML vor der Headerausgabe:
 
@@ -178,7 +181,8 @@ $test = $_GET['test']; // Notice: Undefined index:
 header ('Content-Type: text/html; charset=utf-8'); // Notice als Ausgabe führt zum Folgefehler
 ~~~
 
-#### Leerzeichen und anderer Whitespace
+#### [Leerzeichen und anderer Whitespace](#leerzeichen-und-anderer-whitespace)
+{: #leerzeichen-und-anderer-whitespace}
 
 Wichtig zu wissen ist, dass jedes Zeichen, auch Whitespace bereits als Ausgabe
 zählt:
@@ -191,7 +195,8 @@ Bsp. 6, Headers sent als Folgefehler:
 header ('Content-Type: text/html; charset=utf-8'); // Notice als Ausgabe führt zum Folgefehler
 ~~~
 
-#### Byte-Order-Mark von signierten UTF-8-kodiertem Quellcode
+#### [Byte-Order-Mark von signierten UTF-8-kodiertem Quellcode](#byte-order-mark-von-signierten-utf-8-kodiertem-quellcode)
+{: #byte-order-mark-von-signierten-utf-8-kodiertem-quellcode}
 
 Besonders heimtückisch ist die Verwendung der Zeichencodierung UTF-8 mit BOM
 (Byte-Order-Mark, UTF-8-Signatur), die PHP nicht vernünftig verarbeiten kann
@@ -222,7 +227,8 @@ physisch aber eben existiert (unteres Beispiel).
 
 
 
-### Analyse
+### [Analyse](#analyse)
+{: #analyse}
 
 Mit [eingeschaltetem
 Fehlermanagement]({{ page.root }}/jumpto/leitfaden/) meldet PHP
@@ -241,7 +247,8 @@ eine Null als Zeilenangabe angegeben, ist die Ursache fürgemein das UTF-8-BOM
 
 
 
-### Empfehlungen
+### [Empfehlungen](#empfehlungen)
+{: #empfehlungen}
 
 Es wird empfohlen, generell PHP-Scripte, denen kein Inline-HTML oder anderer
 Inline-Content folgt, ohne schließendes PHP-Tag abzuschließen. Also

@@ -45,7 +45,7 @@ inhalt:
       simple: ""
 
     - name: "expose_php"
-      anchor: exposephp
+      anchor: expose_php
       simple: ""
 
     - name: "allow_url_fopen"

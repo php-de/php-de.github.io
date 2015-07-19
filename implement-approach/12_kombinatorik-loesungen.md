@@ -23,12 +23,15 @@ inhalt:
 
     -   name: "Alle Kombinationen einer bestimmten Anzahl der Elemente eines Arrays"
         anchor: alle-kombinationen-einer-bestimmten-anzahl-der-elemente-eines-arrays
+        simple: ""
 
     -   name: "Ziehen mit Zurücklegen"
         anchor: ziehen-mit-zuruecklegen
+        simple: ""
 
     -   name: "Weblinks"
         anchor: weblinks
+        simple: ""
 
 entry-type: in-discussion
 ---

@@ -46,14 +46,18 @@ Oft zeigt sich bei PHP-Einsteigern, dass ein grundlegendes Verständnis dafür f
     Dieser Artikel beschreibt den klassischen Einsatzzweck von PHP als serverseitiger Skriptsprache. Der Fokus liegt darauf, die Rolle von PHP im Zusammenspiel von Client und Server bei der Interaktion mit Webseiten über das HTTP zu erklären. Darüber hinaus kann PHP wie viele Programmiersprachen auch zu allgemeineren Zwecken genutzt werden. Auf einem entsprechend konfigurierten System können etwa in PHP geschriebene Konsolenanwendungen oder Hintergrunddienste ausgeführt werden. Es existieren sogar Ansätze, interaktive, grafische Desktopanwendungen in PHP zu erstellen. Diese Verwendungsmöglichkeiten sind allerdings höchstens noch am Rande dem Bereich der Web-Entwicklung zuzuordnen und werden deshalb an dieser Stelle derzeit nicht näher beschrieben.
 </div>
 
-### Was PHP ist
+### [Was PHP ist](#was-php-ist)
+{: #was-php-ist}
+
 PHP ist eine Skript-Sprache, die komplett auf dem Server verarbeitet wird. Das heißt, der Benutzer kommt mit dem Quelltext des Skripts gar nicht erst in Berührung.
 PHP ist darauf ausgelegt, durch Programmoperationen eine andere Sprache, zumeist Hypertext-Markup (also HTML), zu erzeugen, die auf anderen Geräten weiterverarbeitet werden kann. Hieraus ergibt sich auch die Bedeutung des Backronyms PHP, welche PHP: Hypertext Preprocessor lautet.
 
 Um ein PHP-Skript aufzurufen, wird ein [Request]({{ page.root }}/jumpto/request/) an den Server abgesetzt, welcher dann den PHP-Parser anweist, das entsprechende Skript zu parsen. Anschließend wird die erzeugte Ausgabe wieder zurück an den Benutzer gesendet. Lediglich diese Ausgabe des Skripts ist es dann, welche der Benutzer zu Gesicht bekommt.
 
 
-#### Somit ist mit PHP folgendes möglich:
+#### [Somit ist mit PHP folgendes möglich:](#somit-ist-mit-php-folgendes-moeglich)
+{: #somit-ist-mit-php-folgendes-moeglich}
+
 - Verarbeiten der über einen Request gesendeten Daten
 - Verbindungen zu anderen Servern, Diensten etc.
 - Datei- und Datenbankoperationen auf dem Server
@@ -61,11 +65,15 @@ Um ein PHP-Skript aufzurufen, wird ein [Request]({{ page.root }}/jumpto/request/
 <br>
 
 
-### Was PHP nicht ist
+### [Was PHP nicht ist](#was-php-nicht-ist)
+{: #was-php-nicht-ist}
+
 PHP ist hingegen nicht dazu gedacht, direkt mit dem Benutzer zu interagieren, sprich: es ist nicht möglich, direkt auf Eingaben vom Benutzer zu reagieren, sofern diese nicht durch einen erneuten Request an den Server gesendet wurden.
 Für direkte Interaktion mit dem Benutzer ist [JavaScript]({{ page.root }}/jumpto/javascript/) gedacht, welches (genau entgegengesetzt zu PHP) im Browser des Benutzers läuft, hingegen nicht auf dem Server ausgeführt wird.
 
-#### Somit ist mit PHP folgendes nicht möglich:
+#### [Somit ist mit PHP folgendes nicht möglich:](#somit-ist-mit-php-folgendes-nicht-moeglich)
+{: #somit-ist-mit-php-folgendes-nicht-moeglich}
+
 - Direkte Verarbeitung von Benutzereingaben bzw. aktive Interaktion mit dem Anwender
 - Operationen im Browser des Anwenders
 - Kontrolle des Browsers, Auslesen von Browser- oder Clientsystemzuständen
@@ -73,7 +81,9 @@ Für direkte Interaktion mit dem Benutzer ist [JavaScript]({{ page.root }}/jumpt
 <br>
 
 
-### Merkhilfe
+### [Merkhilfe](#merkhilfe)
+{: #merkhilfe}
+
 Im normalen Kontext - Browser ruft Website auf - stellen sich die Rollen von HTML und PHP so dar:
 
 Der Aufruf einer HTML Seite liefert ein Hypertextdokument, das durch den Browser gerendert, d. h. angezeigt wird.

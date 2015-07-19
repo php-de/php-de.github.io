@@ -33,24 +33,28 @@ inhalt:
         simple: ""
 
     -   name: "Kontrollstrukturen: Fehlende Blöcke"
-        anchor: kontrollstrukturen-fehlende-blcke
+        anchor: kontrollstrukturen-fehlende-bloecke
         simple: ""
 
 ---
 
-### Headervorgänge und „Headers already sent“
+### [Headervorgänge und „Headers already sent“](#headervorgaenge-und-headers-already-sent)
+{: #headervorgaenge-und-headers-already-sent}
 
-#### Problem
+#### [Problem](#problem)
+{: #problem}
 
 Bei einer Sessioninitialisierung (`session_start()`), einem Cookiesetzen oder einer versuchten Header-Weiterleitung (`header("Location: ... ")`) erfolgt eine Fehlermeldung („Headers already sent“) und die Aktion bleibt aus.
 
-#### Fehler
+#### [Fehler](#fehler)
+{: #fehler}
 
 Der Fehler kann mannigfaltige Ursachen haben, die aber alle die Gemeinsamkeit besitzen, dass sie vor der jeweiligen Headerausgabe Zeichenausgaben erzeugen.
 
 Liste möglicher Ursachen im [Hauptartikel zu Headers already sent]({{ page.root }}/jumpto/headers-already-sent/).
 
-#### Lösung
+#### [Lösung](#loesung)
+{: #loesung}
 
 Es gibt zwei prinzipielle Lösungsansätze. Der erste besteht darin, die gesamte Scriptstruktur (aller beteiligten Scripte) so zu strukturieren, dass vor einer Aktion wie Sessionstart oder Header-Weiterleitung keine Ausgabe erfolgen kann. Dies kann im allgemeinen durch Ergänzen von Bedingungen oder Anlegen von Variablen für Ausgabestrings erreicht werden. Eine wichtige Maßnahme ist auch, alle Funktionen so einzurichten, dass sie keine Bildschirmausgabe erzeugen, sondern Code mittels `return` als String zurückgeben.
 
@@ -93,9 +97,11 @@ echo $output;
 
 Prinzipiell ist der ersten Variante der Vorrang zu geben. Der Ausgabepuffer ist kein Allheilmittel gegen schlechte Programmstrukturen!
 
-### Kontrollstrukturen: Zuweisung statt Vergleich
+### [Kontrollstrukturen: Zuweisung statt Vergleich](#kontrollstrukturen-zuweisung-statt-vergleich)
+{: #kontrollstrukturen-zuweisung-statt-vergleich}
 
-#### Problem
+#### [Problem](#problem-2)
+{: #problem-2}
 
 ~~~ php
 if ($a = 5) {
@@ -105,15 +111,18 @@ if ($a = 5) {
 
 Der Code erzeugt unerwartete Ergebnisse.
 
-#### Ziel
+#### [Ziel](#ziel-2)
+{: #ziel-2}
 
 In 95% aller Fälle soll hier der Wert in $a mit dem konstanten Wert „5“ verglichen werden und bei Erfolg ein Ausdruck ausgeführt werden. do_something soll dann abhängig von der Bedingung ausgeführt werden.
 
-#### Fehler
+#### [Fehler](#fehler-2)
+{: #fehler-2}
 
 In der Bedingung wird eine Zuweisung (=-Operator) statt eines Vergleichs (== bzw. ===-Operator) benutzt. In einigen Sprachen ist „=“ ein Vergleichsoperator, in PHP jedoch nicht.
 
-#### Lösung
+#### [Lösung](#loesung-2)
+{: #loesung-2}
 
 Der PHP-Parser kann diesen Fall nicht erkennen, weil `if( )` nur einen Ausdruck mit einem Rückgabewert erfordert. Eine Zuweisung hat einen Rückgabewert (den zugewiesenen Wert) und ist damit erfüllt (bzw. nicht erfüllt, je nach zugewiesenem Wert). Die Lösung besteht in der Benutzung der korrekten Vergleichsoperatoren:
 
@@ -134,9 +143,11 @@ if (5 == $a) {
 Wird in diesem Fall ein „=“ vergessen, erzeugt dies einen Parser Fehler, weil Zuweisungen an Werte nicht möglich sind. In Fällen, wo zwei Variablen auf Gleichheit verglichen werden, klappt dieser Trick natürlich nicht.
 
 
-### Kontrollstrukturen: Vorzeitige Beendigung durch Anweisungsende
+### [Kontrollstrukturen: Vorzeitige Beendigung durch Anweisungsende](#kontrollstrukturen-vorzeitige-beendigung-durch-anweisungsende)
+{: #kontrollstrukturen-vorzeitige-beendigung-durch-anweisungsende}
 
-#### Problem
+#### [Problem](#problem-3)
+{: #problem-3}
 
 ~~~ php
 if ($a == 5);
@@ -148,15 +159,18 @@ if ($a == 5);
 Der Code erzeugt unerwartete Ergebnisse. Die geklammerten Anweisungen werden immer ausgeführt.
 
 
-#### Ziel
+#### [Ziel](#ziel-3)
+{: #ziel-3}
 
 Die geklammerten Anweisungen (do_something) sollen abhängig von der Bedingung ausgeführt werden.
 
-#### Fehler
+#### [Fehler](#fehler-3)
+{: #fehler-3}
 
 Hinter der Bedingung wurde versehentlich ein Semikolon notiert. Semikolons schließen Anweisungen ab, das `if` wird also für einen leeren Ausdruck ausgewertet. {}-Blöcke dürfen in PHP auch alleinstehend existieren, auch wenn sie keinen Zweck erfüllen. Daher reagiert der PHP-Parser hier mit keiner Meldung.
 
-#### Lösung
+#### [Lösung](#loesung-3)
+{: #loesung-3}
 
 Ein geeignetes Syntaxhighlighting und eine andere Einrückformatierung können zur Vermeidung dieses Schreibfehlers beitragen:
 
@@ -185,9 +199,11 @@ while ($x > 0);
 }
 ~~~
 
-### Kontrollstrukturen: Fehlende Blöcke
+### [Kontrollstrukturen: Fehlende Blöcke](#kontrollstrukturen-fehlende-bloecke)
+{: #kontrollstrukturen-fehlende-bloecke}
 
-#### Problem
+#### [Problem](#problem-4)
+{: #problem-4}
 
 ~~~ php
 if ($a == 5)
@@ -197,15 +213,18 @@ if ($a == 5)
 
 Der Code erzeugt unerwartete Ergebnisse. Die erste Anweisung (do_something_1) wird korrekt, die zweite (do_something_2) immer ausgeführt.
 
-#### Ziel
+#### [Ziel](#ziel-4)
+{: #ziel-4}
 
 Alle eingerückten Befehle sollen abhängig von der Bedingung ausgeführt werden.
 
-#### Fehler
+#### [Fehler](#fehler-4)
+{: #fehler-4}
 
 PHP nutzt eine Blocksyntax, um Ausdrücke einer Kontrollstruktur zuzuordnen. Fehlen nach der Kontrollstruktur geschweifte Klammern, wird lediglich der erste nachfolgende Ausdruck der Bedingung oder Schleife zugeordnet. Einrückungen haben dagegen keine Bedeutung für die Zugehörigkeit von Ausdrücken zu Kontrollstrukturen. Das ist bspw. bei Python anders.
 
-#### Lösung
+#### [Lösung](#loesung-4)
+{: #loesung-4}
 
 Die konditionalen Ausdrücke (auch einzeilige!) von Bedingungen und Schleifen sollten immer in geschweiften Klammern als Block gefasst werden.
 
@@ -216,7 +235,8 @@ if ($a == 5) {
 }
 ~~~
 
-#### Verwandte Probleme
+#### [Verwandte Probleme](#verwandte-probleme)
+{: #verwandte-probleme}
 
 Das Problem ist genauso auf andere Kontrollstrukturen übertragbar:
 
@@ -228,4 +248,3 @@ while ($x > 0)
   do_something_2();
   $x--;
 ~~~
-

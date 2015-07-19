@@ -36,12 +36,14 @@ einfachste im Bereich der Formularverarbeitung im Webbereich.
 
 
 
-### Browserelemente
+### [Browserelemente](#browserelemente)
+{: #browserelemente}
 
 Zur Zeit bieten Browser einzeilige und mehrzeilige Eingabefelder als
 Formularelemente an.
 
-#### Einzeilige Eingabefelder
+#### [Einzeilige Eingabefelder](#einzeilige-eingabefelder)
+{: #einzeilige-eingabefelder}
 
 * werden mit `<input type="text">` erzeugt
 * Es gibt Spezialtypen:
@@ -58,7 +60,8 @@ Mehrzeilige Eingabefelder
 
 
 
-### Textfelder auswerten
+### [Textfelder auswerten](#textfelder-auswerten)
+{: #textfelder-auswerten}
 
 Alle genannten Elemente werden gleich verarbeitet. Der Requestparameter ist ein
 String, der je nach Anfragetyp in `$_POST` oder `$_GET` als `string`-Value auftaucht.
@@ -106,12 +109,14 @@ dargestellt.
 
 
 
-###  Vorbelegen der Eingabe
+### [Vorbelegen der Eingabe](#vorbelegen-der-eingabe)
+{: #vorbelegen-der-eingabe}
 
 Die Angabe eine Vorgabewertes unterscheidet sich für die beiden oben genannten
 Eingabetypen.
 
-#### Einzeilige Eingabefelder
+#### [Einzeilige Eingabefelder](#einzeilige-eingabefelder-2)
+{: #einzeilige-eingabefelder-2}
 
 Hier wird ein Vorgabewert im `value`-Attribut notiert. Eine dynamische Belegung
 via PHP kann also so aussehen:
@@ -132,7 +137,8 @@ das Escaping – bisher vernachlässigt wurde. Näheres im Kapitel weiter unten.
 
 Die Vorbelegung von Passwort oder versteckten Eingabefeldern unterscheidet sich nicht vom obigen Lehrbesipiel.
 
-#### Mehrzeilige Eingabefelder
+#### [Mehrzeilige Eingabefelder](#mehrzeilige-eingabefelder)
+{: #mehrzeilige-eingabefelder}
 
 Die Vorbelegung für Textareas unterscheidet sich nur darin, dass der Inhalt
 hier zwischen einem Start- und Endtag notiert wird:
@@ -147,7 +153,8 @@ $text = 'Hallo, dies ist ein Satz.';
 Wie hier leicht vorstellbar ist, kann `$text` das Wort `</textarea>` enthalten.
 Deshalb ist das nachfolgende Thema unbedingt zu beachten.
 
-#### Scriptsicherheit
+#### [Scriptsicherheit](#scriptsicherheit)
+{: #scriptsicherheit}
 
 Die obigen Beispiele sind fehleranfällig, weil die Eingaben keine
 [Zeichenmaskierung]({{ page.root }}/jumpto/kontextwechsel/)

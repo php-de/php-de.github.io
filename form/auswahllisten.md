@@ -32,12 +32,14 @@ inhalt:
 | Je nach Selectiontyp unterscheiden sich die Verfahren zur Verarbeitung und Darstellung. Die jeweiligen Verfahren sind dabei mit denen für Optionsfelder (Radiogroups bzw. Checkboxes) verwandt/identisch. | ![select]({{ page.root }}/images/select_multi_off.gif) | ![select]({{ page.root }}/images/select_multi_selected.gif) |
 
 
-### Selections auswerten
+### [Selections auswerten](#selections-auswerten)
+{: #selections-auswerten}
 
 Wie bei allen Formularelementen können die Werte eines innnerhalb eines `<form>`-Tags notierten `<select>`-Elements durch Auslesen eines Parameterarrays im Folgescript verarbeitet werden. Näheres dazu siehe unter [Formularverarbeitung Überblick]({{ page.root }}/jumpto/form/).
 
 
-#### Einfachauswahlen
+#### [Einfachauswahlen](#einfachauswahlen)
+{: #einfachauswahlen}
 
 Für einfache Selections wird im HTML-Teil eine skalare Variable als *name*-Attribut des Formelements notiert:
 
@@ -62,7 +64,8 @@ Auf diesen Wert kann nun einfach über den *name*-Attribut gleichen Schlüssel z
 echo $_POST['Auswahl'];
 ~~~
 
-#### Mehrfachauswahlen
+#### [Mehrfachauswahlen](#mehrfachauswahlen)
+{: #mehrfachauswahlen}
 
 Ein HTTP Request überträgt zwar alle ausgewählten Werte eines entsprechenden Mehrfachauswahlfeldes, nur werden diese anschließend in die superglobalen Parameterarrays unter ihrem Variablennamen als Schlüssel hinterlegt und damit folglich alle Werte bis auf den letzten von den folgenden überschrieben.
 Die Lösung ist, im *name*-Attribut von vornherein eine Arrayvariable anzugeben:
@@ -102,12 +105,14 @@ foreach ($_POST['Auswahl'] as $value) {
 <div class="alert alert-warning"><strong>Achtung: </strong>Für alle Ausgaben von Formularwerten besteht die Gefahr von Code-injection und Cross Site Scripting. Die Lehrbeispiele werden zunächst ohne entsprechende Maßnahmen reduziert dargestellt. Weitere Hinweise dazu bietet das Kapitel <a href="#sicherheit">Sicherheit</a> weiter unten.</div>
 
 
-### Selection mit Vorauswahl dynamisch erzeugen
+### [Selection mit Vorauswahl dynamisch erzeugen](#selection-mit-vorauswahl-dynamisch-erzeugen)
+{: #selection-mit-vorauswahl-dynamisch-erzeugen}
 
 In verschiedenen Fällen kann es nötig sein, dass Selections bei der Ausgabe dynamisch mit einem oder mehreren gegebenen Auswahlwerten vorselektiert werden. Nachfolgend wird zunächst das Prinzip erklärt und dann eine optimierte Variante gezeigt. In allen Beispielen werden als gegebene Auswahlwerte die Eingabeparameter aus einem [POST-Submit]({{ page.root }}/jumpto/request/) angenommen, wie es bspw. beim [Affenformular]({{ page.root }}/jumpto/affenformular/) üblich ist. Natürlich kann statt der `$_POST`-Angabe auch jede andere Variable gleichen Typs genutzt werden.
 
 
-#### Funktionsprinzip
+#### [Funktionsprinzip](#funktionsprinzip)
+{: #funktionsprinzip}
 
 Der oder die selektierten Auswahlwert einer Auswahlliste wird HTML-seitig über das Attribut `selected="selected"` im zugehörigen `<option>` Element notiert. Damit ergibt sich folgendes Prinzip, das anhand einer Wertvergleichsoperation die jeweilige Ausgabe des Attributwertes erzeugt:
 
@@ -143,7 +148,8 @@ $selectedValue = $_POST['Auswahl'];
 </select>
 ~~~
 
-#### Einfachauswahlen
+#### [Einfachauswahlen](#einfachauswahlen-2)
+{: #einfachauswahlen-2}
 
 Einen ersten Ansatz für Einfachauswahlen haben wir gerade kennengelernt. Wie deutlich zu erkennen, ist dabei der Overhead, den die Funktion zum Wiederbefüllen erzeugt, relativ hoch. Optimiert werden kann der Code, wenn die Optionsbezeichner und -werte als Array vorliegen und sowohl die eben gezeigte Prüfung, als auch die gesamte Ausgabe des `<option>`-Elements in einer Schleife erfolgt. Gerade bei erhöhter Wertanzahl ergibt sich hier ein schlanker und übersichtlicher Code. Zudem ergibt sich eine leichte Möglichkeit zum Abändern der Einträge.
 
@@ -193,7 +199,8 @@ Für die Ausgabe wird hier beispielhaft das `sprintf`-Statement verwendet, um da
 <div class="alert alert-info"><strong>Information: </strong>Die Arraylösung ist nicht für alle Zwecke geeignet. Da Arrays eindeutige Schlüssel besitzen, erlaubt sie bspw. keine Selections mit mehrfacher Angabe eines identischen Optionswertes. Zu diesem Zweck muß der obige Code geringfügig abgewandelt werden.</div>
 
 
-#### Mehrfachauswahlen
+#### [Mehrfachauswahlen](#mehrfachauswahlen-2)
+{: #mehrfachauswahlen-2}
 
 
 Wie oben beschrieben, liegen die Werte übertragener Multiselects immer als Array vor (jedenfalls wenn mans richtig macht). Ein direkter Stringvergleich bringt uns hier also nicht weiter, weil zwei Wertmengen (die aller möglichen Werte und die aller übertragenen Werte) gegeneinander verglichen werden müssen.
@@ -247,7 +254,8 @@ Die Funktion `in_array()` untersucht hier den aktuell durchlaufenen Optionwert a
 <div class="alert alert-warning"><strong>Achtung: </strong>Da Mehrfachauswahlen auch den Zustand "keine Auswahl" zulassen, sollte der entsprechende Eintrag im Parameterarray stets explizit nach Array gecastet werden, im Bsp. hiermit: `(array) $_POST['Auswahl']`. Ansonsten kann die Verarbeitung des Elements einen Fehler erzeugen.</div>
 
 
-### Sicherheit
+### [Sicherheit](#sicherheit)
+{: #sicherheit}
 
 Für alle Ausgaben auf Formularübermittlung ergibt sich die Gefahr von Code-Injection und Cross Site Scripting. Zudem unterliegen Selections noch der Gefahr von Typverletzungen.
 

@@ -42,9 +42,11 @@ inhalt:
 entry-type: in-discussion
 ---
 
-### Serverpfade
+### [Serverpfade](#serverpfade)
+{: #serverpfade}
 
-#### Anwendung
+#### [Anwendung](#anwendung)
+{: #anwendung}
 
 Serverpfade sind relevant für
 
@@ -53,7 +55,8 @@ Serverpfade sind relevant für
 
 
 
-#### Aufbau
+#### [Aufbau](#aufbau)
+{: #aufbau}
 
 Serverpfade bestehen aus Verzeichnisnamen, die durch Slashes voneinander
 getrennt sind. Die Gültigkeit der Verzeichnisnamen richtet sich dabei nach dem
@@ -63,7 +66,8 @@ Pfadtrennzeichen, Linux dagegen `/`. Unter PHP ist das irrelevant. Da `\` aber
 eine Sonderbedeutung in Strings hat (Escapezeichen), empfiehlt sich eine
 generelle Verwendung von `/`, auch unter Windows-Serversystemen.
 
-#### Absolute Serverpfade
+#### [Absolute Serverpfade](#absolute-serverpfade)
+{: #absolute-serverpfade}
 
 **Absolute Serverpfade** beginnen mit `/` und beziehen sich stets auf das
 Wurzelverzeichnis des Mount points (Linux, Unix) bzw. das Laufwerk (Windows),
@@ -75,7 +79,8 @@ referenzierte Pfadangabe `/abc/cde` bezieht sich dann auf den Systempfad
 
 Alle anderen Pfade werden als relativ interpretiert.
 
-#### Relative Serverpfade
+#### [Relative Serverpfade](#relative-serverpfade)
+{: #relative-serverpfade}
 
 **Relative Serverpfade** beginnen mit einer Verzeichnisangabe (`.`, `..`, ein
 oder mehrere Verzeichnisse durch `/` getrennt) oder sind leer (für das aktuelle
@@ -97,7 +102,8 @@ Hinweise:
 
 
 
-### Webpfade
+### [Webpfade](#webpfade)
+{: #webpfade}
 
 Webpfade adressieren über einen URL bestimmte Ressourcen (Dateien oder
 generierte Daten). Die URLs können dabei echte, physische Pfade, aber auch
@@ -113,7 +119,8 @@ abgehandelt werden, das den URL in seine Bestandteile zerlegt und anhand dieser
 die korrekte Ausgabe generiert (manchmal als [Front Controller
 pattern](https://en.wikipedia.org/wiki/Front_Controller_pattern) bezeichnet).
 
-#### Anwendung
+#### [Anwendung](#anwendung-2)
+{: #anwendung-2}
 
 Webpfade
 
@@ -124,7 +131,8 @@ Webpfade
 - können über sogenannte URL-Wrapper Dateizugriffe auf fremde Server
   ermöglichen (siehe dazu Abschnitt URL-Wrapper)
 
-#### Aufbau
+#### [Aufbau](#aufbau-2)
+{: #aufbau-2}
 
 Wenn sie physische Dateien referenzieren, unterliegen Webpfade zum einen den
 Beschränkungen des verwendeten Filesystems (Ausnahme: mod_rewrite und
@@ -132,7 +140,8 @@ vergleichbare Techniken). Desweiteren ist die Menge der für URLs gültigen
 Zeichen weiter eingeschränkt. Hier kommen
 [Escapezeichenketten](https://de.wikipedia.org/wiki/URL-Encoding) zum Einsatz.
 
-#### Prinzip
+#### [Prinzip](#prinzip)
+{: #prinzip}
 
 Die Grundlage der URL-Adressierung bildet das DNS System und das Routing über
 daraus ermittelte IP-Adressen. Grob gesagt, stehen einer oder mehreren
@@ -160,7 +169,8 @@ auflösen und das Dokument ausliefern.
 
 Bezugnehmend auf diese Aussagen, ergeben sich folgende Referenzierungsarten:
 
-#### Vollständige URL-Angaben
+#### [Vollständige URL-Angaben](#vollstaendige-url-angaben)
+{: #vollstaendige-url-angaben}
 
 Für diese gilt eben Gesagtes. Domain und Subdomain bestimmen das physische
 Serververzeichnis, weitere URL-Pfadangaben werden relativ zum Serververzeichnis
@@ -171,13 +181,15 @@ Beispiel: Bezieht sich die Domain `http://example.com/` auf das Verzeichnis
 `http://example.com/images/test.jpg` die Datei
 `/homepages/47/u110815/htdocs/images/test.jpg` auf der entsprechenden Maschine.
 
-#### Absolute Webpfade
+#### [Absolute Webpfade](#absolute-webpfade)
+{: #absolute-webpfade}
 
 Die aktuelle Domain (oben `http://example.com/`) kann durch `/` angesprochen
 werden. Es ergibt sich eine absolute Pfadangabe, etwa `/images/test.jpg`, für
 eben genanntes Beispiel.
 
-#### Relative Webpfade
+#### [Relative Webpfade](#relative-webpfade)
+{: #relative-webpfade}
 
 Analog zu absoluten Serverpfaden kann eine Ressource auch relativ zum aktuellen
 Dokument referenziert werden. Wiederum sind die Angaben `.`, `..`, ein
@@ -185,7 +197,8 @@ Verzeichnispfad oder der leere String gültig. Die Angabe ist dabei relativ zum
 URL des HTML-Dokuments. Es ist dabei natürlich nicht möglich, den Document-Root
 zu verlassen, indem ausreichend oft `../` in den Pfad eingefügt wird.
 
-#### Analogie
+#### [Analogie](#analogie)
+{: #analogie}
 
 Der Serverpfad ist ein Dateisystempfad auf einer konkreten Maschine. Webpfade
 kann man sich so vorstellen, dass ein Subpfad dieses Dateisystems als eigenes
@@ -205,7 +218,8 @@ Hinweise:
 
 
 
-### Komplettbeispiel
+### [Komplettbeispiel](#komplettbeispiel)
+{: #komplettbeispiel}
 
 Struktur des Projekts im Dateisystem:
 
@@ -290,7 +304,8 @@ inhalt.txt:
 </p>
 ~~~
 
-### Sichtbarkeit
+### [Sichtbarkeit](#sichtbarkeit)
+{: #sichtbarkeit}
 
 Als logische Konsequenz aus den obigen Aussagen zum Document-Root ergibt sich, dass
 jenseits des Document-Roots abgelegte Dateien nicht öffentlich über den Webserver
@@ -319,11 +334,15 @@ Eine alternative Zugriffssicherung wird in der Praxis durch Einsatz einer .htacc
 
 
 
-### Besonderheiten
+### [Besonderheiten](#besonderheiten)
+{: #besonderheiten}
 
-#### mod_rewrite
+#### [mod_rewrite](#mod_rewrite)
+{: #mod_rewrite}
 
-#### URL-Wrapper
+#### [URL-Wrapper](#url-wrapper)
+{: #url-wrapper}
 
-#### (Dateisystem)-Links
+#### [(Dateisystem)-Links](#dateisystem-links)
+{: #dateisystem-links}
 

@@ -25,7 +25,7 @@ inhalt:
         simple: ""
 
     -   name: "Lösung"
-        anchor: lsung
+        anchor: loesung
         simple: ""
 
     -   name: "Referenzen"
@@ -47,9 +47,11 @@ Zeichen auf einen eingeschränkten Sprachraum.
 
 
 
-### Beispiele
+### [Beispiele](#beispiele)
+{: #beispiele}
 
-#### HTML
+#### [HTML](#html)
+{: #html}
 
 HTML benutzt wenige Sonderzeichen, wie `" < > &`, die immer maskiert werden
 sollten. Ansonsten können Situationen entstehen, die für den Parser nicht
@@ -71,7 +73,8 @@ Definition einer Textbox in HTML mit problematischen Inhalt:
 </textarea>
 ~~~
 
-#### PHP-Strings
+#### [PHP-Strings](#php-strings)
+{: #php-strings}
 
 Strings in PHP haben zwei relevante Ebenen. Auf der einen Seite werden Strings
 syntaktisch mit Hochkommata notiert, weshalb dieses Zeichen nicht „unbehandelt“
@@ -93,7 +96,8 @@ Zeichenmaskierung eines Tab-Zeichens:
 $foo = "Vor und \t nach dem Tab.";
 ~~~
 
-#### SQL
+#### [SQL](#sql)
+{: #sql}
 
 Ebengesagtes gilt genauso für Angaben von SQL-Strings (CHAR-Typen). Zusätzlich
 kann bei einer SQL-Query in PHP sowohl ein String-Escaping (für PHP), als auch
@@ -113,7 +117,8 @@ Zeichenkollisionen PHP-String und SQL-Stringbegrenzer:
 $query = 'INSERT INTO Users (id , name) VALUES (23 , 'Horst')';
 ~~~
 
-#### Reguläre Ausdrücke
+#### [Reguläre Ausdrücke](#regulaere-ausdruecke)
+{: #regulaere-ausdruecke}
 
 Reguläre Ausdrücke haben eine komplexe Syntax mit sehr vielen
 Zeichen-„Operatoren“. Insofern diese Zeichen nicht als Operator
@@ -125,7 +130,8 @@ im Ausdruck unmaskiert zu unerwarteten Ergebnissen führen können.
 
 
 
-### Relevanz
+### [Relevanz](#relevanz)
+{: #relevanz}
 
 Zeichenmaskierung wird immer dann wichtig, wenn die Gefahr besteht, dass
 Eingabewerte und syntaktischer Sprachraum in einem Kontext kollidieren. Viele
@@ -149,10 +155,10 @@ Anwendung, die mit Usereingaben und dynamischen Ausdrücken hantiert.
 
 
 
-### Lösung
+### [Lösung](#loesung)
+{: #loesung}
 
-
-
-### Referenzen
+### [Referenzen](#referenzen)
+{: #referenzen}
 
 * [http://wiki.selfhtml.org/wiki/Artikel:Kontextwechsel](http://wiki.selfhtml.org/wiki/Artikel:Kontextwechsel)

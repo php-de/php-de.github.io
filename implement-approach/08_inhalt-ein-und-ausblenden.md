@@ -38,7 +38,8 @@ inhalt:
 entry-type: in-discussion
 ---
 
-### Einblenden der Box mit CSS
+### [Einblenden der Box mit CSS](#einblenden-der-box-mit-css)
+{: #einblenden-der-box-mit-css}
 
 Am einfachsten lässt sich dieser Effekt mit CSS realisieren. Beim Überfahren
 eines Elements wird die Box eingeblendet und verschwindet beim Verlassen
@@ -77,14 +78,16 @@ Der Internet Explorer 6 unterstützt die Pseudo-Klasse :hover nur bei Links
 
 
 
-### Blenden der Box mit JavaScript
+### [Blenden der Box mit JavaScript](#blenden-der-box-mit-javascript)
+{: #blenden-der-box-mit-javascript}
 
 Als nächstes werde ich eine Möglichkeit vorstellen, die Box mit JavaScript
 einzublenden. Diese hat den Vorteil, dass sie nicht auf de Hover-Effekt
 beschränkt ist und sich die Box auch nicht innerhalb des zu hovernden Elements
 befinden muss.
 
-#### Schalten des style-Attributs display
+#### [Schalten des style-Attributs display](#schalten-des-style-attributs-display)
+{: #schalten-des-style-attributs-display}
 
 Zunächst wieder das Markup:
 
@@ -111,9 +114,11 @@ Das JavaScript dazu sieht so aus:
   }
 ~~~
 
-#### Variante: Box mit JavaScript ein- und ausfaden
+#### [Variante: Box mit JavaScript ein- und ausfaden](#variante-box-mit-javascript-ein-und-ausfaden)
+{: #variante-box-mit-javascript-ein-und-ausfaden}
 
-##### Eigenlösung
+##### [Eigenlösung](#eigenloesung)
+{: #eigenloesung}
 
 Das benötigte Markup sieht wie folgt aus:
 
@@ -182,7 +187,8 @@ explizite Typenprüfung bei der Abfrage von `arguments[1]` ist deshalb nötig, d
 die Opazitätsstufe durchaus `0` sein kann, was aber nicht mit `null` bzw.
 `'undefined'` verwechselt werden darf.
 
-##### Mittels jQuery
+##### [Mittels jQuery](#mittels-jquery)
+{: #mittels-jquery}
 
 Mit jQuery gestaltet sich das Ganze um einiges einfacher:
 
@@ -211,7 +217,8 @@ toggleDisplay = function (element)
 }
 ~~~
 
-##### Mittels ExtJS
+##### [Mittels ExtJS](#mittels-extjs)
+{: #mittels-extjs}
 
 ExtJS macht es einem ähnlich einfach, Elemente ein- und auszufaden. Diesmal
 wurde das Effekte-Object `Ext.Fx` erweitert:
@@ -237,7 +244,8 @@ Ein Aufruf von `Ext.Fx.fade('#fade')` genügt, um das Element ein bzw. auszufade
 Das Erweitern der Frameworks lässt sich natürlich noch stark verfeinern und
 verbessern, aber wie sooft geht es auch hier nur um das Prinzip.
 
-#### Schalten eines `class`-Attributs
+#### [Schalten eines `class`-Attributs](#schalten-eines-class-attributs)
+{: #schalten-eines-class-attributs}
 
 Eine weitere Abstraktion ermöglicht das Benutzen einer CSS Klasse, die das
 Aussehen des Elementes vor und beim Überfahren beschreibt. Im einfachsten Fall
@@ -301,7 +309,8 @@ toggleElementDisplay = function (element)
 
 
 
-### Blenden der Box mit PHP
+### [Blenden der Box mit PHP](#blenden-der-box-mit-php)
+{: #blenden-der-box-mit-php}
 
 Natürlich funktioniert auch eine serverseitige Variante. Dabei entsteht bei
 jedem Umschaltprozess ein Request. Zum Schalten wird eine GET-Variable benutzt,
@@ -343,7 +352,8 @@ Here ist some content for you!
 
 
 
-### Kombiniertes Beispiel, JS und PHP als Fallback
+### [Kombiniertes Beispiel, JS und PHP als Fallback](#kombiniertes-beispiel-js-und-php-als-fallback)
+{: #kombiniertes-beispiel-js-und-php-als-fallback}
 
 Aufbauend darauf können wir unseren Link erweitern, so dass er bei
 Vorhandensein von Javascript die Box ohne Neuladen der Seite „toggelt“. Wir

@@ -173,7 +173,7 @@ demnach zur Ausführung. Dem Besucher wird eine `alert`-Box mit dem Inhalt
 {: #problem-magic_quotes_gpc}
 
 Ist die Direktive
-[magic_quotes_gpc]({{ page.root }}/jumpto/php-ini/#magicquotesgpc)
+[magic_quotes_gpc]({{ page.root }}/jumpto/php-ini/#magic_quotes_gpc)
 in der [php.ini]({{ page.root }}/jumpto/php-ini/) eingeschaltet,
 wird der obige Code unter Umständen nicht funktionieren, da die Stringbegrenzer
 `"` und `'` nicht funktionieren werden. Dies stellt jedoch kein Problem dar, da

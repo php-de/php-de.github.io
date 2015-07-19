@@ -190,7 +190,7 @@ entstehen. Wichtig ist, dass unerwartete Eingaben ignoriert werden.
 {: #register-globals}
 
 [Hauptartikel Register
-Globals]({{ page.root }}/jumpto/php-ini/#registerglobals)
+Globals]({{ page.root }}/jumpto/php-ini/#register_globals)
 
 Mit dieser veralteten Servereinstellung werden alle Eingabedaten nicht nur in
 den Requestvariablen (`$_POST`, `$_GET`), sondern auch als lokale Variablen

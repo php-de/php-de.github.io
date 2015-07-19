@@ -116,7 +116,7 @@ Generell gilt:
 
 Die offensichtlichsten Daten sind die Parameter, die durch Auswertung der URL oder Eingabe in Formularfelder entstehen.
 
-Keinesfalls zu vergessen ist die Möglichkeit, dass weitere, nicht vorgesehene Parameter übersandt werden können. Gerade in Verbindung mit der Ini-Einstellung [register_globals_gpc]({{ page.root }}/jumpto/php-ini/#registerglobals) und nichtinitialiserten Variablen ist dies ein nicht zu unterschätzender Angriffsvektor. Möglichkeiten bietet sich dazu viele:
+Keinesfalls zu vergessen ist die Möglichkeit, dass weitere, nicht vorgesehene Parameter übersandt werden können. Gerade in Verbindung mit der Ini-Einstellung [register_globals_gpc]({{ page.root }}/jumpto/php-ini/#register_globals) und nichtinitialiserten Variablen ist dies ein nicht zu unterschätzender Angriffsvektor. Möglichkeiten bietet sich dazu viele:
 
 - direktes Schreiben der Daten in die URL
 - Verwenden eines selbst erstellten Formulars

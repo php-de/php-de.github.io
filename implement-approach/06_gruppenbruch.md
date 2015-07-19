@@ -45,7 +45,8 @@ können als Gruppenbruch umgesetzt werden.
 
 
 
-### Prinzip und Voraussetzung
+### [Prinzip und Voraussetzung](#prinzip-und-voraussetzung)
+{: #prinzip-und-voraussetzung}
 
 Alle zu gruppierenden Elemente werden in einer Schleife durchlaufen und in den
 Ausgabepuffer oder eine Variable geschrieben. Gruppierende Elemente erfolgen
@@ -54,7 +55,8 @@ sich dabei ein gemeinsames Gruppierungkriterium ableiten lassen.
 
 
 
-### Bruch nach Vergleichskriterium
+### [Bruch nach Vergleichskriterium](#bruch-nach-vergleichskriterium)
+{: #bruch-nach-vergleichskriterium}
 
 Das gruppierende Kriterium wird hier stets mit seinem Vorgänger verglichen, der
 für diesen Zweck bis zum nächsten Schleifendurchlauf temporär gespeichert wird.
@@ -110,9 +112,11 @@ Buchstabe: U
 
 
 
-### Bruch nach sonstigen Kriterien
+### [Bruch nach sonstigen Kriterien](#bruch-nach-sonstigen-kriterien)
+{: #bruch-nach-sonstigen-kriterien}
 
-#### Modulo
+#### [Modulo](#modulo)
+{: #modulo}
 
 Der Modulo ist der Rest einer Ganzzahldivision. Damit liefert `Modulo(n)` für
 in einer Schleife durchlaufene numerische Werte für jeden n-ten Wert ein
@@ -202,9 +206,11 @@ if (false === empty ($content)) {
 
 
 
-### Alternativen
+### [Alternativen](#alternativen)
+{: #alternativen}
 
-#### Abbildung einer Zwischenstruktur auf Arrays
+#### [Abbildung einer Zwischenstruktur auf Arrays](#abbildung-einer-zwischenstruktur-auf-arrays)
+{: #abbildung-einer-zwischenstruktur-auf-arrays}
 
 Eine einfach Alternative bieten mehrdimensionale Arrays, die als Schlüssel der
 obersten Ebene das Sortierkriterium nutzen und als Unterebene eine Menge von
@@ -283,7 +289,8 @@ Vorteil ergibt sich, dass die Eingansreihenfolge nicht durch Sortierung
 verändert werden muss. Das kann für bestimmte Daten, etwa Logfile-Daten oder
 IMAP-Listen, die zum Beispiel zeitlich angeordnet sind, vorteilhaft sein.
 
-#### Verschachtelte Schleifen mit Abbruchbedingung
+#### [Verschachtelte Schleifen mit Abbruchbedingung](#verschachtelte-schleifen-mit-abbruchbedingung)
+{: #verschachtelte-schleifen-mit-abbruchbedingung}
 
 Bsp. 5, Gruppierung über Schleifenabbruch, PHP Umsetzung:
 

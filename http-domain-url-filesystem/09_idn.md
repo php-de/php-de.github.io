@@ -26,7 +26,7 @@ inhalt:
         simple: "externe Klassen, PHP-Boardmittel"
 
     -   name: "RFC zum Thema IDN(A) / Punycode"
-        anchor: rfc-zum-thema-idna-punycode
+        anchor: rfc-zum-thema-idn-a-punycode
         simple: ""
 
 

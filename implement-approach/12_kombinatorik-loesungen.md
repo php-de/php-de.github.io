@@ -25,7 +25,7 @@ inhalt:
         anchor: alle-kombinationen-einer-bestimmten-anzahl-der-elemente-eines-arrays
 
     -   name: "Ziehen mit Zurücklegen"
-        anchor: ziehen-mit-zurcklegen
+        anchor: ziehen-mit-zuruecklegen
 
     -   name: "Weblinks"
         anchor: weblinks
@@ -33,9 +33,11 @@ inhalt:
 entry-type: in-discussion
 ---
 
-### Grundlegende Funktionen
+### [Grundlegende Funktionen](#grundlegende-funktionen)
+{: #grundlegende-funktionen}
 
-#### Berechnung der Fakultät
+#### [Berechnung der Fakultät](#berechnung-der-fakultaet)
+{: #berechnung-der-fakultaet}
 
 ~~~ php
 /**
@@ -59,7 +61,8 @@ function fac($n)
 };
 ~~~
 
-#### Berechnung des Binomialkoeffizienten (n über k)
+#### [Berechnung des Binomialkoeffizienten (n über k)](#berechnung-des-binomialkoeffizienten-n-ueber-k)
+{: #berechnung-des-binomialkoeffizienten-n-ueber-k}
 
 ~~~ php
 function nChooseK($n, $k)
@@ -78,7 +81,8 @@ function nChooseK($n, $k)
 
 
 
-### Alle Kombinationen der Elemente eines Arrays
+### [Alle Kombinationen der Elemente eines Arrays](#alle-kombinationen-der-elemente-eines-arrays)
+{: #alle-kombinationen-der-elemente-eines-arrays}
 
 ~~~ php
 /**
@@ -188,7 +192,8 @@ Ausgabe:
 
 
 
-### Alle Kombinationen einer bestimmten Anzahl der Elemente eines Arrays
+### [Alle Kombinationen einer bestimmten Anzahl der Elemente eines Arrays](#alle-kombinationen-einer-bestimmten-anzahl-der-elemente-eines-arrays)
+{: #alle-kombinationen-einer-bestimmten-anzahl-der-elemente-eines-arrays}
 
 Beispiel: Lottozahlen (alle Kombinationen von 6 aus 49).
 
@@ -292,7 +297,8 @@ echo implode('-', $path3) . "\n"; // 1-2-3-17-28-39
 
 
 
-### Ziehen mit Zurücklegen
+### [Ziehen mit Zurücklegen](#ziehen-mit-zuruecklegen)
+{: #ziehen-mit-zuruecklegen}
 
 ~~~ php
 <?php
@@ -347,6 +353,7 @@ echo implode(', ', get_perm($elements, $draw, $pow - 1)) . "\n";
 
 
 
-### Weblinks
+### [Weblinks](#weblinks)
+{: #weblinks}
 
 - [Finding All Permutations of an Array (PHP Cookbook)](http://docstore.mik.ua/orelly/webprog/pcook/ch04_26.htm)

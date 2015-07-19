@@ -21,15 +21,15 @@ author:
 
 inhalt:
     - name: "magic_quotes_gpc"
-      anchor: magicquotesgpc
+      anchor: magic_quotes_gpc
       simple: ""
 
     - name: "register_globals"
-      anchor: registerglobals
+      anchor: register_globals
       simple: ""
 
     - name: "Verfügbarkeit"
-      anchor: verfgbarkeit
+      anchor: verfuegbarkeit
       simple: ""
 
     - name: "Fremdinitialiserung"
@@ -49,23 +49,23 @@ inhalt:
       simple: ""
 
     - name: "allow_url_fopen"
-      anchor: allowurlfopen
+      anchor: allow_url_fopen
       simple: ""
 
     - name: "allow_url_include"
-      anchor: allowurlinclude
+      anchor: allow_url_include
       simple: ""
 
     - name: "disable_functions"
-      anchor: disablefunctions
+      anchor: disable_functions
       simple: ""
 
     - name: "disable_classes"
-      anchor: disableclasses
+      anchor: disable_classes
       simple: ""
 
     - name: "short_open_tag"
-      anchor: shortopentag
+      anchor: short_open_tag
       simple: ""
 
     - name: "Abschluss"
@@ -78,7 +78,9 @@ inhalt:
 
 ---
 
-### magic_quotes_gpc
+
+### [magic_quotes_gpc](#magic_quotes_gpc)
+{: #magic_quotes_gpc}
 
 Die Direktive **magic_quotes_gpc** bezeichnet einen Eintrag der php.ini-Datei, die PHP anweist, die Werte von übermittelten GPC-Parametern (GET, POST und COOKIE) einer automatische Sonderzeichen-Auszeichnung (sogenanntes Escaping) zu unterziehen. Allen der nachfolgend genannten Sonderzeichen wird dabei ein Backslash (\\) als Escapezeichen vorangestellt.
 
@@ -98,13 +100,17 @@ Um zur Laufzeit herauszufinden, ob die Direktive auf On gesetzt ist, kann die Fu
 Schon jetzt sollten <a href="http://www.php.net/manual/en/security.magicquotes.disabling.php">Alternativen</a> benutzt werden, um Software zukunftsfähig zu gestalten.
 </div>
 
-### register_globals
+
+### [register_globals](#register_globals)
+{: #register_globals}
 
 Die Direktive register_globals in der php.ini bewirkt, dass alle Request-Parameter unter ihrem Namen als Variable im globalen [Scope]({{ page.root }}/jumpto/geltungsbereich-namensraum/) verfügbar sind. Wird einer PHP-Datei beispielsweise der GET-Parameter foo=bar übergeben, so ist bei aktiver register_globals Einstellung der Wert bar im Skript direkt unter dem Variablennamen $foo abrufbar.
 
 Da register_globals in frühen PHP-Versionen Standard war, setzen viele alte (veraltete) Scripte noch auf dieses Verhalten. In neuen Serverumgebungen funktionieren diese Scripte jedoch out-of-the-box nicht mehr, da register_globals in aktuellen PHP-Versionen deaktiviert ist und damit die betreffenden Variablen nicht mehr automatisch im Scope deklariert werden.
 
-#### Problematik
+
+#### [Problematik](#problematik)
+{: #problematik}
 
 Die Verwendung von Variablen, die durch register_globals automatisch initialisiert wurden, führt zu verschiedenen Problemen, weshalb diese Option zunehmend per Ini-Voreinstellung abgeschaltet ist und in zukünftigen PHP Versionen ganz entfallen wird. Nachfolgend werden die Problematiken aufgeführt.
 
@@ -113,11 +119,15 @@ Die Verwendung von Variablen, die durch register_globals automatisch initialisie
 Es wird dringend empfohlen, stattdessen <a href="{{ page.root }}/jumpto/geltungsbereich-namensraum/#superglobals">SuperGlobals</a> zu verwenden!
 </div>
 
-##### Verfügbarkeit
+
+##### [Verfügbarkeit](#verfuegbarkeit)
+{: #verfuegbarkeit}
 
 Alleine die Möglichkeit, register_globals ein- und auzuschalten führt zum ersten Problem. Ist eine Software so programmiert, dass sie automatisch initialisierte Variablen benutzt, funktioniert sie nicht mehr auf Systemen, die register_globals deaktiviert haben. Gerade auf Serverbereichen, die nicht selbst administrierbar sind, ergibt sich als einzige Möglichkeit eine Änderung der genutzen Software. Die alternative Verwendung der superglobalen Parameterarrays funktioniert dagegen sowohl mit an- als auch abgeschalteter Variablenregistrierung.
 
-##### Fremdinitialiserung
+
+##### [Fremdinitialiserung](#fremdinitialiserung)
+{: #fremdinitialiserung}
 
 Betrachtet man das obige Beispiel lässt sich erahnen, dass aus dieser automatischen Variablengenerierung immense Probleme entstehen können, die nicht zuletzt auch die Sicherheit des Skripts beeinträchtigen. Der Programmierer hat durch register_globals keine Kontrolle mehr über die verfügbaren Variablen.
 
@@ -153,11 +163,15 @@ if (true == $passSecondIf) {
 
 Somit ist es nicht mehr möglich, $passSecondIf zu manipulieren. Dass das Beispiel ohne register_globals trotzdem nicht wie gewünscht funktionieren würde, ist Problematik 1 geschuldet. Lediglich die Prüfung des Parameters durch den Zugriff über eine Superglobale führt hier zum Ziel.
 
-##### Kollision von Parametern
+
+##### [Kollision von Parametern](#kollision-von-parametern)
+{: #kollision-von-parametern}
 
 Ein weiteres Problem von register_globals ist, dass sich gleichnamige Parameter überschreiben. So wird beispielsweise je nach Einstellung der GET-Parameter **$foo** durch den POST-Parameter **$foo** überschrieben, der wiederum vom COOKIE-Parameter **$foo** überschrieben wird. Werden also mehrere gleichnamige Parameter auf verschiedenem Wege übergeben, so ist nur einer von ihnen schlussendlich verfügbar, da alle denselben Variablennamen (hier: **$foo**) für sich beanspruchen.
 
-### Alternative Verwendung von Superglobalen Arrays
+
+### [Alternative Verwendung von Superglobalen Arrays](#alternative-verwendung-von-superglobalen-arrays)
+{: #alternative-verwendung-von-superglobalen-arrays}
 
 Seit PHP Version 4.1.0 stehen für jede Art der Request-Parameterübergabe geeignete assoziative Arrays zur Verfügung, die die Werte unter dem Parameternamen als Schlüssel bereitstellen. Die Arrays sind superglobal, also in jedem Variablenraum verfügbar, und nach dem Typ des Request benannt. Ein GET Parameteraufruf mit **?foo=bar** stellt bspw. ein Array **$_GET** mit folgendem Inhalt bereit:
 
@@ -184,38 +198,50 @@ $foo = $_REQUEST['foo'];
 
 Entsprechend bündelt **$_POST** alle POST Parameter und **$_COOKIE** alle vom Browser gesandten Cookiedaten des Scriptaufrufs.
 
-### expose_php
+
+### [expose_php](#expose_php)
+{: #expose_php}
 
 Erlaubt das Auslesen über einen Header *(z.B. X-Powered-By: PHP/5.3.7)*, ob PHP aktiviert ist. Des weiteren wird durch das Anhängen eines URL-Segments kontrolliert, ob das PHP-Logo erreichbar ist.
 Wenn expose_php ausgeschaltet ist, werden weder das Logo, noch die Credits bei **php_info()** dargestellt.
 
 Voreinstellung ist hier aktiv, kann aber getrost ausgeschaltet werdem, da diese Informationen ein normaler User nicht zu wissen braucht.
 
-### allow_url_fopen
+
+### [allow_url_fopen](#allow_url_fopen)
+{: #allow_url_fopen}
 
 Mit dieser Option wird der Zugriff mittels **fopen** auf externe Server gewährt. Es wird damit die Möglichkeit geschaffen auf URL-Objekte , wie normale Dateien zuzugreifen.
 
 Es wird empfohlen die Option zu deaktivieren, da durch das Sicherheitsrisiko verringert wird.
 
-### allow_url_include
+
+### [allow_url_include](#allow_url_include)
+{: #allow_url_include}
 
 Über diese Option wird der Zugriff mittels **reuqire**, **reuqire_once**, **include**, sowie **include_once** auf externe Server ermöglicht. Um **allow_url_include** nutzen zu können, muss **allow_url_fopen** aktiviert sein.
 
 Es wird empfohlen die Funktion deaktiviert zu lassen, da durch das Sicherheitsrisiko verringert wird.
 
-### disable_functions
+
+### [disable_functions](#disable_functions)
+{: #disable_functions}
 
 Mit dieser Option können ausschließlich interne Funktionen aus Sicherheitsgründen über eine Kommatatrennung deaktiviert werden.
 
 Sie hat keinen Einfluss auf den **Safe Mode** und muss immer in der *php.ini* gesetzt werden. Ein Änderungen z.B.: über Apaches **httpd.conf** ist nicht möglich.
 
-### disable_classes
+
+### [disable_classes](#disable_classes)
+{: #disable_classes}
 
 Mit dieser Option können Klassen aus Sicherheitsgründen über eine Kommatatrennung deaktiviert werden.
 
 Sie hat keinen Einfluss auf den **Safe Mode** und muss immer in der *php.ini* gesetzt werden. Ein Änderungen z.B.: über Apaches **httpd.conf** ist nicht möglich.
 
-### short_open_tag
+
+### [short_open_tag](#short_open_tag)
+{: #short_open_tag}
 
 Durch diese Option wird die Kurzschreibweise für **php** eingeschaltet.
 
@@ -249,11 +275,15 @@ Seit ***PHP 5.4*** ist die Kurzausgabe von *PHP* und *echo* standardgemäß eing
 
 Empfohlen wird diese Funktion zu deaktiviert, da es den Code besser les- und wartbar macht.
 
-### Abschluss
+
+### [Abschluss](#abschluss)
+{: #abschluss}
 
 Zum Abschluss sei noch gesagt, es gibt viele weitere **PHP-Direktive**, die einem das Leben einfacher, aber auch schwerer machen können. Dieser Artikel stellt nur eine sehr kleine Auswahl da. Für weiterführende Informationen steht [PHP.net: php.ini-Direktiven](http://php.net/manual/de/ini.list.php) zur Verfügung.
 
-### Links zum Thema
+
+### [Links zum Thema](#links-zum-thema)
+{: #links-zum-thema}
 
 * [RegisterGlobals, was ist das?](http://www.openwebboard.org/Tutorials/PHP_MySQL/RegisterGlobals_was_ist_das_1.html)
 * [PHP.net: Superglobals](http://de.php.net/manual/de/language.variables.superglobals.php)

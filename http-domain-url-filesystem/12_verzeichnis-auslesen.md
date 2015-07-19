@@ -47,7 +47,8 @@ inhalt:
 entry-type: in-discussion
 ---
 
-### Hinweis
+### [Hinweis](#hinweis)
+{: #hinweis}
 
 * Der Übersichtlichkeit halber werden Kommentare des vorhergehenden Codes
   teilweise weggelassen.
@@ -56,7 +57,8 @@ entry-type: in-discussion
 
 
 
-### Der moderne Weg
+### [Der moderne Weg](#der-moderne-weg)
+{: #der-moderne-weg}
 
 Das folgende Beispiel nutzt
 [SPL-Klassen](http://us3.php.net/manual/en/book.spl.php), die in PHP 5.3
@@ -81,7 +83,8 @@ foreach ($iterator as $file) {
 
 
 
-### Grundlage
+### [Grundlage](#grundlage)
+{: #grundlage}
 
 ~~~ php
 $dir = '/path/to/files/';
@@ -101,7 +104,8 @@ closedir($handle);
 
 
 
-### Erweiterung
+### [Erweiterung](#erweiterung)
+{: #erweiterung}
 
 * Fehlerkontrolle (fehlendes oder nicht lesbares Verzeichnis)
 * Ausschluss der Dateieinträge `.` (Selbstreferenz) und `..` (übergeordneter
@@ -146,7 +150,8 @@ while (false !== ($file = readdir($handle))) {
 closedir($handle);
 ~~~
 
-#### Hinweis
+#### [Hinweis](#hinweis-2)
+{: #hinweis-2}
 
 Hier und nachfolgend muss sichergestellt werden, dass `$dir` einen
 abschließenden `/` enthält. Grund ist die Kombination mit dem ausgelesenen
@@ -162,7 +167,8 @@ berücksichtigen.
 
 
 
-### Unterverzeichnisse rekursiv auslesen
+### [Unterverzeichnisse rekursiv auslesen](#unterverzeichnisse-rekursiv-auslesen)
+{: #unterverzeichnisse-rekursiv-auslesen}
 
 Um im Leseordner auch die Einträge von Unterverzeichnissen zu berücksichtigen,
 wird ein Teil Funktionalität in eine selbstaufrufende Funktion ausgelagert.
@@ -215,7 +221,8 @@ readDirRecursive($dir);
 
 
 
-### Verarbeitung der Inhalte
+### [Verarbeitung der Inhalte](#verarbeitung-der-inhalte)
+{: #verarbeitung-der-inhalte}
 
 Bisher wurden die Dateinamen noch nicht weiter verarbeitet. Sollen die
 Dateinamen nicht direkt ausgegeben werden, sondern beispielsweise in ein Array
@@ -229,7 +236,8 @@ Ein an der Leseposition gefundenes Unterverzeichnis wird zuerst durchlaufen
 (und gegebenenfalls weitere in ihm), bevor zur nächsten Position
 zurückgesprungen wird.
 
-#### Array Return
+#### [Array Return](#array-return)
+{: #array-return}
 
 Hier ist die Fehlerausgabe `false` zu beachten, die im Anfang der Funktion
 erfolgen kann.
@@ -287,7 +295,8 @@ $dir = '/path/to/files';
 $result = readDirRecursive($dir);
 ~~~
 
-#### Referenz-Aufruf
+#### [Referenz-Aufruf](#referenz-aufruf)
+{: #referenz-aufruf}
 
 Der Vorteil dieser Funktion: Es muß nicht mit einer Zwischenmenge
 `$resultSubdir` gearbeitet werden, da der rekursive Aufruf direkt in die
@@ -344,9 +353,11 @@ readDirRecursive($dir , $result);
 
 
 
-### Anmerkungen
+### [Anmerkungen](#anmerkungen)
+{: #anmerkungen}
 
-#### Verzeichnisprüfung
+#### [Verzeichnisprüfung](#verzeichnispruefung)
+{: #verzeichnispruefung}
 
 Da die Einträge `.` und `..` in jedem normalen Verzeichnis vorhanden sind und
 stets als erste Einträge zurückgegeben werden, wird oft statt `is_dir($file)`
@@ -355,7 +366,8 @@ Aufrufe gestartet, deren Rückgabe nicht verarbeitet wird.
 
 Diese Aufrufe müssen natürlich vor der while Schleife erfolgen.
 
-#### `readdir` Rückgabe
+#### [`readdir` Rückgabe](#readdir-rueckgabe)
+{: #readdir-rueckgabe}
 
 Das PHP Manual stellt ausdrücklich in seinem Beispiel die Verwendung von `while
 (false !== ($file = readdir($handle)))` als korrekt gegenüber `while ($file =
@@ -374,7 +386,8 @@ while (false != ($file = readdir($handle)) {}
 while (! false == ($file = readdir($handle)) {}
 ~~~
 
-#### Verzeichnisse auslesen
+#### [Verzeichnisse auslesen](#verzeichnisse-auslesen)
+{: #verzeichnisse-auslesen}
 
 Natürlich ist auch das Auslesen aller „Nicht-Dateien“ (Verzeichnisse) möglich.
 Dabei kehren sich quasi die Bearbeitung der Zustände `is_dir($file)` und

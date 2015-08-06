@@ -4,9 +4,9 @@ permalink: /jumpto/vagrant/
 root: ../..
 title: "Entwicklungsumgebung mit Vagrant"
 
-{::comment}
-group: "Entwicklungsumgebung"
-{:/comment}
+#{::comment}
+#group: "Entwicklungsumgebung"
+#{:/comment}
 
 orderId: 9
 

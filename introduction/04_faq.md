@@ -155,7 +155,7 @@ einen Stringbegrenzer, ein Semikolon oder eine Klammer vergessen. Siehe:
 
 
 
-#### [Warum werden auf meiner Seite die Umlaute falsch dargestellt, obwohl ich UTF-8 im HTML-Dokument angegeben habe?](#html-charset)
+#### <span id="charset"></span>[Warum werden auf meiner Seite die Umlaute falsch dargestellt, obwohl ich UTF-8 im HTML-Dokument angegeben habe?](#html-charset)
 {: #html-charset}
 
 Die Zeichensatz-Angabe im `meta`-Element im HTML-Code ist nur eine von mehreren

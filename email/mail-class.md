@@ -144,7 +144,7 @@ Die Klasse flugs auf dem Server installiert, Pfade angepasst und das Dauerfeuer 
 Überblick der aktuell publiken Mailer-Klassen-Kandidaten:
 
 - [http://swiftmailer.org/](http://swiftmailer.org/)
-- [http://sourceforge.net/projects/phpmailer/](http://sourceforge.net/projects/phpmailer/)
+- [https://github.com/PHPMailer/PHPMailer/](https://github.com/PHPMailer/PHPMailer/)
 - [http://pear.php.net/package/Mail/](http://pear.php.net/package/Mail/)
 
 

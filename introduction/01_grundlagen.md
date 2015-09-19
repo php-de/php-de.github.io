@@ -374,8 +374,6 @@ inhalt:
 
   * **Weiterführendes:**
     * [Captchas sind Blödsinn - Alternativen gegen Spam](http://1ngo.de/web/captcha-spam.html)
-    * [Spam bekämpfen – aber richtig!](http://www.shiftedwork.de/blog/2010/08/10/spam-bekampfen-aber-richtig/) <br>
-      Anregungen zur Abwehr von Spam ohne grafische Captchas.
 
 
 ##### [PHP Fortgeschrittene](#php-fortgeschrittene)

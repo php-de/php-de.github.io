@@ -14,7 +14,7 @@ author:
         profile: 21246
 inhalt:
     -   name: "Hashing (Hash-Funktion)"
-        anchor: hashing-hash-funktion
+        anchor: hashing
         simple: "Anwendung, Sicherheit, Gesalzene Hashes"
 
     -   name: "Kodierung"
@@ -32,12 +32,10 @@ entry-type: in-discussion
 Diese Übersicht gibt einen kurzen Überblick über die unterschiedlichen Verfahren. Weitere Detailinformationen gibt es dazu u.a. bei den verlinkten Quellen.
 
 
-### [Hashing (Hash-Funktion)](#hashing-hash-funktion)
-{: #hashing-hash-funktion}
+### [Hashing (Hash-Funktion)](#hashing)
+{: #hashing}
 
-Zweck des Hashing ist es aus einem Ausgangswert einen nicht rückrechenbaren Hash zu generieren. Unabhängig der Länge des Ausgangswertes entsteht je nach verwendeter Funktion ein gleich langer Hash. Hierfür stehen in PHP für verschiedene Hash-Algorithmen entsprechende Funktionen zur Verfügung.
-
-[Wikipedia Artikel zu "Hashfunktion".](http://de.wikipedia.org/wiki/Hashfunktion)
+Zweck des Hashing ist es aus einem Ausgangswert einen nicht rückrechenbaren Hash zu generieren. Unabhängig der Länge des Ausgangswertes entsteht je nach verwendeter Funktion ein gleich langer Hash. Hierfür stehen in PHP für verschiedene Hash-Algorithmen entsprechende Funktionen zur Verfügung. [Wikipedia Artikel zu "Hashfunktion".](http://de.wikipedia.org/wiki/Hashfunktion)
 
 
 ##### [Anwendung](#anwendung)
@@ -72,7 +70,7 @@ Weitere Informationen dazu, welche Algorithmen man aktuell vermeiden und verwend
 In PHP stehen dafür die Funktionen [base64_encode()](http://php.net/manual/de/function.base64-encode.php) und [base64_decode()](http://php.net/manual/de/function.base64-decode.php) zur Verfügung.
 
 
-<div class="alert alert-info"><strong>Hinweis!</strong> Die oben erwähnten Funktionen zu verwenden, um Texte "geheim" zu halten oder "unleserlich" zu machen, macht wenig Sinn. Zumeist ist schon am kodierten Ergebnis relativ eindeutig ersichtlich das es sich um das Produkt einer Base64-Kodierung handelt. Hierzu ist eine Verschlüsselung anzuwenden, siehe dazu weiter unten.</div>
+<div class="alert alert-warning"><strong>Achtung!</strong> Die oben erwähnten Funktionen zu verwenden, um Texte "geheim" zu halten oder "unleserlich" zu machen, macht keinen Sinn. Zumeist ist schon am kodierten Ergebnis relativ eindeutig ersichtlich das es sich um das Produkt einer Base64-Kodierung handelt. Hierzu ist eine Verschlüsselung anzuwenden, siehe dazu weiter unten.</div>
 
 
 ### [Verschlüsselung](#verschluesselung)
@@ -82,7 +80,136 @@ In PHP stehen dafür die Funktionen [base64_encode()](http://php.net/manual/de/f
 
 > Verschlüsselung nennt man den Vorgang, bei dem ein klar lesbarer Text (Klartext, oder auch Informationen anderer Art wie Ton- oder Bildaufzeichnungen) mit Hilfe eines Verschlüsselungsverfahrens (Kryptosystem) in eine "unleserliche", das heißt nicht einfach interpretierbare Zeichenfolge (also Geheimtext) umgewandelt wird. Als entscheidend wichtige Parameter der Verschlüsselung werden hierbei ein oder auch mehrere Schlüssel verwendet.
 
+In PHP stehen dafür die Funktionen der kryptografischen Erweiterung [Mcrypt](http://php.net/manual/de/book.mcrypt.php) zur Verfügung.
 
-PHP-Funktionen z.B. über die Erweiterung MCrypt:
-[mcrypt()](http://php.net/manual/de/book.mcrypt.php)
 
+##### [Anwendungsbeispiel](#beispiel)
+{: #beispiel}
+
+Die hierfür verwendete Klasse wurde als Anwendungsbeispiel [von einigen Benutzern im php.de-Forum](http://www.php.de/forum/php-de-intern/wiki-diskussionsforum/1448256-verschl%C3%BCsselung-erg%C3%A4nzung-beispielklasse) erstellt und ist grundsätzlich lauffähig. Ein Einsatz im produktiven Betrieb liegt natürlich im eigenen Ermessen.
+
+Um das erstellte, verschlüsselte Ergebnis als lesbaren String weitergeben zu können, wird die base64-Kodierung verwendet.
+
+**Die Klasse**
+
+~~~php
+<?php
+/**
+ * Mcrypt Adapter
+ *
+ * @license https://creativecommons.org/publicdomain/zero/1.0/
+ * @see http://php.net/manual/en/book.mcrypt.php
+ * @see https://en.wikipedia.org/wiki/Adapter_pattern
+ * @see https://en.wikipedia.org/wiki/Padding_(cryptography)#PKCS7
+ * @see http://stackoverflow.com/a/7324793
+ * @see http://www.cryptofails.com/post/70059609995/crypto-noobs-1-initialization-vectors
+*/
+class Cipher
+{
+    /**
+     * @var hash of passphrase
+     */
+    private $secureKey;
+
+    /**
+     * @var initialization vector size
+     */
+    private $initializationVectorSize;
+
+    /**
+     * @var en-/decryption method
+     */
+    private $cryptCipher = MCRYPT_RIJNDAEL_128;
+
+    /**
+     * @var en-/decryption mode
+     */
+    private $cryptMode = MCRYPT_MODE_CBC;
+
+    /**
+     * Constructor
+     *
+     * @api
+     * @param string $passpharse
+     */
+    public function __construct($passphrase)
+    {
+        $this->secureKey = hash('sha256', $passphrase, true);
+        $this->initializationVectorSize = mcrypt_get_iv_size($this->cryptCipher, $this->cryptMode);
+    }
+
+    /**
+     * query command - encrypts the given data string
+     *
+     * @api
+     * @param string $unencryptedData
+     * @return string
+     */
+    public function encrypt($unencryptedData)
+    {
+        $iv = mcrypt_create_iv($this->initializationVectorSize, MCRYPT_DEV_URANDOM);
+
+        $blockSize = mcrypt_get_block_size($this->cryptCipher, $this->cryptMode);
+        $rest = strlen($unencryptedData) % $blockSize;
+        $pad = $blockSize - ($rest > 0) ? $rest : $blockSize;
+
+        return $iv . mcrypt_encrypt(
+            $this->cryptCipher,
+            $this->secureKey,
+            $unencryptedData . str_repeat(chr($pad), $pad),
+            $this->cryptMode,
+            $iv
+        );
+    }
+
+    /**
+     * query command - decrypts the given encrypted string
+     *
+     * @api
+     * @param string $encryptedData
+     * @return string
+     */
+    public function decrypt($encryptedData)
+    {
+        $decryptedData = mcrypt_decrypt(
+            $this->cryptCipher,
+            $this->secureKey,
+            substr($encryptedData, $this->initializationVectorSize),
+            $this->cryptMode,
+            substr($encryptedData, 0, $this->initializationVectorSize)
+        );
+        $pad = ord($decryptedData[strlen($decryptedData) - 1]);
+        return substr($decryptedData, 0, -$pad);
+    }
+}
+~~~
+
+
+**User A**
+
+~~~php
+require_once "cipher.class.php";
+
+$uncrypted = 'Fußball á la Bärbel';
+
+$passphrase = 'f00bar';
+$cipher = new Cipher($passphrase);
+$crypted = $cipher->encrypt($uncrypted); // ergibt bei jeder Anwendung ein anderes Ergebnis
+
+var_dump( base64_encode($crypted) ); // z.B. MNK5fNUDNj0Nwe2hYbocGMWiNpHmpp8NcpIPr07st2myTi4NuFVq0RDF3f47Aoci
+~~~
+
+**User B**
+
+~~~php
+require_once "cipher.class.php";
+
+$crypted = 'MNK5fNUDNj0Nwe2hYbocGMWiNpHmpp8NcpIPr07st2myTi4NuFVq0RDF3f47Aoci';
+$crypted = base64_decode($crypted);
+
+$passphrase = 'f00bar';
+$cipher = new Cipher($passphrase);
+$decrypted = $cipher->decrypt($crypted);
+
+var_dump($decrypted); // Fußball á la Bärbel
+~~~

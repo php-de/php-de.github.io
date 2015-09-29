@@ -86,7 +86,7 @@ In PHP stehen dafür die Funktionen der kryptografischen Erweiterung [Mcrypt](ht
 ##### [Anwendungsbeispiel](#beispiel)
 {: #beispiel}
 
-Die hierfür verwendete Klasse wurde als Anwendungsbeispiel [von einigen Benutzern im php.de-Forum](http://www.php.de/forum/php-de-intern/wiki-diskussionsforum/1448256-verschl%C3%BCsselung-erg%C3%A4nzung-beispielklasse) erstellt und ist grundsätzlich lauffähig. Ein Einsatz im produktiven Betrieb liegt natürlich im eigenen Ermessen.
+Die hier verwendete Klasse wurde als Anwendungsbeispiel [von einigen Benutzern im php.de-Forum](http://www.php.de/forum/php-de-intern/wiki-diskussionsforum/1448256-verschl%C3%BCsselung-erg%C3%A4nzung-beispielklasse) erstellt und ist grundsätzlich lauffähig. Ein Einsatz im produktiven Betrieb liegt natürlich im eigenen Ermessen.
 
 Um das erstellte, verschlüsselte Ergebnis als lesbaren String weitergeben zu können, wird die base64-Kodierung verwendet.
 

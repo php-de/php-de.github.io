@@ -70,7 +70,7 @@ Weitere Informationen dazu, welche Algorithmen man aktuell vermeiden und verwend
 In PHP stehen dafür die Funktionen [base64_encode()](http://php.net/manual/de/function.base64-encode.php) und [base64_decode()](http://php.net/manual/de/function.base64-decode.php) zur Verfügung.
 
 
-<div class="alert alert-warning"><strong>Achtung!</strong> Die oben erwähnten Funktionen zu verwenden, um Texte "geheim" zu halten oder "unleserlich" zu machen, macht keinen Sinn. Zumeist ist schon am kodierten Ergebnis relativ eindeutig ersichtlich das es sich um das Produkt einer Base64-Kodierung handelt. Hierzu ist eine Verschlüsselung anzuwenden, siehe dazu weiter unten.</div>
+<div class="alert alert-warning"><strong>Achtung!</strong> Die oben erwähnten base64-Funktionen zu verwenden, um Texte "geheim" zu halten oder "unleserlich" zu machen, macht keinen Sinn. Zumeist ist schon am kodierten Ergebnis relativ eindeutig ersichtlich das es sich um das Produkt einer Base64-Kodierung handelt. Hierzu ist eine Verschlüsselung anzuwenden, siehe dazu weiter unten.</div>
 
 
 ### [Verschlüsselung](#verschluesselung)

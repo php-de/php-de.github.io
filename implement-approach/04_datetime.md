@@ -13,6 +13,10 @@ author:
         profile: 21246
 
 inhalt:
+    -   name: "Zeitzone"
+        anchor: zeitzone
+        simple: ""
+
     -   name: "DateTime-Objekt erstellen"
         anchor: datetime-erstellen
         simple: ""
@@ -74,10 +78,25 @@ Nachfolgende Seiten aus der PHP-Dokumentation finden in den Beispielen laufend V
 - [DateTime::createFromFormat](http://php.net/manual/de/datetime.createfromformat.php)
 
 
-<div class="alert alert-info">
-  Für alle nachfolgenden Beispiele wird mittels <code>date_default_timezone_set('Europe/Berlin');</code>
-  die verwendete <strong>Standard-Zeitzone</strong> gesetzt.
-</div>
+### [Zeitzone](#zeitzone)
+{: #zeitzone}
+
+Für alle nachfolgenden Beispiele wurde wie folgt die verwendete <strong>Standard-Zeitzone</strong> gesetzt.
+
+~~~php
+date_default_timezone_set('Europe/Berlin');
+~~~
+
+Alternativ kann die Zeitzone auch jeweils separat im jeweiligen DateTime-Objekt im Konstruktor angegeben werden.
+
+~~~php
+$dt = new DateTime('now', new DateTimeZone('Europe/Berlin'));
+
+// bzw.
+
+$dtZone = new DateTimeZone('Europe/Berlin');
+$dt = new DateTime('now', $dtZone);
+~~~
 
 
 ### [DateTime-Objekt erstellen](#datetime-erstellen)
@@ -177,7 +196,7 @@ $dt2 = new DateTime('2015-01-12');
 $dtInterval = $dt1->diff($dt2);
 echo $dtInterval->format('%R%a days');
 // +11 days
-~~~ 
+~~~
 
 ~~~ php
 // ist Benutzer schon seit 30 Tagen registriert?

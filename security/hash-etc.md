@@ -53,7 +53,7 @@ Das Sicherheitsrikiso bei Hash-Werten liegt in der grundsätzlichen Möglichkeit
 
 Weitere Details, sowie Anwendungsempfehlungen, sind in den nachfolgenden Artikel zu finden.
 
-[Sicheres Password Hashing](http://php.net/manual/de/faq.passwords.php).
+[Artikel "Sicheres Password Hashing" (php.net)](http://php.net/manual/de/faq.passwords.php)
 
 [PHP-Doku zu crypt():](http://php.net/manual/de/function.crypt.php)
 

@@ -51,13 +51,13 @@ Beim Login-Vorgang wird dann das im Login-Formular eingegebene Klartext-Passwort
 
 Das Sicherheitsrikiso bei Hash-Werten liegt in der grundsätzlichen Möglichkeit von Kollisionen, Stichwort: ["Rainbow-Tables"](http://de.wikipedia.org/wiki/Rainbow_Table). Dabei geht es in erster Linie darum, einen Ausgangswert zu finden, der nach dem Hash-Vorgang den selben Hash-Wert als Ergebnis hat.
 
-Aktuell gibt es für die zu verwendenden Hash-Funktionen nachfolgende Anwendungempfehlung.
+Weitere Details, sowie Anwendungsempfehlungen, sind in den nachfolgenden Artikel zu finden.
+
+[Sicheres Password Hashing](http://php.net/manual/de/faq.passwords.php).
 
 [PHP-Doku zu crypt():](http://php.net/manual/de/function.crypt.php)
 
 > password_hash() verwendet einen starken Hash, erzeugt ein starkes Salt, und wendet eine angemessene Anzahl von Runden automatisch an. password_hash() ist ein einfacher crypt()-Wrapper und kompatibel zu bestehenden Passwort-Hashes. Die Verwendung von password_hash() wird empfohlen.
-
-Weitere Informationen dazu sind in kompakter Form hier zu finden: [Sicheres Password Hashing (php.net)](http://php.net/manual/de/faq.passwords.php) und
 
 
 ##### [Anwendungsbeispiel](#beispiel-hash)

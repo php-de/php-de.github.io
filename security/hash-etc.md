@@ -15,7 +15,7 @@ author:
 inhalt:
     -   name: "Hashing (Hash-Funktion)"
         anchor: hashing
-        simple: "Anwendung, Sicherheit, Gesalzene Hashes"
+        simple: "Anwendung, Sicherheit"
 
     -   name: "Kodierung"
         anchor: kodierung
@@ -41,17 +41,39 @@ Zweck des Hashing ist es aus einem Ausgangswert einen nicht rückrechenbaren Has
 ##### [Anwendung](#anwendung)
 {: #anwendung}
 
-Die übliche Anwendung besteht darin, Paswörter zu hashen, bevor diese in der Datenbank gespeichert werden. Damit sind diese in der gehashten Form soweit nutzlos, selbst wenn man Zugriff darauf erlangt.
+Die übliche Anwendung besteht darin, Paswörter zu hashen, bevor diese in der Datenbank gespeichert werden. Damit sind diese in der gehashten Form soweit grundsätzlich nutzlos, selbst wenn man Zugriff darauf erlangt.
 
 Beim Login-Vorgang wird dann das im Login-Formular eingegebene Klartext-Passwort mit dem selben Algorithmus, wie jener der vor der Speicherung angewandt wurde, gehasht und dann dieser eben errechnete Hash mit dem bestehenden Hash in der Datenbank verglichen. Stimmen diese beiden überein, ist das Login-Passwort korrekt.
 
 
-##### [Sicherheit der Hash-Algorithmen, salted Hashes](#sicherheit-der-hash-algorithmen-salted-hashes)
-{: #sicherheit-der-hash-algorithmen-salted-hashes}
+##### [Sicherheit und Anwendungsempfehlung](#best-practise)
+{: #best-practise}
 
-Das Sicherheitsrikiso bei Hash-Werten liegt in der grundsätzlichen Möglichkeit von Kollisionen, Stichwort:  ["Rainbow-Tables"](http://de.wikipedia.org/wiki/Rainbow_Table). Dabei geht es in erster Linie darum, einen Ausgangswert zu finden, der nach dem Hash-Vorgang den selben Hash-Wert als Ergebnis hat.
+Das Sicherheitsrikiso bei Hash-Werten liegt in der grundsätzlichen Möglichkeit von Kollisionen, Stichwort: ["Rainbow-Tables"](http://de.wikipedia.org/wiki/Rainbow_Table). Dabei geht es in erster Linie darum, einen Ausgangswert zu finden, der nach dem Hash-Vorgang den selben Hash-Wert als Ergebnis hat.
 
-Weitere Informationen dazu, welche Algorithmen man aktuell vermeiden und verwenden sollte und bzgl. "salted" Hashes sind in kompakter Form hier angeführt: [Sicheres Password Hashing (php.net)](http://php.net/manual/de/faq.passwords.php).
+Aktuell gibt es für die zu verwendenden Hash-Funktionen nachfolgende Anwendungempfehlung.
+
+[PHP-Doku zu crypt():](http://php.net/manual/de/function.crypt.php)
+
+> password_hash() verwendet einen starken Hash, erzeugt ein starkes Salt, und wendet eine angemessene Anzahl von Runden automatisch an. password_hash() ist ein einfacher crypt()-Wrapper und kompatibel zu bestehenden Passwort-Hashes. Die Verwendung von password_hash() wird empfohlen.
+
+Weitere Informationen dazu sind in kompakter Form hier zu finden: [Sicheres Password Hashing (php.net)](http://php.net/manual/de/faq.passwords.php) und
+
+
+##### [Anwendungsbeispiel](#beispiel-hash)
+{: #beispiel-hash}
+
+~~~php
+$plain = "dasPasswort";
+$hash  = password_hash($plain, PASSWORD_DEFAULT);
+
+// Kontrolle - F5 drücken ergibt jedes mal einen neuen Hash.
+echo $hash;
+// z.B: $2y$10$7m/zzhrnqqNm9/Sch2dsUusF4DznOawCB3rLi8JY4mmmtqrx0L97a
+
+// Hash verifizieren
+var_dump( password_verify($plain, $hash) ); // true
+~~~
 
 
 ### [Kodierung](#kodierung)
@@ -83,8 +105,8 @@ In PHP stehen dafür die Funktionen [base64_encode()](http://php.net/manual/de/f
 In PHP stehen dafür die Funktionen der kryptografischen Erweiterung [Mcrypt](http://php.net/manual/de/book.mcrypt.php) zur Verfügung.
 
 
-##### [Anwendungsbeispiel](#beispiel)
-{: #beispiel}
+##### [Anwendungsbeispiel](#beispiel-crypt)
+{: #beispiel-crypt}
 
 Die hier verwendete Klasse wurde als Anwendungsbeispiel [von einigen Benutzern im php.de-Forum](http://www.php.de/forum/php-de-intern/wiki-diskussionsforum/1448256-verschl%C3%BCsselung-erg%C3%A4nzung-beispielklasse) erstellt und ist grundsätzlich lauffähig. Ein Einsatz im produktiven Betrieb liegt natürlich im eigenen Ermessen.
 

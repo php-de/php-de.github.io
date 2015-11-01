@@ -51,6 +51,9 @@ inhalt:
 ### [Lass Dir Fehler ausgeben](#lass-dir-fehler-ausgeben)
 {: #lass-dir-fehler-ausgeben}
 
+Nachfolgend Beispiele zur Fehlerausgabe. Natürlich kann man auch bei der Entwicklung schon vernünftig mit Exceptions arbeiten. In jedem Fall haben im Live-System `die()`-Anweisungen nichts zu suchen! Technische Fehlermeldungen sind nicht für Anwender gedacht und beinhalten ein Gefahrenpotential, weil Sie potentiellen Angreifern wertvolle Informationen liefern.
+
+
 #### [In der Entwicklungsumgebung](#entwicklungsumgebung)
 {: #entwicklungsumgebung}
 
@@ -82,9 +85,6 @@ Die Art der Fehlerausgabe kann auch zentral für die DB-Verbindung definiert wer
 
 - mysqli: [http://php.net/manual/de/mysqli-driver.report-mode.php](http://php.net/manual/de/mysqli-driver.report-mode.php)
 - PDO: [http://php-de.github.io/jumpto/pdo/#create-conn](http://php-de.github.io/jumpto/pdo/#create-conn) -> Parameter `PDO::ATTR_ERRMODE`
-
-
-Natürlich kann man auch bei der Entwicklung schon vernünftig mit Exceptions arbeiten. In jedem Fall haben im Live-System `die()`-Anweisungen nichts zu suchen! Technische Fehlermeldungen sind nicht für Anwender gedacht und beinhalten ein Gefahrenpotential, weil Sie potentiellen Angreifern wertvolle Informationen liefern.
 
 
 ### [Lass Dir die Query ausgeben](#lass-dir-die-query-ausgeben)

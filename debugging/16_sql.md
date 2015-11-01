@@ -78,10 +78,11 @@ if (false === mysqli_query($dblink, $query)) {
 #### [Zentrale Angabe](#zentral)
 {: #zentral}
 
-Die Art der Fehlerausgabe kann auch zentral für alle Operationen der jeweiligen DB-Verbindung definiert werden:
+Die Art der Fehlerausgabe kann auch zentral für die DB-Verbindung definiert werden:
 
-- mysqli: http://php.net/manual/de/mysqli-driver.report-mode.php
-- PDO: http://php-de.github.io/jumpto/pdo/#create-conn -> Parameter `PDO::ATTR_ERRMODE`
+- mysqli: [http://php.net/manual/de/mysqli-driver.report-mode.php](http://php.net/manual/de/mysqli-driver.report-mode.php)
+- PDO: [http://php-de.github.io/jumpto/pdo/#create-conn](http://php-de.github.io/jumpto/pdo/#create-conn) -> Parameter `PDO::ATTR_ERRMODE`
+
 
 Natürlich kann man auch bei der Entwicklung schon vernünftig mit Exceptions arbeiten. In jedem Fall haben im Live-System `die()`-Anweisungen nichts zu suchen! Technische Fehlermeldungen sind nicht für Anwender gedacht und beinhalten ein Gefahrenpotential, weil Sie potentiellen Angreifern wertvolle Informationen liefern.
 

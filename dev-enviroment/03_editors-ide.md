@@ -39,7 +39,7 @@ Dieser Beitrag bietet eine Übersicht über Editoren und Entwicklungsumgebungen,
 
 Ein Editor ist eine Anwendung, die grundlegende Funktionen zur Text- und Quellcodebearbeitung bereitstellt, die aber nicht direkt mit PHP oder anderen Tools interagiert und die auch keine weiterführenden sprachspezifischen Features enthält. Editoren erleichtern die Arbeit, indem sie beispielsweise per Syntax-Highlighting auf Typos oder andere Syntaxfehler hinweisen.
 
-* **Sublime Text** - **empfohlen**{: style="color: #006400"}
+* **Sublime Text**
     <br>Webseite: [http://www.sublimetext.com](http://www.sublimetext.com)
     <br>UI-Sprache: Englisch
     <br>Features: Viele - Siehe Webseite
@@ -79,7 +79,7 @@ Ein Editor ist eine Anwendung, die grundlegende Funktionen zur Text- und Quellco
 
     Coda ist brilliant und wäre eine echte Konkurrenz für Sublime Text, allerdings nur für den Mac.
 
-* **ActiveState Komodo Edit** - **empfohlen**{: style="color: #006400"}
+* **ActiveState Komodo Edit**
     <br>Webseite: [http://komodoide.com/](http://komodoide.com/)
     <br>UI-Sprache: Englisch
     <br>Features: Siehe Webseite
@@ -103,7 +103,7 @@ Ein Editor ist eine Anwendung, die grundlegende Funktionen zur Text- und Quellco
 
 Integrierte Entwicklungsumgebungen interagieren immer mit PHP und vernetzen eure Scripts so das ihr jederzeit (auch grafisch) durch die Scripts navigieren könnt und schon beim Autocomplete seht wo die Funktion die ihr gerade benutzt definiert wurde und welche Parameter sie hat. Qualitätssicherung steht nicht bei jeder IDE im Vordergrund, wird jedoch in jeder IDE zumindest Ansatzweise implementiert.
 
-* **JetBrains PhpStorm** - **empfohlen**{: style="color: #006400"}
+* **JetBrains PhpStorm**
     <br>Webseite: [http://www.jetbrains.com/phpstorm/](http://www.jetbrains.com/phpstorm/)
     <br>UI-Sprache: Englisch
     <br>Features: [http://www.jetbrains.com/phpstorm/features/index.html](http://www.jetbrains.com/phpstorm/features/index.html)
@@ -146,7 +146,7 @@ Integrierte Entwicklungsumgebungen interagieren immer mit PHP und vernetzen eure
 
     ZendStudio ist ziemlich nah an PHP entwickelt und basiert auf Eclipse.
 
-* **Aptana Studio** - **empfohlen**{: style="color: #006400"}
+* **Aptana Studio**
     <br>Webseite: [http://aptana.com/](http://aptana.com/)
     <br>UI-Sprache: Englisch
     <br>Features: [http://www.aptana.com/products/studio3.html](http://www.aptana.com/products/studio3.html)

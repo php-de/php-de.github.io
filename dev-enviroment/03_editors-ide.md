@@ -95,8 +95,6 @@ Ein Editor ist eine Anwendung, die grundlegende Funktionen zur Text- und Quellco
     <br>Kostet: **kostenlos**
     <br>Plattform: Windows, Linux, Mac
 
-    Bluefish ist aus der Produktfamilie der Content Editing Environments der Open Office Foundation und ebendso wie Notepad++, Sublime Text 2 und Coda ein leistungsfähiger Editor.
-
 
 ### [Integrierte Entwicklungsumgebungen (IDEs)](#ide)
 {: #ide}

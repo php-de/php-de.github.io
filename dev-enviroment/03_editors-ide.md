@@ -37,7 +37,7 @@ Dieser Beitrag bietet eine Übersicht über Editoren und Entwicklungsumgebungen,
 ### [Editoren](#editoren)
 {: #editoren}
 
-Ein Editor ist eine Anwendung, die grundlegende Funktionen zur Text- und Quellcodebearbeitung bereitstellt, die aber nicht direkt mit PHP oder anderen Tools interagiert und die auch keine weiterführenden sprachspezifischen Features enthält. Editoren erleichtern die Arbeit, indem sie beispielsweise per Syntax-Highlighting auf Typos oder andere Syntaxfehler hinweisen.
+Ein Editor ist eine Anwendung, die grundlegende Funktionen zur Text- und Quellcodebearbeitung bereitstellt, die aber nicht direkt (oder nur sehr eingeschränkt) mit dem PHP-Interpreter oder anderen Tools interagiert und die auch keine komplexeren sprachspezifischen Features enthält. Editoren erleichtern die Arbeit, indem sie beispielsweise per Syntax-Highlighting auf Typos oder andere Syntaxfehler hinweisen.
 
 * **Sublime Text**
     <br>Webseite: [http://www.sublimetext.com](http://www.sublimetext.com)
@@ -48,7 +48,7 @@ Ein Editor ist eine Anwendung, die grundlegende Funktionen zur Text- und Quellco
     <br>Plattform: Windows, Linux, Mac
     <br>Benutzer: **Twitter**
 
-    Sublime Text 2 ist ein Editor mit vielen Features für den Performance auch bei großen Dateien kein Problem ist. Die Download-Version ist voll funktionsfähig, die 70 $ für die Vollversion Entfernen lediglich ein Popup, das alle 30-60 Minuten beim Speichervorgang erscheint, aber sofort schließbar ist.
+    Sublime Text 2 ist ein Editor mit vielen Features für den Performance auch bei großen Dateien kein Problem ist. Die Download-Version ist voll funktionsfähig, die 70 $ für die Vollversion entfernen lediglich ein Popup, das alle 30-60 Minuten beim Speichervorgang erscheint, aber sofort schließbar ist.
 
 * **Kate**
     <br>Webseite: [http://kate-editor.org](http://kate-editor.org)
@@ -58,7 +58,7 @@ Ein Editor ist eine Anwendung, die grundlegende Funktionen zur Text- und Quellco
     <br>Kostet: **kostenlos; freie Software**
     <br>Plattform: Windows, Linux, Mac
 
-    Kate ist ein Editor der KDE Software Compilation. Er ist vergleichbar mit Notepad++ und Sublime Text, allerdings nicht so „feature-rich“ wie Sublime Text.
+    Kate ist ein Editor der KDE Software Compilation. Er ist vergleichbar mit Notepad++ und Sublime Text, hat allerdings einen geringeren Funktionsumfang als Sublime Text.
 
 * **Notepad++**
     <br>Webseite: [http://notepad-plus-plus.org/](http://notepad-plus-plus.org/)
@@ -86,7 +86,7 @@ Ein Editor ist eine Anwendung, die grundlegende Funktionen zur Text- und Quellco
     <br>Kostet: **kostenlos**
     <br>Plattform: Windows, Linux, Mac
 
-    Komodo Edit ist wohl der ausgereifteste Editor, man merkt aber schnell das er der kleine Bruder von Komodo Studio ist, was ihm keine Nachteile beschert, man aber doch hier und da Funktionen findet, die eigentlich IDE-spezifischer sind.
+    Komodo Edit ist wohl der ausgereifteste Editor. Man merkt aber schnell, dass er der kleine Bruder von Komodo Studio ist. Das ist zwar kein Nachteil, aber man findet doch hier und da Funktionen, die eigentlich IDE-spezifischer sind.
 
 * **Bluefish**
     <br>Webseite: [http://bluefish.openoffice.nl/index.html](http://bluefish.openoffice.nl/index.html)
@@ -95,19 +95,19 @@ Ein Editor ist eine Anwendung, die grundlegende Funktionen zur Text- und Quellco
     <br>Kostet: **kostenlos**
     <br>Plattform: Windows, Linux, Mac
 
-    Bluefish ist aus der Produktfamilie der Content Editing Environments der Open Office Foundation und ebendso wie Notepad++, Sublime Text 2 und Coda ein leistungsfähiger Editor, der hier und da mit der ein oder anderen Gehirnwindung Gassi geht.
+    Bluefish ist aus der Produktfamilie der Content Editing Environments der Open Office Foundation und ebendso wie Notepad++, Sublime Text 2 und Coda ein leistungsfähiger Editor.
 
 
 ### [Integrierte Entwicklungsumgebungen (IDEs)](#ide)
 {: #ide}
 
-Integrierte Entwicklungsumgebungen interagieren immer mit PHP und vernetzen eure Scripts so das ihr jederzeit (auch grafisch) durch die Scripts navigieren könnt und schon beim Autocomplete seht wo die Funktion die ihr gerade benutzt definiert wurde und welche Parameter sie hat. Qualitätssicherung steht nicht bei jeder IDE im Vordergrund, wird jedoch in jeder IDE zumindest Ansatzweise implementiert.
+Integrierte Entwicklungsumgebungen interagieren direkt mit PHP und vernetzen Quellcode so, dass jederzeit (auch grafisch) durch die Inhalte navigiert werden kann und schon beim Autocomplete ersichtlich wird, wo eine Methode oder Funktion definiert wurde und welche Parameter sie hat. Qualitätssicherung steht nicht bei jeder IDE im Vordergrund, wird jedoch in jeder IDE zumindest ansatzweise implementiert.
 
 * **JetBrains PhpStorm**
     <br>Webseite: [http://www.jetbrains.com/phpstorm/](http://www.jetbrains.com/phpstorm/)
     <br>UI-Sprache: Englisch
     <br>Features: [http://www.jetbrains.com/phpstorm/features/index.html](http://www.jetbrains.com/phpstorm/features/index.html)
-    <br>Kostet: 89 € + Steuern Vollversion / 44 € + Steuern Upgrade pro Entwickler
+    <br>Kostet: 89-199 € im ersten Jahr (je nach Art der Lizenz, Sonderkonditionen verfügbar)
     <br>Plattform: Windows, Linux, Mac
     <br>Benutzer: **Valve, Paypal, MediaWiki**
 
@@ -117,7 +117,7 @@ Integrierte Entwicklungsumgebungen interagieren immer mit PHP und vernetzen eure
     <br>Webseite: [http://www.activestate.com/komodo-ide](http://www.activestate.com/komodo-ide)
     <br>UI-Sprache: Englisch
     <br>Features: Siehe Webseite
-    <br>Kostet: 382 $
+    <br>Kostet: 99-382 $ (je nach Art der Lizenz, Sonderkonditionen verfügbar)
 
     Eine etwas teurere IDE aus dem Hause ActiveState.
 
@@ -137,9 +137,9 @@ Integrierte Entwicklungsumgebungen interagieren immer mit PHP und vernetzen eure
 
     Eclipse ist die Basis einiger weiterer IDEs wie beispielsweise ZendStudio.
 
-* **Zend's ZendStudio**
+* **ZendStudio**
     <br>Webseite: [http://www.zend.com/de/products/studio/](http://www.zend.com/de/products/studio/)
-    <br>UI-Sprache: lokalisiert
+    <br>UI-Sprache: lokalisierbar
     <br>Features: [http://www.zend.com/de/products/studio/features](http://www.zend.com/de/products/studio/features)
     <br>Kostet: 299 € (ab und zu sind Rabatt-Aktionen, siehe Webseite)
     <br>Specials: Hoch kompatibel mit dem PHP-Stack aus eigenem Hause (Zend Server)
@@ -152,7 +152,7 @@ Integrierte Entwicklungsumgebungen interagieren immer mit PHP und vernetzen eure
     <br>Features: [http://www.aptana.com/products/studio3.html](http://www.aptana.com/products/studio3.html)
     <br>Kostet: **kostenlos**
 
-    Aptana Studio ist das Sublime Text unter den IDEs, aber nicht ganz so funktionsreich wie PhpStorm, dennoch die kostenlose Empfehlung für Einsteigende und Fortgeschrittene PHP-Entwickler.
+    Aptana Studio ist das Sublime Text unter den IDEs, aber nicht ganz so funktionsreich wie PhpStorm, dennoch die kostenlose Empfehlung für einsteigende und fortgeschrittene PHP-Entwickler.
 
 * **CSE HTML Validator**
     <br>Website: [http://www.htmlvalidator.com/](http://www.htmlvalidator.com/)
@@ -168,13 +168,13 @@ Integrierte Entwicklungsumgebungen interagieren immer mit PHP und vernetzen eure
     <br>Features: [http://www.mpsoftware.dk/phpdesigner.php](http://www.mpsoftware.dk/phpdesigner.php)
     <br>Kostet: abhängig von der Version - Personal für 29 €, Commerical für 69 €
 
-    phpDesigner ist eine der kostengüstigeren IDEs, nicht ganz so umfangreich wie PhpStorm, dennoch mit allem gerüstet was den täglichen Einsatz als Software-Entwickler leichter macht.
+    phpDesigner ist eine der kostengüstigeren IDEs. Sie ist nicht ganz so umfangreich wie PhpStorm, aber dennoch mit allem gerüstet was die tägliche Arbeit als Software-Entwickler erleichtert.
 
 
 ### [Sonstige](#sonstige)
 {: #sonstige}
 
-Einige Editoren werden es nicht in diese Übersicht schaffen, da sie entweder nicht PHP-spezifisch und wenn zwar nicht oder zu wenig verbreitet in der PHP-Welt sind. Da diese Editoren nicht gänzlich ungenannt bleiben sollten, findet ihr sie in der folgenden Liste:
+Einige Editoren werden es nicht in diese Übersicht schaffen, da sie nicht PHP-spezifisch oder in der PHP-Welt zu wenig verbreitet sind. Sie sollen aber nicht gänzlich ungenannt bleiben.
 
 * [TextPad](http://www.textpad.com/products/textpad/index.html) - Wenig verbreitet
 * [Vim](http://www.vim.org/index.php) - Zwar verbreitet, aber nur geringe Anfänger-Tauglichkeit

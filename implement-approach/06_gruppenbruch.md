@@ -3,7 +3,7 @@ layout: guide
 
 permalink: /jumpto/gruppenbruch/
 root: ../..
-title: "Gruppenbruch"
+title: "Gruppenbruch / Gruppenwechsel"
 group: "Standard Implementierungsansätze / Code-Snippets"
 orderId: 6
 
@@ -120,6 +120,7 @@ Angenommen wir haben folgende DB-Tabellen zu Automarken und dazugehörigen Model
 und wollen daraus eine Auflistung aller Modelle je Marke.
 
 Tabelle `marke`
+
 ~~~
 +----+-------+
 | id | name  |
@@ -132,6 +133,7 @@ Tabelle `marke`
 ~~~
 
 Tabelle `modell`
+
 ~~~
 +----+---------+----------+
 | id | name    | marke_id |
@@ -150,7 +152,7 @@ Tabelle `modell`
 +----+---------+----------+
 ~~~
 
-Nun holen wir uns daraus mittels einem JOIN die benötigten Daten.
+Zuerst holen wir uns daraus mittels einem JOIN die benötigten Daten.
 
 ~~~
 SELECT
@@ -178,7 +180,7 @@ ORDER BY ma.name, mo.name
 +------------+-------------+
 ~~~
 
-Nun wird noch mittels Gruppenbruch die Ausgabe in eine schöne Form gebracht.
+Nun wird die Ausgabe mittels Gruppenbruch in eine lesbar gegliederte Form gebracht.
 
 ~~~ php
 $last_entry = null;
@@ -186,10 +188,10 @@ $last_entry = null;
 while ($row = $result->fetch_object()) {
 
    if ($last_entry != $row->marke_name) {
-        echo $row->marke_name."\n";
+        echo $row->marke_name.'<br>';
         $last_entry = $row->marke_name;
     }
-    echo '  '.$row->modell_name."\n";
+    echo '- '.$row->modell_name.'<br>';
 }
 ~~~
 

@@ -66,7 +66,7 @@ für eine Gruppierung nach Anfangsbuchstaben). Ist dies nicht möglich, kann
 mithilfe von Arrays ein alternatives Vorgehen verwendet werden (siehe unten).
 
 
-##### Beispiel 1a - Gruppenbruch mit Vorgängervergleich(#beispiel-1a)
+##### [Beispiel 1a - Gruppenbruch mit Vorgängervergleich](#beispiel-1a)
 {: #beispiel-1a}
 
 ~~~ php
@@ -113,7 +113,7 @@ Buchstabe: U
 ~~~
 
 
-##### Beispiel 1b - Gruppenbruch mit Vorgängervergleich mit JOIN-Daten aus DB(#beispiel-1b)
+##### [Beispiel 1b - Gruppenbruch mit Vorgängervergleich mit JOIN-Daten aus DB](#beispiel-1b)
 {: #beispiel-1b}
 
 Angenommen wir haben folgende DB-Tabellen zu Automarken und dazugehörigen Modellen
@@ -235,7 +235,7 @@ nebeneinander ausgeben und alle drei Durchläufe durch eine horizontale
 Trennlinie durchbrochen.
 
 
-##### Beispiel 2 - Gruppenbruch mit Indexmodulo(#beispiel-2)
+##### [Beispiel 2 - Gruppenbruch mit Indexmodulo](#beispiel-2)
 {: #beispiel-2}
 
 ~~~ php
@@ -260,7 +260,7 @@ der Abschluss der laufenden Tabellenzeile und der Anfang einer neuen
 (`</tr></tr>`).
 
 
-##### Beispiel 3a - Gruppenbruch mit Indexmodulo(#beispiel-3a)
+##### [Beispiel 3a - Gruppenbruch mit Indexmodulo](#beispiel-3a)
 {: #beispiel-3a}
 
 ~~~ php
@@ -289,7 +289,7 @@ Tabellenzeile aus, selbst für Leere Datenmengen. Abhilfe schafft hier nur die
 Zwischenspeicherung der Ausgabe, bspw.:
 
 
-##### Beispiel 3b - Gruppenbruch mit Indexmodulo, datensatzabhängig(#beispiel-3b)
+##### [Beispiel 3b - Gruppenbruch mit Indexmodulo, datensatzabhängig](#beispiel-3b)
 {: #beispiel-3b}
 
 ~~~ php
@@ -329,7 +329,7 @@ obersten Ebene das Sortierkriterium nutzen und als Unterebene eine Menge von
 automatisch angelegten numerischen Indizies.
 
 
-##### Beispiel 4 - Gruppierung über Zwischenarray(#beispiel-4)
+##### [Beispiel 4 - Gruppierung über Zwischenarray](#beispiel-4)
 {: #beispiel-4}
 
 ~~~ php
@@ -407,7 +407,7 @@ IMAP-Listen, die zum Beispiel zeitlich angeordnet sind, vorteilhaft sein.
 {: #verschachtelte-schleifen-mit-abbruchbedingung}
 
 
-##### Beispiel 5 - Gruppierung über Schleifenabbruch(#beispiel-5)
+##### [Beispiel 5 - Gruppierung über Schleifenabbruch](#beispiel-5)
 {: #beispiel-5}
 
 

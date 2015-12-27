@@ -65,7 +65,9 @@ dem/den genutzten Gruppenkriterium/en (wie bspw. eine alphabetische Sortierung
 für eine Gruppierung nach Anfangsbuchstaben). Ist dies nicht möglich, kann
 mithilfe von Arrays ein alternatives Vorgehen verwendet werden (siehe unten).
 
-Bsp. 1, Gruppenbruch mit Vorgängervergleich, PHP Umsetzung:
+
+##### Beispiel 1a - Gruppenbruch mit Vorgängervergleich(#beispiel-1a)
+{: #beispiel-1a}
 
 ~~~ php
 $array = array(
@@ -81,21 +83,21 @@ $last_entry = null;
 
 // Elemente durchlaufen
 foreach ($array as $current_entry) {
-   
+
     $first_char = $current_entry[0]; // erstes Zeichen des aktuellen Wertes
-   
+
     // Gruppenbruch, neuer Anfangsbuchstabe
     if ($first_char != $last_entry) {
-        echo 'Buchstabe: ' . $first_char . '<br />';
+        echo 'Buchstabe: ' . $first_char . '<br>';
     }
-    echo '  ' . $current_entry . '<br />';
+    echo '  ' . $current_entry . '<br>';
 
     // neuen Vergleichswert setzen
     $last_entry = $first_char;
-} 
+}
 ~~~
 
-Bsp. 1, Ausgabe:
+Ausgabe:
 
 ~~~
 Buchstabe: A
@@ -111,9 +113,110 @@ Buchstabe: U
 ~~~
 
 
+##### Beispiel 1b - Gruppenbruch mit Vorgängervergleich mit JOIN-Daten aus DB(#beispiel-1b)
+{: #beispiel-1b}
+
+Angenommen wir haben folgende DB-Tabellen zu Automarken und dazugehörigen Modellen
+und wollen daraus eine Auflistung aller Modelle je Marke.
+
+Tabelle `marke`
+~~~
++----+-------+
+| id | name  |
++----+-------+
+|  1 | Audi  |
+|  2 | VW    |
+|  3 | Skoda |
+|  4 | Seat  |
++----+-------+
+~~~
+
+Tabelle `modell`
+~~~
++----+---------+----------+
+| id | name    | marke_id |
++----+---------+----------+
+|  1 | A2      |        1 |
+|  2 | A4      |        1 |
+|  3 | A6      |        1 |
+|  4 | Golf    |        2 |
+|  5 | Sharan  |        2 |
+|  6 | Touareg |        2 |
+|  7 | Octavia |        3 |
+|  8 | Fabia   |        3 |
+|  9 | Yeti    |        3 |
+| 10 | Leon    |        4 |
+| 11 | Ibiza   |        4 |
++----+---------+----------+
+~~~
+
+Nun holen wir uns daraus mittels einem JOIN die benötigten Daten.
+
+~~~
+SELECT
+  ma.name AS marke_name,
+  mo.name AS modell_name
+FROM marke ma
+INNER JOIN modell mo
+  ON ma.id = mo.marke_id
+ORDER BY ma.name, mo.name
+
++------------+-------------+
+| marke_name | modell_name |
++------------+-------------+
+| Audi       | A2          |
+| Audi       | A4          |
+| Audi       | A6          |
+| Seat       | Ibiza       |
+| Seat       | Leon        |
+| Skoda      | Fabia       |
+| Skoda      | Octavia     |
+| Skoda      | Yeti        |
+| VW         | Golf        |
+| VW         | Sharan      |
+| VW         | Touareg     |
++------------+-------------+
+~~~
+
+Nun wird noch mittels Gruppenbruch die Ausgabe in eine schöne Form gebracht.
+
+~~~ php
+$last_entry = null;
+
+while ($row = $result->fetch_object()) {
+
+   if ($last_entry != $row->marke_name) {
+        echo $row->marke_name."\n";
+        $last_entry = $row->marke_name;
+    }
+    echo '  '.$row->modell_name."\n";
+}
+~~~
+
+Ausgabe:
+
+~~~
+Audi
+- A2
+- A4
+- A6
+Seat
+- Ibiza
+- Leon
+Skoda
+- Fabia
+- Octavia
+- Yeti
+VW
+- Golf
+- Sharan
+- Touareg
+~~~
+
 
 ### [Bruch nach sonstigen Kriterien](#bruch-nach-sonstigen-kriterien)
 {: #bruch-nach-sonstigen-kriterien}
+
 
 #### [Modulo](#modulo)
 {: #modulo}
@@ -129,9 +232,11 @@ Dreiergruppen angeordnet. Im ersten Beispiel werden die Daten dazu
 nebeneinander ausgeben und alle drei Durchläufe durch eine horizontale
 Trennlinie durchbrochen.
 
-Bsp. 2, Gruppenbruch mit Indexmodulo, PHP Umsetzung:
 
-~~~
+##### Beispiel 2 - Gruppenbruch mit Indexmodulo(#beispiel-2)
+{: #beispiel-2}
+
+~~~ php
 // ... Datenbankverbindung etc.
 
 // Zähler
@@ -152,7 +257,9 @@ Auch eine tabellarische Ausgabe ist so möglich. Das Trennelement bildet hier
 der Abschluss der laufenden Tabellenzeile und der Anfang einer neuen
 (`</tr></tr>`).
 
-Bsp. 3a, Gruppenbruch mit Indexmodulo, PHP Umsetzung:
+
+##### Beispiel 3a - Gruppenbruch mit Indexmodulo(#beispiel-3a)
+{: #beispiel-3a}
 
 ~~~ php
 // ... Datenbankverbindung etc.
@@ -179,7 +286,9 @@ Prinzipbedingt gibt diese Lösung immer Tabletags und mindestens eine
 Tabellenzeile aus, selbst für Leere Datenmengen. Abhilfe schafft hier nur die
 Zwischenspeicherung der Ausgabe, bspw.:
 
-Bsp. 3b, Gruppenbruch mit Indexmodulo, datensatzabhängig, PHP Umsetzung:
+
+##### Beispiel 3b - Gruppenbruch mit Indexmodulo, datensatzabhängig(#beispiel-3b)
+{: #beispiel-3b}
 
 ~~~ php
 // ... Datenbankverbindung etc.
@@ -209,6 +318,7 @@ if (false === empty ($content)) {
 ### [Alternativen](#alternativen)
 {: #alternativen}
 
+
 #### [Abbildung einer Zwischenstruktur auf Arrays](#abbildung-einer-zwischenstruktur-auf-arrays)
 {: #abbildung-einer-zwischenstruktur-auf-arrays}
 
@@ -216,23 +326,24 @@ Eine einfach Alternative bieten mehrdimensionale Arrays, die als Schlüssel der
 obersten Ebene das Sortierkriterium nutzen und als Unterebene eine Menge von
 automatisch angelegten numerischen Indizies.
 
-Bsp. 4, Gruppierung über Zwischenarray, PHP Umsetzung:
+
+##### Beispiel 4 - Gruppierung über Zwischenarray(#beispiel-4)
+{: #beispiel-4}
 
 ~~~ php
-$array = array
-  (
+$array = array(
   'Bibo' ,
   'Alf' ,
   'Peter Pan' ,
   'Biene Maja' ,
   'Bibi Blocksberg' ,
   'Urmel aus dem Eis' ,
-  );
+);
 
 foreach ($array as $entry) {
     if (false === isset ($ordered[$entry[0]])) {
         $ordered[$entry[0]] = array ();
-        }
+    }
     $ordered[$entry[0]][] = $entry;
 }
 
@@ -240,12 +351,12 @@ print_r ($ordered);
 
 // Ausgabe nach Reihenfolge des ersten Auftretens
 foreach ($ordered as $character => $set) {
-    echo $character . '<br />';
-    echo implode (' | ' , $set) . '<br />';
+    echo $character . '<br>';
+    echo implode (' | ' , $set) . '<br>';
 }
 ~~~
 
-Bsp. 4, Strukturlisting und Ausgabe:
+Strukturlisting und Ausgabe:
 
 ~~~
 Array
@@ -289,15 +400,19 @@ Vorteil ergibt sich, dass die Eingansreihenfolge nicht durch Sortierung
 verändert werden muss. Das kann für bestimmte Daten, etwa Logfile-Daten oder
 IMAP-Listen, die zum Beispiel zeitlich angeordnet sind, vorteilhaft sein.
 
+
 #### [Verschachtelte Schleifen mit Abbruchbedingung](#verschachtelte-schleifen-mit-abbruchbedingung)
 {: #verschachtelte-schleifen-mit-abbruchbedingung}
 
-Bsp. 5, Gruppierung über Schleifenabbruch, PHP Umsetzung:
+
+##### Beispiel 5 - Gruppierung über Schleifenabbruch(#beispiel-5)
+{: #beispiel-5}
+
 
 ~~~ php
 // ... Datenbankverbindung etc.
 
-$elements = (0 < mysql_num_rows ($dbResult));
+$elements = (0 < mysqli_num_rows($dbResult));
 
 if ($elements) {
     echo '<table>';
@@ -307,7 +422,7 @@ if ($elements) {
         // drei Elemente am Stück auslesen und ausgeben
         for ($index = 0; $index < 3; $index++) {
             // keine weiteren Elemente
-            if (false === $set = mysql_fetch_assoc ($dbResult)) {
+            if (false === $set = mysqli_fetch_assoc($dbResult)) {
                 // Verhindert weiterlaufen der äußeren Schleife
                 $elements = false;
                 // vorzeitiger Abbruch der For-Schleife
@@ -323,4 +438,3 @@ if ($elements) {
     echo '</table>';
 }
 ~~~
-

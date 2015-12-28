@@ -202,7 +202,7 @@ Datenbanksystem MySQL, sondern ist lediglich der Name eines der drei APIs, die
 PHP zur Kommunikation mit MySQL-Datenbanken nutzen kann. Die anderen beiden
 (nicht veralteten) APIs sind [mysqli](http://php.net/mysqli) und
 [PDO](http://php.net/pdo). Mehr Hintergründe und Empfehlungen stehen [in der
-PHP-Dokumentation](http://php.net/manual/en/mysqlinfo.api.choosing.php).
+PHP-Dokumentation](http://php.net/manual/en/mysqlinfo.api.choosing.php). Ein kurzes Anwendungsbeispiel zu PDO gibt es auch [hier in der Wissensammlung](http://php-de.github.io/jumpto/pdo/).
 
 
 #### [Was ist eine SQL-Injection und was kann ich dagegen unternehmen?](#sql-injection)

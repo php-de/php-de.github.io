@@ -15,11 +15,11 @@ author:
     - name: Manko10
       profile: 1139
 
-    - name: hausl
-      profile: 21246
-
     - name: mermshaus
       profile: 15041
+
+    - name: hausl
+      profile: 21246
 
 inhalt:
     -   name:   "Was ist Debugging und wie debugge ich richtig?"
@@ -60,6 +60,10 @@ inhalt:
 
     -   name:   "You have an error in your SQL syntax;  ... Warning: mysql_fetch_row() expects parameter 1 to be resource, boolean given"
         anchor: sql-error
+        simple: ""
+
+    -   name:   "\"eval is evil\" .. Das lese ich immer wieder. Warum? Was ist denn so schlimm daran?"
+        anchor: eval-is-evil
         simple: ""
 
 
@@ -229,3 +233,17 @@ SQL-Injection]({{ page.root }}/jumpto/sql-injection/) zu finden.
 Der SQL-String für die Datenbankabfrage ist fehlerhaft. Lass dir den fertigen
 String der entsprechenden Query vor der Anfrage testweise ausgeben. Siehe:
 [SQL-Fehlerbehebung]({{ page.root }}/jumpto/sql/).
+
+
+#### [eval is evil](#eval-is-evil)
+{: #eval-is-evil}
+
+Um es trefflich auf den Punkt zu bringen, hier ein [Zitat aus dem php.de-Forum](http://www.php.de/forum/webentwicklung/php-einsteiger/1463694-pack-eines-gesamten-arrays?p=1463709#post1463709)
+
+> eval() ist langsam.
+> eval() ist schlecht lesbar.
+> eval() ist schwer debugbar.
+> eval() ist eine potenzielle Sicherheitslücke.
+> eval() ist zu 99,99999% unnötig.
+>
+> Die Wahrscheinlichkeit, dass eval() der richtige Lösungsweg ist geringer als ein 6er im Lotto.

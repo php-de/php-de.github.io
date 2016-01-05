@@ -16,10 +16,6 @@ author:
         profile: 15041
 
 inhalt:
-    -   name: "Hinweis"
-        anchor: hinweis
-        simple: ""
-
     -   name: "Der moderne Weg"
         anchor: der-moderne-weg
         simple: ""
@@ -47,40 +43,58 @@ inhalt:
 entry-type: in-discussion
 ---
 
-### [Hinweis](#hinweis)
-{: #hinweis}
-
-* Der Übersichtlichkeit halber werden Kommentare des vorhergehenden Codes
-  teilweise weggelassen.
-* Die Beispielcodes machen Gebrauch von sogenanntem „linksgehaltenem Code“. Es
-  ist sinnvoll, sich vor der Lektüre mit diesem Ansatz vertraut zu machen.
-
-
-
 ### [Der moderne Weg](#der-moderne-weg)
 {: #der-moderne-weg}
 
-Das folgende Beispiel nutzt
-[SPL-Klassen](http://us3.php.net/manual/en/book.spl.php), die in PHP 5.3
-hinzugefügt wurden. Iteratoren sind der empfohlene Weg, das Dateisystem
-rekursiv zu durchlaufen.
+Iteratoren sind der empfohlene Weg, das Dateisystem (rekursiv) zu durchlaufen.
+Das folgende Beispiel nutzt [SPL-Klassen](http://us3.php.net/manual/en/book.spl.php),
+die in PHP 5.3 hinzugefügt wurden.
+
+
+#### [Verzeichnis rekursiv auslesen](#iterator-rekursiv)
+{: #iterator-rekursiv}
 
 ~~~ php
+$dir = __DIR__;
+
 $iterator = new RecursiveIteratorIterator(
-    new RecursiveDirectoryIterator(__DIR__)
+    new RecursiveDirectoryIterator($dir)
 );
 
 foreach ($iterator as $file) {
     /* @var $file SplFileInfo */
 
-    if (false === $file->isFile()) {
+    if (!$file->isFile()) {
         continue;
     }
-
     echo $file->getPathname() . "\n";
 }
 ~~~
 
+
+#### [Verzeichnis rekursiv auslesen - mit Filter](#iterator-rekursiv-filter)
+{: #iterator-rekursiv-filter}
+
+Will man bsp. nur auf spezielle Dateiendung(en) "filtern", könnte man den RegexIterator verwenden.
+
+Beispiel wie oben, um den RegexIterator erweitert. Der Filter wird durch ein [Regex-Pattern](http://php.net/manual/de/reference.pcre.pattern.syntax.php) festgelegt.
+
+~~~php
+$dir = __DIR__;
+
+$iterator = new RecursiveIteratorIterator(
+    new RecursiveDirectoryIterator($dir)
+);
+$php_files = new RegexIterator($iterator, '/\.php$/');
+
+foreach ($php_files as $file) {
+
+    if (!$file->isFile()) {
+        continue;
+    }
+    echo $file->getPathname() . "\n";
+}
+~~~
 
 
 ### [Grundlage](#grundlage)
@@ -150,8 +164,7 @@ while (false !== ($file = readdir($handle))) {
 closedir($handle);
 ~~~
 
-#### [Hinweis](#hinweis-2)
-{: #hinweis-2}
+**Hinweis**
 
 Hier und nachfolgend muss sichergestellt werden, dass `$dir` einen
 abschließenden `/` enthält. Grund ist die Kombination mit dem ausgelesenen

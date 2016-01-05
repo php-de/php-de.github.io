@@ -240,10 +240,10 @@ String der entsprechenden Query vor der Anfrage testweise ausgeben. Siehe:
 
 Um es trefflich auf den Punkt zu bringen, hier ein [Zitat aus dem php.de-Forum](http://www.php.de/forum/webentwicklung/php-einsteiger/1463694-pack-eines-gesamten-arrays?p=1463709#post1463709)
 
-> eval() ist langsam.
-> eval() ist schlecht lesbar.
-> eval() ist schwer debugbar.
-> eval() ist eine potenzielle Sicherheitslücke.
-> eval() ist zu 99,99999% unnötig.
+> eval() ist langsam. <br>
+> eval() ist schlecht lesbar. <br>
+> eval() ist schwer debugbar. <br>
+> eval() ist eine potenzielle Sicherheitslücke. <br>
+> eval() ist zu 99,99999% unnötig. <br>
 >
 > Die Wahrscheinlichkeit, dass eval() der richtige Lösungsweg ist geringer als ein 6er im Lotto.

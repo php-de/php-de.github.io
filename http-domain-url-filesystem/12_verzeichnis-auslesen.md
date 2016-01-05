@@ -15,44 +15,58 @@ author:
     -   name: mermshaus
         profile: 15041
 
+    -   name: hausl
+        profile: 21246
+
 inhalt:
-    -   name: "Der moderne Weg"
-        anchor: der-moderne-weg
+    -   name: "Verzeichnis auslesen"
+        anchor: auslesen
         simple: ""
 
-    -   name: "Grundlage"
-        anchor: grundlage
+    -   name: "Verzeischnis rekursiv auslesen"
+        anchor: auslesen-rekursiv
         simple: ""
 
-    -   name: "Erweiterung"
-        anchor: erweiterung
-        simple: ""
-
-    -   name: "Unterverzeichnisse rekursiv auslesen"
-        anchor: unterverzeichnisse-rekursiv-auslesen
-        simple: ""
-
-    -   name: "Verarbeitung der Inhalte"
-        anchor: verarbeitung-der-inhalte
+    -   name: "Verzeischnis rekursiv auslesen, mit Filter"
+        anchor: auslesen-filter
         simple: ""
 
     -   name: "Anmerkungen"
         anchor: anmerkungen
         simple: ""
 
+
 entry-type: in-discussion
 ---
 
-### [Der moderne Weg](#der-moderne-weg)
-{: #der-moderne-weg}
 
-Iteratoren sind der empfohlene Weg, das Dateisystem (rekursiv) zu durchlaufen.
-Das folgende Beispiel nutzt [SPL-Klassen](http://us3.php.net/manual/en/book.spl.php),
+Iteratoren sind der empfohlene Weg, das Dateisystem zu durchlaufen.
+Die folgenden Beispiele nutzten [SPL-Klassen](http://us3.php.net/manual/en/book.spl.php),
 die in PHP 5.3 hinzugefügt wurden.
 
 
-#### [Verzeichnis rekursiv auslesen](#iterator-rekursiv)
-{: #iterator-rekursiv}
+### [Verzeichnis auslesen](#auslesen)
+{: #auslesen}
+
+~~~ php
+$dir = __DIR__;
+
+$iterator = new DirectoryIterator($dir);
+
+foreach ($iterator as $file) {
+
+    if (!$file->isFile()) {
+        continue;
+    }
+    echo $file->getPathname() . "\n";
+}
+~~~
+
+Alternativ könnte man hier für einfache Durchläufe auch `glob()` ([Doku](http://php.net/manual/de/function.glob.php)) verwenden.
+
+
+### [Verzeischnis rekursiv auslesen](#auslesen-rekursiv)
+{: #auslesen-rekursiv}
 
 ~~~ php
 $dir = __DIR__;
@@ -62,7 +76,6 @@ $iterator = new RecursiveIteratorIterator(
 );
 
 foreach ($iterator as $file) {
-    /* @var $file SplFileInfo */
 
     if (!$file->isFile()) {
         continue;
@@ -77,7 +90,8 @@ foreach ($iterator as $file) {
 
 Will man bsp. nur auf spezielle Dateiendung(en) "filtern", könnte man den RegexIterator verwenden.
 
-Beispiel wie oben, um den RegexIterator erweitert. Der Filter wird durch ein [Regex-Pattern](http://php.net/manual/de/reference.pcre.pattern.syntax.php) festgelegt.
+Beispiel wie oben, um den RegexIterator erweitert.
+Der Filter wird durch ein [Regex-Pattern](http://php.net/manual/de/reference.pcre.pattern.syntax.php) festgelegt.
 
 ~~~php
 $dir = __DIR__;
@@ -85,7 +99,7 @@ $dir = __DIR__;
 $iterator = new RecursiveIteratorIterator(
     new RecursiveDirectoryIterator($dir)
 );
-$php_files = new RegexIterator($iterator, '/\.php$/');
+$php_files = new RegexIterator($iterator, '/\.php$/'); // Dateiendung ".php"
 
 foreach ($php_files as $file) {
 
@@ -97,336 +111,8 @@ foreach ($php_files as $file) {
 ~~~
 
 
-### [Grundlage](#grundlage)
-{: #grundlage}
-
-~~~ php
-$dir = '/path/to/files/';
-
-// Verzeichnis öffnen
-$handle = opendir($dir);
-
-// Auslesen bis readdir FALSE zurückgibt
-while (false !== ($file = readdir($handle))) {
-
-    // Verarbeitung des Dateinamens, Zuweisung o.ä.
-    $file;
-
-}
-closedir($handle);
-~~~
-
-
-
-### [Erweiterung](#erweiterung)
-{: #erweiterung}
-
-* Fehlerkontrolle (fehlendes oder nicht lesbares Verzeichnis)
-* Ausschluss der Dateieinträge `.` (Selbstreferenz) und `..` (übergeordneter
-  Ordner)
-* Ausschluss von Unterverzeichniseinträgen
-
-~~~ php
-$dir = '/path/to/files/';
-
-if (false === is_dir($dir)) {
-    // Fehlerverarbeitung
-    // Abbruch
-    die;
-}
-
-$handle = opendir($dir);
-
-if (false === $handle) {
-    // Fehlerverarbeitung
-    // Abbruch
-    die;
-}
-
-while (false !== ($file = readdir($handle))) {
-
-    // Ausschluss von . und ..
-    if ('.' == $file || '..' == $file) {
-        // nächstes Element
-        continue;
-    }
-
-    // Ausschluss von Verzeichnisnamen
-    if (is_dir($dir . $file)) {
-        // nächstes Element
-        continue;
-    }
-
-    // Verarbeitung des Dateinamens, Zuweisung o.ä.
-    $file;
-
-}
-closedir($handle);
-~~~
-
-**Hinweis**
-
-Hier und nachfolgend muss sichergestellt werden, dass `$dir` einen
-abschließenden `/` enthält. Grund ist die Kombination mit dem ausgelesenen
-Datenamen über `$dir .  $file`. Dies kann beispielsweise durch dieses
-Codefragment sicher gestellt werden.
-
-~~~ php
-$dir = rtrim($dir , ' /\\') . '/';
-~~~
-
-Ebenfalls ist die Problematik verschiedener Pfadbegrenzern (`/` und `\`) zu
-berücksichtigen.
-
-
-
-### [Unterverzeichnisse rekursiv auslesen](#unterverzeichnisse-rekursiv-auslesen)
-{: #unterverzeichnisse-rekursiv-auslesen}
-
-Um im Leseordner auch die Einträge von Unterverzeichnissen zu berücksichtigen,
-wird ein Teil Funktionalität in eine selbstaufrufende Funktion ausgelagert.
-
-~~~ php
-function readDirRecursive($dir)
-{
-    if (false === is_dir($dir)) {
-        return false;
-    }
-
-    $handle = opendir($dir);
-
-    if (false === $handle) {
-        return false;
-    }
-
-    while (false !== ($file = readdir($handle))) {
-
-        // Ausschluss von . und ..
-        if ('.' == $file || '..' == $file) {
-            // nächstes Element
-            continue;
-        }
-
-        // Verarbeitung von Verzeichnisnamen
-        if (is_dir($dir . $file)) {
-
-            // Selbstaufruf
-            readDirRecursive($dir . $file . '/');
-
-            // nächstes Element
-            continue;
-        }
-
-        // Verarbeitung des Dateinamens, Zuweisung o.ä.
-        $file;
-
-    }
-    closedir($handle);
-
-    return true;
-}
-
-
-$dir = '/path/to/files';
-
-readDirRecursive($dir);
-~~~
-
-
-
-### [Verarbeitung der Inhalte](#verarbeitung-der-inhalte)
-{: #verarbeitung-der-inhalte}
-
-Bisher wurden die Dateinamen noch nicht weiter verarbeitet. Sollen die
-Dateinamen nicht direkt ausgegeben werden, sondern beispielsweise in ein Array
-eingehen, macht es uns die Funktionskapselung etwas schwieriger. Nachfolgend
-werden zwei Arten aufgeführt: Die Rückgabe via `return` und die Nutzung eines
-referentiellen Parameters.
-
-Grundlage ist bei beiden Lösungen ein Sammeln der Dateinamen im Array
-`$result`.  Die Einträge werden dabei in Reihenfolge der Abarbeitung erstellt:
-Ein an der Leseposition gefundenes Unterverzeichnis wird zuerst durchlaufen
-(und gegebenenfalls weitere in ihm), bevor zur nächsten Position
-zurückgesprungen wird.
-
-#### [Array Return](#array-return)
-{: #array-return}
-
-Hier ist die Fehlerausgabe `false` zu beachten, die im Anfang der Funktion
-erfolgen kann.
-
-~~~ php
-function readDirRecursive($dir)
-{
-    if (false === is_dir($dir)) {
-        return false;
-    }
-
-    $handle = opendir($dir);
-
-    if (false === $handle) {
-        return false;
-    }
-
-    $result = array();
-
-    while (false !== ($file = readdir($handle))) {
-
-        // Ausschluss von . und ..
-        if ('.' == $file || '..' == $file) {
-            // nächstes Element
-            continue;
-        }
-
-        // Verarbeitung von Verzeichnisnamen
-        if (is_dir($dir . $file)) {
-
-            // Selbstaufruf
-            $resultSubdir = readDirRecursive($dir . $file . '/');
-
-            // gültige Werte dem Rsultset hinzufügen
-            if (false !== $resultSubdir) {
-                $result = array_merge($result , $resultSubdir);
-            }
-
-            // nächstes Element
-            continue;
-        }
-
-        // Array Zuweisung des Dateinamens
-        $result[] = $file;
-
-    }
-    closedir($handle);
-
-    return $result;
-}
-
-
-$dir = '/path/to/files';
-
-$result = readDirRecursive($dir);
-~~~
-
-#### [Referenz-Aufruf](#referenz-aufruf)
-{: #referenz-aufruf}
-
-Der Vorteil dieser Funktion: Es muß nicht mit einer Zwischenmenge
-`$resultSubdir` gearbeitet werden, da der rekursive Aufruf direkt in die
-Ergebnismenge schreiben kann. Weiterhin bleibt der Rückgabewert der Funktion
-frei und könnte beispielsweise bei einem Verzeichnislesefehler ein entstehendes
-`false` bis zum Ur-Aufruf „durchschleifen“.
-
-~~~ php
-function readDirRecursive($dir , & $result)
-{
-    if (false === is_dir($dir)) {
-        return false;
-    }
-
-    $handle = opendir($dir);
-
-    if (false === $handle) {
-        return false;
-    }
-
-    while (false !== ($file = readdir($handle))) {
-
-        // Ausschluss von . und ..
-        if ('.' == $file || '..' == $file) {
-            // nächstes Element
-            continue;
-        }
-
-        // Verarbeitung von Verzeichnisnamen
-        if (is_dir($dir . $file)) {
-
-            // Selbstaufruf
-            readDirRecursive($dir . $file . '/' , $result);
-
-            // nächstes Element
-            continue;
-        }
-
-        // Array Zuweisung des Dateinamens
-        $result[] = $file;
-
-    }
-    closedir($handle);
-
-    return true;
-}
-
-
-$dir = '/path/to/files';
-
-$result = array();
-readDirRecursive($dir , $result);
-~~~
-
-
-
 ### [Anmerkungen](#anmerkungen)
 {: #anmerkungen}
 
-#### [Verzeichnisprüfung](#verzeichnispruefung)
-{: #verzeichnispruefung}
-
-Da die Einträge `.` und `..` in jedem normalen Verzeichnis vorhanden sind und
-stets als erste Einträge zurückgegeben werden, wird oft statt `is_dir($file)`
-eine alternative Syntax gebraucht: Es werden zwei pauschale `readdir($handle)`;
-Aufrufe gestartet, deren Rückgabe nicht verarbeitet wird.
-
-Diese Aufrufe müssen natürlich vor der while Schleife erfolgen.
-
-#### [`readdir` Rückgabe](#readdir-rueckgabe)
-{: #readdir-rueckgabe}
-
-Das PHP Manual stellt ausdrücklich in seinem Beispiel die Verwendung von `while
-(false !== ($file = readdir($handle)))` als korrekt gegenüber `while ($file =
-readdir($handle))` heraus.
-
-Hintergrund: Nur die Identitätsprüfung (===) bzw. deren Negation nimmt eine explizite Typprüfung vor.
-
-Alle anderen Vergleiche unterscheiden faktisch nicht zwischen `null`, `''`
-(leerer String), `0`, `'0'` und anderen. Ein Dateiname namens `"0"` würde hier
-also beispielsweise zum Schleifenabbruch führen.
-
-Analog sind die folgenden Schleifenbedingungen falsch:
-
-~~~ php
-while (false != ($file = readdir($handle)) {}
-while (! false == ($file = readdir($handle)) {}
-~~~
-
-#### [Verzeichnisse auslesen](#verzeichnisse-auslesen)
-{: #verzeichnisse-auslesen}
-
-Natürlich ist auch das Auslesen aller „Nicht-Dateien“ (Verzeichnisse) möglich.
-Dabei kehren sich quasi die Bearbeitung der Zustände `is_dir($file)` und
-„restliche“ um. Der Selbstaufruf muss natürlich weiterhin für
-Verzeichniseinträge erfolgen. Relevanter Schleifencode:
-
-~~~ php
-while (false !== ($file = readdir($handle))) {
-
-    // Ausschluss von . und ..
-    if ('.' == $file || '..' == $file) {
-        // nächstes Element
-        continue;
-    }
-
-    // Verarbeitung von Verzeichnisnamen
-    if (is_dir($dir . $file)) {
-
-        // Verarbeitung des Verzeichnisnamens, Zuweisung o.ä.
-        $file;
-
-        // Selbstaufruf
-        readDirRecursive($dir . $file . '/');
-    }
-
-    // Else Fall: Für Dateien passiert nichts
-}
-~~~
-
+Es gibt noch andere Wege zB `readdir()`, `dir()`,  etc. die jedoch seit Einführung
+der Iteratoren mit PHP 5.3 für diesen Zweck keine Vorteile bringen.

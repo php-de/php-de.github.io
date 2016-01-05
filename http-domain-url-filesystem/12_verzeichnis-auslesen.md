@@ -85,8 +85,8 @@ foreach ($iterator as $file) {
 ~~~
 
 
-#### [Verzeichnis rekursiv auslesen - mit Filter](#iterator-rekursiv-filter)
-{: #iterator-rekursiv-filter}
+### [Verzeichnis rekursiv auslesen - mit Filter](#auslesen-filter)
+{: #auslesen-filter}
 
 Will man bsp. nur auf spezielle Dateiendung(en) "filtern", könnte man den RegexIterator verwenden.
 

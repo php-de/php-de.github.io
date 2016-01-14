@@ -185,7 +185,7 @@ echo $dt->format('Y-m-d');
 ~~~
 
 
-### [Differenzen](#differenzen)
+### [Differenzen, Interval](#differenzen)
 {: #differenzen}
 
 
@@ -199,23 +199,26 @@ echo $dtInterval->format('%R%a days');
 ~~~
 
 ~~~ php
-// ist Benutzer schon seit 30 Tagen registriert?
-$regDate = new DateTime('2014-12-15');
+// Bsp: Wie lange ist ein Benutzer schon registriert?
+
 $now     = new DateTime(); // 2015-01-19
-
-if ( $now->modify('-30 days') >= $regDate ) {
-    echo "Ja!";
-}
-// Ja!
-
-// oder
-
 $regDate = new DateTime('2014-12-15');
-$now     = new DateTime(); // 2015-01-19
 
-echo $now->diff($regDate)->days; // 35
-// somit:
-var_dump($now->diff($regDate)->days > 30); // true
+echo $now->diff($regDate)->days;
+// 35
+~~~
+
+~~~ php
+$now      = new DateTime(); // 2016-01-14
+$refDate  = new DateTime('2013-02-10');
+
+$format = '%y Jahre, %m Monate und %d Tage.';
+$period = $now
+    ->diff($refDate)
+    ->format($format);
+
+echo $period;
+// 2 Jahre, 11 Monate und 4 Tage.
 ~~~
 
 

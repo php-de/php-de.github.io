@@ -123,7 +123,7 @@ $query = 'INSERT INTO Users (id , name) VALUES (23 , 'Horst')';
 Reguläre Ausdrücke haben eine komplexe Syntax mit sehr vielen
 Zeichen-„Operatoren“. Insofern diese Zeichen nicht als Operator
 (Quantifizierer, Klammer, …) fungieren sollen, müssen alle Zeichen escaped
-werden. Zusätzlich verwenden POSIX-basierte Ausdrücke (`preg_*`) ein äußeres
+werden. Zusätzlich verwenden PCRE-basierte Ausdrücke (`preg_*`) ein äußeres
 Begrenzerzeichen, für das Zeichenmaskierung ebenfalls nötig wird. Typische
 problematische Zeichen sind: `+ . ( ) - | * $ ^ [ ] { }`, die je nach Position
 im Ausdruck unmaskiert zu unerwarteten Ergebnissen führen können.

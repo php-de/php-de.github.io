@@ -284,7 +284,7 @@ $dt = new DateTime('2015-08-10');
 $monat = $dt->format('n'); // Monat ohne führender Null
 $quartal = floor(($monat - 1) / 3) + 1;
 
-echo $quartal  // 3
+echo $quartal;  // 3
 ~~~
 
 

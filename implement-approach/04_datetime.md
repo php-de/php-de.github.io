@@ -45,6 +45,10 @@ inhalt:
         anchor: kalenderwochen
         simple: ""
 
+    -   name: "Quartal"
+        anchor: quartal
+        simple: ""
+
     -   name: "Deutsche Tages- und Monatsnamen"
         anchor: deutsche-namen
         simple: ""
@@ -252,7 +256,6 @@ echo $dt->format('Y-m-d');
 // 2015-01-12 (Montag)
 ~~~
 
-
 ~~~ php
 // Tag gehört zu welcher Kalenderwoche
 $dt = new DateTime('2015-01-15');
@@ -267,6 +270,21 @@ $ultimo = '2015-12-31';
 $dt = new DateTime($ultimo);
 echo ($dt->format('W') > 52) ? 53 : 52;
 // 53
+~~~
+
+
+### [Quartal](#quartal)
+{: #quartal}
+
+In welchem Quartal ein Datum liegt, kann bsp. wie folgt berechnet werden.
+
+~~~php
+$dt = new DateTime('2015-08-10');
+
+$monat = $dt->format('n'); // Monat ohne führender Null
+$quartal = floor(($monat - 1) / 3) + 1;
+
+echo $quartal  // 3
 ~~~
 
 

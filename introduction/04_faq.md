@@ -66,6 +66,10 @@ inhalt:
         anchor: eval-is-evil
         simple: ""
 
+    -   name:   "Ist es falsch Bilder in der Datenbank, anstatt im Dateisystem zu speichern?"
+        anchor: image-storeloc
+        simple: ""
+
 
 entry-type: in-discussion
 ---
@@ -248,3 +252,12 @@ hier ein [Zitat aus dem php.de-Forum](http://www.php.de/forum/webentwicklung/php
 > eval() ist zu 99,99999% unnötig. <br>
 >
 > Die Wahrscheinlichkeit, dass eval() der richtige Lösungsweg ist geringer als ein 6er im Lotto.
+
+
+#### [Ist es falsch Bilder in der Datenbank, anstatt im Dateisystem zu speichern?](#image-storeloc)
+{: #image-storeloc}
+
+Das ist generell nicht mit "ja" oder "nein" zu beantworten. 
+Argumente die dafür und dagegen sprechen sind z.B. in 
+[diesem PHP.de-Forumsthread](http://www.php.de/forum/webentwicklung/datenbanken/111631-bild-aus-datenbank-auslesen?p=1209079#post1209079) zu finden.
+

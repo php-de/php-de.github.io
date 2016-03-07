@@ -295,7 +295,9 @@ echo $quartal;  // 3
 {: #deutsche-wochentage}
 
 ~~~ php
-$aWeekdayNamesDE = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
+$aWeekdayNamesDE = [
+    'Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'
+];
 $dt = new DateTime();
 echo $aWeekdayNamesDE[$dt->format('w')];  // 'w': 0 (für Sonntag) bis 6 (für Samstag)
 // Montag (heute Mo. 2015-01-12)
@@ -305,7 +307,10 @@ echo $aWeekdayNamesDE[$dt->format('w')];  // 'w': 0 (für Sonntag) bis 6 (für S
 {: #deutsche-monate}
 
 ~~~ php
-$aMonthNamesDE = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+$aMonthNamesDE = [
+    'Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
+    'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'
+];
 $dt = new DateTime();
 echo $aMonthNamesDE[$dt->format('n')-1];
 // Januar (heute 2015-01-12)

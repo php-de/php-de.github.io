@@ -319,7 +319,7 @@ echo $aMonthNamesDE[$dt->format('n')-1];
 Ergänzend sei auch auf diese Beiträge/Threads hingewiesen:
 
 * [http://www.php.de/php-einsteiger/112963-kalendermonat-und-kalendertag-bestimmten.html#post831698](http://www.php.de/php-einsteiger/112963-kalendermonat-und-kalendertag-bestimmten.html#post831698)
-* [http://www.php.de/php-einsteiger/114254-datum-plus-42-tage-deutsch.html#post841725](http://www.php.de/php-einsteiger/114254-datum-plus-42-tage-deutsch.html#post841725)
+* [http://www.php.de/forum/webentwicklung/php-einsteiger/117066-erledigt-datum-plus-42-tage-in-deutsch?p=1265559#post1265559](http://www.php.de/forum/webentwicklung/php-einsteiger/117066-erledigt-datum-plus-42-tage-in-deutsch?p=1265559#post1265559)
 
 
 ### [Überschneidungen Zeiträume](#ueberschneidungen)

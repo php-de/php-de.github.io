@@ -23,11 +23,11 @@ inhalt:
         anchor: auslesen
         simple: ""
 
-    -   name: "Verzeischnis rekursiv auslesen"
+    -   name: "Verzeichnis rekursiv auslesen"
         anchor: auslesen-rekursiv
         simple: ""
 
-    -   name: "Verzeischnis rekursiv auslesen, mit Filter"
+    -   name: "Verzeichnis rekursiv auslesen, mit Filter"
         anchor: auslesen-filter
         simple: ""
 
@@ -65,7 +65,7 @@ foreach ($iterator as $file) {
 Alternativ könnte man hier für einfache Durchläufe auch `glob()` ([Doku](http://php.net/manual/de/function.glob.php)) verwenden.
 
 
-### [Verzeischnis rekursiv auslesen](#auslesen-rekursiv)
+### [Verzeichnis rekursiv auslesen](#auslesen-rekursiv)
 {: #auslesen-rekursiv}
 
 ~~~ php

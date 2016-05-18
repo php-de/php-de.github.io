@@ -68,12 +68,12 @@ Mögliche Error-Modi: [http://php.net/manual/de/pdo.error-handling.php](http://p
 #### [Wiederverwendung der Verbindung](#recycle-conn)
 {: #recycle-conn}
 
-Benötigt eine Funktion oder ein Objekt eine DB-Verbindung, so wird die bestehende PDO-Instanz `$pdo` als Parameter übergeben.
+Benötigt eine Funktion oder ein Objekt eine DB-Verbindung, so wird die bestehende PDO-Instanz `$pdo` als Parameter übergeben. In den folgenden Beispielen wird [typehinting](http://php.net/manual/de/language.oop5.typehinting.php) verwendet.
 
 **Beispiel - Funktion**
 
 ~~~ php
-function getUsernameById($userID, $pdo) {
+function getUsernameById($userID, PDO $pdo) {
     // ...
 }
 
@@ -89,7 +89,7 @@ class User
 {
     private $pdo; // Eigenschaft deklarieren
 
-    public function __construct($pdo) {
+    public function __construct(PDO $pdo) {
         // PDO-Objekt an die Eigenschaft übergeben
         // diese steht nun in der ganzen Klasse
         // per $this->pdo zur Verfügung.

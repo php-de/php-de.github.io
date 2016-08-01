@@ -52,8 +52,7 @@ Vorweg sei an dieser Stelle erwähnt, dass eine Prüfung auf tatsächliche Exist
 PHP stellt ab Version 5.2 die Funktion [filter_var()](http://php.net/manual/de/function.filter-var.php) zur Verfügung. Mit dem optionalen Parameter FILTER_VALIDATE_EMAIL kann diese grundsätzlich zur E-Mail-Validierung verwendet werden. Jedoch ist es damit nicht möglich internationalisierte E-Mail-Adressen zu prüfen - solche werden immer als falsch ausgewertet. Lösungsansätze folgen [weiter unten](#idn).
 
 ~~~ php
-function isValidEmail($mail)
-{
+function isValidEmail($mail) {
     return (bool) filter_var($mail, FILTER_VALIDATE_EMAIL);
 }
 
@@ -69,8 +68,7 @@ Sollte filter_var() nicht verfügbar sein, dann den Provider kontaktieren (oder 
 > We get a more practical implementation of RFC 2822 if we omit the syntax using double quotes and square brackets. It will still match 99.99% of all email addresses in actual use today.
 
 ~~~ php
-function isValidEmail($mail)
-{
+function isValidEmail($mail) {
     $pattern = '#[a-z0-9!\\#$%&\'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!\#$%&\'*+/=?^_`{|}~-]+)*'
              . '@'
              . '(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?#i';
@@ -98,8 +96,7 @@ Um auch internationalisierte Domains / E-Mail-Adressen auf grundsätzliche forme
 Diese Variante kommt ohne Punycode-Konvertierung aus. Hierbei spielen die verwendeten Zeichen kaum eine Rolle, denn es wird nur der grobe Rahmen geprüft und ob keine Whitespaces (Leerzeichen, Tabstopps, etc.) vorhanden sind.
 
 ~~~ php
-function isValidEmail($mail)
-{
+function isValidEmail($mail) {
     // Gesamtlänge check
     // http://de.wikipedia.org/wiki/E-Mail-Adresse#L.C3.A4nge_der_E-Mail-Adresse
     if (strlen($mail) > 256) {
@@ -127,8 +124,7 @@ Generell kann in jeder oben angeführten Varianten, wenn gewüscht, die Antwort 
 Hinweis: Die an das DNS übergebene Domain der E-Mail-Adresse muss für die Verwendung von internationalisierten Domains (wie bei filter_var()) ebenfalls in [Punycode konvertiert]({{ page.root }}/jumpto/idna/) sein.
 
 ~~~ php
-function checkEMailDomainDNS($mail)
-{
+function checkEMailDomainDNS($mail) {
     $parts = explode('@', $mail);
     return (checkdnsrr($parts[1], "MX") or checkdnsrr($parts[1], "A"));
 }

@@ -5,9 +5,7 @@ markdown: kramdown
 kramdown:
   syntax_highlighter_opts:
     disable: true
-  use_coderay: true
-  coderay:
-    coderay_line_numbers: nil
+
 
 exclude: [
     README.md,

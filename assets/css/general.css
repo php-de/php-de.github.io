@@ -242,8 +242,7 @@
     pre {
         margin: 10px -15px;
         padding: 9.5px 15px;
-        border-left-width: 0;
-        border-right-width: 0;
+        border: none;
         border-radius: 0;
         background: #333;
         color: white;

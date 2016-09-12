@@ -1,8 +1,7 @@
 @media screen {
-
     #page {
         background: white;
-        border: 1px solid #ddd;
+        border: 10px solid #ddd;
     }
 
     /* http://lea.verou.me/demos/css3-patterns.html */
@@ -39,33 +38,24 @@
     }
 
     .container {
-        padding:0;
+        padding: 0;
     }
 
     #logoContainer {
-        background-image:url(../images/php-de-2013-fin.png);
-        background-position:center left;
-        background-repeat:no-repeat;
-        height:80px;
+        background-image: url(../images/php-de-2013-fin.png);
+        background-position: center left;
+        background-repeat: no-repeat;
+        height: 80px;
 
     }
 
     #breadcrumbs ol {
-        border-radius:0 !important;
-        margin:0;
+        border-radius: 0 !important;
+        margin: 0;
     }
 
     #breadcrumbs {
-        border-bottom:1px solid #ddd;
-    }
-
-    #page {
-        /*border-left:1px solid #ddd;
-        border-right:1px solid #ddd;
-        border-bottom:1px solid #ddd;
-        border-radius:5px;
-        border-top-left-radius:0px;
-        border-top-right-radius:0px;*/
+        border-bottom: 1px solid #ddd;
     }
 
     #contents dt {
@@ -75,15 +65,15 @@
     }
 
     .alert {
-        border:0 !important;
-        border-left:5px solid !important;
-        border-radius:0;
-        text-align:justify;
-        padding-left:11px;
+        border: 0 !important;
+        border-left: 5px solid !important;
+        border-radius: 0;
+        text-align: justify;
+        padding-left: 11px;
     }
 
     .alert.alert-default {
-        border-color:#ddd !important;
+        border-color: #ddd !important;
     }
 
     .alert-success a,
@@ -96,71 +86,71 @@
     }
 
     .left-alerted .alert {
-        border:0 !important;
-        border-right:5px solid !important;
-        margin:0;
-        padding:8px;
-        padding-left:15px;
+        border: 0 !important;
+        border-right: 5px solid !important;
+        margin: 0;
+        padding: 8px;
+        padding-left: 15px;
     }
 
     td.left-alerted {
-        padding:0 !important;
+        padding: 0 !important;
     }
 
     .introduction {
-        border-bottom:1px solid #ddd !important;
-        margin-bottom:0;
+        border-bottom: 1px solid #ddd !important;
+        margin-bottom: 0;
     }
 
     .introduction.info-block {
-        padding:15px;
+        padding: 15px;
     }
 
     table.groups-table thead th {
-        color:#aaa;
+        color: #aaa;
     }
 
     table.groups-table .state {
-        width:24%;
+        width: 24%;
     }
 
     .group-panel.panel {
-        border-radius:0;
-        border-top:1px solid #f0f0f0;
-        border-bottom:2px solid #969696;
+        border-radius: 0;
+        border-top: 1px solid #f0f0f0;
+        border-bottom: 2px solid #969696;
     }
 
     .panel {
-        margin-bottom:0;
+        margin-bottom: 0;
     }
 
     table.groups-table.table td, table.groups-table.table th {
-        padding-left:15px;
+        padding-left: 15px;
     }
 
     #guide {
-        margin-top:0;
+        margin-top: 0;
     }
 
     #guide .alert {
-        margin-left:-15px;
-        margin-right:-15px;
+        margin-left: -15px;
+        margin-right: -15px;
     }
 
     #guide .alert.introduction {
-        margin-top:-15px;
-        margin-bottom:15px;
+        margin-top: -15px;
+        margin-bottom: 15px;
     }
 
     #guide .group-panel.panel {
-        border-radius:0 !important;
-        border:0;
-        border-bottom:1px solid #ddd;
+        border-radius: 0 !important;
+        border: 0;
+        border-bottom: 1px solid #ddd;
     }
 
     #guide blockquote, blockquote p {
-        font-size:11pt !important;
-        color:#777 !important;
+        font-size: 11pt !important;
+        color: #777 !important;
     }
 
     #guide h1, #guide h2, #guide h3, #guide h4, #guide h5 {
@@ -175,84 +165,86 @@
     }
 
     #guide h1 {
-        font-size:1.8em !important;
+        font-size: 1.8em !important;
     }
 
     #guide h2 {
-        font-size:1.6em !important;
+        font-size: 1.6em !important;
     }
 
     #guide h3 {
-        font-size:1.4em !important;
+        font-size: 1.4em !important;
     }
 
     #guide h4 {
-        font-size:1.2em !important;
+        font-size: 1.2em !important;
     }
 
     #guide h5 {
-        font-size:1.0em !important;
+        font-size: 1.0em !important;
     }
 
     #guide h6 {
-        font-size:0.9em !important;
+        font-size: 0.9em !important;
     }
 
     #guide dl dt {
-        font-weight:normal;
+        font-weight: normal;
     }
 
     #guide dl dt span.glyphicon {
-        color:#ddd;
+        color: #ddd;
     }
 
     #guide dl dd {
-        margin-bottom:8px;
-        padding-left:18px;
+        margin-bottom: 8px;
+        padding-left: 18px;
     }
 
     #guide .alert.contents {
-        padding-top:6px;
-        padding-bottom:6px;
-        border-color:#bbb !important;
-        border-bottom:0 !important;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        border-color: #bbb !important;
+        border-bottom: 0 !important;
     }
 
     #guide .alert.contents dl {
-        margin-top:3px;
-        margin-bottom:3px;
+        margin-top: 3px;
+        margin-bottom: 3px;
     }
 
     .group-panel .panel-heading {
-        background-color:#eee;
-        border-radius:0;
+        background-color: #eee;
+        border-radius: 0;
     }
 
     .shadowed {
-        box-shadow:inset 0px 0px 8px #d8d8d8;
+        box-shadow: inset 0px 0px 8px #d8d8d8;
     }
 
     footer {
-        text-align:center;
-        padding:15px;
+        text-align: center;
+        padding: 15px;
     }
 
     footer > * {
-        margin-top:8px;
+        margin-top: 8px;
     }
 
     footer > *:last-child {
-        margin-bottom:15px;
+        margin-bottom: 15px;
     }
 
     * {
-        box-sizing:content-box !important;
+        box-sizing: content-box !important;
     }
 
-    pre.prettyprint {
-        padding:15px !important;
+    pre {
+        margin: 10px -15px;
+        padding: 9.5px 15px;
+        border-left-width: 0;
+        border-right-width: 0;
     }
-
 }
 
 @media print {

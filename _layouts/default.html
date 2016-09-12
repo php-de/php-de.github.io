@@ -11,13 +11,10 @@
         <link rel="alternate" href="{{ page.root }}/feed/atom.xml" type="application/atom+xml" title="Atom Feed">
 
         <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-        <script type="text/javascript" src="http://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
         <script type="text/javascript" src="{{ page.root }}/assets/scroll.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function(){
-                $('pre code').addClass('prettyprint');
-            });
-        </script>
+
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
     </head>
     <body class="bg-stripes bg-angled">
         <div id="page" class="container">

@@ -245,6 +245,8 @@
         border-left-width: 0;
         border-right-width: 0;
         border-radius: 0;
+        background: #333;
+        color: white;
     }
 
     .hljs {

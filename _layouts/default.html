@@ -6,7 +6,6 @@
         <title>{% if page.title != 'index' %}{{ page.title }} &middot; {% endif %}PHP.de Wissenssammlung</title>
 
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="{{ page.root }}/assets/css/general.css">
         <link rel="shortcut icon" href="{{ page.root }}/favicon.ico">
         <link rel="alternate" href="{{ page.root }}/feed/atom.xml" type="application/atom+xml" title="Atom Feed">
 
@@ -16,6 +15,8 @@
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
+
+        <link rel="stylesheet" type="text/css" href="{{ page.root }}/assets/css/general.css">
     </head>
     <body class="bg-stripes bg-angled">
         <div id="page" class="container">

@@ -62,7 +62,7 @@ Composer ist ein auf PHP basierender Dependency Manager (Abhängigkeitsverwalter
 ### [Wozu dient Packagist.org?](#wozu-dient-packagist-org)
 {: #wozu-dient-packagist-org}
 
-Packagist.org ist das zu Composer gehörende [Repository](http://de.wikipedia.org/wiki/Repository), quasi ein Verzeichnis darüber was via Composer verwendet werden kann. Packagist.org ist aber nur eine Quelle von wo Composer Komponenten in euer Projekt *einspeisen* kann.
+Packagist.org ist das zu Composer gehörende [Repository](http://de.wikipedia.org/wiki/Repository), quasi ein Verzeichnis darüber, was via Composer verwendet werden kann. Packagist.org ist aber nur eine Quelle aus der Composer Komponenten in euer Projekt *einspeisen* kann.
 
 
 ### [Ich bin Anfänger, brauche ich Composer?](#ich-bin-anfaenger-brauche-ich-composer)
@@ -95,7 +95,6 @@ Lade dir Git-SCM [herunter](http://git-scm.com/download/win) und installiere es 
 
 * Bestätige den Abschluss der Installation mit klick auf **Finish**
 
-
 Gratulation, du verfügst nun über eine voll funktionsfähige Git-Installation.
 
 
@@ -103,7 +102,6 @@ Gratulation, du verfügst nun über eine voll funktionsfähige Git-Installation.
 {: #installation}
 
 Composer selbst steht zum einen als phar-Executable bereit, verwenden wirst du allerdings (da du unter Windows arbeitest) den Composer Windows Installer, welchen du hier [runterlädst](http://getcomposer.org/Composer-Setup.exe).
-
 
 * Starte den Installer durch einen doppelklick auf die heruntergeladene Datei. Alle Windowsversionen mit aktivierter Benutzerkontrolle werden dich danach fragen ob dem Installer erlaubt werden soll ausgeführt zu werden, bestätige diese anfrage mit **Ja**.
 
@@ -114,7 +112,6 @@ Composer selbst steht zum einen als phar-Executable bereit, verwenden wirst du a
 
 * Bestätige die Erfolgreiche Installation durch Klick auf **Finish**
 
-
 Gratulation, du verfügst nun über eine funktionierende Composer-Installation.
 
 
@@ -123,12 +120,11 @@ Gratulation, du verfügst nun über eine funktionierende Composer-Installation.
 
 In wenigen Netzwerkumgebungen kann es zu schwierigkeiten Zwischen deinem PC und dem Host den Composer nutzt kommen. Noch geringer ist die Chance das der Installationsprozess eine defekte Composer-Konfiguration mitgeliefert hat. Damit du diesem Problem vorbeugen kannst, teste die Konnektivität von Composer wie folgt:
 
-
 Drücke ![Windows Taste]({{ page.root }}/images/win_logo_2012_black.png) (Windows Taste) + R und gib in dem darauf erscheinenden *Ausführen...*-Dialog **cmd** ein und bestätige mit der &crarr;-Taste (Enter-Taste).
 
 Du befindest dich nun in der Eingabeaufforderung deines Betriebssystems, gib dort
 
-~~~
+~~~ bash
 composer diagnose
 ~~~
 
@@ -143,7 +139,6 @@ Checking composer version: OK
 ~~~
 
 Du kannst sicherheitshalber auch die Git-Verfügbarkeit für CLI-Anwendungen prüfen in dem du in der selben offenen Eingabeaufforderung git eingibst. Im Normalfall gibt dieser Befehl die Hilfe des Befehls aus.
-
 
 ~~~
 usage: git [--version] [--exec-path[=<path>]] [--html-path] [--man-path] [--info
@@ -179,10 +174,9 @@ The most commonly used git commands are:
 See 'git help <command>' for more information on a specific command.
 ~~~
 
-
 Soweit so gut, Composer ist nun einsatzbereit.
 
-Die Installation von Composer ist nun abgeschlossen. Im folgenden beschäftigst du dich nun damit Composer zu verwenden:
+Die Installation von Composer ist nun abgeschlossen. Im folgenden beschäftigst du dich nun damit, Composer zu verwenden:
 
 
 ### [Komponenten Installieren](#komponenten-installieren)
@@ -204,13 +198,12 @@ Ein Beispiel: Auf Packagist.org hast du 2 Komponenten gefunden, die du gerne fü
 
 Diese musst du nun in validem JSON in deiner composer.json-Datei notieren, diese Datei **muss** im UTF-8 Format abgespeichert werden:
 
-
-~~~
+~~~ json
 {
-   "require": {
-      "swiftmailer/swiftmailer": "4.3.*@dev",
-      "silex/silex": "1.0.*@dev"
-   }
+    "require": {
+        "swiftmailer/swiftmailer": "4.3.*@dev",
+        "silex/silex": "1.0.*@dev"
+    }
 }
 ~~~
 
@@ -218,7 +211,7 @@ Navigiere nun in dein Anwendungsverzeichnis (dorthin wo du deine composer.json a
 
 In der Eingabeaufforderung gib
 
-~~~
+~~~ bash
 composer install
 ~~~
 
@@ -283,7 +276,7 @@ Einmal installierte Komponenten hinterlegen im Hauptverzeichnis eine composer.lo
 
 Wann immer du deine composer.json veränderst führe wie bei der Komponenten-Installation composer aus, allerdings nicht mit der Ergänzung *install* sondern mit der Ergänzung *update*
 
-~~~
+~~~ bash
 composer update
 ~~~
 
@@ -291,13 +284,12 @@ composer update
 ### [Komponenten verwenden](#komponenten-verwenden)
 {: #komponenten-verwenden}
 
-Um die Komponenten verwenden zu können ist nicht viel Mühe notwendig. Als Beispiel erstelle ein PHP-Script im Anwendungsverzeichnis mit dem Namen *index.php*, dort testen wir aus der vorherigen Installation eine einfache Silex-basierende Anwendung:
+Um die Komponenten verwenden zu können ist nicht viel Mühe notwendig. Als Beispiel erstelle ein PHP-Script im Anwendungsverzeichnis mit dem Namen `index.php`, dort testen wir aus der vorherigen Installation eine einfache auf Silex basierende Anwendung:
 
-
-~~~
+~~~ php
 <?php
 
-require 'vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 $app = new Silex\Application;
 

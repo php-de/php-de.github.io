@@ -93,7 +93,7 @@ var_dump($ref, $var);
 
 Die Ausgabe:
 
-~~~ php
+~~~
 null
 null
 ~~~

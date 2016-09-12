@@ -203,14 +203,12 @@ Marks](https://de.wikipedia.org/wiki/Byte_Order_Mark). Siehe auch:
 [EVA-Prinzip]({{ page.root }}/jumpto/eva-prinzip/).
 
 
-
 #### [Nach Aktion XY zeigt mein Browser nur noch eine weiße Seite.](#weisse-seite)
 {: #weisse-seite}
 
 Wahrscheinlich handelt es sich um einen Parser-Fehler. Üblicherweise hast Du
 einen Stringbegrenzer, ein Semikolon oder eine Klammer vergessen. Siehe:
 [Standardfehler]({{ page.root }}/jumpto/standardfehler/).
-
 
 
 #### <span id="charset"></span>[Warum werden auf meiner Seite die Umlaute falsch dargestellt, obwohl ich UTF-8 im HTML-Dokument angegeben habe?](#html-charset)
@@ -259,8 +257,8 @@ Ja. Das „mysql“ bezieht sich hier allerdings *nicht* auf das komplette
 Datenbanksystem MySQL, sondern ist lediglich der Name eines der drei APIs, die
 PHP zur Kommunikation mit MySQL-Datenbanken nutzen kann. Die anderen beiden
 (nicht veralteten) APIs sind [mysqli](http://php.net/mysqli) und
-[PDO](http://php.net/pdo). Mehr Hintergründe und Empfehlungen stehen [in der
-PHP-Dokumentation](http://php.net/manual/en/mysqlinfo.api.choosing.php). Ein kurzes Anwendungsbeispiel zu PDO gibt es auch [hier in der Wissensammlung](http://php-de.github.io/jumpto/pdo/).
+[PDO](http://php.net/pdo). Ab PHP 7 ist die alte mysql-Erweiterung nicht mehr verfügbar. Weitere Hintergründe und Empfehlungen sind [in der
+PHP-Dokumentation](http://php.net/manual/en/mysqlinfo.api.choosing.php) zu finden. Ein kurzes Anwendungsbeispiel zu PDO gibt es auch [hier in der Wissenssammlung]({{ page.root }}/jumpto/pdo/).
 
 
 #### [Was ist eine SQL-Injection und was kann ich dagegen unternehmen?](#sql-injection)

@@ -26,6 +26,10 @@ inhalt:
         anchor: debugging
         simple: ""
 
+    -   name:   "Was ist die alternative Syntax für Kontrollstrukturen?"
+        anchor: alternative-syntax
+        simple: ""
+
     -   name:   "Warum sollte ich eine Mailerklasse statt der mail()-Funktion verwenden?"
         anchor: mailerklasse
         simple: ""
@@ -92,6 +96,52 @@ Richtig debuggen
 Die Ausgaben per `var_dump` oder `echo` kann man sich ersparen, indem man einen Debugger einsetzt.
 
 - [Ausführlichere Informationen zum Thema Debugging]({{ page.root }}/#debugging)
+
+
+#### [Was ist die alternative Syntax für Kontrollstrukturen?](#alternative-syntax)
+{: #alternative-syntax}
+
+Neben der üblichen Syntax für Kontrollstrukturen in PHP (`if`, `for`, `while`, …), die geschweifte Klammern nutzt, um den Körper zu definieren, …
+
+~~~ php
+if ($var === 42) {
+    // ...
+} else {
+    // ...
+}
+
+while ($i > 0) {
+    // ...
+}
+~~~
+
+…existiert eine [alternative Syntax](http://php.net/manual/en/control-structures.alternative-syntax.php), die für jede Kontrollstruktur ein explizites Schlüsselwort enthält, um das Ende des Körpers anzugeben. Zudem wird die öffnende geschweifte Klammer durch einen Doppelpunkt ersetzt:
+
+~~~ php
+if ($var === 42):
+    // ...
+else:
+    // ...
+endif;
+
+while ($i > 0):
+    // ...
+endwhile;
+~~~
+
+Beide Syntaxvarianten sind von der Funktionsweise her identisch. Die Nutzung der alternativen Syntax ist in Dateien, die nur PHP-Code enthalten, unüblich. Sie wird aber von vielen Entwicklern gern genutzt, wenn PHP-Code mit HTML-Code vermischt ist, wenn PHP also als Templatesprache zur Generierung von HTML-Ausgaben eingesetzt wird. Einerseits lässt sich dadurch hervorheben, dass es sich bei entsprechendem Code um Template-Code handelt und nicht um „normalen“ Anwendungscode, und andererseits sind die Schlüsselwörter der alternativen Syntax im schnell unübersichtlichen Gemisch aus HTML-Tags und PHP-Code leichter einer bestimmten Kontrollstruktur zuzuordnen, als es bei den generischen geschweiften Klammern der Fall ist.
+
+~~~ php
+<?php if ($loggedIn): ?>
+  <h1>Hallo Nutzer!</h1>
+  <p>Deine neuen Nachrichten:</p>
+  <ul>
+    <?php foreach ($messages as $message): ?>
+    <li>...</li>
+    <?php endforeach; ?>
+  </ul>
+<?php endif; ?>
+~~~
 
 
 #### [Warum sollte ich eine Mailerklasse statt der `mail()`-Funktion verwenden?](#mailerklasse)
@@ -257,7 +307,6 @@ hier ein [Zitat aus dem php.de-Forum](http://www.php.de/forum/webentwicklung/php
 #### [Ist es falsch Bilder in der Datenbank, anstatt im Dateisystem zu speichern?](#image-storeloc)
 {: #image-storeloc}
 
-Das ist generell nicht mit "ja" oder "nein" zu beantworten. 
-Argumente die dafür und dagegen sprechen sind z.B. in 
+Das ist generell nicht mit "ja" oder "nein" zu beantworten.
+Argumente die dafür und dagegen sprechen sind z.B. in
 [diesem PHP.de-Forumsthread](http://www.php.de/forum/webentwicklung/datenbanken/111631-bild-aus-datenbank-auslesen?p=1209079#post1209079) zu finden.
-

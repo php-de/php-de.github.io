@@ -206,9 +206,7 @@ Marks](https://de.wikipedia.org/wiki/Byte_Order_Mark). Siehe auch:
 #### [Nach Aktion XY zeigt mein Browser nur noch eine weiße Seite.](#weisse-seite)
 {: #weisse-seite}
 
-Wahrscheinlich handelt es sich um einen Parser-Fehler. Üblicherweise hast Du
-einen Stringbegrenzer, ein Semikolon oder eine Klammer vergessen. Siehe:
-[Standardfehler]({{ page.root }}/jumpto/standardfehler/).
+Wahrscheinlich handelt es sich um einen Parser-Fehler, also einen syntaktischen Fehler im geschriebenen PHP-Quellcode. Vielleicht wurde ein Stringbegrenzer, ein Semikolon oder eine Klammer vergessen?
 
 
 #### <span id="charset"></span>[Warum werden auf meiner Seite die Umlaute falsch dargestellt, obwohl ich UTF-8 im HTML-Dokument angegeben habe?](#html-charset)

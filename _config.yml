@@ -3,8 +3,9 @@
 markdown: kramdown
 
 kramdown:
-  syntax_highlighter_opts:
-    disable: true
+    syntax_highlighter: nil
+    syntax_highlighter_opts:
+        disable: true
 
 exclude: [
     README.md,

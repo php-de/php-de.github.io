@@ -273,9 +273,13 @@ SQL-Kontext haben. Ein Beispiel dafür sind die Anführungszeichen `"` und `'`.
 Enthält eine Eingabe wie `$_POST['name']` den Wert `O'Brian`, bringt das
 die Syntax eines Query-Strings wie `"WHERE name = '" . $_POST['name'] . "'"`
 durcheinander, da der String, mit dem verglichen werden soll, bereits
-nach dem `O` geschlossen wird.
+nach dem `O` geschlossen wird. Dadurch können Fehler entstehen, und durch
+gezielt konstruierte Eingaben kann sogar die Query insgesamt so verändert
+werden, dass sie eine völlig andere Operation auslöst, als der Entwickler
+beabsichtigt hatte. SQL-Injections sind eines der primären Mittel beim Angriff
+auf Webseiten.
 
-Weitere Informationen und sinnvolle Gegemaßnahmen sind im [Hauptartikel
+Weitere Informationen und sinnvolle Gegenmaßnahmen sind im [Hauptartikel
 SQL-Injection]({{ page.root }}/jumpto/sql-injection/) zu finden.
 
 

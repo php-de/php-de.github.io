@@ -117,13 +117,13 @@ Datenbanken benutzen Keywords in Ihrer Syntax, die dann nicht gleichzeitig Feldn
 Negativbeispiel - unübersichtliches Statement
 
 ~~~ php
-$query = 'SELECT Name , Age FROM Users WHERE Name LIKE "%Horst%" OR `Register` < "2008-01-01"';
+$query = "SELECT Name , Age FROM Users WHERE Name LIKE '%Horst%' OR `Register` < '2008-01-01'";
 ~~~
 
 Mehrzeilige Statements
 
 - sind besser zu lesen und damit leichter zu debuggen
-- ergeben in Fehlermeldungen genauere Positionsmeldungen (`„near ... at line 2“`)
+- ergeben in Fehlermeldungen genauere Positionsmeldungen (`near ... at line 2`)
 <br> <br>
 
 Aber richtig!
@@ -133,24 +133,26 @@ Mehrzeilig heißt nicht, jede Zeile in PHP aus eigenenständigen Strings zu konk
 Negativbeispiel - mehrzeilig aber syntaktisch falsch
 
 ~~~ php
-$query = 'SELECT Name , Age ' .
-         'FROM   Users' . // hier entsteht ein Fehler (fehlendes Leerzeichen)
-         'WHERE  Name LIKE "%Horst%"' .
-         'OR `Register` < "2008-01-01"';
+$query = "SELECT Name, Age " .
+         "FROM   Users" . // hier entsteht ein Fehler (fehlendes Leerzeichen)
+         "WHERE  Name LIKE '%Horst%'" .
+         "OR `Register` < '2008-01-01'";
 ~~~
 
-Dieses Verfahren ist unnötig und auch fehleranfällig. An der oben kommentierten Stelle entsteht in der Query später ein „UsersWHERE“, ohne dass das im Quellcode offenkundig ist.
+Dieses Verfahren ist unnötig und auch fehleranfällig. An der oben kommentierten Stelle entsteht in der Query später ein `UsersWHERE`, ohne dass das im Quellcode offenkundig ist.
 
 MySQL stört sich nicht an Zeilenumbrüchen und auch PHP kann damit problemlos umgehen.
 
 Positivbeispiel - übersichtliches Statement
 
 ~~~ php
-$query = 'SELECT Name ,
-                 Age
-          FROM   Users
-          WHERE  Name LIKE "%Horst%"
-                 OR `Register` < "2008-01-01"';
+$query = "
+SELECT Name,
+    Age
+    FROM   Users
+    WHERE  Name LIKE '%Horst%'
+           OR `Register` < '2008-01-01'
+";
 ~~~
 
 #### [Benutze Backticks (MySQL)](#benutze-backticks-mysql)

@@ -1,2 +1,1 @@
-
-[Wissenssammlung der PHP.de-Community](http://php-de.github.io)
+[Wissenssammlung der PHP.de-Community](https://php-de.github.io)

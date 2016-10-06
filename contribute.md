@@ -31,14 +31,14 @@ inhalt:
 ---
 
 
-Diese Webseite basiert auf einem Github-Repository das durch das Github-Pages System
-über JEKYLL statische Webseiten erzeugt. Alle Beiträge dieses Repository dürfen von
+Diese Webseite basiert auf einem GitHub-Repository das durch das GitHub-Pages System
+über Jekyll statische Webseiten erzeugt. Alle Beiträge dieses Repository dürfen von
 jedem weiterentwickelt und verändert werden. Wie genau die Markdown-Dateien im einzelnen
 aufgebaut sind und welche Möglichkeiten für das definieren der Markdowns bereitgestellt
 wurden erfährst du in diesem Beitrag.
 
 <div class="alert alert-warning">
-<strong>Wichtig!</strong> Beiträge werden nur alle 10 Minuten von JEKYLL auf Github erneuert. Dieser Interval ist nicht davon abhängig wann du Dinge veränderst, es ist ein fester Zeit-Interval.
+<strong>Wichtig!</strong> Beiträge werden nur alle 10 Minuten von Jekyll auf GitHub erneuert. Dieser Interval ist nicht davon abhängig wann du Dinge veränderst, es ist ein fester Zeit-Interval.
 </div>
 
 
@@ -63,15 +63,15 @@ Respektiere folgende Regeln wenn du Beiträge hinzufügen oder bearbeiten möcht
 {: #markdown-aufbau}
 
 <div class="alert alert-warning">
-    <strong>Wichtig:</strong> Änderungen am JEKYLL sind diskutabel und sollten im Forum diskutiert werden.
+    <strong>Wichtig:</strong> Änderungen am Jekyll sind diskutabel und sollten im Forum diskutiert werden.
 </div>
-Das JEKYLL-System benutzt [kramdown](http://kramdown.rubyforge.org/quickref.html)-Syntax und erlaubt inline HTML. Du kannst also auch Bootstrap-Komponenten wie das obige Warning mit in deinen Beitrag einbauen. Nutze bitte nur folgende Bootstrap-Elemente: Warnings, Wells, Media-Objects, Labels. Nutze HTML **nicht** dazu Demonstrationen deiner Quellcodes auszuliefern. Deine HTML-Elemente dürfen kein Javascript ausführen oder Ziel einer Javascript-Komponente der Seite werden. Die statischen HTML-Seiten werden mit dem HTML5-Doctype erstellt (kein XHTML).
+Das Jekyll-System benutzt [kramdown](http://kramdown.rubyforge.org/quickref.html)-Syntax und erlaubt inline HTML. Du kannst also auch Bootstrap-Komponenten wie das obige Warning mit in deinen Beitrag einbauen. Nutze bitte nur folgende Bootstrap-Elemente: Warnings, Wells, Media-Objects, Labels. Nutze HTML **nicht** dazu Demonstrationen deiner Quellcodes auszuliefern. Deine HTML-Elemente dürfen kein Javascript ausführen oder Ziel einer Javascript-Komponente der Seite werden. Die statischen HTML-Seiten werden mit dem HTML5-Doctype erstellt (kein XHTML).
 
 
 ### [YAML](#yaml)
 {: #yaml}
 
-Jedes Dokument fängt mit einem YAML-Kopf an und muss zumindest die Einträge `layout: guide`, `permalink: "/jumpto/dateiname-ohne-extension/"` und `root: "../.."` besitzen. Damit wird JEKYLL angewiesen, das entsprechende Layout für Beiträge zu benutzen, den Permanent-Link richtig zu aggregieren und einen relativen Pfad in der Variablen `{{ "{{ page.root " }}}}` bereitzustellen, über den andere Seiten und sonstige Ressourcen verlinkt werden können.
+Jedes Dokument fängt mit einem YAML-Kopf an und muss zumindest die Einträge `layout: guide`, `permalink: "/jumpto/dateiname-ohne-extension/"` und `root: "../.."` besitzen. Damit wird Jekyll angewiesen, das entsprechende Layout für Beiträge zu benutzen, den Permanent-Link richtig zu aggregieren und einen relativen Pfad in der Variablen `{{ "{{ page.root " }}}}` bereitzustellen, über den andere Seiten und sonstige Ressourcen verlinkt werden können.
 
 ~~~ yaml
 ---
@@ -92,7 +92,7 @@ title: "Hallo Welt Tutorial"
 ---
 ~~~
 
-Damit JEKYLL feststellen kann wer das Tutorial eigentlich ursprünglich verfasst hat, muss jeder Beitrag 2 weitere Felder ausliefern: `authors` und `creator`. Das authors-Feld ist ein YAML-Array aus YAML-Arrays und ist wie folgt aufgebaut:
+Damit Jekyll feststellen kann wer das Tutorial eigentlich ursprünglich verfasst hat, muss jeder Beitrag 2 weitere Felder ausliefern: `authors` und `creator`. Das authors-Feld ist ein YAML-Array aus YAML-Arrays und ist wie folgt aufgebaut:
 
 ~~~ yaml
 ---
@@ -208,4 +208,4 @@ Für den Fall das du dir nicht sicher bist ob du diese Komponente in diesem Repo
 ## [Das Git Repository](#git-repository)
 {: #git-repository}
 
-Unser Wissens-Repository basiert auf GIT und wird auf Github gehostet. Um etwas über den Umgang mit GIT zu erfahren und wie du dich auf Github an diesem Repository beteiligen kannst, haben wir ebenfalls einen [Beitrag]({{ page.root }}/jumpto/how-to/) bereitgestellt.
+Unser Wissens-Repository basiert auf Git und wird auf GitHub gehostet. Um etwas über den Umgang mit Git zu erfahren und wie du dich auf GitHub an diesem Repository beteiligen kannst, haben wir ebenfalls einen [Beitrag]({{ page.root }}/jumpto/how-to/) bereitgestellt.

@@ -79,7 +79,7 @@ Außerdem bedient der Großteil der Libraries und Frameworks die Composer liefer
 ### [Vorbereitung](#vorbereitung)
 {: #vorbereitung}
 
-Composer selbst benötigt zum Reibungslosen ablauf des Paket-Imports der Packagist.org-Pakete [Git](http://de.wikipedia.org/wiki/Git). Git ist ein Versionskontrollsystem (VCS) das Composer als Werkzeug nutzt um Komponenten direkt von [Github.com](http://github.com/) in deinen Projektordner zu importieren.
+Composer selbst benötigt zum reibungslosen Ablauf des Paket-Imports der Packagist-Pakete [Git](http://de.wikipedia.org/wiki/Git). Git ist ein Versionskontrollsystem (VCS), das Composer als Werkzeug nutzt, um Komponenten direkt von [GitHub](http://github.com/) in deinen Projektordner zu importieren.
 
 Lade dir Git-SCM [herunter](http://git-scm.com/download/win) und installiere es wie folgt:
 

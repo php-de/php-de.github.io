@@ -78,7 +78,7 @@ inhalt:
 entry-type: in-discussion
 ---
 
-### [Was ist Debugging und wie debugge ich richtig?](#debugging)
+## [Was ist Debugging und wie debugge ich richtig?](#debugging)
 {: #debugging}
 
 Richtig debuggen
@@ -98,7 +98,7 @@ Die Ausgaben per `var_dump` oder `echo` kann man sich ersparen, indem man einen 
 - [Ausführlichere Informationen zum Thema Debugging]({{ page.root }}/#debugging)
 
 
-### [Was ist die alternative Syntax für Kontrollstrukturen?](#alternative-syntax)
+## [Was ist die alternative Syntax für Kontrollstrukturen?](#alternative-syntax)
 {: #alternative-syntax}
 
 Neben der üblichen Syntax für Kontrollstrukturen in PHP (`if`, `for`, `while`, …), die geschweifte Klammern nutzt, um den Körper zu definieren, …
@@ -144,7 +144,7 @@ Beide Syntaxvarianten sind von der Funktionsweise her identisch. Die Nutzung der
 ~~~
 
 
-### [Warum sollte ich eine Mailerklasse statt der `mail()`-Funktion verwenden?](#mailerklasse)
+## [Warum sollte ich eine Mailerklasse statt der `mail()`-Funktion verwenden?](#mailerklasse)
 {: #mailerklasse}
 
 Während es für die kleine, schnelle Info-Mail gerade noch okay ist, versuchen
@@ -172,18 +172,18 @@ für den Versand von Spam an Dritte benutzen.
 - [Mail headers injections with PHP](http://www.phpsecure.info/v2/article/MailHeadersInject.en.php)
 
 
-### [Wie kann ich erreichen, dass mein Formular bei Unvollständigkeit wieder ausgefüllt wird?](#formular-gefuellt)
+## [Wie kann ich erreichen, dass mein Formular bei Unvollständigkeit wieder ausgefüllt wird?](#formular-gefuellt)
 {: #formular-gefuellt}
 
 Ein Affenformular bietet genau diese Funktionalität. Siehe [Affenformular]({{ page.root }}/jumpto/affenformular/)
 
 
-### [Was ist ein Affenformular?](#affenformular)
+## [Was ist ein Affenformular?](#affenformular)
 {: #affenformular}
 Siehe: vorige Frage.
 
 
-### [Ich erhalte immer die Meldung "headers already sent"](#headers-already-sent)
+## [Ich erhalte immer die Meldung "headers already sent"](#headers-already-sent)
 {: #headers-already-sent}
 
 Das HTTP schreibt vor, dass der Header einer Response vor dem Body an den
@@ -203,13 +203,13 @@ Marks](https://de.wikipedia.org/wiki/Byte_Order_Mark). Siehe auch:
 [EVA-Prinzip]({{ page.root }}/jumpto/eva-prinzip/).
 
 
-### [Nach Aktion XY zeigt mein Browser nur noch eine weiße Seite.](#weisse-seite)
+## [Nach Aktion XY zeigt mein Browser nur noch eine weiße Seite.](#weisse-seite)
 {: #weisse-seite}
 
 Wahrscheinlich handelt es sich um einen Parser-Fehler, also einen syntaktischen Fehler im geschriebenen PHP-Quellcode. Vielleicht wurde ein Stringbegrenzer, ein Semikolon oder eine Klammer vergessen?
 
 
-###<span id="charset"></span>[Warum werden auf meiner Seite die Umlaute falsch dargestellt, obwohl ich UTF-8 im HTML-Dokument angegeben habe?](#html-charset)
+## <span id="charset"></span>[Warum werden auf meiner Seite die Umlaute falsch dargestellt, obwohl ich UTF-8 im HTML-Dokument angegeben habe?](#html-charset)
 {: #html-charset}
 
 Die Zeichensatz-Angabe im `meta`-Element im HTML-Code ist nur eine von mehreren
@@ -248,7 +248,7 @@ Das Hinzufügen dieser Zeile löst das Problem meist. Wie jeder `header`-Aufruf
 muss auch dieser vor der ersten Ausgabe des Scripts erfolgen.
 
 
-### [Ist die mysql-Erweiterung wirklich veraltet und sollte nicht mehr genutzt werden?](#deprecated-mysql)
+## [Ist die mysql-Erweiterung wirklich veraltet und sollte nicht mehr genutzt werden?](#deprecated-mysql)
 {: #deprecated-mysql}
 
 Ja. Das „mysql“ bezieht sich hier allerdings *nicht* auf das komplette
@@ -259,7 +259,7 @@ PHP zur Kommunikation mit MySQL-Datenbanken nutzen kann. Die anderen beiden
 PHP-Dokumentation](http://php.net/manual/en/mysqlinfo.api.choosing.php) zu finden. Ein kurzes Anwendungsbeispiel zu PDO gibt es auch [hier in der Wissenssammlung]({{ page.root }}/jumpto/pdo/).
 
 
-### [Was ist eine SQL-Injection und was kann ich dagegen unternehmen?](#sql-injection)
+## [Was ist eine SQL-Injection und was kann ich dagegen unternehmen?](#sql-injection)
 {: #sql-injection}
 
 Vor dem Absenden an das Datenbanksystem werden SQL-Queries in PHP in der
@@ -281,7 +281,7 @@ Weitere Informationen und sinnvolle Gegenmaßnahmen sind im [Hauptartikel
 SQL-Injection]({{ page.root }}/jumpto/sql-injection/) zu finden.
 
 
-### [You have an error in your SQL syntax; ... Warning: mysql_fetch_row() expects parameter 1 to be resource, boolean given](#sql-error)
+## [You have an error in your SQL syntax; ... Warning: mysql_fetch_row() expects parameter 1 to be resource, boolean given](#sql-error)
 {: #sql-error}
 
 Der SQL-String für die Datenbankabfrage ist fehlerhaft. Lass dir den fertigen
@@ -289,7 +289,7 @@ String der entsprechenden Query vor der Anfrage testweise ausgeben. Siehe:
 [SQL-Fehlerbehebung]({{ page.root }}/jumpto/sql/).
 
 
-### [eval is evil - Warum?](#eval-is-evil)
+## [eval is evil - Warum?](#eval-is-evil)
 {: #eval-is-evil}
 
 Um es trefflich auf den Punkt zu bringen,
@@ -304,7 +304,7 @@ hier ein [Zitat aus dem php.de-Forum](http://www.php.de/forum/webentwicklung/php
 > Die Wahrscheinlichkeit, dass eval() der richtige Lösungsweg ist geringer als ein 6er im Lotto.
 
 
-### [Ist es falsch Bilder in der Datenbank, anstatt im Dateisystem zu speichern?](#image-storeloc)
+## [Ist es falsch Bilder in der Datenbank, anstatt im Dateisystem zu speichern?](#image-storeloc)
 {: #image-storeloc}
 
 Das ist generell nicht mit "ja" oder "nein" zu beantworten.

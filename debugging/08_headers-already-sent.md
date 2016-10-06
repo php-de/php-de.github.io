@@ -48,7 +48,7 @@ sind klassische Kandidaten.
 
 
 
-### [Faustregel](#faustregel)
+## [Faustregel](#faustregel)
 {: #faustregel}
 
 <div class="alert alert-info">
@@ -69,7 +69,7 @@ von Scripten via Include/Require entsteht.
 
 
 
-### [Negativbeispiele](#negativbeispiele)
+## [Negativbeispiele](#negativbeispiele)
 {: #negativbeispiele}
 
 Die Angabe `header('Content-Type: text/html; charset=utf-8');` steht
@@ -78,7 +78,7 @@ Funktionen, die einen solchen erzeugen, wie session_start oder setcookie.
 Typisch ist auch der Versuch, nach einer Ausgabe mit dem Location-Header
 umzuleiten.
 
-#### [Quelltext / Bildschirmausgaben](#quelltext-bildschirmausgaben)
+### [Quelltext / Bildschirmausgaben](#quelltext-bildschirmausgaben)
 {: #quelltext-bildschirmausgaben}
 
 Bsp. 1, HTML vor der Headerausgabe:
@@ -181,7 +181,7 @@ $test = $_GET['test']; // Notice: Undefined index:
 header ('Content-Type: text/html; charset=utf-8'); // Notice als Ausgabe führt zum Folgefehler
 ~~~
 
-#### [Leerzeichen und anderer Whitespace](#leerzeichen-und-anderer-whitespace)
+### [Leerzeichen und anderer Whitespace](#leerzeichen-und-anderer-whitespace)
 {: #leerzeichen-und-anderer-whitespace}
 
 Wichtig zu wissen ist, dass jedes Zeichen, auch Whitespace bereits als Ausgabe
@@ -195,7 +195,7 @@ Bsp. 6, Headers sent als Folgefehler:
 header ('Content-Type: text/html; charset=utf-8'); // Notice als Ausgabe führt zum Folgefehler
 ~~~
 
-#### [Byte-Order-Mark von signierten UTF-8-kodiertem Quellcode](#byte-order-mark-von-signierten-utf-8-kodiertem-quellcode)
+### [Byte-Order-Mark von signierten UTF-8-kodiertem Quellcode](#byte-order-mark-von-signierten-utf-8-kodiertem-quellcode)
 {: #byte-order-mark-von-signierten-utf-8-kodiertem-quellcode}
 
 Besonders heimtückisch ist die Verwendung der Zeichencodierung UTF-8 mit BOM
@@ -227,7 +227,7 @@ physisch aber eben existiert (unteres Beispiel).
 
 
 
-### [Analyse](#analyse)
+## [Analyse](#analyse)
 {: #analyse}
 
 Mit [eingeschaltetem
@@ -247,7 +247,7 @@ eine Null als Zeilenangabe angegeben, ist die Ursache fürgemein das UTF-8-BOM
 
 
 
-### [Empfehlungen](#empfehlungen)
+## [Empfehlungen](#empfehlungen)
 {: #empfehlungen}
 
 Es wird empfohlen, generell PHP-Scripte, denen kein Inline-HTML oder anderer

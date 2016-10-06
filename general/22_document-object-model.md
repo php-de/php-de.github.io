@@ -42,7 +42,7 @@ hierbei um ein HTML- oder XML-Dokument.
 
 
 
-### [Elementknoten](#elementknoten)
+## [Elementknoten](#elementknoten)
 {: #elementknoten}
 
 Im Folgenden soll ein HTML-Dokument den Aufbau eines DOM-Baums verdeutlichen:
@@ -94,7 +94,7 @@ Center</a>.
 </div>
 
 
-### [Attributknoten](#attributknoten)
+## [Attributknoten](#attributknoten)
 {: #attributknoten}
 
 Nicht nur Elemente stellen Knoten im DOM-Baum dar, auch Attribute tun dies.
@@ -129,7 +129,7 @@ Der DOM-Baum sieht diesmal so aus:
 
 
 
-### [Verarbeitung des DOM-Baums](#verarbeitung)
+## [Verarbeitung des DOM-Baums](#verarbeitung)
 {: #verarbeitung}
 
 
@@ -191,7 +191,7 @@ var div = document.getElementById('wrapper'),
 ~~~
 
 
-### [Weiterführende Links](#links)
+## [Weiterführende Links](#links)
 {: #links}
 
 

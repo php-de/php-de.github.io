@@ -51,7 +51,7 @@ Letztlich gilt es also, eine Lösung für ein Problem zu finden, das überhaupt 
 Es soll auf verschiedene mögliche Ansätze hingewiesen werden, aber es soll auch vermittelt werden, dass die Frage nach der grundsätzlichen Entscheidbarkeit bei derlei Problemstellungen von zentraler Bedeutung ist.
 
 
-### [Ein Ansatz](#ansatz)
+## [Ein Ansatz](#ansatz)
 {: #ansatz}
 
 
@@ -99,7 +99,7 @@ function get_float($value)
 ~~~
 
 
-### [Ein anderer Ansatz per `filter_var`](#filter-var)
+## [Ein anderer Ansatz per `filter_var`](#filter-var)
 {: #filter-var}
 
 ~~~ php
@@ -130,7 +130,7 @@ $floatAutoDetect = function ($value) {
 };
 ~~~
 
-### [Mit der Intl-Erweiterung](#intl)
+## [Mit der Intl-Erweiterung](#intl)
 {: #intl}
 
 Zuletzt eine Variante, welche die [intl Erweiterung](http://www.php.net/manual/de/intro.intl.php) voraussetzt. Es muss bedacht werden, dass die übergebene Locale das Parsing beeinflusst (zur Veranschaulichung siehe Tests).

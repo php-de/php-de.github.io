@@ -48,11 +48,11 @@ inhalt:
 **Dieser Thread enthält Links auf wertvolle Webquellen rund um das Thema Webentwicklung.**
 
 
-### [Dokumentationen (Manuals) und Nachschlagewerke](#dokus)
+## [Dokumentationen (Manuals) und Nachschlagewerke](#dokus)
 {: #dokus}
 
 
-##### [HTML](#html)
+#### [HTML](#html)
 {: #html}
 
 * [SELFHTML: HTML/XHTML](http://de.selfhtml.org/html/index.htm) <br>
@@ -65,7 +65,7 @@ inhalt:
     und Varianten
 
 
-##### [CSS](#css)
+#### [CSS](#css)
 {: #css}
 
 * [CSS 4 You - The Finest in Stylesheets](http://www.css4you.de/) <br>
@@ -105,7 +105,7 @@ inhalt:
         960 Grid System ist ein weiteres beliebtes CSS Framework.
 
 
-##### [javascript](#javascript)
+#### [javascript](#javascript)
 {: #javascript}
 
 * [SELFHTML: JavaScript/DOM](http://de.selfhtml.org/javascript/index.htm) <br>
@@ -135,7 +135,7 @@ inhalt:
         allen jQuery Funktionen.
 
 
-##### [PHP](#php)
+#### [PHP](#php)
 {: #php}
 
 * [PHP: PHP-Handbuch - Manual](http://php.net/manual/de/) <br>
@@ -202,7 +202,7 @@ inhalt:
         zur Verfügung.
 
 
-##### [MySQL](#mysql)
+#### [MySQL](#mysql)
 {: #mysql}
 
 * [MySQL Referenzhandbuch](http://dev.mysql.com/doc/) <br>
@@ -212,24 +212,24 @@ inhalt:
     **Nachteile:** teilweise etwas unübersichtlich
 
 
-##### [Webentwicklung, divers](#webentwicklung-divers)
+#### [Webentwicklung, divers](#webentwicklung-divers)
 {: #webentwicklung-divers}
 
 * [http://dochub.io/ Referenz](http://dochub.io/) <br>
 
 
-##### [Unzulänglichkeiten](#unzulaenglichkeiten)
+#### [Unzulänglichkeiten](#unzulaenglichkeiten)
 {: #unzulaenglichkeiten}
 
 * [PHP: a fractal of bad design](http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/) <br>
     Auch sowas ist mal lesenswert.
 
 
-### [Tutorials](#tutorials)
+## [Tutorials](#tutorials)
 {: #tutorials}
 
 
-##### [HTML](#html-2)
+#### [HTML](#html-2)
 {: #html-2}
 
 * [Peter Kropff - HTML - Überblick](http://www.peterkropff.de/site/html/html.htm) <br>
@@ -239,7 +239,7 @@ inhalt:
     <br>**Vorteile:** Grundlagen vom absoluten Anfang, kein Fachchinesisch,
     Umfang
 
-##### [CSS](#css-2)
+#### [CSS](#css-2)
 {: #css-2}
 
 * [Peter Kropff - CSS - Überblick](http://www.peterkropff.de/site/css/css.htm) <br>
@@ -250,7 +250,7 @@ inhalt:
     Umfang
 
 
-##### [javascript](#javascript-2)
+#### [javascript](#javascript-2)
 {: #javascript-2}
 
 * [Peter Kropff - JavaScript - Einleitung](http://www.peterkropff.de/site/javascript/javascript.htm) <br>
@@ -287,7 +287,7 @@ inhalt:
       <br>**Vorteile:** große Auswahl an Plugins, viele Live Demos
 
 
-##### [PHP Anfänger](#php-anfaenger)
+#### [PHP Anfänger](#php-anfaenger)
 {: #php-anfaenger}
 
 * [Peter Kropff - PHP - Einleitung](http://www.peterkropff.de/site/php/php.htm) <br>
@@ -376,7 +376,7 @@ inhalt:
     * [Captchas sind Blödsinn - Alternativen gegen Spam](http://1ngo.de/web/captcha-spam.html)
 
 
-##### [PHP Fortgeschrittene](#php-fortgeschrittene)
+#### [PHP Fortgeschrittene](#php-fortgeschrittene)
 {: #php-fortgeschrittene}
 
 * [Professionelle Softwareentwicklung mit PHP 5](http://professionelle-softwareentwicklung-mit-php5.de/) <br>
@@ -390,7 +390,7 @@ inhalt:
     <br>**Nachteile:** hoher Anspruch, nur für Fortgeschrittene
 
 
-##### [MySQL](#mysql-2)
+#### [MySQL](#mysql-2)
 {: #mysql-2}
 
 * [Peter Kropff - MySQL - Einleitung](http://www.peterkropff.de/site/mysql/mysql.htm) <br>
@@ -399,7 +399,7 @@ inhalt:
     <br>**Vorteile:** Grundlagen vom absoluten Anfang, kein Fachchinesisch, Umfang
 
 
-##### [Sicherheit](#sicherheit)
+#### [Sicherheit](#sicherheit)
 {: #sicherheit}
 
 * [http://www.cms-sicherheit.de/](http://www.cms-sicherheit.de/) <br>
@@ -414,7 +414,7 @@ inhalt:
     <br>**Nachteile:** Die Ausführungen sind trotz der guten Erklärungen
     manchmal etwas kurz geraten
 
-### [Bücher](#books)
+## [Bücher](#books)
 {: #books}
 
 * [Galileo Computing : Buch : Besser PHP programmieren](https://www.galileo-press.de/besser-php-programmieren_1670/) <br>
@@ -516,7 +516,7 @@ inhalt:
   gehört haben.
 
 
-### [Sicherheit](#security)
+## [Sicherheit](#security)
 {: #security}
 
 Lesenswerte Artikel zum Thema Sicherheit bei Webapplikationen:
@@ -524,7 +524,7 @@ Lesenswerte Artikel zum Thema Sicherheit bei Webapplikationen:
 * [OWASP Guide 2.0.1](http://www.owasp.org/index.php/Category:OWASP_Guide_Project) (Englisch)
 
 
-### [weitere Links](#weitere-links)
+## [weitere Links](#weitere-links)
 {: #weitere-links}
 
  Weitere Links zu verschiedenen Themen gibt es unter:

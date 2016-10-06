@@ -41,7 +41,7 @@ inhalt:
 
 Auswahlfelder sind HTML Formularelemente, die die Auswahl einer atomaren Angabe ermöglichen. Typischerweise stellt diese Angabe eine Element einer Gruppe von Auswahloptionen dar.
 
-### [Funktion](#funktion)
+## [Funktion](#funktion)
 {: #funktion}
 
 Je nach Verwendung und nach Elementtyp ergibt sich eine Funktion als
@@ -58,18 +58,18 @@ Je nach Verwendung und nach Elementtyp ergibt sich eine Funktion als
 
 Inhaltlich können die meisten diese Aufgaben auch durch [Auswahllisten]({{ page.root }}/jumpto/auswahllisten/) übernommen werden. Aus Aspekten der Usability werden Auswahlfelder aber als die bessere Alternative bewertet.
 
-### [Browserelemente](#browserelemente)
+## [Browserelemente](#browserelemente)
 {: #browserelemente}
 
 Aktuell stellen Browser Checkboxes und Radioboxes zur Verfügung.
 
-#### [Checkbox-Elemente](#checkbox-elemente)
+### [Checkbox-Elemente](#checkbox-elemente)
 {: #checkbox-elemente}
 
 - Checkboxes werden mit `<input type="checkbox">` erzeugt
 - können durch Vergabe eines identischen *name*-Attributs gruppiert werden
 
-#### [Radiobox-Elemente](#radiobox-elemente)
+### [Radiobox-Elemente](#radiobox-elemente)
 {: #radiobox-elemente}
 
 - Radioboxes werden mit `<input type="radio">` erzeugt
@@ -77,13 +77,13 @@ Aktuell stellen Browser Checkboxes und Radioboxes zur Verfügung.
 
 Im Gegensatz zu Checkboxes sind alleinstehende Radiobox-Elemente fürgemein nicht sinnvoll und auch nicht nutzerfreundlich, weil sie weder eine Alternativauswahl bieten, noch browserseitig wieder „abgewählt“ werden können. Im Vergleich zu Checkbox-Elementen (An/Aus-Funktion) ergibt sich hier eine Ja-oder-Ja-Funktion.
 
-### [Auswahlfelder auswerten](#auswahlfelder-auswerten)
+## [Auswahlfelder auswerten](#auswahlfelder-auswerten)
 {: #auswahlfelder-auswerten}
 
 <div class="alert alert-warning"><strong>Achtung: </strong><br>
 Für alle Ausgaben von Formularwerten besteht die Gefahr von Code-injection und Cross Site Scripting. Die Lehrbeispiele werden zunächst ohne entsprechende Maßnahmen reduziert dargestellt. Weitere Hinweise dazu bietet das <a href="#sicherheit">Kapitel Sicherheit</a> weiter unten.</div>
 
-#### [Übertragung](#uebertragung)
+### [Übertragung](#uebertragung)
 {: #uebertragung}
 
 Ein wichtiger Punkt ist die fehlende Übertragung nicht ausgewählter Elemente. Gängige Browser erzeugen keinen Parameter zu einem Auswahlelement, das nicht im Browser selektiert wurde. Dies dürfte dem Umstand geschuldet sein, dass Auswahlfelder eine freie Angabe von value-Werten (prinzipiell also auch den leeren String) ermöglichen, was zu einer Verwechselungsmöglichkeit führen würde. Zudem würde ein Form-Submit eine große Anzahl von Parametern enthalten, die nicht ausgewählten Elementen entstammen.
@@ -93,10 +93,10 @@ Wird ein Eintrag ausgewählt wird im Request der Inhalt des *value*-Attributs de
 
 Der Schlüssel für das Array richtet sich nach der Art des *name*-Attributs, das wiederum funktionsbestimmend für gruppierte Auswahlfelder ist:
 
-#### [Checkbox-Elemente](#checkbox-elemente-2)
+### [Checkbox-Elemente](#checkbox-elemente-2)
 {: #checkbox-elemente-2}
 
-##### [Übergabe als Skalarwert](#uebergabe-als-skalarwert)
+#### [Übergabe als Skalarwert](#uebergabe-als-skalarwert)
 {: #uebergabe-als-skalarwert}
 
 ~~~ php
@@ -144,7 +144,7 @@ echo $_POST['AGB_Best']; // Ja
 var_dump(isset($_POST['AGB_Best'])); // true
 ~~~
 
-##### [Übergabe als Wertgruppe](#uebergabe-als-wertgruppe)
+#### [Übergabe als Wertgruppe](#uebergabe-als-wertgruppe)
 {: #uebergabe-als-wertgruppe}
 
 Zusammengehörige Auswahlen können auch als Array übergeben werden. Im folgenden ergibt sich so
@@ -198,7 +198,7 @@ Ausgabe Schleife: blau gelb
 Ausgabe Element: blau
 ~~~
 
-##### [Übergabe als assoziative Wertgruppe](#uebergabe-als-assoziative-wertgruppe)
+#### [Übergabe als assoziative Wertgruppe](#uebergabe-als-assoziative-wertgruppe)
 {: #uebergabe-als-assoziative-wertgruppe}
 
 Dieser dritte Punkt kann verwendet werden, um eine dritte Übergabemethode zu schaffen, sozusagen die Kombination aus den beiden genannten Varianten. Hier wird der Schlüssel wieder Bedeutungsträger, durch eine gemeinsame Namensbasis werden die Elemente trotzdem als Array gruppiert:
@@ -224,7 +224,7 @@ Etwas anderes als *ja* kann prinzipbedingt hier (aus dem Originalformular) gar n
 
 Die gezeigten Varianten haben verschiedene Vor- und Nachteile und werden deshalb je nach Anwendungszweck benutzt. Bei Variante 2 ist bspw. der Zugriff auf die einzelnen Werte sehr einfach (über den numerischen Schlüssel), die Varianten 1 und 3 lassen sich sehr leicht auf Vorhandensein eines bestimmten Wertes prüfen (`isset()` bzw. `in_array()`).
 
-#### [Radiobox-Elemente](#radiobox-elemente-2)
+### [Radiobox-Elemente](#radiobox-elemente-2)
 {: #radiobox-elemente-2}
 
 Die Systematik entstehender Requestwerte gleicht denen der Checkbox. Namen mit [] erzeugen Array-Typen, sonst werden die Werte einzeln übertragen. Es gibt jedoch zwei Unterschiede.
@@ -248,7 +248,7 @@ array (
 
 Abgefragt werden kann dieser Wert wie oben beschrieben.
 
-### [Vorbelegen der Anzeige](#vorbelegen-der-anzeige)
+## [Vorbelegen der Anzeige](#vorbelegen-der-anzeige)
 {: #vorbelegen-der-anzeige}
 
 Beide Elementtypen können durch Setzen des *checked*-Attributs vorselektiert werden.
@@ -261,7 +261,7 @@ Beide Elementtypen können durch Setzen des *checked*-Attributs vorselektiert we
 <input type="radio" name="Anrede"  value="Frau"> Frau
 ~~~
 
-#### [Vorbelegen mit „sich selbst“](#vorbelegen-mit-sich-selbst)
+### [Vorbelegen mit „sich selbst“](#vorbelegen-mit-sich-selbst)
 {: #vorbelegen-mit-sich-selbst}
 
 Im sog. [Affenformular]({{ page.root }}/jumpto/affenformular/) werden bis zur Vollständigkeit einer Formulareingabe abgesendete Werte wieder als Vorauswahl Ihrer Formularelemente verwendet. Das Prinzip ist dabei abhängig von den oben beschriebenen Übergabemethoden.
@@ -334,7 +334,7 @@ foreach ($anreden as $wert => $bezeichner) {
 }
 ~~~
 
-### [Verwandtschaft mit Auswahllisten](#verwandtschaft-mit-auswahllisten)
+## [Verwandtschaft mit Auswahllisten](#verwandtschaft-mit-auswahllisten)
 {: #verwandtschaft-mit-auswahllisten}
 
 Wie bereits angedeutet sind Auswahllisten und gruppierte Auswahlfelder größtenteils austauschbar. Sowohl inhaltliche Funktion als auch PHP-seitige Verarbeitung (natürlich abgesehen vom HTML-Code des jeweiligen Elements) können
@@ -345,7 +345,7 @@ Wie bereits angedeutet sind Auswahllisten und gruppierte Auswahlfelder größten
 Gruppen aus Auswahlfeldern werden allerdings als benutzerfreundlicher angesehen. Besonders Multi-Select-Listen sind wesentlich schlechter bedienbar.
 
 
-### [Sicherheit](#sicherheit)
+## [Sicherheit](#sicherheit)
 {: #sicherheit}
 
 Für die Eingaben von Werten aus Auswahlfeldern gilt das übliche Gefahrenpotential von HTML-seitigen Ausgaben oder Verarbeitungen in Kontexten wie Datenbankqueries. Einen Überblick bieten die Artikel [Formularverarbeitung, Sicherheit]({{ page.root }}/jumpto/sicherheit/) und die [Ausführungen zum verwandten Selection-Element]({{ page.root }}/jumpto/auswahllisten/#sicherheit).

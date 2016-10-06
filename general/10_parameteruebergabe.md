@@ -41,7 +41,7 @@ Dieser Artikel behandelt nicht die Parameterübergabe an ein PHP-Script. Diese I
 Die **Parameterübergabe** bezeichnet die Übergabe von Werten an eine Funktion oder Methode, welche die weitere Verarbeitung dieser Daten übernimmt. In aller Regel wird eine feste Anzahl von Parametern übergeben, die bei der Funktionsdeklaration bestimmt wird. Diese festgelegte Parameteranzahl nennt man *Funktions-* bzw. *Methodensignatur*. In vielen Hochsprachen stellen die Datentypen der einzelnen Parameter einen Teil der Signatur dar. Weil jedoch PHP eine schwach getypte Sprache ist, ist die Festlegung der Datentypen nur beschränkt möglich.
 
 
-### [Festlegung der Parameter](#festlegung-parameter)
+## [Festlegung der Parameter](#festlegung-parameter)
 {: #festlegung-parameter}
 
 Die Signatur wird bei der Funktionsdeklaration innerhalb der Klammern angegeben. Die verwendeten Variablennamen sind irrelevant, sollten allerdings die Art des zu übergebenden Wertes erklären.
@@ -58,7 +58,7 @@ Dies deklariert eine Funktion, die zwei Parameter fordert. Übergeben werden die
 func('Wert1', 'Wert2');
 ~~~
 
-#### [Optionale Parameter](#optionale-parameter)
+### [Optionale Parameter](#optionale-parameter)
 {: #optionale-parameter}
 
 Es ist auch möglich, optionale Parameter festzulegen, indem in der Signatur gleich ein Wert zugewiesen wird. Dieser Standardwert wird benutzt, wenn der entsprechende Parameter beim Funktionsaufruf nicht definiert wird.
@@ -102,7 +102,7 @@ Wert1 - Wert2 - Wert3
 ~~~
 
 
-#### [Variable Parameter](#variable-parameter)
+### [Variable Parameter](#variable-parameter)
 {: #variable-parameter}
 
 Es ist in PHP auch möglich, auf die explizite Festlegung der Signatur zu verzichten und die Parameterübergabe dynamisch zu gestalten. Dies kann in manchen Fällen ganz praktisch sein (vgl. `array()`), sollte aber aus Gründen der Übersichtlichkeit eher sparsam eingesetzt werden.
@@ -118,7 +118,7 @@ function func() {
 ~~~
 
 
-#### [Type Hinting](#type-hinting)
+### [Type Hinting](#type-hinting)
 {: #type-hinting}
 
 Type Hinting bezeichnet die Festlegung des Datentyps in der Signatur, indem der Datentyp vor dem Parameternamen notiert wird. Übergebene Parameter müssen diesem Datentyp entsprechen, ansonsten wird eine Fehlermeldung von Typ *Catchable fatal error* geworfen. Type Hinting ist **nicht** mit skalaren (primitiven) Datentypen möglich!
@@ -136,7 +136,7 @@ func2(MyInterface) {
 Wird ein Klassenname angegeben, so muss der Parameter eine Instanz dieser Klasse oder einer ihrer Kindklassen sein. Handelt es sich um eine Schnittstelle, muss der übergebene Parameter diese implementieren.
 
 
-### [Art der Übergabe](#uebergabe-art)
+## [Art der Übergabe](#uebergabe-art)
 {: #uebergabe-art}
 
 Die Parameter lassen sich auf zwei Arten übergeben. Zum einen durch *Call by Value*, welches einer normalen Übergabe entspricht und zum anderen durch *Call by Reference*.
@@ -177,13 +177,13 @@ func(foobar());
 ~~~
 
 
-#### [Copy on write](#copy-on-write)
+### [Copy on write](#copy-on-write)
 {: #copy-on-write}
 
 Ein beliebtes Missverständnis besteht darin, Funktionsparameter auch dann als Referenz zu übergeben, wenn die Werte während des Durchlaufs der Funktion nicht verändert werden. Der Gedanke dahinter ist, PHP auf diese Weise besonders bei umfangreichem Variableninhalt den vermeintlich aufwendigen Kopiervorgang des Inhalts in den Geltungsbereich der Funktion zu ersparen. Tatsächlich nimmt PHP diese Optimierung jedoch selbstständig vor und erstellt nach dem *Copy on write*-Prinzip nur dann eine Kopie des Variableninhalts, wenn dieser innerhalb des Funktionscodes verändert wird.
 
 
-#### [Übergabe von Objekten](#objekte)
+### [Übergabe von Objekten](#objekte)
 {: #objekte}
 
 Die Übergabe von Objekten an Funktionen folgt ebenfalls den Prinzipien *Call by Value* und *Call by Reference*. Dies lässt sich an einem Beispiel verdeutlichen:

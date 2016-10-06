@@ -44,13 +44,13 @@ HTML bietet verschiedene Eingabeelemente an, die ähnlich den Feldern einer Erfa
 Da die Natur des Menschen (die, Fehler zu machen) dem zustandslosen Verbindungsverhalten (oder der Vergesslichkeit) PHPs entgegenläuft, hat sich als Standardmethode der Datenverarbeitung das sogenannte [Affenformular (Standardverfahren)]({{ page.root }}/jumpto/affenformular/) etabliert, das sich solange mit bereits eingetragenen Daten selbst aufruft, bis die Eingabe vollständig und fehlerfrei ist. Das Verfahren ist so praktisch, dass ihm in diesem Wiki ein eigener Themenbereich gewidmet wurde.
 
 
-### [Grundlagen](#grundlagen)
+## [Grundlagen](#grundlagen)
 {: #grundlagen}
 
 Wichtig zu wissen ist, dass die Daten beim Aufruf des Serverscripts im [Request]({{ page.root }}/jumpto/request/) enthalten sind und dem Script dadurch zur Verfügung stehen. Die Kehrseite dieser Tatsache sind Sicherheitsaspekte, die auf der leichten Manipulierbarkeit von Formularen und Verbindungsdaten fußen.
 
 
-### [Parametermengen](#parametermengen)
+## [Parametermengen](#parametermengen)
 {: #parametermengen}
 
 Je nachdem, wie die Datenübertragung erfolgt, gibt es für PHP verschiedene Array-Variablen, die Parameterdaten enthalten können.
@@ -63,13 +63,13 @@ Siehe dazu auch:
 Nachfolgend wird stets der POST Request bei der PHP-seitigen Verarbeitung zugrunde gelegt und `<form>` Tags im der HTML Code der Übersichtlichkeit halber weggelassen.
 
 
-### [Parameterformat](#parameterformat)
+## [Parameterformat](#parameterformat)
 {: #parameterformat}
 
 Formular-Parameterdaten (nachfolgend Formulardaten) kann man grob in zwei Datentypen einteilen: Skalare, d. h. eindimensionale Daten und mehrdimensionale Typen.
 
 
-#### [Skalare Elementtypen](#skalare-elementtypen)
+### [Skalare Elementtypen](#skalare-elementtypen)
 {: #skalare-elementtypen}
 
 Klassische eindimensionale Formulardaten sind Einträge einer Textbox oder eines Inputfeldes vom Typ `'text'`. Hier steht ein konkreter Wert einem Namen gegenüber. Auch der Eintrag einer Gruppe von Radioboxes ist ein solcher Typ, weil nur jeweils eine der möglichen Auswahlen als Wert übertragen wird.
@@ -99,7 +99,7 @@ echo $_POST['EinfachSelektion'];
 Dieses Script wird mit den oben vorgegebenen Felddaten nacheinander "*abc*", "*123*" und – je nach Auswahl – "*Auswahl 1*" bzw. "*Auswahl 2*", "*Option 1*" bzw. "*Option 2*" ausgeben.
 
 
-#### [Mehrdimensionale Elementtypen](#mehrdimensionale-elementtypen)
+### [Mehrdimensionale Elementtypen](#mehrdimensionale-elementtypen)
 {: #mehrdimensionale-elementtypen}
 
 Alle anderen Eingabeelemente (außer Buttons, die genau genommen auch als solche benutzt werden können) erzeugen mehrdimensionale Daten. Das liegt in der Natur der Eingabe begründet: Sobald mehrere Optionen auswählbar sind, müssen diese Werte auch als Wertmenge übertragen werden. Zu nennen sind hier Checkbox-Elemente und Select-Auswahlen mit einem `multiple` Attribut.
@@ -129,7 +129,7 @@ Wiederum wird auf einen Wert über den Namen als Arrayschlüssel zugegriffen. Ge
 
 <div class="alert alert-info"><strong>Information! </strong>Genau betrachtet können auch oben genannte 'skalare' Elementtypen mit einem [] erweitert werden, um ihre Werte in der Parametermenge als Array abzubilden. In bestimmten Fällen – meist um eine JavaScript Funktionalität umzusetzen – kann dieses Verhalten sinnvoll sein.</div>
 
-##### [Vorhergehende Existenz-Prüfung](#vorhergehende-existenz-pruefung)
+#### [Vorhergehende Existenz-Prüfung](#vorhergehende-existenz-pruefung)
 {: #vorhergehende-existenz-pruefung}
 
 Der Zugriff auf einen konkreten Wert einer Mehrfachauswahl kann tückisch sein. Werden bspw. keine Elemente angewählt oder ist die Anzahl der ausgewählten Optionen kleiner als der angeforderte Index, wird PHP angewiesen, auf einen nicht existierenden Wert (genauer: Arrayschlüssel) zuzugreifen und wird diesen Versuch mit einer Fehlermeldung quittieren.
@@ -148,7 +148,7 @@ if (isset($_POST['MehrfachSelektion'][0])) {
 solange nicht unterschieden werden soll, ob nur der erste Eintrag des Feldes "MehrfachSelektion" existiert (also mindestens ein Wert gewählt wurde) oder ob "MehrfachSelektion" *überhaupt* existiert.
 
 
-##### [Vorbestimmte Wertmengenschlüssel](#vorbestimmte-wertmengenschluessel)
+#### [Vorbestimmte Wertmengenschlüssel](#vorbestimmte-wertmengenschluessel)
 {: #vorbestimmte-wertmengenschluessel}
 
 Ein anderer Ansatz, der dieses Problem weiter beleuchtet, besteht darin, die automatische Numerierung übertragener Feldwerte zu unterbinden, indem im HTML Formelement bereits konkrete Schlüssel vergeben werden. Üblicherweise werden hier Strings verwendet, numerische Schlüssel sind aber auch durchaus möglich.
@@ -179,7 +179,7 @@ Array (
 )
 ~~~
 
-##### [Spezielle Übergabeverhalten](#spezielle-uebergabeverhalten)
+#### [Spezielle Übergabeverhalten](#spezielle-uebergabeverhalten)
 {: #spezielle-uebergabeverhalten}
 
 Radio- und Checkboxes, sowie Mehrfachselektionen erfordern eine zusätzliche Aufmerksamkeit. Diese Elementtypen legen bei der Datenübergabe ein besonderes Verhalten an den Tag: Nur Elemente, von denen die im Formular mindestens eine Option angekreuzt bzw. ausgewählt wurde, werden übertragen. Von nicht angewählten Formularelementen tauchen also auch nicht die Elementnamen im Parameterarray auf. Demgegenüber werden bspw. Textfelder immer übertragen, auch wenn die Eingabe leer ist.
@@ -215,7 +215,7 @@ if (isset($_POST['AuswahlfeldAssoc']['Auswahl 1'])) {
 
 Die zweite Variante wird oft benutzt, um gleichzeitig zwei Daten über eine Checkbox zu übergeben, der zweite Wert wird hier alternativ zum oben verwendeten "on" angegeben.
 
-#### [Datentypen](#datentypen)
+### [Datentypen](#datentypen)
 {: #datentypen}
 
 Steigt man tiefer in PHP ein und beschäftigt sich mit Typen und expliziter/impliziter Umwandlung, ist es wichtig zu wissen, dass HTML-Formelemente nach einem Submit stets Stringtypen (bzw. Arrays aus Stringtypen) im Parameter Array erzeugen.
@@ -239,7 +239,7 @@ if ($_POST['Anzahl'] != (int) $_POST['Anzahl']) {
 
 Jede Art von nicht-INT-Eingabe wird hier durch die explizite Typumwandlung durch `(int)` eine 0, und damit einen von der Eingabe verschiedenen Wert, erzeugen.
 
-### [Komplettbeispiel](#komplettbeispiel)
+## [Komplettbeispiel](#komplettbeispiel)
 {: #komplettbeispiel}
 
 Beispielhaft soll hier ein minimaler Personendatensatz übertragen und von PHP strukturiert ausgegeben werden. Als einfache Typprüfung wird exemplarisch eine Altersprüfung vorgenommen.
@@ -310,7 +310,7 @@ echo '</ul>';
 
 Wie dieses Beispiel als Affenformular und mit kompletter Eingabeprüfung aussieht, kann unter den entsprechenden Wiki-Artikeln nachgelesen werden.
 
-### [Weitere Beiträge zum Thema](#weitere-beitraege-zum-thema)
+## [Weitere Beiträge zum Thema](#weitere-beitraege-zum-thema)
 {: #weitere-beitraege-zum-thema}
 
 - [Affenformular (Standardverfahren)]({{ page.root }}/jumpto/affenformular/)

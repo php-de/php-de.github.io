@@ -25,7 +25,7 @@ entry-type: in-progress
 ---
 
 
-### [Motivation](#motivation)
+## [Motivation](#motivation)
 {: #motivation}
 
 In der Regel reicht eine XAMPP Installation unter Windows komplett aus, um mal eben mit PHP entwicklen zu können.

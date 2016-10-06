@@ -44,7 +44,7 @@ inhalt:
 entry-type: in-discussion
 ---
 
-### [Ursprung](#ursprung)
+## [Ursprung](#ursprung)
 {: #ursprung}
 
 SQL-Injections fallen in den Bereich der
@@ -76,7 +76,7 @@ Angriffsversuch vorausgehen. Im Beispiel würde bereits die Eingabe eines Namens
 wie `O'Brian` die Query syntaktisch ungültig werden und fehlschlagen lassen.
 
 
-### [Gegenmaßnahmen](#gegenmanahmen)
+## [Gegenmaßnahmen](#gegenmanahmen)
 {: #gegenmanahmen}
 
 Zur Vermeidung von SQL-Injections dienen Funktionen, die die syntaktisch
@@ -87,7 +87,7 @@ Stringbegrenzer gemeint ist (syntaktische Funktion), sondern lediglich das
 konkrete Zeichen `"` (reiner Inhalt).
 
 
-### [Anwendung](#anwendung)
+## [Anwendung](#anwendung)
 {: #anwendung}
 
 Für jede Datenbankschnittstelle existiert mindestens eine spezielle Funktion
@@ -113,7 +113,7 @@ $query = "
 ~~~
 
 
-### [Sicher ist sicher](#sicher-ist-sicher)
+## [Sicher ist sicher](#sicher-ist-sicher)
 {: #sicher-ist-sicher}
 
 Es ist zu empfehlen, *jeden* variablen Wert, der in Query-Strings eingefügt
@@ -126,7 +126,7 @@ Escape-Funktion fehlt. Schließlich wäre es denkbar, dass sie versehentlich
 vergessen wurde.
 
 
-### [Prepared-Statements](#prepared-statements)
+## [Prepared-Statements](#prepared-statements)
 {: #prepared-statements}
 
 Viele Datenbankschnittstellen unterstützen zusätzlich das Konzept der [Prepared

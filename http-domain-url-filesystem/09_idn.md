@@ -35,10 +35,10 @@ entry-type: in-discussion
 
 
 
-### [Begriffserklärung](#begriffserklaerung)
+## [Begriffserklärung](#begriffserklaerung)
 {: #begriffserklaerung}
 
-#### [IDN (*Internationalized domain name*)](#idn-internationalized-domain-name)
+### [IDN (*Internationalized domain name*)](#idn-internationalized-domain-name)
 {: #idn-internationalized-domain-name}
 
 [Wikipedia:](http://de.wikipedia.org/wiki/Internationalisierter_Domainname)
@@ -48,7 +48,7 @@ entry-type: in-discussion
 > Grundsätzlich sind alle Unicode-Zeichen in IDNs zulässig. Jede Vergabestelle für Domains regelt jedoch individuell, welche Zeichen sie für Domain-Registrierungen erlaubt.
 
 
-#### [Punycode](#punycode)
+### [Punycode](#punycode)
 {: #punycode}
 
 [Wikipedia:](http://de.wikipedia.org/wiki/Punycode)
@@ -56,7 +56,7 @@ entry-type: in-discussion
 > Punycode ist ein im [RFC 3492](http://tools.ietf.org/html/rfc3492) standardisiertes Kodierungsverfahren zum Umwandeln von Unicode-Zeichenketten in ASCII-kompatible Zeichenketten, die aus den Zeichen a bis z, 0 bis 9 und dem Bindestrich bestehen. Punycode wurde entworfen, um internationalisierte Domainnamen aus Unicode-Zeichen eindeutig und umkehrbar durch ASCII-Zeichen darzustellen.
 
 
-#### [Beipiele](#beipiele)
+### [Beipiele](#beipiele)
 {: #beipiele}
 
 Beispiele von IDN - mit entsprechender Punycodedarstellung
@@ -70,7 +70,7 @@ déjà.vu.com  →  xn--dj-kia8a.vu.com
 ñandú.com    →  xn--and-6ma2c.com
 ~~~
 
-#### [E-Mail-Adressen](#e-mail-adressen)
+### [E-Mail-Adressen](#e-mail-adressen)
 {: #e-mail-adressen}
 
 Für E-Mail-Adressen gilt insgesamt selbiges wie oben erwähnt.
@@ -84,7 +84,7 @@ Pelé@example.com                 →  xn--pel-dma@example.com
 ~~~
 
 
-### [Anwendungsgebiete in PHP](#anwendungsgebiete-in-php)
+## [Anwendungsgebiete in PHP](#anwendungsgebiete-in-php)
 {: #anwendungsgebiete-in-php}
 
 Sämtliche Funktionen die Operationen mit Domains oder E-Mail-Adressen durchführen, benötigen bei der Anwendung mit Sonderzeichendomains eine vorherige Umwandlung in Punycode. Dies betrifft beispielsweise:
@@ -95,7 +95,7 @@ Sämtliche Funktionen die Operationen mit Domains oder E-Mail-Adressen durchfüh
 - etc ...
 
 
-##### [cURL - Zusatzinfo](#curl-zusatzinfo)
+#### [cURL - Zusatzinfo](#curl-zusatzinfo)
 {: #curl-zusatzinfo}
 
 Bei der Anwendung von cURL ist es möglicherweise nicht separat nötig, die Sonderzeichendomains (IDN) vorher in Punycode zu wandeln. Ob cURL bereits mit IDN-Unterstützung verfügbar ist, ist in der phpinfo() ersichtlich.
@@ -103,10 +103,10 @@ Bei der Anwendung von cURL ist es möglicherweise nicht separat nötig, die Sond
 ![cURL phpinfo()]({{ page.root }}/images/idn-phpinfo.jpg)
 
 
-### [Konvertierung](#konvertierung)
+## [Konvertierung](#konvertierung)
 {: #konvertierung}
 
-#### [Externe Punycode-Klasse](#externe-punycode-klasse)
+### [Externe Punycode-Klasse](#externe-punycode-klasse)
 {: #externe-punycode-klasse}
 
 Für die Punycodeumwandlung gibt es einige PHP-Klassen im Web, dazu am besten mal [Tante G.](https://www.google.at/search?q=php+punycode+OR+idna+converter) fragen.
@@ -155,7 +155,7 @@ echo $idn->encode($email);
 ~~~
 
 
-#### [PHP-Boardmittel](#php-boardmittel)
+### [PHP-Boardmittel](#php-boardmittel)
 {: #php-boardmittel}
 
 Wenn folgende Voraussetzungen erfüllt sind ...
@@ -171,7 +171,7 @@ var_dump(function_exists('idn_to_ascii'));  // true oder false
 ~~~
 
 
-### [RFC zum Thema IDN(A) / Punycode](#rfc-zum-thema-idn-a-punycode)
+## [RFC zum Thema IDN(A) / Punycode](#rfc-zum-thema-idn-a-punycode)
 {: #rfc-zum-thema-idn-a-punycode}
 
 [RFC 3490](http://tools.ietf.org/html/rfc3490) - Internationalizing Domain Names in Applications (IDNA)

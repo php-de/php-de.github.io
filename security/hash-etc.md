@@ -32,13 +32,13 @@ entry-type: in-discussion
 Diese Übersicht gibt einen kurzen Überblick über die unterschiedlichen Verfahren. Weitere Detailinformationen gibt es dazu u.a. bei den verlinkten Quellen.
 
 
-### [Hashing (Hash-Funktion)](#hashing)
+## [Hashing (Hash-Funktion)](#hashing)
 {: #hashing}
 
 Zweck des Hashing ist es aus einem Ausgangswert einen nicht rückrechenbaren Hash zu generieren. Unabhängig der Länge des Ausgangswertes entsteht je nach verwendeter Funktion ein gleich langer Hash. Hierfür stehen in PHP für verschiedene Hash-Algorithmen entsprechende Funktionen zur Verfügung. [Wikipedia Artikel zu "Hashfunktion".](http://de.wikipedia.org/wiki/Hashfunktion)
 
 
-##### [Anwendung](#anwendung)
+#### [Anwendung](#anwendung)
 {: #anwendung}
 
 Die übliche Anwendung besteht darin, Paswörter zu hashen, bevor diese in der Datenbank gespeichert werden. Damit sind diese in der gehashten Form soweit grundsätzlich nutzlos, selbst wenn man Zugriff darauf erlangt.
@@ -46,7 +46,7 @@ Die übliche Anwendung besteht darin, Paswörter zu hashen, bevor diese in der D
 Beim Login-Vorgang wird dann das im Login-Formular eingegebene Klartext-Passwort mit dem selben Algorithmus, wie jener der vor der Speicherung angewandt wurde, gehasht und dann dieser eben errechnete Hash mit dem bestehenden Hash in der Datenbank verglichen. Stimmen diese beiden überein, ist das Login-Passwort korrekt.
 
 
-##### [Sicherheit und Anwendungsempfehlung](#best-practise)
+#### [Sicherheit und Anwendungsempfehlung](#best-practise)
 {: #best-practise}
 
 Das Sicherheitsrikiso bei Hash-Werten liegt in der grundsätzlichen Möglichkeit von Kollisionen, Stichwort: ["Rainbow-Tables"](http://de.wikipedia.org/wiki/Rainbow_Table). Dabei geht es in erster Linie darum, einen Ausgangswert zu finden, der nach dem Hash-Vorgang den selben Hash-Wert als Ergebnis hat.
@@ -60,7 +60,7 @@ Weitere Details, sowie Anwendungsempfehlungen, sind in den nachfolgenden Artikel
 > password_hash() verwendet einen starken Hash, erzeugt ein starkes Salt, und wendet eine angemessene Anzahl von Runden automatisch an. password_hash() ist ein einfacher crypt()-Wrapper und kompatibel zu bestehenden Passwort-Hashes. Die Verwendung von password_hash() wird empfohlen.
 
 
-##### [Anwendungsbeispiel](#beispiel-hash)
+#### [Anwendungsbeispiel](#beispiel-hash)
 {: #beispiel-hash}
 
 ~~~php
@@ -76,7 +76,7 @@ var_dump( password_verify($plain, $hash) ); // true
 ~~~
 
 
-### [Kodierung](#kodierung)
+## [Kodierung](#kodierung)
 {: #kodierung}
 
 [Wikipedia:](http://de.wikipedia.org/wiki/Code)
@@ -95,7 +95,7 @@ In PHP stehen dafür die Funktionen [base64_encode()](http://php.net/manual/de/f
 <div class="alert alert-warning"><strong>Achtung!</strong> Die oben erwähnten base64-Funktionen zu verwenden, um Texte "geheim" zu halten oder "unleserlich" zu machen, macht keinen Sinn. Zumeist ist schon am kodierten Ergebnis relativ eindeutig ersichtlich das es sich um das Produkt einer Base64-Kodierung handelt. Hierzu ist eine Verschlüsselung anzuwenden, siehe dazu weiter unten.</div>
 
 
-### [Verschlüsselung](#verschluesselung)
+## [Verschlüsselung](#verschluesselung)
 {: #verschluesselung}
 
 [Wikipedia:](http://de.wikipedia.org/wiki/Verschl%C3%BCsselung)
@@ -105,7 +105,7 @@ In PHP stehen dafür die Funktionen [base64_encode()](http://php.net/manual/de/f
 In PHP stehen dafür die Funktionen der kryptografischen Erweiterung [Mcrypt](http://php.net/manual/de/book.mcrypt.php) zur Verfügung.
 
 
-##### [Anwendungsbeispiel](#beispiel-crypt)
+#### [Anwendungsbeispiel](#beispiel-crypt)
 {: #beispiel-crypt}
 
 Die hier verwendete Klasse wurde als Anwendungsbeispiel [von einigen Benutzern im php.de-Forum](http://www.php.de/forum/php-de-intern/wiki-diskussionsforum/1448256-verschl%C3%BCsselung-erg%C3%A4nzung-beispielklasse) erstellt und ist grundsätzlich lauffähig. Ein Einsatz im produktiven Betrieb liegt natürlich im eigenen Ermessen.

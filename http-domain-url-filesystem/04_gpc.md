@@ -35,13 +35,13 @@ Bei **GPC** handelt es sich um ein Kürzel, welches für **G**ET, **P**OST, **C*
 Im Variablenraum von PHP manifestieren sich diese Parametermengen jeweils als gleichnamiges, superglobales Array: Anfallende Daten werden als $_GET, $_POST bzw. $_COOKIE global verfügbar. Da die Arrays getrennte Wertebereiche pro Parameterart benutzen, repräsentieren sie stets alle bei einem Scriptaufruf anfallenden Daten und unterliegen nicht der Konkurrenz gleichnamiger Schlüsselwerte. Ist die Herkunft der Angabe dagegen nicht relevant, kann alternativ eine andere Superglobale verwendet werden: $_REQUEST.
 
 
-### [Superglobale Parametersumme](#parametersumme)
+## [Superglobale Parametersumme](#parametersumme)
 {: #parametersumme}
 
 Das Array $_REQUEST vereint die Werte dieser drei Arrays in sich, wobei die Behandlung doppelter Werte abhängig von ini-Einstellungen variieren kann (siehe nachfolgend).
 
 
-### [Initialisierungsreihenfolge](#init-reihenfolge)
+## [Initialisierungsreihenfolge](#init-reihenfolge)
 {: #init-reihenfolge}
 
 Sowohl für Arrays, die verschiedene Wertmengen gemeinsam verwalten, als auch das Verfahren [register_globals]({{ page.root }}/jumpto/php-ini/#register_globals), das Daten lokal unter ihrem Parameternamen als Variable verfügbar macht, ergibt sich die Problematik gleichnamiger Schlüssel: In einem Namensraum wie auch einer Array kann stets nur ein Wert einem Bezeichner zugeordnet sein. Wird aber bspw. in einem Aufruf gleichzeitig per POST und per COOKIE ein Parameter namens wert übergeben, treten die beiden Angaben in eine Konkurrenzsituation.

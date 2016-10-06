@@ -56,7 +56,7 @@ Das **EVA-Prinzip** (Eingabe - Verarbeitung - Ausgabe) steht für ein Paradigma,
 linear in dieser Reihenfolge erfolgen sollen. Dies ist technisch sinnvoll, soll aber auch eine Abbildbarkeit eines Softwareprozesses auf eine abstraktes Prinzip unterstützen, das dem Prinzip *Ursache* und *Wirkung* nahekommt.
 
 
-### [Einleitung](#einleitung)
+## [Einleitung](#einleitung)
 {: #einleitung}
 
 Die Sprache PHP ist eng mit dem EVA-Prinzip verknüpft, weil der übliche Spracheinstieg eng mit der Funktion von PHP als dynamische Ausgabe verknüpft ist:
@@ -106,7 +106,7 @@ Im Prinzip haben wir jetzt alle Komponenten zusammen. Die Eingabe (hier durch di
 Im Beispiel wirkt PHP größtenteil als Templating-Funktion. Das bedeutet, in ein statisches (Text-)Konstrukt (Template) wird ein dynamischer Inhalt „eingebaut“. Im Prinzip ist das auch die Hauptaufgabe von PHP - die Sprache wurde entworfen, um dynamisch HTML-Dokumente zu generieren. PHP ist jedoch auch eine vollwertige Programmiersprache. Wir könnten also innerhalb unseres Dokuments Werte berechnen, Dateisystemoperationen durchführen o.ä. In diesem Fall wird unser Template schnell fragmentiert, da die Anzahl von Codezeilen der Verarbeitungs-Komponente stark zunimmt. Auch stellt sich die Frage, an welche Stelle diese Verarbeitung gehört. Praktisch gesehen natürlich vor die Ausgabe (das ist logisch), das EVA-Prinzip geht allerdings weiter und definiert den richtigen Platz dafür vor jegliche Ausgabe.
 
 
-### [EVA und das Client-Server-Prinzip](#client-server-prinzip)
+## [EVA und das Client-Server-Prinzip](#client-server-prinzip)
 {: #client-server-prinzip}
 
 Um dies weiter zu betrachten, müssen wir uns kurz das Prinzip von Webkommunikation ansehen. Auf einen Request des Client erfolgt die Antwort in Form unseres PHP-generierten Dokuments. Auf einer tieferen Ebene (vgl. OSI-Modell) wird neben den offensichtlichen Textinhalten aber auch eine Reihe von Meta-Informationen versendet: die sogenannten HTTP-Header. Diese Header können auch durch PHP gesetzt werden. Nicht gesetzte Header produziert der Webserver eigenständig. Für das EVA-Prinzip relevant ist vor allem, dass dies vor jeglicher Textausgabe erfolgt. Das bedeutet, der Webserver erkennt eine Textausgabe und verschickt die HTTP-Header des Dokuments, bevor er die Ausgabe ausliefert.
@@ -148,7 +148,7 @@ Der HTML-Inhalt wird zu einem reinen Ausgabetext von PHP, der erst im Browser se
 Gehen wir zurück zur obigen AUssage zu Headern, werden die Header ziemlich genau in dem Moment „abgesendet“, in dem der PHP-Parser `echo` druchläuft.
 
 
-### [Bedeutung](#bedeutung)
+## [Bedeutung](#bedeutung)
 {: #bedeutung}
 
 Solange wir PHP in seiner Grundfunktion als Ausgabesprache nutzen, brauchen wir uns im Prinzip keine Sorgen um EVA und die HTTP-Header machen. Sobald wir etwas tiefer einsteigen, wird das schnell unabdingbar. Viele wichtige Mechanismen basieren auf dem Prinzip von HTTP-Headern:
@@ -163,7 +163,7 @@ Solange wir PHP in seiner Grundfunktion als Ausgabesprache nutzen, brauchen wir 
 All diese Funktionen müssen vor jeglichen Textausgaben des Dokuments geschehen, sonst resultieren sie in einem [headers-sent-Fehler]({{ page.root }}/jumpto/headers-already-sent/).
 
 
-### [Umsetzung](#umsetzung)
+## [Umsetzung](#umsetzung)
 {: #umsetzung}
 
 Der klassische Einsteigerfehler ist, die Anwendung nach dem Funktionsprinzip und nicht nach EVA zu gliedern:
@@ -214,7 +214,7 @@ echo $out;
 Die Prüfung ist nicht direkt für die Ausgabe verantwortlich und kann deshalb früher erfolgen. Die Ausgabe ist sowieso nur für den Fehlerfall relevant, im Erfolgsfall wird ja gleich weitergeleitet.
 
 
-#### [Funktionsrückgabe](#funktionsrueckgabe)
+### [Funktionsrückgabe](#funktionsrueckgabe)
 {: #funktionsrueckgabe}
 
 Die meisten der obigen Aussagen, lassen sich auf Funktionen übertragen. Meist dienen Funktionen ja dazu, wiederverwendbare oder zusammengehörige Funktionalität zu kapseln. Damit können Sie ein Paradebesipiel für EVA sein: Sie erhalten nötige Eingabewerte, stellen irgendetwas damit an und geben das fertige Produkt zurück. Leider sieht die Realität sehr oft immer noch so aus:
@@ -254,7 +254,7 @@ echo 'Der Pythagoras lautet: ' , doPythagorean(17 , 4);
 Die Funktion stellt sozusagen den Schritt „Verarbeitung“ dar, Ihre Schnittstellen die Schritte Eingabe (Liste der Parameter) und Ausgabe (Return-Wert).
 
 
-#### [Methodenrückgabe](#methodenrueckgabe)
+### [Methodenrückgabe](#methodenrueckgabe)
 {: #methodenrueckgabe}
 
 Auch in der objektorientierten Programmierung (OOP) läßt sich vortefflich schludern. Für Eingaben, vor allem die Instanziierung von Objekten, spiegelt sich EVA im Pattern der sog. Dependency Injection wieder, wir wollen aber zunächst die Methodenrückgabe betrachten.
@@ -303,7 +303,7 @@ if (true === $user->checkAge($_POST['age'])) {
 <div class="alert alert-info"><strong>Information!</strong> Die vorliegenden Codes sind Lehrbeispiele und der Übersichtlichkeit halber stark vereinfacht. Der Sinn, einen User ggf. ohne Altersangabe und ohne Validierung des Namens zu erstellen, ist natürlich in Frage zu stellen.</div>
 
 
-##### [Dependency Injection (DI)](#di)
+#### [Dependency Injection (DI)](#di)
 {: #di}
 
 Die obigen Codebeispiele zeigen auch einen einfachen Fall von DI. $_POST ist eine Superglobale und technisch gesehen ist es nicht notwendig, sie als Parameter von Methoden (Konstruktor und setAge ()) zu übergeben, sie ist ohnehin in jedem Kontext verfügbar. Schauen wir uns mal das obige Beispiel an, wenn wir diese Variablen einfach im Objekt auslesen:
@@ -329,13 +329,13 @@ Die meisten nicht-trivialen Objekte, sind von anderen Objekten oder Vorgabewerte
 Die Antwort auf alle drei Fragen lautet: Geht nicht, das Funktionsprinzip ist fest verdrahtet, dazu muß der Code für das Userobjekt geändert werden.
 
 
-#### [Includes](#includes)
+### [Includes](#includes)
 {: #includes}
 
 ...
 
 
-#### [Templating](#templating)
+### [Templating](#templating)
 {: #templating}
 
 ...

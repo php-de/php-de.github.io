@@ -32,7 +32,7 @@ Das liegt wohl auch daran, dass immer eine Datenbank benötigt wird.
 Für solche kleinen Tests eignet sich SQLite hervorragend, zumal die Datenbank auch im Speicher erstellt werden kann.
 
 
-#### [Beispiel](#beispiel)
+### [Beispiel](#beispiel)
 {: #beispiel}
 
 ~~~ php
@@ -78,7 +78,7 @@ echo "<br>";
 ~~~
 
 
-#### [Ausgabe](#ausgabe)
+### [Ausgabe](#ausgabe)
 {: #ausgabe}
 
 ~~~ php
@@ -107,7 +107,7 @@ Das Beispiel zeigt, wird konsequent mit UTF-8 gearbeitet, sind auch Umlaute und 
 Die Prepared Statements sorgen hier gleich für die unbedingt notwendige Maskierung der Daten.
 
 
-##### [Quelle-Originalbeitrag](#quelle)
+#### [Quelle-Originalbeitrag](#quelle)
 {: #quelle}
 
 [http://www.php.de/php-einsteiger/97089-erledigt-arrays-als-json-string-sql-datenbank-speichern.html](http://www.php.de/php-einsteiger/97089-erledigt-arrays-als-json-string-sql-datenbank-speichern.html)

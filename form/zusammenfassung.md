@@ -42,19 +42,19 @@ inhalt:
         simple: ""
 ---
 
-### [Formularnotierung](#formularnotierung)
+## [Formularnotierung](#formularnotierung)
 {: #formularnotierung}
 
 HTML besitzt Sprachelemente für Formularfelder, Buttons und das Form selbst. Nur Formularfelder innerhalb von `<form>` werden beim Absenden übertragen. Das Absenden erfolgt nur durch Bestätigung eines Submit- oder Image-Buttons oder durch ein `<button>`-Element. Das Übertragen des Formulars nach Enter in einem einzeiligen Eingabefeld ist browserspezifisch und damit nicht verlässlich. Zudem kann durch den Javascript-Aufruf `submit()` das zugehörige Formularobjekt übertragen werden (also ein Request gestartet werden).
 
 
-### [Übertragung](#uebertragung)
+## [Übertragung](#uebertragung)
 {: #uebertragung}
 
 Die Übertragungsmethode von Formulardaten wird durch das *method*-Attribut des `<form>`-Tags bestimmt. Mögliche Methoden sind [POST- und GET-Request]({{ page.root }}/jumpto/request/), die Formulardaten werden dabei je nach Typ im Anfragekörper oder in der URL übertragen.
 
 
-### [Gemeinsamkeiten](#gemeinsamkeiten)
+## [Gemeinsamkeiten](#gemeinsamkeiten)
 {: #gemeinsamkeiten}
 
 Alle Eingaben und Auswahlen treten im Folgescript (*action*-Angabe des Formulars) stets als Wert des Requestparameterarrays auf, je nach *method*-Attributangabe des Formulars unter `$_POST` oder `$_GET`. Der oder die Elementwerte sind dabei jeweils unter einem assoziativen Arrayschlüssel hinterlegt, der dem *name*-Attribut des jeweiligen Formularelements entspricht. Ist das *name*-Attribut eine Arraynotation in HTML:
@@ -88,12 +88,12 @@ array (
 Wenn angegeben, werden konkrete Schlüssel benutzt, sonst erfolgt die Vergabe numerisch fortlaufend. Auch assoziative Schlüssel in HTML und mehrfache Arrayverschachtelungen sind dabei möglich.
 
 
-### [Datentypen (nativer Ansatz)](#datentypen-nativer-ansatz)
+## [Datentypen (nativer Ansatz)](#datentypen-nativer-ansatz)
 {: #datentypen-nativer-ansatz}
 
 Grundlegend betrachtet, unterscheidet die Verabeitung von Formularelementen aktueller Browser nur zwei Typen:
 
-##### [Skalare Eingabetypen](#skalare-eingabetypen)
+#### [Skalare Eingabetypen](#skalare-eingabetypen)
 {: #skalare-eingabetypen}
 
 - input type=text
@@ -108,7 +108,7 @@ Dazu gehören alle Textfelder, Einfach-Selections und Radiobuttons. Nur ein Wert
 
 Skalare Eingabefelder übermitteln in (ungefälschten) abgesendeten Formularen stets eine Stringtyp. Das gilt auch für numerische Angaben im HTML Bereich. Dieser Fakt ist durch das HTTP Protokoll bedingt und ist wichtig für die [Validierung]({{ page.root }}/jumpto/validierung/) von Eingabedaten.
 
-#### [Mehrdimensionale Eingabetypen](#mehrdimensionale-eingabetypen)
+### [Mehrdimensionale Eingabetypen](#mehrdimensionale-eingabetypen)
 {: #mehrdimensionale-eingabetypen}
 
 - input type=checkbox (Gruppe von Elementem)
@@ -128,7 +128,7 @@ Zur Verarbeitung einzelner Werte sollte stets eine Verfügbarkeitsprüfung über
 Checkboxgruppen und Multiselections ermöglichen die Abwahl aller Einträge/Auswahlen. Wird nicht mindestens ein Wert ausgewählt, wird das gesamte Formularelement aber nicht übertragen! Dies ist bei Zugriffen auf Werte und Arrayschlüssel unbedingt zu beachten.</div>
 
 
-### [Datentypen (technischer Ansatz)](#datentypen-technischer-ansatz)
+## [Datentypen (technischer Ansatz)](#datentypen-technischer-ansatz)
 {: #datentypen-technischer-ansatz}
 
 Die bisherigen Betrachtungen sind nur halb wahr. Genau betrachtet, ergibt sich der Datentyp eines Elements ausschließlich aus den unter "Gemeinsamkeiten" genannten Fakten. Es ist also genauso möglich, mehrere Textfelder als assoziatives Array darzustellen
@@ -169,7 +169,7 @@ Schließlich kann sogar eine Multiselection skalar übertragen werden
 
 Dabei werden konsequent alle ausgewählten Werte den vorhergehenden überschreiben. Was übrig bleibt ist ein String mit dem letzten der ausgewählten Werte. Nicht sinnvoll, aber möglich (Anmerkung: Über die Request-URL kann man diese Daten auch auswerten, nur die Superglobalen Arrays sind hier nicht nutzbar).
 
-### [Komplettbeispiel](#komplettbeispiel)
+## [Komplettbeispiel](#komplettbeispiel)
 {: #komplettbeispiel}
 
 Für die Themen Formularverarbeitung und Affenformular wurde ein Beispiel verfasst, das die meisten Eingabeelemente und deren Verarbeitung abdeckt.

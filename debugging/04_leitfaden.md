@@ -46,20 +46,20 @@ inhalt:
 Hier findest du einen Debugging Leitfaden, der Schritt für Schritt durch Grundlagen der Fehlersuche führen soll. Die nachfolgenden Informationen beziehen sich vornehmlich auf die Analyse von Fehlern, die serverseitig in PHP auftreten. Konkrete Fehlersituationen klärt [Debugging-Standardfehler]({{ page.root }}/jumpto/standardfehler/).
 
 
-### [Hinweis](#hinweis)
+## [Hinweis](#hinweis)
 {: #hinweis}
 
 Dieser Leitfaden bezieht sich auf die Analyse von PHP Fehlern. Viele dieser Fehler können jedoch nur indirekt erkannt werden, da PHP erzeugte Fehler Teil der Browser-Ausgabe werden und somit den Anzeigegegebenenheiten des Browsers unterliegen. Es ist dringend zu empfehlen, zur Fehleranalyse immer den Browserquelltext heranzuziehen, da nur dort die Sichtbarkeit aller zur Verfügung stehenden Informationen gewährleistet ist. Nachfolgende Aussagen wie "Die Seite zeigt gar nichts an" beziehen sich immer auf den Browserquelltext.
 
 
-### [Ausgangssituation 1](#situation-1)
+## [Ausgangssituation 1](#situation-1)
 {: #situation-1}
 
 - Die Seite zeigt gar nichts an.
 - Der Browser-Quelltext ist leer.
 
 
-#### [Prüfe die Verfügbarkeit von PHP](#verfuegbarkeit-php)
+### [Prüfe die Verfügbarkeit von PHP](#verfuegbarkeit-php)
 {: #verfuegbarkeit-php}
 
 Wenn das Deine ersten Schritte mit PHP sind, erstelle eine Datei test.php mit folgendem Inhalt.
@@ -74,7 +74,7 @@ Lade die Datei in den öffentlich erreichbaren Kontext Deines Webspace und rufe 
 **Hinweis:** Bei allen nachfolgenden Beispielen wird das `<?php` nicht mehr explizit angeführt.
 
 
-#### [Erzwinge die Fehlerausgabe](#fehlerausgabe)
+### [Erzwinge die Fehlerausgabe](#fehlerausgabe)
 {: #fehlerausgabe}
 
 Mit hoher Wahrscheinlichkeit handelt es sich um einen Fehler vor der ersten Ausgabe oder einen sogenannten Parser Fehler. Das ist ein Fehler, den PHP generiert, weil der Parser aufgrund einer Syntaxverletzung die Ausführung des Scripts nicht zu Ende führen kann.
@@ -93,20 +93,20 @@ Parserfehler treten auf, bevor das Skript ausgeführt wird. Daher kann das Repor
 Je nachdem wie sich die Ausgabe ändert kannst Du jetzt unter 2 oder 3 fortfahren.
 
 
-### [Ausgangssituation 2](#situation-2)
+## [Ausgangssituation 2](#situation-2)
 {: #situation-2}
 
 - Auf dem Bildschirm werden Fehlermeldungen ausgegeben.
 <br>
 
 
-#### [Fehler verstehen](#fehler-verstehen)
+### [Fehler verstehen](#fehler-verstehen)
 {: #fehler-verstehen}
 
 Jede Fehlermeldung, die PHP erzeugt, enthält eine kurze Beschreibung, eine Angabe zu Script und Zeilennumer, in dem der Fehler auftrat und u.U. ein sogenanntes Parser Token, das die Zeichenkette bezeichnet, die den Fehler ausgelöst hat. Alle Parser Token sind im [PHP Manual](http://php.net/manual/de/tokens.php) nachlesbar. Somit kann man ergründen, welches Element vom Parser zum Zeitpunkt des Fehlers verarbeitet wurde.
 
 
-#### [Sonderfall Parser Fehler](#parserfehler)
+### [Sonderfall Parser Fehler](#parserfehler)
 {: #parserfehler}
 
 Parser Fehler sind Fehler, die durch eine ungültige oder unvollständige Syntax ausgelöst werden. Das können bspw. fehlende Semikolons, Klammern, PHP Begrenzer (?>) oder Stringbegrenzer (Hochkommata) sein. Oftmals bemerkt der Parser diese Probleme erst Zeilen später (siehe Beispiel) und gibt dann diese Zeilennummer in der Fehlermeldung an – das kann soweit gehen, dass eine fehlende geschweifte Klammer bis zum Ende des Scripts gesucht wird.
@@ -146,7 +146,7 @@ Gerade bei Parserfehlern mit oft ungenauer Angabe der Fehlerstelle ist es sehr w
 Gerade für fehlende Hochkommata ist auch ein Editor mit Syntaxhighlighting ein gutes Erkennungsmittel, da dieser über eben denselben Fehler wie der Parser stolpern wird und alle Inhalte bis zum nächsten verfügbaren Hochkomma als Stringwert markieren wird.
 
 
-#### [Fehler im Kontext betrachten/Folgefehler](#folgefehler)
+### [Fehler im Kontext betrachten/Folgefehler](#folgefehler)
 {: #folgefehler}
 
 Fehler erzeugen eine Fehlermeldung, die bei gesetztem error reporting in die Ausgabe, also ins Browserfenster (genauer in den vom Server gelieferten Browserquelltext) geschrieben werden. Einige PHP Befehle setzen aber zwingend voraus, dass bis zu ihrer Abarbeitung keinerlei Ausgabe erfolgt.
@@ -156,7 +156,7 @@ Erfolgt nun eine Fehlerausgabe vor einem solchen Funktionsaufruf (und bricht die
 Damit ist es sinnvoll, bei der Fehleranalyse immer linear vorzugehen.
 
 
-### [Ausgangssituation 3](#situation-3)
+## [Ausgangssituation 3](#situation-3)
 {: #situation-3}
 
 - Auf dem Bildschirm werden keine Fehlermeldungen ausgegeben.
@@ -164,7 +164,7 @@ Damit ist es sinnvoll, bei der Fehleranalyse immer linear vorzugehen.
 <br>
 
 
-#### [Wirklich?](#wirklich)
+### [Wirklich?](#wirklich)
 {: #wirklich}
 
 Gerade für Anfänger ist es wichtig, sich immer wieder die [Zusammenhänge von server- und clientseitigem Code]({{ page.root }}/jumpto/was-ist-php/) klarzumachen. Da PHP vor browserseitigen Ausgaben erfolgt können Fehlermeldungen durchaus in HTML Text eingeschlossen und damit nur im Quelltext sichtbar sein. Sie können innerhalb einer Ausgabe von Javascript erzeugt worden sein und dadurch wiederum dort eine ungültige Syntax erzeugen und damit wiederum Javascript Fehlermeldungen. Schließlich haben Browser eine gewisse Fehlertoleranz auf ihr Markup, sodass irreguläre Angaben gänzlich unerkannt bleiben können.
@@ -172,7 +172,7 @@ Gerade für Anfänger ist es wichtig, sich immer wieder die [Zusammenhänge von 
 Einfache Faustregel: PHP baut HTML und alle anderen Sprachen, die der Browser verarbeitet. Der erste Blick bei der Fehlersuche sollte also stets dem Browserquelltext dienen, die reine Bildschirmaussage sagt kaum etwas über die Probleme im Hintergrund aus.
 
 
-#### [Fehler eingrenzen](#fehler-eingrenzen)
+### [Fehler eingrenzen](#fehler-eingrenzen)
 {: #fehler-eingrenzen}
 
 Nun gilt es, den Ist- mit dem Sollzustand vergleichen. Erst wenn man genau weißt, was Du in HTML ausgeben willst/mußt, kannst Du Dich auf den PHP Quellcode stürzen. Nötigenfalls kannst Du eine statische HTML-Website erstellen, die die gewünschten Merkmale zu Funktionalität und Aussehen bietet. Dann versuchst Du, die dynamischen Teile durch PHP zu erzeugen.
@@ -184,13 +184,13 @@ Da Dein Bildschirm keine Fehlermeldungen anzeigt, handelt es sich typischerweise
 <br>
 
 
-#### [Zustände prüfen](#zustaende-pruefen)
+### [Zustände prüfen](#zustaende-pruefen)
 {: #zustaende-pruefen}
 
 Auch wenn etwas noch so logisch oder noch so unmöglich erscheint - läuft das Programm nicht heißt es: Alle Zustände prüfen. Wird ein bestimmter Programmteil nach einer Bedingung überhaupt ausgeführt? Wie oft wird eine Schleife durchlaufen? Ist die Variable gesetzt?
 
 
-#### [Variablen prüfen](#variablen-pruefen)
+### [Variablen prüfen](#variablen-pruefen)
 {: #variablen-pruefen}
 
 Eine Grundregel - lass Dir Variablen ausgeben!
@@ -199,7 +199,7 @@ Für einfache Varibalen reicht schon ein `echo` Kommando. Für komplexere Typen 
 Für Ausgaben (sogenannte Dumps) von Arrays und Objekten empfielt sich weiterhin, das HTML-Script vorübergehend durch ein zu erweitern oder die Debuggingausgabe im Browserquelltext anzuschauen. Grund ist die Eigenheit von HTML-Renderings, Gruppen von Leerzeichen und Zeilenumbrüchen als ein Leerzeichen darzustellen und damit die strukturelle Darstellung von Variablendumps in einen großen Zeichenberg aufzulösen.
 
 
-#### [Meldungen erzeugen](#meldungen-erzeugen)
+### [Meldungen erzeugen](#meldungen-erzeugen)
 {: #meldungen-erzeugen}
 
 Ein durchlaufener Block einer Bedingung läßt sich am einfachsten prüfen, indem man dem Code einfach eine Testausgabe wie "Bedingung erfolgreich" hinzufügt. Gleiches gilt für Schleifen. Ein ausgegebener Stern oder ein Schleifencounter ermöglicht eine einfache optische Prüfung.
@@ -216,7 +216,7 @@ Fehlermeldungen erzeugen So gut wie alle Funktionen von PHP liefern Rückgabewer
 Manche Funktionen liefern auch weitreichendere Fehlermeldungen, die man explizit abfragen und ausgeben lassen kann. So z.B. Datenbankfunktionen.
 
 
-#### [Tipps](#tipps)
+### [Tipps](#tipps)
 {: #tipps}
 
 **var_dump()**

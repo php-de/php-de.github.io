@@ -56,12 +56,12 @@ Ein Request an einen existierenden Server wird von diesem mit einem Response bea
 
 Für das Verständnis der Client-Server-Kommunikation, vor allem aber der Verarbeitung von Parameterdaten ist ein grundlegendes Verständnis des protokollbasierten Aufrufs wichtig.
 
-### [HTTP](#http)
+## [HTTP](#http)
 {: #http}
 
 Ein maßgeblicher Teil der Requestverarbeitung in PHP betrifft das Hypertext Transfer Protocol (HTTP). Hier sind zwei Typen von Parameterübergaben zu unterscheiden.
 
-#### [GET](#get)
+### [GET](#get)
 {: #get}
 
 Parameter, die mit einem GET-Request übertragen werden, werden zusätzlich zur Angabe des aufzurufenden Dokuments als Daten an die URL angehängt. Dabei erfolgt die Angabe in der Form Parametername=Parameterwert. Mehrere Parameter werden durch ein Trennzeichen, üblicherweise das kaufmännische Und (&) voneinander getrennt. Zur Abgrenzung von der URL Adresse dient standardmäßig das Fragezeichen.
@@ -80,7 +80,7 @@ Abweichende Trennzeichen für Paramater können in der php.ini
 unter den Einstellungen arg_separator.output und arg_separator.input angegeben werden.</div>
 
 
-##### [Anwendungsgebiet](#anwendungsgebiet)
+#### [Anwendungsgebiet](#anwendungsgebiet)
 {: #anwendungsgebiet}
 
 >
@@ -100,7 +100,7 @@ echo '<a href="next.php?start=' . $startvalue . '" alt="nächste Seite">weiter</
 
 Der unter $startvalue eingebundene Wert würde sich nach Anklicken des entstehenden Links im Folgescript (hier next.php) unter dem Schlüssel startvalue im Array $_GETwiederfinden.
 
-#### [POST](#post)
+### [POST](#post)
 {: #post}
 
 Bei einem POST-Request werden die Parameter nicht an die URL angehängt, sondern im Textkörper (Body) des Requests gesendet. Dabei folgen sie der gleichen Syntax wie die GET-Requests.
@@ -122,16 +122,16 @@ Es folgen weiter die Angabe des für einen POST-Request erforderlichen Content-T
 Eine Leerzeile trennt schließlich den Headerbereich vom Body. In diesem befinden sich nun die Parameter, vergleichbar mit denen eines GET-Requests.
 Die Länge der gesendeten Daten eines POST-Requests ist theoretisch nur von der Einstellung post_max_size  in der [php.ini]({{ page.root }}/jumpto/php-ini/) abhängig. Allerdings kann es sein, dass das Skript dennoch vorzeitig abbricht, da die Übertragung zu lange dauert oder das Speicherlimit erreicht wurde.
 
-##### [Anwendungsgebiet](#anwendungsgebiet-2)
+#### [Anwendungsgebiet](#anwendungsgebiet-2)
 {: #anwendungsgebiet-2}
 
 >
 Da bei einem POST-Request (im Gegensatz zum GET-Request) die Parameter nicht an die URL angehängt werden, ist diese Sendemethode transparenter und weniger verwirrend für den Benutzer. Sie bietet sich vor allem für Serveranfragen mit viel Inhalt (z.B. Formulare) an. Da die URL nicht verändert wird, werden die Header auch in der Log-Datei des Servers nicht festgehalten. Somit eignet sich ein POST-Request besser zur Übertragung vertraulicher Daten, als ein GET-Request, wobei natürlich auch hier eine Übertragungs-Verschlüsselung genutzt werden sollte.
 
-### [Beispiele](#beispiele)
+## [Beispiele](#beispiele)
 {: #beispiele}
 
-#### [Request auf eine Bilddatei](#request-auf-eine-bilddatei)
+### [Request auf eine Bilddatei](#request-auf-eine-bilddatei)
 {: #request-auf-eine-bilddatei}
 
 ~~~html

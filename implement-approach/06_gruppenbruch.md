@@ -45,7 +45,7 @@ können als Gruppenbruch umgesetzt werden.
 
 
 
-### [Prinzip und Voraussetzung](#prinzip-und-voraussetzung)
+## [Prinzip und Voraussetzung](#prinzip-und-voraussetzung)
 {: #prinzip-und-voraussetzung}
 
 Alle zu gruppierenden Elemente werden in einer Schleife durchlaufen und in den
@@ -55,7 +55,7 @@ sich dabei ein gemeinsames Gruppierungkriterium ableiten lassen.
 
 
 
-### [Bruch nach Vergleichskriterium](#bruch-nach-vergleichskriterium)
+## [Bruch nach Vergleichskriterium](#bruch-nach-vergleichskriterium)
 {: #bruch-nach-vergleichskriterium}
 
 Das gruppierende Kriterium wird hier stets mit seinem Vorgänger verglichen, der
@@ -66,7 +66,7 @@ für eine Gruppierung nach Anfangsbuchstaben). Ist dies nicht möglich, kann
 mithilfe von Arrays ein alternatives Vorgehen verwendet werden (siehe unten).
 
 
-##### [Beispiel 1a - Gruppenbruch mit Vorgängervergleich](#beispiel-1a)
+#### [Beispiel 1a - Gruppenbruch mit Vorgängervergleich](#beispiel-1a)
 {: #beispiel-1a}
 
 ~~~ php
@@ -113,7 +113,7 @@ Buchstabe: U
 ~~~
 
 
-##### [Beispiel 1b - Gruppenbruch mit Vorgängervergleich mit JOIN-Daten aus DB](#beispiel-1b)
+#### [Beispiel 1b - Gruppenbruch mit Vorgängervergleich mit JOIN-Daten aus DB](#beispiel-1b)
 {: #beispiel-1b}
 
 Angenommen wir haben folgende DB-Tabellen zu Automarken und dazugehörigen Modellen
@@ -216,11 +216,11 @@ VW
 ~~~
 
 
-### [Bruch nach sonstigen Kriterien](#bruch-nach-sonstigen-kriterien)
+## [Bruch nach sonstigen Kriterien](#bruch-nach-sonstigen-kriterien)
 {: #bruch-nach-sonstigen-kriterien}
 
 
-#### [Modulo](#modulo)
+### [Modulo](#modulo)
 {: #modulo}
 
 Der Modulo ist der Rest einer Ganzzahldivision. Damit liefert `Modulo(n)` für
@@ -235,7 +235,7 @@ nebeneinander ausgeben und alle drei Durchläufe durch eine horizontale
 Trennlinie durchbrochen.
 
 
-##### [Beispiel 2 - Gruppenbruch mit Indexmodulo](#beispiel-2)
+#### [Beispiel 2 - Gruppenbruch mit Indexmodulo](#beispiel-2)
 {: #beispiel-2}
 
 ~~~ php
@@ -260,7 +260,7 @@ der Abschluss der laufenden Tabellenzeile und der Anfang einer neuen
 (`</tr></tr>`).
 
 
-##### [Beispiel 3a - Gruppenbruch mit Indexmodulo](#beispiel-3a)
+#### [Beispiel 3a - Gruppenbruch mit Indexmodulo](#beispiel-3a)
 {: #beispiel-3a}
 
 ~~~ php
@@ -289,7 +289,7 @@ Tabellenzeile aus, selbst für Leere Datenmengen. Abhilfe schafft hier nur die
 Zwischenspeicherung der Ausgabe, bspw.:
 
 
-##### [Beispiel 3b - Gruppenbruch mit Indexmodulo, datensatzabhängig](#beispiel-3b)
+#### [Beispiel 3b - Gruppenbruch mit Indexmodulo, datensatzabhängig](#beispiel-3b)
 {: #beispiel-3b}
 
 ~~~ php
@@ -317,11 +317,11 @@ if (false === empty ($content)) {
 
 
 
-### [Alternativen](#alternativen)
+## [Alternativen](#alternativen)
 {: #alternativen}
 
 
-#### [Abbildung einer Zwischenstruktur auf Arrays](#abbildung-einer-zwischenstruktur-auf-arrays)
+### [Abbildung einer Zwischenstruktur auf Arrays](#abbildung-einer-zwischenstruktur-auf-arrays)
 {: #abbildung-einer-zwischenstruktur-auf-arrays}
 
 Eine einfach Alternative bieten mehrdimensionale Arrays, die als Schlüssel der
@@ -329,7 +329,7 @@ obersten Ebene das Sortierkriterium nutzen und als Unterebene eine Menge von
 automatisch angelegten numerischen Indizies.
 
 
-##### [Beispiel 4 - Gruppierung über Zwischenarray](#beispiel-4)
+#### [Beispiel 4 - Gruppierung über Zwischenarray](#beispiel-4)
 {: #beispiel-4}
 
 ~~~ php
@@ -403,11 +403,11 @@ verändert werden muss. Das kann für bestimmte Daten, etwa Logfile-Daten oder
 IMAP-Listen, die zum Beispiel zeitlich angeordnet sind, vorteilhaft sein.
 
 
-#### [Verschachtelte Schleifen mit Abbruchbedingung](#verschachtelte-schleifen-mit-abbruchbedingung)
+### [Verschachtelte Schleifen mit Abbruchbedingung](#verschachtelte-schleifen-mit-abbruchbedingung)
 {: #verschachtelte-schleifen-mit-abbruchbedingung}
 
 
-##### [Beispiel 5 - Gruppierung über Schleifenabbruch](#beispiel-5)
+#### [Beispiel 5 - Gruppierung über Schleifenabbruch](#beispiel-5)
 {: #beispiel-5}
 
 

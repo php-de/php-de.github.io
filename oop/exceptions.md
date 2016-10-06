@@ -49,7 +49,7 @@ inhalt:
 
 ---
 
-### [Was sind Exceptions?](#was-sind-exceptions)
+## [Was sind Exceptions?](#was-sind-exceptions)
 {: #was-sind-exceptions}
 
 *Exception* bedeutet übersetzt *Ausnahme* und stellt in der objekt-orientierten Programmierung eine elegante Möglichkeit dar, bei besonderen oder schweren Fehlern den aktuellen Programmkontext zu verlassen (!) um ihn mit einer Fehlerbehandlung fortzuführen.
@@ -57,7 +57,7 @@ inhalt:
 Ähnlich wie `return` für das Abliefern eines Ergebnisses funktioniert, funktioniert das Werfen (throw) von Exceptions, also einem Fehler-Objekt, nur wird das Programm nun nicht zwingend in der übergeordneten, aufrufenden Umgebung landen, sondern dort, wo es erwartet und aufgefangen (catch) wird.
 
 
-### [Wie wirft und fängt man Exceptions?](#wie-wirft-und-faengt-man-exceptions)
+## [Wie wirft und fängt man Exceptions?](#wie-wirft-und-faengt-man-exceptions)
 {: #wie-wirft-und-faengt-man-exceptions}
 
 Exception-Handling unterteilt sich in zwei Blocke, logisch wie syntaktisch.
@@ -129,7 +129,7 @@ try {
 Das Werfen der Exception wird also sogar ausserhalb des try-Blockes deklariert. Relevant ist jedoch, ob dieser Code im try-Block ausgeführt wird und das ist hier der Fall.
 
 
-### [Wann bzw. wo wirft man Exceptions?](#wann-bzw-wo-wirft-man-exceptions)
+## [Wann bzw. wo wirft man Exceptions?](#wann-bzw-wo-wirft-man-exceptions)
 {: #wann-bzw-wo-wirft-man-exceptions}
 
 Exceptions sind Ausnahmen und ich teile die Meinung aus "Der Pragmatische Programmierer", dass Exceptions die Ausnahme sein sollten.
@@ -171,7 +171,7 @@ try {
 Auch dieses Beispiel ist natürlich ungeschickt gewählt, da sich die Fehlerbehandlung zufällig sogar direkt unter dem auslösenden Fehler befindet. Üblicherweise ist das nicht der Fall. Dazu kommen wir im nächsten Kapitel.
 
 
-### [Wann bzw. wo fängt man Exceptions?](#wann-bzw-wo-faengt-man-exceptions)
+## [Wann bzw. wo fängt man Exceptions?](#wann-bzw-wo-faengt-man-exceptions)
 {: #wann-bzw-wo-faengt-man-exceptions}
 
 Exceptions fängt man dort, wo man das Problem am besten lösen kann. Das heißt in dem Block, an dem man mit ausreichender Sicherheit sagen kann, die Ausnahme und ihre Tragweite verstanden zu haben.
@@ -226,7 +226,7 @@ Was aber, wenn wir dem Betrachter mit einer Nachricht mitteilen möchten, dass e
 Das Gallery-Modul scheint also der richtige Ort zum Fangen dieser Exception zu sein!
 
 
-### [Wie unterscheidet man Exceptions?](#wie-unterscheidet-man-exceptions)
+## [Wie unterscheidet man Exceptions?](#wie-unterscheidet-man-exceptions)
 {: #wie-unterscheidet-man-exceptions}
 
 Es gibt viele verschiedene Variationen von Exceptions. Jede sollte *in ihrem direkten Kontext* schwer und von besonderer Bedeutung sein! Das heißt aber wie wir gesehen haben nicht unbedingt, dass sie in ihrer Gesamtheit betrachtet schwer sein muss.
@@ -329,7 +329,7 @@ try {
 Der catch-Block wird nie zur Ausführung kommen.
 
 
-### [Wie fängt man mehrere Exceptions?](#wie-faengt-man-mehrere-exceptions)
+## [Wie fängt man mehrere Exceptions?](#wie-faengt-man-mehrere-exceptions)
 {: #wie-faengt-man-mehrere-exceptions}
 
 Ein Gallery-Modul muss ihre Aufgaben nicht nur an Image-Klassen weiterdelegieren. Der Einsatz vielerlei Klassen ist denkbar, sie müssten nicht einmal direkt etwas mit Bildern zu tun haben .. eine File-Klasse zum Zugriff auf Bilder wäre denkbar oder der Einsatz eines Log-Tools.
@@ -370,7 +370,7 @@ Beachtet werden sollte, dass man nicht in den `catch (My_Stupid_Exception $e)` g
 *Der erste Treffer zählt.*
 
 
-### [Wie wirft man eine Exception weiter?](#wie-wirft-man-eine-exception-weiter)
+## [Wie wirft man eine Exception weiter?](#wie-wirft-man-eine-exception-weiter)
 {: #wie-wirft-man-eine-exception-weiter}
 
 Wenn der catch-Block (z.B. anhand des Exception-Codes) feststellt, dass das Problem doch lieber von einer höheren Instanz gelöst werden sollte oder gar durch seine Problemlösungsversuche selbst eine neue Exception auslöst, wird dies ganz "normal" gehandhabt, der nächsthöhere try-catch-Block fängt die Exception auf.
@@ -409,7 +409,7 @@ Die Ausgabe lautet, wie erwartet:
 Hoffentlich konntet ihr einen kleinen Einblick in Exceptions bekommen und gebt eure Fehler nun nicht mehr nur durch return FALSE und Konsorten zurück, sondern lasst das die Exceptions erledigen. Dafür sind sie da.
 
 
-### [Quellen](#quellen)
+## [Quellen](#quellen)
 {: #quellen}
 
 [Link zum Originalbeitrag im php.de Forum](http://www.php.de/tutorials/45124-php-exceptions-teil-1-a.html)

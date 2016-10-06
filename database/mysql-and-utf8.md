@@ -19,7 +19,7 @@ inhalt:
 ---
 
 
-### [Wie bringe ich meiner Datenbank UTF-8 bei?](#mysql-utf8)
+## [Wie bringe ich meiner Datenbank UTF-8 bei?](#mysql-utf8)
 {: #mysql-utf8}
 
 Mittlerweile nutzen die meisten Webanwendungen UTF-8 und das aus gutem Grund. In einem internationalen Raum muss auch für jede Sprache und deren Zeichen Platz sein und jeden Benutzer erst einstellen zu lassen, welchen Zeichensatz er gern hätte, ist eine unsägliche Methode. Einerseits fände dies der Benutzer sicherlich nicht so lustig wie vielleicht der Programmierer, andererseits bedeutete es einen enormen Aufwand, der sich nicht rechnet. Folglich wird auf Unicode gesetzt, im Speziellen auf UTF-8.

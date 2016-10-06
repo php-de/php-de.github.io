@@ -62,7 +62,7 @@ den Unterschied von Klartextformaten gegenüber einem binären Typ.
 
 
 
-### [Abgrenzung](#abgrenzung)
+## [Abgrenzung](#abgrenzung)
 {: #abgrenzung}
 
 Auch wenn eine Abgrenzung zu modernen Scripts und Hochsprachen oft schwierig
@@ -72,7 +72,7 @@ ihnen grundlegende Kontrollstrukturen fehlen. HTML wird also nicht
 
 
 
-### [HTML und XML](#html-und-xml)
+## [HTML und XML](#html-und-xml)
 {: #html-und-xml}
 
 HTML bildet eine Untermenge (bzw. definierte Ableitung) des allgemeineren XML
@@ -89,7 +89,7 @@ Zeit wurde der Elementumfang auch um einige spezielle Nicht-Inhaltselemente
 (wie Formularelemente) und leider auch um den Wildwuchs einiger Elemente zur
 direkten Textformatierung bereichert.
 
-#### [Syntax Überblick](#syntax-ueberblick)
+### [Syntax Überblick](#syntax-ueberblick)
 {: #syntax-ueberblick}
 
 HTML und XML beschränken sich auf Elemente, die durch ein Schlüsselwort erzeugt
@@ -123,7 +123,7 @@ Relation zu anderen Dokumenten) dargestellt, als auch mit anderen Dokumenten
 (bspw. Angaben zur optischen Formatierung für verschiedene Medien)
 ausgezeichnet werden.
 
-#### [Exkurs Semantik](#exkurs-semantik)
+### [Exkurs Semantik](#exkurs-semantik)
 {: #exkurs-semantik}
 
 Während das XML Format genau genommen eine freie Definition verwendeter
@@ -150,7 +150,7 @@ Textabschnitt allenfalls optisch aus Erfahrungen mit Printmedien als
   ausgezeichnetes Textelement kann in einem komplett anderen Bereich als der
   visuellen Darstellung verarbeitet werden.
 
-#### [HTML als semantisches Dokument](#html-als-semantisches-dokument)
+### [HTML als semantisches Dokument](#html-als-semantisches-dokument)
 {: #html-als-semantisches-dokument}
 
 Das zunehmende Bedürfnis nach einer semantischen Begrifflichkeit
@@ -162,7 +162,7 @@ bezieht sich desweiteren weitgehend auf die Darstellung als Textdokument
 Beispiel am Ende des Beitrags zeigt, wie XML, losgelöst vom Kontext des
 Textdokumentes, eine zweckgebundene Semantik abbilden kann.
 
-#### [Die HTML Erweiterung Mikroformate](#die-html-erweiterung-mikroformate)
+### [Die HTML Erweiterung Mikroformate](#die-html-erweiterung-mikroformate)
 {: #die-html-erweiterung-mikroformate}
 
 Einen Lösungsansatz versucht das Konzept der Mikroformate zu bieten. Dabei wird
@@ -176,7 +176,7 @@ native HTML-Auszeichnungen.
 
 
 
-### [HTML-Derivate](#html-derivate)
+## [HTML-Derivate](#html-derivate)
 {: #html-derivate}
 
 Aus verschiedenen Anforderungen – meist aber aus der Suche nach in HTML
@@ -184,7 +184,7 @@ editierbaren Auszeichnungsformen – haben sich verschiedene an HTML angelehnte
 Formate entwickelt. Die Hauptanwendung besteht darin, einen dermaßen
 ausgezeichneten Text als Inhalt in HTML-Syntax zu überführen.
 
-#### [BB-Code](#bb-code)
+### [BB-Code](#bb-code)
 {: #bb-code}
 
 Die Einführung von BB-Code entspringt der Problematik, dass innerhalb von
@@ -197,7 +197,7 @@ BB-Code hat sich als einfache Syntaxvariante zu in HTML-Formularen editierbarer
 Textauszeichnung entwickelt und ist in verschiedenen Abwandungen in Wikis,
 Foren und Content Management System weltweit verbreitet im Einsatz.
 
-##### [Syntax Überblick](#syntax-ueberblick-2)
+#### [Syntax Überblick](#syntax-ueberblick-2)
 {: #syntax-ueberblick-2}
 
 Viele HTML-Formatierungen sind in BB-Code wiederzufinden, wobei hier eckige
@@ -212,7 +212,7 @@ BB-Code versteht sich als inline Formatierung, bildet also keine vollständigen
 Dokumentstrukturen ab. Darum verfügt BB-Code-Syntax über keine Elemente, die
 Dokumentstrukturen oder Metadaten kennzeichnen.
 
-#### [Wikisyntax](#wikisyntax)
+### [Wikisyntax](#wikisyntax)
 {: #wikisyntax}
 
 Sowohl Wikisyntax als auch Textile beschreiten ein interessanten Weg: Sie lösen
@@ -224,7 +224,7 @@ für blockbildende Elemente genutzt.
 Beide Formate kommen damit Autoren längerer Fließtexte entgegen, indem sie
 Editierbarkeit vor Parsing-Aufwand stellen.
 
-#### [Textile](#textile)
+### [Textile](#textile)
 {: #textile}
 
 Textile ist eine Formatsprache des Textpattern CMS und benutzt eine reduzierte,
@@ -232,7 +232,7 @@ aber für durchschnittliche Textdokumente weitgehend ausreichende Syntax.
 
 
 
-### [Rich Text](#rich-text)
+## [Rich Text](#rich-text)
 {: #rich-text}
 
 Im Gegensatz zu HTML versteht sich Rich Text Format als
@@ -240,7 +240,7 @@ Textformatierungssprache. Obgleich es auch semantische Auszeichnungen erlaubt,
 kann man es wohl als Klartextalternative zu binären Formaten von
 Textverarbeitungsprogrammen verstehen.
 
-#### [Syntax Überblick](#syntax-ueberblick-3)
+### [Syntax Überblick](#syntax-ueberblick-3)
 {: #syntax-ueberblick-3}
 
 Syntaxbestandteile werden hier durch `\` eingeleitet und sind zumeist Abkürzungen
@@ -258,7 +258,7 @@ Neben Dokumenttyp-Angaben zu Zeichensatz und Basis-Schriftart Farbtabellen und
 
 
 
-### [Vergleichende Beispiele](#vergleichende-beispiele)
+## [Vergleichende Beispiele](#vergleichende-beispiele)
 {: #vergleichende-beispiele}
 
 Lediglich XML schafft es von den hier vorgestellten Formaten, einen Inhalt

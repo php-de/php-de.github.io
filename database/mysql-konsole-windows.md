@@ -33,7 +33,7 @@ entry-type: in-discussion
 ---
 
 
-### [Problem](#problem)
+## [Problem](#problem)
 {: #problem}
 
 Wenn man die MySQL Konsole über die Eingabeaufforderung (cmd.exe) von Windows
@@ -44,7 +44,7 @@ Webseite) erscheinen statt der Umlaute andere Sonderzeichen - statt einem `"Ü"`
 z.B. `"š"`.
 
 
-### [Ursache](#ursache)
+## [Ursache](#ursache)
 {: #ursache}
 
 Die Standardeinstellung für den Zeichensatz auf der Clientseite (MySQL Konsole)
@@ -83,7 +83,7 @@ bedeutet aber in der Zeichentabelle MS-DOS 850 `"³"`. D.h. die Umlaute, die ich
 aber bei Abruf über den anderen immer falsch.
 
 
-### [Lösung](#loesung)
+## [Lösung](#loesung)
 {: #loesung}
 
 Über den Befehl `chcp` (kurz für Change Codepage) kann man die Codepage für die
@@ -103,7 +103,7 @@ cmd /c chcp 1252 && mysql -uuser -ppasswort
 ~~~
 
 
-### [Alternative Lösung](#alternative)
+## [Alternative Lösung](#alternative)
 {: #alternative}
 
 Wenn man die Codepage der Windows Eingabeaufforderung nicht ändern möchte, so

@@ -37,12 +37,12 @@ Method chaining funktioniert nur mit mit dem erweiterten Objektmodell von PHP5.
 <div class="alert alert-info"><strong>Hinweis: </strong>Für folgende Beispiele wird grundlegendes Verständnis von OOP vorrausgesetzt.</div>
 
 
-### [Anwendung](#anwendung)
+## [Anwendung](#anwendung)
 {: #anwendung}
 
 <div class="alert alert-warning"><strong>Achtung! </strong>Aus Gründen der Übersicht wurde auf Fehlerbehandlungen verzichtet, dies obliegt dem Nutzer.</div>
 
-#### [klassische Anwendung von Methoden](#klassische-anwendung-von-methoden)
+### [klassische Anwendung von Methoden](#klassische-anwendung-von-methoden)
 {: #klassische-anwendung-von-methoden}
 
 Hier ein Beispiel mit einer Klasse und Methoden, die im klassischen Sinne verwendet werden.
@@ -83,7 +83,7 @@ My Name is Flo! And I am 21 years old!
 
 Die Klasse Person wird als Objekt instanziert. Anschließend werden nacheinander Methoden über den -> Operator ausgerufen.
 
-#### [Anwendung von Method chaining](#anwendung-von-method-chaining)
+### [Anwendung von Method chaining](#anwendung-von-method-chaining)
 {: #anwendung-von-method-chaining}
 
 Folgendes Beispiel produziert die selbe Ausgabe allerdings wird Method chaining angewendet.
@@ -157,12 +157,12 @@ $number->setNewValue();
 
 Um Method chaining zu nutzen muss also **nur** das Objekt selbst in den Methoden, die aneinander gekettet werden sollen, zurückgegeben werden. Es muss also in diesen Methoden immer ein `return $this;` am Ende aufgerufen werden. Die Daten die in den Methoden gesetzt oder verändert werden müssen allerdings in dem Objekt gespeichert werden um sie dann bei dem letzten Methodenaufruf der Kette verarbeitet zu werden. In dem Beispiel oben wird also das Alter und der Name intern gespeichert und erst bei der letzten Methode ausgegeben.
 
-#### [Anwendungsgebiete](#anwendungsgebiete)
+### [Anwendungsgebiete](#anwendungsgebiete)
 {: #anwendungsgebiete}
 
 Hier sind noch zwei Beispiele bei denen Method chaining verwendet werden kann.
 
-##### [Datenbank](#datenbank)
+#### [Datenbank](#datenbank)
 {: #datenbank}
 
 Möglich wäre eine Klasse zu erstellen die Datenbank Querys generiert. Dies hat den Vorteil dass man einfach von einem Datenbanksystem auf ein anderes wechseln kann. Es muss dann nur die Klasse die die Querys generiert bearbeitet werden, alle Datenbankabfragen im Quellcode, die über diese Klasse abgehandelt werden, können so bestehen bleiben und müssen nicht extra überarbeitet werden.
@@ -180,7 +180,7 @@ Die Methoden `from()`, `where()`, `order_by()` und `limit()` geben in diesem Fal
 
 Auf die Klasse selber wird hier verzichtet da es eine recht komplexe Angelegenheit ist einen Query richtig zu generieren und alle Möglichkeiten einzubauen.
 
-##### [Validierung](#validierung)
+#### [Validierung](#validierung)
 {: #validierung}
 
 Um zum Beispiel Formulareingaben zu überprüf kann dafür eine Klasse geschrieben werden die sich nur um die Validierung kümmert.
@@ -286,7 +286,7 @@ class Validator
 }
 ~~~
 
-### [Schluss](#schluss)
+## [Schluss](#schluss)
 {: #schluss}
 
 Method chaining ist also eine interessant Art wie man mit Methoden umgehen kann. Bei sinnvoller Verwendung kann es so die Lesbarkeit erhöhen und den Aufwand für den Programmierer senken.

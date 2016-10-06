@@ -50,7 +50,7 @@ Dies klappt auch in den meisten Fällen, aber leider nicht immer. <br>
 Weniger bekannt ist: PHP prüft den vor den einfachen (typschwachen) Vergleich beide Stringinhalte, ob diese einen numerischen Inhalt haben. Sind beide Stringinhalte numerisch, wird auch ein numerischer Vergleich durchgeführt. So auch wenn eine Seite ein numerischer Datentyp ist, was allgemein bekannt ist.
 
 
-### [Beispiele typschwacher Stringvergleiche](#beispiel-typschwach)
+## [Beispiele typschwacher Stringvergleiche](#beispiel-typschwach)
 {: #beispiel-typschwach}
 
 ~~~php
@@ -67,7 +67,7 @@ Wie die Beispiele zeigen, werden auch Hexadezimalausdrücke als numerisch angese
 Diese Stolperfallen lauern versteckt auch in anderen Konstrukten, wie z.B. `switch` oder `usort`. Dazu die folgenden Beispiele.
 
 
-### [Beispiel switch](#beispiel-switch)
+## [Beispiel switch](#beispiel-switch)
 {: #beispiel-switch}
 
 ~~~php
@@ -110,7 +110,7 @@ switch (true) {
 ~~~
 
 
-### [Beispiel usort](#beispiel-usort)
+## [Beispiel usort](#beispiel-usort)
 {: #beispiel-usort}
 
 ~~~php
@@ -147,14 +147,14 @@ var_dump($a3);
 Das Beispiel zeigt deutlich, dass `usort` bei Verwendung der Vergleichsfunktion `cmp` mit dem typschwachen Vergleich nicht das gewünschte Resultat bringt. `sort` und `usort` mit `cmpStr`, welche `strcmp` benutzt, arbeiten richtig.
 
 
-### [Fazit](#fazit)
+## [Fazit](#fazit)
 {: #fazit}
 
 Für den sicheren Stringvergleich auf Gleich/Ungleich kann nur der strenge Vergleich `===` bzw. `!==` empfohlen werden.
 Wird in den obigen ersten Beispielcode konsequent `===` benutzt, bleibt die Ausgabe leer. Für einen größer/kleiner Vergleich von Strings bleibt nur `strcmp` zu nehmen.
 
 
-### [Quelle](#quelle)
+## [Quelle](#quelle)
 {: #quelle}
 
 * [Forumsbeitrag von jspit](http://www.php.de/php-einsteiger/95512-fallstricke-bei-typeschwachen-stringvergleichen.html)

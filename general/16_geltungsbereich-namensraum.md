@@ -59,7 +59,7 @@ Als **Geltungsbereich** oder Sichtbarkeitsbereich (*scope*, engl. für Geltungsb
 Die meisten Hochsprachen bieten die Möglichkeit, mehrere Namensräume zu definieren. Damit wird es möglich, mehrere Variablen gleichen Namens zu deklarieren, die nebeneinander existieren können, da sie sich in unterschiedlichen Namensräumen befinden. Der Sichtbarkeitsraum ist also eine praktische Sache, um Daten zu kapseln, bietet aber auch Tücken, wenn man nicht beachtet, wo eine Variable definiert wurde.
 
 
-### [Der globale Geltungsbereich](#global-scope)
+## [Der globale Geltungsbereich](#global-scope)
 {: #global-scope}
 
 Standardmäßig werden Variablen im globalen Geltungsbereich definiert. "Global" ist der Geltungsbereich, in dem das Skript läuft.
@@ -79,7 +79,7 @@ Das Ergebnis:
 Diese Variable ist nun im folgenden Skriptverlauf sicht- und nutzbar, solange man sich im selben Geltungsbereich befindet.
 
 
-### [Der lokale Geltungsbereich](#local-scope)
+## [Der lokale Geltungsbereich](#local-scope)
 {: #local-scope}
 
 Definiert man nun einen lokalen Geltungsbereich, so hat das zur Folge, dass die darin enthaltenen Variablen von außen nicht sichtbar sind. Ebenso gilt das Umgekehrte: Variablen aus dem globalen Geltungsbereich sind (im Regelfall) im lokalen Geltungsbereich nicht sichtbar.
@@ -128,7 +128,7 @@ Notice: Undefined variable: var in /var/www/xyz/abc.php on line x
 ~~~
 
 
-### [Das Schlüsselwort static](#static)
+## [Das Schlüsselwort static](#static)
 {: #static}
 
 Eine Variable geht verloren, wenn der Geltungsbereich geschlossen wird. Wenn also die Abarbeitung einer Funktion beendet wird und die Ausführung zum Funktionsaufruf zurückkehrt, wird auch die Variable gelöscht. Ein Beispiel demonstriert dieses:
@@ -198,7 +198,7 @@ func();
 echo $var;
 ~~~
 
-### [Das Schlüsselwort global](#global)
+## [Das Schlüsselwort global](#global)
 {: #global}
 
 Das Schlüsselwort `global` durchbricht den Geltungsbereich und macht eine Variable in einem anderen Geltungsbereich sichtbar. Mithilfe von `global` ist es möglich, im lokalen Geltungsbereich auf Variablen des globalen Geltungsbereiches zuzugreifen und umgekehrt kann aus dem globalen Geltungsbereich auf Variablen des lokalen Geltungsbereiches zugegriffen werden.
@@ -242,7 +242,7 @@ Das Ergebnis ist dasselbe:
 <div class="alert alert-warning"><strong>Achtung: </strong>Durch die Verwendung von global wird das Prinzip des Geltungsbereiches außer Kraft gesetzt und es ist nicht mehr sicher, ob eine Variable bereits definiert wurde oder nicht. So kommt es leicht zu einer ungewollten Überschreibung von Variablen. Deshalb wird geraten, auf <code>global</code> zu verzichten. Wenn innerhalb einer Funktion auf eine Variable aus dem globalen Geltungsbereich zugegriffen werden muss, sollte lieber eine <a href="{{ page.root }}/jumpto/referenz/">Referenz</a> als Parameter übergeben werden.</div>
 
 
-### [Superglobals](#superglobals)
+## [Superglobals](#superglobals)
 {: #superglobals}
 
 Superglobals sind von PHP reservierte Variablen, die in jedem Geltungsbereich verfügbar sind. Superglobals beginnen immer mit einem Unterstrich _ im Namen. Zu ihnen gehören `$_SERVER`, `$_GET`, `$_POST`, `$_COOKIE`, `$_REQUEST`, `$_FILES`, `$_SESSION`, `$_ENV` und `$GLOBALS`.
@@ -278,14 +278,14 @@ Das Ergebnis, wie erwartet:
 <div class="alert alert-warning"><strong>Achtung: </strong>Wenn kein triftiger Grund dafür existiert, so sollte auf den Gebrauch von <code>$GLOBALS</code> für die Variablendefinition natürlich ebenso verzichtet werden, wie auf das Schlüsselwort <code>global</code>. Stattdessen sollten die bereits vordefinierten Superglobals Verwendung finden.</div>
 
 
-### [Bezeichnerklassen](#bezeichnerklassen)
+## [Bezeichnerklassen](#bezeichnerklassen)
 {: #bezeichnerklassen}
 
 Streng genommen unterliegen alle Bezeichner der PHP-Syntax einer Namensraumregelung. So wird zwischen Funktionsnamen, Variablenbezeichnern, Klassenbezeichnern und Konstantennamen unterschieden. All diese Bezeichner benutzen in der PHP-Syntax unterschiedliche Namensräume, können also theoretisch in jedem Kontext mit dem selben Namen belegt werden.
 Es obliegt dem Parser, den zuständigen Namensraum aufgrund der Syntax zu bestimmen. So wird bspw. ein Bezeichner mit folgenden Klammern stets als Funktion bzw. im Klassenkontext als Methode interpretiert werden.
 
 
-### [Geltungsbereich-Strukturen](#strukturen)
+## [Geltungsbereich-Strukturen](#strukturen)
 {: #strukturen}
 
 In PHP gibt es zwei Strukturen (oder drei, je nach Betrachtungsweise), die jenseits der globalen Sichtbarkeit einen eigenen lokalen (Variablen-)Geltungsbereich abbilden. Die Funktionen wurden bereits genannt.

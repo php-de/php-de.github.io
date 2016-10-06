@@ -34,7 +34,7 @@ inhalt:
 Dieser Beitrag bietet eine Übersicht über Editoren und Entwicklungsumgebungen, die für die Arbeit mit PHP geeignet sind. Wer seine Wahl ebenfalls äußern möchte, ist in [diesem Beitrag](http://www.php.de/php-einsteiger/101627-editor-ide-let-me-tell-you-something.html) herzlich dazu eingeladen.
 
 
-### [Editoren](#editoren)
+## [Editoren](#editoren)
 {: #editoren}
 
 Ein Editor ist eine Anwendung, die grundlegende Funktionen zur Text- und Quellcodebearbeitung bereitstellt, die aber nicht direkt (oder nur sehr eingeschränkt) mit dem PHP-Interpreter oder anderen Tools interagiert und die auch keine komplexeren sprachspezifischen Features enthält. Editoren erleichtern die Arbeit, indem sie beispielsweise per Syntax-Highlighting auf Typos oder andere Syntaxfehler hinweisen.
@@ -96,7 +96,7 @@ Ein Editor ist eine Anwendung, die grundlegende Funktionen zur Text- und Quellco
     <br>Plattform: Windows, Linux, Mac
 
 
-### [Integrierte Entwicklungsumgebungen (IDEs)](#ide)
+## [Integrierte Entwicklungsumgebungen (IDEs)](#ide)
 {: #ide}
 
 Integrierte Entwicklungsumgebungen interagieren direkt mit PHP und vernetzen Quellcode so, dass jederzeit (auch grafisch) durch die Inhalte navigiert werden kann und schon beim Autocomplete ersichtlich wird, wo eine Methode oder Funktion definiert wurde und welche Parameter sie hat. Qualitätssicherung steht nicht bei jeder IDE im Vordergrund, wird jedoch in jeder IDE zumindest ansatzweise implementiert.
@@ -169,7 +169,7 @@ Integrierte Entwicklungsumgebungen interagieren direkt mit PHP und vernetzen Que
     phpDesigner ist eine der kostengüstigeren IDEs. Sie ist nicht ganz so umfangreich wie PhpStorm, aber dennoch mit allem gerüstet was die tägliche Arbeit als Software-Entwickler erleichtert.
 
 
-### [Sonstige](#sonstige)
+## [Sonstige](#sonstige)
 {: #sonstige}
 
 Einige Editoren werden es nicht in diese Übersicht schaffen, da sie nicht PHP-spezifisch oder in der PHP-Welt zu wenig verbreitet sind. Sie sollen aber nicht gänzlich ungenannt bleiben.

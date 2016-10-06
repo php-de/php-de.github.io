@@ -37,7 +37,7 @@ inhalt:
         simple: ""
 ---
 
-#### [Was sind Template Engines?](#was-sind-template-engines)
+### [Was sind Template Engines?](#was-sind-template-engines)
 {: #was-sind-template-engines}
 
 Template Engines sind Bibliotheken, die den notwendigen Aufwand zur Trennung von
@@ -47,7 +47,7 @@ Viele Template Engines heben sich von PHP ab, indem sie eine eigene Template-Spr
 mitbringen um somit das direkte Ausführen von PHP-Quellcode im Template verhindern.
 
 
-#### [Wann sind Template Engines sinnvoll?](#wann-sind-template-engines-sinnvoll)
+### [Wann sind Template Engines sinnvoll?](#wann-sind-template-engines-sinnvoll)
 {: #wann-sind-template-engines-sinnvoll}
 
 Will man unbedingt eine Richtlinie festlegen die definiert wann eine Template Engine
@@ -56,7 +56,7 @@ festlegen. Es ist natürlich nicht immer jedes Feature einer Template Engine not
 Die Grundaufgabe ( die Trennung von PHP und HTML ) sollte jedoch immer erfüllt werden.
 
 
-#### [Welche Template Engine sollte ich benutzen?](#welche-template-engine-sollte-ich-benutzen)
+### [Welche Template Engine sollte ich benutzen?](#welche-template-engine-sollte-ich-benutzen)
 {: #welche-template-engine-sollte-ich-benutzen}
 
 Kurz gesagt: die mit der du umgehen kannst. Viele würden jetzt blind auf Twig, Smarty
@@ -65,7 +65,7 @@ Entwicklung baut, die impliziert das du dich mit einer möglicherweise Komplexer
 vertraut machen musst, als deine eigentliche Anwendung je sein wird.
 
 
-#### [Was ist nötig für eine leicht erweiterbare solide Template Engine?](#was-ist-noetig-fuer-eine-leicht-erweiterbare-solide-template-engine)
+### [Was ist nötig für eine leicht erweiterbare solide Template Engine?](#was-ist-noetig-fuer-eine-leicht-erweiterbare-solide-template-engine)
 {: #was-ist-noetig-fuer-eine-leicht-erweiterbare-solide-template-engine}
 
 Aus technischer Sicht benötigt eine Template Engine zwei Klassen. Eine Klasse, die es ermöglicht
@@ -76,10 +76,10 @@ eigentlichen Engine-Funktionen zu trennen. Mehr ist aus technischer Sicht für e
 Template Engine nicht notwendig.
 
 
-#### [Implementierung](#implementierung)
+### [Implementierung](#implementierung)
 {: #implementierung}
 
-##### [Die Engine-Klasse](#die-engine-klasse)
+#### [Die Engine-Klasse](#die-engine-klasse)
 {: #die-engine-klasse}
 
 Um eine generelle leichte Erweiterbarkeit bereitzustellen erzeugen wir zuerst ein Interface
@@ -230,7 +230,7 @@ class Engine implements EngineContract {
 ~~~
 
 
-###### [directory()](#directory)
+##### [directory()](#directory)
 {: #directory}
 
 Die `directory()`-Methode assoziiert einen beliebigen Dateipfad mit einem Alias,
@@ -238,7 +238,7 @@ sodass du nicht innerhalb von Template oder beim Render-Aufruf immer den konkret
 Pfad zur Template-Datei angeben musst.
 
 
-###### [define()](#define)
+##### [define()](#define)
 {: #define}
 
 Die `define()`-Methode assoziiert einen beliebigen in der Klasse `Template` nicht
@@ -246,7 +246,7 @@ existenten Methodennamen mit einem `Closure`-Callback. Die mit dieser Methode
 definierten Funktionen sind als Objekt-Methoden mit Hilfe von `$this` aufrufbar.
 
 
-###### [stringify()](#stringify)
+##### [stringify()](#stringify)
 {: #stringify}
 
 Die `stringify()`-Methode assoziiert ein beliebiges Interface ( Klassen- oder Interface-Name )
@@ -255,7 +255,7 @@ automatisch das Callback das auf das jeweilige Interface registriert wurde auf w
 dem Template übergeben wurde.
 
 
-###### [assign()](#assign)
+##### [assign()](#assign)
 {: #assign}
 
 Die `assign()`-Methode setzt die globalen Assignments. Globale Assignments sind in allen
@@ -263,14 +263,14 @@ Templates verfügbar und müssen nicht innerhalb der Templates an weitere Templa
 weitergereicht werden.
 
 
-###### [build()](#build)
+##### [build()](#build)
 {: #build}
 
 Die `build()`-Methode erzeugt eine Template Instanz. Diese Methode wird von `render()`
 benutzt und kann dazu verwendet werden ein traditionelles View-Objekt zu erzeugen.
 
 
-###### [compile()](#compile)
+##### [compile()](#compile)
 {: #compile}
 
 Die `compile()`-Methode führt das übergebene Template aus. Diese Methode wird von `render()`
@@ -281,7 +281,7 @@ um zu vermeiden das Templates selbst die Engine oder andere anwendungsspezifisch
 direkt manipulieren können.
 
 
-###### [render()](#render)
+##### [render()](#render)
 {: #render}
 
 Die `render()`-Methode führt ein angegebenes Template aus. Diese Methode ruft `build()` auf
@@ -295,7 +295,7 @@ Außerdem registriert der Constructor eine `render`-Template-Funktion sodass inn
 Templates weitere Templates aufgerufen werden können.
 
 
-##### [Die Template-Klasse](#die-template-klasse)
+#### [Die Template-Klasse](#die-template-klasse)
 {: #die-template-klasse}
 
 Die Template-Klasse dient als Handler und wird in dieser Implementierung als `final` definiert,
@@ -378,14 +378,14 @@ final class Template {
 ~~~
 
 
-###### [templateFileName()](#templatefilename)
+##### [templateFileName()](#templatefilename)
 {: #templatefilename}
 
 Die `templateFileName()`-Methode dient der Engine dazu den aktuellen Dateinamen des Templates abzurufen.
 Diese Methode kann außerdem innerhalb von Templates für Debugging-Zwecke genutzt werden.
 
 
-###### [Magische Methoden](#magische-methoden)
+##### [Magische Methoden](#magische-methoden)
 {: #magische-methoden}
 
 Die in dieser Klasse definierten Magischen Methoden erlauben das dynamische Implementieren von
@@ -396,7 +396,7 @@ Zugriff auf das Assignment ) verfügbar. Du kannst dieses Verhalten aber später
 für Arrays und andere Strukturen implementieren.
 
 
-#### [Der Test](#der-test)
+### [Der Test](#der-test)
 {: #der-test}
 
 In diesem Test-Beispiel wird [Composer]({{ page.root }}/jumpto/composer/)

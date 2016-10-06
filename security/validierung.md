@@ -35,7 +35,7 @@ Unter **Validierung** oder **Eingabevalidierung** (engl. *valid* = gültig) vers
 
 Die Eingabevalidierung muß sowohl Nutzerfehler (Fehleingaben, Fehlbedienung), gezielte Datenmanipulation als auch eventuelle Softwarefehler berücksichtigen. Deshalb müssen bei der Entwicklung mögliche Parameterabweichungen gründlich analysiert und Datentypen durch vorausgehende Spezifikation des Eingabe- und Verarbeitungsprozesses möglichst präzise definiert werden.
 
-### [Ansätze](#ansaetze)
+## [Ansätze](#ansaetze)
 {: #ansaetze}
 
 Eine Prüfung solcher Daten kann auf verschiedenen Wegen und hinsichtlich unterschiedlicher Kriterien erfolgen. Motivation für eine Datenprüfung kann u.a. sein:
@@ -47,7 +47,7 @@ Eine Prüfung solcher Daten kann auf verschiedenen Wegen und hinsichtlich unters
 
 Je nach Maßgabe zum gewählten Prüfverhalten der Anwendung können daraus verschiedene Prüfarten abgeleitet werden.
 
-#### [Typprüfung und semantische Validierung](#typpruefung-und-semantische-validierung)
+### [Typprüfung und semantische Validierung](#typpruefung-und-semantische-validierung)
 {: #typpruefung-und-semantische-validierung}
 
 Diese Bereiche sind nicht vollständig voneinander zu trennen, besonders da PHP eine schwach typisierte Sprache ist und Request-Parameterdaten bspw. generell als String übertragen werden (vgl. [Formularverarbeitung]({{ page.root }}/jumpto/form/)).
@@ -67,7 +67,7 @@ Beispiele abstrakter Feldtypen:
 - Eine deutsche Postleitzahl ist eine 5-stellige Zahl, die aber führende Nullen erlaubt
 
 
-#### [Anwendungsspezifische Prüfkriterien](#anwendungsspezifische-pruefkriterien)
+### [Anwendungsspezifische Prüfkriterien](#anwendungsspezifische-pruefkriterien)
 {: #anwendungsspezifische-pruefkriterien}
 
 Beispiele für Anwendungsspezifika:
@@ -78,7 +78,7 @@ Beispiele für Anwendungsspezifika:
 - Eine Textangabe darf nicht länger als 255 sein (z.B. wegen der Maximalgröße eines Datenbankfeldes)
 - Eine Angabe ist als erforderlich markiert und darf kein leerer String sein
 
-#### [Sicherheitsrelevante Prüfkriterien](#sicherheitsrelevante-pruefkriterien)
+### [Sicherheitsrelevante Prüfkriterien](#sicherheitsrelevante-pruefkriterien)
 {: #sicherheitsrelevante-pruefkriterien}
 
 Hierunter fallen alle Kriterien, die die Anzeige oder Funktion der Anwendung bewußt manipulieren (Code Injection, XSS) oder versuchen, Zugang auf nicht dafür vorgesehene Ressourcen oder Daten zu erlangen (eval geparster Code, als Pfadbestandteile eingebundene URL Parameter ...).
@@ -102,7 +102,7 @@ Je nach Ansatz und Unsicherheitsfaktor kann eine Validierung hier den Abbruch ei
 
 Sicherheitsrelevante Validierung kann also allgemein als informationell verstanden werden (bspw. zur Angriffsanalyse einer Anwendung herangezogen werden) oder dem frühzeitigem Abbruch der Applikation dienen.
 
-### [Zu prüfende Daten](#zu-pruefende-daten)
+## [Zu prüfende Daten](#zu-pruefende-daten)
 {: #zu-pruefende-daten}
 
 Generell gilt:
@@ -111,7 +111,7 @@ Generell gilt:
 (Leitsatz: *never trust user input* – vertraue niemals Nutzereingaben)</div>
 
 
-#### [URL Parameter und Forumlareingaben](#url-parameter-und-forumlareingaben)
+### [URL Parameter und Forumlareingaben](#url-parameter-und-forumlareingaben)
 {: #url-parameter-und-forumlareingaben}
 
 Die offensichtlichsten Daten sind die Parameter, die durch Auswertung der URL oder Eingabe in Formularfelder entstehen.
@@ -125,24 +125,24 @@ Keinesfalls zu vergessen ist die Möglichkeit, dass weitere, nicht vorgesehene P
 
 Daneben gibt es aber weitere Daten, die nicht zu vergessen sind:
 
-#### [Gespeicherte Daten](#gespeicherte-daten)
+### [Gespeicherte Daten](#gespeicherte-daten)
 {: #gespeicherte-daten}
 
 Alle Daten, die die Webanwendung ohne vorherige Filterung/Validierung speichert und später verwendet, sind Usereingaben gleichzusetzen und spätestens bei der Verwendung zu validieren. Da dieses Verfahren Fehlerpotential nahezu impliziert, ist von der Speicherung ungefilteter Daten generell abzuraten.
 
-#### [Cookiedaten](#cookiedaten)
+### [Cookiedaten](#cookiedaten)
 {: #cookiedaten}
 
 Auch wenn ein Cookie zunächst sicher scheint, weil alle Daten ja vom Server gesetzt werden – der Cookie liegt auf dem Client-PC und damit ist es dem Client vorbehalten, diese Daten bei jedem Request zu übersenden. Sowohl der Cookie selbst (Editieren der Datei) als auch die Headerangabe im Verbindungsaufruf können manipuliert werden.
 
 Auch für Cookiedaten gilt das oben gesagte: Nur weil die Anwendung selbst keinen Cookie erstellt, ist das kein Garant dafür, dass nicht trotzdem Cookiedaten übersandt werden.
 
-#### [Browserdaten](#browserdaten)
+### [Browserdaten](#browserdaten)
 {: #browserdaten}
 
 Eine Reihe von Parametern wird vom Browser selbst mitgesendet. Typische, oft auch ausgewertete Daten sind hier bspw. eine Browserkennung, Sprach- und Codierungseinstellungen.
 
-##### [Fallstrick vermeintliche Serverdaten](#fallstrick-vermeintliche-serverdaten)
+#### [Fallstrick vermeintliche Serverdaten](#fallstrick-vermeintliche-serverdaten)
 {: #fallstrick-vermeintliche-serverdaten}
 
 Erst eine intensive Beschäftigung mit Client-Server-Kommunikation offenbart den Umfang der Problematik. Parameterdaten sind weit mehr als Formulareingaben und URL-Parameter. Auch viele Angaben wie Browsersignatur oder aktueller Scriptname werden vom Browser erzeugt und werden als Teil des übermittelten Datenstroms an verschiedenen Stellen Teil einer Manipulationsgefahr.
@@ -161,10 +161,10 @@ Bsp.
 <div class="alert alert-danger"><strong>Achtung! </strong>Häufig gemachter Fehler: Das vorliegende Beispiel zeigt eine weit verbreitete, sicherheitskritische Angabe, um eine Form-Action wieder auf das aktuelle Script zu leiten (Affenformular).</div>
 
 
-### [Abgrenzung](#abgrenzung)
+## [Abgrenzung](#abgrenzung)
 {: #abgrenzung}
 
-#### [Datenfilterung](#datenfilterung)
+### [Datenfilterung](#datenfilterung)
 {: #datenfilterung}
 
 Genau genommen ist die Eingabenfilterung eher ein Teilbereich der Formularverarbeitung, kann aber auch nicht gänzlich losgelöst von der Validierung betrachtet werden. Insbesondere muß eine Validierung als reiner Erkennungsvorgang stets vor der Eingabefilterung (also der expliziten Löschung oder Aufbereitung von Fehlwerten) erfolgen. Desweiteren kann eine Filterung bestimmten Arten der Validierung vorangestellt werden und den Prozess vereinfachen.
@@ -200,6 +200,6 @@ if (1000 < $strlen($meldung)) {
 
 Der Filter zur Entfernung von HTML Formatierungen wird vorgezogen, um die Validierung der Textlänge auf den tatsächlich verarbeiteten Text anzuwenden. Codepostings ohne Plaintext ergäben sonst nach der Filterung einen leeren Eintrag.
 
-#### [Verifikation](#verifikation)
+### [Verifikation](#verifikation)
 {: #verifikation}
 

@@ -53,19 +53,19 @@ inhalt:
 Dieser Guide soll (allem voran Einsteigern) einen Einblick in das Abhängigkeits-Management-Werkzeug [Composer](http://getcomposer.org/) und das Komponenten-Repository [Packagist.org](http://packagist.org/) bieten. In diesem Guide wird speziell auf den Installations- und Verwendungsprozess unter Microsoft Windows eingegangen.
 
 
-### [Was ist Composer?](#was-ist-composer)
+## [Was ist Composer?](#was-ist-composer)
 {: #was-ist-composer}
 
 Composer ist ein auf PHP basierender Dependency Manager (Abhängigkeitsverwalter). Dependency Manager dienen dazu Anwendungen modular zu warten - also den Prozess der Wartung von Anwendungskomponenten wie Frameworks und Libraries auf ein Minimum zu reduzieren. Außerdem dienen Dependency Manager dazu den ständig wiederkehrenden Prozess der *Komponenten-Installation* bei neue erstellten Projekten stark zu vereinfachen.
 
 
-### [Wozu dient Packagist.org?](#wozu-dient-packagist-org)
+## [Wozu dient Packagist.org?](#wozu-dient-packagist-org)
 {: #wozu-dient-packagist-org}
 
 Packagist.org ist das zu Composer gehörende [Repository](http://de.wikipedia.org/wiki/Repository), quasi ein Verzeichnis darüber, was via Composer verwendet werden kann. Packagist.org ist aber nur eine Quelle aus der Composer Komponenten in euer Projekt *einspeisen* kann.
 
 
-### [Ich bin Anfänger, brauche ich Composer?](#ich-bin-anfaenger-brauche-ich-composer)
+## [Ich bin Anfänger, brauche ich Composer?](#ich-bin-anfaenger-brauche-ich-composer)
 {: #ich-bin-anfaenger-brauche-ich-composer}
 
 Nicht ganz leicht zu beantworten. Es hängt zum einen davon ab auf welchem Wissensstand du im Moment bist. Grundsätzlich erleichtert Composer deine Arbeit und erspart dir kompliziertes *durch die Welt includen*. Zum anderen gibt Composer einen Autoloading-Mechanismus vor, den du verwenden solltest (aber nicht musst) damit du deine Anwendungen nicht mit Teilprozesse überlädst die eigentlich das selbe tun.
@@ -73,10 +73,10 @@ Nicht ganz leicht zu beantworten. Es hängt zum einen davon ab auf welchem Wisse
 Außerdem bedient der Großteil der Libraries und Frameworks die Composer liefern kann die Objektorientierte Entwicklung. Solltest du mit OOP (noch) nichts am Hut haben, ist Composer vorerst uninteressant für dich.
 
 
-### [Composer Installation](#composer-installation)
+## [Composer Installation](#composer-installation)
 {: #composer-installation}
 
-#### [Vorbereitung](#vorbereitung)
+### [Vorbereitung](#vorbereitung)
 {: #vorbereitung}
 
 Composer selbst benötigt zum Reibungslosen ablauf des Paket-Imports der Packagist.org-Pakete [Git](http://de.wikipedia.org/wiki/Git). Git ist ein Versionskontrollsystem (VCS) das Composer als Werkzeug nutzt um Komponenten direkt von [Github.com](http://github.com/) in deinen Projektordner zu importieren.
@@ -98,7 +98,7 @@ Lade dir Git-SCM [herunter](http://git-scm.com/download/win) und installiere es 
 Gratulation, du verfügst nun über eine voll funktionsfähige Git-Installation.
 
 
-#### [Installation](#installation)
+### [Installation](#installation)
 {: #installation}
 
 Composer selbst steht zum einen als phar-Executable bereit, verwenden wirst du allerdings (da du unter Windows arbeitest) den Composer Windows Installer, welchen du hier [runterlädst](http://getcomposer.org/Composer-Setup.exe).
@@ -115,7 +115,7 @@ Composer selbst steht zum einen als phar-Executable bereit, verwenden wirst du a
 Gratulation, du verfügst nun über eine funktionierende Composer-Installation.
 
 
-#### [Testen der Composer Konnektivität und Git-Verfügbarkeit in der CL (Eingabeaufforderung)](#testen-der-composer-konnektivitaet-und-git-verfuegbarkeit-in-der-cl-eingabeaufforderung)
+### [Testen der Composer Konnektivität und Git-Verfügbarkeit in der CL (Eingabeaufforderung)](#testen-der-composer-konnektivitaet-und-git-verfuegbarkeit-in-der-cl-eingabeaufforderung)
 {: #testen-der-composer-konnektivitaet-und-git-verfuegbarkeit-in-der-cl-eingabeaufforderung}
 
 In wenigen Netzwerkumgebungen kann es zu schwierigkeiten Zwischen deinem PC und dem Host den Composer nutzt kommen. Noch geringer ist die Chance das der Installationsprozess eine defekte Composer-Konfiguration mitgeliefert hat. Damit du diesem Problem vorbeugen kannst, teste die Konnektivität von Composer wie folgt:
@@ -179,7 +179,7 @@ Soweit so gut, Composer ist nun einsatzbereit.
 Die Installation von Composer ist nun abgeschlossen. Im folgenden beschäftigst du dich nun damit, Composer zu verwenden:
 
 
-### [Komponenten Installieren](#komponenten-installieren)
+## [Komponenten Installieren](#komponenten-installieren)
 {: #komponenten-installieren}
 
 Composer benötigt zum durchführen der Installation und dem einspielen von Updates eine Datei mit dem Namen **composer.json** im Hauptverzeichnis deiner Anwendung. Wie die Datei-Erweiterung schon verrät ist diese Datei im JSON-Format gehalten. Composer wird bei der Installation der Komponenten automatisch ein *vendor*-Verzeichnis anlegen, in dem der Autoloader und alle installierten Komponenten hinterlegt werden. Später, wenn dein Knowhow und der Umgang mit Composer sicherer geworden ist kannst du dieses Verhalten auch verändern, dieses Guide bezieht sich allerdings auf die Vorgabe von Composer.
@@ -271,7 +271,7 @@ Wie du siehst, wurden mehrere Komponenten Installiert, da bspw. Silex auf mehrer
 Einmal installierte Komponenten hinterlegen im Hauptverzeichnis eine composer.lock, dort ist gespeichert was wo wann wie installiert wurde. Außerdem verhindert diese Datei ein nochmaliges ausführen des install-Befehls im selben Verzeichnis. Ab jetzt musst du deine Installation updaten:
 
 
-### [Komponenten und Installationen updaten](#komponenten-und-installationen-updaten)
+## [Komponenten und Installationen updaten](#komponenten-und-installationen-updaten)
 {: #komponenten-und-installationen-updaten}
 
 Wann immer du deine composer.json veränderst führe wie bei der Komponenten-Installation composer aus, allerdings nicht mit der Ergänzung *install* sondern mit der Ergänzung *update*
@@ -281,7 +281,7 @@ composer update
 ~~~
 
 
-### [Komponenten verwenden](#komponenten-verwenden)
+## [Komponenten verwenden](#komponenten-verwenden)
 {: #komponenten-verwenden}
 
 Um die Komponenten verwenden zu können ist nicht viel Mühe notwendig. Als Beispiel erstelle ein PHP-Script im Anwendungsverzeichnis mit dem Namen `index.php`, dort testen wir aus der vorherigen Installation eine einfache auf Silex basierende Anwendung:
@@ -307,7 +307,7 @@ $app->run();
 Glückwunsch, du hast nun Composer erfolgreich getestet und verfügst nun über einen soliden Zugang zum Packagist-Repository.
 
 
-### [Appendix](#appendix)
+## [Appendix](#appendix)
 {: #appendix}
 
 Vorschläge, Anregungen, Feedback? Dann bitte [hier in diesem Forumsthread](http://www.php.de/php-einsteiger/98949-guide-composer-kickstart-guide.html) posten.

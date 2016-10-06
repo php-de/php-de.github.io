@@ -42,10 +42,10 @@ inhalt:
 entry-type: in-discussion
 ---
 
-### [Serverpfade](#serverpfade)
+## [Serverpfade](#serverpfade)
 {: #serverpfade}
 
-#### [Anwendung](#anwendung)
+### [Anwendung](#anwendung)
 {: #anwendung}
 
 Serverpfade sind relevant für
@@ -55,7 +55,7 @@ Serverpfade sind relevant für
 
 
 
-#### [Aufbau](#aufbau)
+### [Aufbau](#aufbau)
 {: #aufbau}
 
 Serverpfade bestehen aus Verzeichnisnamen, die durch Slashes voneinander
@@ -66,7 +66,7 @@ Pfadtrennzeichen, Linux dagegen `/`. Unter PHP ist das irrelevant. Da `\` aber
 eine Sonderbedeutung in Strings hat (Escapezeichen), empfiehlt sich eine
 generelle Verwendung von `/`, auch unter Windows-Serversystemen.
 
-#### [Absolute Serverpfade](#absolute-serverpfade)
+### [Absolute Serverpfade](#absolute-serverpfade)
 {: #absolute-serverpfade}
 
 **Absolute Serverpfade** beginnen mit `/` und beziehen sich stets auf das
@@ -79,7 +79,7 @@ referenzierte Pfadangabe `/abc/cde` bezieht sich dann auf den Systempfad
 
 Alle anderen Pfade werden als relativ interpretiert.
 
-#### [Relative Serverpfade](#relative-serverpfade)
+### [Relative Serverpfade](#relative-serverpfade)
 {: #relative-serverpfade}
 
 **Relative Serverpfade** beginnen mit einer Verzeichnisangabe (`.`, `..`, ein
@@ -102,7 +102,7 @@ Hinweise:
 
 
 
-### [Webpfade](#webpfade)
+## [Webpfade](#webpfade)
 {: #webpfade}
 
 Webpfade adressieren über einen URL bestimmte Ressourcen (Dateien oder
@@ -119,7 +119,7 @@ abgehandelt werden, das den URL in seine Bestandteile zerlegt und anhand dieser
 die korrekte Ausgabe generiert (manchmal als [Front Controller
 pattern](https://en.wikipedia.org/wiki/Front_Controller_pattern) bezeichnet).
 
-#### [Anwendung](#anwendung-2)
+### [Anwendung](#anwendung-2)
 {: #anwendung-2}
 
 Webpfade
@@ -131,7 +131,7 @@ Webpfade
 - können über sogenannte URL-Wrapper Dateizugriffe auf fremde Server
   ermöglichen (siehe dazu Abschnitt URL-Wrapper)
 
-#### [Aufbau](#aufbau-2)
+### [Aufbau](#aufbau-2)
 {: #aufbau-2}
 
 Wenn sie physische Dateien referenzieren, unterliegen Webpfade zum einen den
@@ -140,7 +140,7 @@ vergleichbare Techniken). Desweiteren ist die Menge der für URLs gültigen
 Zeichen weiter eingeschränkt. Hier kommen
 [Escapezeichenketten](https://de.wikipedia.org/wiki/URL-Encoding) zum Einsatz.
 
-#### [Prinzip](#prinzip)
+### [Prinzip](#prinzip)
 {: #prinzip}
 
 Die Grundlage der URL-Adressierung bildet das DNS System und das Routing über
@@ -169,7 +169,7 @@ auflösen und das Dokument ausliefern.
 
 Bezugnehmend auf diese Aussagen, ergeben sich folgende Referenzierungsarten:
 
-#### [Vollständige URL-Angaben](#vollstaendige-url-angaben)
+### [Vollständige URL-Angaben](#vollstaendige-url-angaben)
 {: #vollstaendige-url-angaben}
 
 Für diese gilt eben Gesagtes. Domain und Subdomain bestimmen das physische
@@ -181,14 +181,14 @@ Beispiel: Bezieht sich die Domain `http://example.com/` auf das Verzeichnis
 `http://example.com/images/test.jpg` die Datei
 `/homepages/47/u110815/htdocs/images/test.jpg` auf der entsprechenden Maschine.
 
-#### [Absolute Webpfade](#absolute-webpfade)
+### [Absolute Webpfade](#absolute-webpfade)
 {: #absolute-webpfade}
 
 Die aktuelle Domain (oben `http://example.com/`) kann durch `/` angesprochen
 werden. Es ergibt sich eine absolute Pfadangabe, etwa `/images/test.jpg`, für
 eben genanntes Beispiel.
 
-#### [Relative Webpfade](#relative-webpfade)
+### [Relative Webpfade](#relative-webpfade)
 {: #relative-webpfade}
 
 Analog zu absoluten Serverpfaden kann eine Ressource auch relativ zum aktuellen
@@ -197,7 +197,7 @@ Verzeichnispfad oder der leere String gültig. Die Angabe ist dabei relativ zum
 URL des HTML-Dokuments. Es ist dabei natürlich nicht möglich, den Document-Root
 zu verlassen, indem ausreichend oft `../` in den Pfad eingefügt wird.
 
-#### [Analogie](#analogie)
+### [Analogie](#analogie)
 {: #analogie}
 
 Der Serverpfad ist ein Dateisystempfad auf einer konkreten Maschine. Webpfade
@@ -218,7 +218,7 @@ Hinweise:
 
 
 
-### [Komplettbeispiel](#komplettbeispiel)
+## [Komplettbeispiel](#komplettbeispiel)
 {: #komplettbeispiel}
 
 Struktur des Projekts im Dateisystem:
@@ -304,7 +304,7 @@ inhalt.txt:
 </p>
 ~~~
 
-### [Sichtbarkeit](#sichtbarkeit)
+## [Sichtbarkeit](#sichtbarkeit)
 {: #sichtbarkeit}
 
 Als logische Konsequenz aus den obigen Aussagen zum Document-Root ergibt sich, dass
@@ -334,15 +334,15 @@ Eine alternative Zugriffssicherung wird in der Praxis durch Einsatz einer .htacc
 
 
 
-### [Besonderheiten](#besonderheiten)
+## [Besonderheiten](#besonderheiten)
 {: #besonderheiten}
 
-#### [mod_rewrite](#mod_rewrite)
+### [mod_rewrite](#mod_rewrite)
 {: #mod_rewrite}
 
-#### [URL-Wrapper](#url-wrapper)
+### [URL-Wrapper](#url-wrapper)
 {: #url-wrapper}
 
-#### [(Dateisystem)-Links](#dateisystem-links)
+### [(Dateisystem)-Links](#dateisystem-links)
 {: #dateisystem-links}
 

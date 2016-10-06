@@ -47,10 +47,10 @@ Zeichen auf einen eingeschränkten Sprachraum.
 
 
 
-### [Beispiele](#beispiele)
+## [Beispiele](#beispiele)
 {: #beispiele}
 
-#### [HTML](#html)
+### [HTML](#html)
 {: #html}
 
 HTML benutzt wenige Sonderzeichen, wie `" < > &`, die immer maskiert werden
@@ -73,7 +73,7 @@ Definition einer Textbox in HTML mit problematischen Inhalt:
 </textarea>
 ~~~
 
-#### [PHP-Strings](#php-strings)
+### [PHP-Strings](#php-strings)
 {: #php-strings}
 
 Strings in PHP haben zwei relevante Ebenen. Auf der einen Seite werden Strings
@@ -96,7 +96,7 @@ Zeichenmaskierung eines Tab-Zeichens:
 $foo = "Vor und \t nach dem Tab.";
 ~~~
 
-#### [SQL](#sql)
+### [SQL](#sql)
 {: #sql}
 
 Ebengesagtes gilt genauso für Angaben von SQL-Strings (CHAR-Typen). Zusätzlich
@@ -117,7 +117,7 @@ Zeichenkollisionen PHP-String und SQL-Stringbegrenzer:
 $query = 'INSERT INTO Users (id , name) VALUES (23 , 'Horst')';
 ~~~
 
-#### [Reguläre Ausdrücke](#regulaere-ausdruecke)
+### [Reguläre Ausdrücke](#regulaere-ausdruecke)
 {: #regulaere-ausdruecke}
 
 Reguläre Ausdrücke haben eine komplexe Syntax mit sehr vielen
@@ -130,7 +130,7 @@ im Ausdruck unmaskiert zu unerwarteten Ergebnissen führen können.
 
 
 
-### [Relevanz](#relevanz)
+## [Relevanz](#relevanz)
 {: #relevanz}
 
 Zeichenmaskierung wird immer dann wichtig, wenn die Gefahr besteht, dass
@@ -155,10 +155,10 @@ Anwendung, die mit Usereingaben und dynamischen Ausdrücken hantiert.
 
 
 
-### [Lösung](#loesung)
+## [Lösung](#loesung)
 {: #loesung}
 
-### [Referenzen](#referenzen)
+## [Referenzen](#referenzen)
 {: #referenzen}
 
 * [http://wiki.selfhtml.org/wiki/Artikel:Kontextwechsel](http://wiki.selfhtml.org/wiki/Artikel:Kontextwechsel)

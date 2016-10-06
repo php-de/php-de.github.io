@@ -23,7 +23,7 @@ inhalt:
 ---
 
 
-### [E-Mail-Klassen](#e-mail-klassen)
+## [E-Mail-Klassen](#e-mail-klassen)
 {: #e-mail-klassen}
 
 <p style="font-size: 10pt; font-family: Courier New, Consolas">

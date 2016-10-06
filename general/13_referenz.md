@@ -31,7 +31,7 @@ inhalt:
 **Referenzen** in PHP sind gleichberechtigte Aliase für Variablennamen. Sie dienen dazu, mit verschiedenen Variablennamen auf dieselbe Speicherstelle zugreifen zu können. Referenzen können auch [namensraumübergreifend]({{ page.root }}/jumpto/geltungsbereich-namensraum/) eingesetzt werden.
 
 
-### [Variablen und Referenzen](#variablen-und-referenzen)
+## [Variablen und Referenzen](#variablen-und-referenzen)
 {: #variablen-und-referenzen}
 
 Eine Variable ist ein Bezeichner für eine Speicherstelle, in der ein Wert abgelegt ist. Die Variable enthält also selbst keinen Wert, sondern verweist auf eine Adresse im Arbeitsspeicher. Eine Referenz ist nichts anderes als ein weiterer Bezeichner für dieselbe Speicheradresse. Es existieren fortan zwei Variablen mit demselben Ziel. Diese beiden Variablen sind gleichberechtigt und voneinander unabhängig. Es existiert also keine „Originalvariable“, von der die danach angelegte Referenz in irgendeiner Weise abhängt.
@@ -81,7 +81,7 @@ Die Ausgabe:
 ~~~
 
 
-### [Referenzen auf nicht existierende Variablen](#referenzen-auf-nicht-existierende-variablen)
+## [Referenzen auf nicht existierende Variablen](#referenzen-auf-nicht-existierende-variablen)
 {: #referenzen-auf-nicht-existierende-variablen}
 
 Was passiert aber, wenn eine Referenz auf eine nicht existierende Variable erstellt wird? Die Referenz würde in dem Falle ins Leere verweisen. Für diesen Fall ist in PHP ein Schutzmechanismus eingebaut. Nicht existierende Variablen werden automatisch mit `null` belegt.

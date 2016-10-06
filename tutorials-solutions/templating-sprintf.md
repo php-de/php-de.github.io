@@ -32,7 +32,7 @@ entry-type: in-discussion
 ---
 
 
-### [Ausgangssituation](#ausgangssituation)
+## [Ausgangssituation](#ausgangssituation)
 {: #ausgangssituation}
 
 Als Beispiel nehmen wir eine Methode eines Fehlerobjektes, die beliebige
@@ -94,7 +94,7 @@ Parameters nach `int`, führende Nullen oder Leerzeichen.
 
 
 
-### [Lösung](#loesung)
+## [Lösung](#loesung)
 {: #loesung}
 
 Zunächst die Funktion, die ich `vsprintf_assoc` getauft habe. Genauso denkbar
@@ -254,7 +254,7 @@ Möglicherweise nicht das beste Ausgangsbeispiel, aber ich denke der ein oder
 andere wird eine geeignete Anwendung finden…
 
 
-### [Quellen](#quellen)
+## [Quellen](#quellen)
 {: #quellen}
 
 * PHP Manual Funktionreferenzen: [`printf`](http://php.net/printf),

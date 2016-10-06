@@ -48,13 +48,13 @@ inhalt:
 ---
 
 
-### [Lass Dir Fehler ausgeben](#lass-dir-fehler-ausgeben)
+## [Lass Dir Fehler ausgeben](#lass-dir-fehler-ausgeben)
 {: #lass-dir-fehler-ausgeben}
 
 Nachfolgend Beispiele zur Fehlerausgabe. Natürlich kann man auch bei der Entwicklung schon vernünftig mit Exceptions arbeiten. In jedem Fall haben im Live-System `die()`-Anweisungen nichts zu suchen! Technische Fehlermeldungen sind nicht für Anwender gedacht und beinhalten ein Gefahrenpotential, weil Sie potentiellen Angreifern wertvolle Informationen liefern.
 
 
-#### [In der Entwicklungsumgebung](#entwicklungsumgebung)
+### [In der Entwicklungsumgebung](#entwicklungsumgebung)
 {: #entwicklungsumgebung}
 
 ~~~ php
@@ -68,7 +68,7 @@ if (false === mysqli_query($dblink, $query)) {
 ~~~
 
 
-#### [In der Produktivumgebung](#produktivumgebung)
+### [In der Produktivumgebung](#produktivumgebung)
 {: #produktivumgebung}
 
 ~~~ php
@@ -78,7 +78,7 @@ if (false === mysqli_query($dblink, $query)) {
 }
 ~~~
 
-#### [Zentrale Angabe](#zentral)
+### [Zentrale Angabe](#zentral)
 {: #zentral}
 
 Die Art der Fehlerausgabe kann auch zentral für die DB-Verbindung definiert werden:
@@ -87,7 +87,7 @@ Die Art der Fehlerausgabe kann auch zentral für die DB-Verbindung definiert wer
 - PDO: [http://php-de.github.io/jumpto/pdo/#create-conn](http://php-de.github.io/jumpto/pdo/#create-conn) -> Parameter `PDO::ATTR_ERRMODE`
 
 
-### [Lass Dir die Query ausgeben](#lass-dir-die-query-ausgeben)
+## [Lass Dir die Query ausgeben](#lass-dir-die-query-ausgeben)
 {: #lass-dir-die-query-ausgeben}
 
 PHP-generierte Queries sind meistens dynamisch (also mit variablen Parametern) und werden damit schnell unübersichtlich:
@@ -101,17 +101,17 @@ PHP-generierte Queries sind meistens dynamisch (also mit variablen Parametern) u
 Bei der Fehlersuche sollte die erste Maßnahme sein, sich die „gerenderte“ Query ausgeben zu lassen, also den Querystring, der auch an die Datenbank via `mysqli_query()` übergeben wird.
 
 
-### [Keywords](#keywords)
+## [Keywords](#keywords)
 {: #keywords}
 
 Keywords sind heiße Kandidaten für unbestimmbare Fehler. Konsultiere das Datenbank-Manual und prüfe die Liste der reservierten Wörter.
 
 Datenbanken benutzen Keywords in Ihrer Syntax, die dann nicht gleichzeitig Feldnamen sein sollten. Das kann zu schwer bestimmbaren Syntaxfehlern führen. So sind bspw. „Alter“, „Show“ oder „Limit“ klassische Feldnamen, die zu Fehlern führen. Merke: Am besten durchweg Bezeichner in Backticks einschließen.
 
-### [Proaktive Maßnahmen](#proaktive-massnahmen)
+## [Proaktive Maßnahmen](#proaktive-massnahmen)
 {: #proaktive-massnahmen}
 
-#### [Schreibe mehrzeilig](#schreibe-mehrzeilig)
+### [Schreibe mehrzeilig](#schreibe-mehrzeilig)
 {: #schreibe-mehrzeilig}
 
 Negativbeispiel - unübersichtliches Statement
@@ -155,14 +155,14 @@ SELECT Name,
 ";
 ~~~
 
-#### [Benutze Backticks (MySQL)](#benutze-backticks-mysql)
+### [Benutze Backticks (MySQL)](#benutze-backticks-mysql)
 {: #benutze-backticks-mysql}
 
 In Backticks eingeschlossene Begriffe kollidieren nicht mit den Syntaxbestandteilen der Sprache. Damit können Keyword-Probleme umgangen werden.<br>
 **Achtung!** Backticks ist MySQL-spezifisch. Wird ein anderes DBMS als MySQL benutzt (z.b. MS-SQL, PostgreSQL, ...), so sind sehr warscheinlich andere Zeichen zu verwenden, um die selbe Wirkung zu erzielen. Ein Blick in die jeweilige Doku hilft hier weiter.
 
 
-##### [Benutze richtige Backticks](#benutze-richtige-backticks)
+#### [Benutze richtige Backticks](#benutze-richtige-backticks)
 {: #benutze-richtige-backticks}
 
 Backticks sind keine String-Begrenzer!
@@ -178,7 +178,7 @@ Begrenzer  Bedeutung
 Strings gehören nicht in Backticks, Feldnamen nicht in Stringbegrenzer. Auch wenn MySQL hier manchmal etwas weniger strikt ist, bitte gar nicht erst angewöhnen!
 
 
-##### [Benutze Backticks richtig](#benutze-backticks-richtig)
+#### [Benutze Backticks richtig](#benutze-backticks-richtig)
 {: #benutze-backticks-richtig}
 
 Richtig:
@@ -197,7 +197,7 @@ Falsch:
 ~~~
 
 
-#### [Benutze Stringbegrenzer konsequent](#benutze-stringbegrenzer-konsequent)
+### [Benutze Stringbegrenzer konsequent](#benutze-stringbegrenzer-konsequent)
 {: #benutze-stringbegrenzer-konsequent}
 
 Wie eben geschrieben erlaubt SQL zwei verschiedene Stringbegrenzer - einfache und doppelte Hochkommata. Da das gleiche für PHP gilt, ist es eine gute Idee, konsequent einen Stringbegrenzer für PHP und einen für SQL zu benuzten, um Escaping vermeiden zu können. Diese Überlegungen haben nichts mit Feldinhalten zu tun (und dort evtl. auftretenden Hochkommata); hierfür ist allein `mysqli_real_escape_string()` verantwortlich!
@@ -269,7 +269,7 @@ $query = 'SELECT `Name` ,
 In den jeweils ersten Beispielen wird eine Variable im String verwendet (Variablenparsing), was als Stringbegrenzer für PHP die doppelten Hochkommata erfordert. Im Positivbesipiel ist die selbe Query in Alternativschreibweise mit einfachen Hochkommata ergänzt.
 
 
-### [Last but not least](#last-but-not-least)
+## [Last but not least](#last-but-not-least)
 {: #last-but-not-least}
 
 Wenn Du trotzdem im Forum posten musst, gib uns alle Informationen, die Dir die obigen Schritte geliefert haben: sauber formatierte Query, SQL-Fehlermeldung.

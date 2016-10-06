@@ -20,7 +20,7 @@ inhalt:
 entry-type: in-discussion
 ---
 
-### [Datums- und Zeitangaben](#datum-und-zeit)
+## [Datums- und Zeitangaben](#datum-und-zeit)
 {: #datum-und-zeit}
 
 (Für Linux, Windows und OS X mit `setlocale` und Ausgabe in UTF-8.)
@@ -45,7 +45,7 @@ setlocale (LC_ALL, 'Russian');
 iconv("CP1251", "utf-8", strftime("%B" , $date->getTimestamp()))';
 ~~~
 
-#### [Allgemeines und Ausgabe unter UTF-8](#utf8-allgemein)
+### [Allgemeines und Ausgabe unter UTF-8](#utf8-allgemein)
 {: #utf8-allgemein}
 
 Ländercodes findet man unter [http://www.w3.org/WAI/ER/IG/ert/iso639.htm](http://www.w3.org/WAI/ER/IG/ert/iso639.htm). Es sind nicht immer alle Codes auf dem jeweiligen System verfügbar, daher gilt es zu testen. Bei nicht UTF-8 Codes wie Windows ("deu" oder "German") muss man die Rückgabe von `strftime` zusätzlich vom ursprünglichen Zeichencode in den von UTF-8 konvertieren. Bei Windows-1252 geschieht dies zum Beispiel mit `utf8_encode`. Für andere Zeichenkodierungen wie Russisch muss `iconv` angewendet werden. Die Ausgabe auf dem Zielsystem (Client oder Browser) wird durch die Zeichenkodierung vorher festgelegt. UTF-8 ist hier laut W3C der zu verwendende Standard. Ist im Server keine Zeichenkodierung vorgegeben, muss bei Ausgabe durch den Metatag Charset die Ausgabe auf UTF-8 festgelegt werden. In jedem Fall sollte das Script im Editor als UTF-8-Datei abgespeichert werden, um hier nicht noch zusätzlichen Zeichensalat entstehen zu lassen.
@@ -56,12 +56,12 @@ Zusammengefasst:
 - Server UTF-8 ausgeben lassen (Content-Type: text/html; charset=utf-8).
 - HTML5-Doctype und Charset UTF-8 verwenden.
 
-#### [Linux-Server und UTF-8](#utf8-linux)
+### [Linux-Server und UTF-8](#utf8-linux)
 {: #utf8-linux}
 
 Unter Linux kann man sich die verfügbaren Ländercodes mit `locale -a` in der Konsole anzeigen lassen. Läuft das Script auf einem Linux-Server, kann man auf die UTF-8-Zeichensätze zurückgreifen, indem man `.utf8` hinten dranhängt. Also `setlocale(LC_TIME, 'de_DE.utf8')` für Ausgaben der Kalendernamen auf Deutsch mit korrekten Umlauten. Man spart sich dadurch die Konvertierung. Dies gilt nur für Linux Server mit zum Beispiel Apache.
 
-#### [Windows-Server und UTF-8](#utf8-windows)
+### [Windows-Server und UTF-8](#utf8-windows)
 {: #utf8-windows}
 
 Für Windows sind die ausgeschriebenen Ländernamen zu bevorzugen, da sie schneller abgearbeitet werden (laut MSDN). Also `setlocale(LC_TIME, 'German')` statt `setlocale(LC_TIME, 'deu')` oder `setlocale(LC_TIME, 'Ger')`. Unter Windows-Server fallen auch alle WAMP- oder XAMPP-Installationen, da hier auf Windows-Libraries zurückgegriffen wird.

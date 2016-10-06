@@ -45,7 +45,7 @@ Die folgenden Beispiele nutzten [SPL-Klassen](http://us3.php.net/manual/en/book.
 die in PHP 5.3 hinzugefügt wurden.
 
 
-### [Verzeichnis auslesen](#auslesen)
+## [Verzeichnis auslesen](#auslesen)
 {: #auslesen}
 
 ~~~ php
@@ -65,7 +65,7 @@ foreach ($iterator as $file) {
 Alternativ könnte man hier für einfache Durchläufe auch `glob()` ([Doku](http://php.net/manual/de/function.glob.php)) verwenden.
 
 
-### [Verzeichnis rekursiv auslesen](#auslesen-rekursiv)
+## [Verzeichnis rekursiv auslesen](#auslesen-rekursiv)
 {: #auslesen-rekursiv}
 
 ~~~ php
@@ -85,7 +85,7 @@ foreach ($iterator as $file) {
 ~~~
 
 
-### [Verzeichnis rekursiv auslesen - mit Filter](#auslesen-filter)
+## [Verzeichnis rekursiv auslesen - mit Filter](#auslesen-filter)
 {: #auslesen-filter}
 
 Will man bsp. nur auf spezielle Dateiendung(en) "filtern", könnte man den RegexIterator verwenden.
@@ -111,7 +111,7 @@ foreach ($php_files as $file) {
 ~~~
 
 
-### [Anmerkungen](#anmerkungen)
+## [Anmerkungen](#anmerkungen)
 {: #anmerkungen}
 
 Es gibt noch andere Wege zB `readdir()`, `dir()`,  etc. die jedoch seit Einführung

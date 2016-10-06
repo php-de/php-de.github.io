@@ -40,7 +40,7 @@ Das sogenannte **Affenformular** ist eine Codebasis bei der Verarbeitung von Web
 
 In jedem Fall registriert ein solcher Code einen erfolgreichen Submit (i.A. einen [POST Request]({{ page.root }}/jumpto/request/#post)) und führt eine Folgeaktion (Parameterverarbeitung oder erneutes Darstellen des Formularcodes) aus. Ob eine [Validierung]({{ page.root }}/jumpto/validierung/) der übertragenen Feldwerte noch zum Affenformular gehört ist Ansichtssache.
 
-### [Abgrenzung](#abgrenzung)
+## [Abgrenzung](#abgrenzung)
 {: #abgrenzung}
 
 Im Vergleich zu klassischer, einfacher Formularverarbeitung – Script 1 stellt Formular dar, ein Submit führt nach Script 2, das die Verarbeitung übernimmt – ergibt sich im Affenformular-Verfahren vor allem ein Mehrwert für den Anwender: das Wiederauffüllen von Feld-Werten. Das Script bietet damit
@@ -50,7 +50,7 @@ Im Vergleich zu klassischer, einfacher Formularverarbeitung – Script 1 stellt 
 
 Beide Punkte werden durch eine klassische Fomularverarbeitung allenfalls ansatzweise erreicht. Der wichtige Faktor des Wiederauffüllens von Eingabefeldern kann dort nur durch JavaScript-basierte Rückwärtslinks oder den Back-Button des Browsers erreicht werden und ist damit von der Funktionalität des verwendeten Browsers abhängig.
 
-### [Herleitung aus einer Standard-Formularverarbeitung](#herleitung-aus-einer-standard-formularverarbeitung)
+## [Herleitung aus einer Standard-Formularverarbeitung](#herleitung-aus-einer-standard-formularverarbeitung)
 {: #herleitung-aus-einer-standard-formularverarbeitung}
 
 Am Anfang steht die klassische Formularverarbeitung. Wir haben ein HTML-basiertes Formularscript, dessen Form-Action auf ein serverbasiertes Aktionsscript verweist. Ein Button erzeugt einen Request auf dieses Script und startet dessen Aktion.
@@ -75,7 +75,7 @@ Führt man diesen Schritt konsequent weiter, kann auch die Aktionsfunktionen mit
 ![echtes Affenformular]({{ page.root }}/images/affenform_herleitung_4.gif)
 
 
-### [Umsetzung](#umsetzung)
+## [Umsetzung](#umsetzung)
 {: #umsetzung}
 
 Das Grundprinzip des Affenformulars ist der Selbstaufruf des Scripts. Die bisher auf ein Sende- und ein Empfängerscript verteilten Aufgaben - Form-Darstellung und Parameterableitung/Datenverarbeitung - geschehen nun in einem gemeinsamen Script. Damit ergibt sich eine neue Grundstruktur, da das Script nun verschiedene Zustände (entsprechend der nötigen Aufgabe) annehmen muß.
@@ -83,7 +83,7 @@ Das Grundprinzip des Affenformulars ist der Selbstaufruf des Scripts. Die bisher
 <div class="alert alert-info"><strong>Information: </strong>Innerhalb dieses Kapitels wird stets von "einem Script" gesprochen. Gemeint ist hier aber eine gemeinsame funktionale Einheit verschiedener Komponenten. Natürlich können die einzelnen Bestandteile (Formular HTML, Validierungsfunktion, Logik) durchaus auch auf mehrere Scripte verteilt und via <code>include</code> verbunden werden.</div>
 
 
-#### [Erkennen des Submit](#erkennen-des-submit)
+### [Erkennen des Submit](#erkennen-des-submit)
 {: #erkennen-des-submit}
 
 Entscheidend für die Funktion des Affenformulars ist die Unterscheidung zweier Zustände: des Erstaufrufs und der Formularabsendung.
@@ -92,7 +92,7 @@ Ein Script, das erstmalig aufgerufen wird, kann daran zu erkennen sein, dass es 
 
 Aufgrund Ihrer spezifischen Eigenschaften sind alle Form-Elemente außer Checkboxes und Selectfelder für die Unterscheidung des Status geeignet. Eine Erklärung dafür findet sich weiter unten.
 
-##### [Problematik Enter-Taste](#problematik-enter-taste)
+#### [Problematik Enter-Taste](#problematik-enter-taste)
 {: #problematik-enter-taste}
 
 Als allgemein üblich hat sich die Prüfung eines Submit-Buttons eingebürgert. Bsp.
@@ -123,14 +123,14 @@ if (isset($_POST['Name_des_Textfelds'])) {
 
 Der Vorteil dieser Methode ist, dass das versteckte Textfeld auch als Container für ein [CSRF-Token]({{ page.root }}/jumpto/cross-site-request-forgery/) dienen kann. In diesem Fall erfüllt das Feld gleich zwei Funktionen. Der Eintrag im Feld ist dann nicht mehr unerheblich.
 
-#### [Wiederbefüllen/Wiederauswahl der Elemente](#wiederbefuellen-wiederauswahl-der-elemente)
+### [Wiederbefüllen/Wiederauswahl der Elemente](#wiederbefuellen-wiederauswahl-der-elemente)
 {: #wiederbefuellen-wiederauswahl-der-elemente}
 
 Für die Umsetzung des Abschicken & Wiederauffüllen-Verfahrens müssen die unterschiedlichen Verhalten der HTML Eingabefelder berücksichtigt werden. Besonderes Augenmerk verdienen hier nicht ausgewählte Checkboxen und Radiobuttons, deren Werte beim Submit nicht übertragen werden.
 
 Die Grundlagen zur Übergabe von Formular-Parameterdaten sind bereits unter [Formularverarbeitung]({{ page.root }}/jumpto/form/) beschrieben. Nachfolgend wird darauf aufbauend die Wiederbelegung der Elemente beschrieben.
 
-##### [Textfeld und Inputfeld](#textfeld-und-inputfeld)
+#### [Textfeld und Inputfeld](#textfeld-und-inputfeld)
 {: #textfeld-und-inputfeld}
 
 Hauptartikel [Formularverarbeitung Textfelder]({{ page.root }}/jumpto/textfelder/)
@@ -142,14 +142,14 @@ Die unkomliziertesten Felder. Die Ausgabe erfolgt im value Attribut bzw. zwische
 <textarea name="Textbox"><?php echo $_POST['Textbox']; ?></textarea>
 ~~~
 
-##### [Auswahlelemente](#auswahlelemente)
+#### [Auswahlelemente](#auswahlelemente)
 {: #auswahlelemente}
 
 Hauptartikel Formularverarbeitung [Auswahlfelder]({{ page.root }}/jumpto/auswahlfelder/) | [Auswahllisten (Selections)]({{ page.root }}/jumpto/auswahllisten/)
 
 Für alle anderen Elemente muß die jeweilige Auswahl durch ein spezielles Attribut (je nach Typ checked oder selected) gekennzeichnet werden. Das Vorgehen unterscheidet sich lediglich im Datentyp, das das Element liefert.
 
-##### [Problematik HTML Sonderzeichen](#problematik-html-sonderzeichen)
+#### [Problematik HTML Sonderzeichen](#problematik-html-sonderzeichen)
 {: #problematik-html-sonderzeichen}
 
 Besondere Vorsicht ist bei den Elementtypen Textfeld und Inputfeld geboten: Während bei allen anderen Elementen die Übergabeparameter nur durch PHP verglichen werden, werden hier direkt Daten in den Browserquelltext geschrieben. Da PHP vor dem Browserrendering geschieht, kann dieser natürlich nicht zwischen umschließendem HTML-Formcode und Eingabedaten unterscheiden.

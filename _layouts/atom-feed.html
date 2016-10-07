@@ -3,7 +3,7 @@
     <author>
         <name>PHP.de Community</name>
     </author>
-    <title>{{ page.title }}</title>
+    <title>{{ page.title | xml_escape }}</title>
     <id>http://php.de/virtual/feed/atom/full</id>
     <updated>{{ site.time | date_to_xmlschema }}</updated>
 
@@ -12,12 +12,12 @@
         {% for current in site.pages %}{% if sitegroup.name == current.group %}{% assign cgcount = cgcount |plus:1 %}{% endif %}{% endfor %}
             {% for sortrange in (0..26) %}{% for current in site.pages %}{% if current.orderId %}{% assign orderId = current.orderId %}{% else %}{% assign orderId = site.orderId %}{% endif %}{% if sitegroup.name == current.group and orderId == sortrange %}
     <entry>
-        <title>{{ current.title }}</title>
+        <title>{{ current.title | xml_escape }}</title>
         <link href="{{ site.url }}{{ current.url }}" />
         <id>http://php.de/virtual{{ current.url }}#inexisting-url</id>
         <updated>{{ site.time | date_to_xmlschema }}</updated>
         <author>
-            <name>{{ current.author[0].name }}</name>
+            <name>{{ current.author[0].name | xml_escape }}</name>
         </author>
     </entry>{% endif %}{% endfor %}{% endfor %}
     {% endfor %}

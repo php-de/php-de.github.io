@@ -4,6 +4,7 @@ layout: guide
 permalink: /jumpto/faq/
 root: ../..
 title: "FAQ - Häufig gestellte Fragen aus dem Themenbereich des Forums"
+description: "Eine Sammlung häufig gestellter Fragen und Antworten zur Programmiersprache PHP. Auswahl: SQL-Injections, Cross-Site-Scripting, Zeichensätze, Mailer-Klasse."
 group: "Einführung"
 orderId: 4
 

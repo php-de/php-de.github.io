@@ -42,9 +42,9 @@
     }
 
     #logoContainer {
-        background-image: url(../images/php-de-2013-fin.png);
+        /*background-image: url(../images/php-de-2013-fin.png);
         background-position: center left;
-        background-repeat: no-repeat;
+        background-repeat: no-repeat;*/
         height: 80px;
 
     }

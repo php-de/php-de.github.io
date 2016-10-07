@@ -9,7 +9,7 @@ layout: default
 <div class="group-panel panel panel-default">
     {% for current in site.pages %}{% if sitegroup.name == current.group %}{% assign cgcount = cgcount |plus:1 %}{% endif %}{% endfor %}
     <div class="panel-heading shadowed">
-        <a id="{{ sitegroup.anchor }}" href="#{{ sitegroup.anchor}}">{{ sitegroup.name | xml_escape }}<span class="label label-default pull-right">{{ cgcount }} {% if cgcount > 1 %}Beiträge{% else %}Beitrag{% endif %}</span></a>
+        <h2><a id="{{ sitegroup.anchor }}" href="#{{ sitegroup.anchor}}">{{ sitegroup.name | xml_escape }}</a></h2><span class="label label-default pull-right">{{ cgcount }} {% if cgcount > 1 %}Beiträge{% else %}Beitrag{% endif %}</span>
         <p style="margin-bottom:0; color:#888;"><small>{{ sitegroup.desc | xml_escape }}</small></p>
     </div>
     <table class="table groups-table">

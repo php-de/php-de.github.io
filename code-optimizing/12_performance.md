@@ -34,7 +34,7 @@ Einige Grundregeln, die in vielen Fällen sinnvoll erscheinen, um die Performanc
 
 - **Nicht zu viele Daten auf einmal laden**
 
-  Bei jedem Request einen Join auf sechs Tabellen zu machen, damit in einer Tooltip-Ansicht auch die Berechtigungen und Rollen des angemeldeten Benutzers angezeigt werden, ist wahrscheinlich übertrieben. Hier sollte überlegt werden, ob diese Infos unter allen Umständen benötigt werden, oder ob es nicht klüger wäre, einzelne Datensätze per Klick und Ajax nachzuladen. Wahlweise könnte auch Caching verwendet werden.
+  Bei jedem Request einen Join auf sechs Tabellen zu machen, damit in einer Tooltip-Ansicht auch die Berechtigungen und Rollen des angemeldeten Benutzers angezeigt werden, ist wahrscheinlich übertrieben. Hier sollte überlegt werden, ob diese Infos unter allen Umständen benötigt werden oder ob es nicht klüger wäre, einzelne Datensätze per Klick und Ajax nachzuladen. Wahlweise könnte auch Caching verwendet werden.
 
 - **Caching (sinnvoll) einsetzen**
 
@@ -42,7 +42,7 @@ Einige Grundregeln, die in vielen Fällen sinnvoll erscheinen, um die Performanc
 
 - **Session nicht als Datencache missbrauchen**
 
-  Etliche PHP-Programmierer nutzen die Session als Daten-Cache für alle möglichen Infos (z. B. Benutzerdaten oder Konfigurationsdaten). Das ist keine gute Idee, denn die Session ist häufig ein sehr langsamer Speicher, der bei jedem Request für jeden User geschrieben und gelesen werden muss, was dazu führt, dass PHP für andere Requests blockiert wird. Das ist insbesondere bei parallelen Ajax-Requests sehr nachteilig. Mehr dazu:
+  Etliche PHP-Programmierer nutzen die Session als Zwischenspeicher für diverse Infos (z. B. Benutzerdaten oder Konfigurationsdaten). Das ist keine gute Idee, denn die Session ist häufig ein sehr langsamer Speicher, der bei jedem Request für jeden User geschrieben und gelesen werden muss. Das führt dazu, dass PHP für andere Requests blockiert wird. Das ist insbesondere bei parallelen Ajax-Requests sehr nachteilig. Mehr dazu:
 
   \- [maximem: Speed up your sessions, part 1 – Best practices](http://phpchunk.net/2011/06/speed-up-your-sessions-part-1-best-practices/)
 

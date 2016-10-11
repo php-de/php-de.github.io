@@ -1,25 +1,26 @@
 ---
 layout: guide
 
-permalink: /jumpto/faq/
-root: ../..
-title: "FAQ - Häufig gestellte Fragen"
-description: "Antworten zu häufig gestellten Fragen. Etwa zu den Themen Debugging, SQL-Injections, Cross-Site-Scripting, mysql-Erweiterung, Zeichensätze oder Mailer-Klasse."
-group: "Einführung"
-orderId: 4
+title:       "FAQ – Häufig gestellte Fragen"
+description: "Antworten zu häufig gestellten Fragen zu Themen wie Debugging, SQL-Injections, Cross-Site-Scripting, mysql-Erweiterung, Zeichensätze oder Mailer-Klasse."
+group:       "Einführung"
+orderId:     4
+permalink:   /jumpto/faq/
+root:        ../..
+entry-type:  in-discussion
+creator:     nikosch
 
-creator: nikosch
 author:
-    - name: nikosch
+    - name:    nikosch
       profile: 2314
 
-    - name: Manko10
+    - name:    Manko10
       profile: 1139
 
-    - name: mermshaus
+    - name:    mermshaus
       profile: 15041
 
-    - name: hausl
+    - name:    hausl
       profile: 21246
 
 inhalt:
@@ -74,9 +75,6 @@ inhalt:
     -   name:   "Ist es falsch Bilder in der Datenbank, anstatt im Dateisystem zu speichern?"
         anchor: image-storeloc
         simple: ""
-
-
-entry-type: in-discussion
 ---
 
 ## [Was ist Debugging und wie debugge ich richtig?](#debugging)

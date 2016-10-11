@@ -105,7 +105,7 @@ inhalt:
         960 Grid System ist ein weiteres beliebtes CSS Framework.
 
 
-#### [javascript](#javascript)
+#### [JavaScript](#javascript)
 {: #javascript}
 
 * [SELFHTML: JavaScript/DOM](http://de.selfhtml.org/javascript/index.htm) <br>
@@ -250,7 +250,7 @@ inhalt:
     Umfang
 
 
-#### [javascript](#javascript-2)
+#### [JavaScript](#javascript-2)
 {: #javascript-2}
 
 * [Peter Kropff - JavaScript - Einleitung](http://www.peterkropff.de/site/javascript/javascript.htm) <br>

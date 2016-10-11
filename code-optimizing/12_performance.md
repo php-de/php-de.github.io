@@ -1,21 +1,20 @@
 ---
 layout: guide
 
-permalink:  /jumpto/performance/
-root:       ../..
-title:      "Performance"
-group:      "Code-Optimierung"
-orderId:    12
-entry-type: in-discussion
-
-creator: Andreas
+title:       "Performance"
+description: "Hilfen und Tipps zum Profiling und zur Optimierung der Performance von Programmcode. Betrachtet werden u. a. Datenbanken, Caching und Xdebug/Cachegrind."
+group:       "Code-Optimierung"
+orderId:     12
+permalink:   /jumpto/performance/
+root:        ../..
+entry-type:  in-discussion
+creator:     Andreas
 
 author:
     - name:    Andreas
       profile: 4302
     - name:    mermshaus
       profile: 15041
-
 ---
 
 Einige Grundregeln, die in vielen Fällen sinnvoll erscheinen, um die Performance eines Scripts oder einer PHP-Anwendung positiv zu beeinflussen:
@@ -65,8 +64,8 @@ Einige Grundregeln, die in vielen Fällen sinnvoll erscheinen, um die Performanc
 
   \- [Composer: Config, optimize-autoloader](https://getcomposer.org/doc/06-config.md#optimize-autoloader)
 
-- **Performance Probleme nicht vermuten, sondern verifizieren**
+- **Performance-Probleme nicht vermuten, sondern verifizieren**
 
   Häufig werden Performance-Probleme dort vermutet, wo keine sind. Verifiziert werden können Performance-Engpässe etwa mit der [Xdebug-Erweiterung](https://xdebug.org/). Dort kann ein Profiler aktiviert werden, der relativ genaue Auskunft darüber liefert, in welchen Teilen des PHP-Programms die meiste Zeit verbracht wird. Ohne ein solches Werkzeug ist es schwierig bis unmöglich, Performance-Problemen auf die Spur zu kommen. Zur Analyse der Dateien, die vom Profiler generiert werden (Cachegrind-Format), kann unter Windows beispielsweise [QCacheGrind](https://sourceforge.net/projects/qcachegrindwin/) verwendet werden. Auch IDEs bieten teilweise eine entsprechende Funktionalität an (PhpStorm: Tools, Analyse XDebug Profiler Snapshot).
 
-Wenn die „bestmögliche“ Performance gewollt ist und das Hauptaugenmerk nicht etwa auf unkomplizierter Entwicklung, Kompatibilität zu vielen Webhostern oder einer großen Community liegt, dann ist PHP wahrscheinlich nicht die beste Wahl, da es sich bei PHP um eine Scriptsprache handelt, deren Code nicht in dem Sinne kompiliert und für die Ziel-Hardware optimiert wird. In den meisten Fällen können mit guter Pflege aber auch große Anwendungen mit PHP performant umgesetzt werden.
+Wenn die „bestmögliche“ Performance gewollt ist und das Hauptaugenmerk nicht etwa auf unkomplizierter Entwicklung, Kompatibilität zu vielen Webhostern oder einer großen Community liegt, dann ist PHP wahrscheinlich nicht die beste Technologiewahl, da PHP eine Scriptsprache ist, deren Code nicht im klassischen Sinne kompiliert und für die Ziel-Hardware optimiert wird. In den meisten Fällen können mit guter Pflege aber auch große Anwendungen mit PHP performant umgesetzt werden.

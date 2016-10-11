@@ -70,7 +70,7 @@ Die zweite Komponente ist der zeitliche Aspekt. Ein Angriff über XSS soll nicht
 den Manipulierenden selbst, sondern Besucher dieser Seite treffen. Deshalb ist
 ein erfolgreicher XSS-Angriff nur möglich, wenn der Schadcode in irgendeiner
 Form gespeichert und Teil der öffentlichen Ausgabe der Website wird. Aus
-demselben Grund kann eine dynamische Seitenmanipulation über Javascript/DOM
+demselben Grund kann eine dynamische Seitenmanipulation über JavaScript/DOM
 nicht zu den Cross-Site-Scripting-Attacken gezählt werden.
 
 

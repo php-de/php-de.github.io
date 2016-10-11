@@ -356,7 +356,7 @@ Here ist some content for you!
 {: #kombiniertes-beispiel-js-und-php-als-fallback}
 
 Aufbauend darauf können wir unseren Link erweitern, so dass er bei
-Vorhandensein von Javascript die Box ohne Neuladen der Seite „toggelt“. Wir
+Vorhandensein von JavaScript die Box ohne Neuladen der Seite „toggelt“. Wir
 benutzen eine jQuery-Variante, behalten aber unsere CSS-Klassen bei, um auch
 weiter PHP-seitiges Schalten zu unterstützen.
 
@@ -408,7 +408,7 @@ $link = '?display=' . $states[$display]; // Gegenteil in den Link
 <div id="box" class="<?php echo $display; ?>">Here ist some content for you!</div>
 ~~~
 
-Der einzige Nachteil der Lösung ist, dass bei Neuladen ein etwaiger Javascript
+Der einzige Nachteil der Lösung ist, dass bei Neuladen ein etwaiger JavaScript
 geschalteter Status verloren geht (wie bei allen JS Lösungen). Eine Lösung
 dafür kann in einer Session liegen, die via Ajax auf den aktuellen Status
 gesetzt wird. Über jQuery gestaltet sich Ajax sehr einfach. Sinnvollerweise

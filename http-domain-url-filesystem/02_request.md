@@ -50,7 +50,7 @@ inhalt:
 
 ---
 
-Ein **Request** ist eine Anfrage eines Clients an einen Server innerhalb eines Client-Server-Systems. Auslösendes Moment eines Request kann beispielsweise die Eingabe einer URL in einen Browser (GET-Request) oder das Absenden eines HTML Formulars sein (je nach action-Attribut GET- oder POST-Request). Weiterhin kann ein Request durch Javascript (respektive AJAX) oder serverseitige Aktionen (Weiterleitungen, cURL) veranlasst werden. Selbst das Einbinden von Bildern, CSS- oder Javascriptdateien erzeugt einen GET-Request auf die betreffende Ressource.
+Ein **Request** ist eine Anfrage eines Clients an einen Server innerhalb eines Client-Server-Systems. Auslösendes Moment eines Request kann beispielsweise die Eingabe einer URL in einen Browser (GET-Request) oder das Absenden eines HTML Formulars sein (je nach action-Attribut GET- oder POST-Request). Weiterhin kann ein Request durch JavaScript (respektive AJAX) oder serverseitige Aktionen (Weiterleitungen, cURL) veranlasst werden. Selbst das Einbinden von Bildern, CSS- oder JavaScript-Dateien erzeugt einen GET-Request auf die betreffende Ressource.
 
 Ein Request an einen existierenden Server wird von diesem mit einem Response beantwortet.
 

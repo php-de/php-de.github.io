@@ -44,9 +44,9 @@ Debugging umfasst eine Vielzahl von Methoden, die zunehmend auch durch technisch
 - Einzelschrittanalyse des Programmzustands
 <br>
 
-Debugging in der Webentwicklung kann ein komplexer Prozess sein, weil sich Fehler in verschiedenen Quellcode-Bestandteilen der Applikation ereignen können, bspw. serverseitig durch einen Fehler in PHP Code oder eine ungültige Datenbankabfrage, aber auch auf Clientseite durch logische Fehler in der Auszeichnung oder in einem Javascript. Somit ist es sehr wichtig, dass man die [Zusammenhänge zwischen den eigenen Sprachen sowie die Client-Server-Interaktion]({{ page.root }}/jumpto/was-ist-php/) verinnerlicht hat.
+Debugging in der Webentwicklung kann ein komplexer Prozess sein, weil sich Fehler in verschiedenen Quellcode-Bestandteilen der Applikation ereignen können, bspw. serverseitig durch einen Fehler in PHP Code oder eine ungültige Datenbankabfrage, aber auch auf Clientseite durch logische Fehler in der Auszeichnung oder in einem JavaScript. Somit ist es sehr wichtig, dass man die [Zusammenhänge zwischen den eigenen Sprachen sowie die Client-Server-Interaktion]({{ page.root }}/jumpto/was-ist-php/) verinnerlicht hat.
 
-Die zunehmende Verbreitung von Ajax und Javascript-erzeugten, dynamischen Inhalten erhöht die Komplexität der Seitengenerierung weiter; und damit auch den Aufwand der Fehlersuche. Eine größere Anzahl von Schichten, welche Inhalt verarbeiten und darstellen, steht der beschränkten Wahrnehmung entgegen, wie eine Ausgabe im Fehlerkontext erkannt werden kann. Es gilt, sich von der reinen (fehlerhaften) Browserdarstellung zur Ursache des Problems 'durchzuhangeln'.
+Die zunehmende Verbreitung von Ajax und JavaScript-erzeugten, dynamischen Inhalten erhöht die Komplexität der Seitengenerierung weiter; und damit auch den Aufwand der Fehlersuche. Eine größere Anzahl von Schichten, welche Inhalt verarbeiten und darstellen, steht der beschränkten Wahrnehmung entgegen, wie eine Ausgabe im Fehlerkontext erkannt werden kann. Es gilt, sich von der reinen (fehlerhaften) Browserdarstellung zur Ursache des Problems 'durchzuhangeln'.
 
 Nicht zuletzt ist einfaches Debugging ein gutes Argument dafür, seine Applikation in voneinander weitgehend unabhängigen Schichten anzulegen. Das betrifft sowohl die Programmierung selbst, als auch die Abstraktion der oben genannten Darstellungskomponenten.
 

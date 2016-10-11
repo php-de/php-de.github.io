@@ -501,17 +501,17 @@ inhalt:
 
 * [Franzis: JavaScript - Objektorientierung und Entwurfsmuster](http://www.terrashop.de/Buch/JavaScript-Objektorientierung-und-Entwurfsmuster-Ross-Harmes-Dustin-Diaz-ISBN-3772364888/art/77236488/) <br>
   Sehr gut Beschreibung von Objektorientierung und Design patterns im
-  Bereich Javascript. Die eigenwilligen Prinzipien von Javascript im
+  Bereich JavaScript. Die eigenwilligen Prinzipien von JavaScript im
   Bereich Vererbung und die Auswirkungen auf die Pattern im Vergleich
   zur Umsetzung in anderen Sprachen werden sehr gut dargelegt.
   <br>**Vorteile:** Sehr gut geschriebenes Angebot an fortgeschrittene
   Nutzer. Schneller Einstieg in den Themenbereich, die Ausführung von
-  Javascript-Basics beschränkt sich auf wenige Seiten. Nötige Grundlagen
+  JavaScript-Basics beschränkt sich auf wenige Seiten. Nötige Grundlagen
   wie Prototypenvererbung u.ä. werden aber beleuchtet. Didaktisch gut
   aufgebaut stützen sich die Kapitel auf im Buch früher erarbeitete
   Konzepte.
-  <br>**Nachteile:** Sicher nichts für blutige Javascript-Newbies. Das Buch
-  beschreibt bspw. keine Javascript-Basis-Syntax o.ä. Auch von OOP und
+  <br>**Nachteile:** Sicher nichts für blutige JavaScript-Newbies. Das Buch
+  beschreibt bspw. keine JavaScript-Basis-Syntax o.ä. Auch von OOP und
   Entwurfsmustern sollte man (bspw. in anderen Sprachen) schon mal
   gehört haben.
 

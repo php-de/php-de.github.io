@@ -120,8 +120,8 @@ Keinesfalls zu vergessen ist die Möglichkeit, dass weitere, nicht vorgesehene P
 
 - direktes Schreiben der Daten in die URL
 - Verwenden eines selbst erstellten Formulars
-- Verwenden eines durch Javascript manipulierten Formulars
-- Direktes Eintragen der Parameterdaten in den Header des Requests (bspw,. über einen Proxy)
+- Verwenden eines durch JavaScript manipulierten Formulars
+- Direktes Eintragen der Parameterdaten in den Header des Requests (bspw. über einen Proxy)
 
 Daneben gibt es aber weitere Daten, die nicht zu vergessen sind:
 

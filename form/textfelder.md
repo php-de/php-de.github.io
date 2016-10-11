@@ -182,7 +182,7 @@ erzeugt im Browser:
 Wie man bereits optisch erkennt, wird das `value`-Attribut bereits durch das
 erste doppelte Hochkomma geschlossen. Dieses Beispiel erzeugt nur einen
 falschen Vorgabewert (Horst). In anderen Fällen ist das Prinzip geeignet,
-Javascript-Code auszuführen, Browserlayouts zu zerstören, etc. (Vgl. XSS).
+JavaScript-Code auszuführen, Browserlayouts zu zerstören, etc. (Vgl. XSS).
 
 Wirkungsvolle Gegenmaßnahmen ist die konsequente Verwendung von HTML-Maskierung
 von Eingabewerten. Geeignete Funktion sind `htmlspecialchars` und

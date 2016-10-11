@@ -45,7 +45,7 @@ inhalt:
 ## [Formularnotierung](#formularnotierung)
 {: #formularnotierung}
 
-HTML besitzt Sprachelemente für Formularfelder, Buttons und das Form selbst. Nur Formularfelder innerhalb von `<form>` werden beim Absenden übertragen. Das Absenden erfolgt nur durch Bestätigung eines Submit- oder Image-Buttons oder durch ein `<button>`-Element. Das Übertragen des Formulars nach Enter in einem einzeiligen Eingabefeld ist browserspezifisch und damit nicht verlässlich. Zudem kann durch den Javascript-Aufruf `submit()` das zugehörige Formularobjekt übertragen werden (also ein Request gestartet werden).
+HTML besitzt Sprachelemente für Formularfelder, Buttons und das Form selbst. Nur Formularfelder innerhalb von `<form>` werden beim Absenden übertragen. Das Absenden erfolgt nur durch Bestätigung eines Submit- oder Image-Buttons oder durch ein `<button>`-Element. Das Übertragen des Formulars nach Enter in einem einzeiligen Eingabefeld ist browserspezifisch und damit nicht verlässlich. Zudem kann durch den JavaScript-Aufruf `submit()` das zugehörige Formularobjekt übertragen werden (also ein Request gestartet werden).
 
 
 ## [Übertragung](#uebertragung)

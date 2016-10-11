@@ -167,7 +167,7 @@ Damit ist es sinnvoll, bei der Fehleranalyse immer linear vorzugehen.
 ### [Wirklich?](#wirklich)
 {: #wirklich}
 
-Gerade für Anfänger ist es wichtig, sich immer wieder die [Zusammenhänge von server- und clientseitigem Code]({{ page.root }}/jumpto/was-ist-php/) klarzumachen. Da PHP vor browserseitigen Ausgaben erfolgt können Fehlermeldungen durchaus in HTML Text eingeschlossen und damit nur im Quelltext sichtbar sein. Sie können innerhalb einer Ausgabe von Javascript erzeugt worden sein und dadurch wiederum dort eine ungültige Syntax erzeugen und damit wiederum Javascript Fehlermeldungen. Schließlich haben Browser eine gewisse Fehlertoleranz auf ihr Markup, sodass irreguläre Angaben gänzlich unerkannt bleiben können.
+Gerade für Anfänger ist es wichtig, sich immer wieder die [Zusammenhänge von server- und clientseitigem Code]({{ page.root }}/jumpto/was-ist-php/) klarzumachen. Da PHP vor browserseitigen Ausgaben erfolgt können Fehlermeldungen durchaus in HTML Text eingeschlossen und damit nur im Quelltext sichtbar sein. Sie können innerhalb einer Ausgabe von JavaScript erzeugt worden sein und dadurch wiederum dort eine ungültige Syntax erzeugen und damit wiederum JavaScript Fehlermeldungen. Schließlich haben Browser eine gewisse Fehlertoleranz auf ihr Markup, sodass irreguläre Angaben gänzlich unerkannt bleiben können.
 
 Einfache Faustregel: PHP baut HTML und alle anderen Sprachen, die der Browser verarbeitet. Der erste Blick bei der Fehlersuche sollte also stets dem Browserquelltext dienen, die reine Bildschirmaussage sagt kaum etwas über die Probleme im Hintergrund aus.
 

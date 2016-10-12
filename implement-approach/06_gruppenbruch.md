@@ -1,13 +1,14 @@
 ---
 layout: guide
 
-permalink: /jumpto/gruppenbruch/
-root: ../..
-title: "Gruppenbruch / Gruppenwechsel"
-group: "Standard Implementierungsansätze / Code-Snippets"
-orderId: 6
+title:       "Gruppenbruch / Gruppenwechsel"
+description: ""
+group:       "Standard Implementierungsansätze / Code-Snippets"
+orderId:     6
+permalink:   /jumpto/gruppenbruch/
+root:        ../..
+creator:     nikosch
 
-creator: nikosch
 author:
     -   name: nikosch
         profile: 2314
@@ -76,8 +77,8 @@ $array = array(
   'Bibo',
   'Biene Maja',
   'Peter Pan',
-  'Urmel aus dem Eis',
-  );
+  'Urmel aus dem Eis'
+);
 
 $last_entry = null;
 
@@ -329,8 +330,8 @@ obersten Ebene das Sortierkriterium nutzen und als Unterebene eine Menge von
 automatisch angelegten numerischen Indizies.
 
 
-#### [Beispiel 4 - Gruppierung über Zwischenarray](#beispiel-4)
-{: #beispiel-4}
+#### [Beispiel 4a - Gruppierung über Zwischenarray](#beispiel-4a)
+{: #beispiel-4a}
 
 ~~~ php
 $array = array(
@@ -339,7 +340,7 @@ $array = array(
   'Peter Pan' ,
   'Biene Maja' ,
   'Bibi Blocksberg' ,
-  'Urmel aus dem Eis' ,
+  'Urmel aus dem Eis'
 );
 
 foreach ($array as $entry) {
@@ -401,6 +402,128 @@ verarbeitet werden. Das ist besonders kritisch für sehr große Datenmengen. Als
 Vorteil ergibt sich, dass die Eingansreihenfolge nicht durch Sortierung
 verändert werden muss. Das kann für bestimmte Daten, etwa Logfile-Daten oder
 IMAP-Listen, die zum Beispiel zeitlich angeordnet sind, vorteilhaft sein.
+
+
+#### [Beispiel 4b - Gruppierung über Zwischenarray aus einer Datenbankabfrage mit PDO](#beispiel-4b)
+{: #beispiel-4b}
+
+
+Die Namen liegen hier in der Filmfiguren-Tabelle `filmfigures` vor.
+Es wird `PDO::FETCH_GROUP` genutzt, um das komplette Zwischenarray direkt aus einer Datenbankabfrage zu generieren.
+Erstellt wird ein mehrdimensionales Array mit dem ersten Feldelement des Selects (= der Anfangsbuchstabe) als Key und
+mit Subarrays, welche alle weiteren Feldelemente (die Gruppen) enthalten.
+
+~~~
+SELECT
+  SUBSTR(name, 1, 1) as firstchar,
+  name
+FROM
+  filmfigures
+ORDER BY
+  name
+
++-----------+-------------------+
+| firstchar | name              |
++-----------+-------------------+
+| A         | Alf               |
+| B         | Bibi Blocksberg   |
+| B         | Bibo              |
+| B         | Biene Maja        |
+| P         | Peter Pan         |
+| U         | Urmel aus dem Eis |
++-----------+-------------------+
+~~~
+
+
+Verarbeitung in PHP mittels PDO
+
+~~~ php
+$sql = "
+    SELECT
+      SUBSTR(name, 1, 1) as firstchar,
+      name
+    FROM
+      filmfigures
+    ORDER BY
+      name
+";
+
+$stmt = $pdo->query($sql);
+$result = $stmt->fetchAll(PDO::FETCH_GROUP);
+
+print_r($result);
+
+foreach ($result as $firstChar => $groupArray) {
+    echo $firstChar.'<br>';
+    foreach ($groupArray as $group){
+        echo ' - '.$group->name.'<br>';
+    }
+}
+~~~
+
+Ergibt folgende Ausgabe
+
+~~~
+Array
+(
+    [A] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [name] => Alf
+                )
+        )
+
+    [B] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [name] => Bibi Blocksberg
+                )
+
+            [1] => stdClass Object
+                (
+                    [name] => Bibo
+                )
+
+            [2] => stdClass Object
+                (
+                    [name] => Biene Maja
+                )
+        )
+
+    [P] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [name] => Peter Pan
+                )
+        )
+
+    [U] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [name] => Urmel aus dem Eis
+                )
+        )
+)
+
+
+A
+ - Alf
+B
+ - Bibi Blocksberg
+ - Bibo
+ - Biene Maja
+P
+ - Peter Pan
+U
+ - Urmel aus dem Eis
+~~~
+
+Der Vorteil dieser Variante ergibt sich aus den vielfältigen Möglichkeiten einer Datenbank in Bezug auf Auswahl und Sortierung.
+
 
 
 ### [Verschachtelte Schleifen mit Abbruchbedingung](#verschachtelte-schleifen-mit-abbruchbedingung)

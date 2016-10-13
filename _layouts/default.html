@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        {% if page.description %}
+        {% if page.description and page.description != "" %}
         <meta name="description" content="{{ page.description | xml_escape }}">
         {% endif %}
         <title>{% if page.title != 'index' %}{{ page.title | xml_escape }} &middot; {% endif %}PHP.de Wissenssammlung</title>

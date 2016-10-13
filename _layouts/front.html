@@ -22,7 +22,7 @@ layout: default
         <tbody>{% for sortrange in (0..26) %}{% for current in site.pages %}{% if current.orderId %}{% assign orderId = current.orderId %}{% else %}{% assign orderId = site.orderId %}{% endif %}{% if sitegroup.name == current.group and orderId == sortrange %}
             <tr>
                 <td class="topic"><a href="{{ page.root }}{{ current.url }}">{{ current.title | xml_escape }}</a>
-                    {% if current.description %}
+                    {% if current.description and current.description != "" %}
                     <p style="margin: 4px 0 4px 15px;">{{ current.description | xml_escape }}</p>
                     {% endif %}
                 </td>

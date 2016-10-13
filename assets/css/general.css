@@ -256,6 +256,18 @@
         padding: 0;
         background: none;
     }
+
+    h1 {
+        font-size: 30px;
+        margin-top: 16px;
+        margin-bottom: 8px;
+    }
+
+    h2 {
+        font-size: 26px;
+        margin-top: 16px;
+        margin-bottom: 8px;
+    }
 }
 
 @media print {

@@ -36,7 +36,7 @@ entry-type: in-progress
 ---
 
 Als **Zeichenmaskierung** oder **Escaping** wird ein Verfahren bezeichnet, um in einem
-sprachlichen Kontext ein Zeichen dastellen zu können, das Teil der verwendeten
+sprachlichen Kontext ein Zeichen darstellen zu können, das Teil der verwendeten
 Syntax ist und damit ohne spezielle Auszeichnung eine Doppeldeutigkeit erzeugen
 könnte. Zeichenmaskierung erfolgt im Allgemeinen durch die Definition einer
 speziellen Zeichensequenz (Kombination von Zeichen), die per Definition dann

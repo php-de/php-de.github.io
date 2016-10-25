@@ -44,11 +44,11 @@ Nachfolgend wird die Verbindung zum [DBMS](http://de.wikipedia.org/w/index.php?t
 $dsn  = 'mysql:dbname=test;host=localhost;charset=utf8';
 $user = 'root';
 $pass = '';
-$options = array(
+$options = [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
     PDO::ATTR_EMULATE_PREPARES => false
-);
+];
 $pdo = new PDO($dsn, $user, $pass, $options);
 ~~~
 

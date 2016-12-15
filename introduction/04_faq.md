@@ -94,6 +94,8 @@ Richtig debuggen
 
 Die Ausgaben per `var_dump` oder `echo` kann man sich ersparen, indem man einen Debugger einsetzt.
 
+Auf Produktivsystemen sollte die direkte Fehlerausgabe (Punkte 2 und 3) deaktiviert sein, da Fehlermeldungen nicht selten [sensible Daten preisgeben](http://stackoverflow.com/questions/6455018/why-does-pdo-print-my-password-when-the-connection-fails). Die beiden Einstellungen können zudem auch in der `php.ini`-Datei verändert werden.
+
 - [Ausführlichere Informationen zum Thema Debugging]({{ page.root }}/#debugging)
 
 

@@ -37,6 +37,10 @@ inhalt:
         anchor: differenzen
         simple: ""
 
+    -   name: "Perioden"
+        anchor: perioden
+        simple: ""
+
     -   name: "Vergleiche"
         anchor: vergleiche
         simple: ""
@@ -217,12 +221,46 @@ $now      = new DateTime(); // 2016-01-14
 $refDate  = new DateTime('2013-02-10');
 
 $format = '%y Jahre, %m Monate und %d Tage.';
-$period = $now
-    ->diff($refDate)
-    ->format($format);
+$period = $now->diff($refDate)->format($format);
 
 echo $period;
 // 2 Jahre, 11 Monate und 4 Tage.
+~~~
+
+
+## [Perioden](#perioden)
+{: #perioden}
+
+Will man bspw. eine Auflistung, mit den kommenden Samstagen (hier der nächsten zwei Monate),
+so kann man hier z.B. `DatePeriod` nutzen.
+
+~~~ php
+// heute Fr. 13.01.2017
+
+$dtStart = new DateTimeImmutable('this saturday'); // Datum von
+$dtEnd   = $dtStart->modify('+2 months');          // Datum bis
+
+$period = new DatePeriod(
+    $dtStart,
+    new DateInterval('P1W'), // Periode: 1 Woche
+    $dtEnd
+);
+
+foreach ($period as $date) {
+    echo $date->format('D. d.m.Y') . "\n";
+}
+
+/*
+Sat. 14.01.2017
+Sat. 21.01.2017
+Sat. 28.01.2017
+Sat. 04.02.2017
+Sat. 11.02.2017
+Sat. 18.02.2017
+Sat. 25.02.2017
+Sat. 04.03.2017
+Sat. 11.03.2017
+*/
 ~~~
 
 
@@ -233,7 +271,6 @@ echo $period;
 $dt1 = new DateTime('now');
 $dt2 = new DateTime('tomorrow');
 
-// ab PHP 5.2.2 - davor siehe Doku
 var_dump($dt1 == $dt2); // false
 var_dump($dt1 < $dt2);  // true
 var_dump($dt1 > $dt2);  // false

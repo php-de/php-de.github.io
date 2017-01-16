@@ -21,6 +21,10 @@ inhalt:
         anchor: bedingung
         simple: ""
 
+    -   name:   "Blockweise Sortierung"
+        anchor: block
+        simple: ""
+
     -   name:   "Querverweise"
         anchor: links
         simple: ""
@@ -161,6 +165,143 @@ SELECT name, date_birth FROM persons ORDER BY date_birth IS NULL DESC, name
 +---------+------------+
 8 rows in set (0.00 sec)
 ~~~
+
+
+
+## [Blockweise Sortierung](#block)
+{: #block}
+
+Wir haben Kunden und zu jedem Kunden mehrere Aufträge.
+Wir wollen uns Kunden mit den Aufträgen ausgeben lassen,
+jedoch soll die Ausgabe der "Kundenblöcke" so ausgegeben werden,
+dass der Block mit dem aktuellsten/jüngsten Datum zuerst kommt.
+
+
+Die Kunden
+
+~~~ sql
+SELECT id, name FROM kunde
+
++----+----------+
+| id | name     |
++----+----------+
+|  1 | Aigner   |
+|  2 | Gruber   |
+|  3 | Sandmann |
++----+----------+
+3 rows in set (0.00 sec)
+~~~
+
+
+Die Aufträge
+
+~~~ sql
+SELECT id, kunde_id, produkt, deadline
+FROM auftrag
+ORDER BY deadline
+
++----+----------+--------------+------------+
+| id | kunde_id | produkt      | deadline   |
++----+----------+--------------+------------+
+|  1 |        3 | Tisch eckig  | 2017-02-01 |
+|  4 |        1 | Kasten       | 2017-03-15 |
+|  7 |        2 | Gartenzaun   | 2017-04-01 |
+|  5 |        1 | Tisch rund   | 2017-04-15 |
+|  2 |        3 | Vitrine      | 2017-05-01 |
+|  9 |        2 | Schreibtisch | 2017-09-01 |
+|  6 |        1 | Essecke      | 2017-10-01 |
+|  8 |        2 | Carport      | 2017-10-15 |
+|  3 |        3 | Lampe        | 2018-02-01 |
++----+----------+--------------+------------+
+9 rows in set (0.00 sec)
+~~~
+
+
+Ergibt "gejoint"
+
+~~~ sql
+SELECT k.id, k.name, a.produkt, a.deadline
+FROM kunde k
+INNER JOIN auftrag a ON k.id = a.kunde_id
+ORDER BY deadline
+
++----+----------+--------------+------------+
+| id | name     | produkt      | deadline   |
++----+----------+--------------+------------+
+|  3 | Sandmann | Tisch eckig  | 2017-02-01 |
+|  1 | Aigner   | Kasten       | 2017-03-15 |
+|  2 | Gruber   | Gartenzaun   | 2017-04-01 |
+|  1 | Aigner   | Tisch rund   | 2017-04-15 |
+|  3 | Sandmann | Vitrine      | 2017-05-01 |
+|  2 | Gruber   | Schreibtisch | 2017-09-01 |
+|  1 | Aigner   | Essecke      | 2017-10-01 |
+|  2 | Gruber   | Carport      | 2017-10-15 |
+|  3 | Sandmann | Lampe        | 2018-02-01 |
++----+----------+--------------+------------+
+9 rows in set (0.00 sec)
+~~~
+
+
+Um die Blöcke nach dem aktuellsten Datum sortieren zu können,
+brauchen wir zuerst mal das jeweils jüngste Datum der Aufträge
+je Kunde.
+
+~~~ sql
+SELECT k.id, k.name, MIN(a.deadline) AS min_date
+FROM kunde k
+INNER JOIN auftrag a ON k.id = a.kunde_id
+GROUP BY k.id, k.name
+ORDER BY min_date
+
++----+----------+------------+
+| id | name     | min_date   |
++----+----------+------------+
+|  3 | Sandmann | 2017-02-01 |
+|  1 | Aigner   | 2017-03-15 |
+|  2 | Gruber   | 2017-04-01 |
++----+----------+------------+
+3 rows in set (0.00 sec)
+~~~
+
+Nun verwenden wir diese Daten als "innere" Tabelle
+und joinen uns den Rest wie benötigt dazu.
+
+~~~ sql
+SELECT
+    k.id, k.name,
+    a.produkt, a.deadline,
+    sub.min_date
+FROM
+    (
+        -- frühestes deadline-datum je kunde
+        SELECT k.id, MIN(a.deadline) AS min_date
+        FROM kunde k
+        INNER JOIN auftrag a ON k.id = a.kunde_id
+        GROUP BY k.id
+        ORDER BY min_date
+    ) sub
+INNER JOIN kunde k ON sub.id = k.id
+INNER JOIN auftrag a ON k.id = a.kunde_id
+ORDER BY sub.min_date, a.deadline
+
++----+----------+--------------+------------+------------+
+| id | name     | produkt      | deadline   | min_date   |
++----+----------+--------------+------------+------------+
+|  3 | Sandmann | Tisch eckig  | 2017-02-01 | 2017-02-01 |
+|  3 | Sandmann | Vitrine      | 2017-05-01 | 2017-02-01 |
+|  3 | Sandmann | Lampe        | 2018-02-01 | 2017-02-01 |
+|  1 | Aigner   | Kasten       | 2017-03-15 | 2017-03-15 |
+|  1 | Aigner   | Tisch rund   | 2017-04-15 | 2017-03-15 |
+|  1 | Aigner   | Essecke      | 2017-10-01 | 2017-03-15 |
+|  2 | Gruber   | Gartenzaun   | 2017-04-01 | 2017-04-01 |
+|  2 | Gruber   | Schreibtisch | 2017-09-01 | 2017-04-01 |
+|  2 | Gruber   | Carport      | 2017-10-15 | 2017-04-01 |
++----+----------+--------------+------------+------------+
+9 rows in set (0.00 sec)
+~~~
+
+Fertig! Dies kann nun mit dem [Gruppenbruch]({{ page.root }}/jumpto/gruppenbruch/) entprechend blockweise nach Kunden ausgegeben werden.
+
 
 
 ## [Querverweise](#bedingung)

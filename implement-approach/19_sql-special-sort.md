@@ -172,12 +172,11 @@ SELECT name, date_birth FROM persons ORDER BY date_birth IS NULL DESC, name
 {: #block}
 
 Wir haben Kunden und zu jedem Kunden mehrere Aufträge.
-Wir wollen uns Kunden mit den Aufträgen ausgeben lassen,
-jedoch soll die Ausgabe der "Kundenblöcke" so ausgegeben werden,
+Nun wollen wir die Aufträge "geblockt nach Kunden" ausgeben lassen. 
+Die Ausgabe der "Kundenblöcke" soll jedoch so ausgegeben werden,
 dass der Block mit dem aktuellsten/jüngsten Datum zuerst kommt.
 
-
-Die Kunden
+**Die Kunden**
 
 ~~~ sql
 SELECT id, name FROM kunde
@@ -193,7 +192,7 @@ SELECT id, name FROM kunde
 ~~~
 
 
-Die Aufträge
+**Die Aufträge**
 
 ~~~ sql
 SELECT id, kunde_id, produkt, deadline
@@ -217,7 +216,7 @@ ORDER BY deadline
 ~~~
 
 
-Ergibt "gejoint"
+**Ergibt "gejoint"**
 
 ~~~ sql
 SELECT k.id, k.name, a.produkt, a.deadline
@@ -300,7 +299,8 @@ ORDER BY sub.min_date, a.deadline
 9 rows in set (0.00 sec)
 ~~~
 
-Fertig! Dies kann nun mit dem [Gruppenbruch]({{ page.root }}/jumpto/gruppenbruch/) entprechend blockweise nach Kunden ausgegeben werden.
+**Fertig!**<br>
+Dies kann nun mit dem [Gruppenbruch]({{ page.root }}/jumpto/gruppenbruch/) entprechend blockweise nach Kunden ausgegeben werden.
 
 
 

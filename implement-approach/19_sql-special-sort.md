@@ -242,7 +242,7 @@ ORDER BY deadline
 
 
 Um die Blöcke nach dem aktuellsten Datum sortieren zu können,
-brauchen wir zuerst mal das jeweils jüngste Datum der Aufträge
+brauchen wir zuerst das jeweils jüngste Datum der Aufträge
 je Kunde.
 
 ~~~ sql
@@ -300,7 +300,7 @@ ORDER BY sub.min_date, a.deadline
 ~~~
 
 **Fertig!**<br>
-Dies kann nun mit dem [Gruppenbruch]({{ page.root }}/jumpto/gruppenbruch/) entprechend blockweise nach Kunden ausgegeben werden.
+Dies kann nun mit dem [Gruppenbruch]({{ page.root }}/jumpto/gruppenbruch/) auf `min_date`entsprechend ausgegeben werden.
 
 
 

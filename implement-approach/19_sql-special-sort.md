@@ -172,10 +172,9 @@ SELECT name, date_birth FROM persons ORDER BY date_birth IS NULL DESC, name
 {: #block}
 
 Wir haben Kunden und zu jedem Kunden mehrere Aufträge.
-Nun wollen wir die Aufträge "geblockt nach Kunden" ausgeben lassen. 
-Die Ausgabe der "Kundenblöcke" soll jedoch so ausgegeben werden,
-dass die Blöcke in sich nach Datum sortiert sind und 
-der gesamte Block mit dem aktuellsten/jüngsten Datum zuerst kommt.
+Es sollen die Aufträge "geblockt nach Kunden" so ausgeben werden,
+dass die Blöcke in sich nach Datum sortiert sind. Zusätzlich soll
+der gesamte Block mit dem aktuellsten/jüngsten Datum zuerst erscheinen.
 
 **Die Kunden**
 
@@ -242,8 +241,7 @@ ORDER BY deadline
 ~~~
 
 
-Nun brauchen wir zuerst das jeweils jüngste Datum der Aufträge
-je Kunde.
+Zuerst brauchen wir das jeweils jüngste Datum der Aufträge je Kunde.
 
 ~~~ sql
 SELECT k.id, k.name, MIN(a.deadline) AS min_date
@@ -269,19 +267,18 @@ und joinen uns den Rest wie benötigt dazu.
 SELECT
     k.id, k.name,
     a.produkt, a.deadline,
-    sub.min_date
+    k.min_date
 FROM
     (
         -- frühestes deadline-datum je kunde
-        SELECT k.id, MIN(a.deadline) AS min_date
+        SELECT k.id, k.name, MIN(a.deadline) AS min_date
         FROM kunde k
         INNER JOIN auftrag a ON k.id = a.kunde_id
         GROUP BY k.id
         ORDER BY min_date
-    ) sub
-INNER JOIN kunde k ON sub.id = k.id
+    ) k
 INNER JOIN auftrag a ON k.id = a.kunde_id
-ORDER BY sub.min_date, a.deadline
+ORDER BY k.min_date, a.deadline
 
 +----+----------+--------------+------------+------------+
 | id | name     | produkt      | deadline   | min_date   |
@@ -302,6 +299,30 @@ ORDER BY sub.min_date, a.deadline
 **Fertig!**<br>
 Dies kann nun mit dem [Gruppenbruch]({{ page.root }}/jumpto/gruppenbruch/) wie gewünscht ausgegeben werden.
 
+
+**Hinweis zur `WHERE`-Klausel**
+
+Aus Performancegründen sollten Bedingungen möglichst in der inneren
+Query notiert werden. Bspw. sollte ein Filter nach einer Kundengruppe so aussehen:
+
+~~~ sql
+SELECT
+    k.id, k.name,
+    a.produkt, a.deadline,
+    k.min_date
+FROM
+    (
+        -- frühestes deadline-datum je kunde
+        SELECT k.id, k.name, MIN(a.deadline) AS min_date
+        FROM kunde k
+        INNER JOIN auftrag a ON k.id = a.kunde_id
+        WHERE k.gruppe = 'A' -- Hier ist der Filter anzugeben
+        GROUP BY k.id
+        ORDER BY min_date
+    ) k
+INNER JOIN auftrag a ON k.id = a.kunde_id
+ORDER BY k.min_date, a.deadline
+~~~
 
 
 ## [Querverweise](#bedingung)

@@ -174,7 +174,7 @@ SELECT name, date_birth FROM persons ORDER BY date_birth IS NULL DESC, name
 Wir haben Kunden und zu jedem Kunden mehrere Aufträge.
 Nun wollen wir die Aufträge "geblockt nach Kunden" ausgeben lassen. 
 Die Ausgabe der "Kundenblöcke" soll jedoch so ausgegeben werden,
-das die Blöcke in sich nach Datum sortier sind und 
+dass die Blöcke in sich nach Datum sortiert sind und 
 der gesamte Block mit dem aktuellsten/jüngsten Datum zuerst kommt.
 
 **Die Kunden**

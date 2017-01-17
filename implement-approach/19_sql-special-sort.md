@@ -21,7 +21,7 @@ inhalt:
         anchor: bedingung
         simple: ""
 
-    -   name:   "Blockweise Sortierung"
+    -   name:   "Blockweise Sortierung nach einem Wert je Block"
         anchor: block
         simple: ""
 
@@ -168,13 +168,14 @@ SELECT name, date_birth FROM persons ORDER BY date_birth IS NULL DESC, name
 
 
 
-## [Blockweise Sortierung](#block)
+## [Blockweise Sortierung nach einem Wert je Block](#block)
 {: #block}
 
 Wir haben Kunden und zu jedem Kunden mehrere Aufträge.
 Nun wollen wir die Aufträge "geblockt nach Kunden" ausgeben lassen. 
 Die Ausgabe der "Kundenblöcke" soll jedoch so ausgegeben werden,
-dass der Block mit dem aktuellsten/jüngsten Datum zuerst kommt.
+das die Blöcke in sich nach Datum sortier sind und 
+der gesamte Block mit dem aktuellsten/jüngsten Datum zuerst kommt.
 
 **Die Kunden**
 
@@ -300,7 +301,7 @@ ORDER BY sub.min_date, a.deadline
 ~~~
 
 **Fertig!**<br>
-Dies kann nun mit dem [Gruppenbruch]({{ page.root }}/jumpto/gruppenbruch/) auf `min_date`entsprechend ausgegeben werden.
+Dies kann nun mit dem [Gruppenbruch]({{ page.root }}/jumpto/gruppenbruch/) wie gewünscht ausgegeben werden.
 
 
 

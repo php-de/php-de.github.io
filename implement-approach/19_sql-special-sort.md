@@ -242,8 +242,7 @@ ORDER BY deadline
 ~~~
 
 
-Um die Blöcke nach dem aktuellsten Datum sortieren zu können,
-brauchen wir zuerst das jeweils jüngste Datum der Aufträge
+Nun brauchen wir zuerst das jeweils jüngste Datum der Aufträge
 je Kunde.
 
 ~~~ sql

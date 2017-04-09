@@ -8,6 +8,7 @@ group: "E-Mail"
 orderId: 2
 
 creator: hausl
+
 author:
     -   name: hausl
         profile: 21246
@@ -15,43 +16,47 @@ author:
     -   name: tr0y
         profile: 21125
 
+    -   name: mermshaus
+        profile: 15041
+
 inhalt:
-    -   name: "filter_var()"
+    -   name:   "filter_var"
         anchor: filtervar
         simple: "als Standard-Weg"
 
-    -   name: "Internationale Domainnamen / Punycode"
+    -   name:   "Internationale Domainnamen / Punycode"
         anchor: idn
         simple: "Domains mit Sonderzeichen"
 
-    -   name: "Ohne Punycode"
+    -   name:   "Ohne Punycode"
         anchor: ohne-punycode
         simple: "Lose Rahmenprüfung durch reguläre Ausdrücke"
 
-    -   name: "DNS Domain-Prüfung"
+    -   name:   "DNS Domain-Prüfung"
         anchor: dns
         simple: "zusätzliche Existenz-Prüfung"
 
-    -   name: "Weiterführende Quellen"
+    -   name:   "Weiterführende Quellen"
         anchor: quellen
         simple: "Links und RFCs"
-
 
 entry-type: in-discussion
 ---
 
-Dieses Tutorial zeigt grundsätzliche (übliche) Möglichkeiten, eine E-Mail-Adresse *(wie sie für den Transport per SMTP im Internet verwendet wird, bestehend aus zwei Teilen, die durch ein @-Zeichen voneinander getrennt sind)*
- zu validieren.
+Dieses Tutorial zeigt grundsätzliche (übliche) Möglichkeiten, eine E-Mail-Adresse (wie sie für den Transport per SMTP im Internet verwendet wird, bestehend aus zwei Teilen, die durch ein @-Zeichen voneinander getrennt sind) zu validieren.
 
-<div class="alert alert-info">Vorweg sei an dieser Stelle erwähnt, dass eine Prüfung auf tatsächliche Existenz einer E-Mail-Adresse auf diesem Weg nicht möglich ist. Die nachfolgenden Ansätze dienen lediglich zur Feststellung ob die grundlegenden formellen Rahmenbedingungen erfüllt werden bzw. einer positiven <a href="http://de.wikipedia.org/wiki/Domain_Name_System">DNS</a>-Antwort im Falle einer <a href="http://de.wikipedia.org/wiki/Domain">Domain</a>-<a href="http://de.wikipedia.org/wiki/Domain_Name_System">DNS</a>-Prüfung.</div>
+<div class="alert alert-info">
+    Vorweg sei an dieser Stelle erwähnt, dass eine Prüfung auf tatsächliche Existenz einer E-Mail-Adresse auf diesem Weg nicht möglich ist. Die nachfolgenden Ansätze dienen lediglich zur Feststellung, ob die grundlegenden formellen Rahmenbedingungen erfüllt werden bzw. ob eine positive <a href="http://de.wikipedia.org/wiki/Domain_Name_System">DNS</a>-Antwort im Falle einer <a href="http://de.wikipedia.org/wiki/Domain">Domain</a>-DNS-Prüfung vorliegt.
+</div>
 
-Des Weiteren erhebt dieses Tutorial nicht den Anspruch, [sämtlichen RFC zu diesem Thema](#rfc) zu genügen (wenn sich schon die meisten großen Provider und Mail-Anbieter nicht daran halten ...).
+Des Weiteren erhebt dieses Tutorial nicht den Anspruch, sämtlichen [RFCs zu diesem Thema](#rfc) zu genügen. Auch viele der großen Provider und E-Mail-Anbieter befolgen nicht alle RFCs.
 
 
-## [filter_var()](#filtervar)
+
+## [filter_var](#filtervar)
 {: #filtervar}
 
-PHP stellt ab Version 5.2 die Funktion [filter_var()](http://php.net/manual/de/function.filter-var.php) zur Verfügung. Mit dem optionalen Parameter FILTER_VALIDATE_EMAIL kann diese grundsätzlich zur E-Mail-Validierung verwendet werden. Jedoch ist es damit nicht möglich internationalisierte E-Mail-Adressen zu prüfen - solche werden immer als falsch ausgewertet. Lösungsansätze folgen [weiter unten](#idn).
+PHP stellt ab Version 5.2 die Funktion [filter_var](http://php.net/manual/de/function.filter-var.php) zur Verfügung. Mit dem Parameter `FILTER_VALIDATE_EMAIL` kann diese grundsätzlich zur E-Mail-Validierung verwendet werden. Jedoch ist es damit nicht möglich, internationalisierte E-Mail-Adressen zu prüfen – solche werden immer als falsch ausgewertet. Lösungsansätze folgen [weiter unten](#idn).
 
 ~~~ php
 function isValidEmail($mail) {
@@ -63,9 +68,7 @@ var_dump(isValidEmail("pelé@example.com"));  // false
 var_dump(isValidEmail("mail@übung.de"));     // false
 ~~~
 
-**Hinweis**
-
-Sollte filter_var() nicht verfügbar sein, dann den Provider kontaktieren (oder wechseln ;)). Im ungünstigsten Fall gibt es [auf dieser Seite](http://www.regular-expressions.info/email.html) unten (vorletzter Absatz) ein zu [RFC 2822](http://tools.ietf.org/html/rfc2822) empfohlenen regulären Ausdruck (Regex).
+Sollte `filter_var` nicht eingesetzt werden können, gibt es [auf dieser Seite](http://www.regular-expressions.info/email.html) unten (vorletzter Absatz) einen zu [RFC 2822](http://tools.ietf.org/html/rfc2822) empfohlenen regulären Ausdruck.
 
 > We get a more practical implementation of RFC 2822 if we omit the syntax using double quotes and square brackets. It will still match 99.99% of all email addresses in actual use today.
 
@@ -82,17 +85,18 @@ var_dump(isValidEmail("pelé@example.com"));  // false
 var_dump(isValidEmail("mail@übung.de"));     // false
 ~~~
 
-Dies kann alternativ zu filter_var() verwendet werden. Ebenso wie [oben bei filter_var()](#filtervar) schlägt die Prüfung von internationalisierten Domains fehl (was hier bereits am Pattern erkennbar ist).
+Dieser kann alternativ zu `filter_var` verwendet werden. Ebenso wie bei `filter_var` schlägt die Prüfung von internationalisierten Domains fehl. (Das ist hier bereits am Pattern erkennbar.)
+
 
 
 ## [Internationalisierte Domainnamen (IDN)](#idn)
 {: #idn}
 
+Um auch internationalisierte Domains/E-Mail-Adressen auf grundsätzliche formelle Korrektheit zu prüfen, ist die Konvertierung in [Punycode](http://de.wikipedia.org/wiki/Punycode) *vor* der eigentlichen Prüfung nötig. Weitere Informationen und Möglichkeiten zur Konvertierung gibt es [hier]({{ page.root }}/jumpto/idna/).
 
-Um auch internationalisierte Domains / E-Mail-Adressen auf grundsätzliche formelle Korrektheit zu prüfen ist die Konvertierung in [Punycode](http://de.wikipedia.org/wiki/Punycode) **vor** der eigentlichen Prüfung nötig. Weitere Informationen und Möglichkeiten zur Konvertierung gibt es [hier]({{ page.root }}/jumpto/idna/).
 
 
-## [Ohne Punycode - Lose Rahmenprüfung mittels regulären Ausdrücken (Regex)](#ohne-punycode)
+## [Ohne Punycode: Lose Rahmenprüfung mittels regulären Ausdrücken (Regex)](#ohne-punycode)
 {: #ohne-punycode}
 
 Diese Variante kommt ohne Punycode-Konvertierung aus. Hierbei spielen die verwendeten Zeichen kaum eine Rolle, denn es wird nur der grobe Rahmen geprüft und ob keine Whitespaces (Leerzeichen, Tabstopps, etc.) vorhanden sind.
@@ -118,12 +122,14 @@ var_dump(isValidEmail("test@übärdrübär.com"));                        // tru
 var_dump(isValidEmail("test@sub.mail.dot.anything.übärdrübär.com"));  // true
 ~~~
 
+
+
 ## [Zusatz-Option: DNS-Domain-Prüfung](#dns)
 {: #dns}
 
-Generell kann in jeder oben angeführten Varianten, wenn gewüscht, die Antwort des [DNS](http://de.wikipedia.org/wiki/Domain_Name_System) zur Domain (auf vorhandenen ["MX" oder "A"-Record](http://de.wikipedia.org/wiki/Domain_Name_System#Aufbau_der_DNS-Datenbank)) berücksichtigt werden.
+Generell kann in jeder der oben angeführten Varianten, wenn gewüscht, die Antwort des [DNS](http://de.wikipedia.org/wiki/Domain_Name_System) zur Domain (auf vorhandenen ["MX" oder "A"-Record](http://de.wikipedia.org/wiki/Domain_Name_System#Aufbau_der_DNS-Datenbank)) berücksichtigt werden.
 
-Hinweis: Die an das DNS übergebene Domain der E-Mail-Adresse muss für die Verwendung von internationalisierten Domains (wie bei filter_var()) ebenfalls in [Punycode konvertiert]({{ page.root }}/jumpto/idna/) sein.
+Hinweis: Die an das DNS übergebene Domain der E-Mail-Adresse muss für die Verwendung von internationalisierten Domains (wie bei `filter_var`) ebenfalls in [Punycode konvertiert]({{ page.root }}/jumpto/idna/) sein.
 
 ~~~ php
 function checkEMailDomainDNS($mail) {
@@ -135,19 +141,18 @@ var_dump(checkEMailDomainDNS('mail@example.com'));  // true
 ~~~
 
 
+
 ## [Weiterführende Quellen](#quellen)
 {: #quellen}
-
 
 ### [Links](#links)
 {: #links}
 
-Wer sich genauer für die Regex-Prüfung interessiert, dem sei [dieser Link](http://squiloople.com/2009/12/20/email-address-validation/) empfohlen. Danke an [Trainmaster](http://www.php.de/member.php?u=20243) für den Link.
+- [Forumsbeitrag][Forum] zur Frage, wie `filter_var` validiert.
 
-Wer sich dafür interessiert wie eigentlich filter_var() validiert, dem sei ein Blick in den Quelltext von PHP empfohlen oder etwas einfacher hier in [diesem Forumsbeitrag](http://www.php.de/wiki-diskussionsforum/101439-erledigt-sinnvolle-standard-verfahren-zur-e-mail-validierung-3.html#post748505). Danke an [Asterixus](http://www.php.de/member.php?u=21236) für die Recherche.
+[Forum]: https://www.php.de/forum/php-de-intern/wiki-diskussionsforum/103940-erledigt-sinnvolle-standard-verfahren-zur-e-mail-validierung?p=1136882#post1136882
 
-
-### [RFC zum Thema E-Mail](#rfc)
+### [RFCs zum Thema E-Mail](#rfc)
 {: #rfc}
 
 * [RFC 2142](http://tools.ietf.org/html/rfc2142) - Mailbox Names for Common Services, Roles and Functions

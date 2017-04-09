@@ -12,6 +12,9 @@ author:
     -   name: hausl
         profile: 21246
 
+    -   name: mermshaus
+        profile: 15041
+
 inhalt:
     -   name:   "Begriffserklärung"
         anchor: begriffserklaerung

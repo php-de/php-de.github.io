@@ -75,6 +75,10 @@ inhalt:
     -   name:   "Ist es falsch Bilder in der Datenbank, anstatt im Dateisystem zu speichern?"
         anchor: image-storeloc
         simple: ""
+
+    -   name:   "Warum sollte SELECT * in SQL-Abfragen vermieden werden?"
+        anchor: select-star
+        simple: ""
 ---
 
 ## [Was ist Debugging und wie debugge ich richtig?](#debugging)
@@ -311,3 +315,16 @@ hier ein [Zitat aus dem php.de-Forum](http://www.php.de/forum/webentwicklung/php
 Das ist generell nicht mit "ja" oder "nein" zu beantworten.
 Argumente die dafür und dagegen sprechen sind z.B. in
 [diesem PHP.de-Forumsthread](http://www.php.de/forum/webentwicklung/datenbanken/111631-bild-aus-datenbank-auslesen?p=1209079#post1209079) zu finden.
+
+
+## [Warum sollte SELECT * in SQL-Abfragen vermieden werden?](#select-star)
+{: #select-star}
+
+Beim Einsatz von SQL-Datenbanken sollte das Abrufen aller Spalten eines Datensatzes per `SELECT *` vermieden werden. Stattdessen sollten die gewünschten Spaltennamen explizit aufgelistet werden (`SELECT col1, col2 FROM …`). Einige Vorteile:
+
+- Häufig werden in einer Abfrage nicht alle Spalten benötigt, die aktuell existieren oder in Zukunft existieren könnten, sodass unnötige Daten übertragen werden.
+- Bei expliziter Angabe der gewünschten Spalten können Datenbanksysteme unter Umständen Indizes zur Beantwortung von Abfragen nutzen.
+- Eine Auflistung der Spaltennamen macht den Code verständlicher, da die Tabellenstruktur nicht erst im Datenbankschema nachgelesen werden muss.
+- Bei Änderungen am Datenbankschema (etwa bei Entfernung oder Umbenennung einer Spalte) schlägt eine Query, die kein `SELECT *` nutzt, sofort fehl. Das ist hilfreich, da so keine Stelle im Code übersehen werden kann, an der wahrscheinlich auch die PHP-Datenstrukturen an das neue Schema angepasst werden müssen.
+
+Unproblematisch ist der Einsatz des Sternchens in `SELECT COUNT(*)`.

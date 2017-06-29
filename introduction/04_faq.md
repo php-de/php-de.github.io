@@ -164,7 +164,7 @@ ordentlich darstellen kann, ist einfach zu groß.
 
 - [Mail-Klassen]({{ page.root }}/jumpto/mail-class/)
 
-Geeignete Mailerklassen sind etwa [PHPMailer](http://phpmailer.worxware.com/)
+Geeignete Mailerklassen sind etwa [PHPMailer](https://github.com/PHPMailer/PHPMailer)
 und [Swift Mailer](http://swiftmailer.org/). Siehe hierzu auch [diesen
 Artikel]({{ page.root }}/jumpto/mail-class/).
 

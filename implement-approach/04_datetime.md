@@ -281,10 +281,10 @@ printf('Thema erstellt vor %s %s.', $intervall, $unit);
 Ergibt testweise bei folgenden Eingabe die als Kommentar nebenstehenden Ausgaben.
 
 ~~~php
-$ts = time('U');           // Thema erstellt vor 0 Sekunden.
-$ts = time('U') - 1800;    // Thema erstellt vor 30 Minuten.
-$ts = time('U') - 3600;    // Thema erstellt vor 1 Stunde.
-$ts = time('U') - 1036800; // Thema erstellt vor 12 Tagen.
+$ts = time();           // Thema erstellt vor 0 Sekunden.
+$ts = time() - 1800;    // Thema erstellt vor 30 Minuten.
+$ts = time() - 3600;    // Thema erstellt vor 1 Stunde.
+$ts = time() - 1036800; // Thema erstellt vor 12 Tagen.
 ~~~
 
 

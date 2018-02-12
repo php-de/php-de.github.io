@@ -89,7 +89,7 @@ Nachfolgende Seiten aus der PHP-Dokumentation finden in den Beispielen laufend V
 ## [Zeitzone](#zeitzone)
 {: #zeitzone}
 
-Für alle nachfolgenden Beispiele wurde wie folgt die verwendete <strong>Standard-Zeitzone</strong> gesetzt.
+Für alle nachfolgenden Beispiele wurde wie folgt die verwendete **Standard-Zeitzone** gesetzt.
 
 ~~~php
 date_default_timezone_set('Europe/Berlin');
@@ -226,6 +226,67 @@ $period = $now->diff($refDate)->format($format);
 echo $period;
 // 2 Jahre, 11 Monate und 4 Tage.
 ~~~
+
+
+### [Interval - Anwendungsbeispiel ("Vor x Tagen")](#interval-anwendung)
+{: #interval-anwendung}
+
+Auf Basis der obigen Ansätze ist bspw. nachfolgende konkrete Anwendung **"Vor x Tagen/Monaten."** möglich.
+Basis und Codebeispiel entstammen diesen [PHP.de-Forumsbeitrag](https://www.php.de/forum/webentwicklung/php-einsteiger/1524146-php-vor-x-tagen).
+
+~~~ php
+$ts = 1517580600;
+
+$date = new DateTime('now');
+$date->setTimestamp($ts);
+
+$now = new DateTime('now');
+$diff = $now->diff($date);
+
+if ($diff->y > 0) {
+    $unit = 'Jahr';
+    $intervall = $diff->y;
+
+} elseif ($diff->m > 0) {
+    $unit = 'Monat';
+    $intervall = $diff->m;
+
+} elseif ($diff->d > 0) {
+    $unit = 'Tag';
+    $intervall = $diff->d;
+
+} elseif ($diff->h > 0) {
+    $unit = 'Stunde';
+    $intervall = $diff->h;
+
+} elseif ($diff->i > 0) {
+    $unit = 'Minute';
+    $intervall = $diff->i;
+
+} else {
+    $unit = 'Sekunde';
+    $intervall = $diff->s;
+}
+
+// ev. Pluralform erzeugen
+if ($intervall <> 1 ) {
+    $unit .= 'en';
+    $unit = str_replace('ee', 'e', $unit);
+}
+
+// Ausgabe
+printf('Thema erstellt vor %s %s.', $intervall, $unit);
+~~~
+
+Ergibt testweise bei folgenden Eingabe die als Kommentar nebenstehenden Ausgaben.
+
+~~~php
+$ts = date('U');           // Thema erstellt vor 0 Sekunden.
+$ts = date('U') - 1800;    // Thema erstellt vor 30 Minuten.
+$ts = date('U') - 3600;    // Thema erstellt vor 1 Stunde.
+$ts = date('U') - 1036800; // Thema erstellt vor 12 Tagen.
+~~~
+
 
 
 ## [Perioden](#perioden)

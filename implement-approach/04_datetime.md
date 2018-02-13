@@ -268,7 +268,8 @@ if ($interval !== 1 ) {
 }
 
 // Ausgabe
-printf('Thema erstellt vor %s %s.', $interval, $unit);~~~
+printf('Thema erstellt vor %s %s.', $interval, $unit);
+~~~
 
 Ergibt testweise bei folgenden Eingabe die als Kommentar nebenstehenden Ausgaben.
 

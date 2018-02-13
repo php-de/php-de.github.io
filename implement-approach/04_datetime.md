@@ -228,10 +228,10 @@ echo $period;
 ~~~
 
 
-### [Interval - Anwendungsbeispiel ("Vor x Tagen")](#interval-anwendung)
+### [Interval - Anwendungsbeispiel ("Vor x Tagen/Monaten/...")](#interval-anwendung)
 {: #interval-anwendung}
 
-Auf Basis der obigen Ansätze ist bspw. nachfolgende konkrete Anwendung **"Vor x Tagen/Monaten."** möglich.
+Auf Basis der obigen Ansätze ist bspw. nachfolgende konkrete Anwendung **"Vor x Tagen/Monaten/..."** möglich.
 Basis und Codebeispiel entstammen diesen [PHP.de-Forumsbeitrag](https://www.php.de/forum/webentwicklung/php-einsteiger/1524146-php-vor-x-tagen).
 
 ~~~ php
@@ -243,40 +243,32 @@ $date->setTimestamp($ts);
 $now = new DateTime('now');
 $diff = $now->diff($date);
 
-if ($diff->y > 0) {
-    $unit = 'Jahr';
-    $intervall = $diff->y;
+$aPairs = [
+    'y' => 'Jahr',
+    'm' => 'Monat',
+    'd' => 'Tag',
+    'h' => 'Stunde',
+    'i' => 'Minute',
+    's' => 'Sekunde',
+];
 
-} elseif ($diff->m > 0) {
-    $unit = 'Monat';
-    $intervall = $diff->m;
+$interval = 0;
 
-} elseif ($diff->d > 0) {
-    $unit = 'Tag';
-    $intervall = $diff->d;
-
-} elseif ($diff->h > 0) {
-    $unit = 'Stunde';
-    $intervall = $diff->h;
-
-} elseif ($diff->i > 0) {
-    $unit = 'Minute';
-    $intervall = $diff->i;
-
-} else {
-    $unit = 'Sekunde';
-    $intervall = $diff->s;
+foreach ($aPairs as $att => $unit) {
+    if ($diff->{$att} > 0) {
+        $interval = $diff->{$att};
+        break;
+    }
 }
 
 // ev. Pluralform erzeugen
-if ($intervall !== 1 ) {
+if ($interval !== 1 ) {
     $unit .= 'en';
-    $unit = str_replace('ee', 'e', $unit);
+    $unit = str_replace('een', 'en', $unit);
 }
 
 // Ausgabe
-printf('Thema erstellt vor %s %s.', $intervall, $unit);
-~~~
+printf('Thema erstellt vor %s %s.', $interval, $unit);~~~
 
 Ergibt testweise bei folgenden Eingabe die als Kommentar nebenstehenden Ausgaben.
 

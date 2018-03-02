@@ -193,9 +193,10 @@ echo $stmt->rowCount();
 ### [Daten aus Array in DB schreiben](#insert-from-array)
 {: #insert-from-array}
 
-Um Daten mittels Prepared Statements aus einem Array in die DB zu schreiben, kann man folgenden Ansatz nutzen. Verwendet wird dazu wieder das oben erstellte PDO-Objekt `$pdo` mit der DB-Verbindung.
+Um Daten mittels Prepared Statements aus einem Array in die DB zu schreiben, kann man folgenden Ansatz nutzen. Verwendet wird dazu wieder das oben erstellte PDO-Objekt `$pdo` mit der DB-Verbindung. Das Beispiel entstammt [diesen PHP.de-Thread](https://www.php.de/forum/webentwicklung/php-einsteiger/1525948-fehlermeldung-bei-übergabe-eines-array-an-db-insert?p=1525975#post1525975).
 
 ~~~php
+// Temporäre Tabelle zum Testen des Scripts
 $pdo->query("
     CREATE TEMPORARY TABLE temp (
         id INT NOT NULL AUTO_INCREMENT,

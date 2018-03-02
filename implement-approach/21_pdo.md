@@ -190,6 +190,71 @@ echo $stmt->rowCount();
 ~~~
 
 
+### [Daten aus Array in DB schreiben](#insert-from-array)
+{: #insert-from-array}
+
+Um Daten mittels Prepared Statements aus einem Array in die DB zu schreiben, kann man folgenden Ansatz nutzen. Verwendet wird dazu wieder das oben erstellte PDO-Objekt `$pdo` mit der DB-Verbindung.
+
+~~~php
+$pdo->query("
+    CREATE TEMPORARY TABLE temp (
+        id INT NOT NULL AUTO_INCREMENT,
+        vorname VARCHAR(255) NOT NULL,
+        nachname VARCHAR(255) NOT NULL,
+        PRIMARY KEY (id)
+    )
+");
+
+// unser Daten-Array
+$aData = [
+    ['vorname' => 'Hans',   'nachname' => 'Maier'],
+    ['vorname' => 'Peter',  'nachname' => 'Müller'],
+    ['vorname' => 'Robert', 'nachname' => 'Kinz']
+];
+
+// in DB schreiben
+$sql = "
+    INSERT INTO temp (" . implode(", ", array_keys($aData[0])) . ")
+    VALUES (" . implode(", ", array_fill(0, count($aData[0]), "?")) . ")
+";
+$stmt = $pdo->prepare($sql);
+
+foreach ($aData as $row) {
+    $stmt->execute(array_values($row));
+}
+
+// Test - Daten wieder ausgeben
+$result = $pdo->query("SELECT id, vorname, nachname FROM temp");
+print_r( $result->fetchAll(PDO::FETCH_ASSOC) );
+/*
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [vorname] => Hans
+            [nachname] => Maier
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [vorname] => Peter
+            [nachname] => Müller
+        )
+
+    [2] => Array
+        (
+            [id] => 3
+            [vorname] => Robert
+            [nachname] => Kinz
+        )
+
+)
+*/
+~~~
+
+
 ## [Querverweise](#links)
 {: #links}
 

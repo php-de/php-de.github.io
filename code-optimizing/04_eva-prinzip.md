@@ -30,7 +30,7 @@ inhalt:
 
     -   name: "Umsetzung"
         anchor: umsetzung
-        simple: "Funktionsrückgabe <br>Methodenrückgabe <br>Dependency Injection"
+        simple: "Funktions-/Methodenrückgabe, Dependency Injection"
 
     -   name: "Includes"
         anchor: includes
@@ -111,7 +111,7 @@ Im Beispiel wirkt PHP größtenteil als Templating-Funktion. Das bedeutet, in ei
 
 Um dies weiter zu betrachten, müssen wir uns kurz das Prinzip von Webkommunikation ansehen. Auf einen Request des Client erfolgt die Antwort in Form unseres PHP-generierten Dokuments. Auf einer tieferen Ebene (vgl. OSI-Modell) wird neben den offensichtlichen Textinhalten aber auch eine Reihe von Meta-Informationen versendet: die sogenannten HTTP-Header. Diese Header können auch durch PHP gesetzt werden. Nicht gesetzte Header produziert der Webserver eigenständig. Für das EVA-Prinzip relevant ist vor allem, dass dies vor jeglicher Textausgabe erfolgt. Das bedeutet, der Webserver erkennt eine Textausgabe und verschickt die HTTP-Header des Dokuments, bevor er die Ausgabe ausliefert.
 
-An dieser Stelle ist es Zeit, unser Verständnis für das Funktionsprinzip von PHP „umzukrempeln“. Der Spracheinsteiger interpretiert PHP zumeist als „in HTML eingebettete“, dynamische Komponente. Betrachtet man die Komponenten (PHP, HTML, Server, Client, HTTP) auf technischer Ebene, ergibt sich ein anderes Bild: Der Server, auf dem PHP läuft, kennt im Prinzip gar keine HTML-Dokumente. Seine einzige Aufgabe ist das Ausliefern (und über PHP auch das Generieren) von Dokumenten, die übere eine Adresse (die URI) angefordert werden. Erst auf der Clientseite - für gewöhnlich ein Browser - wird das Dokuyment als HTML (oder eben als Bild, XML-Dokument, Stylesheet...) identifiziert und angemessen dargestellt.
+An dieser Stelle ist es Zeit, unser Verständnis für das Funktionsprinzip von PHP „umzukrempeln“. Der Spracheinsteiger interpretiert PHP zumeist als „in HTML eingebettete“, dynamische Komponente. Betrachtet man die Komponenten (PHP, HTML, Server, Client, HTTP) auf technischer Ebene, ergibt sich ein anderes Bild: Der Server, auf dem PHP läuft, kennt im Prinzip gar keine HTML-Dokumente. Seine einzige Aufgabe ist das Ausliefern (und über PHP auch das Generieren) von Dokumenten, die übere eine Adresse (die URI) angefordert werden. Erst auf der Clientseite - für gewöhnlich ein Browser - wird das Dokument als HTML (oder eben als Bild, XML-Dokument, Stylesheet...) identifiziert und angemessen dargestellt.
 
 Als Erkenntnis ergibt sich, dass PHP die „umschließende“ Sprache ist, nicht HTML. Für unser Hallo-Welt-Beispiel:
 

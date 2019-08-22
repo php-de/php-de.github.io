@@ -308,11 +308,9 @@ hier ein [Zitat aus dem php.de-Forum](http://www.php.de/forum/webentwicklung/php
 >
 > Die Wahrscheinlichkeit, dass eval() der richtige Lösungsweg ist geringer als ein 6er im Lotto.
 
-In dieser Art brachte es auch Rasmus Lerdorf (Erfinder von PHP) auf den Punkt:
+In dieser Art brachte es auch Rasmus Lerdorf (Erfinder von PHP) [in einem Zitat](https://www.php.net/manual/de/function.eval.php#44008) auf den Punkt. 
 
 > If eval() is the answer, you're almost certainly asking the wrong question.
-
-https://www.php.net/manual/de/function.eval.php#44008
 
 
 ## [Ist es falsch Bilder in der Datenbank, anstatt im Dateisystem zu speichern?](#image-storeloc)

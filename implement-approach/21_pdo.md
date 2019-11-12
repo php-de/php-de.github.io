@@ -262,3 +262,4 @@ Array
 * [Forums-Thread zu diesem Beitrag](http://www.php.de/forum/php-de-intern/wiki-diskussionsforum/1431002-pdo-beitrag)
 * [PHP Data Objects-Erweiterung (PDO) auf php.net](http://php.net/manual/de/intro.pdo.php)
 * [Arrays als JSON-String in SQL-Datenbank speichern]({{ page.root }}/jumpto/array-as-json-to-sqldb/)
+* [Ein anderes umfangreiches, externes PDO-Tutorial](https://phpdelusions.net/pdo)

@@ -180,11 +180,11 @@ $selectedValue = $_POST['Auswahl'];
 
      // Ausgabe des <option> Elements
      sprintf (
-             '<option value="%s"%s>%s</option>' ,
-             $value ,
-             $attribute ,
+             '<option value="%s"%s>%s</option>',
+             $value,
+             $attribute,
              $description
-             );
+     );
   }
   ?>
 </select>

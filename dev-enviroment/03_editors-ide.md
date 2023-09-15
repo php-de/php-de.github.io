@@ -168,6 +168,13 @@ Integrierte Entwicklungsumgebungen interagieren direkt mit PHP und vernetzen Que
 
     phpDesigner ist eine der kostengüstigeren IDEs. Sie ist nicht ganz so umfangreich wie PhpStorm, aber dennoch mit allem gerüstet was die tägliche Arbeit als Software-Entwickler erleichtert.
 
+* **CodeLobster IDE**
+    <br>Website: [http://www.codelobster.com/](http://www.codelobster.com/)
+    <br>UI-Sprache: Englisch, Deutsch, Französisch, Italienisch, Spanisch, Russisch, Chinesisch, Japanisch, Portugiesisch, Ungarisch, Tschechisch, Slowakisch, Türkisch, Persisch
+    <br>Features: [http://www.codelobster.com/details_phped.html](http://www.codelobster.com/details_phped.html)
+    <br>Kostet: Die Hauptversion ist kostenlos, die Professional-Version kostet 59 $
+  
+    CodeLobster IDE ist eine praktische kostenlose plattformübergreifende IDE mit Unterstützung Drupal CMS, Joomla CMS, Magento CMS, Twig, WordPress, JQuery Bibliotheken und Frameworks: CodeIgniter, CakePHP, Symfony, Yii, AngularJS,  BackboneJS, MeteorJS, Laravel, Phalcon.
 
 ## [Sonstige](#sonstige)
 {: #sonstige}
